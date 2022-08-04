@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="HeroMalfurionTalentInnervateRevitalize" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Innerrvate.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentTwilightDreamAstralCommunion" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_TwilightDream.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentCourseofLife" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_PowerHungry.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentMoonfireCelestialAlignment" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentMoonfireMoonlight" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire_a.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentNaturesCleanse" parent="CoreButtonParent">
+        <Name value="Button/Name/PrestigeCleanse"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_Cleanse.dds"/>
+        <AlertName value="Button/Name/PrestigeCleanse"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentInnervateMoonlitHarmony" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Innerrvate.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentElunesChosen" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Mana.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentMoonfireHinderingMoonfire" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentEntanglingRootsTenaciousRoots" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_EntanglingRoots.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentRegrowthLifeseed" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentEntanglingRootsDangerousRoots" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_EntanglingRoots_b.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionRegrowthNaturesProtection" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentTranquilitySerenity" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Tranquility.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <SimpleDisplayText value="Button/Tooltip/HeroMalfurionTalentTranquilitySerenity_Simple"/>
+    </CButton>
+    <CButton id="HeroMalfurionRegrowthYserasGift" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionRegrowthLifebloom" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionRegrowth" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroMalfurionTalentRegrowthLifeseed" Face="HeroMalfurionTalentRegrowthLifeseed"/>
+        <TooltipAppender Validator="HeroMalfurionRegrowthNaturesProtection" Face="HeroMalfurionRegrowthNaturesProtection"/>
+        <TooltipAppender Validator="HeroMalfurionRegrowthYserasGift" Face="HeroMalfurionRegrowthYserasGift"/>
+        <TooltipAppender Validator="HeroMalfurionRegrowthLifebloom" Face="HeroMalfurionRegrowthLifebloom"/>
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="CoreHero:Malfurion,StandardTypeCategory:HeroAbility"/>
+    </CButton>
+    <CButton id="HeroMalfurionMoonfire" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroMalfurionTalentMoonfireHinderingMoonfire" Face="HeroMalfurionTalentMoonfireHinderingMoonfire"/>
+        <TooltipAppender Validator="HeroMalfurionTalentMoonfireMoonlight" Face="HeroMalfurionTalentMoonfireMoonlight"/>
+        <TooltipAppender Validator="HeroMalfurionTalentMoonfireFullMoonfire" Face="HeroMalfurionTalentMoonfireFullMoonfire"/>
+        <TooltipAppender Validator="HeroMalfurionTalentMoonfireCelestialAlignment" Face="HeroMalfurionTalentMoonfireCelestialAlignment"/>
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTranquility" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroMalfurionTalentTranquilitySerenity" Face="HeroMalfurionTalentTranquilitySerenity"/>
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Tranquility.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <SimpleDisplayText value="Button/Tooltip/HeroMalfurionTranquility_Simple"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentEntanglingRootsOvergrownPath" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_EntanglingRoots_a.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTalentMoonfireFullMoonfire" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionInnervate" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Innerrvate.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <SimpleDisplayText value="Button/Tooltip/HeroMalfurionInnervate_Simple"/>
+        <TooltipAppender Validator="HeroMalfurionTalentInnervateMoonlitHarmony" Face="HeroMalfurionTalentInnervateMoonlitHarmony"/>
+        <TooltipAppender Validator="HeroMalfurionTalentInnervateRevitalize" Face="HeroMalfurionTalentInnervateRevitalize"/>
+    </CButton>
+    <CButton id="HeroMalfurionEntanglingRoots" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroMalfurionTalentEntanglingRootsTenaciousRoots" Face="HeroMalfurionTalentEntanglingRootsTenaciousRoots"/>
+        <TooltipAppender Validator="HeroMalfurionTalentEntanglingRootsOvergrownPath" Face="HeroMalfurionTalentEntanglingRootsOvergrownPath"/>
+        <TooltipAppender Validator="HeroMalfurionTalentEntanglingRootsDangerousRoots" Face="HeroMalfurionTalentEntanglingRootsDangerousRoots"/>
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_EntanglingRoots.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+    <CButton id="HeroMalfurionTwilightDream" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_TwilightDream.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CButton>
+</Catalog>

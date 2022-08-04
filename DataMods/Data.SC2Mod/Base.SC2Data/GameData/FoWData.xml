@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CFoW default="1">
+        <BlendSpeed value="2"/>
+    </CFoW>
+    <CFoW id="Black">
+        <Color value="165,0,0,0"/>
+        <Expand value="0"/>
+        <BlendSpeed value="2"/>
+    </CFoW>
+    <CFoW id="BlackNoUnhide">
+        <Color value="165,0,0,0"/>
+        <Expand value="0"/>
+        <BlendSpeed value="2"/>
+    </CFoW>
+    <CFoW id="Dark">
+        <Color value="165,0,0,0"/>
+        <Expand value="0"/>
+        <BlendSpeed value="2"/>
+    </CFoW>
+</Catalog>

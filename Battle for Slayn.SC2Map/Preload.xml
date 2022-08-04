@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Asset path="assets\textures\ui_void_loading_taldarim01.dds" Type="Image"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="Aiur_Rock_Cliff_Jungle" Variations="0,1,3,4,5"/>
+<Actor id="Aiur_Rock_Cliff_Jungle_Chunks" Variations="0,1,2"/>
+<Actor id="Aiur_Trees_Giant" Variations="0,1,2"/>
+<Actor id="Aiur_Trees_Log" Variations="0,1"/>
+<Actor id="Aiur_Trees_Regular" Variations="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/>
+<Actor id="Aiur_Trees_Regular_Grouped" Variations="2"/>
+<Actor id="Aiur_Trees_Tall" Variations="1,3,4,6,8,10,11"/>
+<Actor id="Elsecaro_Curb" Variations="9,13"/>
+<Actor id="GenericProtossFire_Medium"/>
+<Actor id="JarbanMinor_CaveEntrance" Variations="1"/>
+<Actor id="JarbanMinor_Grass" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="JarbanMinor_Large_Rock" Variations="0,2,3,4,5,6"/>
+<Actor id="JarbanMinor_Medium_Rock_Group" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="JarbanMinor_Small_Rock" Variations="0,1,2,3,4,5"/>
+<Actor id="JarbanMinor_Small_Rock_Group" Variations="0,1,2,3"/>
+<Actor id="PurificationDesert_Medium_Rock_Group" Variations="1,5,6,7"/>
+<Actor id="PurificationDesert_Small_Rock_Group" Variations="0,1,3"/>
+<Actor id="Purifier_Trees_Log" Variations="3"/>
+<Actor id="RiverRapid" Variations="2"/>
+<Actor id="Rock_Cliff_Chunks" Variations="0,3,4"/>
+<Actor id="Shakuras_PowerCrystal"/>
+<Actor id="Shakuras_SmallBrush_Windy" Variations="1"/>
+<Actor id="Shakuras_Stone_Temple_Rubble" Variations="2"/>
+<Actor id="Shakuras_Temple_Statue" Variations="0,2"/>
+<Actor id="Slayn_Banner" Variations="0,1,2,3,4"/>
+<Actor id="Slayn_Brambles" Variations="0,1,2,4,5"/>
+<Actor id="Slayn_Brazier_Embers" Variations="3"/>
+<Actor id="Slayn_Brazier_Fire" Variations="0,2,3"/>
+<Actor id="Slayn_Braziers" Variations="0,1"/>
+<Actor id="Slayn_CliffSpires" Variations="0,1"/>
+<Actor id="Slayn_CliffTemples_Lit" Variations="0,1,2,4,5,6"/>
+<Actor id="Slayn_Cliff_Temple_Entrance" Variations="3"/>
+<Actor id="Slayn_Generic_Temple" Variations="1,3,4"/>
+<Actor id="Slayn_PitOfDoom"/>
+<Actor id="Slayn_Ramps" Variations="2"/>
+<Actor id="Slayn_Road_Inlay" Variations="0,1"/>
+<Actor id="Slayn_Sacrificial_Altar" Variations="1,2,3,4,5,6,7"/>
+<Actor id="Slayn_Sacrificial_Altar_Big" Variations="2,4,6"/>
+<Actor id="Slayn_Statues" Variations="1,2,3,4"/>
+<Actor id="Slayn_StoneDoodads" Variations="1,3"/>
+<Actor id="Slayn_Stone_Bricks" Variations="6"/>
+<Actor id="Slayn_Stone_Bricks_Piece" Variations="1,2,4,5,8"/>
+<Actor id="Slayn_Temple_Banners" Variations="0,2,3,6"/>
+<Actor id="Slayn_Temple_BigWalls" Variations="0,1,2,3,4"/>
+<Actor id="Slayn_Temple_Inlay" Variations="2,4"/>
+<Actor id="Slayn_Temple_Pillars" Variations="0,1,2,3"/>
+<Actor id="Slayn_Temple_Pillars_Broken" Variations="2,5"/>
+<Actor id="Slayn_Terrazine_Temple" Variations="0,1"/>
+<Actor id="Slayn_Weeds" Variations="0,1,2,3,4,5,6,7,8,9,10"/>
+<Actor id="TheVoid_LightRed" Variations="1"/>
+<Actor id="XelNaga_Cavern_ArchPost"/>
+<Actor id="XelNaga_Caverns_GroundPlates_Destroyed" Variations="0,3"/>
+<Actor id="ZerusCliffVines" Variations="0,3,4,5"/>
+<Actor id="ZerusGroundVines" Variations="0,2,3"/>
+<Actor id="ZerusLargeVines" Variations="0,1"/>
+<Actor id="AgriaTree" Variations="3,4,7"/>
+<Actor id="AiurTree" Variations="0,1,4,5"/>
+<Actor id="FogMist"/>
+<Actor id="FogGrey"/>
+<Actor id="HavenTree" Variations="0,1,2,3,4,5,6,7"/>
+<Actor id="MarSaraTreeDead" Variations="0,1,2,4,5"/>
+<Actor id="RainSprinkle"/>
+<Actor id="ShakurasTempleWall" Variations="0,2,3,4,6"/>
+<Actor id="Sunrays"/>
+<Actor id="TarsonisTree" Variations="1"/>
+<Actor id="Waterfall"/>
+<Actor id="TyphonTree" Variations="0,1,2,3,4,5,6"/>
+<Actor id="Storm_Doodad_KingsCrest_RavenCourt_Tree" Variations="0,1,4,5,6,7,8"/>
+<Actor id="Storm_Doodad_KingsCrest_RavenCourt_CurtainLarge" Variations="0,1"/>
+<Actor id="Storm_Doodad_KingsCrest_CurbStone" Variations="0,1,2,3,4,5"/>
+<Actor id="Storm_Doodad_KingsCrest_RavenBush" Variations="0,1,2,3"/>
+<Actor id="BaseProtossRepulsor"/>
+<Actor id="Slayn_Braziers_2" Variations="0,1"/>
+<Terrain id="Storm_Slayn_BattleForSlayn"/>
+<Unit id="XelNagaWatchTower"/>
+<Unit id="StormGameStartPathingBlockerDiagonal"/>
+<Unit id="StormGameStartPathingBlocker"/>
+<Unit id="TownWallRadial3L3" Variations="0"/>
+<Unit id="TownWallRadial4L2" Variations="1"/>
+<Unit id="TownWallRadial4L3" Variations="1"/>
+<Unit id="TownWallRadial5L2" Variations="0"/>
+<Unit id="TownWallRadial6L2" Variations="0,5"/>
+<Unit id="TownWallRadial6L3" Variations="2"/>
+<Unit id="TownWallRadial9L3" Variations="1"/>
+<Unit id="TownWallRadial14L3" Variations="0"/>
+<Unit id="TownWallRadial17L2" Variations="1,4"/>
+<Unit id="TownWallRadial17L3" Variations="1"/>
+<Unit id="TownWallRadial18L2" Variations="1,3"/>
+<Unit id="TownWallRadial19L2" Variations="0"/>
+<Unit id="TownWallRadial19L3" Variations="2"/>
+<Unit id="TownWallRadial20L3" Variations="1"/>
+<Unit id="TownProtossCannonTowerL2"/>
+<Unit id="TownProtossCannonTowerL2Standalone"/>
+<Unit id="TownProtossCore"/>
+<Unit id="TownProtossGateL3BRUL"/>
+<Unit id="TownProtossGateL3Vertical180"/>
+<Unit id="TownProtossGateL3Vertical"/>
+<Unit id="TownProtossGateL3BLUR"/>
+<Unit id="TownProtossMoonwellL2"/>
+<Unit id="TownProtossTownHallL3"/>
+<Unit id="TownProtossCannonTowerL3Standalone"/>
+<Unit id="TownProtossCannonTowerL3"/>
+<Unit id="TownProtossTownHallL2"/>
+<Unit id="TownProtossMoonwellL3"/>
+<Unit id="TownProtossGateL215BRUL"/>
+<Unit id="TownProtossGateL215BLUR"/>
+<Unit id="TownProtossGateL2Vertical"/>
+</Preload>

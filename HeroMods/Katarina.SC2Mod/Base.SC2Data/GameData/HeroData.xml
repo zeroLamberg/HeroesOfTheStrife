@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CHero id="HeroKatarina" HeroID="Katarina">
+        <AttributeId value="HKat"/>
+        <Model value="HeroKatarina@KatarinaAutoriflerSniped"/>
+        <Role value="Damage"/>
+        <UniverseIcon value="Assets\Textures\UI_Glues_Store_GameIcon_SC2.dds"/>
+    </CHero>
+</Catalog>

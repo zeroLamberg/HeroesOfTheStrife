@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="MercenaryColossusChargedBlast">
+        <Icon value="Assets\Textures\btn-ability-protoss-chargedblast.dds"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CButton>
+    <CButton id="MercenaryColossusFireBeam">
+        <Icon value="Assets\Textures\btn-ability-protoss-firebeam.dds"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CButton>
+</Catalog>

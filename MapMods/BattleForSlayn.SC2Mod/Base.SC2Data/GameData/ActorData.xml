@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorUnit default="1" id="WallRadialParent" parent="CoreTownBaseStructure">
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <On Terms="UnitDeath" Send="QueryRadius 1.500000 BuildingDiedBirdQueryResponse"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 0; PlayerId 11 12" Send="DeathCustomize Variation0"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 1; PlayerId 11 12" Send="DeathCustomize Variation1"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 2; PlayerId 11 12" Send="DeathCustomize Variation2"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 3; PlayerId 11 12" Send="DeathCustomize Variation3"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 4; PlayerId 11 12" Send="DeathCustomize Variation4"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 5; PlayerId 11 12" Send="DeathCustomize Variation5"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 6; PlayerId 11 12" Send="DeathCustomize Variation6"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 7; PlayerId 11 12" Send="DeathCustomize Variation7"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 8; PlayerId 11 12" Send="DeathCustomize Variation8"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 9; PlayerId 11 12" Send="DeathCustomize Variation9"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath00" Name="Variation0"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath01" Name="Variation1"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath02" Name="Variation2"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath03" Name="Variation3"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath04" Name="Variation4"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath05" Name="Variation5"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath06" Name="Variation6"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath07" Name="Variation7"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath08" Name="Variation8"/>
+        <DeathCustoms ModelLink="TownWallTaldarimDeath09" Name="Variation9"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_BoE_Building_Wall_Hell.dds"/>
+        </GroupIcon>
+        <ImpactSound value="BuildingWall_Impact"/>
+    </CActorUnit>
+    <CActorUnit id="MercenaryColossus@Defender">
+        <Model value="MercenaryColossus@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MercenaryColossus@DeathTaldarim"/>
+        <DeathCustoms index="1" ModelLink="MercenaryColossus@DeathRagdollTaldarim"/>
+        <PlacementModel value="MercenaryColossus@ModelTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="MercenaryColossus@Laner">
+        <Model value="MercenaryColossus@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MercenaryColossus@DeathTaldarim"/>
+        <DeathCustoms index="1" ModelLink="MercenaryColossus@DeathRagdollTaldarim"/>
+        <PlacementModel value="MercenaryColossus@ModelTaldarim"/>
+    </CActorUnit>
+    <CActorModel id="MercenaryColossusChargedBlast@PowerUpModel">
+        <Model value="MercenaryColossusChargedBlast@PowerUpTaldarim"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@PowerUpModel">
+        <Model value="MercenaryColossusFireBeam@PowerUpTaldarim"/>
+    </CActorModel>
+    <CActorUnit id="MercenaryVanguard@Defender">
+        <Model value="MercenaryVanguard@ModelTaldarim"/>
+        <BuildModel value="MercenaryVanguard@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MercenaryVanguard@DeathTaldarim"/>
+        <PlacementModel value="MercenaryVanguard@ModelTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="MercenaryVanguard@Laner">
+        <Model value="MercenaryVanguard@ModelTaldarim"/>
+        <BuildModel value="MercenaryVanguard@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MercenaryVanguard@DeathTaldarim"/>
+        <PlacementModel value="MercenaryVanguard@ModelTaldarim"/>
+    </CActorUnit>
+    <CActorModel id="MercenaryVanguardWeapon@AttackLaunchModelLeft">
+        <Model value="MercenaryVanguardWeapon@AttackLaunchTaldarim"/>
+    </CActorModel>
+    <CActorModel id="MercenaryVanguardWeapon@AttackLaunchModelRight">
+        <Model value="MercenaryVanguardWeapon@AttackLaunchTaldarim"/>
+    </CActorModel>
+    <CActorUnit id="MinionProtossCatapult">
+        <Model value="MinionProtossCatapult@ModelTaldarim"/>
+        <BuildModel value="MMinionProtossCatapult@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossCatapult@DeathTaldarim"/>
+        <PlacementModel value="MinionProtossCatapult@ModelTaldarim"/>
+        <DeathCustoms index="1" ModelLink="MinionProtossCatapult@DeathRagdollTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossMelee">
+        <Model value="MinionProtossMelee@ModelTaldarim"/>
+        <BuildModel value="MinionProtossMelee@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossMelee@DeathTaldarim"/>
+        <PlacementModel value="MinionProtossMelee@ModelTaldarim"/>
+        <DeathCustoms index="1" ModelLink="MinionProtossMelee@DeathRagdollTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossRanged">
+        <Model value="MinionProtossRanged@ModelTaldarim"/>
+        <BuildModel value="MinionProtossRanged@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossRanged@DeathTaldarim"/>
+        <PlacementModel value="MinionProtossRanged@ModelTaldarim"/>
+        <DeathCustoms index="1" ModelLink="MinionProtossRanged@DeathRagdollTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossWizard">
+        <Model value="MinionProtossWizard@ModelTaldarim"/>
+        <BuildModel value="MinionProtossWizard@ModelTaldarim"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossWizard@DeathTaldarim"/>
+        <PlacementModel value="MinionProtossWizard@ModelTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="SlaynVoidRift" parent="CoreTownBaseStructure" unitName="SlaynVoidRift@Static">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <On index="12" Terms="UnitBirth.*.Normal" Send="AnimPlay Birth Build 0 0.000000"/>
+        <On Terms="ActorCreation" Send="SetShowStatusBar"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <BarOffset value="45"/>
+        <HighlightTooltip value="Unit/Name/SlaynVoidRift"/>
+        <StatusBarOn index="Progress" value="0"/>
+    </CActorUnit>
+    <CActorDoodad id="SlaynVoidNebulaStorm">
+        <EditorCategories value="DoodadType:Props,StandardHero:MapEvents"/>
+        <On Terms="ActorCreation" Send="Create VoidNebulaStorm_Lightning_LoopSound"/>
+        <On Terms="ActorCreation" Send="Create VoidNebulaStorm_LoopSound"/>
+    </CActorDoodad>
+    <CActorUnit id="SlaynSupplicant" parent="CoreMinionStandard" unitName="SlaynSupplicant">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <On Terms="ActorCreation" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="SetOpacity 1.000000 0.750000"/>
+        <On Terms="ActorCreation" Send="SetMinimapVisibility"/>
+        <Model value="SlaynSupplicant@Model"/>
+        <BuildModel value="SlaynSupplicant@Model"/>
+        <DeathArray index="Normal" ModelLink="SlaynSupplicant@Death" SoundLink="" VoiceLink="Ascendant_Death_Fx"/>
+        <PlacementModel value="SlaynSupplicant@Model"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+    </CActorUnit>
+    <CActorDoodad id="SlaynVoidThrasher@GroundSkirt">
+        <EditorCategories value="DoodadType:Props,StandardHero:MapEvents"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+    </CActorDoodad>
+    <CActorAction id="SlaynVoidThrasherShooting@Attack" parent="CoreGenericAttack" effectImpact="SlaynVoidThrasherShooting@Damage" effectLaunch="SlaynVoidThrasherShooting@LM">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon00"/>
+        <ImpactMap index="None" Model="SlaynVoidThrasherShooting@Impact"/>
+        <ImpactSound value="GenericAttackImpactSound"/>
+    </CActorAction>
+    <CActorMissile id="SlaynVoidThrasherShooting@AttackMissile" parent="CoreMissileWithDeath" unitName="SlaynVoidThrasherShooting@Missile">
+        <AcceptedTransfers index="AnimProps" value="0"/>
+        <AcceptedTransfers index="Textures" value="0"/>
+        <AcceptedTransfers index="Status" value="0"/>
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+    </CActorMissile>
+    <CActorSound id="SlaynVoidThrasherShooting@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <On Terms="UnitCreation.SlaynVoidThrasherShooting@Missile" Send="Create"/>
+        <Layers>
+            <Sound value="SlaynVoidThrasherShooting@LaunchLayer2"/>
+            <PitchSource value="Actor"/>
+            <PlayDelaySource value="Actor"/>
+            <VolumeSource value="Actor"/>
+            <Chance value="100"/>
+            <Pitch value="-3.000000,1.000000"/>
+            <PlayDelay value="0,10"/>
+            <Volume value="-17.000000,-15.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="SlaynVoidThrasherShooting@SoundMissileLaunch" parent="CoreSoundContinuous">
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <On Terms="UnitCreation.SlaynVoidThrasherShooting@Missile" Send="Create"/>
+    </CActorSound>
+    <!--        <On Terms="Abil.SlaynVoidThrasherShooting.SourceCastStart" Send="AnimPlay Spell Attack 0 -1.000000 -1.000000 3.500000 AsDuration"/>-->
+    <CActorUnit id="SlaynVoidThrasher" parent="CoreCreepStandard" unitName="SlaynVoidThrasher">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <On index="26" Terms="UnitDeathCustomize; CanApplyActionPhysics RagdollBasic" Send="DeathCustomize RagdollBasic"/>
+        <On index="27" Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On index="28" Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <On index="29" Terms="UnitDeathCustomize" Target="SlaynVoidThrasher@GroundSkirt" Send="AnimBracketStop BSD"/>
+        <On index="30" Terms="Behavior.SlaynVoidThrasherShooting@Active.On" Send="AnimBracketStart StandWork Stand,Work,Start Stand,Work Stand,Work,End OpeningPlayForever"/>
+        <On Terms="Behavior.SlaynVoidThrasherShooting@Active.Off" Send="AnimBracketStop StandWork"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="SetMinimapVisibility"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="$Birth"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="AnimSetTimeScale Birth 3.000000"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="TimerSet 1.000000 BirthT"/>
+        <On Terms="TimerExpired; TimerName BirthT" Send="AnimSetTimeScale Birth 1.000000"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="Create SlaynVoidThrasher@GroundSkirt"/>
+        <On Terms="UnitBirth" Send="SetShowStatusBar"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <StatusBarFlags index="Custom" value="0"/>
+    </CActorUnit>
+    <CActorSound id="SlaynVoidRiftSpawn@SoundBirth" parent="CoreSoundOneShot">
+        <On Terms="Effect.SlaynVoidRiftSpawn@DummyVisualSet.Start; At Target" Send="Create"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+    </CActorSound>
+    <CActorMissile id="SlaynVoidRiftSpawn@ActionMissile" parent="GenericAttackMissile" unitName="SlaynVoidRiftSpawn@Missile">
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,255 2.000000}"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+    </CActorMissile>
+    <CActorAction id="SlaynVoidRiftSpawn@Action" parent="GenericAttack" effectImpact="NHbrVoidRiftTrain@PrecursorRB" effectLaunch="SlaynVoidRiftSpawn@LM">
+        <LaunchSiteOps Ops="SOpAttachOrigin SOpMoveDownBy1"/>
+        <LaunchAssets Model="" Sound="NHbr_PlasmaBlastLaunch"/>
+        <ImpactSiteOps Ops="SOpAttachCenter"/>
+        <ShieldFlashType value="None"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+    </CActorAction>
+    <CActorModel id="SlaynVoidRiftSpawn@ModelBirth" parent="CoreModelAnimationStyleOneShot">
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="1"/>
+        <AcceptedHostedPropTransfers index="CastShadows" value="1"/>
+        <AcceptedHostedPropTransfers index="CloakEffect" value="1"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="1"/>
+        <AcceptedHostedPropTransfers index="Decal" value="1"/>
+        <AcceptedHostedPropTransfers index="LocalTintColor" value="1"/>
+        <AcceptedHostedPropTransfers index="Opacity" value="1"/>
+        <AcceptedHostedPropTransfers index="Scale" value="1"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <AcceptedHostedPropTransfers index="TimeScale" value="1"/>
+        <AcceptedHostedPropTransfers index="TintColor" value="1"/>
+        <AcceptedHostedPropTransfers index="Visibility" value="1"/>
+        <AcceptedHostedPropTransfers index="WarpGroup" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,255 2.000000}"/>
+        <On Terms="ActorCreation" Target="_Selectable" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Target="_Selectable" Send="SetOpacity 1.000000 0.500000"/>
+        <On Terms="Effect.SlaynVoidRiftSpawn@DummyVisualSet.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="MercenarySlaynElementalEssenceLeech@ModelCage" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.MercenarySlaynElementalEssenceLeech@Encased.On" Send="Create"/>
+        <On Terms="Behavior.MercenarySlaynElementalEssenceLeech@Encased.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="2.000000"/>
+    </CActorModel>
+    <CActorSound id="MercenarySlaynElementalEssenceLeech@SoundCageEnd" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Behavior.MercenarySlaynElementalEssenceLeech@Encased.Off" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="MercenarySlaynElementalEssenceLeech@SoundCageStart" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.MercenarySlaynElementalEssenceLeech@Encased.On" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="MercenarySlaynElemental@Defender" parent="CoreCreepStandard" unitName="MercenarySlaynElemental@Defender">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.FaceMeltDance.On" Send="AnimPlay Spell Dance PlayForever"/>
+        <On Terms="Behavior.FaceMeltDance.Off" Send="AnimClear Spell"/>
+        <On Terms="Behavior.TalentBucketPromote.On" Send="SetScale 1.250000 1.000000"/>
+        <On Terms="UnitDeathCustomize" Send="DeathCustomize RagdollBasic"/>
+        <On Terms="ActorCreation" Send="SetMinimapVisibility"/>
+        <On Terms="ActorCreation" Send="$Birth,A DontResetOnUnhide 0.000000 -1.000000 -1.000000 AsAutomatic 0.000000 40"/>
+        <Model value="MercenarySlaynElemental@Model"/>
+        <BuildModel value="MercenarySlaynElemental@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenarySlaynElemental@Death" SoundLink="" VoiceLink=""/>
+        <DeathCustoms ModelLink="MassHallucinationDeath" SoundLink="Tassadar_MassHallucination_DeathLarge" Name="Hallucination"/>
+        <DeathCustoms ActorModel="SlaynElementalDeathRagdoll" ModelLink="MercenarySlaynElemental@DeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PlacementModel value="MercenarySlaynElemental@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <CustomUnitStatusFrame value="UnitStatus/SuperCreepNeutralUnitStatusFrameTemplate"/>
+        <MinimapIconIsTeamColored value="0"/>
+        <MinimapUseSelfColor value="1"/>
+        <MinimapUseSelectionColor value="1"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <UnitIcon value="Assets\Textures\tip_slaynelemental.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,150"/>
+    </CActorUnit>
+    <CActorModel id="MercenarySlaynElementalEssenceLeech@Warning" parent="CoreModelAnimationStyleContinuous">
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenarySlaynElementalEssenceLeech@CreateWarningPersistent.Start" Send="Create"/>
+        <On Terms="Effect.MercenarySlaynElementalEssenceLeech@CreateWarningPersistent.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+    </CActorModel>
+    <CActorSound id="MercenarySlaynElementalEssenceLeech@SoundCageLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.MercenarySlaynElementalEssenceLeech@Encased.On" Send="Create"/>
+        <On Terms="Behavior.MercenarySlaynElementalEssenceLeech@Encased.Off" Send="Destroy"/>
+    </CActorSound>
+    <CActorBeamSimple id="MercenarySlaynElementalWeapon@AttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On index="0" Send="AnimBracketStart BSD Birth {} Death ContentPlayOnce"/>
+    </CActorBeamSimple>
+    <CActorAction id="MercenarySlaynElementalWeapon@Attack" parent="GenericAttack" effectAttack="MercenarySlaynElementalWeapon@Damage">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <LaunchAttachQuery Methods="Weapon"/>
+    </CActorAction>
+    <CActorUnit id="JungleObjectiveThrasherIcon" parent="GenericUnitMinimal" unitName="JungleObjectiveThrasherIcon">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapEvents"/>
+        <Model value="Invisible"/>
+        <MinimapIcon value="Assets/Textures/UI_MinimapIcon_Slayn_Hybrid.dds"/>
+        <MinimapIconTintColor value="255,224,119,255"/>
+        <MinimapRenderPriority value="Merc"/>
+        <MinimapUseSelfColor value="0"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL2">
+        <Model value="TownProtossCannonTowerL2Taldarim"/>
+        <BuildModel value="TownProtossCannonTowerL2BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL2DeathTaldarim"/>
+        <DeathArray index="UnderConstruction" ModelLink="TownProtossCannonTowerL2DeathUnpoweredTaldarim"/>
+        <PlacementModel value="TownProtossCannonTowerL2PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL2Standalone">
+        <Model value="TownProtossCannonTowerL2Taldarim"/>
+        <BuildModel value="TownProtossCannonTowerL2BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL2DeathTaldarim"/>
+        <PlacementModel value="TownProtossCannonTowerL2Taldarim"/>
+        <DeathCustoms index="1" ModelLink="TownProtossCannonTowerL2DeathUnpoweredTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL3">
+        <Model value="TownProtossCannonTowerL3Taldarim"/>
+        <BuildModel value="TownProtossCannonTowerL3BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL3DeathTaldarim"/>
+        <DeathArray index="UnderConstruction" ModelLink="TownProtossCannonTowerL3DeathUnpoweredTaldarim"/>
+        <PlacementModel value="TownProtossCannonTowerL3PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL3Standalone">
+        <Model value="TownProtossCannonTowerL3Taldarim"/>
+        <BuildModel value="TownProtossCannonTowerL3BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL3DeathTaldarim"/>
+        <DeathCustoms index="1" ModelLink="TownProtossCannonTowerL3DeathUnpoweredTaldarim"/>
+        <PlacementModel value="TownProtossCannonTowerL3PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCore">
+        <Model value="TownProtossCoreTaldarim"/>
+        <BuildModel value="TownProtossCoreBirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCoreDeathTaldarim"/>
+        <PlacementModel value="TownProtossCorePlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossMoonwellL2">
+        <Model value="TownProtossMoonwellL2Taldarim"/>
+        <BuildModel value="TownProtossMoonwellL2BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossMoonwellL2DeathTaldarim"/>
+        <PlacementModel value="TownProtossMoonwellL2PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossMoonwellL3">
+        <Model value="TownProtossMoonwellL3Taldarim"/>
+        <BuildModel value="TownProtossMoonwellL3BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossMoonwellL3DeathTaldarim"/>
+        <PlacementModel value="TownProtossMoonwellL3PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossTownHallL2">
+        <Model value="TownProtossTownHallL2Taldarim"/>
+        <BuildModel value="TownProtossTownHallL2BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTownHallL2DeathTaldarim"/>
+        <PlacementModel value="TownProtossTownHallL2PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossTownHallL3">
+        <Model value="TownProtossTownHallL3Taldarim"/>
+        <BuildModel value="TownProtossTownHallL3BirthTaldarim"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTownHallL3DeathTaldarim"/>
+        <PlacementModel value="TownProtossTownHallL3PlacementTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial0L1" parent="WallRadialParent" unitName="TownWallRadial0L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial0L2" parent="WallRadialParent" unitName="TownWallRadial0L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial0L3" parent="WallRadialParent" unitName="TownWallRadial0L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial10L1" parent="WallRadialParent" unitName="TownWallRadial10L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial10L2" parent="WallRadialParent" unitName="TownWallRadial10L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial10L3" parent="WallRadialParent" unitName="TownWallRadial10L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial11L1" parent="WallRadialParent" unitName="TownWallRadial11L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial11L2" parent="WallRadialParent" unitName="TownWallRadial11L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial11L3" parent="WallRadialParent" unitName="TownWallRadial11L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial12L1" parent="WallRadialParent" unitName="TownWallRadial12L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial12L2" parent="WallRadialParent" unitName="TownWallRadial12L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial12L3" parent="WallRadialParent" unitName="TownWallRadial12L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial13L1" parent="WallRadialParent" unitName="TownWallRadial13L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial13L2" parent="WallRadialParent" unitName="TownWallRadial13L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial13L3" parent="WallRadialParent" unitName="TownWallRadial13L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial14L1" parent="WallRadialParent" unitName="TownWallRadial14L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial14L2" parent="WallRadialParent" unitName="TownWallRadial14L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial14L3" parent="WallRadialParent" unitName="TownWallRadial14L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial15L1" parent="WallRadialParent" unitName="TownWallRadial15L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial15L2" parent="WallRadialParent" unitName="TownWallRadial15L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial15L3" parent="WallRadialParent" unitName="TownWallRadial15L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial16L1" parent="WallRadialParent" unitName="TownWallRadial16L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial16L2" parent="WallRadialParent" unitName="TownWallRadial16L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial16L3" parent="WallRadialParent" unitName="TownWallRadial16L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial17L1" parent="WallRadialParent" unitName="TownWallRadial17L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial17L2" parent="WallRadialParent" unitName="TownWallRadial17L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial17L3" parent="WallRadialParent" unitName="TownWallRadial17L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial18L1" parent="WallRadialParent" unitName="TownWallRadial18L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial18L2" parent="WallRadialParent" unitName="TownWallRadial18L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial18L3" parent="WallRadialParent" unitName="TownWallRadial18L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial19L1" parent="WallRadialParent" unitName="TownWallRadial19L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial19L2" parent="WallRadialParent" unitName="TownWallRadial19L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial19L3" parent="WallRadialParent" unitName="TownWallRadial19L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial1L1" parent="WallRadialParent" unitName="TownWallRadial1L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial1L2" parent="WallRadialParent" unitName="TownWallRadial1L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial1L3" parent="WallRadialParent" unitName="TownWallRadial1L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial20L1" parent="WallRadialParent" unitName="TownWallRadial20L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial20L2" parent="WallRadialParent" unitName="TownWallRadial20L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial20L3" parent="WallRadialParent" unitName="TownWallRadial20L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial21L1" parent="WallRadialParent" unitName="TownWallRadial21L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial21L2" parent="WallRadialParent" unitName="TownWallRadial21L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial21L3" parent="WallRadialParent" unitName="TownWallRadial21L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial22L1" parent="WallRadialParent" unitName="TownWallRadial22L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial22L2" parent="WallRadialParent" unitName="TownWallRadial22L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial22L3" parent="WallRadialParent" unitName="TownWallRadial22L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial23L1" parent="WallRadialParent" unitName="TownWallRadial23L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial23L2" parent="WallRadialParent" unitName="TownWallRadial23L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial23L3" parent="WallRadialParent" unitName="TownWallRadial23L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial2L1" parent="WallRadialParent" unitName="TownWallRadial2L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial2L2" parent="WallRadialParent" unitName="TownWallRadial2L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial2L3" parent="WallRadialParent" unitName="TownWallRadial2L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial3L1" parent="WallRadialParent" unitName="TownWallRadial3L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial3L2" parent="WallRadialParent" unitName="TownWallRadial3L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial3L3" parent="WallRadialParent" unitName="TownWallRadial3L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial4L1" parent="WallRadialParent" unitName="TownWallRadial4L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial4L2" parent="WallRadialParent" unitName="TownWallRadial4L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial4L3" parent="WallRadialParent" unitName="TownWallRadial4L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial5L1" parent="WallRadialParent" unitName="TownWallRadial5L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial5L2" parent="WallRadialParent" unitName="TownWallRadial5L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial5L3" parent="WallRadialParent" unitName="TownWallRadial5L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial6L1" parent="WallRadialParent" unitName="TownWallRadial6L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial6L2" parent="WallRadialParent" unitName="TownWallRadial6L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial6L3" parent="WallRadialParent" unitName="TownWallRadial6L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial7L1" parent="WallRadialParent" unitName="TownWallRadial7L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial7L2" parent="WallRadialParent" unitName="TownWallRadial7L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial7L3" parent="WallRadialParent" unitName="TownWallRadial7L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial8L1" parent="WallRadialParent" unitName="TownWallRadial8L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial8L2" parent="WallRadialParent" unitName="TownWallRadial8L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial8L3" parent="WallRadialParent" unitName="TownWallRadial8L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial9L1" parent="WallRadialParent" unitName="TownWallRadial9L1">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial9L2" parent="WallRadialParent" unitName="TownWallRadial9L2">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+    <CActorUnit id="TownWallRadial9L3" parent="WallRadialParent" unitName="TownWallRadial9L3">
+        <Model value="TownWallTaldarim"/>
+        <BuildModel value="TownWallTaldarim"/>
+        <PlacementModel value="TownWallTaldarim"/>
+    </CActorUnit>
+</Catalog>

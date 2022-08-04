@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="PrestigeShrinkRay@ApplySlow">
+        <Behavior value="PrestigeShrinkRay"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PrestigeShrinkRay@InitialSet">
+        <EditorCategories value="CoreHero:Common"/>
+        <EffectArray value="PrestigeShrinkRay@ApplySlow"/>
+        <EffectArray value="PrestigeShrinkRay@ApplyDamageReduction"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="PrestigeShrinkRay@ApplyDamageReduction">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="PrestigeShrinkRay@DamageReduction"/>
+    </CEffectApplyBehavior>
+    <CEffectCreateHealer id="PrestigeBloodForBlood@CreateHealer" parent="CoreCreateHealerStorm">
+        <EditorCategories value="CoreHero:Common"/>
+    </CEffectCreateHealer>
+    <CEffectApplyBehavior id="PrestigePoisonDart@ApplyBehavior">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="PrestigePoisonDart"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="PrestigePoisonDart@Damage" parent="CorePercentDamage">
+        <Flags index="NoScaledDealtBonus" value="1"/>
+        <Flags index="NoFractionDealtBonus" value="1"/>
+        <Flags index="NoUnscaledDealtBonus" value="1"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectSet id="PrestigePoisonDart@DamageAndRevealSet">
+        <EditorCategories value="CoreHero:Common"/>
+        <EffectArray value="PrestigePoisonDart@Damage"/>
+        <EffectArray value="PrestigePoisonDart@RevealerCreatePersistent"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="PrestigePoisonDart@RevealerCreatePersistent">
+        <EditorCategories value="CoreHero:Common"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="1"/>
+        <RevealRadius value="1"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="PrestigeFirstAid@ApplyBehavior">
+        <EditorCategories value="CoreHero:Common"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PrestigeFirstAid"/>
+    </CEffectApplyBehavior>
+    <CEffectCreateHealer id="PrestigeFirstAid@CreateHealer">
+        <EditorCategories value="CoreHero:Common"/>
+        <ImpactUnit Value="Caster"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriod value="1"/>
+        <RechargeVitalFraction value="0.039"/>
+    </CEffectCreateHealer>
+    <CEffectApplyBehavior id="PrestigeSprint@ApplyBehavior">
+        <EditorCategories value="CoreHero:Common"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PrestigeSprint"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="PrestigeCleanse@ApplyCleanse">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="PrestigeCleanse"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="PrestigeStoneSkin@ApplyBehavior">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="PrestigeStoneSkin"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="PrestigeBloodForBlood@ApplyBehavior">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="PrestigeBloodForBlood"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="PrestigeBloodForBlood@Damage" parent="CorePercentDamage">
+        <Flags index="NoScaledDealtBonus" value="1"/>
+        <Flags index="NoFractionDealtBonus" value="1"/>
+        <Flags index="NoUnscaledDealtBonus" value="1"/>
+        <VitalFractionMax index="Life" value="0.025"/>
+        <LaunchLocation Value="CasterUnit"/>
+    </CEffectDamage>
+    <CAbilEffectTarget id="PrestigeShrinkRay@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeShrinkRay@InitialSet"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeShrinkRay" Location="Player" TimeUse="240"/>
+        </Cost>
+        <TargetFilters value="Heroic,Visible;Player,Ally,Neutral,Structure,Stasis,Dead,Hidden"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeShrinkRay@Slot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PrestigeShrinkRay@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeShrinkRay@InitialSet"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeShrinkRay" Location="Player" TimeUse="240"/>
+        </Cost>
+        <TargetFilters value="Heroic,Visible;Player,Ally,Neutral,Structure,Stasis,Dead,Hidden"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeShrinkRay@Slot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="PrestigeFirstAid@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeFirstAid@ApplyBehavior"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeFirstAid" Location="Player" TimeUse="240"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeFirstAid@Slot2" Requirements="HeroHasNoDeadBehavior">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PrestigePoisonDart@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigePoisonDart@ApplyBehavior"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigePoisonDart" Location="Player" TimeUse="240"/>
+        </Cost>
+        <TargetFilters value="Heroic;Self,Player,Ally,Neutral,Structure,Stasis,Dead,Invulnerable"/>
+        <Range value="5"/>
+        <CastIntroTime value="0.1"/>
+        <FinishTime value="0.1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigePoisonDart@Slot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="PrestigeFirstAid@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeFirstAid@ApplyBehavior"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeFirstAid" Location="Player" TimeUse="240"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeFirstAid@Slot1" Requirements="HeroHasNoDeadBehavior">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PrestigePoisonDart@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigePoisonDart@ApplyBehavior"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigePoisonDart" Location="Player" TimeUse="240"/>
+        </Cost>
+        <TargetFilters value="Heroic;Self,Player,Ally,Neutral,Structure,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="5"/>
+        <CastIntroTime value="0.1"/>
+        <FinishTime value="0.1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigePoisonDart@Slot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilBehavior id="PrestigeIceBlock@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <SharedFlags index="DisableWhileDead" value="0"/>
+        <CmdButtonArray index="On" DefaultButtonFace="PrestigeIceBlock@Slot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="PrestigeIceBlock@CancelSlot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeIceBlock" Location="Player" TimeUse="240"/>
+        </Cost>
+        <BehaviorArray value="PrestigeIceBlock"/>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilBehavior>
+    <CAbilEffectInstant id="PrestigeSprint@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeSprint@ApplyBehavior"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeSprint" Location="Player" TimeUse="120"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeSprint@Slot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilBehavior id="PrestigeIceBlock@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <SharedFlags index="DisableWhileDead" value="0"/>
+        <CmdButtonArray index="On" DefaultButtonFace="PrestigeIceBlock@Slot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="PrestigeIceBlock@CancelSlot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeIceBlock" Location="Player" TimeUse="240"/>
+        </Cost>
+        <BehaviorArray value="PrestigeIceBlock"/>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilBehavior>
+    <CAbilEffectInstant id="PrestigeStoneSkin@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <AbilityCategories index="Polymorph" value="1"/>
+        <Effect value="PrestigeStoneSkin@ApplyBehavior"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeStoneSkin" Location="Player" TimeUse="240"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeStoneSkin@Slot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="PrestigeSprint@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeSprint@ApplyBehavior"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeSprint" Location="Player" TimeUse="120"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeSprint@Slot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="PrestigeStoneSkin@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <AbilityCategories index="Polymorph" value="1"/>
+        <Effect value="PrestigeStoneSkin@ApplyBehavior"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeStoneSkin" Location="Player" TimeUse="240"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeStoneSkin@Slot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="PrestigeCleanse@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <AbilityCategories index="Polymorph" value="1"/>
+        <Effect value="PrestigeCleanse@ApplyCleanse"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeCleanse" Location="Player" TimeUse="240"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeCleanse@Slot2">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="PrestigeCleanse@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <AbilityCategories index="Polymorph" value="1"/>
+        <Effect value="PrestigeCleanse@ApplyCleanse"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeCleanse" Location="Player" TimeUse="240"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeCleanse@Slot1">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PrestigeBloodForBlood@Slot2">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeBloodForBlood@ApplyBehavior"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeForBlood" Location="Player" TimeUse="240"/>
+        </Cost>
+        <TargetFilters value="-;Player,Ally,Neutral,ImmuneToAOE,ImmuneToSkillshots,Structure,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeBloodForBlood@Slot2" Requirements="HeroHasNoDeadBehavior">
+            <Flags index="AllowSelfCast" value="0"/>
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PrestigeBloodForBlood@Slot1">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect value="PrestigeBloodForBlood@ApplyBehavior"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Cooldown Link="Abil/PrestigeForBlood" Location="Player" TimeUse="240"/>
+        </Cost>
+        <TargetFilters value="-;Player,Ally,Neutral,ImmuneToAOE,ImmuneToSkillshots,Structure,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PrestigeBloodForBlood@Slot1" Requirements="HeroHasNoDeadBehavior">
+            <Flags index="AllowSelfCast" value="0"/>
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Polymorph" value="1"/>
+    </CAbilEffectTarget>
+    <CButton id="PrestigeShrinkRay@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeShrinkRay"/>
+        <Tooltip value="Button/Tooltip/PrestigeShrinkRay"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_ShrinkRay.dds"/>
+        <AlertName value="Button/Name/PrestigeShrinkRay"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeShrinkRay"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeShrinkRay/Info"/>
+    </CButton>
+    <CButton id="PrestigeShrinkRay@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeShrinkRay"/>
+        <Tooltip value="Button/Tooltip/PrestigeShrinkRay"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_ShrinkRay.dds"/>
+        <AlertName value="Button/Name/PrestigeShrinkRay"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeShrinkRay"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeShrinkRay/Info"/>
+    </CButton>
+    <CButton id="PrestigeFirstAid@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeFirstAid"/>
+        <Tooltip value="Button/Tooltip/PrestigeFirstAid"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_AmplifiedHealing.dds"/>
+        <AlertName value="Button/Name/PrestigeFirstAid"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeFirstAid"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeFirstAid/Info"/>
+    </CButton>
+    <CButton id="PrestigeIceBlock@CancelSlot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeIceBlockCancel"/>
+        <Tooltip value="Button/Tooltip/PrestigeIceBlock@Cancel"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeIceBlock/Info"/>
+        <Icon value="assets\Textures\hud_btn_bg_ability_cancel.dds"/>
+        <AlertName value="Button/Name/PrestigeIceBlockCancel"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeIceBlock@Cancel"/>
+    </CButton>
+    <CButton id="PrestigePoisonDart@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Abil/Name/PrestigePoisonDart"/>
+        <Tooltip value="Button/Tooltip/PrestigePoisonDart"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Envenom.dds"/>
+        <AlertName value="Abil/Name/PrestigePoisonDart"/>
+        <AlertTooltip value="Button/Tooltip/PrestigePoisonDart"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigePoisonDart/Info"/>
+    </CButton>
+    <CButton id="PrestigeFirstAid@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeFirstAid"/>
+        <Tooltip value="Button/Tooltip/PrestigeFirstAid"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_AmplifiedHealing.dds"/>
+        <AlertName value="Button/Name/PrestigeFirstAid"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeFirstAid"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeFirstAid/Info"/>
+    </CButton>
+    <CButton id="PrestigePoisonDart@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Abil/Name/PrestigePoisonDart"/>
+        <Tooltip value="Button/Tooltip/PrestigePoisonDart"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Envenom.dds"/>
+        <AlertName value="Button/Name/PrestigePoisonDart"/>
+        <AlertTooltip value="Button/Tooltip/PrestigePoisonDart"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigePoisonDart/Info"/>
+    </CButton>
+    <CButton id="PrestigeIceBlock@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeIceBlock"/>
+        <Tooltip value="Button/Tooltip/PrestigeIceBlock"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeIceBlock/Info"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_IceBlock.dds"/>
+        <AlertName value="Button/Name/PrestigeIceBlock"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeIceBlock"/>
+    </CButton>
+    <CButton id="PrestigeIceBlock@CancelSlot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeIceBlockCancel"/>
+        <Tooltip value="Button/Tooltip/PrestigeIceBlock@Cancel"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeIceBlock/Info"/>
+        <Icon value="assets\Textures\hud_btn_bg_ability_cancel.dds"/>
+        <AlertName value="Button/Name/PrestigeIceBlockCancel"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeIceBlock@Cancel"/>
+    </CButton>
+    <CButton id="PrestigeSprint@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeSprint"/>
+        <Tooltip value="Button/Tooltip/PrestigeSprint"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Sprint.dds"/>
+        <AlertName value="Button/Name/PrestigeSprint"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeSprint"/>
+    </CButton>
+    <CButton id="PrestigeIceBlock@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeIceBlock"/>
+        <Tooltip value="Button/Tooltip/PrestigeIceBlock"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeIceBlock/Info"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_IceBlock.dds"/>
+        <AlertName value="Button/Name/PrestigeIceBlock"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeIceBlock"/>
+    </CButton>
+    <CButton id="PrestigeStoneSkin@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeStoneSkin"/>
+        <Tooltip value="Button/Tooltip/PrestigeStoneSkin"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeStoneSkin/Time"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_StoneSkin.dds"/>
+        <AlertName value="Button/Name/PrestigeStoneSkin"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeStoneSkin"/>
+        <SimpleDisplayText value="Button/Tooltip/PrestigeStoneSkin_Simple"/>
+    </CButton>
+    <CButton id="PrestigeSprint@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeSprint"/>
+        <Tooltip value="Button/Tooltip/PrestigeSprint"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeSprint/Time"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Sprint.dds"/>
+        <AlertName value="Button/Name/PrestigeSprint"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeSprint"/>
+    </CButton>
+    <CButton id="PrestigeStoneSkin@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeStoneSkin"/>
+        <Tooltip value="Button/Tooltip/PrestigeStoneSkin"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeStoneSkin/Time"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_StoneSkin.dds"/>
+        <AlertName value="Button/Name/PrestigeStoneSkin"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeStoneSkin"/>
+        <SimpleDisplayText value="Button/Tooltip/PrestigeStoneSkin_Simple"/>
+    </CButton>
+    <CButton id="PrestigeCleanse@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeCleanse"/>
+        <Tooltip value="Button/Tooltip/PrestigeCleanse"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeCleanse/Time"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_Cleanse.dds"/>
+        <AlertName value="Button/Name/PrestigeCleanse"/>
+    </CButton>
+    <CButton id="PrestigeCleanse@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeCleanse"/>
+        <Tooltip value="Button/Tooltip/PrestigeCleanse"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/PrestigeCleanse/Time"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_Cleanse.dds"/>
+        <AlertName value="Button/Name/PrestigeCleanse"/>
+        <HotkeyAlias value="CorePrestigeButtonSlot2"/>
+    </CButton>
+    <CButton id="PrestigeBloodForBlood@Slot2" parent="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/PrestigeBloodForBlood"/>
+        <Tooltip value="Button/Tooltip/PrestigeBloodForBlood"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/TalentBucket_BloodForBlood/Info"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_BloodForBlood.dds"/>
+        <AlertName value="Button/Name/PrestigeBloodForBlood"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeBloodForBlood"/>
+        <SimpleDisplayText value="Button/Tooltip/PrestigeBloodForBlood/Simple"/>
+    </CButton>
+    <CButton id="PrestigeBloodForBlood@Slot1" parent="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/PrestigeBloodForBlood"/>
+        <Tooltip value="Button/Tooltip/PrestigeBloodForBlood"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/TalentBucket_BloodForBlood/Info"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_BloodForBlood.dds"/>
+        <AlertName value="Button/Name/PrestigeBloodForBlood"/>
+        <AlertTooltip value="Button/Tooltip/PrestigeBloodForBlood"/>
+        <SimpleDisplayText value="Button/Tooltip/PrestigeBloodForBlood/Simple"/>
+    </CButton>
+    <CActorRange id="PrestigePoisonDart@RangeSlot2" parent="CoreRangeAbilPlusSplat" abil="PrestigePoisonDart@Slot2">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorRange id="PrestigeShrinkRay@RangeSlot2" parent="CoreRangeAbilPlusSplat" abil="PrestigeShrinkRay@Slot2">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorSplat id="PrestigePoisonDart@RangeSlot1Splat" parent="UI_RangeSplat">
+        <Scale value="5.500000"/>
+    </CActorSplat>
+    <CActorSplat id="PrestigeShrinkRay@RangeSlot1Splat" parent="UI_RangeSplat">
+        <Scale value="7.500000"/>
+    </CActorSplat>
+    <CActorSplat id="PrestigeShrinkRay@RangeSlot2Splat" parent="UI_RangeSplat">
+        <Scale value="7.500000"/>
+    </CActorSplat>
+    <CActorSound id="PrestigeShrinkRay@BeamSound" parent="SoundOneShot">
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.ItemDemonicGaze1.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.PrestigeShrinkRay@ApplyDamageReduction.Start; At Caster" Send="Create"/>
+        <Sound value="PrestigeShrinkRay@Beam_Loop"/>
+    </CActorSound>
+    <CActorSound id="PrestigeShrinkRay@OnSound" parent="SoundOneShot">
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeShrinkRay@DamageReduction.On" Send="Create"/>
+        <Sound value="PrestigeShrinkRay@Cast"/>
+    </CActorSound>
+    <CActorSound id="PrestigeShrinkRay@OffSound" parent="SoundOneShot">
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeShrinkRay@DamageReduction.Off" Send="Create"/>
+        <Sound value="PrestigeShrinkRay@Off"/>
+    </CActorSound>
+    <CActorSplat id="PrestigePoisonDart@RangeSlot2Splat" parent="UI_RangeSplat">
+        <Scale value="5.500000"/>
+    </CActorSplat>
+    <CActorRange id="PrestigePoisonDart@RangeSlot1" parent="CoreRangeAbilPlusSplat" abil="PrestigePoisonDart@Slot1">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorBeamSimple id="PrestigeShrinkRay@Beam" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigeShrinkRay@InitialSet.Start" Send="Create"/>
+        <On Terms="Effect.PrestigeShrinkRay@ApplyDamageReduction.Start" Send="Create"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachCenter"/>
+        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorSimple id="PrestigeShrinkRay@SizeScaling">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeShrinkRay.On" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetScale 0.600000 0.500000 ShrinkRayScale"/>
+        <On Terms="Behavior.PrestigeShrinkRay.Off" Target="_Unit" Send="ClearScale 0.500000 ShrinkRayScale"/>
+        <On Terms="Behavior.PrestigeShrinkRay.Off" Send="Destroy"/>
+    </CActorSimple>
+    <CActorSimple id="PrestigeCleanse@BuffUnstoppable">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeCleanse.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeCleanse.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="ModelMaterialApply PrestigeCleanseGlaze"/>
+        <On Terms="ActorDestruction" Target="PrestigeCleanse@Glaze" Send="AnimBracketStop BSD"/>
+    </CActorSimple>
+    <CActorModel id="PrestigePoisonDart@PoisonedEffect" parent="CoreModelAddition">
+        <AcceptedTransfers index="Rotation" value="0"/>
+        <On Terms="Behavior.PrestigePoisonDart.On" Send="Create"/>
+        <On Terms="Behavior.PrestigePoisonDart.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorSound id="PrestigePoisonDart@PoisonedSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigePoisonDart@ApplyBehavior.Start; At Target" Send="Create"/>
+        <Sound value="PrestigePoisonDart@Poisoned"/>
+    </CActorSound>
+    <CActorSound id="PrestigeSprint@SoundCast" parent="SoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeSprint.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeSprint.Off" Send="Destroy"/>
+    </CActorSound>
+    <!-- Skill Sprint                                                                     -->
+    <CActorModel id="PrestigeSprint@ModelActive" parent="CoreModelAnimationStyleContinuousUnit">
+        <On Terms="Behavior.PrestigeSprint.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeSprint.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <!-- Focused Attack                                                                                  -->
+    <!-- Handled in CritEffectController instead -->
+    <!--CActorModel id="TalentBucketFocusedAttackCrit" parent="CoreModelAnimationStyleOneShot">-->
+    <!--        <Filter index="All" value="1"/>-->
+    <!--        <VisibleToAtCreation index="Source" value="1"/>-->
+    <!--        <VisibleToAtCreation index="Target" value="1"/>-->
+    <!--        <EditorCategories value=""/>-->
+    <!--        <On Terms="Effect.TalentGenericMarksmanDummy.Start; At Target" Send="Create"/>-->
+    <!--        <Host Subject="_Unit"/>-->
+    <!--        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>-->
+    <!--        <Model value="GenericCriticalFX"/>-->
+    <!--    </CActorModel-->
+    <!-- Ice Block                                                                                  -->
+    <CActorSound id="PrestigeIceBlock@SoundOn" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeIceBlock.On" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="PrestigeIceBlock@SoundOff" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeIceBlock.Off" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="PrestigeIceBlock@ModelBuff" parent="CoreModelAddition">
+        <Inherits index="TimeScale" value="0"/>
+        <On Terms="Behavior.PrestigeIceBlock.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeIceBlock.On" Target="::Main" Send="SetTintColor {81,159,255 1.500000} 1.000000"/>
+        <On Terms="Behavior.PrestigeIceBlock.Off" Target="::Main" Send="ClearTintColor"/>
+        <On Terms="Behavior.PrestigeIceBlock.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldRotation="1"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSimple id="PrestigeIceBlock@AnimStop">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeIceBlock.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeIceBlock.On" Target="_Unit" Send="AnimSetPausedAll"/>
+        <On Terms="Behavior.PrestigeIceBlock.Off" Target="_Unit" Send="AnimSetPausedAll 0"/>
+        <On Terms="Behavior.PrestigeIceBlock.Off" Send="Destroy"/>
+    </CActorSimple>
+    <!-- Purity/Cleanse                                                                    -->
+    <CActorSound id="PrestigeCleanse@SoundCast" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigeCleanse@ApplyCleanse.Start" Send="Create"/>
+        <Sound value="PrestigeCleanse@SoundImpact"/>
+    </CActorSound>
+    <CActorModel id="PrestigeCleanse@ModelImpact" parent="CoreModelAnimationStyleOneShot">
+        <On Terms="Effect.PrestigeCleanse@ApplyCleanse.Start; At Target" Send="Create"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModelMaterial id="PrestigeCleanse@Glaze" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="ActorCreation" Send="AnimPlay GLstand GLstand PlayForever -1.000000 -1.000000 0.750000 AsTimeScale"/>
+        <Model value="GlazeUnstoppableHoly"/>
+    </CActorModelMaterial>
+    <!-- Stoneskin                                                                         -->
+    <CActorModel id="PrestigeStoneSkin@ModelBuff" parent="CoreModelAnimationStyleContinuousUnit">
+        <On Terms="Behavior.PrestigeStoneSkin.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeStoneSkin.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="PrestigeStoneSkin@SoundCast" parent="SoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.PrestigeStoneSkin.On" Send="Create"/>
+        <On Terms="Behavior.PrestigeStoneSkin.Off" Send="Destroy"/>
+    </CActorSound>
+    <CActorRange id="PrestigeShrinkRay@RangeSlot1" parent="CoreRangeAbilPlusSplat" abil="PrestigeShrinkRay@Slot1">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorRange id="PrestigeBloodForBlood@RangeSlot2" parent="CoreRangeAbilPlusSplat" abil="PrestigeBloodForBlood@Slot2">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorRange id="PrestigeBloodForBlood@RangeSlot1" parent="CoreRangeAbilPlusSplat" abil="PrestigeBloodForBlood@Slot1">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorSplat id="PrestigeBloodForBlood@RangeSlot2Splat" parent="UI_RangeSplat">
+        <Scale value="6.500000"/>
+    </CActorSplat>
+    <CActorSplat id="PrestigeBloodForBlood@RangeSlot1Splat" parent="UI_RangeSplat">
+        <Scale value="6.500000"/>
+    </CActorSplat>
+    <CActorModel id="PrestigeBloodForBlood@ModelImpact" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigeBloodForBlood@Damage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorSound id="PrestigeBloodForBlood@SoundImpact" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigeBloodForBlood@Damage.Start; At Target" Send="Create"/>
+        <Sound value="PrestigeBloodForBlood@Impact"/>
+    </CActorSound>
+    <CActorSound id="PrestigeBloodForBlood@SoundCaster" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigeBloodForBlood@CreateHealer.Start; At Caster" Send="Create"/>
+        <Sound value="PrestigeBloodForBlood@Cast"/>
+    </CActorSound>
+    <CActorModel id="PrestigeBloodForBlood@ModelCaster" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.PrestigeBloodForBlood@CreateHealer.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorBeamSimple id="PrestigeBloodForBlood@Beam" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorBeamSimple>
+    <CActorAction id="PrestigeBloodForBlood@BeamAction" parent="GenericAttack" effectAttack="PrestigeBloodForBlood@Damage">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <LaunchSiteOps Ops="SOpTargetUnit SOpMoveUpBy1"/>
+        <Beam value="PrestigeBloodForBlood@Beam"/>
+        <ImpactSiteOps Ops="SOpCasterUnit SOpMoveUpBy1"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CModel id="PrestigeBloodForBlood@Beam" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_New_BloodForBlood_Beam\Talent_New_BloodForBlood_Beam.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeShrinkRay@Beam" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_Old_ShrinkRay\Talent_Old_ShrinkRay.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeFirstAid@HealModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_Old_FirstAid_Impact\Talent_Old_FirstAid_Impact.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigePoisonDart@PoisonedEffect" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_Old_Poison_Impact\Talent_Old_Poison_Impact.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeSprint@ModelActive" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Talent_Sprint_Slow\Storm_FX_Talent_Sprint_Slow.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeIceBlock@ModelBuff" parent="BuffFX">
+        <Model value="assets\Effects\Storm_FX_Talent_IceBlock\Storm_FX_Talent_IceBlock.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeStoneSkin@ModelBuff" parent="BuffFX">
+        <Model value="assets\Effects\Talents\Talent_Old_Stoneskin\Talent_Old_Stoneskin.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeCleanse@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Talents\Talent_New_Cleanse_Impact\Talent_New_Cleanse_Impact.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeBloodForBlood@ModelCaster" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_New_BloodForBlood\Talent_New_BloodForBlood.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="PrestigeBloodForBlood@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Talents\Talent_New_BloodForBlood_Impact\Talent_New_BloodForBlood_Impact.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CSound id="PrestigeShrinkRay@Beam_Loop" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.ogg" Volume="-5.000000,-5.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="PrestigeShrinkRay@Cast" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_End01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_End02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_End03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_End04.ogg" FacialGroup=""/>
+        <Pitch value="2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="PrestigeShrinkRay@Off" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_Launch00.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_Launch01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_Launch02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_Launch03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Muradin\Muradin_Avatar_Launch04.ogg" FacialGroup=""/>
+        <Pitch value="2.000000,2.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="PrestigeFirstAid@HealSound" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_FirstAid_Launch01.ogg" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="PrestigePoisonDart@Poisoned" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison06.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Poison07.ogg" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <ReverbBalance Room="-10000"/>
+    </CSound>
+    <CSound id="PrestigeSprint@SoundCast" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Dash_Launch01.ogg" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="PrestigeIceBlock@SoundOn" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Launch01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Launch02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Launch03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Launch04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Launch05.ogg" FacialGroup=""/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="PrestigeIceBlock@SoundOff" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Ice_Impact04.ogg" FacialGroup=""/>
+        <DupeHistoryCount value="2"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="PrestigeStoneSkin@SoundCast" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_StoneSkin_Launch01.ogg"/>
+        <Flags index="Purgable" value="0"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="PrestigeCleanse@SoundImpact" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Cleanse_Launch_01.ogg"/>
+        <DupeDestroyCount value="4"/>
+        <Pitch value="-1.820000,1.640000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="PrestigeBloodForBlood@Cast" parent="Spell">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact05.ogg" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="PrestigeBloodForBlood@Impact" parent="Spell">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Bleed01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Bleed02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Bleed03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Bleed04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Status_Bleed05.ogg" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <Category value="Combat"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CDataCollection id="PrestigeBloodForBlood">
+        <EditorCategories value="CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Abil,PrestigeBloodForBlood@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeBloodForBlood@Slot2"/>
+        <DataRecord Entry="Sound,PrestigeBloodForBlood@Impact"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@RangeSlot1"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@RangeSlot2"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@RangeSlot1Splat"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@RangeSlot2Splat"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@ModelImpact"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@SoundImpact"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@SoundCaster"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@ModelCaster"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@ModelCaster"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@ModelImpact"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@SoundCaster"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@SoundImpact"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@Beam"/>
+        <DataRecord Entry="Actor,PrestigeBloodForBlood@BeamAction"/>
+        <DataRecord Entry="Behavior,PrestigeBloodForBlood"/>
+        <DataRecord Entry="Button,PrestigeBloodForBlood@Slot1"/>
+        <DataRecord Entry="Button,PrestigeBloodForBlood@Slot2"/>
+        <DataRecord Entry="Effect,PrestigeBloodForBlood@ApplyBehavior"/>
+        <DataRecord Entry="Effect,PrestigeBloodForBlood@CreateHealer"/>
+        <DataRecord Entry="Effect,PrestigeBloodForBlood@Damage"/>
+        <DataRecord Entry="Model,PrestigeBloodForBlood@ModelCaster"/>
+        <DataRecord Entry="Model,PrestigeBloodForBlood@ModelImpact"/>
+        <DataRecord Entry="Sound,PrestigeBloodForBlood@Impact"/>
+        <DataRecord Entry="Sound,PrestigeBloodForBlood@Cast"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigeShrinkRay">
+        <EditorCategories value="CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Abil,PrestigeShrinkRay@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeShrinkRay@Slot2"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@RangeSlot1"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@RangeSlot1Splat"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@RangeSlot2"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@RangeSlot2Splat"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@Beam"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@BeamSound"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@OffSound"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@OnSound"/>
+        <DataRecord Entry="Actor,PrestigeShrinkRay@SizeScaling"/>
+        <DataRecord Entry="Behavior,PrestigeShrinkRay"/>
+        <DataRecord Entry="Behavior,PrestigeShrinkRay@DamageReduction"/>
+        <DataRecord Entry="Button,PrestigeShrinkRay@Slot1"/>
+        <DataRecord Entry="Button,PrestigeShrinkRay@Slot2"/>
+        <DataRecord Entry="Effect,PrestigeShrinkRay@InitialSet"/>
+        <DataRecord Entry="Effect,PrestigeShrinkRay@ApplySlow"/>
+        <DataRecord Entry="Effect,PrestigeShrinkRay@ApplyDamageReduction"/>
+        <DataRecord Entry="Model,PrestigeShrinkRay@Beam"/>
+        <DataRecord Entry="Sound,PrestigeShrinkRay@Beam_Loop"/>
+        <DataRecord Entry="Sound,PrestigeShrinkRay@Cast"/>
+        <DataRecord Entry="Sound,PrestigeShrinkRay@Off"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigeCleanse">
+        <EditorCategories value="CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Abil,PrestigeCleanse@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeCleanse@Slot2"/>
+        <DataRecord Entry="Actor,PrestigeCleanse@Glaze"/>
+        <DataRecord Entry="Actor,PrestigeCleanse@ModelImpact"/>
+        <DataRecord Entry="Actor,PrestigeCleanse@BuffUnstoppable"/>
+        <DataRecord Entry="Actor,PrestigeCleanse@SoundCast"/>
+        <DataRecord Entry="Behavior,PrestigeCleanse"/>
+        <DataRecord Entry="Behavior,PrestigeCleanse@Debuffs"/>
+        <DataRecord Entry="Button,PrestigeCleanse@Slot1"/>
+        <DataRecord Entry="Button,PrestigeCleanse@Slot2"/>
+        <DataRecord Entry="Effect,PrestigeCleanse@ApplyCleanse"/>
+        <DataRecord Entry="Model,PrestigeCleanse@ModelImpact"/>
+        <DataRecord Entry="Sound,PrestigeCleanse@SoundImpact"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigeFirstAid">
+        <EditorCategories value="CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Behavior,PrestigeFirstAid"/>
+        <DataRecord Entry="Abil,PrestigeFirstAid@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeFirstAid@Slot2"/>
+        <DataRecord Entry="Button,PrestigeFirstAid@Slot1"/>
+        <DataRecord Entry="Button,PrestigeFirstAid@Slot2"/>
+        <DataRecord Entry="Effect,PrestigeFirstAid@ApplyBehavior"/>
+        <DataRecord Entry="Effect,PrestigeFirstAid@CreateHealer"/>
+        <DataRecord Entry="Model,PrestigeFirstAid@HealModel"/>
+        <DataRecord Entry="Sound,PrestigeFirstAid@HealSound"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigeIceBlock">
+        <EditorCategories value="CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Behavior,PrestigeIceBlock"/>
+        <DataRecord Entry="Abil,PrestigeIceBlock@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeIceBlock@Slot2"/>
+        <DataRecord Entry="Actor,PrestigeIceBlock@AnimStop"/>
+        <DataRecord Entry="Actor,PrestigeIceBlock@ModelBuff"/>
+        <DataRecord Entry="Actor,PrestigeIceBlock@SoundOn"/>
+        <DataRecord Entry="Actor,PrestigeIceBlock@SoundOff"/>
+        <DataRecord Entry="Button,PrestigeIceBlock@Slot1"/>
+        <DataRecord Entry="Button,PrestigeIceBlock@Slot2"/>
+        <DataRecord Entry="Model,PrestigeIceBlock@ModelBuff"/>
+        <DataRecord Entry="Sound,PrestigeIceBlock@SoundOn"/>
+        <DataRecord Entry="Sound,PrestigeIceBlock@SoundOff"/>
+        <DataRecord Entry="Button,PrestigeIceBlock@CancelSlot1"/>
+        <DataRecord Entry="Button,PrestigeIceBlock@CancelSlot2"/>
+        <DataRecord Entry="Effect,PrestigeIceBlock@InitialSet"/>
+        <DataRecord Entry="Effect,PrestigeIceBlock@ApplyBehavior"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigePoisonDart">
+        <EditorCategories value="CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Abil,PrestigePoisonDart@Slot1"/>
+        <DataRecord Entry="Button,PrestigePoisonDart@Slot1"/>
+        <DataRecord Entry="Behavior,PrestigePoisonDart"/>
+        <DataRecord Entry="Actor,PrestigePoisonDart@PoisonedEffect"/>
+        <DataRecord Entry="Actor,PrestigePoisonDart@PoisonedSound"/>
+        <DataRecord Entry="Actor,PrestigePoisonDart@RangeSlot1"/>
+        <DataRecord Entry="Effect,PrestigePoisonDart@ApplyBehavior"/>
+        <DataRecord Entry="Effect,PrestigePoisonDart@RevealerCreatePersistent"/>
+        <DataRecord Entry="Effect,PrestigePoisonDart@DamageAndRevealSet"/>
+        <DataRecord Entry="Effect,PrestigePoisonDart@Damage"/>
+        <DataRecord Entry="Model,PrestigePoisonDart@PoisonedEffect"/>
+        <DataRecord Entry="Sound,PrestigePoisonDart@Poisoned"/>
+        <DataRecord Entry="Actor,PrestigePoisonDart@RangeSlot2Splat"/>
+        <DataRecord Entry="Abil,PrestigePoisonDart@Slot2"/>
+        <DataRecord Entry="Button,PrestigePoisonDart@Slot2"/>
+        <DataRecord Entry="Actor,PrestigePoisonDart@RangeSlot1Splat"/>
+        <DataRecord Entry="Actor,PrestigePoisonDart@RangeSlot2"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigeSprint">
+        <EditorCategories value="Race:Neutral,CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Behavior,PrestigeSprint"/>
+        <DataRecord Entry="Abil,PrestigeSprint@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeSprint@Slot2"/>
+        <DataRecord Entry="Actor,PrestigeSprint@ModelActive"/>
+        <DataRecord Entry="Actor,PrestigeSprint@SoundCast"/>
+        <DataRecord Entry="Button,PrestigeSprint@Slot1"/>
+        <DataRecord Entry="Button,PrestigeSprint@Slot2"/>
+        <DataRecord Entry="Effect,PrestigeSprint@ApplyBehavior"/>
+        <DataRecord Entry="Model,PrestigeSprint@ModelActive"/>
+        <DataRecord Entry="Sound,PrestigeSprint@SoundCast"/>
+    </CDataCollection>
+    <CDataCollection id="PrestigeStoneSkin">
+        <EditorCategories value="Race:Neutral,CoreHero:Common"/>
+        <EditorIconSource value="Behavior"/>
+        <DataRecord Entry="Abil,PrestigeStoneSkin@Slot1"/>
+        <DataRecord Entry="Abil,PrestigeStoneSkin@Slot2"/>
+        <DataRecord Entry="Actor,PrestigeStoneSkin@SoundCast"/>
+        <DataRecord Entry="Actor,PrestigeStoneSkin@ModelBuff"/>
+        <DataRecord Entry="Behavior,PrestigeStoneSkin"/>
+        <DataRecord Entry="Button,PrestigeStoneSkin@Slot1"/>
+        <DataRecord Entry="Button,PrestigeStoneSkin@Slot2"/>
+        <DataRecord Entry="Effect,PrestigeStoneSkin@ApplyBehavior"/>
+        <DataRecord Entry="Model,PrestigeStoneSkin@ModelBuff"/>
+        <DataRecord Entry="Sound,PrestigeStoneSkin@SoundCast"/>
+    </CDataCollection>
+    <CBehaviorBuff id="PrestigeShrinkRay" parent="CoreSlow">
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_ShrinkRay.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="4"/>
+        <Modification UnifiedMoveSpeedFactor="-0.3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeShrinkRay@DamageReduction" parent="CoreUnitStatsModificator">
+        <Alignment value="Negative"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_ShrinkRay.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <BuffFlags index="UpdateDurationWhileDisabled" value="1"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray index="3" Points="-40"/>
+            <AttributeChangeArray Attribute="UnitStatsArmorUnified"/>
+        </Modification>
+        <DisableValidatorArray value="TargetNotInvulnerableCategory"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigePoisonDart" parent="CoreUnitStatsModificator">
+        <Alignment value="Negative"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_Envenom.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="6"/>
+        <Period value="1"/>
+        <InitialEffect value="PrestigePoisonDart@RevealerCreatePersistent"/>
+        <PeriodicEffect value="PrestigePoisonDart@DamageAndRevealSet"/>
+        <PeriodicDisplayEffect value="PrestigePoisonDart@Damage"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorUnified"/>
+            <AttributeChangeArray/>
+            <AttributeChangeArray/>
+            <AttributeChangeArray Points="-50"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeFirstAid">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AmplifiedHealing.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="4"/>
+        <Period value="1"/>
+        <InitialEffect value="PrestigeFirstAid@CreateHealer"/>
+        <PeriodicEffect value="PrestigeFirstAid@CreateHealer"/>
+        <PeriodicDisplayEffect value="PrestigeFirstAid@CreateHealer"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeIceBlock" parent="CoreStasisIceBlock">
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_IceBlock.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="3"/>
+        <Modification>
+            <AbilLinkEnableArray value="PrestigeIceBlock@Slot1"/>
+            <AbilLinkEnableArray value="PrestigeIceBlock@Slot2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeSprint">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_Sprint.dds"/>
+        <BehaviorCategories index="Fast" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="3"/>
+        <Modification UnifiedMoveSpeedFactor="0.2">
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeCleanse" parent="CoreUnstoppableParent">
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_Cleanse.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="1"/>
+        <InitialEffect value="PrestigeCleanseDebuffsUnstoppable"/>
+        <FinalEffect value="PrestigeCleanseDebuffsUnstoppable"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeCleanse@Debuffs">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="0.0625"/>
+        <Modification>
+            <StateFlags index="Unstoppable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeStoneSkin" parent="CoreShield">
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_StoneSkin.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="5"/>
+        <DamageResponse>
+            <ModifyLimitVitalMaxFractionArray index="Life" value="0.25"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PrestigeBloodForBlood">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_BloodForBlood.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <BuffFlags index="UpdateDurationWhileDisabled" value="1"/>
+        <Duration value="6"/>
+        <Period value="1"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffect value="PrestigeBloodForBlood@Damage"/>
+    </CBehaviorBuff>
+</Catalog>

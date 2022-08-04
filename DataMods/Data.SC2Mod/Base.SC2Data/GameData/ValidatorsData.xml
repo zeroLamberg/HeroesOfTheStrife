@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorCombine id="CasterIsBlindedOrTargetIsEvadingAndNotDodging">
+        <CombineArray value="CasterIsBlinded"/>
+        <CombineArray value="TargetIsEvadingAndNotDodging"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetIsEvadingAndNotDodging">
+        <Type value="And"/>
+        <CombineArray value="TargetIsEvading"/>
+        <CombineArray value="TargetNotDodging"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterandTargetNotDeadTargetIsVisibleAndNotCloakedOrIsRevealedAndNotInStasisAndNotInvulnerableAndNotPossessed">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDeadAndTargetNotDead"/>
+        <CombineArray value="TargetIsVisible"/>
+        <CombineArray value="NotCloakedOrIsRevealed"/>
+        <CombineArray value="TargetNotStasis"/>
+        <CombineArray value="TargetNotInvulnerable"/>
+        <CombineArray value="SylvanasTargetUnPossessed"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="SiegeGiantMeleePeriodicValidatorCombine">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDazedOrDeadOrPolymorphedOrRootedOrStasisOrStunned"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetIsDisplaceable">
+        <Type value="And"/>
+        <CombineArray value="TargetNotSgtHammerFortified"/>
+        <CombineArray value="Diablo_LightningBreath_TargetIsNotCastingLightningBreath"/>
+        <CombineArray value="TargetNotUnstoppable"/>
+        <CombineArray value="TargetDoesNotHaveImmuneToCrowdControlBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterIsAttackingUnitAndNotDeadOrDoesNotHaveAmmoDisablerAndTargetNotDead">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDeadAndTargetNotDead"/>
+        <CombineArray value="CasterIsAttackingUnit"/>
+        <CombineArray value="CasterDoesNotHaveStructureAmmoDisabler"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetNotImmuneToFriendlyAbilitiesOrIsDVaMech">
+        <CombineArray value="TargetNotImmuneToFriendlyAbilities"/>
+        <CombineArray value="DVaTargetIsMech"/>
+    </CValidatorCombine>
+</Catalog>

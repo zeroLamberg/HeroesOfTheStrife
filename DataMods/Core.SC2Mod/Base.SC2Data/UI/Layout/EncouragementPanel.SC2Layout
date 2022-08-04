@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    
+    <Frame type="Label" name="StatCalloutLabel">
+        <Width val="780"/>
+        <Height val="25"/>
+        <CollapseLayout val="true"/>
+        <Style val="Heroes_EncouragementStatCallout"/>
+        <Text val="Stat callout"/>
+    </Frame>
+    
+    <Frame type="Label" name="DeathTipLabel">
+        <Width val="780"/>
+        <Height val="70"/>
+        <CollapseLayout val="true"/>
+        <Style val="Heroes_EncouragementDeathTip"/>
+        <Text val="Helpful tip"/>
+    </Frame>
+    
+    <Frame type="Frame" name="EncouragementPanelTemplate">
+        <Width val="800"/>
+        
+        <!-- this makes the collapse layout stuff work -->
+        <Anchor side="Bottom" relative="$this/DeathTipLabel1" pos="Max" offset="10"/>
+        
+        <Frame type="Image" name="Background">
+            <Anchor relative="$parent"/>
+            <Texture val="@UI/StormTooltipBackground"/>
+            <TextureType val="Nineslice"/>
+            <Tiled val="true"/>
+        </Frame>
+        
+        <Frame type="Button" name="CloseButton" template="MyStandardTemplates/StandardCloseButtonTemplate">
+            <Width val="30"/>
+            <Height val="30"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="6"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-6"/>
+        </Frame>
+        
+        <Frame type="Label" name="StatCalloutLabel1" template="EncouragementPanel/StatCalloutLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="20"/>
+        </Frame>
+        
+        <Frame type="Label" name="StatCalloutLabel2" template="EncouragementPanel/StatCalloutLabel">
+            <Anchor side="Top" relative="$parent/StatCalloutLabel1" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent/StatCalloutLabel1" pos="Min" offset="0"/>
+        </Frame>
+        
+        <Frame type="Label" name="StatCalloutLabel3" template="EncouragementPanel/StatCalloutLabel">
+            <Anchor side="Top" relative="$parent/StatCalloutLabel2" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent/StatCalloutLabel2" pos="Min" offset="0"/>
+        </Frame>
+        
+        <Frame type="Label" name="StatCalloutLabel4" template="EncouragementPanel/StatCalloutLabel">
+            <Anchor side="Top" relative="$parent/StatCalloutLabel3" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent/StatCalloutLabel3" pos="Min" offset="0"/>
+        </Frame>
+        
+        <Frame type="Label" name="DeathTipLabel1" template="EncouragementPanel/DeathTipLabel">
+            <Anchor side="Top" relative="$parent/StatCalloutLabel4" pos="Max" offset="10"/>
+            <Anchor side="Left" relative="$parent/StatCalloutLabel4" pos="Min" offset="0"/>
+        </Frame>
+    </Frame>
+</Desc>

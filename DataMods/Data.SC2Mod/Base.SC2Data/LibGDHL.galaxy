@@ -1,0 +1,913 @@
+include "TriggerLibs/NativeLib"
+include "LibCore_h"
+include "LibGame_h"
+include "LibSond_h"
+include "LibUIUI_h"
+
+include "LibGDHL_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Game Data Helper
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libGDHL_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libSond_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libGDHL_InitVariables_completed = false;
+
+void libGDHL_InitVariables () {
+    if (libGDHL_InitVariables_completed) {
+        return;
+    }
+
+    libGDHL_InitVariables_completed = true;
+
+}
+
+// Functions
+point libGDHL_gf_TargetCalculation (point lp_targetPoint, point lp_casterPoint, region lp_bFGRegion) {
+    // Variable Declarations
+    point lv_casterPoint;
+    point lv_targetPoint;
+    fixed lv_targetXToEdgeOfMap;
+    fixed lv_targetYToEdgeOfMap;
+    fixed lv_targetAngle;
+    fixed lv_triangle1C;
+    fixed lv_triangle2C;
+    point lv_abilityTargetPoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_casterPoint = lp_casterPoint;
+    lv_targetPoint = lp_targetPoint;
+
+    // Implementation
+    if ((PointGetX(lv_casterPoint) <= PointGetX(lv_targetPoint)) && (PointGetY(lv_casterPoint) <= PointGetY(lv_targetPoint))) {
+        lv_targetXToEdgeOfMap = (PointGetX(RegionGetBoundsMax(lp_bFGRegion)) - PointGetX(lv_targetPoint));
+        lv_targetYToEdgeOfMap = (PointGetY(RegionGetBoundsMax(lp_bFGRegion)) - PointGetY(lv_targetPoint));
+        lv_targetAngle = AngleBetweenPoints(lv_casterPoint, lv_targetPoint);
+        if ((Cos(lv_targetAngle) == 0.0)) {
+            lv_abilityTargetPoint = Point(PointGetX(lv_targetPoint), PointGetY(RegionGetBoundsMax(lp_bFGRegion)));
+        }
+        else {
+            lv_triangle1C = (lv_targetXToEdgeOfMap / Cos(lv_targetAngle));
+            lv_targetAngle = (90.0 - lv_targetAngle);
+            if ((Cos(lv_targetAngle) == 0.0)) {
+                lv_abilityTargetPoint = Point(PointGetX(RegionGetBoundsMax(lp_bFGRegion)), PointGetY(lv_targetPoint));
+            }
+            else {
+                lv_triangle2C = (lv_targetYToEdgeOfMap / Cos(lv_targetAngle));
+                if ((lv_triangle1C < lv_triangle2C)) {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle1C * -1.0), lv_casterPoint);
+                }
+                else {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle2C * -1.0), lv_casterPoint);
+                }
+            }
+        }
+    }
+    else if ((PointGetX(lv_casterPoint) >= PointGetX(lv_targetPoint)) && (PointGetY(lv_casterPoint) <= PointGetY(lv_targetPoint))) {
+        lv_targetXToEdgeOfMap = PointGetX(lv_targetPoint);
+        lv_targetYToEdgeOfMap = (PointGetY(RegionGetBoundsMax(lp_bFGRegion)) - PointGetY(lv_targetPoint));
+        lv_targetAngle = (AngleBetweenPoints(lv_casterPoint, lv_targetPoint) - 90.0);
+        if ((Cos(lv_targetAngle) == 0.0)) {
+            lv_abilityTargetPoint = Point(PointGetX(RegionGetBoundsMin(lp_bFGRegion)), PointGetY(lv_targetPoint));
+        }
+        else {
+            lv_triangle1C = (lv_targetYToEdgeOfMap / Cos(lv_targetAngle));
+            lv_targetAngle = (90.0 - lv_targetAngle);
+            if ((Cos(lv_targetAngle) == 0.0)) {
+                lv_abilityTargetPoint = Point(PointGetX(lv_targetPoint), PointGetY(RegionGetBoundsMax(lp_bFGRegion)));
+            }
+            else {
+                lv_triangle2C = (lv_targetXToEdgeOfMap / Cos(lv_targetAngle));
+                if ((lv_triangle1C < lv_triangle2C)) {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle1C * -1.0), lv_casterPoint);
+                }
+                else {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle2C * -1.0), lv_casterPoint);
+                }
+            }
+        }
+    }
+    else if ((PointGetX(lv_casterPoint) >= PointGetX(lv_targetPoint)) && (PointGetY(lv_casterPoint) >= PointGetY(lv_targetPoint))) {
+        lv_targetXToEdgeOfMap = PointGetX(lv_targetPoint);
+        lv_targetYToEdgeOfMap = PointGetY(lv_targetPoint);
+        lv_targetAngle = (AngleBetweenPoints(lv_casterPoint, lv_targetPoint) - 180.0);
+        if ((Cos(lv_targetAngle) == 0.0)) {
+            lv_abilityTargetPoint = Point(PointGetX(lv_targetPoint), PointGetY(RegionGetBoundsMin(lp_bFGRegion)));
+        }
+        else {
+            lv_triangle1C = (lv_targetXToEdgeOfMap / Cos(lv_targetAngle));
+            lv_targetAngle = (90.0 - lv_targetAngle);
+            if ((Cos(lv_targetAngle) == 0.0)) {
+                lv_abilityTargetPoint = Point(PointGetX(RegionGetBoundsMin(lp_bFGRegion)), PointGetY(lv_targetPoint));
+            }
+            else {
+                lv_triangle2C = (lv_targetYToEdgeOfMap / Cos(lv_targetAngle));
+                if ((lv_triangle1C < lv_triangle2C)) {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle1C * -1.0), lv_casterPoint);
+                }
+                else {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle2C * -1.0), lv_casterPoint);
+                }
+            }
+        }
+    }
+    else if ((PointGetX(lv_casterPoint) <= PointGetX(lv_targetPoint)) && (PointGetY(lv_casterPoint) >= PointGetY(lv_targetPoint))) {
+        lv_targetXToEdgeOfMap = (PointGetX(RegionGetBoundsMax(lp_bFGRegion)) - PointGetX(lv_targetPoint));
+        lv_targetYToEdgeOfMap = PointGetY(lv_targetPoint);
+        lv_targetAngle = (AngleBetweenPoints(lv_casterPoint, lv_targetPoint) - 270.0);
+        if ((Cos(lv_targetAngle) == 0.0)) {
+            lv_abilityTargetPoint = Point(PointGetX(RegionGetBoundsMax(lp_bFGRegion)), PointGetY(lv_targetPoint));
+        }
+        else {
+            lv_triangle1C = (lv_targetYToEdgeOfMap / Cos(lv_targetAngle));
+            lv_targetAngle = (90.0 - lv_targetAngle);
+            if ((Cos(lv_targetAngle) == 0.0)) {
+                lv_abilityTargetPoint = Point(PointGetX(lv_targetPoint), PointGetY(RegionGetBoundsMin(lp_bFGRegion)));
+            }
+            else {
+                lv_triangle2C = (lv_targetXToEdgeOfMap / Cos(lv_targetAngle));
+                if ((lv_triangle1C < lv_triangle2C)) {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle1C * -1.0), lv_casterPoint);
+                }
+                else {
+                    lv_abilityTargetPoint = libNtve_gf_PointOffsetTowardsPoint(lv_targetPoint, (lv_triangle2C * -1.0), lv_casterPoint);
+                }
+            }
+        }
+    }
+    if ((lv_abilityTargetPoint != null)) {
+        return lv_abilityTargetPoint;
+    }
+    else {
+        return null;
+    }
+}
+
+bool libGDHL_gf_TalentHardenedFocusBasicAbilitiesOnCD (int lp_player) {
+    // Variable Declarations
+    int lv_itAbility;
+    int lv_abilityIndex;
+    string lv_abilityLink;
+    int lv_heroIndex;
+
+    // Automatic Variable Declarations
+    int autoD10911FE_ae;
+    const int autoD10911FE_ai = 1;
+    int autoD034CCEF_ae;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_heroIndex = libCore_gf_HeroIndexOfPlayerHero(lp_player);
+    autoD10911FE_ae = libCore_gv_dataHeroesHeroData[lv_heroIndex].lv_abilitiesCount;
+    lv_itAbility = 1;
+    for ( ; ( (autoD10911FE_ai >= 0 && lv_itAbility <= autoD10911FE_ae) || (autoD10911FE_ai < 0 && lv_itAbility >= autoD10911FE_ae) ) ; lv_itAbility += autoD10911FE_ai ) {
+        lv_abilityIndex = libCore_gv_dataHeroesHeroData[lv_heroIndex].lv_abilityIndex[lv_itAbility];
+    }
+    autoD034CCEF_ae = libCore_gv_dataHeroesHeroData[lv_heroIndex].lv_abilitiesCount;
+    lv_itAbility = 1;
+    for ( ; lv_itAbility <= autoD034CCEF_ae ; lv_itAbility += 1 ) {
+        lv_abilityLink = libCore_gv_abilityData[lv_itAbility].lv_abilityLink;
+        if ((libCore_gv_abilityData[lv_abilityIndex].lv_isAffectedByCooldownReduction == true) && (libCore_gv_abilityData[lv_abilityIndex].lv_type == "Basic")) {
+            if ((libCore_gv_abilityData[lv_abilityIndex].lv_isUsesCharges == true)) {
+                if ((UnitGetCooldown(libGame_gf_PlayerHeroUnit(lp_player), CatalogFieldValueGet(c_gameCatalogAbil, lv_abilityLink, "Cost[" + IntToString(0) + "].Charge.Link", c_playerAny)) <= 0.0)) {
+                    return false;
+                }
+            }
+            else {
+                if ((UnitGetCooldown(libGame_gf_PlayerHeroUnit(lp_player), CatalogFieldValueGet(c_gameCatalogAbil, lv_abilityLink, "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #Include Game Data Helper
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_IncludeGameDataHelper_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_IncludeGameDataHelper_Init () {
+    libGDHL_gt_IncludeGameDataHelper = TriggerCreate("libGDHL_gt_IncludeGameDataHelper_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Generic - Camera Shake Light Target
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroGenericCameraShakeLightTarget_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitTarget))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DistanceBetweenPoints(EventPlayerEffectUsedPoint(c_effectLocationCasterPoint), CameraGetTarget(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget))) <= 10.0)) {
+        CameraShake(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget), "Light", "Shake", 0.1, 0.2, 0.3);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroGenericCameraShakeLightTarget_Init () {
+    libGDHL_gt_HeroGenericCameraShakeLightTarget = TriggerCreate("libGDHL_gt_HeroGenericCameraShakeLightTarget_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroGenericCameraShakeLightTarget, c_playerAny, "CameraShakeLightTauntingTotemSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Generic - Camera Shake Medium Target
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroGenericCameraShakeMediumTarget_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitTarget))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DistanceBetweenPoints(EventPlayerEffectUsedPoint(c_effectLocationCasterPoint), CameraGetTarget(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget))) <= 10.0)) {
+        CameraShake(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget), "Medium", "Shake", 0.1, 0.2, 0.3);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroGenericCameraShakeMediumTarget_Init () {
+    libGDHL_gt_HeroGenericCameraShakeMediumTarget = TriggerCreate("libGDHL_gt_HeroGenericCameraShakeMediumTarget_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroGenericCameraShakeMediumTarget, c_playerAny, "CameraShakeMediumTauntingTotemSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Generic - Camera Shake Heavy Target
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroGenericCameraShakeHeavyTarget_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitTarget))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DistanceBetweenPoints(EventPlayerEffectUsedPoint(c_effectLocationCasterPoint), CameraGetTarget(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget))) <= 10.0)) {
+        CameraShake(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget), "Heavy", "Shake", 0.1, 0.2, 0.3);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroGenericCameraShakeHeavyTarget_Init () {
+    libGDHL_gt_HeroGenericCameraShakeHeavyTarget = TriggerCreate("libGDHL_gt_HeroGenericCameraShakeHeavyTarget_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroGenericCameraShakeHeavyTarget, c_playerAny, "CameraShakeHeavyTauntingTotemSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Generic - Camera Shake Light Caster
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroGenericCameraShakeLightCaster_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DistanceBetweenPoints(EventPlayerEffectUsedPoint(c_effectLocationCasterUnit), CameraGetTarget(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster))) <= 10.0)) {
+        CameraShake(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster), "Light", "Shake", 0.1, 0.2, 0.3);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroGenericCameraShakeLightCaster_Init () {
+    libGDHL_gt_HeroGenericCameraShakeLightCaster = TriggerCreate("libGDHL_gt_HeroGenericCameraShakeLightCaster_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroGenericCameraShakeLightCaster, c_playerAny, "CameraShakeLightCasterDummySet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Generic - Camera Shake Medium Caster
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroGenericCameraShakeMediumCaster_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DistanceBetweenPoints(EventPlayerEffectUsedPoint(c_effectLocationCasterUnit), CameraGetTarget(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster))) <= 10.0)) {
+        CameraShake(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster), "Medium", "Shake", 0.1, 0.2, 0.3);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroGenericCameraShakeMediumCaster_Init () {
+    libGDHL_gt_HeroGenericCameraShakeMediumCaster = TriggerCreate("libGDHL_gt_HeroGenericCameraShakeMediumCaster_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroGenericCameraShakeMediumCaster, c_playerAny, "CameraShakeMediumCasterDummySet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Generic - Camera Shake Heavy Caster
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroGenericCameraShakeHeavyCaster_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitCaster))) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((DistanceBetweenPoints(EventPlayerEffectUsedPoint(c_effectLocationCasterUnit), CameraGetTarget(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster))) <= 10.0)) {
+        CameraShake(EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster), "Heavy", "Shake", 0.1, 0.2, 0.3);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroGenericCameraShakeHeavyCaster_Init () {
+    libGDHL_gt_HeroGenericCameraShakeHeavyCaster = TriggerCreate("libGDHL_gt_HeroGenericCameraShakeHeavyCaster_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroGenericCameraShakeHeavyCaster, c_playerAny, "CameraShakeHeavyCasterDummySet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero Port Back To Base
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HeroPortBackToBase_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    unit lv_hero;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_player = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
+    lv_hero = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    UnitSetPosition(lv_hero, libGame_gv_players[EventPlayer()].lv_spawnPoint, false);
+    UnitIssueOrder(lv_hero, OrderTargetingPoint(AbilityCommand("move", 4), PointWithOffsetPolar(libGame_gv_players[EventPlayer()].lv_spawnPoint, 1.0, 0.0)), c_orderQueueAddToFront);
+    if ((UnitBehaviorCount(lv_hero, "HeroMalfurionTranquility") == 0)) {
+        libGame_gf_ApplyMountBehaviorToHero(lv_hero);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HeroPortBackToBase_Init () {
+    libGDHL_gt_HeroPortBackToBase = TriggerCreate("libGDHL_gt_HeroPortBackToBase_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HeroPortBackToBase, c_playerAny, "HeroGenericHearthstone@TeleportSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hearthstone - Channeling Buff - On
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HearthstoneChannelingBuffOn_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libUIUI_gf_PingPlayerStartsHearthStonePing(EventPlayer(), UnitGetPosition(EventUnit()));
+    libSond_gf_HeroVOHeroBeginsHearthing(EventPlayer());
+    libUIUI_gf_UIPartyFrameHeroHearthstoneStart(EventPlayer(), EventUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HearthstoneChannelingBuffOn_Init () {
+    libGDHL_gt_HearthstoneChannelingBuffOn = TriggerCreate("libGDHL_gt_HearthstoneChannelingBuffOn_Func");
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_HearthstoneChannelingBuffOn, null, "HeroGenericHearthstone@ChannelingBuff", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hearthstone - Channeling Buff - Off
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HearthstoneChannelingBuffOff_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libUIUI_gf_PingCancelPlayersHearthStonePing(EventPlayer());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HearthstoneChannelingBuffOff_Init () {
+    libGDHL_gt_HearthstoneChannelingBuffOff = TriggerCreate("libGDHL_gt_HearthstoneChannelingBuffOff_Func");
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_HearthstoneChannelingBuffOff, null, "HeroGenericHearthstone@ChannelingBuff", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hearthstone - Channeling Buff - Canceled
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_HearthstoneChannelingBuffCanceled_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_hearthstoneUnit;
+    int lv_hearthstonePlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_hearthstoneUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    lv_hearthstonePlayer = UnitGetOwner(lv_hearthstoneUnit);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PingDestroy(libUIUI_gv_pingPlayerHearthstonePing[lv_hearthstonePlayer]);
+    libUIUI_gf_UIPartyFrameHeroHearthstoneFizzle(lv_hearthstonePlayer, lv_hearthstoneUnit);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_HearthstoneChannelingBuffCanceled_Init () {
+    libGDHL_gt_HearthstoneChannelingBuffCanceled = TriggerCreate("libGDHL_gt_HearthstoneChannelingBuffCanceled_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_HearthstoneChannelingBuffCanceled, c_playerAny, "HeroGenericHearthstone@ChannelingBuffCancelDummyModifyUnit");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Prestige - Blood For Blood
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_PrestigeBloodForBlood_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_bFBHealingEffect;
+    fixed lv_value;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitIsAlive(EventUnitDamageSourceUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_bFBHealingEffect = "PrestigeBloodForBlood@CreateHealer";
+    lv_value = (EventUnitDamageAmount() + EventUnitDamageAbsorbed());
+    lv_value *= libGDHL_gv_prestigeBloodForBloodHealModificator;
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, lv_bFBHealingEffect, "RechargeVitalRate", EventUnitDamageSourcePlayer(), lv_value);
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, lv_bFBHealingEffect, "RechargeVitalMax", EventUnitDamageSourcePlayer(), lv_value);
+    UnitCreateEffectUnit(EventUnitDamageSourceUnit(), lv_bFBHealingEffect, EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_PrestigeBloodForBlood_Init () {
+    libGDHL_gt_PrestigeBloodForBlood = TriggerCreate("libGDHL_gt_PrestigeBloodForBlood_Func");
+    TriggerAddEventUnitDamaged(libGDHL_gt_PrestigeBloodForBlood, null, c_unitDamageTypeAny, c_unitDamageEither, "PrestigeBloodForBlood@Damage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Regeneration Globe Talents
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_RegenerationGlobeTalents_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_targetUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_targetUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((PlayerHasTalent(UnitGetOwner(lv_targetUnit), "TalentRegenerationMaster") == true)) {
+        UnitBehaviorAddPlayer(lv_targetUnit, "TalentRegenerationMaster", EventPlayer(), 1);
+    }
+    if ((PlayerHasTalent(UnitGetOwner(lv_targetUnit), "TalentConjurersPursuit") == true)) {
+        UnitBehaviorAddPlayer(lv_targetUnit, "TalentConjurersPursuit", EventPlayer(), 1);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_RegenerationGlobeTalents_Init () {
+    libGDHL_gt_RegenerationGlobeTalents = TriggerCreate("libGDHL_gt_RegenerationGlobeTalents_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_RegenerationGlobeTalents, c_playerAny, "RegenGlobe@PickupHeroImpactSwitch");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Calldown MULE - Apply XP To MULE
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentCalldownMULEApplyXPToMULE_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_mULEUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_mULEUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    libGame_gf_UpdateScalingForUnit(lv_mULEUnit, libGame_gv_scalingTicks, 0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentCalldownMULEApplyXPToMULE_Init () {
+    libGDHL_gt_TalentCalldownMULEApplyXPToMULE = TriggerCreate("libGDHL_gt_TalentCalldownMULEApplyXPToMULE_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_TalentCalldownMULEApplyXPToMULE, c_playerAny, "GenericTalentCalldownMULE@ApplyTimedLifeBehavior");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Rewind Activate
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentRewindActivate_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_hero;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_hero = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentRewindActivate_Init () {
+    libGDHL_gt_TalentRewindActivate = TriggerCreate("libGDHL_gt_TalentRewindActivate_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_TalentRewindActivate, c_playerAny, "TalentBucket_Rewind_TriggerDummySet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Fury of the Storm - Activate
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentFuryoftheStormActivate_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((TriggerIsEnabled(libGDHL_gt_TalentFuryoftheStorm) == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(TriggerGetCurrent(), false);
+    TriggerEnable(libGDHL_gt_TalentFuryoftheStorm, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentFuryoftheStormActivate_Init () {
+    libGDHL_gt_TalentFuryoftheStormActivate = TriggerCreate("libGDHL_gt_TalentFuryoftheStormActivate_Func");
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_TalentFuryoftheStormActivate, null, "TalentBucket_FuryoftheStorm_CarryBehavior", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_TalentFuryoftheStormActivate, null, "TalentBucket_FuryoftheStorm_CarryBehavior_Tychus", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Fury of the Storm
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentFuryoftheStorm_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_damage;
+    fixed lv_modifiedDamage;
+    unit lv_itDamagingUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_itDamagingUnit = EventUnitDamageSourceUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!(((UnitBehaviorCount(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_CarryBehavior") == 1) || (UnitBehaviorCount(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_CarryBehavior_Tychus") == 1)))) {
+            return false;
+        }
+
+        if (!((UnitBehaviorCount(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_Cooldown") == 0))) {
+            return false;
+        }
+
+        if (!((UnitBehaviorCount(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_Cooldown_Tychus") == 0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_damage = EventUnitDamageAttempted();
+    lv_modifiedDamage = (lv_damage * (1.0 - libCore_gv_talents_FuryOfTheStormBounceDamagePercent_C));
+    CatalogFieldValueSet(c_gameCatalogEffect, "TalentBucket_FuryOfTheStorm_Damage1", "Amount", UnitGetOwner(lv_itDamagingUnit), FixedToString(lv_modifiedDamage, c_fixedPrecisionAny));
+    CatalogFieldValueSet(c_gameCatalogEffect, "TalentBucket_FuryOfTheStorm_Damage2", "Amount", UnitGetOwner(lv_itDamagingUnit), FixedToString(lv_modifiedDamage, c_fixedPrecisionAny));
+    UnitCreateEffectUnit(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_Delay1", EventUnit());
+    if ((UnitBehaviorCount(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_CarryBehavior") == 1)) {
+        UnitBehaviorAdd(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_Cooldown", lv_itDamagingUnit, 1);
+    }
+    else if ((UnitBehaviorCount(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_CarryBehavior_Tychus") == 1)) {
+        UnitBehaviorAdd(lv_itDamagingUnit, "TalentBucket_FuryoftheStorm_Cooldown_Tychus", lv_itDamagingUnit, 1);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentFuryoftheStorm_Init () {
+    libGDHL_gt_TalentFuryoftheStorm = TriggerCreate("libGDHL_gt_TalentFuryoftheStorm_Func");
+    TriggerEnable(libGDHL_gt_TalentFuryoftheStorm, false);
+    TriggerAddEventUnitDamaged(libGDHL_gt_TalentFuryoftheStorm, null, c_unitDamageTypeRanged, c_unitDamageEither, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Bribe
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentBribe_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_JungleCamp;
+    unit lv_unit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentBribe_Init () {
+    libGDHL_gt_TalentBribe = TriggerCreate("libGDHL_gt_TalentBribe_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_TalentBribe, c_playerAny, "BribeSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Swift Storm
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentSwiftStorm_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_hero;
+    fixed lv_hearthCastTime;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_hero = EventUnit();
+    lv_hearthCastTime = 2.0;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    CatalogFieldValueSet(c_gameCatalogAbil, "PortBackToBase", "CastIntroTime[" + IntToString(0) + "]", UnitGetOwner(lv_hero), FixedToString(lv_hearthCastTime, 2));
+    TechTreeUpgradeAddLevel(UnitGetOwner(EventUnit()), "LevelUp_SwiftStorm", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentSwiftStorm_Init () {
+    libGDHL_gt_TalentSwiftStorm = TriggerCreate("libGDHL_gt_TalentSwiftStorm_Func");
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_TalentSwiftStorm, null, "TalentBucketSwiftStormCarryBehavior", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Storm Shield
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentStormShield_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_hero;
+    fixed lv_heroMaxHealth;
+    fixed lv_shieldAmount;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_hero = EventUnit();
+    lv_heroMaxHealth = UnitGetPropertyFixed(lv_hero, c_unitPropLifeMax, c_unitPropCurrent);
+    lv_shieldAmount = (lv_heroMaxHealth * 0.2);
+    CatalogFieldValueSet(c_gameCatalogBehavior, "TalentBucketStormShield", "DamageResponse.ModifyLimit", UnitGetOwner(lv_hero), FixedToString(lv_shieldAmount, 2));
+    UnitBehaviorRemove(lv_hero, "TalentBucketStormShieldDummyBehavior", 1);
+    UnitCreateEffectUnit(lv_hero, "TalentBucketStormShieldApplyBehavior", lv_hero);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentStormShield_Init () {
+    libGDHL_gt_TalentStormShield = TriggerCreate("libGDHL_gt_TalentStormShield_Func");
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_TalentStormShield, null, "TalentBucketStormShieldDummyBehavior", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Hardened Focus
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentHardenedFocus_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    int autoC3A229FA_ae;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitBehaviorChange() == c_unitBehaviorChangeCreate)) {
+        TriggerEnable(libGDHL_gt_TalentHardenedFocusUpdate, true);
+    }
+    else {
+        autoC3A229FA_ae = libCore_gv_bALMaxEnginePlayerCount;
+        lv_itPlayer = 1;
+        for ( ; lv_itPlayer <= autoC3A229FA_ae ; lv_itPlayer += 1 ) {
+            if ((libGame_gf_PlayerHeroUnit(lv_itPlayer) != null) && (PlayerHasTalent(lv_itPlayer, "TalentBucket_HardenedFocus") == true)) {
+                return true;
+            }
+        }
+        TriggerEnable(libGDHL_gt_TalentHardenedFocusUpdate, false);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentHardenedFocus_Init () {
+    libGDHL_gt_TalentHardenedFocus = TriggerCreate("libGDHL_gt_TalentHardenedFocus_Func");
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_TalentHardenedFocus, null, "TalentBucket_HardenedFocus_CarryBehavior", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libGDHL_gt_TalentHardenedFocus, null, "TalentBucket_HardenedFocus_CarryBehavior", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Hardened Focus - Update
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentHardenedFocusUpdate_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    int autoE23B8798_ae;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoE23B8798_ae = libCore_gv_bALMaxEnginePlayerCount;
+    lv_itPlayer = 1;
+    for ( ; lv_itPlayer <= autoE23B8798_ae ; lv_itPlayer += 1 ) {
+        if ((UnitIsAlive(libGame_gf_PlayerHeroUnit(lv_itPlayer)) == true) && (libGame_gf_PlayerHeroUnit(lv_itPlayer) != null) && (libGDHL_gf_TalentHardenedFocusBasicAbilitiesOnCD(lv_itPlayer) == true)) {
+            libGame_gf_CooldownUniversalHeroCDR(libGame_gf_PlayerHeroUnit(lv_itPlayer), libCore_gv_talents_HardenedFocus_Value_C, false, false, false, false);
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentHardenedFocusUpdate_Init () {
+    libGDHL_gt_TalentHardenedFocusUpdate = TriggerCreate("libGDHL_gt_TalentHardenedFocusUpdate_Func");
+    TriggerEnable(libGDHL_gt_TalentHardenedFocusUpdate, false);
+    TriggerAddEventTimePeriodic(libGDHL_gt_TalentHardenedFocusUpdate, 0.0625, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Talent - Resurgence Of The Storm
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_gt_TalentResurgenceOfTheStorm_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gf_HeroDeathResetRespawnTimerOfPlayerHero(EventPlayer());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libGDHL_gt_TalentResurgenceOfTheStorm_Init () {
+    libGDHL_gt_TalentResurgenceOfTheStorm = TriggerCreate("libGDHL_gt_TalentResurgenceOfTheStorm_Func");
+    TriggerAddEventPlayerEffectUsed(libGDHL_gt_TalentResurgenceOfTheStorm, c_playerAny, "GenericTalentResurgenceOfTheStorm@ApplyCooldownBehavior");
+}
+
+void libGDHL_InitTriggers () {
+    libGDHL_gt_IncludeGameDataHelper_Init();
+    libGDHL_gt_HeroGenericCameraShakeLightTarget_Init();
+    libGDHL_gt_HeroGenericCameraShakeMediumTarget_Init();
+    libGDHL_gt_HeroGenericCameraShakeHeavyTarget_Init();
+    libGDHL_gt_HeroGenericCameraShakeLightCaster_Init();
+    libGDHL_gt_HeroGenericCameraShakeMediumCaster_Init();
+    libGDHL_gt_HeroGenericCameraShakeHeavyCaster_Init();
+    libGDHL_gt_HeroPortBackToBase_Init();
+    libGDHL_gt_HearthstoneChannelingBuffOn_Init();
+    libGDHL_gt_HearthstoneChannelingBuffOff_Init();
+    libGDHL_gt_HearthstoneChannelingBuffCanceled_Init();
+    libGDHL_gt_PrestigeBloodForBlood_Init();
+    libGDHL_gt_RegenerationGlobeTalents_Init();
+    libGDHL_gt_TalentCalldownMULEApplyXPToMULE_Init();
+    libGDHL_gt_TalentRewindActivate_Init();
+    libGDHL_gt_TalentFuryoftheStormActivate_Init();
+    libGDHL_gt_TalentFuryoftheStorm_Init();
+    libGDHL_gt_TalentBribe_Init();
+    libGDHL_gt_TalentSwiftStorm_Init();
+    libGDHL_gt_TalentStormShield_Init();
+    libGDHL_gt_TalentHardenedFocus_Init();
+    libGDHL_gt_TalentHardenedFocusUpdate_Init();
+    libGDHL_gt_TalentResurgenceOfTheStorm_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libGDHL_InitLib_completed = false;
+
+void libGDHL_InitLib () {
+    if (libGDHL_InitLib_completed) {
+        return;
+    }
+
+    libGDHL_InitLib_completed = true;
+
+    libGDHL_InitLibraries();
+    libGDHL_InitVariables();
+    libGDHL_InitTriggers();
+}
+
+include "LibCore"
+include "LibGame"
+include "LibSond"
+include "LibUIUI"
+

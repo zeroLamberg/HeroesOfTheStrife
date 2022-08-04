@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="HeroMalfurionTalentNaturesCleanse" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Malfurion"/>
+    </CUnit>
+    <CUnit id="HeroMalfurion" parent="CoreHeroMounted">
+        <LifeStart value="1525"/>
+        <LifeMax value="1525"/>
+        <LifeRegenRate value="1.7382"/>
+        <AbilArray Link="HeroGenericHearthstone"/>
+        <AbilArray Link="HeroMalfurionRegrowth"/>
+        <AbilArray Link="HeroMalfurionMoonfire"/>
+        <AbilArray Link="HeroMalfurionEntanglingRoots"/>
+        <AbilArray Link="HeroMalfurionTranquility"/>
+        <AbilArray Link="HeroMalfurionTwilightDream"/>
+        <AbilArray Link="HeroMalfurionInnervate"/>
+        <BehaviorArray Link="HeroMalfurionInnervate"/>
+        <BehaviorArray Link="HeroMalfurionRegrowth@PlayerUI"/>
+        <BehaviorArray Link="HeroMalfurionRegrowth@TrackedUnitCounter"/>
+        <WeaponArray Link="HeroMalfurionWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="HeroMalfurionRegrowth" Type="AbilCmd" AbilCmd="HeroMalfurionRegrowth,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroMalfurionMoonfire" Type="AbilCmd" AbilCmd="HeroMalfurionMoonfire,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroMalfurionEntanglingRoots" Type="AbilCmd" AbilCmd="HeroMalfurionEntanglingRoots,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroMalfurionTranquility" Type="AbilCmd" AbilCmd="HeroMalfurionTranquility,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroMalfurionTwilightDream" Type="AbilCmd" AbilCmd="HeroMalfurionTwilightDream,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroMalfurionInnervate" Type="AbilCmd" AbilCmd="HeroMalfurionInnervate,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <InnerRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Hero,CoreHero:Malfurion"/>
+        <TacticalAIThink value="AIThinkMalfurion"/>
+        <EffectArray index="Death" value="HeroMalfurion@DeathSet"/>
+    </CUnit>
+    <CUnit id="HeroMalfurionEntanglingRoots">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="NoDraw" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <BehaviorArray Link="HallOfStormsKnockbackImmunity"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Malfurion"/>
+    </CUnit>
+    <CUnit id="HeroMalfurionTreant">
+        <DeathRevealRadius value="3"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="VisionTestCenterOnly" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <PushPriority value="0"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Attributes index="Summoned" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeRegenDelay value="2"/>
+        <Speed value="3"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="6"/>
+        <AttackTargetPriority value="10"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <BehaviorArray Link="HeroMalfurionTreant@TimedLife"/>
+        <BehaviorArray Link="StandardSummonedUnit"/>
+        <BehaviorArray Link="StandardSummonedActiveUnit"/>
+        <BehaviorArray Link="HeroMalfurionTalentEntanglingRootsDangerousRoots@FlatDamageBonus"/>
+        <WeaponArray Link="HeroMalfurionTreant@Weapon"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="2" Column="1"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="2" Column="3"/>
+        </CardLayouts>
+        <SubgroupPriority value="14"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Malfurion"/>
+        <AIEvalFactor value="0"/>
+        <KillDisplay value="Never"/>
+        <OverlapIndex value="2"/>
+        <AcquireLeashRadius value="6"/>
+    </CUnit>
+    <CUnit id="HeroMalfurionWeapon@Missile" parent="MISSILE_INVULNERABLE">
+        <Mover value="HeroSlowerMissile"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Malfurion"/>
+    </CUnit>
+</Catalog>

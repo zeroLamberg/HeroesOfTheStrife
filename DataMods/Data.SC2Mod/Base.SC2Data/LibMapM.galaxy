@@ -1,0 +1,2200 @@
+include "TriggerLibs/NativeLib"
+include "LibAIAI_h"
+include "LibCore_h"
+include "LibGame_h"
+include "LibSprt_h"
+include "LibSond_h"
+include "LibUIUI_h"
+
+include "LibMapM_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Maps
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libMapM_InitLibraries () {
+    libNtve_InitVariables();
+    libAIAI_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libSprt_InitVariables();
+    libSond_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libMapM_InitVariables_completed = false;
+
+void libMapM_InitVariables () {
+    int init_i;
+    int init_i1;
+
+    if (libMapM_InitVariables_completed) {
+        return;
+    }
+
+    libMapM_InitVariables_completed = true;
+
+    libMapM_gv_bALJungleLeashRespawnTime = 45.0;
+    libMapM_gv_bALJungleCampScalingTimerDuration = 60.0;
+    for (init_i = 0; init_i <= libMapM_gv_jungleMaxCamps; init_i += 1) {
+        libMapM_gv_jungleCreepCamps[init_i].lv_mapDataCampType = libMapM_ge_JungleCampTypes_MercCamp;
+        libMapM_gv_jungleCreepCamps[init_i].lv_mapDataCampDefenderType = libMapM_ge_JungleCampDefenderTypes_Custom;
+        libMapM_gv_jungleCreepCamps[init_i].lv_mapDataBattleshipSpawnType = libMapM_ge_JungleCampMercTypes_Custom;
+        libMapM_gv_jungleCreepCamps[init_i].lv_defenderCoweringUnitGroup = UnitGroupEmpty();
+        for (init_i1 = 0; init_i1 <= libCore_gv_bALMaxTeams; init_i1 += 1) {
+            libMapM_gv_jungleCreepCamps[init_i].lv_mercMercCampHasSingleWaypoint[init_i1] = true;
+        }
+        libMapM_gv_jungleCreepCamps[init_i].lv_campActorMessageUponSpawn = "";
+        libMapM_gv_jungleCreepCamps[init_i].lv_campHelperTextTag = c_textTagNone;
+        libMapM_gv_jungleCreepCamps[init_i].lv_campRespawnTextTag = c_textTagNone;
+        libMapM_gv_jungleCreepCamps[init_i].lv_campSpecialTextTag = c_textTagNone;
+        libMapM_gv_jungleCreepCamps[init_i].lv_stateCreepBirthTimer = TimerCreate();
+        libMapM_gv_jungleCreepCamps[init_i].lv_stateCreepRespawnTimer = TimerCreate();
+        libMapM_gv_jungleCreepCamps[init_i].lv_stateCreepActiveTimer = TimerCreate();
+        libMapM_gv_jungleCreepCamps[init_i].lv_aIState = libMapM_ge_JungleCampStates_Dead;
+    }
+    for (init_i = 0; init_i <= libMapM_gv_jungleMaxCamps; init_i += 1) {
+        libMapM_gv_jungleMiniMapIconGroup[init_i] = UnitGroupEmpty();
+    }
+    libMapM_gv_jungleScalingTimer = TimerCreate();
+    libMapM_gv_mMRepulseRegionPunchedGroup = UnitGroupEmpty();
+}
+
+// Presets
+string libMapM_ge_JungleCampDefenderTypes_Ident (int lp_val) {
+         if (lp_val == libMapM_ge_JungleCampDefenderTypes_Custom) { return "Custom"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_SiegeGiants) { return "SiegeGiants"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_Knights) { return "Knights"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_GraveGolem) { return "GraveGolem"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_Doubloons) { return "Doubloons"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_SiegeCamp1) { return "SiegeCamp1"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_SiegeCamp2) { return "SiegeCamp2"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_SiegeCamp3) { return "SiegeCamp3"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BruiserCamp1) { return "BruiserCamp1"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BruiserCamp2) { return "BruiserCamp2"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BruiserCamp3) { return "BruiserCamp3"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BossCamp1) { return "BossCamp1"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BossCamp2) { return "BossCamp2"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BossCamp3) { return "BossCamp3"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_SiegeVanguards) { return "SiegeVanguards"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BruiserHybrids) { return "BruiserHybrids"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BossColossus) { return "BossColossus"; }
+    else if (lp_val == libMapM_ge_JungleCampDefenderTypes_BossSlaynElemental) { return "BossSlaynElemental"; }
+    return null;
+}
+
+string libMapM_ge_JungleCampStates_Ident (int lp_val) {
+         if (lp_val == libMapM_ge_JungleCampStates_Idle) { return "Idle"; }
+    else if (lp_val == libMapM_ge_JungleCampStates_Busy) { return "Busy"; }
+    else if (lp_val == libMapM_ge_JungleCampStates_Dead) { return "Dead"; }
+    else if (lp_val == libMapM_ge_JungleCampStates_Paused) { return "Paused"; }
+    else if (lp_val == libMapM_ge_JungleCampStates_Hibernating) { return "Hibernating"; }
+    else if (lp_val == libMapM_ge_JungleCampStates_HibernetingReadyToSpawn) { return "HibernetingReadyToSpawn"; }
+    return null;
+}
+
+// Functions
+int libMapM_gf_JungleCampDefenderTypeIndex (int lp_defenderType) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (lp_defenderType);
+}
+
+void libMapM_gf_DataInitializeScalingDataForDefender (int lp_defenderTypeIndex, string lp_scalingBehavior) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMapM_gv_dataJungleCampDefenderData[lp_defenderTypeIndex].lv_numberOfRanks = MinI((CatalogFieldValueCount(c_gameCatalogBehavior, lp_scalingBehavior, "VeterancyLevelArray", c_playerAny) - 1), libCore_gv_dataScalingMaxScalingTicks);
+}
+
+int libMapM_gf_JungleCampMercTypesIndex (int lp_mercType) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (lp_mercType);
+}
+
+void libMapM_gf_DataInitializeScalingDataForMerc (int lp_mercTypeIndex, string lp_scalingBehavior) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMapM_gv_dataJungleCampMercData[lp_mercTypeIndex].lv_numberOfRanks = MinI((CatalogFieldValueCount(c_gameCatalogBehavior, lp_scalingBehavior, "VeterancyLevelArray", c_playerAny) - 1), libCore_gv_dataScalingMaxScalingTicks);
+}
+
+void libMapM_gf_JungleInitializeDefenderData (int lp_camp) {
+    // Variable Declarations
+    int lv_i;
+    int lv_campTypeIndex;
+    int lv_missingPoints;
+
+    // Automatic Variable Declarations
+    int auto1634221D_ae;
+    const int auto1634221D_ai = 1;
+    int autoA56A1090_ae;
+    const int autoA56A1090_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType != libMapM_ge_JungleCampDefenderTypes_Custom)) {
+        lv_campTypeIndex = (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType);
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampIsSoloable = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsSoloable;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampIsElite = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsElite;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderDefendersCoweronDeath = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_defendersCoweronDeath;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderRespawnTime = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_respawnTime;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderNumberofCreeps = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfCreeps;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeMinimapLabel = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeMinimapLabel;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeNameLabel = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel;
+        auto1634221D_ae = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfCreeps;
+        lv_i = 1;
+        for ( ; ( (auto1634221D_ai >= 0 && lv_i <= auto1634221D_ae) || (auto1634221D_ai < 0 && lv_i >= auto1634221D_ae) ) ; lv_i += auto1634221D_ai ) {
+            libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderUnitTypes[lv_i] = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[lv_i];
+            libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCoweringUnit[lv_i] = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_defenderCoweringUnit[lv_i];
+        }
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderNumberOfRanks = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfRanks;
+    }
+
+    autoA56A1090_ae = libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderNumberofCreeps;
+    lv_i = 1;
+    for ( ; ( (autoA56A1090_ai >= 0 && lv_i <= autoA56A1090_ae) || (autoA56A1090_ai < 0 && lv_i >= autoA56A1090_ae) ) ; lv_i += autoA56A1090_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderSpawnPoints[lv_i] == null)) {
+            lv_missingPoints += 1;
+        }
+
+    }
+    if ((lv_missingPoints > 0)) {
+    }
+
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCaptureXPValue = libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_xPAwardForCapture;
+}
+
+void libMapM_gf_JungleInitializeMercCampData (int lp_camp) {
+    // Variable Declarations
+    int lv_i;
+    int lv_itTeam;
+    int lv_itLane;
+    int lv_itWaypoint;
+    int lv_campTypeIndex;
+    int lv_ownerPlayer;
+    point lv_rallyPoint;
+    bool lv_foundLane;
+    int lv_spawnLane;
+    int lv_spawnFirstWaypointIndex;
+
+    // Automatic Variable Declarations
+    int auto154BCA63_ae;
+    const int auto154BCA63_ai = 1;
+    const int auto6E74ECD0_ae = libCore_gv_bALMaxTeams;
+    const int auto6E74ECD0_ai = 1;
+    int auto57847B83_ae;
+    const int auto57847B83_ai = 1;
+    int autoD27B9BD9_ae;
+    const int autoD27B9BD9_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_campTypeIndex = (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataMercSpawnType);
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_mercNumberOfMinionsSpawned = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfMinionsSpawned;
+    auto154BCA63_ae = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfMinionsSpawned;
+    lv_i = 1;
+    for ( ; ( (auto154BCA63_ai >= 0 && lv_i <= auto154BCA63_ae) || (auto154BCA63_ai < 0 && lv_i >= auto154BCA63_ae) ) ; lv_i += auto154BCA63_ai ) {
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_mercSpawnedMinionUnitType[lv_i] = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[lv_i];
+    }
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_mercNumberOfRanks = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfRanks;
+    lv_itTeam = 1;
+    for ( ; ( (auto6E74ECD0_ai >= 0 && lv_itTeam <= auto6E74ECD0_ae) || (auto6E74ECD0_ai < 0 && lv_itTeam >= auto6E74ECD0_ae) ) ; lv_itTeam += auto6E74ECD0_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_mercMercCampHasSingleWaypoint[lv_itTeam] == true)) {
+            if ((lv_itTeam == libGame_gv_teamOrderIndex_C)) {
+                lv_rallyPoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercOrderMercCampPathing[1].lv_waypoint;
+                lv_ownerPlayer = libCore_gv_cOMPUTER_TeamOrder;
+            }
+            else {
+                lv_rallyPoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercChaosMercCampPathing[1].lv_waypoint;
+                lv_ownerPlayer = libCore_gv_cOMPUTER_TeamChaos;
+            }
+        }
+        else {
+            if ((lv_itTeam == libGame_gv_teamOrderIndex_C)) {
+                lv_rallyPoint = libMapM_gf_JungleDetermineMercWaypoint(lv_itTeam, lp_camp);
+                lv_ownerPlayer = libCore_gv_cOMPUTER_TeamOrder;
+            }
+            else {
+                lv_rallyPoint = libMapM_gf_JungleDetermineMercWaypoint(lv_itTeam, lp_camp);
+                lv_ownerPlayer = libCore_gv_cOMPUTER_TeamChaos;
+            }
+        }
+        lv_foundLane = false;
+        auto57847B83_ae = libGame_gv_laneCount;
+        lv_itLane = 1;
+        for ( ; ( (auto57847B83_ai >= 0 && lv_itLane <= auto57847B83_ae) || (auto57847B83_ai < 0 && lv_itLane >= auto57847B83_ae) ) ; lv_itLane += auto57847B83_ai ) {
+            autoD27B9BD9_ae = libGame_gv_laneData[lv_itLane].lv_waypointCount;
+            lv_itWaypoint = 1;
+            for ( ; ( (autoD27B9BD9_ai >= 0 && lv_itWaypoint <= autoD27B9BD9_ae) || (autoD27B9BD9_ai < 0 && lv_itWaypoint >= autoD27B9BD9_ae) ) ; lv_itWaypoint += autoD27B9BD9_ai ) {
+                if ((libGame_gv_laneData[lv_itLane].lv_waypoints[lv_itWaypoint] == lv_rallyPoint)) {
+                    lv_spawnLane = lv_itLane;
+                    lv_spawnFirstWaypointIndex = lv_itWaypoint;
+                    lv_foundLane = true;
+                    break;
+                }
+
+            }
+        }
+        if ((lv_foundLane == false)) {
+            libGame_gf_CalculateSpawnedMinionGoalPoints(lv_ownerPlayer, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+            lv_spawnLane = libGame_gv_spawnedMinionLane;
+            lv_spawnFirstWaypointIndex = libGame_gv_spawnedMinionFirstWaypointIndex;
+        }
+
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_mercLaneToSpawnIn[lv_itTeam] = lv_spawnLane;
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_mercSpawnFirstWaypointIndex[lv_itTeam] = lv_spawnFirstWaypointIndex;
+    }
+}
+
+point libMapM_gf_JungleDetermineMercWaypoint (int lp_owningTeam, int lp_camp) {
+    // Variable Declarations
+    point lv_waypoint;
+    int lv_itPath;
+    int lv_enemyTeamPlayer;
+    unitgroup lv_buildings;
+
+    // Automatic Variable Declarations
+    const int auto02115739_ae = libMapM_gv_dataJungleMaxNumberOfPaths;
+    const int auto02115739_ai = 1;
+    const int auto575845F7_ae = libMapM_gv_dataJungleMaxNumberOfPaths;
+    const int auto575845F7_ai = 1;
+
+    // Variable Initialization
+    lv_buildings = UnitGroupEmpty();
+
+    // Implementation
+    if ((lp_owningTeam == libGame_gv_teamOrderIndex_C)) {
+        lv_enemyTeamPlayer = libCore_gv_cOMPUTER_TeamChaos;
+        lv_itPath = 1;
+        for ( ; ( (auto02115739_ai >= 0 && lv_itPath <= auto02115739_ae) || (auto02115739_ai < 0 && lv_itPath >= auto02115739_ae) ) ; lv_itPath += auto02115739_ai ) {
+            if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_mercOrderMercCampPathing[lv_itPath].lv_townRegion == null)) {
+                lv_waypoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercOrderMercCampPathing[lv_itPath].lv_waypoint;
+                if ((lv_waypoint == null)) {
+                    TextExpressionSetToken("Param/Expression/lib_MapM_23D016D6", "A", IntToText(lp_camp));
+                    TextExpressionSetToken("Param/Expression/lib_MapM_23D016D6", "B", IntToText(lv_itPath));
+                    TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_MapM_23D016D6"), true);
+                }
+
+                return lv_waypoint;
+            }
+            else {
+                lv_buildings = UnitGroup(null, lv_enemyTeamPlayer, libMapM_gv_jungleCreepCamps[lp_camp].lv_mercOrderMercCampPathing[lv_itPath].lv_townRegion, UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+                if ((UnitGroupCount(lv_buildings, c_unitCountAlive) > 0)) {
+                    lv_waypoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercOrderMercCampPathing[lv_itPath].lv_waypoint;
+                    return lv_waypoint;
+                }
+
+            }
+        }
+    }
+
+    if ((lp_owningTeam == libGame_gv_teamChaosIndex_C)) {
+        lv_enemyTeamPlayer = libCore_gv_cOMPUTER_TeamOrder;
+        lv_itPath = 1;
+        for ( ; ( (auto575845F7_ai >= 0 && lv_itPath <= auto575845F7_ae) || (auto575845F7_ai < 0 && lv_itPath >= auto575845F7_ae) ) ; lv_itPath += auto575845F7_ai ) {
+            if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_mercChaosMercCampPathing[lv_itPath].lv_townRegion == null)) {
+                lv_waypoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercChaosMercCampPathing[lv_itPath].lv_waypoint;
+                if ((lv_waypoint == null)) {
+                    TextExpressionSetToken("Param/Expression/lib_MapM_C21662A6", "A", IntToText(lp_camp));
+                    TextExpressionSetToken("Param/Expression/lib_MapM_C21662A6", "B", IntToText(lv_itPath));
+                    TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_MapM_C21662A6"), true);
+                }
+
+                return lv_waypoint;
+            }
+            else {
+                lv_buildings = UnitGroup(null, lv_enemyTeamPlayer, libMapM_gv_jungleCreepCamps[lp_camp].lv_mercChaosMercCampPathing[lv_itPath].lv_townRegion, UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+                if ((UnitGroupCount(lv_buildings, c_unitCountAlive) > 0)) {
+                    lv_waypoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercChaosMercCampPathing[lv_itPath].lv_waypoint;
+                    return lv_waypoint;
+                }
+
+            }
+        }
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_MapM_1B9B7AE0"), true);
+    return lv_waypoint;
+}
+
+void libMapM_gf_JungleInitializeRewardCampData (int lp_camp) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_campTypeIndex = (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataRewardSpawnType);
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_rewardNumberOfRanks = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfRanks;
+}
+
+void libMapM_gf_JungleInitializeDoubloonCampData (int lp_camp) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_campTypeIndex = (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataBattleshipSpawnType);
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_piratesNumberOfRanks = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfRanks;
+}
+
+void libMapM_gf_JungleInitializeDoubloonSmallCampData (int lp_camp) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_campTypeIndex = (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataBattleshipSpawnType);
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_piratesNumberOfRanks = libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfRanks;
+}
+
+void libMapM_gf_JungleInitializeCreepCamp (int lp_camp) {
+    // Variable Declarations
+    unit lv_iconUnit;
+    string lv_icon;
+    const int lv_textTagHeightOffset = 4;
+
+    // Automatic Variable Declarations
+    int auto031F410A_val;
+
+    // Variable Initialization
+
+    // Implementation
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_campOwnershipFlagUnit = UnitGroupUnit(UnitGroup("CampOwnershipFlag", c_playerAny, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderLeashRegion, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 1), 1);
+    auto031F410A_val = libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType;
+    if (auto031F410A_val == libMapM_ge_JungleCampTypes_MercCamp) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "JungleCampIconUnitTeamColor", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_Neutral, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+        lv_iconUnit = UnitLastCreated();
+    }
+    else if (auto031F410A_val == libMapM_ge_JungleCampTypes_RewardCamp) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "JungleCampIconUnitTeamColor", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_Neutral, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+        lv_iconUnit = UnitLastCreated();
+    }
+    else {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "JungleCampIconUnit", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_Neutral, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+        lv_iconUnit = UnitLastCreated();
+    }
+    lv_icon = libMapM_gf_JungleGetCurrentIconForJungleCamp(lp_camp, true);
+    libNtve_gf_SendActorMessageToUnit(lv_iconUnit, "MinimapIcon " + lv_icon);
+    libNtve_gf_SendActorMessageToUnit(lv_iconUnit, "MinimapIconScale 0.750000");
+    libNtve_gf_SendActorMessageToUnit(lv_iconUnit, "SetMinimapVisibility");
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit = lv_iconUnit;
+    DialogControlSetVisible(libUIUI_gv_jCIInfo[lp_camp].lv_mainPanel, PlayerGroupAll(), true);
+    libUIUI_gf_JCISetCampTitleLabelText(lp_camp, libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeNameLabel);
+}
+
+int libMapM_gf_JungleGetJungleCampForUnit (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    return FixedToInt(UnitGetCustomValue(lp_unit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleDefenderCreepCampIndex)));
+}
+
+string libMapM_gf_JungleGetCurrentIconForJungleCamp (int lp_camp, bool lp_alive) {
+    // Automatic Variable Declarations
+    int autoF6AE4A30_val;
+
+    // Implementation
+    autoF6AE4A30_val = libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType;
+    if (autoF6AE4A30_val == libMapM_ge_JungleCampTypes_MercCamp) {
+        if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeGiants) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Easy.dds";
+        }
+        else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_Knights) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Elite.dds";
+        }
+        else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_GraveGolem) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Boss.dds";
+        }
+    }
+    else if (autoF6AE4A30_val == libMapM_ge_JungleCampTypes_RewardCamp) {
+        if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeGiants) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Easy.dds";
+        }
+        else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_Knights) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Elite.dds";
+        }
+        else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_GraveGolem) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Boss.dds";
+        }
+    }
+    else if (autoF6AE4A30_val == libMapM_ge_JungleCampTypes_DoubloonCampSmall) {
+        if ((lp_alive == true)) {
+            return "assets\\Textures\\UI_MinimapIcon_Map_BHB_PirateCamp.dds";
+        }
+        else {
+            return "assets\\Textures\\UI_MinimapIcon_Map_BHB_PirateCampEmpty.dds";
+        }
+    }
+    else if (autoF6AE4A30_val == libMapM_ge_JungleCampTypes_TryMeCamp) {
+        if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeGiants) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Easy.dds";
+        }
+        else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_Knights) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Elite.dds";
+        }
+        else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_GraveGolem) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp3))) {
+            return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Boss.dds";
+        }
+    }
+    else {
+    }
+    return "assets\\Textures\\UI_MinimapIcon_Merc_Camp_Easy.dds";
+}
+
+int libMapM_gf_JungleGetCampIndexFromDefenderIndex (int lp_defenderIndex) {
+    // Variable Declarations
+    int lv_itCamp;
+
+    // Automatic Variable Declarations
+    int autoE4C46BDA_ae;
+    const int autoE4C46BDA_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    autoE4C46BDA_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (autoE4C46BDA_ai >= 0 && lv_itCamp <= autoE4C46BDA_ae) || (autoE4C46BDA_ai < 0 && lv_itCamp >= autoE4C46BDA_ae) ) ; lv_itCamp += autoE4C46BDA_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIDefenderAIIndex == lp_defenderIndex)) {
+            return lv_itCamp;
+        }
+
+    }
+    return 0;
+}
+
+void libMapM_gf_JungleUpdateTextTagForCamp (int lp_camp, int lp_type) {
+    // Variable Declarations
+    int lv_campType;
+    int lv_campLevel;
+    text lv_helperTextStart;
+
+    // Automatic Variable Declarations
+    int auto9D3A2AD3_val;
+    int autoF6584240_val;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_campType = libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType;
+    auto9D3A2AD3_val = lp_type;
+    if (auto9D3A2AD3_val == libMapM_ge_JungleCampTextTagTypes_Helper) {
+        autoF6584240_val = lv_campType;
+        if (autoF6584240_val == libMapM_ge_JungleCampTypes_MercCamp) {
+            if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampIsElite == false)) {
+                libUIUI_gf_JCISetCampDescriptionLabelText(lp_camp, StringExternal("Param/Value/lib_MapM_63DF01A6"), false);
+            }
+            else {
+                libUIUI_gf_JCISetCampDescriptionLabelText(lp_camp, StringExternal("Param/Value/lib_MapM_2DF117A5"), true);
+            }
+        }
+        else if (autoF6584240_val == libMapM_ge_JungleCampTypes_AshenvaleForestGuardians) {
+            TextExpressionSetToken("Param/Expression/lib_MapM_FAC9E067", "A", lv_helperTextStart);
+            TextTagSetText(libMapM_gv_jungleCreepCamps[lp_camp].lv_campHelperTextTag, TextExpressionAssemble("Param/Expression/lib_MapM_FAC9E067"));
+        }
+        else if (autoF6584240_val == libMapM_ge_JungleCampTypes_RewardCamp) {
+            libUIUI_gf_JCISetCampDescriptionLabelText(lp_camp, StringExternal("Param/Value/lib_MapM_5951DA9B"), true);
+        }
+        else if (autoF6584240_val == libMapM_ge_JungleCampTypes_DoubloonCamp) {
+            TextExpressionSetToken("Param/Expression/lib_MapM_2783FE33", "A", lv_helperTextStart);
+            TextTagSetText(libMapM_gv_jungleCreepCamps[lp_camp].lv_campHelperTextTag, TextExpressionAssemble("Param/Expression/lib_MapM_2783FE33"));
+        }
+        else if (autoF6584240_val == libMapM_ge_JungleCampTypes_DoubloonCampSmall) {
+            TextExpressionSetToken("Param/Expression/lib_MapM_B1A1DE92", "A", lv_helperTextStart);
+            TextTagSetText(libMapM_gv_jungleCreepCamps[lp_camp].lv_campHelperTextTag, TextExpressionAssemble("Param/Expression/lib_MapM_B1A1DE92"));
+        }
+        else {
+        }
+    }
+    else if (auto9D3A2AD3_val == libMapM_ge_JungleCampTextTagTypes_Respawn) {
+        libUIUI_gf_JCISetRespawnLabelTextForCamp(lp_camp, TextTimeFormat(StringToText("<min2/>:<sec2/>"), FixedToInt(TimerGetRemaining(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepRespawnTimer))));
+    }
+    else if (auto9D3A2AD3_val == libMapM_ge_JungleCampTextTagTypes_Special) {
+    }
+    else {
+    }
+}
+
+void libMapM_gf_JungleSwitchToTextTagForCamp (int lp_camp, int lp_type) {
+    // Automatic Variable Declarations
+    int autoA81FC594_val;
+
+    // Implementation
+    TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campHelperTextTag, PlayerGroupAll(), false);
+    TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campRespawnTextTag, PlayerGroupAll(), false);
+    TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campSpecialTextTag, PlayerGroupAll(), false);
+    libMapM_gf_JungleUpdateTextTagForCamp(lp_camp, lp_type);
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_campTextTagType = lp_type;
+    if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_aIState == libMapM_ge_JungleCampStates_Hibernating) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_aIState == libMapM_ge_JungleCampStates_HibernetingReadyToSpawn))) {
+        return ;
+    }
+
+    autoA81FC594_val = lp_type;
+    if (autoA81FC594_val == libMapM_ge_JungleCampTextTagTypes_Helper) {
+        TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campHelperTextTag, PlayerGroupAll(), true);
+    }
+    else if (autoA81FC594_val == libMapM_ge_JungleCampTextTagTypes_Respawn) {
+        TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campHelperTextTag, PlayerGroupAll(), true);
+        TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campRespawnTextTag, PlayerGroupAll(), true);
+    }
+    else if (autoA81FC594_val == libMapM_ge_JungleCampTextTagTypes_Special) {
+        TextTagShow(libMapM_gv_jungleCreepCamps[lp_camp].lv_campSpecialTextTag, PlayerGroupAll(), true);
+    }
+    else {
+    }
+}
+
+void libMapM_gf_JungleUpdateMinimapTooltipForCamp (int lp_camp) {
+    // Variable Declarations
+    text lv_titleText;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_titleText = StringExternal("Param/Value/lib_MapM_6CC70C56");
+
+    // Implementation
+    libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, "SetMinimapVisibility 1");
+    if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeNameLabel != null)) {
+        lv_titleText = libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeNameLabel;
+    }
+
+    if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeMinimapLabel != null)) {
+        TextExpressionSetToken("Param/Expression/lib_MapM_4C214A41", "CampType", lv_titleText);
+        TextExpressionSetToken("Param/Expression/lib_MapM_4C214A41", "CampName", libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeMinimapLabel);
+        ActorSendAsText(libNtve_gf_MainActorofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit), TextExpressionAssemble("Param/Expression/lib_MapM_4C214A41"));
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_MapM_BA4C09D3", "CampType", lv_titleText);
+        ActorSendAsText(libNtve_gf_MainActorofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit), TextExpressionAssemble("Param/Expression/lib_MapM_BA4C09D3"));
+    }
+}
+
+trigger auto_libMapM_gf_JungleRespawnCreepsForCamp_Trigger = null;
+int auto_libMapM_gf_JungleRespawnCreepsForCamp_lp_camp;
+
+void libMapM_gf_JungleRespawnCreepsForCamp (int lp_camp) {
+    auto_libMapM_gf_JungleRespawnCreepsForCamp_lp_camp = lp_camp;
+
+    if (auto_libMapM_gf_JungleRespawnCreepsForCamp_Trigger == null) {
+        auto_libMapM_gf_JungleRespawnCreepsForCamp_Trigger = TriggerCreate("auto_libMapM_gf_JungleRespawnCreepsForCamp_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libMapM_gf_JungleRespawnCreepsForCamp_Trigger, false, false);
+}
+
+bool auto_libMapM_gf_JungleRespawnCreepsForCamp_TriggerFunc (bool testConds, bool runActions) {
+    int lp_camp = auto_libMapM_gf_JungleRespawnCreepsForCamp_lp_camp;
+
+    // Variable Declarations
+    int lv_i;
+    fixed lv_staggeredBehaviorAdjustment;
+    unit lv_u;
+    region lv_aggroRegion;
+    string lv_icon;
+    int lv_heightOffset;
+    text lv_helperTextStart;
+    unitgroup lv_defenderGroup;
+
+    // Automatic Variable Declarations
+    unitgroup auto83B415C5_g;
+    int auto83B415C5_u;
+    unitgroup autoF74C782D_g;
+    int autoF74C782D_u;
+    int auto293675AA_ae;
+    const int auto293675AA_ai = 1;
+    playergroup autoB1D5B56B_g;
+    playergroup auto044EF42F_g;
+
+    // Variable Initialization
+    lv_heightOffset = 4;
+    lv_defenderGroup = UnitGroupEmpty();
+
+    // Implementation
+    if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_MercCamp) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_RewardCamp) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_DoubloonCamp))) {
+        UnitSetOwner(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, libCore_gv_cOMPUTER_Neutral, true);
+        UnitSetOwner(libMapM_gv_jungleCreepCamps[lp_camp].lv_campOwnershipFlagUnit, libCore_gv_cOMPUTER_Neutral, true);
+        libNtve_gf_SendActorMessageToGameRegion(libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderLeashRegion, "Signal OwnerNeutral");
+    }
+
+    auto83B415C5_g = libAIAI_gf_DefenderGroup(libMapM_gv_jungleCreepCamps[lp_camp].lv_aIDefenderAIIndex);
+    auto83B415C5_u = UnitGroupCount(auto83B415C5_g, c_unitCountAll);
+    for (;; auto83B415C5_u -= 1) {
+        lv_u = UnitGroupUnitFromEnd(auto83B415C5_g, auto83B415C5_u);
+        if (lv_u == null) { break; }
+        UnitRemove(lv_u);
+    }
+    libNtve_gf_SendActorMessageToGameRegion(RegionCircle(libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 25.0), "Signal CreepCleanup");
+    autoF74C782D_g = UnitGroup("MercCoweringDefenderOrientDummy", c_playerAny, RegionCircle(libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 25.0), UnitFilter(0, 0, (1 << c_targetFilterRawResource) | (1 << c_targetFilterHarvestableResource), 0), 0);
+    autoF74C782D_u = UnitGroupCount(autoF74C782D_g, c_unitCountAll);
+    for (;; autoF74C782D_u -= 1) {
+        lv_u = UnitGroupUnitFromEnd(autoF74C782D_g, autoF74C782D_u);
+        if (lv_u == null) { break; }
+        UnitRemove(lv_u);
+    }
+    auto293675AA_ae = libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderNumberofCreeps;
+    lv_i = 1;
+    for ( ; ( (auto293675AA_ai >= 0 && lv_i <= auto293675AA_ae) || (auto293675AA_ai < 0 && lv_i >= auto293675AA_ae) ) ; lv_i += auto293675AA_ai ) {
+        libNtve_gf_CreateUnitsAtPoint2(1, libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderUnitTypes[lv_i], c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_Hostile, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderSpawnPoints[lv_i]);
+        if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_campActorMessageUponSpawn != "")) {
+            ActorSendAsText(libNtve_gf_MainActorofUnit(UnitLastCreated()), StringToText(libMapM_gv_jungleCreepCamps[lp_camp].lv_campActorMessageUponSpawn));
+        }
+
+        UnitGroupAdd(lv_defenderGroup, UnitLastCreated());
+        UnitSetCustomValue(UnitLastCreated(), libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleDefenderCreepCampIndex), IntToFixed(lp_camp));
+        UnitBehaviorAdd(UnitLastCreated(), "JungleMercDefenderBirthInvulnerability", UnitLastCreated(), 1);
+        libGame_gf_SendEventJungleCampDefenderCreated(UnitLastCreated());
+        if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCoweringUnit[lv_i] == true)) {
+            UnitGroupAdd(libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCoweringUnitGroup, UnitLastCreated());
+        }
+
+        if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderDefendersHaveStaggeredBirth == true)) {
+            UnitBehaviorSetDurationRemaining(UnitLastCreated(), "JungleMercDefenderBirthInvulnerability", (UnitBehaviorDuration(UnitLastCreated(), "JungleMercDefenderBirthInvulnerability") - lv_staggeredBehaviorAdjustment));
+            lv_staggeredBehaviorAdjustment += libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderDefendersStaggeredBirthPeriod;
+            Wait(libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderDefendersStaggeredBirthPeriod, c_timeGame);
+        }
+
+    }
+    libAIAI_gf_StartDefenderAI(lv_defenderGroup, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderLeashRegion, lv_aggroRegion, true);
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_aIDefenderAIIndex = libAIAI_gf_LastCreatedDefenderAI();
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCurrentDefenderScalingTicks = 0;
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCurrentMercScalingTicks = 0;
+    libGame_gf_JungleUpdateScalingForCamp(lp_camp, libGame_gv_scalingTicks);
+    Wait(libMapM_gv_bALJungleBirthDelay, c_timeGame);
+    libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Idle);
+    lv_icon = libMapM_gf_JungleGetCurrentIconForJungleCamp(lp_camp, true);
+    libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, "MinimapIcon " + lv_icon);
+    libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, "SetMinimapVisibility 1");
+    autoB1D5B56B_g = PlayerGroupAll();
+    lv_i = -1;
+    while (true) {
+        lv_i = PlayerGroupNextPlayer(autoB1D5B56B_g, lv_i);
+        if (lv_i < 0) { break; }
+        libNtve_gf_ShareVisionofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, true, lv_i);
+    }
+    Wait(0.0625, c_timeGame);
+    auto044EF42F_g = PlayerGroupAll();
+    lv_i = -1;
+    while (true) {
+        lv_i = PlayerGroupNextPlayer(auto044EF42F_g, lv_i);
+        if (lv_i < 0) { break; }
+        libNtve_gf_ShareVisionofUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, false, lv_i);
+    }
+    libUIUI_gf_JCIChangeOwner(0, libCore_gv_cOMPUTER_Neutral, lp_camp);
+    libMapM_gf_JungleSwitchToTextTagForCamp(lp_camp, libMapM_ge_JungleCampTextTagTypes_Helper);
+    libMapM_gf_JungleUpdateMinimapTooltipForCamp(lp_camp);
+    libGame_gf_SendEventJungleCampSpawned(lp_camp);
+    return true;
+}
+
+void libMapM_gf_JungleCreepCampRespawnTimerExpiresCreateEvent (int lp_camp) {
+    // Variable Declarations
+    trigger lv_trigger;
+    timer lv_timer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_trigger = libMapM_gt_JungleCreepCampRespawnTimerExpires;
+    lv_timer = libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepBirthTimer;
+
+    // Implementation
+    TriggerAddEventTimer(lv_trigger, lv_timer);
+}
+
+void libMapM_gf_JungleTransitionCampIntoState (int lp_camp, int lp_state) {
+    // Variable Declarations
+    unit lv_itUnit;
+    string lv_icon;
+
+    // Automatic Variable Declarations
+    int autoF1366929_val;
+    unitgroup auto1A5A418F_g;
+    int auto1A5A418F_u;
+    unitgroup auto35014145_g;
+    int auto35014145_u;
+
+    // Variable Initialization
+
+    // Implementation
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_aIState = lp_state;
+    libMapM_gf_JungleSwitchToTextTagForCamp(lp_camp, libMapM_gv_jungleCreepCamps[lp_camp].lv_campTextTagType);
+    autoF1366929_val = lp_state;
+    if (autoF1366929_val == libMapM_ge_JungleCampStates_Idle) {
+        libGame_gf_JungleUpdateScalingForCamp(lp_camp, libMapM_gv_jungleScalingTicks);
+    }
+    else if (autoF1366929_val == libMapM_ge_JungleCampStates_Busy) {
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_statTrackingDamageDoneByLastCapture = 0.0;
+        TimerPause(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepRespawnTimer, true);
+        TimerPause(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepBirthTimer, true);
+    }
+    else if (autoF1366929_val == libMapM_ge_JungleCampStates_Dead) {
+        TimerStart(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepRespawnTimer, libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderRespawnTime, false, c_timeGame);
+        TimerStart(libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCreepBirthTimer, (libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderRespawnTime - libMapM_gv_bALJungleBirthDelay), false, c_timeGame);
+        libMapM_gf_JungleSwitchToTextTagForCamp(lp_camp, libMapM_ge_JungleCampTextTagTypes_Respawn);
+        lv_icon = libMapM_gf_JungleGetCurrentIconForJungleCamp(lp_camp, false);
+        libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, "MinimapIcon " + lv_icon);
+        if ((libMapM_gv_jungleCampsShouldBeHibernating == true)) {
+            libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Hibernating);
+        }
+
+    }
+    else if (autoF1366929_val == libMapM_ge_JungleCampStates_Paused) {
+        auto1A5A418F_g = libAIAI_gf_DefenderGroup(libMapM_gv_jungleCreepCamps[lp_camp].lv_aIDefenderAIIndex);
+        auto1A5A418F_u = UnitGroupCount(auto1A5A418F_g, c_unitCountAll);
+        for (;; auto1A5A418F_u -= 1) {
+            lv_itUnit = UnitGroupUnitFromEnd(auto1A5A418F_g, auto1A5A418F_u);
+            if (lv_itUnit == null) { break; }
+            UnitIssueOrder(lv_itUnit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+        }
+    }
+    else if (autoF1366929_val == libMapM_ge_JungleCampStates_Hibernating) {
+        auto35014145_g = libAIAI_gf_DefenderGroup(libMapM_gv_jungleCreepCamps[lp_camp].lv_aIDefenderAIIndex);
+        auto35014145_u = UnitGroupCount(auto35014145_g, c_unitCountAll);
+        for (;; auto35014145_u -= 1) {
+            lv_itUnit = UnitGroupUnitFromEnd(auto35014145_g, auto35014145_u);
+            if (lv_itUnit == null) { break; }
+            libMapM_gf_JungleHibernateCampDefender(lv_itUnit);
+        }
+        libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, "SetMinimapVisibility");
+        libMapM_gf_JungleSwitchToTextTagForCamp(lp_camp, libMapM_gv_jungleCreepCamps[lp_camp].lv_campTextTagType);
+    }
+    else if (autoF1366929_val == libMapM_ge_JungleCampStates_HibernetingReadyToSpawn) {
+        libMapM_gf_JungleSwitchToTextTagForCamp(lp_camp, libMapM_gv_jungleCreepCamps[lp_camp].lv_campTextTagType);
+    }
+    else {
+    }
+}
+
+void libMapM_gf_JungleHibernateCampDefender (unit lp_defender) {
+    // Automatic Variable Declarations
+    // Implementation
+    UnitIssueOrder(lp_defender, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+    libNtve_gf_MakeUnitInvulnerable(lp_defender, true);
+    UnitSetState(lp_defender, c_unitStateTargetable, false);
+    UnitSetState(lp_defender, c_unitStateStoppable, false);
+    UnitSetState(lp_defender, c_unitStateStatusBar, false);
+    UnitSetState(lp_defender, c_unitStateFidget, false);
+    UnitBehaviorRemoveCategory(lp_defender, c_unitBehaviorFlagSlow);
+    UnitBehaviorRemoveCategory(lp_defender, c_unitBehaviorFlagStun);
+    UnitBehaviorRemoveCategory(lp_defender, c_unitBehaviorFlagUser10);
+    UnitBehaviorAdd(lp_defender, "GardensMercCampPreHibernator", lp_defender, 1);
+    libNtve_gf_SendActorMessageToUnit(lp_defender, "SetOpacity 0.000000 2.500000");
+    Wait(0.0625, c_timeGame);
+    libNtve_gf_PauseUnit(lp_defender, true);
+    Wait(3.0, c_timeGame);
+    if ((libMapM_gv_jungleCampsShouldBeHibernating == true)) {
+        UnitBehaviorAdd(lp_defender, "GardensMercCampHibernator", lp_defender, 1);
+    }
+
+}
+
+void libMapM_gf_JungleStopHibernatingCampDefender (unit lp_defender, point lp_location) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_PauseUnit(lp_defender, false);
+    if ((UnitIsAlive(lp_defender) == true)) {
+        UnitSetPosition(lp_defender, lp_location, false);
+        UnitSetFacing(lp_defender, PointGetFacing(lp_location), 0.0);
+    }
+
+    UnitBehaviorRemove(lp_defender, "GardensMercCampHibernator", 1);
+    UnitBehaviorRemove(lp_defender, "GardensMercCampPreHibernator", 1);
+    libNtve_gf_SendActorMessageToUnit(lp_defender, "SetOpacity 1.000000 2.000000");
+    Wait(2.0, c_timeGame);
+    libNtve_gf_MakeUnitInvulnerable(lp_defender, false);
+    UnitSetState(lp_defender, c_unitStateTargetable, true);
+    UnitSetState(lp_defender, c_unitStateStatusBar, true);
+    UnitSetState(lp_defender, c_unitStateFidget, true);
+    if ((UnitGetType(lp_defender) != "MercenaryColossus@Defender")) {
+        UnitSetState(lp_defender, c_unitStateStoppable, true);
+    }
+
+}
+
+void libMapM_gf_JungleTurnOnCampCaptureBeacon (int lp_camp) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_captureCaptureEnabled = true;
+    UnitSetOwner(libMapM_gv_jungleCreepCamps[lp_camp].lv_campIconUnit, libCore_gv_cOMPUTER_Neutral, true);
+    UnitSetOwner(libMapM_gv_jungleCreepCamps[lp_camp].lv_campOwnershipFlagUnit, libCore_gv_cOMPUTER_Neutral, true);
+    libGame_gf_CapturePointEnable(libMapM_gv_jungleCreepCamps[lp_camp].lv_captureCapturePointIndex);
+    libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Paused);
+}
+
+void libMapM_gf_JungleTurnOffCampCaptureBeacon (int lp_camp, int lp_owner) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_captureCaptureEnabled = false;
+    UnitSetOwner(libMapM_gv_jungleCreepCamps[lp_camp].lv_captureCircleOfPowerUnit, lp_owner, true);
+    libMapM_gf_JungleTransitionCampCaptureBeacontoHidden(lp_camp);
+}
+
+void libMapM_gf_JungleTransitionCampCaptureBeacontoHidden (int lp_camp) {
+    // Automatic Variable Declarations
+    // Implementation
+    libGame_gf_CapturePointDisable(libMapM_gv_jungleCreepCamps[lp_camp].lv_captureCapturePointIndex);
+}
+
+void libMapM_gf_JungleGrantCaptureRewards (int lp_camp, int lp_owner, bool lp_hasMercLordTalent) {
+    // Variable Declarations
+    int lv_itPlayer;
+    int lv_team;
+    int lv_killingFaction;
+    string lv_campPortrait;
+    unit lv_itUnit;
+    fixed lv_xPGranted;
+    unitgroup lv_heroUnitGroup;
+    fixed lv_radiusScoreCredit;
+    playergroup lv_creditPlayerGroup;
+
+    // Automatic Variable Declarations
+    unitgroup autoCC83A74C_g;
+    int autoCC83A74C_u;
+    int auto0500883B_val;
+    playergroup auto3D780571_g;
+    const int auto9ADDD05E_n = 3;
+    int auto9ADDD05E_i;
+    const int auto02696B57_n = 2;
+    int auto02696B57_i;
+    playergroup auto96990064_g;
+    unitgroup auto6248044B_g;
+    int auto6248044B_u;
+    playergroup autoD0F91BBF_g;
+
+    // Variable Initialization
+    lv_killingFaction = libGame_ge_Faction_Neutral;
+    lv_heroUnitGroup = UnitGroupEmpty();
+    lv_creditPlayerGroup = PlayerGroupEmpty();
+
+    // Implementation
+    if ((lp_owner == libCore_gv_cOMPUTER_TeamOrder)) {
+        lv_killingFaction = libGame_ge_Faction_Order;
+        lv_team = libGame_gv_teamOrderIndex_C;
+    }
+    else {
+        lv_killingFaction = libGame_ge_Faction_Chaos;
+        lv_team = libGame_gv_teamChaosIndex_C;
+    }
+    if ((lp_owner == libCore_gv_cOMPUTER_TeamOrder)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "RegenGlobe", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_TeamOrder, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+    }
+    else {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "RegenGlobe", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_TeamChaos, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+    }
+    lv_radiusScoreCredit = (libMapM_gv_bALJungleCampCaptureRadius + 5.0);
+    lv_heroUnitGroup = UnitGroupSearch(null, lp_owner, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, lv_radiusScoreCredit, libCore_gv_filtersHeroicAllyorPlayerandnotHallucinationorBenign, 0);
+    autoCC83A74C_g = lv_heroUnitGroup;
+    autoCC83A74C_u = UnitGroupCount(autoCC83A74C_g, c_unitCountAll);
+    for (;; autoCC83A74C_u -= 1) {
+        lv_itUnit = UnitGroupUnitFromEnd(autoCC83A74C_g, autoCC83A74C_u);
+        if (lv_itUnit == null) { break; }
+        PlayerGroupAdd(lv_creditPlayerGroup, UnitGetOwner(lv_itUnit));
+    }
+    auto0500883B_val = libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampType;
+    if (auto0500883B_val == libMapM_ge_JungleCampTypes_MercCamp) {
+        libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Dead);
+        libMapM_gf_JungleMercCampCapturedAnnouncement(lp_camp, lp_owner);
+        libMapM_gf_JungleSpawnMercMinions(lp_camp, lp_owner, lp_hasMercLordTalent);
+        lv_xPGranted = libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCaptureXPValue;
+        auto3D780571_g = libGame_gv_teams[lv_team].lv_teamPlayerGroupNoNPCPlayers;
+        lv_itPlayer = -1;
+        while (true) {
+            lv_itPlayer = PlayerGroupNextPlayer(auto3D780571_g, lv_itPlayer);
+            if (lv_itPlayer < 0) { break; }
+            libGame_gf_GrantXPForPlayer(lv_xPGranted, lv_itPlayer, libGame_ge_XPSource_Creep);
+        }
+    }
+    else if (auto0500883B_val == libMapM_ge_JungleCampTypes_DoubloonCamp) {
+        libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Dead);
+        libMapM_gf_JungleMercCampCapturedAnnouncement(lp_camp, lp_owner);
+        for (auto9ADDD05E_i = 1; auto9ADDD05E_i <= auto9ADDD05E_n; auto9ADDD05E_i += 1) {
+            PlayerCreateEffectPoint(libCore_gv_cOMPUTER_Neutral, "DropCannonballsPersistent", libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+        }
+    }
+    else if (auto0500883B_val == libMapM_ge_JungleCampTypes_DoubloonCampSmall) {
+        libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Dead);
+        for (auto02696B57_i = 1; auto02696B57_i <= auto02696B57_n; auto02696B57_i += 1) {
+            PlayerCreateEffectPoint(libCore_gv_cOMPUTER_Neutral, "DropCannonballsPersistent", libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint);
+        }
+    }
+    else if (auto0500883B_val == libMapM_ge_JungleCampTypes_RewardCamp) {
+        libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Dead);
+        libMapM_gf_JungleMercCampCapturedAnnouncement(lp_camp, lp_owner);
+        if ((UnitXPGetCurrentLevel(libGame_gv_players[PlayerGroupPlayer(libGame_gv_teams[lv_team].lv_teamPlayerGroupNoNPCPlayers, 1)].lv_heroUnit, null) < libCore_gv_bALMaxLevel)) {
+            lv_xPGranted = (libCore_gf_GetTotalXPForLevel((UnitXPGetCurrentLevel(libGame_gv_players[PlayerGroupPlayer(libGame_gv_teams[lv_team].lv_teamPlayerGroupNoNPCPlayers, 1)].lv_heroUnit, null) + 1)) - UnitXPGetCurrentXP(libGame_gv_players[PlayerGroupPlayer(libGame_gv_teams[lv_team].lv_teamPlayerGroupNoNPCPlayers, 1)].lv_heroUnit, null));
+        }
+
+        auto96990064_g = libGame_gv_teams[lv_team].lv_teamPlayerGroupNoNPCPlayers;
+        lv_itPlayer = -1;
+        while (true) {
+            lv_itPlayer = PlayerGroupNextPlayer(auto96990064_g, lv_itPlayer);
+            if (lv_itPlayer < 0) { break; }
+            libGame_gf_GrantXPForPlayer(lv_xPGranted, lv_itPlayer, libGame_ge_XPSource_Creep);
+            auto6248044B_g = libGame_gv_players[lv_itPlayer].lv_heroUnitGroup;
+            auto6248044B_u = UnitGroupCount(auto6248044B_g, c_unitCountAll);
+            for (;; auto6248044B_u -= 1) {
+                lv_itUnit = UnitGroupUnitFromEnd(auto6248044B_g, auto6248044B_u);
+                if (lv_itUnit == null) { break; }
+                UnitCreateEffectUnit(lv_itUnit, "RewardCampDummySet", lv_itUnit);
+            }
+        }
+    }
+    else if (auto0500883B_val == libMapM_ge_JungleCampTypes_TryMeCamp) {
+        libMapM_gf_JungleTransitionCampIntoState(lp_camp, libMapM_ge_JungleCampStates_Dead);
+    }
+    else {
+    }
+    autoD0F91BBF_g = lv_creditPlayerGroup;
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(autoD0F91BBF_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        libSond_gf_HeroVOStartCelebrateVOTimerForPlayer(lv_itPlayer, lv_creditPlayerGroup);
+        libGame_gf_ScoreValuesRecordXPContributionForPlayer(lv_itPlayer, (lv_xPGranted / PlayerGroupCount(lv_creditPlayerGroup)), false);
+    }
+    libUIUI_gf_UICombatFloatingElementsCreateTextTagatPointForPlayerGroup(libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, FixedToText(lv_xPGranted, 0), "FCT_XP_Greater", libUIUI_ge_UIFCTDirection_Vertical, lv_creditPlayerGroup, 0, "EventAnimateSlow");
+}
+
+void libMapM_gf_JungleMercCampCapturedAnnouncement (int lp_camp, int lp_owner) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_owner == libCore_gv_cOMPUTER_TeamOrder)) {
+        MinimapPing(libGame_gv_teams[1].lv_teamPlayerGroupNoNPCPlayers, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 5.0, Color(0.00, 33.33, 100.00));
+        MinimapPing(libGame_gv_teams[2].lv_teamPlayerGroupNoNPCPlayers, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 5.0, Color(100.00, 0.00, 0.00));
+        MinimapPing(libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 5.0, Color(0.00, 33.33, 100.00));
+        SoundPlayForPlayer(SoundLink("MercCampTaken_Ally", -1), libCore_gv_cOMPUTER_TeamOrder, libGame_gv_teams[1].lv_teamPlayerGroupNoNPCPlayers, 100.0, 0.0);
+        SoundPlayForPlayer(SoundLink("MercCampTaken_Enemy", -1), libCore_gv_cOMPUTER_TeamOrder, libGame_gv_teams[2].lv_teamPlayerGroupNoNPCPlayers, 100.0, 0.0);
+        SoundPlayForPlayer(SoundLink("MercCampTaken_Ally", -1), libCore_gv_cOMPUTER_TeamOrder, libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], 100.0, 0.0);
+    }
+    else {
+        MinimapPing(libGame_gv_teams[2].lv_teamPlayerGroupNoNPCPlayers, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 5.0, Color(100.00, 0.00, 0.00));
+        MinimapPing(libGame_gv_teams[2].lv_teamPlayerGroupNoNPCPlayers, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 5.0, Color(0.00, 33.33, 100.00));
+        MinimapPing(libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint, 5.0, Color(100.00, 0.00, 0.00));
+        SoundPlayForPlayer(SoundLink("MercCampTaken_Enemy", -1), libCore_gv_cOMPUTER_TeamChaos, libGame_gv_teams[1].lv_teamPlayerGroupNoNPCPlayers, 100.0, 0.0);
+        SoundPlayForPlayer(SoundLink("MercCampTaken_Ally", -1), libCore_gv_cOMPUTER_TeamChaos, libGame_gv_teams[2].lv_teamPlayerGroupNoNPCPlayers, 100.0, 0.0);
+        SoundPlayForPlayer(SoundLink("MercCampTaken_Enemy", -1), libCore_gv_cOMPUTER_TeamChaos, libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], 100.0, 0.0);
+    }
+}
+
+void libMapM_gf_JungleSpawnMercMinions (int lp_camp, int lp_owner, bool lp_hasMercLordTalent) {
+    // Variable Declarations
+    int lv_i;
+    int lv_team;
+    point lv_spawnPoint;
+    int lv_mercTypeIndex;
+    int lv_scalingTicks;
+    unit lv_minion;
+    int lv_lane;
+    int lv_waypoint;
+    unit lv_spawnHelperUnit;
+    bool lv_knightHasAlreadyBeenCreated;
+
+    // Automatic Variable Declarations
+    int autoFF605CAA_ae;
+    const int autoFF605CAA_ai = 1;
+    string auto4C6ECA6E_val;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_team = libGame_gf_TeamNumberOfPlayer(lp_owner);
+    lv_spawnPoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampCaptainSpawnPoint;
+    lv_mercTypeIndex = (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataMercSpawnType);
+    lv_scalingTicks = libMapM_gv_jungleCreepCamps[lp_camp].lv_stateCurrentMercScalingTicks;
+    libNtve_gf_SendActorMessageToGameRegion(RegionCircle(lv_spawnPoint, 25.0), "Signal CreepCleanup");
+    autoFF605CAA_ae = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercNumberOfMinionsSpawned;
+    lv_i = 1;
+    for ( ; ( (autoFF605CAA_ai >= 0 && lv_i <= autoFF605CAA_ae) || (autoFF605CAA_ai < 0 && lv_i >= autoFF605CAA_ae) ) ; lv_i += autoFF605CAA_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderDefendersCoweronDeath == true)) {
+            lv_spawnHelperUnit = UnitGroupRandomUnit(UnitGroup("MercCoweringDefenderOrientDummy", c_playerAny, RegionCircle(lv_spawnPoint, 25.0), UnitFilter(0, 0, (1 << c_targetFilterRawResource) | (1 << c_targetFilterHarvestableResource), 0), 0), c_unitCountAlive);
+            if ((UnitIsValid(lv_spawnHelperUnit) == true)) {
+                UnitCreate(1, libMapM_gv_jungleCreepCamps[lp_camp].lv_mercSpawnedMinionUnitType[lv_i], c_unitCreateIgnorePlacement, lp_owner, UnitGetPosition(lv_spawnHelperUnit), UnitGetFacing(lv_spawnHelperUnit));
+                UnitRemove(lv_spawnHelperUnit);
+            }
+            else {
+                UnitCreate(1, libMapM_gv_jungleCreepCamps[lp_camp].lv_mercSpawnedMinionUnitType[lv_i], c_unitCreateIgnorePlacement, lp_owner, lv_spawnPoint, PointGetFacing(lv_spawnPoint));
+            }
+        }
+        else {
+            UnitCreate(1, libMapM_gv_jungleCreepCamps[lp_camp].lv_mercSpawnedMinionUnitType[lv_i], c_unitCreateIgnorePlacement, lp_owner, libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderSpawnPoints[lv_i], PointGetFacing(libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataDefenderSpawnPoints[lv_i]));
+        }
+        lv_minion = UnitLastCreated();
+        ActorSendAsText(libNtve_gf_MainActorofUnit(UnitLastCreated()), StringToText(libMapM_gv_jungleCreepCamps[lp_camp].lv_campActorMessageUponSpawn));
+        libGame_gf_SendEventJungleCampLanerCreated(lv_minion);
+        libGame_gf_UpdateScalingForUnit(lv_minion, lv_scalingTicks, 0);
+        if ((lp_hasMercLordTalent == true)) {
+            auto4C6ECA6E_val = UnitGetType(lv_minion);
+            {
+            }
+        }
+
+        UnitSetCustomValue(lv_minion, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleLanerCreepCampIndex), IntToFixed(lp_camp));
+        UnitGroupAdd(libMapM_gv_jungleMiniMapIconGroup[lp_camp], lv_minion);
+        lv_lane = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercLaneToSpawnIn[lv_team];
+        libMapM_gv_jungleCreepCamps[lp_camp].lv_mercLaneLastSpawnedIn[lv_team] = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercLaneToSpawnIn[lv_team];
+        lv_waypoint = libMapM_gv_jungleCreepCamps[lp_camp].lv_mercSpawnFirstWaypointIndex[lv_team];
+        libAIAI_gf_MinionAIStartMinionAI(-1, lv_minion, lv_lane, lv_waypoint, true, 0, false);
+    }
+    libMapM_gf_JungleSetMiniMapIconForMercMinions(lp_camp, libMapM_gv_jungleMiniMapIconGroup[lp_camp]);
+    libMapM_gf_JungleCreateMercPath(libMapM_gv_jungleMiniMapLeader[lp_camp], true);
+}
+
+int libMapM_gf_JungleGetMercCampForUnit (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    return FixedToInt(UnitGetCustomValue(lp_unit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleLanerCreepCampIndex)));
+}
+
+void libMapM_gf_JungleSetMiniMapIconForMercMinions (int lp_camp, unitgroup lp_mercUnitGroup) {
+    // Variable Declarations
+    string lv_image;
+    bool lv_mercLeaderBool;
+    unit lv_minimapUnit;
+    unit lv_itMerc;
+    int lv_i;
+
+    // Automatic Variable Declarations
+    unitgroup autoBFEA9694_g;
+    int autoBFEA9694_u;
+
+    // Variable Initialization
+
+    // Implementation
+    autoBFEA9694_g = lp_mercUnitGroup;
+    autoBFEA9694_u = UnitGroupCount(autoBFEA9694_g, c_unitCountAll);
+    for (;; autoBFEA9694_u -= 1) {
+        lv_itMerc = UnitGroupUnitFromEnd(autoBFEA9694_g, autoBFEA9694_u);
+        if (lv_itMerc == null) { break; }
+        lv_minimapUnit = lv_itMerc;
+        if ((lv_mercLeaderBool == false)) {
+            lv_mercLeaderBool = true;
+            libMapM_gv_jungleMiniMapLeader[lp_camp] = lv_itMerc;
+            UnitBehaviorAdd(lv_itMerc, "MinionDeathMonitor", lv_itMerc, 1);
+            if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeGiants) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_SiegeCamp3))) {
+                libNtve_gf_SendActorMessageToUnit(lv_minimapUnit, "MinimapIcon assets\\Textures\\UI_MinimapIcon_Merc_Unit_Easy.dds");
+            }
+            else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_Knights) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BruiserCamp3))) {
+                libNtve_gf_SendActorMessageToUnit(lv_minimapUnit, "MinimapIcon assets\\Textures\\UI_MinimapIcon_Merc_Unit_Elite.dds");
+            }
+            else if (((libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_GraveGolem) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp1) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp2) || (libMapM_gv_jungleCreepCamps[lp_camp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp3))) {
+                libNtve_gf_SendActorMessageToUnit(lv_minimapUnit, "MinimapIcon assets\\Textures\\UI_MinimapIcon_Merc_Unit_Boss.dds");
+            }
+            TextExpressionSetToken("Param/Expression/lib_MapM_ED63AD24", "A", libMapM_gv_jungleCreepCamps[lp_camp].lv_defenderCampTypeMinimapLabel);
+            ActorSendAsText(libNtve_gf_MainActorofUnit(lv_minimapUnit), TextExpressionAssemble("Param/Expression/lib_MapM_ED63AD24"));
+            libNtve_gf_SendActorMessageToUnit(lv_itMerc, "MinimapIconScale 0.750000");
+            libNtve_gf_SendActorMessageToUnit(lv_itMerc, "SetMinimapVisibility 1");
+        }
+        else {
+            libNtve_gf_SendActorMessageToUnit(lv_itMerc, "SetMinimapVisibility");
+        }
+    }
+}
+
+void libMapM_gf_JungleCreateMercPath (unit lp_mercLeader, bool lp_newPath) {
+    // Variable Declarations
+    int lv_camp;
+    int lv_waveIndex;
+    int lv_currentLane;
+    int lv_i;
+    const fixed lv_pingDuration = 0.75;
+
+    // Automatic Variable Declarations
+    int auto1E74E450_val;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_camp = FixedToInt(UnitGetCustomValue(lp_mercLeader, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleLanerCreepCampIndex)));
+    if ((UnitIsAlive(lp_mercLeader) == false)) {
+        if ((libMapM_gv_jungleMiniMapOrderPath[lv_camp] != 0)) {
+            PathDestroy(libMapM_gv_jungleMiniMapOrderPath[lv_camp]);
+            PathDestroy(libMapM_gv_jungleMiniMapChaosPath[lv_camp]);
+            PathDestroy(libMapM_gv_jungleMiniMapObserverPath[lv_camp]);
+            libMapM_gv_jungleMiniMapOrderPath[lv_camp] = 0;
+            libMapM_gv_jungleMiniMapChaosPath[lv_camp] = 0;
+            libMapM_gv_jungleMiniMapObserverPath[lv_camp] = 0;
+        }
+
+        return ;
+    }
+
+    if ((libMapM_gv_jungleMiniMapOrderPath[lv_camp] != 0)) {
+        PathClearWayPoints(libMapM_gv_jungleMiniMapOrderPath[lv_camp]);
+        PathClearWayPoints(libMapM_gv_jungleMiniMapChaosPath[lv_camp]);
+        PathClearWayPoints(libMapM_gv_jungleMiniMapObserverPath[lv_camp]);
+    }
+    else {
+        PathCreateForUnit(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_teamPlayerGroup, lp_mercLeader);
+        PathSetLineTexture(PathLastCreated(), c_pathLocationMinimap, "assets\\Textures\\storm_waypointline.dds");
+        libMapM_gv_jungleMiniMapOrderPath[lv_camp] = PathLastCreated();
+        PathSetVisible(libMapM_gv_jungleMiniMapOrderPath[lv_camp], c_pathLocationWorld, false);
+        PathCreateForUnit(libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_teamPlayerGroup, lp_mercLeader);
+        PathSetLineTexture(PathLastCreated(), c_pathLocationMinimap, "assets\\Textures\\storm_waypointline.dds");
+        libMapM_gv_jungleMiniMapChaosPath[lv_camp] = PathLastCreated();
+        PathSetVisible(libMapM_gv_jungleMiniMapChaosPath[lv_camp], c_pathLocationWorld, false);
+        PathCreateForUnit(libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], lp_mercLeader);
+        PathSetLineTexture(PathLastCreated(), c_pathLocationMinimap, "assets\\Textures\\storm_waypointline.dds");
+        libMapM_gv_jungleMiniMapObserverPath[lv_camp] = PathLastCreated();
+        PathSetVisible(libMapM_gv_jungleMiniMapObserverPath[lv_camp], c_pathLocationWorld, false);
+    }
+    lv_waveIndex = FixedToInt(UnitGetCustomValue(lp_mercLeader, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_MinionIndex)));
+    lv_currentLane = libAIAI_gv_minionAIActiveMinions[lv_waveIndex].lv_lane;
+    lv_i = libAIAI_gv_minionAIActiveMinions[lv_waveIndex].lv_nextWaypoint;
+    auto1E74E450_val = libAIAI_gv_minionAIActiveMinions[lv_waveIndex].lv_ownerPlayer;
+    if (auto1E74E450_val == libCore_gv_cOMPUTER_TeamOrder) {
+        PathSetColor(libMapM_gv_jungleMiniMapOrderPath[lv_camp], c_pathLocationAll, ColorWithAlpha(0.00, 50.20, 100.00, 89.02));
+        PathSetColor(libMapM_gv_jungleMiniMapChaosPath[lv_camp], c_pathLocationAll, ColorWithAlpha(100.00, 24.71, 24.71, 89.02));
+        PathSetColor(libMapM_gv_jungleMiniMapObserverPath[lv_camp], c_pathLocationAll, ColorWithAlpha(0.00, 50.20, 100.00, 89.02));
+        PathSetDestinationUnit(libMapM_gv_jungleMiniMapOrderPath[lv_camp], libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core);
+        PathSetDestinationUnit(libMapM_gv_jungleMiniMapChaosPath[lv_camp], libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core);
+        PathSetDestinationUnit(libMapM_gv_jungleMiniMapObserverPath[lv_camp], libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core);
+        while ((lv_i < (libGame_gv_laneData[lv_currentLane].lv_waypointCount - 1))) {
+            PathAddWayPoint(libMapM_gv_jungleMiniMapOrderPath[lv_camp], libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i]);
+            PathAddWayPoint(libMapM_gv_jungleMiniMapChaosPath[lv_camp], libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i]);
+            PathAddWayPoint(libMapM_gv_jungleMiniMapObserverPath[lv_camp], libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i]);
+            if ((lp_newPath == true)) {
+                libNtve_gf_CreatePingFacingAngle(libCore_gv_teamOrder, "StandardPingArrow", libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], ColorWithAlpha(0.00, 0.00, 100.00, 0.00), lv_pingDuration, AngleBetweenPoints(libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], libGame_gv_laneData[lv_currentLane].lv_waypoints[(lv_i + 1)]));
+                PingSetScale(PingLastCreated(), 0.3);
+                libNtve_gf_CreatePingFacingAngle(libCore_gv_teamChaos, "StandardPingArrow", libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], ColorWithAlpha(100.00, 0.00, 0.00, 0.00), lv_pingDuration, AngleBetweenPoints(libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], libGame_gv_laneData[lv_currentLane].lv_waypoints[(lv_i + 1)]));
+                PingSetScale(PingLastCreated(), 0.3);
+                libNtve_gf_CreatePingFacingAngle(libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], "StandardPingArrow", libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], ColorWithAlpha(0.00, 0.00, 100.00, 0.00), lv_pingDuration, AngleBetweenPoints(libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], libGame_gv_laneData[lv_currentLane].lv_waypoints[(lv_i + 1)]));
+                PingSetScale(PingLastCreated(), 0.3);
+            }
+
+            lv_i += 1;
+        }
+    }
+    else if (auto1E74E450_val == libCore_gv_cOMPUTER_TeamChaos) {
+        PathSetColor(libMapM_gv_jungleMiniMapOrderPath[lv_camp], c_pathLocationAll, ColorWithAlpha(100.00, 24.71, 24.71, 89.02));
+        PathSetColor(libMapM_gv_jungleMiniMapChaosPath[lv_camp], c_pathLocationAll, ColorWithAlpha(0.00, 50.20, 100.00, 89.02));
+        PathSetColor(libMapM_gv_jungleMiniMapObserverPath[lv_camp], c_pathLocationAll, ColorWithAlpha(100.00, 24.71, 24.71, 89.02));
+        PathSetDestinationUnit(libMapM_gv_jungleMiniMapOrderPath[lv_camp], libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core);
+        PathSetDestinationUnit(libMapM_gv_jungleMiniMapChaosPath[lv_camp], libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core);
+        PathSetDestinationUnit(libMapM_gv_jungleMiniMapObserverPath[lv_camp], libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core);
+        while ((lv_i > 1)) {
+            PathAddWayPoint(libMapM_gv_jungleMiniMapOrderPath[lv_camp], libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i]);
+            PathAddWayPoint(libMapM_gv_jungleMiniMapChaosPath[lv_camp], libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i]);
+            PathAddWayPoint(libMapM_gv_jungleMiniMapObserverPath[lv_camp], libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i]);
+            if ((lp_newPath == true)) {
+                libNtve_gf_CreatePingFacingAngle(libCore_gv_teamOrder, "StandardPingArrow", libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], ColorWithAlpha(100.00, 0.00, 0.00, 0.00), lv_pingDuration, AngleBetweenPoints(libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], libGame_gv_laneData[lv_currentLane].lv_waypoints[(lv_i - 1)]));
+                PingSetScale(PingLastCreated(), 0.3);
+                libNtve_gf_CreatePingFacingAngle(libCore_gv_teamChaos, "StandardPingArrow", libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], ColorWithAlpha(0.00, 0.00, 100.00, 0.00), lv_pingDuration, AngleBetweenPoints(libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], libGame_gv_laneData[lv_currentLane].lv_waypoints[(lv_i - 1)]));
+                PingSetScale(PingLastCreated(), 0.3);
+                libNtve_gf_CreatePingFacingAngle(libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], "StandardPingArrow", libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], ColorWithAlpha(100.00, 0.00, 0.00, 0.00), lv_pingDuration, AngleBetweenPoints(libGame_gv_laneData[lv_currentLane].lv_waypoints[lv_i], libGame_gv_laneData[lv_currentLane].lv_waypoints[(lv_i - 1)]));
+                PingSetScale(PingLastCreated(), 0.3);
+            }
+
+            lv_i -= 1;
+        }
+    }
+    else {
+    }
+}
+
+void libMapM_gf_JungleUpdateMercDamageTracker (int lp_camp, fixed lp_damageDealt) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMapM_gv_jungleCreepCamps[lp_camp].lv_statTrackingDamageDoneByLastCapture += lp_damageDealt;
+    libMapM_gf_JungleUpdateTextTagForCamp(lp_camp, libMapM_ge_JungleCampTextTagTypes_Helper);
+}
+
+void libMapM_gf_MapMechanicAdd (int lp_mechanic, trigger lp_initializeCallback) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libMapM_gv_mapMechanicControllerActor == null)) {
+        libNtve_gf_CreateActorAtPoint("MMController", RegionGetCenter(RegionEntireMap()));
+        libMapM_gv_mapMechanicControllerActor = libNtve_gf_ActorLastCreated();
+    }
+
+    if ((libMapM_gf_MapMechanicExistsOnMap(lp_mechanic) == true)) {
+        return ;
+    }
+
+    libMapM_gv_mapMechanicsCount += 1;
+    libMapM_gv_mapMechanics[libMapM_gv_mapMechanicsCount] = lp_mechanic;
+    libMapM_gv_mapMechanicsInitCallbacks[libMapM_gv_mapMechanicsCount] = lp_initializeCallback;
+}
+
+int libMapM_gf_MapMechanicIndex (int lp_mechanic) {
+    // Variable Declarations
+    int lv_itMechanic;
+
+    // Automatic Variable Declarations
+    int auto1B621E36_ae;
+    const int auto1B621E36_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    auto1B621E36_ae = libMapM_gv_mapMechanicsCount;
+    lv_itMechanic = 1;
+    for ( ; ( (auto1B621E36_ai >= 0 && lv_itMechanic <= auto1B621E36_ae) || (auto1B621E36_ai < 0 && lv_itMechanic >= auto1B621E36_ae) ) ; lv_itMechanic += auto1B621E36_ai ) {
+        if ((libMapM_gv_mapMechanics[lv_itMechanic] == lp_mechanic)) {
+            return lv_itMechanic;
+        }
+
+    }
+    return 0;
+}
+
+bool libMapM_gf_MapMechanicExistsOnMap (int lp_mechanic) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (libMapM_gf_MapMechanicIndex(lp_mechanic) > 0);
+}
+
+int libMapM_gf_PrimaryMapMechanic () {
+    // Automatic Variable Declarations
+    // Implementation
+    return libMapM_gv_mapMechanics[1];
+}
+
+void libMapM_gf_MapSetRepulseRegion (int lp_team, region lp_pulseRegion, point lp_punchTargetLocation1, point lp_punchTargetLocation2, point lp_punchTargetLocation3, point lp_punchTargetLocation4) {
+    // Automatic Variable Declarations
+    // Implementation
+    TriggerEnable(libGame_gt_HallOfStormsKnockbackLaunchMissile, false);
+    TriggerEnable(libGame_gt_HallOfStormsKnockbackUnitEntersRegion, true);
+    libMapM_gv_mMRepulseRegions[lp_team] = lp_pulseRegion;
+    libMapM_gv_mMRepulseRegionPunchTarget[lp_team][1] = lp_punchTargetLocation1;
+    libMapM_gv_mMRepulseRegionPunchTarget[lp_team][2] = lp_punchTargetLocation2;
+    libMapM_gv_mMRepulseRegionPunchTarget[lp_team][3] = lp_punchTargetLocation3;
+    libMapM_gv_mMRepulseRegionPunchTarget[lp_team][4] = lp_punchTargetLocation4;
+    Wait(2.0, c_timeGame);
+    TriggerExecute(libMapM_gt_MMRepulseRegionPunchBehavior, true, false);
+}
+
+trigger auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_Trigger = null;
+unit auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_lp_punchedUnit;
+
+void libMapM_gf_MMRepulseRegionAddToPunchedGroup (unit lp_punchedUnit) {
+    auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_lp_punchedUnit = lp_punchedUnit;
+
+    if (auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_Trigger == null) {
+        auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_Trigger = TriggerCreate("auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_Trigger, false, false);
+}
+
+bool auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_TriggerFunc (bool testConds, bool runActions) {
+    unit lp_punchedUnit = auto_libMapM_gf_MMRepulseRegionAddToPunchedGroup_lp_punchedUnit;
+
+    // Automatic Variable Declarations
+    // Implementation
+    UnitGroupAdd(libMapM_gv_mMRepulseRegionPunchedGroup, lp_punchedUnit);
+    Wait(1.0, c_timeGame);
+    UnitGroupRemove(libMapM_gv_mMRepulseRegionPunchedGroup, lp_punchedUnit);
+    return true;
+}
+
+void libMapM_gf_MapSetSafeRegion (int lp_team, region lp_safeRegion) {
+    // Automatic Variable Declarations
+    // Implementation
+    TriggerEnable(libGame_gt_HallOfStormsUnitEntersRegion, true);
+    libMapM_gv_mMSafeRegions[lp_team] = lp_safeRegion;
+    TriggerExecute(libMapM_gt_MMSafeRegionBehavior, true, false);
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #Include Map Mechanics
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_IncludeMapMechanics_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_IncludeMapMechanics_Init () {
+    libMapM_gt_IncludeMapMechanics = TriggerCreate("libMapM_gt_IncludeMapMechanics_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Data - Jungle Camp Defender Data
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_DataJungleCampDefenderData_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_DataJungleCampDefenderData_Init () {
+    libMapM_gt_DataJungleCampDefenderData = TriggerCreate("libMapM_gt_DataJungleCampDefenderData_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Data - Jungle Camp Merc Data
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_DataJungleCampMercData_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_DataJungleCampMercData_Init () {
+    libMapM_gt_DataJungleCampMercData = TriggerCreate("libMapM_gt_DataJungleCampMercData_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Jungle Camps
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_InitializeJungleCamps_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itPlayer;
+    int lv_itCamp;
+    string lv_actorMessageString;
+
+    // Automatic Variable Declarations
+    int auto48BCC7B9_ae;
+    const int auto48BCC7B9_ai = 1;
+
+    // Variable Initialization
+    lv_actorMessageString = "";
+
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSJungleCreepCamps == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto48BCC7B9_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (auto48BCC7B9_ai >= 0 && lv_itCamp <= auto48BCC7B9_ae) || (auto48BCC7B9_ai < 0 && lv_itCamp >= auto48BCC7B9_ae) ) ; lv_itCamp += auto48BCC7B9_ai ) {
+        libMapM_gf_JungleInitializeDefenderData(lv_itCamp);
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_MercCamp)) {
+            libMapM_gf_JungleInitializeMercCampData(lv_itCamp);
+        }
+
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_DoubloonCamp)) {
+            libMapM_gf_JungleInitializeDoubloonCampData(lv_itCamp);
+        }
+
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_DoubloonCampSmall)) {
+            libMapM_gf_JungleInitializeDoubloonSmallCampData(lv_itCamp);
+        }
+
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_RewardCamp)) {
+            libMapM_gf_JungleInitializeRewardCampData(lv_itCamp);
+        }
+
+        libMapM_gf_JungleCreepCampRespawnTimerExpiresCreateEvent(lv_itCamp);
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "TownMercCampCaptureBeacon", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_Neutral, libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampCaptainSpawnPoint);
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCapturePointSplatModel != null)) {
+            UnitSetFacing(UnitLastCreated(), PointGetFacing(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampCaptainSpawnPoint), 0.0);
+            lv_actorMessageString = ("ModelSwap " + (libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCapturePointSplatModel));
+            ActorSendAsText(libNtve_gf_MainActorofUnit(UnitLastCreated()), StringToText(lv_actorMessageString));
+        }
+
+        libMapM_gv_jungleCreepCamps[lv_itCamp].lv_captureCircleOfPowerUnit = UnitLastCreated();
+        libGame_gf_CapturePointCreate(UnitLastCreated(), libMapM_gv_bALJungleCampCaptureRadius, libMapM_gv_bALJungleCampCaptureTime, 0.0, true, false);
+        libMapM_gv_jungleCreepCamps[lv_itCamp].lv_captureCapturePointIndex = libGame_gf_LastCreatedCapturePoint();
+        libGame_gf_CapturePointDisable(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_captureCapturePointIndex);
+        libUIUI_gf_JCIInitialization(lv_itCamp, libMapM_gv_dataJungleCampDefenderData[lv_itCamp].lv_campIsElite);
+        libMapM_gf_JungleUpdateTextTagForCamp(lv_itCamp, libMapM_ge_JungleCampTextTagTypes_Helper);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_InitializeJungleCamps_Init () {
+    libMapM_gt_InitializeJungleCamps = TriggerCreate("libMapM_gt_InitializeJungleCamps_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Turn On Camps
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleTurnOnCamps_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+
+    // Automatic Variable Declarations
+    int auto7270123C_ae;
+    const int auto7270123C_ai = 1;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSJungleCreepCamps == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_WaitForTimer(libGame_gv_gameTimer, 1.0, true);
+    TriggerEnable(libMapM_gt_JungleCreepCampRespawnTimerExpires, true);
+    TriggerEnable(libMapM_gt_JungleRespawnTimerTextTagCountdown, true);
+    TriggerEnable(libAIAI_gt_DefenderAICreepsAttacked, true);
+    TriggerEnable(libAIAI_gt_DefenderAIDefenderAILogic, true);
+    TriggerEnable(libMapM_gt_JungleDefendersBeginFighting, true);
+    TriggerEnable(libMapM_gt_JungleDefendersEndFighting, true);
+    TriggerEnable(libMapM_gt_JungleAllDefendersKilled, true);
+    auto7270123C_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (auto7270123C_ai >= 0 && lv_itCamp <= auto7270123C_ae) || (auto7270123C_ai < 0 && lv_itCamp >= auto7270123C_ae) ) ; lv_itCamp += auto7270123C_ai ) {
+        libMapM_gf_JungleInitializeCreepCamp(lv_itCamp);
+        if ((GameIsOnline() == false)) {
+            TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepRespawnTimer, libCore_gv_bALJungleTryMeCampActivationDelay, false, c_timeGame);
+            TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepBirthTimer, (libCore_gv_bALJungleTryMeCampActivationDelay - libMapM_gv_bALJungleBirthDelay), false, c_timeGame);
+        }
+        else {
+            if (((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_GraveGolem) || (libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp1) || (libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp2) || (libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataCampDefenderType == libMapM_ge_JungleCampDefenderTypes_BossCamp3))) {
+                TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepRespawnTimer, libCore_gv_bALJungleBossCampActivationDelay, false, c_timeGame);
+                TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepBirthTimer, (libCore_gv_bALJungleBossCampActivationDelay - libMapM_gv_bALJungleBirthDelay), false, c_timeGame);
+            }
+            else {
+                TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepRespawnTimer, libCore_gv_bALJungleCreepCampActivationDelay, false, c_timeGame);
+                TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepBirthTimer, (libCore_gv_bALJungleCreepCampActivationDelay - libMapM_gv_bALJungleBirthDelay), false, c_timeGame);
+            }
+        }
+        libMapM_gf_JungleUpdateTextTagForCamp(lv_itCamp, libMapM_ge_JungleCampTextTagTypes_Respawn);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleTurnOnCamps_Init () {
+    libMapM_gt_JungleTurnOnCamps = TriggerCreate("libMapM_gt_JungleTurnOnCamps_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Creep Camp Respawn Timer Expires
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleCreepCampRespawnTimerExpires_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+
+    // Automatic Variable Declarations
+    int auto675CC1A0_ae;
+    const int auto675CC1A0_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto675CC1A0_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (auto675CC1A0_ai >= 0 && lv_itCamp <= auto675CC1A0_ae) || (auto675CC1A0_ai < 0 && lv_itCamp >= auto675CC1A0_ae) ) ; lv_itCamp += auto675CC1A0_ai ) {
+        if ((EventTimer() == libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepBirthTimer)) {
+            if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIState == libMapM_ge_JungleCampStates_Hibernating)) {
+                libMapM_gf_JungleTransitionCampIntoState(lv_itCamp, libMapM_ge_JungleCampStates_HibernetingReadyToSpawn);
+            }
+            else {
+                libMapM_gf_JungleRespawnCreepsForCamp(lv_itCamp);
+            }
+            break;
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleCreepCampRespawnTimerExpires_Init () {
+    libMapM_gt_JungleCreepCampRespawnTimerExpires = TriggerCreate("libMapM_gt_JungleCreepCampRespawnTimerExpires_Func");
+    TriggerEnable(libMapM_gt_JungleCreepCampRespawnTimerExpires, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Respawn Timer Text Tag Countdown
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleRespawnTimerTextTagCountdown_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+    text lv_campName;
+
+    // Automatic Variable Declarations
+    int auto25714E4D_ae;
+    const int auto25714E4D_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto25714E4D_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (auto25714E4D_ai >= 0 && lv_itCamp <= auto25714E4D_ae) || (auto25714E4D_ai < 0 && lv_itCamp >= auto25714E4D_ae) ) ; lv_itCamp += auto25714E4D_ai ) {
+        if ((TimerGetRemaining(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepRespawnTimer) > 0.0)) {
+            lv_campName = libMapM_gv_jungleCreepCamps[lv_itCamp].lv_defenderCampTypeNameLabel;
+            TextExpressionSetToken("Param/Expression/lib_MapM_2422829A", "CampName", lv_campName);
+            TextExpressionSetToken("Param/Expression/lib_MapM_2422829A", "TIME", TextTimeFormat(StringToText("<min2/>:<sec2/>"), FixedToInt(TimerGetRemaining(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepRespawnTimer))));
+            ActorSendAsText(libNtve_gf_MainActorofUnit(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campIconUnit), TextExpressionAssemble("Param/Expression/lib_MapM_2422829A"));
+            libMapM_gf_JungleUpdateTextTagForCamp(lv_itCamp, libMapM_ge_JungleCampTextTagTypes_Respawn);
+        }
+
+        if ((TimerGetRemaining(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepActiveTimer) > 0.0)) {
+            libMapM_gf_JungleUpdateTextTagForCamp(lv_itCamp, libMapM_ge_JungleCampTextTagTypes_Special);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleRespawnTimerTextTagCountdown_Init () {
+    libMapM_gt_JungleRespawnTimerTextTagCountdown = TriggerCreate("libMapM_gt_JungleRespawnTimerTextTagCountdown_Func");
+    TriggerEnable(libMapM_gt_JungleRespawnTimerTextTagCountdown, false);
+    TriggerAddEventTimePeriodic(libMapM_gt_JungleRespawnTimerTextTagCountdown, 1.0, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Defenders Begin Fighting
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleDefendersBeginFighting_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+    int lv_testIndex;
+    int lv_camp;
+
+    // Automatic Variable Declarations
+    const int auto1ABA458C_ae = libMapM_gv_jungleMaxCamps;
+    const int auto1ABA458C_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_defenderAIIndex = libGame_gf_JungleDefenderAIDefendersBeginFightingIndex();
+    lv_testIndex = 1;
+    for ( ; ( (auto1ABA458C_ai >= 0 && lv_testIndex <= auto1ABA458C_ae) || (auto1ABA458C_ai < 0 && lv_testIndex >= auto1ABA458C_ae) ) ; lv_testIndex += auto1ABA458C_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_testIndex].lv_aIDefenderAIIndex == lv_defenderAIIndex)) {
+            lv_camp = lv_testIndex;
+            break;
+        }
+
+    }
+    if ((lv_camp > 0) && (libMapM_gv_jungleCreepCamps[lv_testIndex].lv_aIState != libMapM_ge_JungleCampStates_Hibernating) && (libMapM_gv_jungleCreepCamps[lv_testIndex].lv_aIState != libMapM_ge_JungleCampStates_HibernetingReadyToSpawn)) {
+        libMapM_gf_JungleTransitionCampIntoState(lv_camp, libMapM_ge_JungleCampStates_Busy);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleDefendersBeginFighting_Init () {
+    libMapM_gt_JungleDefendersBeginFighting = TriggerCreate("libMapM_gt_JungleDefendersBeginFighting_Func");
+    TriggerEnable(libMapM_gt_JungleDefendersBeginFighting, false);
+    libGame_gf_JungleDefenderAIDefendersBeginFighting(libMapM_gt_JungleDefendersBeginFighting);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Defenders End Fighting
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleDefendersEndFighting_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+    int lv_testIndex;
+    int lv_camp;
+
+    // Automatic Variable Declarations
+    const int auto8AFEA46A_ae = libMapM_gv_jungleMaxCamps;
+    const int auto8AFEA46A_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_defenderAIIndex = libGame_gf_JungleDefenderAIDefendersEndFightingIndex();
+    lv_testIndex = 1;
+    for ( ; ( (auto8AFEA46A_ai >= 0 && lv_testIndex <= auto8AFEA46A_ae) || (auto8AFEA46A_ai < 0 && lv_testIndex >= auto8AFEA46A_ae) ) ; lv_testIndex += auto8AFEA46A_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_testIndex].lv_aIDefenderAIIndex == lv_defenderAIIndex)) {
+            lv_camp = lv_testIndex;
+            break;
+        }
+
+    }
+    if ((lv_camp > 0) && (libMapM_gv_jungleCreepCamps[lv_testIndex].lv_aIState != libMapM_ge_JungleCampStates_Hibernating) && (libMapM_gv_jungleCreepCamps[lv_testIndex].lv_aIState != libMapM_ge_JungleCampStates_HibernetingReadyToSpawn)) {
+        libMapM_gf_JungleTransitionCampIntoState(lv_camp, libMapM_ge_JungleCampStates_Busy);
+        if ((UnitGroupCount(libAIAI_gf_DefenderGroup(libMapM_gv_jungleCreepCamps[lv_camp].lv_aIDefenderAIIndex), c_unitCountAlive) < libMapM_gv_jungleCreepCamps[lv_camp].lv_defenderNumberofCreeps)) {
+            TimerStart(libMapM_gv_jungleCreepCamps[lv_camp].lv_stateCreepRespawnTimer, libMapM_gv_bALJungleLeashRespawnTime, false, c_timeGame);
+        }
+
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleDefendersEndFighting_Init () {
+    libMapM_gt_JungleDefendersEndFighting = TriggerCreate("libMapM_gt_JungleDefendersEndFighting_Func");
+    TriggerEnable(libMapM_gt_JungleDefendersEndFighting, false);
+    libGame_gf_JungleDefenderAIDefendersEndFighting(libMapM_gt_JungleDefendersEndFighting);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - All Defenders Killed
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleAllDefendersKilled_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+    unit lv_killingUnit;
+    int lv_itCamp;
+    int lv_camp;
+    int lv_owner;
+
+    // Automatic Variable Declarations
+    const int auto1E5C8FBD_ae = libMapM_gv_jungleMaxCamps;
+    const int auto1E5C8FBD_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_defenderAIIndex = libGame_gf_JungleDefenderAIAllDefendersKilledIndex();
+    lv_killingUnit = libGame_gf_JungleDefenderAIAllDefendersKilledKillingUnit();
+    lv_itCamp = 1;
+    for ( ; ( (auto1E5C8FBD_ai >= 0 && lv_itCamp <= auto1E5C8FBD_ae) || (auto1E5C8FBD_ai < 0 && lv_itCamp >= auto1E5C8FBD_ae) ) ; lv_itCamp += auto1E5C8FBD_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIDefenderAIIndex == lv_defenderAIIndex)) {
+            lv_camp = lv_itCamp;
+            break;
+        }
+
+    }
+    if ((lv_camp > 0)) {
+        if (((libMapM_gv_jungleCreepCamps[lv_camp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_MercCamp) || (libMapM_gv_jungleCreepCamps[lv_camp].lv_mapDataCampType == libMapM_ge_JungleCampTypes_RewardCamp))) {
+            libMapM_gf_JungleTurnOnCampCaptureBeacon(lv_camp);
+        }
+        else {
+            if ((PlayerGroupHasPlayer(libCore_gv_teamOrder, UnitGetOwner(lv_killingUnit)) == true)) {
+                lv_owner = libCore_gv_cOMPUTER_TeamOrder;
+            }
+            else {
+                lv_owner = libCore_gv_cOMPUTER_TeamChaos;
+            }
+            libMapM_gf_JungleGrantCaptureRewards(lv_camp, lv_owner, false);
+        }
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleAllDefendersKilled_Init () {
+    libMapM_gt_JungleAllDefendersKilled = TriggerCreate("libMapM_gt_JungleAllDefendersKilled_Func");
+    TriggerEnable(libMapM_gt_JungleAllDefendersKilled, false);
+    libGame_gf_JungleDefenderAIAllDefendersKilled(libMapM_gt_JungleAllDefendersKilled);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Hibernate Camps Start
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleHibernateCampsStart_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+
+    // Automatic Variable Declarations
+    int autoA47C46B5_ae;
+    const int autoA47C46B5_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMapM_gv_jungleCampsShouldBeHibernating = true;
+    autoA47C46B5_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (autoA47C46B5_ai >= 0 && lv_itCamp <= autoA47C46B5_ae) || (autoA47C46B5_ai < 0 && lv_itCamp >= autoA47C46B5_ae) ) ; lv_itCamp += autoA47C46B5_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIState != libMapM_ge_JungleCampStates_Busy) && (libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIState != libMapM_ge_JungleCampStates_Paused)) {
+            libMapM_gf_JungleTransitionCampIntoState(lv_itCamp, libMapM_ge_JungleCampStates_Hibernating);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleHibernateCampsStart_Init () {
+    libMapM_gt_JungleHibernateCampsStart = TriggerCreate("libMapM_gt_JungleHibernateCampsStart_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Hibernate Camps End
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleHibernateCampsEnd_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+    int lv_itDefenderIndex;
+    unit lv_defenderUnit;
+
+    // Automatic Variable Declarations
+    int autoE0742658_ae;
+    const int autoE0742658_ai = 1;
+    int auto13CE3571_ae;
+    const int auto13CE3571_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMapM_gv_jungleCampsShouldBeHibernating = false;
+    autoE0742658_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (autoE0742658_ai >= 0 && lv_itCamp <= autoE0742658_ae) || (autoE0742658_ai < 0 && lv_itCamp >= autoE0742658_ae) ) ; lv_itCamp += autoE0742658_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIState == libMapM_ge_JungleCampStates_Hibernating)) {
+            auto13CE3571_ae = libMapM_gv_jungleCreepCamps[lv_itCamp].lv_defenderNumberofCreeps;
+            lv_itDefenderIndex = 1;
+            for ( ; ( (auto13CE3571_ai >= 0 && lv_itDefenderIndex <= auto13CE3571_ae) || (auto13CE3571_ai < 0 && lv_itDefenderIndex >= auto13CE3571_ae) ) ; lv_itDefenderIndex += auto13CE3571_ai ) {
+                lv_defenderUnit = libAIAI_gf_DefenderUnit(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIDefenderAIIndex, lv_itDefenderIndex);
+                libMapM_gf_JungleStopHibernatingCampDefender(lv_defenderUnit, libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataDefenderSpawnPoints[lv_itDefenderIndex]);
+            }
+            libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campIconUnit, "SetMinimapVisibility 1");
+            libMapM_gf_JungleTransitionCampIntoState(lv_itCamp, libMapM_ge_JungleCampStates_Idle);
+            if ((UnitGroupCount(libAIAI_gf_DefenderGroup(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIDefenderAIIndex), c_unitCountAlive) > 0) && (UnitGroupCount(libAIAI_gf_DefenderGroup(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIDefenderAIIndex), c_unitCountAlive) < libMapM_gv_jungleCreepCamps[lv_itCamp].lv_defenderNumberofCreeps)) {
+                TimerStart(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_stateCreepRespawnTimer, libMapM_gv_bALJungleLeashRespawnTime, false, c_timeGame);
+            }
+
+        }
+
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_aIState == libMapM_ge_JungleCampStates_HibernetingReadyToSpawn)) {
+            libNtve_gf_SendActorMessageToUnit(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campIconUnit, "SetMinimapVisibility 1");
+            libMapM_gf_JungleRespawnCreepsForCamp(lv_itCamp);
+        }
+
+        libMapM_gf_JungleSwitchToTextTagForCamp(lv_itCamp, libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campTextTagType);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleHibernateCampsEnd_Init () {
+    libMapM_gt_JungleHibernateCampsEnd = TriggerCreate("libMapM_gt_JungleHibernateCampsEnd_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Hibernate Defenders That Leash
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleHibernateDefendersThatLeash_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_camp;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((libMapM_gv_jungleCampsShouldBeHibernating == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_camp = libMapM_gf_JungleGetCampIndexFromDefenderIndex(libGame_gf_JungleDefenderAIDefendersEndFightingIndex());
+    if ((lv_camp > 0)) {
+        libMapM_gf_JungleTransitionCampIntoState(lv_camp, libMapM_ge_JungleCampStates_Hibernating);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleHibernateDefendersThatLeash_Init () {
+    libMapM_gt_JungleHibernateDefendersThatLeash = TriggerCreate("libMapM_gt_JungleHibernateDefendersThatLeash_Func");
+    libGame_gf_JungleDefenderAIDefendersEndFighting(libMapM_gt_JungleHibernateDefendersThatLeash);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Hibernate Defenders That Just Spawned
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleHibernateDefendersThatJustSpawned_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMapM_gv_jungleCampsShouldBeHibernating == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMapM_gf_JungleTransitionCampIntoState(libGame_gf_JungleCampSpawnedIndex(), libMapM_ge_JungleCampStates_Hibernating);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleHibernateDefendersThatJustSpawned_Init () {
+    libMapM_gt_JungleHibernateDefendersThatJustSpawned = TriggerCreate("libMapM_gt_JungleHibernateDefendersThatJustSpawned_Func");
+    libGame_gf_JungleCampSpawned(libMapM_gt_JungleHibernateDefendersThatJustSpawned);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Camp Ownership Change
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleCampOwnershipChange_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+    int lv_newPlayer;
+    int lv_index;
+    int lv_aIOwner;
+    bool lv_hasMercLordTalent;
+    int lv_team;
+
+    // Automatic Variable Declarations
+    int auto8AAEA026_ae;
+    const int auto8AAEA026_ai = 1;
+
+    // Variable Initialization
+    lv_newPlayer = libGame_gf_CapturePointChangesOwnerNewOwnerPlayer();
+    lv_index = libGame_gf_CapturePointChangesOwnerCapturePointIndex();
+    lv_aIOwner = libGame_gf_CapturePointChangesOwnerAIOwner();
+    lv_hasMercLordTalent = libGame_gf_CapturePointChangesOwnerHasMercLordTalent();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto8AAEA026_ae = libMapM_gv_jungleNumberOfCreepCamps;
+    lv_itCamp = 1;
+    for ( ; ( (auto8AAEA026_ai >= 0 && lv_itCamp <= auto8AAEA026_ae) || (auto8AAEA026_ai < 0 && lv_itCamp >= auto8AAEA026_ae) ) ; lv_itCamp += auto8AAEA026_ai ) {
+        if ((libMapM_gv_jungleCreepCamps[lv_itCamp].lv_captureCapturePointIndex == lv_index)) {
+            libGame_gf_SendEventMercCampCaptured(lv_itCamp, lv_aIOwner, libGame_gf_CapturePointChangesOwnerCapturingPlayers());
+            libUIUI_gf_JCIChangeOwner(lv_newPlayer, lv_aIOwner, lv_itCamp);
+            if ((lv_aIOwner == libCore_gv_cOMPUTER_TeamOrder)) {
+                libNtve_gf_SendActorMessageToGameRegion(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataDefenderLeashRegion, "Signal OwnerOrder");
+                UnitSetOwner(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campIconUnit, libCore_gv_cOMPUTER_TeamOrder, true);
+                UnitSetOwner(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campOwnershipFlagUnit, libCore_gv_cOMPUTER_TeamOrder, true);
+                libMapM_gf_JungleTurnOffCampCaptureBeacon(lv_itCamp, libCore_gv_cOMPUTER_TeamOrder);
+                libMapM_gf_JungleGrantCaptureRewards(lv_itCamp, libCore_gv_cOMPUTER_TeamOrder, lv_hasMercLordTalent);
+            }
+            else if ((lv_aIOwner == libCore_gv_cOMPUTER_TeamChaos)) {
+                libNtve_gf_SendActorMessageToGameRegion(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_mapDataDefenderLeashRegion, "Signal OwnerChaos");
+                UnitSetOwner(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campIconUnit, libCore_gv_cOMPUTER_TeamChaos, true);
+                UnitSetOwner(libMapM_gv_jungleCreepCamps[lv_itCamp].lv_campOwnershipFlagUnit, libCore_gv_cOMPUTER_TeamChaos, true);
+                libMapM_gf_JungleTurnOffCampCaptureBeacon(lv_itCamp, libCore_gv_cOMPUTER_TeamChaos);
+                libMapM_gf_JungleGrantCaptureRewards(lv_itCamp, libCore_gv_cOMPUTER_TeamChaos, lv_hasMercLordTalent);
+            }
+            if (((lv_aIOwner == libCore_gv_cOMPUTER_TeamOrder) || (lv_aIOwner == libCore_gv_cOMPUTER_TeamChaos))) {
+                lv_team = libGame_gf_TeamNumberOfPlayer(lv_aIOwner);
+                SoundPlayForPlayer(SoundLink("Doodad_Merc_Camp_Capture_Ally", -1), libCore_gv_cOMPUTER_TeamOrder, libGame_gf_PlayersOnTeamHeroes(libGame_gv_teamOrderIndex_C, false), 100.0, 0.0);
+                SoundPlayForPlayer(SoundLink("Doodad_Merc_Camp_Capture_Enemy", -1), libCore_gv_cOMPUTER_TeamChaos, libGame_gf_PlayersOnTeamHeroes(libGame_gv_teamChaosIndex_C, false), 100.0, 0.0);
+                SoundPlayForPlayer(SoundLink("Doodad_Merc_Camp_Capture_Ally", -1), libCore_gv_oBSERVER_ObserverUIPlayer, libCore_gv_playerGroupFromPlayer[libCore_gv_oBSERVER_ObserverUIPlayer], 100.0, 0.0);
+            }
+
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleCampOwnershipChange_Init () {
+    libMapM_gt_JungleCampOwnershipChange = TriggerCreate("libMapM_gt_JungleCampOwnershipChange_Func");
+    libGame_gf_CapturePointChangesOwner(libMapM_gt_JungleCampOwnershipChange);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Jungle - Merc Leader Dies
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_JungleMercLeaderDies_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itCamp;
+
+    // Automatic Variable Declarations
+    const int auto4CB17BAD_ae = libMapM_gv_jungleMaxCamps;
+    const int auto4CB17BAD_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_itCamp = 1;
+    for ( ; ( (auto4CB17BAD_ai >= 0 && lv_itCamp <= auto4CB17BAD_ae) || (auto4CB17BAD_ai < 0 && lv_itCamp >= auto4CB17BAD_ae) ) ; lv_itCamp += auto4CB17BAD_ai ) {
+        if ((UnitIsAlive(libMapM_gv_jungleMiniMapLeader[lv_itCamp]) == false)) {
+            if ((UnitGroupCount(libMapM_gv_jungleMiniMapIconGroup[lv_itCamp], c_unitCountAlive) > 0)) {
+                libMapM_gf_JungleSetMiniMapIconForMercMinions(lv_itCamp, libMapM_gv_jungleMiniMapIconGroup[lv_itCamp]);
+            }
+
+            libMapM_gf_JungleCreateMercPath(libMapM_gv_jungleMiniMapLeader[lv_itCamp], false);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_JungleMercLeaderDies_Init () {
+    libMapM_gt_JungleMercLeaderDies = TriggerCreate("libMapM_gt_JungleMercLeaderDies_Func");
+    TriggerAddEventUnitBehaviorChange(libMapM_gt_JungleMercLeaderDies, null, "MinionDeathMonitor", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libMapM_gt_JungleMercLeaderDies, null, "MinionDeathMonitor", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Map Mechanics
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_InitializeMapMechanics_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itIndex;
+
+    // Automatic Variable Declarations
+    int auto7EC73FCA_ae;
+    const int auto7EC73FCA_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto7EC73FCA_ae = libMapM_gv_mapMechanicsCount;
+    lv_itIndex = 1;
+    for ( ; ( (auto7EC73FCA_ai >= 0 && lv_itIndex <= auto7EC73FCA_ae) || (auto7EC73FCA_ai < 0 && lv_itIndex >= auto7EC73FCA_ae) ) ; lv_itIndex += auto7EC73FCA_ai ) {
+        if ((libMapM_gv_mapMechanicsInitCallbacks[lv_itIndex] != null)) {
+            TriggerExecute(libMapM_gv_mapMechanicsInitCallbacks[lv_itIndex], true, false);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_InitializeMapMechanics_Init () {
+    libMapM_gt_InitializeMapMechanics = TriggerCreate("libMapM_gt_InitializeMapMechanics_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Repulse Region Punch Behavior
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_MMRepulseRegionPunchBehavior_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itTeam;
+    unit lv_itUnit;
+    int lv_itPunchTargetIndex;
+    point lv_pos;
+    fixed lv_distance;
+    fixed lv_distanceMin;
+    int lv_punchTargetIndexMin;
+
+    // Automatic Variable Declarations
+    int auto48ABDFFF_ae;
+    unitgroup auto1EA6686B_g;
+    int auto1EA6686B_u;
+    const int auto859C51F2_ae = libMapM_gv_mMRepulseRegionPunchTargetMax_C;
+    const int auto859C51F2_ai = 1;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(TriggerGetCurrent(), false);
+    while (true) {
+        if ((libCore_gv_gameOver == true)) {
+            return true;
+        }
+        auto48ABDFFF_ae = libCore_gv_bALMaxTeams;
+        lv_itTeam = 1;
+        for ( ; lv_itTeam <= auto48ABDFFF_ae ; lv_itTeam += 1 ) {
+            auto1EA6686B_g = UnitGroup(null, c_playerAny, libMapM_gv_mMRepulseRegions[lv_itTeam], UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterStructure) | (1 << c_targetFilterWorker) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            auto1EA6686B_u = UnitGroupCount(auto1EA6686B_g, c_unitCountAll);
+            for (;; auto1EA6686B_u -= 1) {
+                lv_itUnit = UnitGroupUnitFromEnd(auto1EA6686B_g, auto1EA6686B_u);
+                if (lv_itUnit == null) { break; }
+                if ((libGame_gf_TeamNumberOfPlayer(UnitGetOwner(lv_itUnit)) == libGame_gf_EnemyTeamNumberOfTeam(lv_itTeam)) && (UnitGroupHasUnit(libMapM_gv_mMRepulseRegionPunchedGroup, lv_itUnit) == false) && (UnitHasBehavior2(lv_itUnit, "HallOfStormsKnockbackImmunity") == false) && ((UnitMoverExists(lv_itUnit, "Ground") == true) || (UnitTypeTestAttribute(UnitGetType(lv_itUnit), c_unitAttributeSummoned) == true))) {
+                    lv_pos = UnitGetPosition(lv_itUnit);
+                    lv_punchTargetIndexMin = 0;
+                    lv_itPunchTargetIndex = 1;
+                    for ( ; ( (auto859C51F2_ai >= 0 && lv_itPunchTargetIndex <= auto859C51F2_ae) || (auto859C51F2_ai < 0 && lv_itPunchTargetIndex >= auto859C51F2_ae) ) ; lv_itPunchTargetIndex += auto859C51F2_ai ) {
+                        if ((libMapM_gv_mMRepulseRegionPunchTarget[lv_itTeam][lv_itPunchTargetIndex] == null)) {
+                            continue;
+                        }
+                        lv_distance = DistanceBetweenPoints(lv_pos, libMapM_gv_mMRepulseRegionPunchTarget[lv_itTeam][lv_itPunchTargetIndex]);
+                        if (((lv_punchTargetIndexMin == 0) || (lv_distance < lv_distanceMin))) {
+                            lv_punchTargetIndexMin = lv_itPunchTargetIndex;
+                            lv_distanceMin = lv_distance;
+                        }
+                    }
+                    if ((lv_punchTargetIndexMin > 0)) {
+                        libGame_gf_SendEventUnitEntersSafeZonePuntRegion(lv_itUnit, libMapM_gv_mMRepulseRegionPunchTarget[lv_itTeam][lv_punchTargetIndexMin]);
+                        libMapM_gf_MMRepulseRegionAddToPunchedGroup(lv_itUnit);
+                    }
+
+                }
+            }
+        }
+        Wait(0.125, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_MMRepulseRegionPunchBehavior_Init () {
+    libMapM_gt_MMRepulseRegionPunchBehavior = TriggerCreate("libMapM_gt_MMRepulseRegionPunchBehavior_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Safe Region Behavior
+//--------------------------------------------------------------------------------------------------
+bool libMapM_gt_MMSafeRegionBehavior_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unitgroup lv_safeRegionUnitGroup;
+    int lv_itTeam;
+    unit lv_itUnit;
+
+    // Automatic Variable Declarations
+    int auto6681668A_ae;
+    unitgroup auto031A3F79_g;
+    int auto031A3F79_u;
+    unitgroup autoCFDFC67B_g;
+    int autoCFDFC67B_u;
+
+    // Variable Initialization
+    lv_safeRegionUnitGroup = UnitGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(TriggerGetCurrent(), false);
+    while (true) {
+        if ((libCore_gv_gameOver == true)) {
+            return true;
+        }
+        auto6681668A_ae = libCore_gv_bALMaxTeams;
+        lv_itTeam = 1;
+        for ( ; lv_itTeam <= auto6681668A_ae ; lv_itTeam += 1 ) {
+            if ((libMapM_gv_mMSafeRegions[lv_itTeam] == null)) {
+                continue;
+            }
+            auto031A3F79_g = UnitGroup(null, c_playerAny, libMapM_gv_mMSafeRegions[lv_itTeam], UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterDestructible), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            auto031A3F79_u = UnitGroupCount(auto031A3F79_g, c_unitCountAll);
+            for (;; auto031A3F79_u -= 1) {
+                lv_itUnit = UnitGroupUnitFromEnd(auto031A3F79_g, auto031A3F79_u);
+                if (lv_itUnit == null) { break; }
+                if ((libGame_gf_TeamNumberOfPlayer(UnitGetOwner(lv_itUnit)) == lv_itTeam)) {
+                    UnitGroupAdd(lv_safeRegionUnitGroup, lv_itUnit);
+                    libGame_gf_SendEventUnitEntersSafeZoneRegion(lv_itUnit);
+                }
+            }
+            autoCFDFC67B_g = libGame_gv_players_Heroes_AllTrackedHeroesForTeam[lv_itTeam];
+            autoCFDFC67B_u = UnitGroupCount(autoCFDFC67B_g, c_unitCountAll);
+            for (;; autoCFDFC67B_u -= 1) {
+                lv_itUnit = UnitGroupUnitFromEnd(autoCFDFC67B_g, autoCFDFC67B_u);
+                if (lv_itUnit == null) { break; }
+                if ((UnitGroupHasUnit(lv_safeRegionUnitGroup, lv_itUnit) == true) && (libNtve_gf_UnitInRegion(lv_itUnit, libMapM_gv_mMSafeRegions[lv_itTeam]) == false)) {
+                    UnitGroupRemove(lv_safeRegionUnitGroup, lv_itUnit);
+                    libGame_gf_SendEventUnitExitsSafeZoneRegion(lv_itUnit);
+                }
+            }
+        }
+        Wait(0.0625, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMapM_gt_MMSafeRegionBehavior_Init () {
+    libMapM_gt_MMSafeRegionBehavior = TriggerCreate("libMapM_gt_MMSafeRegionBehavior_Func");
+}
+
+void libMapM_InitTriggers () {
+    libMapM_gt_IncludeMapMechanics_Init();
+    libMapM_gt_DataJungleCampDefenderData_Init();
+    libMapM_gt_DataJungleCampMercData_Init();
+    libMapM_gt_InitializeJungleCamps_Init();
+    libMapM_gt_JungleTurnOnCamps_Init();
+    libMapM_gt_JungleCreepCampRespawnTimerExpires_Init();
+    libMapM_gt_JungleRespawnTimerTextTagCountdown_Init();
+    libMapM_gt_JungleDefendersBeginFighting_Init();
+    libMapM_gt_JungleDefendersEndFighting_Init();
+    libMapM_gt_JungleAllDefendersKilled_Init();
+    libMapM_gt_JungleHibernateCampsStart_Init();
+    libMapM_gt_JungleHibernateCampsEnd_Init();
+    libMapM_gt_JungleHibernateDefendersThatLeash_Init();
+    libMapM_gt_JungleHibernateDefendersThatJustSpawned_Init();
+    libMapM_gt_JungleCampOwnershipChange_Init();
+    libMapM_gt_JungleMercLeaderDies_Init();
+    libMapM_gt_InitializeMapMechanics_Init();
+    libMapM_gt_MMRepulseRegionPunchBehavior_Init();
+    libMapM_gt_MMSafeRegionBehavior_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libMapM_InitLib_completed = false;
+
+void libMapM_InitLib () {
+    if (libMapM_InitLib_completed) {
+        return;
+    }
+
+    libMapM_InitLib_completed = true;
+
+    libMapM_InitLibraries();
+    libMapM_InitVariables();
+    libMapM_InitTriggers();
+}
+
+include "LibAIAI"
+include "LibCore"
+include "LibGame"
+include "LibSprt"
+include "LibSond"
+include "LibUIUI"
+

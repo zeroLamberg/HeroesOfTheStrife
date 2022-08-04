@@ -1,0 +1,34 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Meta Data Helper
+//--------------------------------------------------------------------------------------------------
+// Trigger Declarations
+trigger libMDHL_gt_IncludeMetaDataHelper;
+trigger libMDHL_gt_MetaDataBaseInitializeDataBase;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseInitialize;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183;
+trigger libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181;
+trigger libMDHL_gt_MetaDataBaseInitializeEventDataBase;
+trigger libMDHL_gt_MetaDataBaseInitializeWinterVeilEvent;
+trigger libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase;
+

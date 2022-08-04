@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+  <Frame type="Frame" name="HeroSpecificStackingBuffsPanelTemplate">
+    <Frame type="SelectionUnitStatusPanel" name="KatarinaStacksFrameContainer" template="Katarina/KatarinaStacksFrameContainer"/>
+    <Frame type="SelectionUnitStatusPanel" name="MalfurionStacksFrameContainer" template="Malfurion/MalfurionStacksFrameContainer"/>
+    <!--<Frame type="SelectionUnitStatusPanel" name="SelendisStacksFrameContainer" template="Selendis/SelendisStacksFrameContainer"/>-->
+
+    <StateGroup name="CustomVisibilityController">
+      <DefaultState val="Visible"/>
+      <State name="Visible">
+        <When type="AnimationState" CustomVisibility="Visible" />
+        <Action type="SetProperty" frame="SelendisStacksFrameContainer" Visible="True"/>
+      </State>
+      <State name="Hidden">
+        <When type="AnimationState" CustomVisibility="Hidden" />
+        <Action type="SetProperty" frame="SelendisStacksFrameContainer" Visible="False"/>
+      </State>
+    </StateGroup>
+  </Frame>
+
+  <Frame type="Frame" name="HeroSpecificStatusContainerTemplate">
+    <Frame type="SelectionUnitStatusPanel" name="DiabloFrame" template="Diablo/DiabloFrame"/>
+    <Frame type="SelectionUnitStatusPanel" name="KatarinaFrame" template="Katarina/KatarinaFrame"/>
+    <Frame type="SelectionUnitStatusPanel" name="MalfurionFrame" template="Malfurion/MalfurionFrame"/>
+    <!--<Frame type="SelectionUnitStatusPanel" name="SelendisFrame" template="Selendis/SelendisFrame"/>-->
+  </Frame>
+</Desc>

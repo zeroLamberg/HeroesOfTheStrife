@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Constant name="itTalentsPanelButtonWidth" val="452"/>
+    <Constant name="ButtonOffset" val="8"/>
+
+    <Frame type="Button" name="TalentTierSelectionButtonTemplate">
+      <Width val="56" />
+      <Height val="56" />
+      <NormalImage val="NormalImage" />
+      <HoverImage val="HoverImage" />
+      <ClickSound val="@UI_BNet_Generic_03" />
+      <DisplayType val="ImageLayer" />
+      <AllowedButtons val="Left|Right" />
+      <RenderPriority val="510"/>
+      <Toggleable val="True"/>
+      <HitTestFrame val="HitTestFrame"/>
+      <!--<TooltipFrame val="MyTalentsPanelTooltip"/>
+      <TooltipAnchorPosition val="BottomCenter" />-->
+      <Frame type="Image" name="HitTestFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="15" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="-15" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15" />
+        <Alpha val="0"/>
+        <HitTestTexture val="@UI/HUD_BTN_BG_Ability_AlphaMask" />
+      </Frame>
+      <Frame type="Image" name="NormalImage">
+        <LayerCount val="4" />
+        <Texture val="@UI/StormShopButtonNormal" layer="0" />
+        <Texture val="@UI/StormShopButtonSelected" layer="1" />
+        <Texture val="@UI/StormShopButtonSelected" layer="2" />
+        <Texture val="@UI/StormShopButtonDisabled" layer="3" />
+        <DescFlags val="Internal" />
+        <DesaturateOnDisable val="false" />
+        <RenderPriority val="540" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+        <LayerCount val="4" />
+        <Texture val="@UI/StormShopButtonHover" layer="0" />
+        <Texture val="@UI/StormShopButtonSelected" layer="1" />
+        <Texture val="@UI/StormShopButtonSelected" layer="2" />
+        <Texture val="@UI/StormShopButtonDisabled" layer="3" />
+        <DescFlags val="Internal" />
+        <DesaturateOnDisable val="false" />
+        <RenderPriority val="540" />
+      </Frame>
+      <Frame type="Label" name="TierLabelFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="18" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="-15" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15" />
+        <RenderPriority val="600"/>
+        <Text val=""/>
+        <Style val="StandardGlueButton" />
+        <StateGroup name="ToggledStyle">
+          <DefaultState val="Default"/>
+          <State name="Default">
+            <When type="Property" frame="$parent" Toggled="False" />
+            <Action type="SetProperty" frame="$this" Enabled="False" />
+          </State>
+          <State name="Toggled">
+            <When type="Property" frame="$parent" Toggled="True" />
+            <Action type="SetProperty" frame="$this" Enabled="True" />
+          </State>
+        </StateGroup>
+      </Frame>
+      <Frame type="Image" name="HighlightTexture">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Texture val="@UI/StormShopButtonHover" />
+        <RenderPriority val="590"/>
+        <Visible val="True"/>
+        <Alpha val="0"/>
+      </Frame>
+      <Animation name="Glow">
+        <Event event="ShowGlow" action="Play"/>
+        <Controller type="Fade" end="Reset" frame="HighlightTexture">
+            <Key type="Curve" time="0" value="50" inout="Linear,Slow" frame="HighlightTexture"/>
+            <Key type="Curve" time=".4" value="255" inout="Linear,Slow" frame="HighlightTexture"/>
+            <Key type="Curve" time=".6" value="255" inout="Slow,Linear" frame="HighlightTexture"/>
+            <Key type="Curve" time="1.4" value="50" inout="Slow,Linear" frame="HighlightTexture"/>
+        </Controller>
+      </Animation>
+      <!--<Animation name="Glow">
+        <Event event="OnShown" action="Restart,Play"/>
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" value="50" inout="Linear,Slow"/>
+          <Key type="Curve" time=".4" value="255" inout="Linear,Slow"/>
+          <Key type="Curve" time=".6" value="255" inout="Slow,Linear"/>
+          <Key type="Curve" time="1.4" value="50" inout="Slow,Linear"/>
+        </Controller>
+      </Animation>
+      <StateGroup name="Highlighting">
+        <DefaultState val="Default"/>
+        <State name="Default">
+          <When type="AnimationState" frame="$this" Highlighting="Default" />
+          <Action type="SetProperty" frame="HighlightTexture" Visible="False" />
+        </State>
+        <State name="Highlight">
+          <When type="AnimationState" frame="$this" Highlighting="Highlight" />
+          <Action type="SetProperty" frame="HighlightTexture" Visible="True" />
+        </State>
+      </StateGroup>-->
+    </Frame>
+
+    <Frame type="Button" name="TalentsButtonTemplate">
+        <Width val="#itTalentsPanelButtonWidth"/>
+        <Height val="100"/>
+        <NormalImage val="NormalImage" />
+        <HoverImage val="HoverImage" />
+        <ClickSound val="@UI_BNet_Generic_03" />
+        <DisplayType val="ImageLayer" />
+        <AllowedButtons val="Left" />
+        <Style val="StandardGlueButton" />
+        <DisplayType val="ImageLayer"/>
+        <CollapseLayout val="True"/>
+        <Frame type="Image" name="NormalImage">
+          <LayerCount val="4" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentAvailable" layer="0" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentSelected" layer="1" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentSelected" layer="2" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentUnavailable" layer="3" />
+          <TextureType val="NineSlice" />
+          <DescFlags val="Internal" />
+          <DesaturateOnDisable val="false" />
+          <RenderPriority val="540" />
+          <TextureType val="Normal" />
+          <Tiled val="false" />
+        </Frame>
+        <Frame type="Image" name="HoverImage">
+          <LayerCount val="4" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentDown" layer="0" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentSelected" layer="1" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentDown" layer="2" />
+          <Texture val="@UI/Storm_UI_InGame_TalentPanel_TalentUnavailable" layer="3" />
+          <DescFlags val="Internal" />
+          <DesaturateOnDisable val="false" />
+          <RenderPriority val="540" />
+          <TextureType val="Normal" />
+          <Tiled val="false" />
+        </Frame>
+        <Frame type="Image" name="TalentImage">
+            <Anchor side="Top" relative="$parent/BorderImage" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent/BorderImage" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent/BorderImage" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent/BorderImage" pos="Mid" offset="0" />
+            <Height val="64" />
+            <Width val="64" />
+           <DesaturateOnDisable val="False" />
+            <DisabledAlpha val="120" />
+            <RenderPriority val="550" />
+            <ImageMaskTexture val="@UI/Storm_UI_InGame_AbilityButtonBorder_Small_Mask" />
+            <Texture val="@UI/StormHeroIconPlaceHolder"/>
+            <Tiled val="false" />
+        </Frame>
+
+        <Frame type="Image" name="BorderImage">
+            <Anchor side="Top" relative="$parent" pos="0.1" offset="0" />
+            <!--<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />-->
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25" />
+            <Width val="72" />
+            <Height val="80" />
+            <DesaturateOnDisable val="True" />
+            <DesaturationColor val="604f79" />
+            <OnDisableDesaturationColor val="604f79" />
+            <RenderPriority val="555" />
+            <Texture val="@UI/Storm_UI_TalentBorder"/>
+        </Frame>
+
+        <Frame type="Label" name="TalentName">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="16" />
+            <Anchor side="Left" relative="$parent/BorderImage" pos="Max" offset="9" />
+            <Anchor side="Right" relative="$parent/HotKeyFrame/HotkeyBorderImage" pos="Min" offset="-5" />
+            <Style val="TalentHighlight" />
+            <Text val="Dummy Talent Name"/>
+            <RenderPriority val="550" />
+            <Height val="25"/>
+        </Frame>
+
+        <Frame type="Label" name="TalentDetails">
+            <Anchor side="Top" relative="$parent/TalentName" pos="Min" offset="25" />
+            <Anchor side="Left" relative="$parent/TalentName" pos="Min" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-10" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+            <Style val="TalentDescription" />
+            <Text val="Dummy Talent description for optimal text size (height and width). Complete."/>
+            <RenderPriority val="550" />
+            <HighlightOnHover val="True"/>
+            <Animation name="Hover">
+              <Event event="OnMouseEnter" action="DirectionForward,Play" frame="$parent" />
+              <Event event="OnMouseExit" action="DirectionReverse,Play" frame="$parent" />
+              <Controller type="Style" end="Pause" frame="$this" style1="TalentDescription" style2="TalentDescriptionHighlight">
+                <Key type="Curve" time="0" value="0" />
+                <Key type="Curve" time=".01" value="1" />
+              </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="Frame" name="HotkeyFrame" template="MyStandardTemplates/HeroAbilHotkeyTalentsFrameTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="7"/>
+          <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+          <Anchor side="Right" relative="$parent" pos="Max" offset="-7"/>
+          <RenderPriority val="560"/>
+      </Frame>
+
+    </Frame>
+
+    <Frame type="Frame" name="MyTalentsFrameTemplate">
+      <Width val="#itTalentsPanelButtonWidth"/>
+      <Height val="100"/>
+      <CollapseLayout val="True"/>
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+      <Frame type="Button" name="Button" template="MyTalentsPanel/TalentsButtonTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <RenderPriority val="530" />
+      </Frame>
+    </Frame>
+
+    <!--================= Talents Panel =======================-->
+
+    <Frame type="Frame" name="TalentsSelectionPanelTemplate">
+        <Width val="800"/>
+        <Height val="800"/>
+        <Animation name="Show">
+          <!--<Event event="OnShown" action="Play"/>-->
+          <Event event="Show" action="Reset,Play"/>
+          <Controller type="Anchor" side="Left" relative="true" end="Pause">
+            <Key type="Curve" time="0" value="-500" out="Slow"/>
+            <Key type="Curve" time=".2" value="0" in="Slow"/>
+          </Controller>
+          <Controller type="Fade" end="Pause">
+            <Key type="Curve" time="0" value="0" out="Slow"/>
+            <Key type="Curve" time=".2" value="255" in="Slow"/>
+          </Controller>
+          <Controller type="Visibility" end="Pause">
+            <Key type="Bool" time="0.0" value="True"/>
+          </Controller>
+        </Animation>
+
+        <Animation name="Hide">
+          <!--<Event event="Hide" action="Play"/>-->
+          <Event event="Hide" action="Reset,Play"/>
+          <Controller type="Anchor" side="Left" relative="true" end="Pause">
+            <Key type="Curve" time="0" value="0" out="Slow"/>
+            <Key type="Curve" time=".2" value="-500" in="Slow"/>
+          </Controller>
+          <Controller type="Fade" end="Pause">
+            <Key type="Curve" time="0" value="255" out="Slow"/>
+            <Key type="Curve" time=".2" value="0" in="Slow"/>
+          </Controller>
+          <Controller type="Visibility" end="Pause">
+            <Key type="Bool" time="0.2" value="False"/>
+          </Controller>
+        </Animation>
+      
+          <Frame type="Frame" name="TalentsFrame1" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent/TalentsFrame2" pos="Min" offset="#ButtonOffset"/>
+          </Frame>
+
+          <Frame type="Frame" name="TalentsFrame2" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent/TalentsFrame3" pos="Min" offset="#ButtonOffset"/>
+          </Frame>
+
+          <Frame type="Frame" name="TalentsFrame3" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent/TalentsFrame4" pos="Min" offset="#ButtonOffset"/>
+          </Frame>
+      
+          <Frame type="Frame" name="TalentsFrame4" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent/TalentsFrame5" pos="Min" offset="#ButtonOffset"/>
+          </Frame>
+
+          <Frame type="Frame" name="TalentsFrame5" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent/TalentsFrame6" pos="Min" offset="#ButtonOffset"/>
+          </Frame>
+
+          <Frame type="Frame" name="TalentsFrame6" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent/TalentsFrame7" pos="Min" offset="#ButtonOffset"/>
+          </Frame>
+
+          <Frame type="Frame" name="TalentsFrame7" template="MyTalentsPanel/MyTalentsFrameTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="#ButtonOffset"/>
+          </Frame>
+
+    </Frame>
+
+
+    <Frame type="Frame" name="TierSelectionPanelTemplate">
+      <Width val="#itTalentsPanelButtonWidth"/>
+      <Height val="58"/>
+      <Frame type="Image" name="BackgroundImage">
+        <Anchor relative="$parent"/>
+        <TextureType val="Normal"/>
+        <Texture val="@UI/Storm_UI_InGame_TalentPanelStatistic"/>
+        <RenderPriority val="500"/>
+        <Tiled val="false" />
+        <TextureType val="NineSlice"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton1" template="MyTalentsPanel/TalentTierSelectionButtonTemplate">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton2" template="MyTalentsPanel/TierSelectionPanelTemplate/TierSelectionButton1">
+        <Anchor side="Left" relative="$parent/TierSelectionButton1" pos="0.75" offset="0"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton3" template="MyTalentsPanel/TierSelectionPanelTemplate/TierSelectionButton1">
+        <Anchor side="Left" relative="$parent/TierSelectionButton2" pos="0.75" offset="0"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton4" template="MyTalentsPanel/TierSelectionPanelTemplate/TierSelectionButton1">
+        <Anchor side="Left" relative="$parent/TierSelectionButton3" pos="0.75" offset="0"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton5" template="MyTalentsPanel/TierSelectionPanelTemplate/TierSelectionButton1">
+        <Anchor side="Left" relative="$parent/TierSelectionButton4" pos="0.75" offset="0"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton6" template="MyTalentsPanel/TierSelectionPanelTemplate/TierSelectionButton1">
+        <Anchor side="Left" relative="$parent/TierSelectionButton5" pos="0.75" offset="0"/>
+      </Frame>
+
+      <Frame type="Button" name="TierSelectionButton7" template="MyTalentsPanel/TierSelectionPanelTemplate/TierSelectionButton1">
+        <Anchor side="Left" relative="$parent/TierSelectionButton6" pos="0.75" offset="0"/>
+      </Frame>
+
+      <Frame type="Frame" name="EXPPointsFrame">
+        <Anchor side="Left" relative="$parent/TierSelectionButton7" pos="0.75" offset="0"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <Frame type="Label" name="EXPPointsLabel">
+          <Anchor side="Left" relative="$parent" pos="0.1" offset="-15"/>
+          <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+          <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
+          <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+          <Width val="150"/>
+          <Text val="500"/>
+          <!--<Style val="ScoreRewardPanelItemLabel_LootChest"/>-->
+          <Style val="HeroReadyButton"/>
+        </Frame>
+      </Frame>
+
+      <!--<Frame type="Label" name="Label">
+        <Anchor side="Left" relative="$parent/TierSelectionButton7" pos="0.75" offset="0"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <Style val="HeroReadyButton"/>
+        <Color val="FFFFFF"/>
+        <RenderPriority val="800"/>
+        <Text val="{EXPPointsFrame/@RealValue}"/>
+      <Frame type="DataRefFrame" name="EXPPointsFrame">
+        <Anchor relative="$parent"/>
+        <Argument name="Score" val="Storm_Player_EXPPoints"/>
+        <PlayerId val="1"/>
+      </Frame>
+    </Frame>-->
+
+      <!-- <Frame type="PlayerScoreValueFrame" name="ItFrame">
+        <Anchor side="Left" relative="$parent/TierSelectionButton7" pos="0.75" offset="0"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <PlayerId val="1"/>
+        <RenderPriority val="650"/>
+        <Frame type="ScoreValueLabelFrame" name="ScoreValueFrame0">
+          <ScoreValueLink val="Storm_Player_EXPPoints"/>
+          <AddCommas val="True"/>
+          <Anchor side="Left" relative="$parent" pos="0.1" offset="-15"/>
+          <Anchor side="Top" relative="$parent" pos="Min" offset="12"/>
+          <Anchor side="Bottom" relative="$parent" pos="Max" offset="-10"/>
+          <Anchor side="Right" relative="$parent" pos="Max" offset="-15"/>
+          <Width val="150"/>
+          <Frame type="Label" name="Label">
+            <Anchor relative="$parent"/>
+            <Style val="HeroReadyButton"/>
+            <Color val="FFFFFF"/>
+          </Frame>
+        </Frame>
+      </Frame>-->
+  </Frame>
+</Desc>

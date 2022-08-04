@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HeroMalfurionTreant@Weapon">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="HeroMalfurionTreant@WeaponDamage"/>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AcquireFilters value="Visible;Player,Ally,Neutral,NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <Range value="0.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.125"/>
+        <Backswing value="0"/>
+        <Effect value="HeroMalfurionTreant@WeaponInitialSet"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroMalfurionWeapon" parent="CoreHeroWeaponMedium">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <DisplayEffect value="HeroMalfurionWeapon@Damage"/>
+        <Effect value="HeroMalfurionWeapon@LaunchMissile"/>
+        <MinScanRange value="5.5"/>
+        <Range value="5.5"/>
+        <Period value="1"/>
+        <PreswingBeforeAttack value="0.5"/>
+        <PreswingBetweenAttacks value="0.25"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+</Catalog>

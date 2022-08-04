@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HeroTalandarWeaponPraetor" parent="CoreHeroWeaponMedium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HeroTalandarWeaponPraetor@Damage"/>
+        <MinScanRange value="4"/>
+        <Range value="1.25"/>
+        <Period value="1.25"/>
+        <Effect value="HeroTalandarWeaponPraetor@ImpactSet"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotsuit-weapon.dds"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroTalandarWeaponDragoon" parent="CoreHeroWeaponMedium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-weapon.dds"/>
+        <DisplayEffect value="HeroTalandarWeaponDragoon@Damage"/>
+        <Arc value="360"/>
+        <Period value="1.5"/>
+        <Effect value="HeroTalandarWeaponDragoon@LaunchMissile"/>
+        <MinScanRange value="5.5"/>
+        <Range value="5.5"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+</Catalog>

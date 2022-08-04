@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff default="1" id="CoreAvoidance">
+        <DamageResponse>
+            <ExcludeEffectArray value="HeroSelendisTalentIntuitiveAttack@Damage"/>
+            <ExcludeEffectArray value="HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisDecisiveStrike@Slow" parent="CoreSlow">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="1.5"/>
+        <Modification UnifiedMoveSpeedFactor="-0.8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisExecutorsGuard@ArmorBuff">
+        <BehaviorCategories index="User1" value="1"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="0.75"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorAll" Points="60"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisExecutorsGuard@WeaponBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Modification WeaponRange="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisZealousRush@Charging">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisZealousRush@HasOrderCombine"/>
+        <RemoveValidatorArray value="HeroSelendisZealousRush@TargetRange"/>
+        <RemoveValidatorArray value="CasterNotDeadOrSilencedOrStasisOrStunnedExceptTimeStop"/>
+        <RemoveValidatorArray value="CasterNotHoldingFireCombine"/>
+        <Duration value="1.5"/>
+        <FinalEffect value="HeroSelendisZealousRush@ClearOrder"/>
+        <Modification MoveSpeedMinimum="18">
+            <StateFlags index="SuppressCollision" value="1"/>
+            <AbilLinkDisableArray value="HoldFire"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentBladesofaZealot@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="1000"/>
+        </Cost>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <RemoveValidatorArray value="HeroSelendisTalentBladesofaZealot"/>
+        <RefreshEffect value="HeroSelendisTalentBladesofaZealot@TokenCounterController"/>
+        <FinalEffect value="HeroSelendisTalentBladesofaZealot@ResetToken"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.1"/>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="1000"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentBladesofaZealot@StackBuff" parent="CoreQuestStackFlatDamageBasicParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentBladesofaZealot"/>
+        <MaxStackCount value="1000"/>
+        <DamageResponse>
+            <ModifyAmount value="0.5">
+                <AccumulatorArray value="HeroSelendisTemplarWillpower@CasterHighLife"/>
+                <AccumulatorArray value="HeroSelendisTemplarWillpower@TargetLowLife"/>
+                <AccumulatorArray value="HeroSelendisTalentTemplarBlades@Switch"/>
+            </ModifyAmount>
+            <RequireEffectArray value="HeroSelendisWeapon@Damage"/>
+            <RequireEffectArray value="HeroSelendisWeapon@DamageCritical"/>
+            <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="50"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="50"/>
+            </Cost>
+        </DamageResponse>
+        <TechAliasArray value="QuestData Limited"/>
+        <RemoveValidatorArray value="HeroSelendisTalentExecutorBladeExecutorPower"/>
+        <RefreshEffect value="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounterController"/>
+        <FinalEffect value="HeroSelendisTalentExecutorBladeExecutorPower@ResetTokenCounter"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentExecutorBladeExecutorPower@StackBuff" parent="CoreQuestStackFlatDamageSpellParent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentExecutorBladeExecutorPower"/>
+        <MaxStackCount value="50"/>
+        <DamageResponse>
+            <ModifyAmount value="5"/>
+            <RequireEffectArray value="HeroSelendisExecutorBlade@Damage"/>
+            <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisPowerStrike@AdditionalMovespeed" parent="CoreSprint">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="3"/>
+        <Modification UnifiedMoveSpeedFactor="0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentExecutorBladeUpstage@Avoidance" parent="CoreAvoidance">
+        <InfoFlags index="Hidden" value="0"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="5"/>
+        <DamageResponse Handled="HeroSelendisTalentExecutorBladeUpstage@HandledSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentTemplarBlades@EnemyHeroSearchBuff" parent="CoreTalentBehaviorParent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentTemplarBlades"/>
+        <Period value="0.125"/>
+        <PeriodicEffect value="HeroSelendisTalentTemplarBlades@SearchTargets"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentTemplarBlades@TargetMarkBuff" parent="CoreTalentBehaviorParent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentTemplarBlades"/>
+        <RemoveValidatorArray value="TargetLifeLT50Percent"/>
+        <RemoveValidatorArray value="TargetNotInvulnerable"/>
+        <RemoveValidatorArray value="TargetNotStasisExceptTimeStop"/>
+        <MaxStackCount value="10"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentZealotofAiurTrueTemplar@Relentless" parent="CoreUnitStatsModificator">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisZealotofAiur@CasterHasProtection"/>
+        <RemoveValidatorArray value="HeroSelendisTalentZealotofAiurTrueTemplar"/>
+        <Modification>
+            <AttributeChangeArray index="19" Points="75"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentVindicatorsBeamInduction@BeamPercentDamageController">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Selendis"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisZealotofAiur@Protection" parent="CoreProtect">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="2"/>
+        <InitialEffect value="HeroSelendisTalentZealotofAiurTrueTemplar@ApplyRelentless"/>
+        <PeriodicEffect value="HeroSelendisTalentZealotofAiurTrueTemplar@ApplyRelentless"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisPowerStrike@Speed">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="CasterNotDazedOrDeadOrFearedOrPolymorphedOrRootedOrSilencedOrStasisOrStunned"/>
+        <FinalEffect value="HeroSelendisPowerStrike@ApplyAdditionalMovespeed"/>
+        <Modification MoveSpeedMaximum="20" MoveSpeedMinimum="20">
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior" parent="CoreUnitStatsModificator">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentTemplarWillpowerForceOfWill"/>
+        <RemoveValidatorArray value="HeroSelendisTemplarWillpower@CasterHasShieldBehavior"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentPowerStrikeFinalCut" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentExecutorBladeAdvancedCharge">
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Speed.dds"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="5"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisExecutorCharge@CasterBehavior">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisExecutorCharge@TargetHasBehavior"/>
+        <Duration value="2"/>
+        <FinalEffect value="HeroSelendisExecutorCharge@RemoveCasterUnitTrackerBehavior"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentPhaseWeapon@ActiveBuff" parent="CoreTalentBehaviorParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentPhaseWeapon"/>
+        <Duration value="8"/>
+    </CBehaviorBuff>
+    <CBehaviorUnitTracker id="HeroSelendisExecutorCharge@UnitTracker">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <MaxTrackedUnits value="1"/>
+        <UnitAddedAtMaxRule value="ReplaceOldest"/>
+    </CBehaviorUnitTracker>
+    <CBehaviorBuff id="HeroSelendisExecutorCharge@TargetBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisExecutorCharge@TargetInCasterRange"/>
+        <Duration value="2"/>
+        <InitialEffect value="HeroSelendisExecutorCharge@ApplyCasterBehavior"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentPowerStrikePsionicDash@Shield" parent="CoreShield">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <MaxStackCount value="3"/>
+        <Duration value="5"/>
+        <DamageResponse>
+            <ModifyLimitVitalMaxFractionArray index="Life" value="0.05"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisCalldownVindicator@Silence" parent="CoreSilence">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisCalldownVindicator"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentExecutorBladeImpalingBlade@CooldownBehavior">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentExecutorBladeImpalingBlade"/>
+        <Duration value="3"/>
+        <PeriodicEffect value="HeroSelendisTalentExecutorBladeImpalingBlade@ModifyCooldowns"/>
+        <InfoFlags index="Hidden" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentInTheHeatOfBattle" parent="CoreUnitStatsModificator">
+        <Alignment value="Positive"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentInTheHeatOfBattle"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="25"/>
+        <Duration value="6"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.02"/>
+            <AttributeChangeArray index="17" Points="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentVindicatorsBeamThermalFire@MarkerBehavior" parent="CoreTalentBehaviorParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <MaxStackCount value="10"/>
+        <MaxStackCountPerCaster value="1"/>
+        <Duration value="0.25"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentIntuitiveAttack">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisTalentIntuitiveAttack"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="6"/>
+        <Duration value="12"/>
+        <InfoFlags index="Hidden" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTemplarWillpower" parent="CoreShieldLeech">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="4"/>
+        <DamageResponse Handled="HeroSelendisTalentTemplarWillpowerDeflectionShield@Search" HandledValue="Absorbed"/>
+        <InitialEffect value="HeroSelendisTalentTemplarWillpowerForceOfWill@ApplyArmorBuff"/>
+        <RefreshEffect value="HeroSelendisTalentTemplarWillpowerForceOfWill@ApplyArmorBuff"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisZealousRush@Mark">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="10"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisZealousRush@MoveDummy">
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisZealousRush@Shield" parent="CoreShield">
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+        <Duration value="5"/>
+        <DamageResponse ModifyLimit="180"/>
+        <TechAliasArray value="Shield Tank"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Selendis_VindicatorCalldown_PeriodChecker">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="TargetDoesNotHaveImmuneToCrowdControlBehavior"/>
+        <RemoveValidatorArray value="TargetNotDead"/>
+        <RemoveValidatorArray value="TargetNotInvulnerableExceptTimeStop"/>
+        <RemoveValidatorArray value="TargetNotUnstoppable"/>
+        <Duration value="0.125"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisCalldownVindicator@TimedLifeBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Duration value="8"/>
+        <PeriodicEffect value="HeroSelendisCalldownVindicator@WeaponSearch"/>
+        <FinalEffect value="Suicide"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+        </Modification>
+        <Period value="0.85"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamageBehavior" parent="CoreTalentBehaviorParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="1"/>
+        <FinalEffect value="HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage"/>
+        <RemoveValidatorArray value="HeroSelendisTalentPowerStrikeTemplarsZeal"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisExecutorCharge@Charging">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <RemoveValidatorArray value="HeroSelendisExecutorCharge@HasOrderCombine"/>
+        <RemoveValidatorArray value="CasterNotDeadOrSilencedOrStasisOrStunnedExceptTimeStop"/>
+        <RemoveValidatorArray value="HeroSelendisExecutorCharge@TargetRange"/>
+        <RemoveValidatorArray value="CasterNotHoldingFireCombine"/>
+        <Duration value="1.5"/>
+        <FinalEffect value="HeroSelendisExecutorCharge@ClearOrder"/>
+        <Modification MoveSpeedMinimum="18">
+            <StateFlags index="SuppressCollision" value="1"/>
+            <AbilLinkDisableArray value="HoldFire"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisExecutorBlade@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="0.75"/>
+        <Modification UnifiedMoveSpeedFactor="-0.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisExecutorChargeApproach@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="1.25"/>
+        <Modification UnifiedMoveSpeedFactor="-0.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisPowerStrike@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="1.5"/>
+        <Modification UnifiedMoveSpeedFactor="-0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroSelendisVindicatorsBeam@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Duration value="1"/>
+        <Modification UnifiedMoveSpeedFactor="-0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorUnitTracker id="HeroSelendisZealousRush@UnitTracker">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <MaxTrackedUnits value="1"/>
+        <UnitAddedAtMaxRule value="ReplaceOldest"/>
+    </CBehaviorUnitTracker>
+</Catalog>

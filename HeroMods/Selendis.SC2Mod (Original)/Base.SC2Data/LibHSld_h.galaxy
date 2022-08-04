@@ -1,0 +1,30 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Selendis
+//--------------------------------------------------------------------------------------------------
+// Constants
+const fixed libHSld_gv_heroSelendisTemplarWillpowerShieldsModifier = 0.5;
+const fixed libHSld_gv_heroSelendisTemplarWillpowerShieldsModifierPlasmaShield = 1.0;
+const fixed libHSld_gv_heroSelendisTemplarWillpowerShieldsModifierPhaseBulwark = 0.3;
+const fixed libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifier = 0.3;
+const fixed libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifierReconfigurationShields = 0.45;
+const fixed libHSld_gv_heroSelendisPhaseWeaponLifestealPassive = 0.15;
+const fixed libHSld_gv_heroSelendisPhaseWeaponLifestealActive = 0.5;
+const fixed libHSld_gv_heroSelendisCalldownVindicatorMothership = 0.75;
+
+// Function Declarations
+fixed libHSld_gf_HeroSelendisTemplarWillpowerShieldsModifier (int lp_player, string lp_effect, unit lp_triggeringUnit);
+fixed libHSld_gf_HeroSelendisTemplarWillpowerHPShieldsMaxModifier (int lp_player);
+
+// Trigger Declarations
+trigger libHSld_gt_HeroSelendisTemplarWillpowerDamaged;
+trigger libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed;
+trigger libHSld_gt_HeroSelendisPhaseWeapon;
+trigger libHSld_gt_HeroSelendisForceofWillTalentChoosen;
+trigger libHSld_gt_HeroSelendisCalldownVindicatorMothership;
+trigger libHSld_gt_HeroSelendisTemplarBladesIconUIController;
+
+// Library Initialization
+void libHSld_InitVariables ();
+

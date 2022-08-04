@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="MercenarySlaynElementalEssenceLeech">
+        <Icon value="Assets\Textures\btn-ability-zerg-corrosivebile.dds"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CButton>
+</Catalog>

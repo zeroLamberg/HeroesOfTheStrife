@@ -1,0 +1,1239 @@
+include "TriggerLibs/NativeLib"
+include "LibAIAI"
+include "LibCore"
+include "LibGame"
+include "LibUIUI"
+
+include "LibHAba_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Abathur
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHAba_InitLibraries () {
+    libNtve_InitVariables();
+    libAIAI_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libHAba_InitVariables_completed = false;
+
+void libHAba_InitVariables () {
+    int init_i;
+
+    if (libHAba_InitVariables_completed) {
+        return;
+    }
+
+    libHAba_InitVariables_completed = true;
+
+    libHAba_gv_heroAbathurSpikeBurstSplatScalar = 1.0;
+    for (init_i = 0; init_i <= libCore_gv_bALMaxEnginePlayerCount; init_i += 1) {
+        libHAba_gv_heroAbathurDeepTunnelPings[init_i] = c_invalidPingId;
+    }
+    for (init_i = 0; init_i <= libCore_gv_bALMaxEnginePlayerCount; init_i += 1) {
+        libHAba_gv_heroAbathurDeepTunnelPingTextLockoutTimer[init_i] = TimerCreate();
+    }
+    for (init_i = 0; init_i <= libCore_gv_bALMaxEnginePlayerCount; init_i += 1) {
+        libHAba_gv_heroAbathurMonstrosityDeepTunnelPings[init_i] = c_invalidPingId;
+    }
+    for (init_i = 0; init_i <= libCore_gv_bALMaxEnginePlayerCount; init_i += 1) {
+        libHAba_gv_heroAbathurMonstrosityDeepTunnelPingTextLockoutTimer[init_i] = TimerCreate();
+    }
+    libHAba_gv_heroAbathurMonstrosityTimedLifeIncrease = 3.0;
+    libHAba_gv_heroAbathurMonstrosityHealthIncreasePerLevel = 3.6;
+    libHAba_gv_heroAbathurEvolutionCompleteStacksCarryover = 0.25;
+}
+
+// Functions
+void libHAba_gf_AbathurUltimateEvolutionEnded (trigger t) {
+    // Automatic Variable Declarations
+    // Implementation
+    TriggerAddEventGeneric(t, libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C);
+}
+
+void libHAba_gf_SendEventAbathurUltimateEvolutionEnded (int lp_abathurPlayer, unit lp_clonedUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C, libHAba_gv_eventParam_AbathurUltimateEvolution_AbathurPlayer_C), lp_abathurPlayer);
+    DataTableSetUnit(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C, libHAba_gv_eventParam_AbathurUltimateEvolution_ClonedUnit_C), lp_clonedUnit);
+    TriggerSendEvent(libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C);
+}
+
+int libHAba_gf_AbathurUltimateEvolutionAbathurPlayer () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C, libHAba_gv_eventParam_AbathurUltimateEvolution_AbathurPlayer_C));
+}
+
+unit libHAba_gf_AbathurUltimateEvolutionClonedUnit () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetUnit(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C, libHAba_gv_eventParam_AbathurUltimateEvolution_ClonedUnit_C));
+}
+
+void libHAba_gf_AbathurUltimateEvolutionHeroCopied (trigger t) {
+    // Automatic Variable Declarations
+    // Implementation
+    TriggerAddEventGeneric(t, libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C);
+}
+
+void libHAba_gf_SendEventAbathurUltimateEvolutionHeroCopied (int lp_abathurOwner, int lp_targetOwner) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C, libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_AbathurOwner_C), lp_abathurOwner);
+    DataTableSetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C, libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_TargetOwner_C), lp_targetOwner);
+    TriggerSendEvent(libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C);
+}
+
+int libHAba_gf_AbathurUltimateEvolutionHeroCopiedAbathurOwner () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C, libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_AbathurOwner_C));
+}
+
+int libHAba_gf_AbathurUltimateEvolutionHeroCopiedTargetOwner () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C, libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_TargetOwner_C));
+}
+
+void libHAba_gf_AbathurSymbiote (trigger t) {
+    // Automatic Variable Declarations
+    // Implementation
+    TriggerAddEventGeneric(t, libHAba_gv_eventID_AbathurSymbiote_C);
+}
+
+void libHAba_gf_SendEventAbathurSymbiote (int lp_abathurPlayer, unit lp_symbioteUnit, unit lp_symbioteTarget) {
+    // Automatic Variable Declarations
+    // Implementation
+    DataTableSetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurSymbiote_C, libHAba_gv_eventParam_AbathurSymbiote_AbathurPlayer_C), lp_abathurPlayer);
+    DataTableSetUnit(false, TriggerEventParamName(libHAba_gv_eventID_AbathurSymbiote_C, libHAba_gv_eventParam_AbathurSymbiote_SymbioteUnit_C), lp_symbioteUnit);
+    DataTableSetUnit(false, TriggerEventParamName(libHAba_gv_eventID_AbathurSymbiote_C, libHAba_gv_eventParam_AbathurSymbiote_SymbioteTarget_C), lp_symbioteTarget);
+    TriggerSendEvent(libHAba_gv_eventID_AbathurSymbiote_C);
+}
+
+int libHAba_gf_AbathurSymbioteAbathurPlayer () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(false, TriggerEventParamName(libHAba_gv_eventID_AbathurSymbiote_C, libHAba_gv_eventParam_AbathurSymbiote_AbathurPlayer_C));
+}
+
+unit libHAba_gf_AbathurSymbioteUnit () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetUnit(false, TriggerEventParamName(libHAba_gv_eventID_AbathurSymbiote_C, libHAba_gv_eventParam_AbathurSymbiote_SymbioteUnit_C));
+}
+
+unit libHAba_gf_AbathurSymbioteTarget () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetUnit(false, TriggerEventParamName(libHAba_gv_eventID_AbathurSymbiote_C, libHAba_gv_eventParam_AbathurSymbiote_SymbioteTarget_C));
+}
+
+void libHAba_gf_HeroAbathurReturnControlledUnittoLaneAI (unit lp_unit) {
+    // Variable Declarations
+    unit lv_lanerUnit;
+    int lv_ownerPlayer;
+    int lv_teamNumberofOwner;
+    point lv_positionOfUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_lanerUnit = lp_unit;
+    lv_positionOfUnit = UnitGetPosition(lp_unit);
+    lv_ownerPlayer = UnitGetOwner(lp_unit);
+    lv_teamNumberofOwner = libGame_gf_TeamNumberOfPlayer(lv_ownerPlayer);
+    libGame_gf_CalculateSpawnedMinionGoalPoints(lv_ownerPlayer, lv_positionOfUnit);
+    libAIAI_gf_MinionAIStartMinionAI(-1, lv_lanerUnit, libGame_gv_spawnedMinionLane, libGame_gv_spawnedMinionFirstWaypointIndex, false, 0, false);
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Symbiote Screen Effect
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurSymbioteScreenEffect_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitHasBehavior2(EventUnit(), "HeroAbathurAssumingDirectControl") == true)) {
+        DialogControlFadeTransparency(libUIUI_gv_fullscreenOverlaysPanel.lv_abathurSymbioteOverlay, PlayerGroupSingle(EventPlayer()), 0.5, 0.0);
+    }
+    else {
+        DialogControlFadeTransparency(libUIUI_gv_fullscreenOverlaysPanel.lv_abathurSymbioteOverlay, PlayerGroupSingle(EventPlayer()), 0.5, 100.0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurSymbioteScreenEffect_Init () {
+    libHAba_gt_HeroAbathurSymbioteScreenEffect = TriggerCreate("libHAba_gt_HeroAbathurSymbioteScreenEffect_Func");
+    TriggerAddEventUnitBehaviorChange(libHAba_gt_HeroAbathurSymbioteScreenEffect, null, "HeroAbathurAssumingDirectControl", c_unitBehaviorChangeAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Locust Nest Set Facing
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurLocustNestSetFacing_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_MakeUnitFacePoint(EventUnitCreatedUnit(), UnitGetPosition(libGame_gv_teams[libGame_gf_EnemyTeamNumberOfPlayer(UnitGetOwner(EventUnitCreatedUnit()))].lv_core), 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurLocustNestSetFacing_Init () {
+    libHAba_gt_HeroAbathurLocustNestSetFacing = TriggerCreate("libHAba_gt_HeroAbathurLocustNestSetFacing_Func");
+    TriggerAddEventUnitCreated(libHAba_gt_HeroAbathurLocustNestSetFacing, null, "HeroAbathurTalentLocustNest", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Locust Spawned
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurLocustSpawned_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_locustUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_locustUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    UnitSetFacing(lv_locustUnit, UnitGetFacing(EventPlayerEffectUsedUnit(c_effectUnitSource)), 0.0);
+    UnitIssueOrder(lv_locustUnit, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(EventPlayerEffectUsedUnit(c_effectUnitSource)), 1.5, UnitGetFacing(EventPlayerEffectUsedUnit(c_effectUnitSource)))), c_orderQueueAddToFront);
+    Wait(0.5, c_timeGame);
+    if ((libGame_gf_PlayerIsHeroPlayer(UnitGetOwner(lv_locustUnit)) == true)) {
+        libAIAI_gf_SummonedAIInitialAttackLogic(false, lv_locustUnit, libGame_gv_players[UnitGetOwner(lv_locustUnit)].lv_heroUnit, true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurLocustSpawned_Init () {
+    libHAba_gt_HeroAbathurLocustSpawned = TriggerCreate("libHAba_gt_HeroAbathurLocustSpawned_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurLocustSpawned, c_playerAny, "HeroAbathurLocustStrain@LanerDummy");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Symbiote
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurSymbiote_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_abathur;
+    int lv_abathurPlayer;
+    unit lv_symbiote;
+    unit lv_symbioteHost;
+    int lv_symbioteHostPlayer;
+    string lv_cooldownLink;
+    fixed lv_spikeBurstRange;
+    fixed lv_symbioteFacing;
+    bool lv_symbioteFacingTriggerEnabled;
+    int lv_i;
+
+    // Automatic Variable Declarations
+    playergroup auto92C46366_g;
+
+    // Variable Initialization
+    lv_cooldownLink = "";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_abathur = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    lv_abathurPlayer = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
+    UnitSetFacing(libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 315.0, 0.0);
+    lv_symbioteHost = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    lv_symbioteHostPlayer = UnitGetOwner(lv_symbioteHost);
+    lv_cooldownLink = CatalogFieldValueGet(c_gameCatalogAbil, "HeroAbathurSymbiote", "Cost[" + IntToString(0) + "].Cooldown.Link", lv_abathurPlayer);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "HeroAbathurSymbiote", 0, lv_abathurPlayer, UnitGetPosition(lv_symbioteHost));
+    lv_symbiote = UnitLastCreated();
+    UnitCreateEffectUnit(lv_abathur, "Summon@CreationSwitch", lv_symbiote);
+    UnitCreateEffectUnit(lv_symbioteHost, "HeroAbathurSymbiote@ActorLink", lv_symbiote);
+    UnitCreateEffectUnit(lv_symbioteHost, "HeroAbathurSymbiote@ApplySuperStealthController", lv_symbiote);
+    UnitCreateEffectUnit(lv_symbioteHost, "HeroAbathurSymbiote@ApplyStealthController", lv_symbiote);
+    UnitCreateEffectUnit(lv_symbiote, "HeroAbathurSymbiote@PropertyLink", lv_symbioteHost);
+    SoundPlayForPlayer(SoundLink("HeroAbathurSymbiote@Screen_Launch", -1), lv_abathurPlayer, PlayerGroupSingle(lv_abathurPlayer), 100.0, 0.0);
+    SoundPlayForPlayer(SoundLink("HeroAbathurSymbiote@Screen_Loop", -1), lv_abathurPlayer, PlayerGroupSingle(lv_abathurPlayer), 100.0, 0.0);
+    libHAba_gv_heroAbathurSymbioteScreenSound[lv_abathurPlayer] = SoundLastPlayed();
+    libHAba_gf_SendEventAbathurSymbiote(lv_abathurPlayer, lv_symbiote, lv_symbioteHost);
+    if ((UnitBehaviorCount(EventPlayerEffectUsedUnit(c_effectUnitCaster), "PressurizedGlandsCarryBehavior") == 1)) {
+        lv_spikeBurstRange = (StringToFixed(CatalogFieldValueGet(c_gameCatalogEffect, "SpikeBurstPressurizedGlandsDamageSearch", "AreaArray[" + IntToString(0) + "].Radius", lv_abathurPlayer)) + UnitGetPropertyFixed(lv_symbioteHost, c_unitPropRadius, c_unitPropCurrent));
+        CatalogFieldValueSet(c_gameCatalogActor, "SymbioteSpikeBurstRangeSplat", "Scale", lv_abathurPlayer, FixedToString((lv_spikeBurstRange * libHAba_gv_heroAbathurSpikeBurstSplatScalar), 2));
+    }
+    else {
+        lv_spikeBurstRange = (StringToFixed(CatalogFieldValueGet(c_gameCatalogEffect, "HeroAbathurSpikeBurst@DamageSearch", "AreaArray[" + IntToString(0) + "].Radius", lv_abathurPlayer)) + UnitGetPropertyFixed(lv_symbioteHost, c_unitPropRadius, c_unitPropCurrent));
+        CatalogFieldValueSet(c_gameCatalogActor, "HeroAbathurSpikeBurst@RangeSplat", "Scale", lv_abathurPlayer, FixedToString((lv_spikeBurstRange * libHAba_gv_heroAbathurSpikeBurstSplatScalar), 2));
+    }
+    SoundPlayForPlayer(SoundLink("AbathurHero_Symbiote", -1), lv_abathurPlayer, PlayerGroupSingle(UnitGetOwner(lv_symbioteHost)), 100.0, 0.0);
+    UnitSelect(libGame_gv_players[lv_abathurPlayer].lv_heroUnit, lv_abathurPlayer, false);
+    UnitSelect(lv_symbiote, lv_abathurPlayer, true);
+    UnitSelect(libGame_gv_players[lv_abathurPlayer].lv_heroUnit, lv_abathurPlayer, true);
+    libGame_gv_players[lv_abathurPlayer].lv_cameraForcedLock = true;
+    libGame_gv_players[lv_abathurPlayer].lv_cameraPlayerUnitGroupToFocusOn = libNtve_gf_ConvertUnitToUnitGroup(lv_symbiote);
+    libGame_gf_CameraUpdateCameraForPlayer(lv_abathurPlayer);
+    libHAba_gv_heroAbathurSymbioteEventAdded[EventPlayer()] = true;
+    libHAba_gv_heroAbathurSymbioteLookAt[lv_abathurPlayer] = UnitGetPosition(lv_symbioteHost);
+    libHAba_gv_heroAbathurSymbioteActive[EventPlayer()] = true;
+    libNtve_gf_MakeUnitFacePoint(lv_symbiote, PointWithOffsetPolar(UnitGetPosition(lv_symbioteHost), 1.0, -90.0), 2.0);
+    while ((UnitIsAlive(lv_symbioteHost) == true) && (UnitBehaviorCount(lv_symbioteHost, "HeroAbathurSymbiote@HostBehavior") >= 1) && (UnitGetOwner(lv_symbioteHost) == lv_symbioteHostPlayer)) {
+        if ((DistanceBetweenPoints(UnitGetPosition(lv_symbiote), UnitGetPosition(lv_symbioteHost)) >= 4.0)) {
+            UnitSetPosition(lv_symbiote, UnitGetPosition(lv_symbioteHost), false);
+        }
+        else {
+            UnitSetPosition(lv_symbiote, UnitGetPosition(lv_symbioteHost), true);
+        }
+        Wait(0.0625, c_timeGame);
+    }
+    UnitModifyCooldown(EventPlayerEffectUsedUnit(c_effectUnitCaster), lv_cooldownLink, 4.0, c_cooldownOperationSet);
+    libGame_gv_players[lv_abathurPlayer].lv_cameraForcedLock = false;
+    libGame_gv_players[lv_abathurPlayer].lv_cameraPlayerUnitGroupToFocusOn = libGame_gv_players[lv_abathurPlayer].lv_heroUnitGroup;
+    libGame_gf_CameraUpdateCameraForPlayer(lv_abathurPlayer);
+    UnitKill(lv_symbiote);
+    UnitBehaviorRemove(lv_abathur, "HeroAbathurAssumingDirectControl", 1);
+    auto92C46366_g = libCore_gv_heroPlayersIncludeAIHeroPlayers;
+    lv_i = -1;
+    while (true) {
+        lv_i = PlayerGroupNextPlayer(auto92C46366_g, lv_i);
+        if (lv_i < 0) { break; }
+        if ((libHAba_gv_heroAbathurSymbioteActive[lv_i] == true)) {
+            lv_symbioteFacingTriggerEnabled = true;
+            break;
+        }
+
+    }
+    libHAba_gv_heroAbathurSymbioteActive[EventPlayer()] = false;
+    SoundStop(libHAba_gv_heroAbathurSymbioteScreenSound[lv_abathurPlayer], false);
+    SoundPlayForPlayer(SoundLink("HeroAbathurSymbiote@Screen_End", -1), lv_abathurPlayer, PlayerGroupSingle(lv_abathurPlayer), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurSymbiote_Init () {
+    libHAba_gt_HeroAbathurSymbiote = TriggerCreate("libHAba_gt_HeroAbathurSymbiote_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurSymbiote, c_playerAny, "HeroAbathurSymbiote@ApplyHostBehavior");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Carapace Regenerative Microbes
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_abathur;
+    int lv_abathurPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_abathurPlayer = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
+    lv_abathur = libGame_gv_players[lv_abathurPlayer].lv_heroUnit;
+    UnitCreateEffectUnit(lv_abathur, "HeroAbathurCarapace@RegenerativeMicrobesApplyBehavior", EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes_Init () {
+    libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes = TriggerCreate("libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes, c_playerAny, "HeroAbathurCarapace@ApplyShield");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes, c_playerAny, "HeroAbathurTalentSymbioteHivemind@ApplyCarapaceShield");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Ultimate Evolution - Start Control
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurUltimateEvolutionStartControl_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_typeofCopiedUnit;
+    unit lv_abathur;
+    int lv_abathurPlayer;
+    unit lv_ultimateEvolutionUnit;
+    fixed lv_multiplier;
+    fixed lv_lifeofTarget;
+    unit lv_target;
+    int lv_targetPlayer;
+    int lv_targetHeroIndex;
+    int lv_itPlayerResponse;
+    int lv_itAbility;
+    int lv_abilityIndex;
+
+    // Automatic Variable Declarations
+    int auto62A64736_n;
+    int auto62A64736_i;
+    int auto8E26F4DE_ae;
+    const int auto8E26F4DE_ai = 1;
+    int autoC5A5DCB2_ae;
+    const int autoC5A5DCB2_ai = 1;
+
+    // Variable Initialization
+    lv_abathur = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    lv_abathurPlayer = UnitGetOwner(lv_abathur);
+    lv_target = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    lv_targetPlayer = UnitGetOwner(lv_target);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitFilterMatch(lv_target, 0, UnitFilter((1 << c_targetFilterHover), 0, 0, 0)) == true)) {
+        UnitCreateEffectUnit(lv_abathur, "AbathurUltimateEvolutionInterruptModifyCooldown", lv_abathur);
+        UnitBehaviorRemove(lv_abathur, "HeroAbathurUltimateEvolution@VehicleCasterBehavior", 1);
+        UnitBehaviorRemove(lv_abathur, "HeroAbathurAssumingDirectControl", 1);
+        return true;
+    }
+
+    if ((UnitIsAlive(lv_abathur) == false)) {
+        UnitBehaviorRemove(lv_abathur, "HeroAbathurAssumingDirectControl", 1);
+        return true;
+    }
+
+    lv_typeofCopiedUnit = UnitGetType(lv_target);
+    lv_multiplier = ((UnitLevel(lv_abathur) * 150.0) + 0.0);
+    lv_lifeofTarget = UnitGetPropertyFixed(lv_target, c_unitPropLifeMax, c_unitPropNormal);
+    lv_targetHeroIndex = libCore_gf_HeroIndexOfUnit(lv_target);
+    PlayerApplySkin(lv_abathurPlayer, libCore_gv_dataSkinsSkinData[libGame_gf_LoadoutGetPlayerSkin(lv_targetPlayer)].lv_skinLink, true);
+    if ((libGame_gf_PlayerIsHeroPlayer(lv_targetPlayer) == true) && (libGame_gv_players[lv_targetPlayer].lv_activeVehicle != null)) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_typeofCopiedUnit, 0, lv_abathurPlayer, UnitTypePlacementFromPoint(lv_typeofCopiedUnit, lv_abathurPlayer, UnitGetPosition(libGame_gv_players[lv_targetPlayer].lv_activeVehicle), 35.0));
+    }
+    else {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, lv_typeofCopiedUnit, 0, lv_abathurPlayer, UnitTypePlacementFromPoint(lv_typeofCopiedUnit, lv_abathurPlayer, UnitGetPosition(lv_target), 35.0));
+    }
+    lv_ultimateEvolutionUnit = UnitLastCreated();
+    libUIUI_gf_InitPathingLines(lv_ultimateEvolutionUnit, lv_abathurPlayer);
+    UnitSetPropertyFixed(lv_ultimateEvolutionUnit, c_unitPropLife, UnitGetPropertyFixed(lv_ultimateEvolutionUnit, c_unitPropLifeMax, c_unitPropCurrent));
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "HeroAbathurTalentUltimateEvolutionEvolutionaryLink@UnitTracker", lv_ultimateEvolutionUnit, 1);
+    UnitCreateEffectUnit(lv_ultimateEvolutionUnit, "HeroAbathurTalentUltimateEvolutionEvolutionaryLink@AddTrackedUnit", lv_target);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "HeroAbathurUltimateEvolution@Build", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "HeroAbathurUltimateEvolution@Buff", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "SuppressGenericDeath", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "SuppressGenericDeathRagdoll", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "HeroAbathurUltimateEvolution@ControlBehavior", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "EarnsXP", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "CapturePointAllowed", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_ultimateEvolutionUnit, "HeroAbathurTalentVolatileMutation", libGame_gv_players[lv_abathurPlayer].lv_heroUnit, 1);
+    SoundPlayForPlayer(SoundLink("Abathur_UltimateEvolution_Screen_Loop", c_soundIndexAny), lv_abathurPlayer, libCore_gv_playerGroupFromPlayer[lv_abathurPlayer], 100.0, 0.0);
+    UnitXPAddXP(lv_ultimateEvolutionUnit, null, libCore_gf_GetTotalXPForLevel(libGame_gv_teams[libGame_gf_TeamNumberOfPlayer(lv_abathurPlayer)].lv_teamLevel));
+    CatalogFieldValueSet(c_gameCatalogAbil, "HeroGenericMount", "CastIntroTime[" + IntToString(0) + "]", UnitGetOwner(lv_abathur), CatalogFieldValueGet(c_gameCatalogAbil, "HeroGenericMount", "CastIntroTime[" + IntToString(0) + "]", 0));
+    libGame_gv_players[lv_abathurPlayer].lv_activeVehicle = lv_ultimateEvolutionUnit;
+    libUIUI_gf_UIHeroConsoleSetUpForPlayer(lv_abathurPlayer, lv_ultimateEvolutionUnit);
+    libUIUI_gf_HeroConsoleUnitStatusBarsSetUnitForBars(lv_ultimateEvolutionUnit, lv_abathurPlayer);
+    UnitStatusBarOverride(lv_ultimateEvolutionUnit, c_unitStatusGroupAll);
+    if ((libCore_gf_HeroHasQuestAtStart(libGame_gv_players[lv_targetPlayer].lv_heroIndex) == true)) {
+        libGame_gf_QuestTokenResetTokenData(libCore_gv_dataHeroesHeroData[libGame_gv_players[lv_targetPlayer].lv_heroIndex].lv_questDataTokenCounterBehavior, lv_abathurPlayer);
+    }
+
+    libGame_gf_LevelUpResetHeroStats(lv_ultimateEvolutionUnit);
+    auto62A64736_n = UnitXPGetCurrentLevel(lv_ultimateEvolutionUnit, null);
+    for (auto62A64736_i = 1; auto62A64736_i <= auto62A64736_n; auto62A64736_i += 1) {
+        libGame_gf_LevelUpApplyHeroStatsForHeroSingleLevel(lv_ultimateEvolutionUnit);
+    }
+    auto8E26F4DE_ae = libCore_gv_dataHeroesHeroData[lv_targetHeroIndex].lv_playerResponseCount;
+    lv_itPlayerResponse = 1;
+    for ( ; ( (auto8E26F4DE_ai >= 0 && lv_itPlayerResponse <= auto8E26F4DE_ae) || (auto8E26F4DE_ai < 0 && lv_itPlayerResponse >= auto8E26F4DE_ae) ) ; lv_itPlayerResponse += auto8E26F4DE_ai ) {
+        PlayerAddResponse(lv_abathurPlayer, libCore_gv_dataHeroesHeroData[lv_targetHeroIndex].lv_playerResponse[lv_itPlayerResponse]);
+    }
+    autoC5A5DCB2_ae = libCore_gv_dataHeroesHeroData[lv_targetHeroIndex].lv_abilitiesCount;
+    lv_itAbility = 1;
+    for ( ; ( (autoC5A5DCB2_ai >= 0 && lv_itAbility <= autoC5A5DCB2_ae) || (autoC5A5DCB2_ai < 0 && lv_itAbility >= autoC5A5DCB2_ae) ) ; lv_itAbility += autoC5A5DCB2_ai ) {
+        lv_abilityIndex = libCore_gv_dataHeroesHeroData[lv_targetHeroIndex].lv_abilityIndex[lv_itAbility];
+        if ((libCore_gv_abilityData[lv_abilityIndex].lv_isInventory == true)) {
+            UnitInventoryCreate(lv_ultimateEvolutionUnit, libCore_gv_abilityData[lv_abilityIndex].lv_inventoryUnit);
+        }
+
+    }
+    UnitClearSelection(lv_abathurPlayer);
+    UnitSelect(lv_ultimateEvolutionUnit, lv_abathurPlayer, true);
+    libGame_gv_players[lv_abathurPlayer].lv_cameraPlayerHasControl = false;
+    libGame_gv_players[lv_abathurPlayer].lv_cameraPlayerUnitGroupToFocusOn = libNtve_gf_ConvertUnitToUnitGroup(lv_ultimateEvolutionUnit);
+    libGame_gf_CameraUpdateCameraForPlayer(lv_abathurPlayer);
+    libGame_gv_players[lv_abathurPlayer].lv_cameraPlayerHasControl = true;
+    libGame_gf_CameraUpdateCameraForPlayer(lv_abathurPlayer);
+    libHAba_gf_SendEventAbathurUltimateEvolutionHeroCopied(lv_abathurPlayer, lv_targetPlayer);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurUltimateEvolutionStartControl_Init () {
+    libHAba_gt_HeroAbathurUltimateEvolutionStartControl = TriggerCreate("libHAba_gt_HeroAbathurUltimateEvolutionStartControl_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurUltimateEvolutionStartControl, c_playerAny, "HeroAbathurUltimateEvolution@CastDummy");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Ultimate Evolution - Stop Control
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurUltimateEvolutionStopControl_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_ultimateEvolutionUnit;
+    int lv_ownerPlayer;
+    int lv_itPlayer;
+    int lv_teamNumberofOwner;
+    bool lv_vehicleTransferCase;
+    string lv_abilLink;
+    string lv_cooldownLink;
+    fixed lv_cooldownValue;
+
+    // Automatic Variable Declarations
+    playergroup auto8E7B62D2_g;
+    int auto8E7B62D2_var;
+    playergroup autoEBFDFF6A_g;
+    int autoEBFDFF6A_var;
+
+    // Variable Initialization
+    lv_vehicleTransferCase = true;
+    lv_cooldownLink = "";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_ultimateEvolutionUnit = EventUnit();
+    lv_ownerPlayer = UnitGetOwner(lv_ultimateEvolutionUnit);
+    lv_teamNumberofOwner = libGame_gf_TeamNumberOfPlayer(lv_ownerPlayer);
+    auto8E7B62D2_g = libGame_gv_teams[lv_teamNumberofOwner].lv_teamPlayerGroup;
+    auto8E7B62D2_var = -1;
+    while (true) {
+        auto8E7B62D2_var = PlayerGroupNextPlayer(auto8E7B62D2_g, auto8E7B62D2_var);
+        if (auto8E7B62D2_var < 0) { break; }
+        if ((libGame_gv_players[auto8E7B62D2_var].lv_activeVehicle == lv_ultimateEvolutionUnit)) {
+            libHAba_gf_SendEventAbathurUltimateEvolutionEnded(lv_ownerPlayer, lv_ultimateEvolutionUnit);
+            UnitBehaviorRemove(libGame_gv_players[auto8E7B62D2_var].lv_heroUnit, "HeroAbathurUltimateEvolution@VehicleCasterBehavior", 1);
+            libGame_gv_players[auto8E7B62D2_var].lv_activeVehicle = null;
+            lv_vehicleTransferCase = false;
+            break;
+        }
+
+    }
+    if ((lv_vehicleTransferCase == true)) {
+        UnitBehaviorRemove(libGame_gv_players[lv_ownerPlayer].lv_heroUnit, "HeroAbathurAssumingDirectControl", 1);
+        return true;
+    }
+
+    autoEBFDFF6A_g = libGame_gv_teams[lv_teamNumberofOwner].lv_teamPlayerGroup;
+    autoEBFDFF6A_var = -1;
+    while (true) {
+        autoEBFDFF6A_var = PlayerGroupNextPlayer(autoEBFDFF6A_g, autoEBFDFF6A_var);
+        if (autoEBFDFF6A_var < 0) { break; }
+        if ((UnitGetType(libGame_gv_players[autoEBFDFF6A_var].lv_heroUnit) == "HeroAbathur")) {
+            UnitSelect(lv_ultimateEvolutionUnit, autoEBFDFF6A_var, false);
+            UnitSelect(libGame_gv_players[autoEBFDFF6A_var].lv_heroUnit, autoEBFDFF6A_var, true);
+            Wait(0.5, c_timeGame);
+            UnitBehaviorRemove(libGame_gv_players[lv_ownerPlayer].lv_heroUnit, "HeroAbathurAssumingDirectControl", 1);
+            libGame_gv_players[autoEBFDFF6A_var].lv_cameraPlayerUnitGroupToFocusOn = libGame_gv_players[autoEBFDFF6A_var].lv_heroUnitGroup;
+            libGame_gf_CameraUpdateCameraForPlayer(autoEBFDFF6A_var);
+            libUIUI_gf_UIHeroConsoleSetUpForPlayer(autoEBFDFF6A_var, libGame_gv_players[autoEBFDFF6A_var].lv_heroUnit);
+            libUIUI_gf_HeroConsoleUnitStatusBarsSetUnitForBars(libGame_gv_players[autoEBFDFF6A_var].lv_heroUnit, autoEBFDFF6A_var);
+            lv_abilLink = "HeroAbathurUltimateEvolution";
+            lv_cooldownLink = CatalogFieldValueGet(c_gameCatalogAbil, lv_abilLink, "Cost[" + IntToString(0) + "].Cooldown.Link", autoEBFDFF6A_var);
+            lv_cooldownValue = CatalogFieldValueGetAsInt(c_gameCatalogAbil, lv_abilLink, "Cost[" + IntToString(0) + "].Cooldown.TimeUse", autoEBFDFF6A_var);
+            UnitModifyCooldown(libGame_gv_players[autoEBFDFF6A_var].lv_heroUnit, lv_cooldownLink, lv_cooldownValue, c_cooldownOperationSet);
+            if (true) {
+            }
+
+            break;
+        }
+
+    }
+    libGame_gv_players[lv_ownerPlayer].lv_heroUsesAnnouncementAlias = false;
+    libGame_gv_players[lv_ownerPlayer].lv_heroAnnouncementAliasText = null;
+    libGame_gv_players[lv_ownerPlayer].lv_heroAnnouncementAliasIcon = null;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurUltimateEvolutionStopControl_Init () {
+    libHAba_gt_HeroAbathurUltimateEvolutionStopControl = TriggerCreate("libHAba_gt_HeroAbathurUltimateEvolutionStopControl_Func");
+    TriggerAddEventUnitBehaviorChange(libHAba_gt_HeroAbathurUltimateEvolutionStopControl, null, "HeroAbathurUltimateEvolution@ControlBehavior", c_unitBehaviorChangeDeactivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Ultimate Evolution - Unit Dead
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurUltimateEvolutionUnitDead_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    int lv_targetPlayer;
+    playergroup lv_allyPlayerGroup;
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    playergroup autoE49CDF7C_g;
+
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_targetPlayer = UnitGetOwner(EventUnit());
+    lv_allyPlayerGroup = PlayerGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitTypeTestAttribute(UnitGetType(EventUnit()), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+
+        if (!(((UnitHasBehavior2(EventUnit(), "HeroAbathurUltimateEvolution@Buff") == true) || (UnitHasBehavior2(EventUnit(), "HeroAbathurUltimateEvolution@Build") == true)))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_MakeUnitUncommandable(lv_unit, true);
+    libGame_gf_ShareUnshareVisionOfAlliesForPlayer(true, lv_targetPlayer);
+    lv_allyPlayerGroup = libGame_gf_AlliedPlayerGroupOfPlayer(lv_targetPlayer);
+    autoE49CDF7C_g = lv_allyPlayerGroup;
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(autoE49CDF7C_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        PlayerSetAlliance(lv_itPlayer, c_allianceIdSeekHelp, lv_targetPlayer, true);
+        PlayerSetAlliance(lv_itPlayer, c_allianceIdGiveHelp, lv_targetPlayer, true);
+    }
+    UnitBehaviorRemove(EventUnit(), "HeroAbathurUltimateEvolution@Buff", 1);
+    UnitRemove(lv_unit);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurUltimateEvolutionUnitDead_Init () {
+    libHAba_gt_HeroAbathurUltimateEvolutionUnitDead = TriggerCreate("libHAba_gt_HeroAbathurUltimateEvolutionUnitDead_Func");
+    TriggerAddEventUnitDied(libHAba_gt_HeroAbathurUltimateEvolutionUnitDead, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Deep Tunnel Ping
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurDeepTunnelPing_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_abathurPlayer;
+    playergroup lv_alliedPlayers;
+    point lv_location;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_abathurPlayer = UnitGetOwner(EventUnit());
+    lv_alliedPlayers = PlayerGroupEmpty();
+    lv_location = EventUnitTargetPoint();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((TimerGetRemaining(libUIUI_gv_pingInputSuppressionTimer[lv_abathurPlayer]) > 0.0)) {
+        return true;
+    }
+
+    if ((TimerGetRemaining(libUIUI_gv_pingLockoutTimer[lv_abathurPlayer]) > 0.0)) {
+        return true;
+    }
+
+    libUIUI_gf_PingIncrementPingCountAndManageTimersForPlayer(lv_abathurPlayer);
+    lv_alliedPlayers = libGame_gf_PlayersOnTeamHeroes(libGame_gf_TeamNumberOfPlayer(lv_abathurPlayer), false);
+    libCore_gf_CreatePingFacingAngleWithType(lv_alliedPlayers, "HeroAbathurDeepTunnel@ModelMiniMap", lv_location, Color(0.0, 5.49, 73.33), 3.0, 270.0, -1);
+    if ((libGame_gv_players[lv_abathurPlayer].lv_activeVehicle != null)) {
+        UnitCreateEffectPoint(libGame_gv_players[lv_abathurPlayer].lv_activeVehicle, "HeroAbathurDeepTunnel@DummyPing", lv_location);
+    }
+    else {
+        UnitCreateEffectPoint(libGame_gv_players[lv_abathurPlayer].lv_heroUnit, "HeroAbathurDeepTunnel@DummyPing", lv_location);
+    }
+    TextExpressionSetToken("Param/Expression/lib_HAba_D06D9271", "A", UnitTypeGetName(UnitGetType(EventUnit())));
+    TextTagCreate(TextExpressionAssemble("Param/Expression/lib_HAba_D06D9271"), 24, lv_location, 2.0, true, false, lv_alliedPlayers);
+    TextTagSetTime(TextTagLastCreated(), c_textTagTimeDuration, 3.5);
+    libHAba_gv_heroAbathurDeepTunnelPings[lv_abathurPlayer] = PingLastCreated();
+    PingSetScale(PingLastCreated(), 0.2);
+    if ((TimerGetRemaining(libHAba_gv_heroAbathurDeepTunnelPingTextLockoutTimer[lv_abathurPlayer]) > 0.0)) {
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_HAba_CC20066A", "A", StringExternal("Param/Value/lib_HAba_6EAB1015"));
+        UIDisplayMessage(lv_alliedPlayers, c_messageAreaChat, TextExpressionAssemble("Param/Expression/lib_HAba_CC20066A"));
+        TimerStart(libHAba_gv_heroAbathurDeepTunnelPingTextLockoutTimer[lv_abathurPlayer], 10.0, false, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurDeepTunnelPing_Init () {
+    libHAba_gt_HeroAbathurDeepTunnelPing = TriggerCreate("libHAba_gt_HeroAbathurDeepTunnelPing_Func");
+    TriggerAddEventUnitAbility(libHAba_gt_HeroAbathurDeepTunnelPing, null, AbilityCommand("HeroAbathurDeepTunnel", 0), c_abilEffectStageCast, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Locust Master Cast
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurLocustMasterCast_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    unitgroup auto452FB700_g;
+    int auto452FB700_u;
+    unit auto452FB700_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto452FB700_g = UnitGroup("HeroAbathurTalentLocustNest", UnitGetOwner(EventUnitCreatedUnit()), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto452FB700_u = UnitGroupCount(auto452FB700_g, c_unitCountAll);
+    for (;; auto452FB700_u -= 1) {
+        auto452FB700_var = UnitGroupUnitFromEnd(auto452FB700_g, auto452FB700_u);
+        if (auto452FB700_var == null) { break; }
+        if ((auto452FB700_var != EventUnitCreatedUnit())) {
+            UnitKill(auto452FB700_var);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurLocustMasterCast_Init () {
+    libHAba_gt_HeroAbathurLocustMasterCast = TriggerCreate("libHAba_gt_HeroAbathurLocustMasterCast_Func");
+    TriggerAddEventUnitCreated(libHAba_gt_HeroAbathurLocustMasterCast, null, "HeroAbathurTalentLocustNest", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Deep Tunnel Ping
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_monstrosity;
+    int lv_abathurPlayer;
+    playergroup lv_alliedPlayers;
+    point lv_location;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_monstrosity = EventUnit();
+    lv_abathurPlayer = UnitGetOwner(EventUnit());
+    lv_alliedPlayers = PlayerGroupEmpty();
+    lv_location = EventUnitTargetPoint();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((TimerGetRemaining(libUIUI_gv_pingInputSuppressionTimer[lv_abathurPlayer]) > 0.0)) {
+        return true;
+    }
+
+    if ((TimerGetRemaining(libUIUI_gv_pingLockoutTimer[lv_abathurPlayer]) > 0.0)) {
+        return true;
+    }
+
+    libUIUI_gf_PingIncrementPingCountAndManageTimersForPlayer(lv_abathurPlayer);
+    lv_alliedPlayers = libGame_gf_PlayersOnTeamHeroes(libGame_gf_TeamNumberOfPlayer(lv_abathurPlayer), false);
+    libCore_gf_CreatePingFacingAngleWithType(lv_alliedPlayers, "HeroAbathurDeepTunnel@ModelMiniMap", lv_location, Color(0.0, 5.49, 73.33), 3.0, 270.0, -1);
+    UnitCreateEffectPoint(lv_monstrosity, "HeroAbathurDeepTunnel@DummyPing", lv_location);
+    TextExpressionSetToken("Param/Expression/lib_HAba_795C5CBA", "A", UnitTypeGetName(UnitGetType(EventUnit())));
+    TextTagCreate(TextExpressionAssemble("Param/Expression/lib_HAba_795C5CBA"), 24, lv_location, 2.0, true, false, lv_alliedPlayers);
+    TextTagSetTime(TextTagLastCreated(), c_textTagTimeDuration, 3.0);
+    libHAba_gv_heroAbathurMonstrosityDeepTunnelPings[lv_abathurPlayer] = PingLastCreated();
+    if ((TimerGetRemaining(libHAba_gv_heroAbathurMonstrosityDeepTunnelPingTextLockoutTimer[lv_abathurPlayer]) > 0.0)) {
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_HAba_81791B56", "A", UnitTypeGetName(UnitGetType(lv_monstrosity)));
+        UIDisplayMessage(lv_alliedPlayers, c_messageAreaChat, TextExpressionAssemble("Param/Expression/lib_HAba_81791B56"));
+        TimerStart(libHAba_gv_heroAbathurMonstrosityDeepTunnelPingTextLockoutTimer[lv_abathurPlayer], 10.0, false, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing_Init () {
+    libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing_Func");
+    TriggerAddEventUnitAbility(libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing, null, AbilityCommand("HeroAbathurDeepTunnelMonstrosity", 0), c_abilEffectStageCast, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Add Minion Kill Stacks
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_symbiote;
+    int lv_evolutionCompleteStacks;
+    unit lv_minionUnit;
+    int lv_player;
+    unit lv_minionUnit2;
+
+    // Automatic Variable Declarations
+    unitgroup auto50B8FD15_g;
+    int auto50B8FD15_u;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_minionUnit = libGame_gf_SpecialCaseUnitParticipatedInNPCTakedownMinion();
+    lv_player = libGame_gf_SpecialCaseUnitParticipatedInNPCTakedownPlayerParticipant();
+    if (((UnitTypeTestAttribute(UnitGetType(lv_minionUnit), c_unitAttributeSummoned) == true) || (UnitTypeTestAttribute(UnitGetType(lv_minionUnit), c_unitAttributeStructure) == true) || (UnitTypeTestAttribute(UnitGetType(lv_minionUnit), c_unitAttributeLight) == true) || (UnitTypeTestAttribute(UnitGetType(lv_minionUnit), c_unitAttributeRobotic) == true) || (UnitTypeTestAttribute(UnitGetType(lv_minionUnit), c_unitAttributeMapBoss) == true))) {
+        return true;
+    }
+
+    if ((UnitGetType(libGame_gv_players[lv_player].lv_heroUnit) == "HeroAbathur") && (PlayerHasTalent(lv_player, "HeroAbathurEvolveMonstrosity") == true) && (UnitTypeTestAttribute(UnitGetType(lv_minionUnit), c_unitAttributeBiological) == true)) {
+        auto50B8FD15_g = UnitGroupSearch("HeroAbathurEvolveMonstrosity", lv_player, UnitGetPosition(lv_minionUnit), libCore_gv_bALXPRadius, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto50B8FD15_u = UnitGroupCount(auto50B8FD15_g, c_unitCountAll);
+        for (;; auto50B8FD15_u -= 1) {
+            lv_minionUnit2 = UnitGroupUnitFromEnd(auto50B8FD15_g, auto50B8FD15_u);
+            if (lv_minionUnit2 == null) { break; }
+            UnitBehaviorAdd(lv_minionUnit2, "HeroAbathurEvolveMonstrosityStacks@DamageStack", lv_minionUnit2, 1);
+            UnitBehaviorAdd(lv_minionUnit2, "HeroAbathurEvolveMonstrosityStacks@HealthStack", lv_minionUnit2, 1);
+            UnitCreateEffectUnit(lv_minionUnit2, "HeroAbathurEvolveMonstrosityStacks@HealthStackHealer", lv_minionUnit2);
+            UnitCreateEffectUnit(lv_minionUnit2, "HeroAbathurEvolveMonstrosityStacks@RefreshTokenCounter", lv_minionUnit2);
+        }
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks_Init () {
+    libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks_Func");
+    libGame_gf_SpecialCaseParticipatedInNPCTakedown(libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Add Symbiote Stacks
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnitCreatedUnit()) == "HeroAbathurSymbiote"))) {
+            return false;
+        }
+
+        if (!((TechTreeUnitCount(UnitGetOwner(EventUnitCreatedUnit()), "HeroAbathurEvolveMonstrosity", c_techCountCompleteOnly) > 0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorAdd(EventUnitCreatedUnit(), "HeroAbathurEvolveMonstrosityStacks@TokenCounter", EventUnitCreatedUnit(), 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks_Init () {
+    libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks_Func");
+    TriggerAddEventUnitCreated(libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks, null, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Initial Hook to AI
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_player = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
+    libAIAI_gf_SummonedAIInitialAttackLogic(false, EventPlayerEffectUsedUnit(c_effectUnitTarget), libGame_gv_players[lv_player].lv_heroUnit, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI_Init () {
+    libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI, c_playerAny, "HeroAbathurEvolveMonstrosity@ApplyTimedLife");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Symbiote end - Hook to AI
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_player = EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster);
+    libUIUI_gf_HeroConsoleUnitStatusBarsSetUnitForBars(libGame_gv_players[lv_player].lv_heroUnit, lv_player);
+    UnitSelect(libHAba_gv_abathurMonstrosity[lv_player], lv_player, false);
+    libUIUI_gf_UIHeroConsoleSetUpForPlayer(lv_player, libGame_gv_players[lv_player].lv_heroUnit);
+    Wait(0.0625, c_timeGame);
+    if ((UnitIsAlive(libGame_gv_players[lv_player].lv_heroUnit) == false)) {
+        libUIUI_gf_HeroConsoleUnitStatusBarsUpdateStunDeathBar("Dead", libGame_gv_players[lv_player].lv_heroUnit);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI_Init () {
+    libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI = TriggerCreate("libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI, c_playerAny, "AbathurSymbioteEvolveMonstrosityFinalDummy");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Deselected - Hook to AI
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = UnitGetOwner(EventUnit());
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((libGame_gf_PlayerIsHeroPlayer(lv_player) == true) && (libHAba_gv_abathurMonstrosity[lv_player] == EventUnit())) {
+        libAIAI_gf_SummonedAIInitialAttackLogic(false, libHAba_gv_abathurMonstrosity[lv_player], libGame_gv_players[lv_player].lv_heroUnit, true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI_Init () {
+    libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI_Func");
+    TriggerAddEventUnitSelected(libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI, null, c_playerAny, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Unhook AI
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityUnhookAI_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitSelect(EventPlayerEffectUsedUnit(c_effectUnitTarget), UnitGetOwner(EventPlayerEffectUsedUnit(c_effectUnitTarget)), true);
+    libAIAI_gf_MinionAIUnhookUnitFromMinionAI(EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    libUIUI_gf_UIHeroConsoleSetUpForPlayer(EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget), EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    libUIUI_gf_HeroConsoleUnitStatusBarsSetUnitForBars(EventPlayerEffectUsedUnit(c_effectUnitTarget), EventPlayerEffectUsedUnitOwner(c_effectPlayerTarget));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityUnhookAI_Init () {
+    libHAba_gt_HeroAbathurMonstrosityUnhookAI = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityUnhookAI_Func");
+    TriggerAddEventPlayerEffectUsed(libHAba_gt_HeroAbathurMonstrosityUnhookAI, c_playerAny, "AbathurSymbioteEvolveMonstrosityInitialDummy");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Monstrosity - Kill Initial Target
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurMonstrosityKillInitialTarget_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitCreateEffectUnit(EventUnit(), "Suicide", EventUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurMonstrosityKillInitialTarget_Init () {
+    libHAba_gt_HeroAbathurMonstrosityKillInitialTarget = TriggerCreate("libHAba_gt_HeroAbathurMonstrosityKillInitialTarget_Func");
+    TriggerAddEventUnitBehaviorChange(libHAba_gt_HeroAbathurMonstrosityKillInitialTarget, null, "HeroAbathurEvolveMonstrosity@TargetCollisionSuppresser", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Symbioted Monstrosity Symbioted
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_deepTunnelCD;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(libHAba_gf_AbathurSymbioteTarget()) == "HeroAbathurEvolveMonstrosity"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libHAba_gv_abathurMonstrosity[libHAba_gf_AbathurSymbioteAbathurPlayer()] = libHAba_gf_AbathurSymbioteTarget();
+    libHAba_gv_abathurSymbioteMonstrosity[libHAba_gf_AbathurSymbioteAbathurPlayer()] = libHAba_gf_AbathurSymbioteUnit();
+    UnitBehaviorRemove(libHAba_gf_AbathurSymbioteUnit(), "HeroAbathurSymbiote@SuppressAttack", 1);
+    UnitBehaviorAdd(libHAba_gf_AbathurSymbioteUnit(), "HeroAbathurDeepTunnelMonstrosity@Carry", libHAba_gf_AbathurSymbioteUnit(), 1);
+    UnitBehaviorAdd(libHAba_gf_AbathurSymbioteTarget(), "HeroAbathurDeepTunnelMonstrosity@Carry", libHAba_gf_AbathurSymbioteTarget(), 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted_Init () {
+    libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted = TriggerCreate("libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted_Func");
+    libHAba_gf_AbathurSymbiote(libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Symbiote Hivemind (Single Target)
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unitgroup lv_possibleSymbioteHivemindHosts;
+    int lv_numSymbioteHivemindHosts;
+    libHAba_gs_SymbioteHivemind lv_symbioteHivemind;
+    unit lv_symbioteHivemindHost;
+    unit lv_itSymbioteHivemindHost;
+    unit lv_mainSymbioteHost;
+    unit lv_mainSymbiote;
+    int lv_abathurPlayer;
+    int lv_hivemindSymbioteHostCounter;
+
+    // Automatic Variable Declarations
+    unitgroup autoFA8CB7BD_g;
+    int autoFA8CB7BD_u;
+
+    // Variable Initialization
+    lv_possibleSymbioteHivemindHosts = UnitGroupEmpty();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_abathurPlayer = libHAba_gf_AbathurSymbioteAbathurPlayer();
+    lv_mainSymbioteHost = libHAba_gf_AbathurSymbioteTarget();
+    lv_mainSymbiote = libHAba_gf_AbathurSymbioteUnit();
+    while ((UnitIsAlive(lv_mainSymbiote) == true) && (UnitIsAlive(lv_mainSymbioteHost) == true)) {
+        if ((PlayerHasTalent(libHAba_gf_AbathurSymbioteAbathurPlayer(), "HeroAbathurTalentSymbioteHivemind") == true)) {
+            lv_possibleSymbioteHivemindHosts = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", lv_abathurPlayer, c_unitAllianceAllyExcludeSelf, RegionCircle(UnitGetPosition(lv_mainSymbioteHost), libHAba_gv_abathurSymbioteHivemindCastRange_C), libCore_gv_filtersHeroicAllyandnotImmuneToFriendlyAbilitiesorBenign, (libHAba_gv_abathurSymbioteHivemindMaxHosts_C + 1));
+            autoFA8CB7BD_g = lv_possibleSymbioteHivemindHosts;
+            autoFA8CB7BD_u = UnitGroupCount(autoFA8CB7BD_g, c_unitCountAll);
+            for (;; autoFA8CB7BD_u -= 1) {
+                lv_itSymbioteHivemindHost = UnitGroupUnitFromEnd(autoFA8CB7BD_g, autoFA8CB7BD_u);
+                if (lv_itSymbioteHivemindHost == null) { break; }
+                if (((lv_itSymbioteHivemindHost == lv_mainSymbioteHost) || (UnitHasBehavior2(lv_itSymbioteHivemindHost, "Dead") == true))) {
+                    UnitGroupRemove(lv_possibleSymbioteHivemindHosts, lv_itSymbioteHivemindHost);
+                    break;
+                }
+
+            }
+            if ((UnitGroupCount(lv_possibleSymbioteHivemindHosts, c_unitCountAlive) <= 0)) {
+                Wait(0.0625, c_timeGame);
+                continue;
+            }
+
+            lv_symbioteHivemindHost = UnitGroupClosestToPoint(lv_possibleSymbioteHivemindHosts, UnitGetPosition(lv_mainSymbioteHost));
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "HeroAbathurSymbiote", 0, lv_abathurPlayer, UnitGetPosition(lv_symbioteHivemindHost));
+            lv_symbioteHivemind.lv_symbioteUnit = UnitLastCreated();
+            lv_symbioteHivemind.lv_hostUnit = lv_symbioteHivemindHost;
+            UnitCreateEffectUnit(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurSymbiote@ActorLink", lv_symbioteHivemind.lv_symbioteUnit);
+            UnitCreateEffectUnit(lv_symbioteHivemind.lv_symbioteUnit, "HeroAbathurSymbiote@PropertyLink", lv_symbioteHivemindHost);
+            UnitCreateEffectUnit(lv_mainSymbiote, "HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA", lv_symbioteHivemind.lv_hostUnit);
+            ActorSend(libNtve_gf_MainActorofUnit(lv_symbioteHivemind.lv_symbioteUnit), "Signal HivemindScale");
+            ActorSend(libNtve_gf_MainActorofUnit(lv_mainSymbiote), "Signal HivemindActive");
+            UnitBehaviorAdd(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurSymbiote@HostBehavior", lv_symbioteHivemind.lv_symbioteUnit, 1);
+            UnitBehaviorAdd(lv_symbioteHivemind.lv_symbioteUnit, "HeroAbathurTalentSymbioteHivemind", lv_symbioteHivemind.lv_symbioteUnit, 1);
+            UnitBehaviorAdd(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurTalentSymbioteHivemind", lv_symbioteHivemind.lv_hostUnit, 1);
+            SoundPlayForPlayer(SoundLink("AbathurHero_Symbiote", -1), lv_abathurPlayer, PlayerGroupSingle(UnitGetOwner(lv_itSymbioteHivemindHost)), 100.0, 0.0);
+            while ((UnitIsAlive(lv_symbioteHivemind.lv_hostUnit) == true) && (UnitHasBehavior2(lv_symbioteHivemind.lv_hostUnit, "Dead") == false) && (UnitIsAlive(lv_symbioteHivemind.lv_symbioteUnit) == true) && (UnitFilterMatch(lv_symbioteHivemind.lv_hostUnit, lv_abathurPlayer, UnitFilter(0, 0, 0, (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)))) == true)) {
+                if ((UnitIsAlive(lv_mainSymbiote) == true) && (UnitIsAlive(lv_mainSymbioteHost) == true)) {
+                    if ((DistanceBetweenPoints(UnitGetPosition(lv_mainSymbioteHost), UnitGetPosition(lv_symbioteHivemind.lv_hostUnit)) >= libHAba_gv_abathurSymbioteHivemindMaxRange_C)) {
+                        ActorSend(libNtve_gf_MainActorofUnit(lv_mainSymbiote), "Signal RemoveStabCursors");
+                        UnitBehaviorRemove(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurSymbiote@HostBehavior", 1);
+                        UnitBehaviorRemove(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurTalentSymbioteHivemind", 1);
+                        UnitBehaviorRemove(lv_symbioteHivemind.lv_symbioteUnit, "HeroAbathurTalentSymbioteHivemind", 1);
+                        UnitKill(lv_symbioteHivemind.lv_symbioteUnit);
+                        lv_symbioteHivemind.lv_symbioteUnit = null;
+                        lv_symbioteHivemind.lv_hostUnit = null;
+                        Wait(0.0625, c_timeGame);
+                        continue;
+                    }
+
+                    if ((DistanceBetweenPoints(UnitGetPosition(lv_symbioteHivemind.lv_symbioteUnit), UnitGetPosition(lv_symbioteHivemind.lv_hostUnit)) >= 4.0)) {
+                        UnitSetPosition(lv_symbioteHivemind.lv_symbioteUnit, UnitGetPosition(lv_symbioteHivemind.lv_hostUnit), false);
+                    }
+                    else {
+                        UnitSetPosition(lv_symbioteHivemind.lv_symbioteUnit, UnitGetPosition(lv_symbioteHivemind.lv_hostUnit), true);
+                    }
+                    Wait(0.0625, c_timeGame);
+                }
+                else {
+                    UnitBehaviorRemove(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurSymbiote@HostBehavior", 1);
+                    UnitBehaviorRemove(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurTalentSymbioteHivemind", 1);
+                    UnitBehaviorRemove(lv_symbioteHivemind.lv_symbioteUnit, "HeroAbathurTalentSymbioteHivemind", 1);
+                    UnitKill(lv_symbioteHivemind.lv_symbioteUnit);
+                    lv_symbioteHivemind.lv_symbioteUnit = null;
+                    lv_symbioteHivemind.lv_hostUnit = null;
+                }
+            }
+            if ((UnitIsAlive(lv_symbioteHivemind.lv_symbioteUnit) == true)) {
+                ActorSend(libNtve_gf_MainActorofUnit(lv_mainSymbiote), "Signal HivemindInActive");
+                UnitBehaviorRemove(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurSymbiote@HostBehavior", 1);
+                UnitBehaviorRemove(lv_symbioteHivemind.lv_hostUnit, "HeroAbathurTalentSymbioteHivemind", 1);
+                UnitBehaviorRemove(lv_symbioteHivemind.lv_symbioteUnit, "HeroAbathurTalentSymbioteHivemind", 1);
+                UnitKill(lv_symbioteHivemind.lv_symbioteUnit);
+                lv_symbioteHivemind.lv_symbioteUnit = null;
+                lv_symbioteHivemind.lv_hostUnit = null;
+            }
+
+        }
+
+        Wait(0.0625, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget_Init () {
+    libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget = TriggerCreate("libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget_Func");
+    libHAba_gf_AbathurSymbiote(libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Symbiote Hivemind Stab
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurSymbioteHivemindStab_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unitgroup lv_symbioteHivemindHats;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_symbioteHivemindHats = UnitGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerHasTalent(UnitGetOwner(EventUnit()), "HeroAbathurTalentSymbioteHivemind") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_symbioteHivemindHats = UnitGroup("HeroAbathurSymbiote", UnitGetOwner(EventUnit()), RegionCircle(UnitGetPosition(EventUnit()), libHAba_gv_abathurSymbioteHivemindMaxRange_C), UnitFilter(0, 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), (libHAba_gv_abathurSymbioteHivemindMaxHosts_C + 1));
+    UnitGroupIssueOrder(lv_symbioteHivemindHats, OrderTargetingPoint(AbilityCommand("HeroAbathurStab", 0), EventUnitTargetPoint()), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurSymbioteHivemindStab_Init () {
+    libHAba_gt_HeroAbathurSymbioteHivemindStab = TriggerCreate("libHAba_gt_HeroAbathurSymbioteHivemindStab_Func");
+    TriggerAddEventUnitAbility(libHAba_gt_HeroAbathurSymbioteHivemindStab, null, AbilityCommand("HeroAbathurStab", 0), c_abilEffectStageCast, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Abathur - Volatile Mutation (Leech)
+//--------------------------------------------------------------------------------------------------
+bool libHAba_gt_HeroAbathurVolatileMutationLeech_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitTypeTestAttribute(UnitGetType(EventUnit()), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gf_UnitStatsLifestealCalculation((EventUnitDamageAmount() + EventUnitDamageBehaviorShield()), libHAba_gv_heroAbathurVolatileMutationLeechPercent, true, true, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHAba_gt_HeroAbathurVolatileMutationLeech_Init () {
+    libHAba_gt_HeroAbathurVolatileMutationLeech = TriggerCreate("libHAba_gt_HeroAbathurVolatileMutationLeech_Func");
+    TriggerAddEventUnitDamaged(libHAba_gt_HeroAbathurVolatileMutationLeech, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroAbathurTalentVolatileMutation@Damage");
+}
+
+void libHAba_InitTriggers () {
+    libHAba_gt_HeroAbathurSymbioteScreenEffect_Init();
+    libHAba_gt_HeroAbathurLocustNestSetFacing_Init();
+    libHAba_gt_HeroAbathurLocustSpawned_Init();
+    libHAba_gt_HeroAbathurSymbiote_Init();
+    libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes_Init();
+    libHAba_gt_HeroAbathurUltimateEvolutionStartControl_Init();
+    libHAba_gt_HeroAbathurUltimateEvolutionStopControl_Init();
+    libHAba_gt_HeroAbathurUltimateEvolutionUnitDead_Init();
+    libHAba_gt_HeroAbathurDeepTunnelPing_Init();
+    libHAba_gt_HeroAbathurLocustMasterCast_Init();
+    libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing_Init();
+    libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks_Init();
+    libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks_Init();
+    libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI_Init();
+    libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI_Init();
+    libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI_Init();
+    libHAba_gt_HeroAbathurMonstrosityUnhookAI_Init();
+    libHAba_gt_HeroAbathurMonstrosityKillInitialTarget_Init();
+    libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted_Init();
+    libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget_Init();
+    libHAba_gt_HeroAbathurSymbioteHivemindStab_Init();
+    libHAba_gt_HeroAbathurVolatileMutationLeech_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHAba_InitLib_completed = false;
+
+void libHAba_InitLib () {
+    if (libHAba_InitLib_completed) {
+        return;
+    }
+
+    libHAba_InitLib_completed = true;
+
+    libHAba_InitLibraries();
+    libHAba_InitVariables();
+    libHAba_InitTriggers();
+}
+

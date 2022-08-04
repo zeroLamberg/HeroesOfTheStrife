@@ -1,0 +1,361 @@
+﻿Abil/Activity/HeroMalfurionTwilightDream=Twilight Dream
+Abil/Name/HeroMalfurionEntanglingRoots=Entangling Roots
+Abil/Name/HeroMalfurionInnervate=Innervate
+Abil/Name/HeroMalfurionMoonfire=Moonfire
+Abil/Name/HeroMalfurionRegrowth=Regrowth
+Abil/Name/HeroMalfurionTalentNaturesCleanse=Nature's Cleanse
+Abil/Name/HeroMalfurionTranquility=Tranquility
+Abil/Name/HeroMalfurionTwilightDream=Twilight Dream
+Behavior/Name/HeroMalfurionRegrowth@PlayerUI=Regrowth
+Behavior/Name/HeroMalfurionTalentElunesChosen@TokenCounter=Elune's Chosen
+Behavior/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter=Dangerous Roots
+Behavior/Name/HeroMalfurionTalentInnervateRevitalize@SpellPower=Spell Power
+Behavior/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter=Hindering Moonifre
+Behavior/Name/HeroMalfurionTranquility=Tranquility
+Behavior/Tooltip/HeroMalfurionRegrowth@PlayerUI=<c val="#TooltipQuest">Ability heal: </c><c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionRegrowth@InitialInstantHeal,VitalArray[Life].Change"/></c><n/><c val="#TooltipQuest">Charges Count: </c><c val="#TooltipNumbers"><d ref="$RunAccumulators:HeroMalfurionRegrowth@InitialInstantHealSwitchAdd$"/></c><n/><c val="#TooltipQuest">Healing Power: </c><c val="#TooltipNumbers"><d ref="$RunAccumulators:UnitStatsPowerCasterHealingAndShieldingCustomValueAdd$"/>%</c><n/><n/><c val="#TooltipQuest">Total Heal: </c><c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionRegrowth@InitialInstantHeal,VitalArray[Life].Change*$RunAccumulators:HeroMalfurionRegrowth@InitialInstantHealSwitchAdd$*(1+($RunAccumulators:UnitStatsPowerCasterHealingAndShieldingCustomValueAdd$/100))"/></c>
+Behavior/Tooltip/HeroMalfurionTalentElunesChosen@TokenCounter=<c val="#TooltipQuest">Basic Attacks: <c val="#TooltipNumbers" validator="!HeroMalfurionTalentElunesChosen@QuestCompleted"><d ref="Accumulator,HeroMalfurionTalentElunesChosen@QuestUIDisplayer,Amount"/>/<d ref="Behavior,HeroMalfurionTalentElunesChosen@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c>
+Behavior/Tooltip/HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter=<c val="#TooltipQuest">Bonus Damage:</c> <c val="#TooltipNumbers" validator="!HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestCompleted"><d ref="Behavior,HeroMalfurionTalentEntanglingRootsDangerousRoots@FlatDamageBonus,DamageResponse.ModifyAmount*Accumulator,HeroMalfurionTalentEntanglingRootsDangerousRoots@DamageConstant,Amount"/></c>
+Behavior/Tooltip/HeroMalfurionTalentInnervateRevitalize@SpellPower=Spell Power increased by <c val="#TooltipNumbers"><d ref="$BehaviorStackCount:HeroMalfurionTalentInnervateRevitalize@SpellPower$*Behavior,HeroMalfurionTalentInnervateRevitalize@SpellPower,Modification.AttributeChangeArray[17].Points"/>%</c>.
+Behavior/Tooltip/HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter=<c val="#TooltipQuest">Hit Enemy Heroes: <c val="#TooltipNumbers" validator="!HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleted"><d ref="Accumulator,HeroMalfurionTalentMoonfireHinderingMoonfire@QuestUIDisplayer,Amount"/>/<d ref="Behavior,HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c>
+Button/Information/HeroMalfurionEntanglingRoots=Mana: <d ref="Abil,HeroMalfurionEntanglingRoots,Cost[0].Vital[Energy]"/><n/>Cooldown: <d ref="Abil,HeroMalfurionEntanglingRoots,Cost[0].Cooldown.TimeUse"/> seconds<n/>Range: <d ref="Abil,HeroMalfurionEntanglingRoots,Range[0]"/> m.<n/>Radius: <d ref="Effect,HeroMalfurionEntanglingRoots@Search5,AreaArray[0].Radius"/> m.
+Button/Information/HeroMalfurionInnervate=Period: <d ref="Behavior,HeroMalfurionInnervate@Cooldown,Duration" player="0"/> seconds
+Button/Information/HeroMalfurionMoonfire=Mana: <d ref="Abil,HeroMalfurionMoonfire,Cost[0].Vital[Energy]" player="0"/><n/>Cooldown: <d ref="Abil,HeroMalfurionMoonfire,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Abil,HeroMalfurionMoonfire,Range[0]"/> m.<n/>Radius: <d ref="Effect,HeroMalfurionMoonfire@Search,AreaArray[0].Radius"/> m.
+Button/Information/HeroMalfurionRegrowth=Mana: <d ref="Abil,HeroMalfurionRegrowth,Cost[0].Vital[Energy]" player="0"/><n/>Range: <d ref="Abil,HeroMalfurionRegrowth,Range[0]" player="0"/> m.<n/>Cooldown: <d ref="Abil,HeroMalfurionRegrowth,Cost[0].Charge.TimeUse" player="0"/> seconds
+Button/Information/HeroMalfurionTalentNaturesCleanse=Cooldown: <d ref="Abil,HeroMalfurionTalentNaturesCleanse,Cost[0].Cooldown.TimeUse"/> seconds
+Button/Information/HeroMalfurionTranquility=Mana: <d ref="Abil,HeroMalfurionTranquility,Cost[0].Vital[Energy]" player="0"/><n/>Cooldown: <d ref="Abil,HeroMalfurionTranquility,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Radius: <d ref="Effect,HeroMalfurionTranquility@Search,AreaArray[0].Radius"/> m.
+Button/Information/HeroMalfurionTwilightDream=Mana: <d ref="Abil,HeroMalfurionTwilightDream,Cost[0].Vital[Energy]"/><n/>Cooldown: <d ref="Abil,HeroMalfurionTwilightDream,Cost[0].Cooldown.TimeUse"/> seconds<n/>Radius: <d ref="Effect,HeroMalfurionTwilightDream@Search,AreaArray[0].Radius"/> m.
+Button/Name/HeroMalfurionEntanglingRoots=Entangling Roots
+Button/Name/HeroMalfurionInnervate=Innervate
+Button/Name/HeroMalfurionMoonfire=Moonfire
+Button/Name/HeroMalfurionRegrowth=Regrowth
+Button/Name/HeroMalfurionRegrowthLifebloom=Lifebloom
+Button/Name/HeroMalfurionRegrowthNaturesProtection=Nature's Protection
+Button/Name/HeroMalfurionRegrowthYserasGift=Ysera's Gift
+Button/Name/HeroMalfurionTalentCourseofLife=Course of Life
+Button/Name/HeroMalfurionTalentElunesChosen=Elune's Chosen
+Button/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots=Dangerous Roots
+Button/Name/HeroMalfurionTalentEntanglingRootsOvergrownPath=Overgrown Path
+Button/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots=Tenacious Roots
+Button/Name/HeroMalfurionTalentInnervateMoonlitHarmony=Moonlit Harmony
+Button/Name/HeroMalfurionTalentInnervateRevitalize=Revitalize
+Button/Name/HeroMalfurionTalentMoonfireCelestialAlignment=Celestial Alignment
+Button/Name/HeroMalfurionTalentMoonfireFullMoonfire=Full Moonfire
+Button/Name/HeroMalfurionTalentMoonfireHinderingMoonfire=Hindering Moonfire
+Button/Name/HeroMalfurionTalentMoonfireMoonlight=Moonlight
+Button/Name/HeroMalfurionTalentRegrowthLifeseed=Life Seed
+Button/Name/HeroMalfurionTalentTranquilitySerenity=Serenity
+Button/Name/HeroMalfurionTalentTwilightDreamAstralCommunion=Astral Communion
+Button/Name/HeroMalfurionTranquility=Tranquility
+Button/Name/HeroMalfurionTwilightDream=Twilight Dream
+Button/SimpleDisplayText/HeroMalfurionEntanglingRoots=Enemies are rooted and take damage over time. Grows to engulf more targets
+Button/SimpleDisplayText/HeroMalfurionMoonfire=Reveal and damage enemies in an area. Reduce Cooldowns of Abilities
+Button/SimpleDisplayText/HeroMalfurionRegrowth=Heal an ally or self over time
+Button/SimpleDisplayText/HeroMalfurionRegrowthLifebloom=«Regrowth» instantly heals for missing Health
+Button/SimpleDisplayText/HeroMalfurionRegrowthNaturesProtection=Allied heroes with high health gain Armor
+Button/SimpleDisplayText/HeroMalfurionRegrowthYserasGift=Increase Regrowth's healing-over-time while Malfurion is at high Health
+Button/SimpleDisplayText/HeroMalfurionTalentCourseofLife=Reduce Health, but increase Damage dealt and Healing Power
+Button/SimpleDisplayText/HeroMalfurionTalentElunesChosen=<c val="#TooltipQuest">Quest:</c> Reduce «Regrowth» cooldown<n/>Basic Attacks restore mana
+Button/SimpleDisplayText/HeroMalfurionTalentEntanglingRootsDangerousRoots=<c val="#TooltipQuest">Quest:</c> Root Enemy Heroes to increase Treant damage
+Button/SimpleDisplayText/HeroMalfurionTalentEntanglingRootsOvergrownPath=«Entangling Roots» persists longer
+Button/SimpleDisplayText/HeroMalfurionTalentEntanglingRootsTenaciousRoots=«Entangling Roots» roots depending on distance from center
+Button/SimpleDisplayText/HeroMalfurionTalentInnervateMoonlitHarmony=Reduce «Regrowth» cooldown<n/>Increase restored mana
+Button/SimpleDisplayText/HeroMalfurionTalentInnervateRevitalize=«Innervate» increases Spell Power
+Button/SimpleDisplayText/HeroMalfurionTalentMoonfireCelestialAlignment=Basic Attacks heal<n/>Increased Reveal duration
+Button/SimpleDisplayText/HeroMalfurionTalentMoonfireFullMoonfire=«Moonfire» reduce enemy Heroes damage dealt
+Button/SimpleDisplayText/HeroMalfurionTalentMoonfireHinderingMoonfire=<c val="#TooltipQuest">Quest:</c> Reduce «Regrowth» cooldown<n/>Increase «Moonfire» damage
+Button/SimpleDisplayText/HeroMalfurionTalentMoonfireMoonlight=Increase «Moonfire» damage against Minions and Mercenaries
+Button/SimpleDisplayText/HeroMalfurionTalentNaturesCleanse=Make an ally Unstoppable
+Button/SimpleDisplayText/HeroMalfurionTalentRegrowthLifeseed=Heal over time is delayed on full health targets. Increase Movespeed
+Button/SimpleDisplayText/HeroMalfurionTalentTwilightDreamAstralCommunion=«Twilight Dream» reduces Armor of hitted heroes
+Button/SimpleDisplayText/HeroMalfurionTwilightDream=Silence and damage nearby enemies
+Button/Tooltip/HeroMalfurionEntanglingRoots=Roots enemies within the target area for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionEntanglingRoots@RootBehavior,Duration" Precision="2" player="0"/></c> seconds, and deals <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionEntanglingRoots@Damage,Amount" option="player"/></c> damage every <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionEntanglingRoots@DamageBehavior,Period" precision="2" player="0"/></c> seconds. Area affected grows larger over <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionEntanglingRoots@CreatePersistent,PeriodicPeriodArray[0] * Effect,HeroMalfurionEntanglingRoots@CreatePersistent,PeriodCount" Precision="2" player="0"/></c> seconds.
+Button/Tooltip/HeroMalfurionInnervate=Malfurion periodically restores <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionInnervate@RestoreMana,VitalArray[Energy].Change" player="0"/></c> Mana to nearby allied manauser Heroes and reduces basic Abilities cooldown by <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHMfn_gv_heroMalfurionInnervateCooldownModifier$" precision="2" /></c> seconds of all allied Heroes in a range.
+Button/Tooltip/HeroMalfurionInnervate_Simple=Periodically restores mana to nearby allied Heroes
+Button/Tooltip/HeroMalfurionMoonfire=Deals <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionMoonfire@Damage,Amount" option="player"/></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionMoonfire@Reveal,Duration" player="0"/></c> seconds. If an enemy Hero is hit, reduce its cooldown to <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionMoonfire@ReduceCD,Cost[0].CooldownTimeUse" player="0"/></c> seconds and refund <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionMoonfire@ReduceCD,VitalArray[Energy].Change" player="0"/></c> Mana.
+Button/Tooltip/HeroMalfurionRegrowth=Heals the targeted ally for <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionRegrowth@InitialInstantHeal,VitalArray[0].Change" option="player"/></c> health instantly for every «Regrowth» charge and additional <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionRegrowth@PeriodicHealing,VitalArray[Life].Change" option="player"/></c> health per second over the next <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionRegrowth,Duration" option="player"/></c> seconds. Stores up to <c val="#TooltipNumbers"><d ref="Abil,HeroMalfurionRegrowth,Cost[0].Charge.CountMax" option="player"/></c> charges.
+Button/Tooltip/HeroMalfurionRegrowthLifebloom=Casting «Regrowth» instantly heals its target for <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroMalfurionRegrowthLifebloom,Ratio" precision="1"/>%</c> of their missing Health.
+Button/Tooltip/HeroMalfurionRegrowthNaturesProtection=While Hero has «Regrowth» periodic healing, it gains <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionRegrowthNaturesProtection@LifeGE33,Modification.AttributeChangeArray[8].Points"/></c> Spell Armor. When below <c val="#TooltipNumbers">33%</c> Health, Spell Armor increases to <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionRegrowthNaturesProtection@LifeLT33,Modification.AttributeChangeArray[8].Points"/></c>.
+Button/Tooltip/HeroMalfurionRegrowthYserasGift=While Malfurion is above <c val="#TooltipNumbers">75%</c> Health, Regrowth's healing-over-time increases by <c val="#TooltipNumbers"><d ref="100 * Accumulator,HeroMalfurionRegrowthYserasGift@Bonus,Amount"/>%</c>.
+Button/Tooltip/HeroMalfurionTalentCourseofLife=Reduce Malfurion's maximum Health by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroMalfurionTalentCourseofLife@CarryBehavior,Modification.VitalMaxFractionArray[Life]"/>%</c>, but increase Damage dealt by <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentCourseofLife@CarryBehavior,Modification.AttributeChangeArray[16].Points"/>%</c> and Healing Power by <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentCourseofLife@CarryBehavior,Modification.AttributeChangeArray[18].Points"/>%</c>.
+Button/Tooltip/HeroMalfurionTalentElunesChosen=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Basic Attack enemies <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentElunesChosen@TokenCounter,Cost.Charge.CountMax"/></c> times.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward: </c>«Regrowth» cooldown will be reduced by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentElunesChosen@QuestCompleteReward,EffectArray[0].Value"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Basic Attacks restore <c val="#TooltipNumbers"><d ref="100*Effect,HeroMalfurionTalentElunesChosen@RestoreMana,VitalArray[Energy].ChangeFraction" precision="1"/>%</c> of Malfurion maximum Mana and reduce «Regrowth» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentElunesChosen@RestoreMana,Cost[0].ChargeTimeUse" precision="2"/></c> seconds.
+Button/Tooltip/HeroMalfurionTalentEntanglingRootsDangerousRoots=«Entangling Roots» spawns a Treant that deals <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTreant@WeaponDamage,Amount" option="player"/></c> damage per second and lasts <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTreant@TimedLife,Duration"/></c> seconds.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Root enemy Heroes to Increase Treant damage by <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentEntanglingRootsDangerousRoots@FlatDamageBonus,DamageResponse.ModifyAmount"/></c> up to <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentEntanglingRootsDangerousRoots@FlatDamageBonus,DamageResponse.ModifyAmount * Behavior,HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c>.
+Button/Tooltip/HeroMalfurionTalentEntanglingRootsOvergrownPath=«Entangling Roots» persists <c val="#TooltipNumbers"><d ref="100*((Effect,HeroMalfurionEntanglingRoots@CreatePersistent,PeriodCount+Effect,HeroMalfurionTalentEntanglingRootsOvergrownPath@Modification,EffectArray[0].Value)/Effect,HeroMalfurionEntanglingRoots@CreatePersistent,PeriodCount-1)" player="0"/>%</c> longer.<n/><n/><c val="#AbilityPassive">Passive:</c> Rooted targets lose <c val="#TooltipNumbers"><d ref="-Behavior,HeroMalfurionTalentEntanglingRootsOvergrownPath@ArmorDebuff,Modification.AttributeChangeArray[0].Points"/></c> Armor.
+Button/Tooltip/HeroMalfurionTalentEntanglingRootsTenaciousRoots=«Entangling Roots» Roots from <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior5,Duration" precision="2"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior1,Duration" precision="2"/></c> seconds in an area, depending on distance from center.<n/><n/><c val="#AbilityPassive">Passive:</c> Basic Root duration increased by <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior5,Duration-Effect,HeroMalfurionEntanglingRoots@ApplyRootBehavior,Duration" precision="2" /></c> seconds.
+Button/Tooltip/HeroMalfurionTalentInnervateMoonlitHarmony=When at least <c val="#TooltipNumbers">1</c> other Allied Hero is in «Innervate» range, «Regrowth» cooldown will recharge <c val="#TooltipNumbers"><d ref="-100*Effect,HeroMalfurionTalentInnervateMoonlitHarmony@CooldownModifier,Cost[0].ChargeTimeUse/0.0625"/>%</c> faster.<n/><n/>Increase «Innervate» mana, given to Allied Heroes by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroMalfurionTalentInnervateMoonlitHarmony@Modifier,Amount"/>%</c>.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase Malfurion mana regeneration by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroMalfurionTalentInnervateMoonlitHarmony@TalentCarry,Modification.VitalRegenMultiplier[Energy]"/>%</c>.
+Button/Tooltip/HeroMalfurionTalentInnervateRevitalize=«Innervate» increases Spell Power of nearby allied Heroes by <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentInnervateRevitalize@SpellPower,Modification.AttributeChangeArray[17].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentInnervateRevitalize@SpellPower,Duration"/></c> seconds. Stacks up to <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentInnervateRevitalize@SpellPower,Modification.AttributeChangeArray[17].Points*Behavior,HeroMalfurionTalentInnervateRevitalize@SpellPower,MaxStackCount"/>%</c>.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Innervate» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentInnervateRevitalize@Modification,EffectArray[0].Value"/></c> second.
+Button/Tooltip/HeroMalfurionTalentMoonfireCelestialAlignment=Basic Attacks against revealed by «Moonfire» Heroes deal additional bonus damage to them equal to <c val="#TooltipNumbers"><d ref="100*Effect,HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage,VitalFractionMax[Life]" precision="2"/>%</c> of their maximum Health and heals Malfurion and nearby allied Heroes for <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroMalfurionTalentMoonfireCelestialAlignment@HealModifier,Amount"/>%</c> of these damage dealt.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase «Moofire» Reveal duration from <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionMoonfire@Reveal,Duration" player="0"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTalentMoonfireCelestialAlignment@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroMalfurionTalentMoonfireFullMoonfire=Heroes hitted by «Moonfire» deal <c val="#TooltipNumbers"><d ref="-Behavior,HeroMalfurionTalentMoonfireFullMoonfire@DamageDealtDebuff,Modification.AttributeChangeArray[0].Points"/>%</c> less damage for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentMoonfireFullMoonfire@DamageDealtDebuff,Duration"/></c> seconds. Stacks up to <c val="#TooltipNumbers"><d ref="-Behavior,HeroMalfurionTalentMoonfireFullMoonfire@DamageDealtDebuff,Modification.AttributeChangeArray[0].Points*Behavior,HeroMalfurionTalentMoonfireFullMoonfire@DamageDealtDebuff,MaxStackCount"/>%</c>.<n/><n/><c val="#AbilityPassive">Passive: </c>Increase area of effect by <c val="#TooltipNumbers"><d ref="100*Effect,HeroMalfurionTalentMoonfireFullMoonfire@Modification,EffectArray[0].Value/Effect,HeroMalfurionMoonfire@Search,AreaArray[0].Radius" player="0"/>%</c>.
+Button/Tooltip/HeroMalfurionTalentMoonfireHinderingMoonfire=«Moonfire» reduces «Regrowth» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentMoonfireHinderingMoonfire@ReduceRegrowthCD,Cost[0].ChargeTimeUse"/></c> seconds per each Hero hit.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c> Heroes with «Moonfire». Progress is lost on death and when Malfurion fails to hit a Hero.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward: </c>Instead of <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentMoonfireHinderingMoonfire@ReduceRegrowthCD,Cost[0].ChargeTimeUse" player="0"/></c> seconds «Moonfire» will reduce «Regrowth» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleteReward,EffectArray[0].Value"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> If target is a Hero, «Moonfire» deals bonus damage to them equal to <c val="#TooltipNumbers"><d ref="100*Effect,HeroMalfurionTalentMoonfireHinderingMoonfire@PercentDamage,VitalFractionMax[Life]" precision="1"/>%</c> of their maximum Health.
+Button/Tooltip/HeroMalfurionTalentMoonfireMoonlight=Increase «Moonfire» damage against Minions and Mercenaries by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroMalfurionTalentMoonfireMoonlight@DamageModifier,Amount"/>%</c>.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Moonfire» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentMoonfireMoonlight@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroMalfurionTalentNaturesCleanse=Activate to make target ally Unstoppable for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentNaturesCleanse,Duration"/></c> second. Cannot be cast on Malfurion. Whenever ally Heroes with «Regrowth» periodic healing take damage, «Nature's Cleanse» cooldown reduces by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentNaturesCleanse@ModifyCooldown,Cost.Cooldown.TimeUse"/></c> seconds.
+Button/Tooltip/HeroMalfurionTalentRegrowthLifeseed=Casting «Regrowth» on a target with full health will delay the healing over time effect until they have taken damage.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase Malfurion Movespeed by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff,Modification.UnifiedMoveSpeedFactor"/>%</c>. Increase this by an additional <c val="#TooltipNumbers"><d ref="100*Behavior,HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff,Modification.UnifiedMoveSpeedFactor"/>%</c> for each active «Regrowth» on allied heroes up to <c val="#TooltipNumbers"><d ref="100*Behavior,HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff,Modification.UnifiedMoveSpeedFactor*Behavior,HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff,MaxStackCount"/>%</c>.
+Button/Tooltip/HeroMalfurionTalentTranquilitySerenity=While Malfurion is channeling  «Tranquility», He and nearby allied Heroes gain <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentTranquilitySerenity@Armor,Modification.AttributeChangeArray[0].Points"/></c> Armor.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Tranquility» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentTranquilitySerenity@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroMalfurionTalentTranquilitySerenity_Simple=«Tranquility» grants Armor to allied Heroes
+Button/Tooltip/HeroMalfurionTalentTwilightDreamAstralCommunion=Enemy Heroes, hitted by «Twilight Dream» lose <c val="#TooltipNumbers"><d ref="-Behavior,HeroMalfurionTalentTwilightDreamAstralCommunion@ArmorDebuff,Modification.AttributeChangeArray[0].Points"/></c> Armor for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTalentTwilightDreamAstralCommunion@ArmorDebuff,Duration"/></c> <lang rule="plural">second,seconds</lang>.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase «Twilight Dream» Silence duration by <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTalentTwilightDreamAstralCommunion@Modification,EffectArray[0].Value"/></c> <lang rule="plural">second,seconds</lang>.<n/><n/><c val="#AbilityPassive">Passive:</c> «Moonfire» reduces «Twilight Dream» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroMalfurionTalentTwilightDreamAstralCommunion@CooldownReduction,Cost[0].CooldownTimeUse" precision="1"/></c> <lang rule="plural">second,seconds</lang> whenever it damages an enemy Hero.
+Button/Tooltip/HeroMalfurionTranquility=Heals <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTranquility@Heal,VitalArray[Life].Change" option="player"/></c> health every <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTranquility@CreatePersistent,PeriodicPeriodArray[0]" precision="2" player="0"/></c> seconds to nearby allies over <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTranquility@CreatePersistent,PeriodCount * Effect,HeroMalfurionTranquility@CreatePersistent,PeriodicPeriodArray[0]"/></c> seconds. During «Tranquility» Malfurion Basic Abilities cooldown recharges <c val="#TooltipNumbers"><d ref="-100*Effect,HeroMalfurionTranquility@CooldownReduction,Cost[2].CooldownTimeUse/0.0625" option="player"/>%</c> faster.
+Button/Tooltip/HeroMalfurionTranquility_Simple=Heals all allies in a large radius over time
+Button/Tooltip/HeroMalfurionTwilightDream=After <c val="#TooltipNumbers"><d ref="Abil,HeroMalfurionTwilightDream,CastIntroTime[0]" precision="1"/></c> seconds, deal <c val="#TooltipNumbers"><d ref="Effect,HeroMalfurionTwilightDream@Damage,Amount" option="player"/></c> damage in a large area around Malfurion, Silencing enemies for <c val="#TooltipNumbers"><d ref="Behavior,HeroMalfurionTwilightDream@Silence,Duration" player="0"/></c> seconds.
+DataCollection/Name/HeroMalfurion=[Malfurion] - Hero
+DataCollection/Name/HeroMalfurionEntanglingRoots=[Malfurion] - Entangling Roots
+DataCollection/Name/HeroMalfurionInnervate=[Malfurion] - Innervate
+DataCollection/Name/HeroMalfurionMoonfire=[Malfurion] - Moonfire
+DataCollection/Name/HeroMalfurionRegrowth=[Malfurion] - Regrowth
+DataCollection/Name/HeroMalfurionRegrowthLifebloom=[Malfurion Talent] - Regrowth @ Lifebloom
+DataCollection/Name/HeroMalfurionRegrowthNaturesProtection=[Malfurion Talent] - Regrowth @ Nature's Protection
+DataCollection/Name/HeroMalfurionRegrowthYserasGift=[Malfurion Talent] - Regrowth @ Ysera's Gift
+DataCollection/Name/HeroMalfurionTalentCourseofLife=[Malfurion Talent] - Course of Life
+DataCollection/Name/HeroMalfurionTalentElunesChosen=[Malfurion Talent] - Elune's Chosen
+DataCollection/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots=[Malfurion Talent] - Entangling Roots @ Dangerous Roots
+DataCollection/Name/HeroMalfurionTalentEntanglingRootsOvergrownPath=[Malfurion Talent] - Entangling Roots @ Overgrown Path
+DataCollection/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots=[Malfurion Talent] - Entangling Roots @ Tenacious Roots
+DataCollection/Name/HeroMalfurionTalentInnervateMoonlitHarmony=[Malfurion Talent] - Innervate @ Moonlit Harmony
+DataCollection/Name/HeroMalfurionTalentInnervateRevitalize=[Malfurion Talent] - Innervate @ Revitalize
+DataCollection/Name/HeroMalfurionTalentMoonfireCelestialAlignment=[Malfurion Talent] - Moonfire @ Celestial Alignment
+DataCollection/Name/HeroMalfurionTalentMoonfireFullMoonfire=[Malfurion Talent] - Moonfire @ Full Moonfire
+DataCollection/Name/HeroMalfurionTalentMoonfireHinderingMoonfire=[Malfurion Talent] - Moonfire @ Hindering Moonfire
+DataCollection/Name/HeroMalfurionTalentMoonfireMoonlight=[Malfurion Talent] - Moonfire @ Moonlight
+DataCollection/Name/HeroMalfurionTalentNaturesCleanse=[Malfurion Talent] - Nature's Cleanse
+DataCollection/Name/HeroMalfurionTalentRegrowthLifeseed=[Malfurion Talent] - Regrowth @ Life Seed
+DataCollection/Name/HeroMalfurionTalentTranquilitySerenity=[Malfurion Talent] - Tranquility @ Serenity
+DataCollection/Name/HeroMalfurionTalentTwilightDreamAstralCommunion=[Malfurion Talent] - Twilight Dream @ Astral Communion
+DataCollection/Name/HeroMalfurionTranquility=[Malfurion] - Tranquility
+DataCollection/Name/HeroMalfurionTreant=[Malfurion] - Treant
+DataCollection/Name/HeroMalfurionTwilightDream=[Malfurion] - Twilight Dream
+DataCollection/Name/HeroMalfurionWeapon=[Malfurion] - Weapon
+DocInfo/Name=Malfurion Hero Mod
+Effect/Name/HeroMalfurion@DeathSet=Death Set
+Effect/Name/HeroMalfurion@LevelScalingModification=Level Scaling Modification
+Effect/Name/HeroMalfurionEntanglingRoots@ApplyDamageBehavior=Apply Damage Behavior
+Effect/Name/HeroMalfurionEntanglingRoots@ApplyRootBehavior=Apply Root Behavior
+Effect/Name/HeroMalfurionEntanglingRoots@ApplyRootedSet=Apply Rooted Set
+Effect/Name/HeroMalfurionEntanglingRoots@ApplyTimedLife=Apply Timed Life
+Effect/Name/HeroMalfurionEntanglingRoots@CreatePersistent=Create Persistent
+Effect/Name/HeroMalfurionEntanglingRoots@CreateUnit=Create Unit
+Effect/Name/HeroMalfurionEntanglingRoots@Damage=Damage
+Effect/Name/HeroMalfurionEntanglingRoots@DamageImpactSet=Damage Set
+Effect/Name/HeroMalfurionEntanglingRoots@DummyDamage=Dummy Damage
+Effect/Name/HeroMalfurionEntanglingRoots@InitialSet=Initial Set
+Effect/Name/HeroMalfurionEntanglingRoots@PersistentInitialSetRoots=Persistent Initial Set Roots
+Effect/Name/HeroMalfurionEntanglingRoots@RootBehavior=Apply Root Behavior
+Effect/Name/HeroMalfurionEntanglingRoots@Search1=Search 1
+Effect/Name/HeroMalfurionEntanglingRoots@Search2=Search 2
+Effect/Name/HeroMalfurionEntanglingRoots@Search3=Search 3
+Effect/Name/HeroMalfurionEntanglingRoots@Search4=Search 4
+Effect/Name/HeroMalfurionEntanglingRoots@Search5=Search 5
+Effect/Name/HeroMalfurionEntanglingRoots@SearchImpactSet=Search Impact Set
+Effect/Name/HeroMalfurionEntanglingRoots@Switch1=Switch 1
+Effect/Name/HeroMalfurionEntanglingRoots@Switch2=Switch 2
+Effect/Name/HeroMalfurionEntanglingRoots@Switch3=Switch 3
+Effect/Name/HeroMalfurionEntanglingRoots@Switch4=Switch 4
+Effect/Name/HeroMalfurionEntanglingRoots@Switch5=Switch 5
+Effect/Name/HeroMalfurionInnervate@ApplyCooldown=Apply Cooldown
+Effect/Name/HeroMalfurionInnervate@InnervateSet=Innervate Set
+Effect/Name/HeroMalfurionInnervate@PeriodicSet=Periodic Set
+Effect/Name/HeroMalfurionInnervate@RestoreMana=Restore Mana
+Effect/Name/HeroMalfurionInnervate@SearchHeroUsers=Search Hero Users
+Effect/Name/HeroMalfurionInnervate@SearchImpactSet=Search Impact Set
+Effect/Name/HeroMalfurionInnervate@SetCooldown=Set Cooldown
+Effect/Name/HeroMalfurionMoonfire@AreaRevealPersistent=Area Reveal Persistent
+Effect/Name/HeroMalfurionMoonfire@Damage=Damage
+Effect/Name/HeroMalfurionMoonfire@ImpactSet=Impact Set
+Effect/Name/HeroMalfurionMoonfire@InitialSet=Initial Set
+Effect/Name/HeroMalfurionMoonfire@ReduceCD=Reduce CD
+Effect/Name/HeroMalfurionMoonfire@ReduceCDDelay=Reduce CD Delay
+Effect/Name/HeroMalfurionMoonfire@RevealBehavior=Reveal Behavior
+Effect/Name/HeroMalfurionMoonfire@Search=Search
+Effect/Name/HeroMalfurionRegrowth@AddTrackedUnit=Add Tracked Unit
+Effect/Name/HeroMalfurionRegrowth@ApplyRegrowthPeriodicHealing=Apply Regrowth Periodic Healing
+Effect/Name/HeroMalfurionRegrowth@BehaviorSwitch=Behavior Switch
+Effect/Name/HeroMalfurionRegrowth@InitialInstantHeal=Initial Instant Heal
+Effect/Name/HeroMalfurionRegrowth@InitialSet=Initial Set
+Effect/Name/HeroMalfurionRegrowth@ModifyWeaponCooldown=Modify Weapon Cooldown
+Effect/Name/HeroMalfurionRegrowth@PeriodicHealing=Periodic Healing (Heal)
+Effect/Name/HeroMalfurionRegrowth@PeriodicHealingInitialSet=Periodic Healing (Initial Set)
+Effect/Name/HeroMalfurionRegrowth@PeriodicHealingPeriodicSet=Periodic Healing (Periodic Set)
+Effect/Name/HeroMalfurionRegrowth@RemoveTrackedUnit=Remove Tracked Unit
+Effect/Name/HeroMalfurionRegrowthNaturesProtection@ApplyArmorGE33=Apply Armor (GE 33)
+Effect/Name/HeroMalfurionRegrowthNaturesProtection@ApplyArmorLT33=Apply Armor (LT 33)
+Effect/Name/HeroMalfurionRegrowthNaturesProtection@ApplyController=Apply Controller
+Effect/Name/HeroMalfurionRegrowthNaturesProtection@Switch=Switch
+Effect/Name/HeroMalfurionTalentElunesChosen@DecreaseToken=Decrease Token
+Effect/Name/HeroMalfurionTalentElunesChosen@ImpactSet=Impact Set
+Effect/Name/HeroMalfurionTalentElunesChosen@IncreaseToken=Increase Token
+Effect/Name/HeroMalfurionTalentElunesChosen@QuestCompleteReward=Quest Complete Reward
+Effect/Name/HeroMalfurionTalentElunesChosen@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroMalfurionTalentElunesChosen@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroMalfurionTalentElunesChosen@RestoreMana=Restore Mana
+Effect/Name/HeroMalfurionTalentElunesChosen@TokenCounterController=Token Counter Controller
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@CreateTreant=Create Treant
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@DecreaseToken=Decrease Token
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@IncreaseToken=Increase Token
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounterController=Token Counter Controller
+Effect/Name/HeroMalfurionTalentEntanglingRootsDangerousRoots@UpdateQuest=Update Quest
+Effect/Name/HeroMalfurionTalentEntanglingRootsOvergrownPath@ApplyArmorDebuff=Apply Armor Debuff
+Effect/Name/HeroMalfurionTalentEntanglingRootsOvergrownPath@Modification=Modification
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior1=Apply Damage Behavior 1
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior2=Apply Damage Behavior 2
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior3=Apply Damage Behavior 3
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior4=Apply Damage Behavior 4
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior5=Apply Damage Behavior 5
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior1=Apply Root Behavior 1
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior2=Apply Root Behavior 2
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior3=Apply Root Behavior 3
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior4=Apply Root Behavior 4
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior5=Apply Root Behavior 5
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set1=Tenacious Set 1
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set2=Tenacious Set 2
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set3=Tenacious Set 3
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set4=Tenacious Set 4
+Effect/Name/HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set5=Tenacious Set 5
+Effect/Name/HeroMalfurionTalentInnervateMoonlitHarmony@CooldownModifier=Cooldown Modifier
+Effect/Name/HeroMalfurionTalentInnervateRevitalize@ApplySpellPowerBuff=Apply Spell Power Buff
+Effect/Name/HeroMalfurionTalentInnervateRevitalize@Modification=Modification
+Effect/Name/HeroMalfurionTalentMoonfireCelestialAlignment@Heal=Heal
+Effect/Name/HeroMalfurionTalentMoonfireCelestialAlignment@Modification=Modification
+Effect/Name/HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage=Percent Damage
+Effect/Name/HeroMalfurionTalentMoonfireCelestialAlignment@Search=Search
+Effect/Name/HeroMalfurionTalentMoonfireFullMoonfire@ApplyArmorReduction=Apply Damage Dealt Debuff
+Effect/Name/HeroMalfurionTalentMoonfireFullMoonfire@Modification=Modification
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@AddStackBuff=Add Stack Buff
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@DecreaseToken=Decrease Token
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@ImpactSet=Impact Set
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@IncreaseToken=Increase Token
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@Modification=Modification
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@PercentDamage=Percent Damage
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleteReward=Quest Complete Reward
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@ReduceRegrowthCD=Reduce Regrowth CD
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@RemoveStacksSet=Remove Stacks Set
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounterController=Token Counter Controller
+Effect/Name/HeroMalfurionTalentMoonfireMoonlight@Modification=Modification
+Effect/Name/HeroMalfurionTalentNaturesCleanse@ApplyCleanse=Apply Cleanse
+Effect/Name/HeroMalfurionTalentNaturesCleanse@Modification=Modification
+Effect/Name/HeroMalfurionTalentNaturesCleanse@ModifyCooldown=Modify Cooldown
+Effect/Name/HeroMalfurionTalentRegrowthLifeseed@ApplyLifeSeed=Apply Life Seed
+Effect/Name/HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingInfinity=Apply Regrowth Periodic Healing (Infinity)
+Effect/Name/HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingTimed=Apply Regrowth Periodic Healing (Timed)
+Effect/Name/HeroMalfurionTalentRegrowthLifeseed@RemoveBehavior=Remove Life Seed
+Effect/Name/HeroMalfurionTalentTranquilitySerenity@ApplyArmor=Apply Armor
+Effect/Name/HeroMalfurionTalentTranquilitySerenity@ApplyMarker=Apply Marker
+Effect/Name/HeroMalfurionTalentTranquilitySerenity@FindHeroesToGrantsArmor=Find Heroes To Grants Armor
+Effect/Name/HeroMalfurionTalentTranquilitySerenity@Modification=Modification
+Effect/Name/HeroMalfurionTalentTranquilitySerenity@Set=Set
+Effect/Name/HeroMalfurionTalentTwilightDreamAstralCommunion@ApplyArmorDebuff=Apply Armor Debuff
+Effect/Name/HeroMalfurionTalentTwilightDreamAstralCommunion@CooldownReduction=Cooldown Reduction
+Effect/Name/HeroMalfurionTalentTwilightDreamAstralCommunion@Modification=Modification
+Effect/Name/HeroMalfurionTranquility@ApplyTranquility=Apply Tranquility
+Effect/Name/HeroMalfurionTranquility@CooldownReduction=Cooldown Reduction
+Effect/Name/HeroMalfurionTranquility@CreatePersistent=Create Persistent
+Effect/Name/HeroMalfurionTranquility@FinalSet=Final Set
+Effect/Name/HeroMalfurionTranquility@Heal=Heal
+Effect/Name/HeroMalfurionTranquility@InitialSet=Initial Set
+Effect/Name/HeroMalfurionTranquility@ModifyWeaponCooldown=Modify Weapon Cooldown
+Effect/Name/HeroMalfurionTranquility@PeriodicSet=Periodic Set
+Effect/Name/HeroMalfurionTranquility@RemoveBehavior=Remove Behavior
+Effect/Name/HeroMalfurionTranquility@Search=Search
+Effect/Name/HeroMalfurionTreant@WeaponDamage=Damage
+Effect/Name/HeroMalfurionTreant@WeaponInitialSet=Initial Set
+Effect/Name/HeroMalfurionTwilightDream@AbilitySet=Ability Set
+Effect/Name/HeroMalfurionTwilightDream@ApplySilenceBehavior=Apply Silence Behavior
+Effect/Name/HeroMalfurionTwilightDream@CreatePersistent=Create Persistent
+Effect/Name/HeroMalfurionTwilightDream@Damage=Damage
+Effect/Name/HeroMalfurionTwilightDream@ImpactSet=Impact Set
+Effect/Name/HeroMalfurionTwilightDream@Modification=Modification
+Effect/Name/HeroMalfurionTwilightDream@Search=Search
+Effect/Name/HeroMalfurionWeapon@Damage=Damage
+Effect/Name/HeroMalfurionWeapon@ImpactSet=Impact Set
+Effect/Name/HeroMalfurionWeapon@LaunchMissile=Launch Missile
+Hero/Name/HeroMalfurion=Malfurion
+ScoreValue/Name/MalfurionHealAllyHealth=Malfurion Heal Ally Health
+ScoreValue/Name/Malfurion_Regrowth_NaturesBlessing=Nature's Blessing
+ScoreValue/PublishName/Malfurion_Regrowth_NaturesBlessing=Natures Blessing Heal
+Skin/Name/MalfurionBetrayer=Betrayer
+Skin/Name/MalfurionBloodRaven=Blood Raven Malfurion
+Skin/Name/MalfurionFlameVar=Flame
+Skin/Name/MalfurionFlameVar12=Flame (Var1)
+Skin/Name/MalfurionFlameVar2=Flame (Var2)
+Skin/Name/MalfurionFlameVar3=Flame (Var3)
+Skin/Name/MalfurionGrey=Grey Malfurion
+Skin/Name/MalfurionRaven=Raven Malfurion
+Skin/Name/MalfurionStormMantle=Storm Mantle Malfurion
+Skin/Name/MalfurionStormMantleCrimson=Red Storm Mantle Malfurion
+Skin/Name/MalfurionStormMantleEmerald=Green Storm Mantle Malfurion
+Skin/Name/MalfurionStormrage=Stormrage
+Skin/Name/MalfurionUltimate=Ultimate
+Skin/Name/MalfurionWinter=Winter
+UI/HeroMalfurion/RegrowthHealing=<d ref="Effect,HeroMalfurionRegrowth@InitialInstantHeal,VitalArray[Life].Change*$RunAccumulators:HeroMalfurionRegrowth@InitialInstantHealSwitchAdd$*(1+($RunAccumulators:UnitStatsPowerCasterHealingAndShieldingCustomValueAdd$/100))"/>
+UI/HeroMalfurion/RegrowthMana=<d ref="Abil,HeroMalfurionRegrowth,Cost[0].Vital[Energy]"/>
+Unit/Name/HeroMalfurion=Malfurion
+Unit/Name/HeroMalfurionEntanglingRoots=Unit
+Unit/Name/HeroMalfurionTalentNaturesCleanse=Nature's Cleanse
+Unit/Name/HeroMalfurionTreant=Treant
+Unit/Name/HeroMalfurionWeapon@Missile=Missile
+Upgrade/Name/HeroMalfurion@BasePurple=Base (Purple)
+Upgrade/Name/HeroMalfurion@BaseWhite=Base (White)
+Upgrade/Name/MalfurionSkinBetrayerBrown=Betrayer (Brown)
+Upgrade/Name/MalfurionSkinBetrayerRed=Betrayer (Red)
+Upgrade/Name/MalfurionSkinFlameVar1=Flame (Var1)
+Upgrade/Name/MalfurionSkinFlameVar2=Flame (Var2)
+Upgrade/Name/MalfurionSkinFlameVar3=Flame (Var3)
+Upgrade/Name/MalfurionSkinSotrmragePurple=Stormrage (Purple)
+Upgrade/Name/MalfurionSkinSotrmrageVar3=Stormrage (Var3)
+Upgrade/Name/MalfurionSkinSotrmrageWhite=Stormrage (White)
+Upgrade/Name/MalfurionSkinUltimateRed=Ultimate (Red)
+Upgrade/Name/MalfurionSkinUltimateWhite=Ultimate (White)
+Upgrade/Name/MalfurionSkinWinterVar1=Winter (Var1)
+Upgrade/Name/MalfurionSkinWinterVar2=Winter (Var2)
+Upgrade/Name/MalfurionSkinWinterVar3=Winter (Var3)
+Upgrade/Name/MalfurionSkinWinterVar4=Winter (Var4)
+UserData/DataIngame_Heroes_Skin/Malfurion_Base_Purple_Skin Name=Malfurion Base (Purple)
+UserData/DataIngame_Heroes_Skin/Malfurion_Base_White_Skin Name=Malfurion Base (White)
+UserData/DataIngame_Heroes_Skin/Malfurion_Betrayer_Brown_Skin Name=Malfurion Betrayer (Brown)
+UserData/DataIngame_Heroes_Skin/Malfurion_Betrayer_Red_Skin Name=Malfurion Betrayer (Red)
+UserData/DataIngame_Heroes_Skin/Malfurion_Betrayer_Skin Name=Malfurion Betrayer
+UserData/DataIngame_Heroes_Skin/Malfurion_Flame_Skin Name=Malfurion Flame
+UserData/DataIngame_Heroes_Skin/Malfurion_Flame_Var1_Skin Name=Malfurion Flame (Var1)
+UserData/DataIngame_Heroes_Skin/Malfurion_Flame_Var2_Skin Name=Malfurion Flame (Var2)
+UserData/DataIngame_Heroes_Skin/Malfurion_Flame_Var3_Skin Name=Malfurion Flame (Var3)
+UserData/DataIngame_Heroes_Skin/Malfurion_Stormrage_Purple_Skin Name=Malfurion Stormrage (Purple)
+UserData/DataIngame_Heroes_Skin/Malfurion_Stormrage_Skin Name=Malfurion Stormrage
+UserData/DataIngame_Heroes_Skin/Malfurion_Stormrage_Var3_Skin Name=Malfurion Stormrage (Var3)
+UserData/DataIngame_Heroes_Skin/Malfurion_Stormrage_White_Skin Name=Malfurion Stormrage (White)
+UserData/DataIngame_Heroes_Skin/Malfurion_Ultimate_Red_Skin Name=Malfurion Ultimate (Red)
+UserData/DataIngame_Heroes_Skin/Malfurion_Ultimate_Skin Name=Malfurion Ultimate
+UserData/DataIngame_Heroes_Skin/Malfurion_Ultimate_White_Skin Name=Malfurion Ultimate (White)
+UserData/DataIngame_Heroes_Skin/Malfurion_Winter_Skin Name=Malfurion Winter
+UserData/DataIngame_Heroes_Skin/Malfurion_Winter_Var1_Skin Name=Malfurion Winter (Var1)
+UserData/DataIngame_Heroes_Skin/Malfurion_Winter_Var2_Skin Name=Malfurion Winter (Var2)
+UserData/DataIngame_Heroes_Skin/Malfurion_Winter_Var3_Skin Name=Malfurion Winter (Var3)
+UserData/DataIngame_Heroes_Skin/Malfurion_Winter_Var4_Skin Name=Malfurion Winter (Var4)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Base_Purple_Skin Name=Malfurion Base (Purple)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Base_White_Skin Name=Malfurion Base (White)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Betrayer_Brown_Skin Name=Malfurion Betrayer (Brown)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Betrayer_Red_Skin Name=Malfurion Betrayer (Red)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Betrayer_Skin Name=Malfurion Betrayer
+UserData/DataIngame_Heroes_Skin2/Malfurion_Flame_Skin Name=Malfurion Flame
+UserData/DataIngame_Heroes_Skin2/Malfurion_Flame_Var1_Skin Name=Malfurion Flame (Var1)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Flame_Var2_Skin Name=Malfurion Flame (Var2)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Flame_Var3_Skin Name=Malfurion Flame (Var3)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Stormrage_Purple_Skin Name=Malfurion Stormrage (Purple)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Stormrage_Skin Name=Malfurion Stormrage
+UserData/DataIngame_Heroes_Skin2/Malfurion_Stormrage_Var3_Skin Name=Malfurion Stormrage (Var3)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Stormrage_White_Skin Name=Malfurion Stormrage (White)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Ultimate_Red_Skin Name=Malfurion Ultimate (Red)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Ultimate_Skin Name=Malfurion Ultimate
+UserData/DataIngame_Heroes_Skin2/Malfurion_Ultimate_White_Skin Name=Malfurion Ultimate (White)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Winter_Skin Name=Malfurion Winter
+UserData/DataIngame_Heroes_Skin2/Malfurion_Winter_Var1_Skin Name=Malfurion Winter (Var1)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Winter_Var2_Skin Name=Malfurion Winter (Var2)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Winter_Var3_Skin Name=Malfurion Winter (Var3)
+UserData/DataIngame_Heroes_Skin2/Malfurion_Winter_Var4_Skin Name=Malfurion Winter (Var4)
+UserData/Skin/MalfurionBase_VariationAdditionalSearchText_001=Black Purple
+UserData/Skin/MalfurionBase_VariationAdditionalSearchText_002=Blue White
+UserData/Skin/MalfurionBase_VariationInfo=Malfurion Stormrage is the greatest druid on Azeroth, and a student of the demi-god Cenarius. Communing with nature and Cenarius through the Emerald dream, Malfurion protects the wilds from demonic influences.
+UserData/Skin/MalfurionBase_VariationName=Malfurion
+UserData/Skin/MalfurionBase_VariationName_001=Raven Malfurion
+UserData/Skin/MalfurionBase_VariationName_002=Tundra Malfurion
+Weapon/Name/HeroMalfurionTreant@Weapon=Treant Weapon
+Weapon/Name/HeroMalfurionWeapon=Hero Weapon

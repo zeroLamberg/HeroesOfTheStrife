@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorConstant id="HeroMalfurionTalentElunesChosen@QuestUIDisplayer"/>
+    <CAccumulatorConstant id="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestUIDisplayer"/>
+    <CAccumulatorArithmetic id="HeroMalfurionRegrowthLifebloom@Arithmetic">
+        <Parameters value="1">
+            <AccumulatorArray value="HeroMalfurionRegrowthLifebloom"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="HeroMalfurionRegrowth@InitialInstantHealSwitch"/>
+        </Parameters>
+        <Operation value="Divide"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorSwitch id="HeroMalfurionRegrowthLifebloom@Switch">
+        <CaseArray Validator="HeroMalfurionRegrowthLifebloom" Accumulator="HeroMalfurionRegrowthLifebloom@Arithmetic"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorBehavior id="HeroMalfurionRegrowth@RemainingDuration">
+        <Behavior value="HeroMalfurionRegrowth"/>
+        <UnitSource Effect="HeroMalfurionTalentRegrowthElunasProtection@InitialSet" Value="Target"/>
+        <Type value="DurationRemaining"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorConstant id="HeroMalfurionTalentEntanglingRootsDangerousRoots@DamageConstant" parent="BaseAccumulator">
+        <MaxAccumulation value="524287.9997"/>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionTalentInnervateMoonlitHarmony@Modifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroMalfurionTalentInnervateMoonlitHarmony@Swtich">
+        <CaseArray Validator="HeroMalfurionTalentInnervateMoonlitHarmony" Accumulator="HeroMalfurionTalentInnervateMoonlitHarmony@Modifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroMalfurionTalentMoonfireCelestialAlignment@HealModifier" parent="BaseAccumulator">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.75"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionTalentMoonfireMoonlight@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="4"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroMalfurionTalentMoonfireMoonlight@Switch">
+        <CaseArray Validator="HeroMalfurionTalentMoonfireMoonlight@CasterHasMoonlightAndTargetIsMinion" Accumulator="HeroMalfurionTalentMoonfireMoonlight@DamageModifier"/>
+        <CaseArray Validator="HeroMalfurionTalentMoonfireMoonlight@CasterHasMoonlightAndTargetIsMercLanerOrDefender" Accumulator="HeroMalfurionTalentMoonfireMoonlight@DamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal2ChargesAdd">
+        <Amount value="2"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal1ChargesAdd">
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal3ChargesAdd">
+        <Amount value="3"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal4ChargesAdd">
+        <Amount value="4"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal5ChargesAdd">
+        <Amount value="5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorVitals id="HeroMalfurionRegrowthLifebloom" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <Ratio value="0.075"/>
+        <Missing value="1"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnit"/>
+    </CAccumulatorVitals>
+    <CAccumulatorSwitch id="HeroMalfurionRegrowth@InitialInstantHealSwitchAdd">
+        <MinAccumulation value="0"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed0" Accumulator="HeroMalfurionRegrowth@InitialHeal5ChargesAdd"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed1" Accumulator="HeroMalfurionRegrowth@InitialHeal4ChargesAdd"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed2" Accumulator="HeroMalfurionRegrowth@InitialHeal3ChargesAdd"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed3" Accumulator="HeroMalfurionRegrowth@InitialHeal2ChargesAdd"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed4" Accumulator="HeroMalfurionRegrowth@InitialHeal1ChargesAdd"/>
+        <CaseDefault value="Constant0Add"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal2Charges">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="2"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal3Charges">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="3"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroMalfurionRegrowth@InitialInstantHealSwitch">
+        <MinAccumulation value="0"/>
+        <ApplicationRule value="Multiply"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed0" Accumulator="HeroMalfurionRegrowth@InitialHeal5Charges"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed1" Accumulator="HeroMalfurionRegrowth@InitialHeal4Charges"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed2" Accumulator="HeroMalfurionRegrowth@InitialHeal3Charges"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed3" Accumulator="HeroMalfurionRegrowth@InitialHeal2Charges"/>
+        <CaseArray Validator="HeroMalfurionRegrowth@ChargesUsed4" Accumulator="ConstantMultiply1"/>
+        <CaseDefault value="Constant0Multiply"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal4Charges">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="4"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowth@InitialHeal5Charges">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroMalfurionRegrowthYserasGift@Bonus">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.6"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroMalfurionRegrowthYserasGift@Switch">
+        <CaseArray Validator="HeroMalfurionRegrowthYserasGift@CasterLifeIsGT75_And_CasterHasYserasGrace" Accumulator="HeroMalfurionRegrowthYserasGift@Bonus"/>
+    </CAccumulatorSwitch>
+</Catalog>

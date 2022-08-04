@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Includes>
+    <!-- Asset Mods -->
+    <Path value="Mods/Commanders Conflict/AssetMods/Assets01.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/AssetMods/Assets02.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/AssetMods/Assets03.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/AssetMods/Assets04.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/AssetMods/Assets05.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/AssetMods/Assets06.SC2Mod" />
+    <!-- Temp Mods -->
+    <Path value="Mods/Commanders Conflict/Development/TempMods/Assets.SC2Mod" />
+    <!-- Data Mods -->
+    <Path value="Mods/Commanders Conflict/Development/DataMods/Core.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/DataMods/Loot.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/DataMods/DataLocalization.SC2Mod" />
+    <!-- Hero Mods -->
+    <Path value="Mods/Commanders Conflict/Development/HeroMods/Abathur.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/HeroMods/Diablo.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/HeroMods/Katarina.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/HeroMods/Malfurion.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/HeroMods/Selendis.SC2Mod" />
+    <Path value="Mods/Commanders Conflict/Development/HeroMods/Talandar.SC2Mod" />
+</Includes>

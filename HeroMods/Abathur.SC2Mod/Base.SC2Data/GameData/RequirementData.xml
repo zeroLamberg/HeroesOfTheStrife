@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HeroAbathur@SkinUltimateGrey">
+        <EditorCategories value="CoreHero:Abathur,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroAbathur@SkinUltimateGreyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathur@BaseChar">
+        <EditorCategories value="CoreHero:Abathur,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroAbathur@BaseCharCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathur@BaseVar3">
+        <EditorCategories value="CoreHero:Abathur,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroAbathur@BaseVar3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathur@BaseAlbino">
+        <EditorCategories value="CoreHero:Abathur,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroAbathur@BaseAlbinoCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathur@SkinUltimateRed">
+        <EditorCategories value="CoreHero:Abathur,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroAbathur@SkinUltimateRedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathur@SkinUltimatePurple">
+        <EditorCategories value="CoreHero:Abathur,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroAbathur@SkinUltimatePurpleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathurEvolveMonstrosity@HasActiveMonstrosityNotInStasis">
+        <NodeArray index="Use" Link="AndGTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0EqCountBehaviorHeroAbathurEvolveMonstrosity@StasisControllerCompleteOnlyAtUnit0"/>
+        <NodeArray index="Show" Link="GTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0"/>
+        <EditorCategories value="CoreHero:Abathur,TechType:Ability"/>
+    </CRequirement>
+    <CRequirement id="AbathurNotUltimateEvolutionClone">
+        <NodeArray index="Use" Link="EqCountBehaviorUltimateEvolutionBuffCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="AbathurHasBombardStrainBuffs"/>
+    <CRequirement id="AbathurHasAssumedDirectControl"/>
+    <CRequirement id="AbathurHasNoStrainBuffs"/>
+    <CRequirement id="AbathurHasAssaultStrainBuffs"/>
+    <CRequirement id="HeroAbathurEvolveMonstrosity@HasActiveMonstrosity">
+        <NodeArray index="Use" Link="GTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0"/>
+        <NodeArray index="Show" Link="GTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0"/>
+        <EditorCategories value="CoreHero:Abathur,TechType:Ability"/>
+    </CRequirement>
+    <CRequirement id="HeroAbathurDeepTunnelMonstrosity@HasCarry">
+        <NodeArray index="Show" Link="AndEqCountBehaviorHeroAbathurDeepTunnelMonstrosity@CarryCompleteOnlyAtUnit1"/>
+        <EditorCategories value="CoreHero:Abathur,TechType:Ability"/>
+    </CRequirement>
+</Catalog>

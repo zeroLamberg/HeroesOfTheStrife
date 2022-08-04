@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton default="1" id="CoreButtonParentHideInfo">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <SimpleDisplayText value="Button/SimpleDisplayText/##id##"/>
+    </CButton>
+    <CButton default="1" id="StormButtonParent">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <TooltipVitalName index="Energy" value="UI/Tooltip/Abil/Mana"/>
+    </CButton>
+    <CButton default="1" id="StormButtonParentFury" parent="StormButtonParent">
+        <TooltipVitalName index="Energy" value="UI/Tooltip/Abil/Fury"/>
+    </CButton>
+    <CButton default="1" id="CorePrestigeButtonSlot1">
+        <Name value="Button/Name/CorePrestigeButtonSlot1"/>
+        <Tooltip value="Button/Tooltip/CorePrestigeButtonSlot1"/>
+        <AlertName value="Button/Name/CorePrestigeButtonSlot1"/>
+        <AlertTooltip value="Button/Tooltip/CorePrestigeButtonSlot1"/>
+        <Hotkey value="Button/Hotkey/CorePrestigeButtonSlot1"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <HotkeyAlias value="CorePrestigeButtonSlot1"/>
+        <DefaultButtonLayout Row="1"/>
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+    </CButton>
+    <CButton default="1" id="CoreSpecificButton">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <DefaultButtonLayout Row="1" Column="3"/>
+    </CButton>
+    <CButton default="1" id="CorePrestigeButtonSlot2">
+        <Name value="Button/Name/CorePrestigeButtonSlot2"/>
+        <Tooltip value="Button/Tooltip/CorePrestigeButtonSlot2"/>
+        <AlertName value="Button/Name/CorePrestigeButtonSlot2"/>
+        <AlertTooltip value="Button/Tooltip/CorePrestigeButtonSlot2"/>
+        <Hotkey value="Button/Hotkey/CorePrestigeButtonSlot2"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <DefaultButtonLayout Row="1" Column="1"/>
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+    </CButton>
+    <CButton default="1" id="CoreButtonParent">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/##id##"/>
+        <SimpleDisplayText value="Button/SimpleDisplayText/##id##"/>
+    </CButton>
+    <CButton id="BasicAttack" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Base.dds"/>
+    </CButton>
+    <CButton id="HeroGenericHearthstone@NoMana">
+        <Name value="Button/Name/HeroGenericHearthstone"/>
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Hearthstone.dds"/>
+        <AlertName value="Button/Name/HeroGenericHearthstone"/>
+        <AlertIcon value="assets\Icons\Common_General\Icon_General_Hearthstone.dds"/>
+    </CButton>
+    <CButton id="RegenGlobe">
+        <Icon value="assets\Icons\Common_General\Icon_General_HealthPotion.dds"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CButton>
+    <CButton id="SmartCommandUnitInteraction">
+        <Icon value="assets\Icons\Common_Diablo\Hero_Necromancer\Icon_D3_Hero_Necromancer_Passive_CheatDeath.dds"/>
+    </CButton>
+    <CButton id="HeroGenericCaptureMacGuffinTwo">
+        <Icon value="Assets\Textures\btn-ability-protoss-voidrayprismaticalignment.dds"/>
+    </CButton>
+    <CButton id="HeroGenericHearthstone">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Hearthstone.dds"/>
+        <AlertIcon value="assets\Icons\Common_General\Icon_General_Hearthstone.dds"/>
+    </CButton>
+    <CButton id="TalentTomOfDamage" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_TomeOfDamage.dds"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentTomOfDamage"/>
+    </CButton>
+    <CButton id="TalentTomOfHealth" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_TomeOfHealth.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentTomOfHealth"/>
+    </CButton>
+    <CButton id="TalentTomOfHealth@Rank1" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_TomeOfHealth.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentTomOfHealth@Rank1"/>
+    </CButton>
+    <CButton id="TalentTomOfHealth@Rank2" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_TomeOfHealth.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <HotkeyAlias value="TalentTomOfHealth@Rank1"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentTomOfHealth@Rank2"/>
+    </CButton>
+    <CButton id="TalentTomOfHealth@Rank3" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_TomeOfHealth.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <HotkeyAlias value="TalentTomOfHealth@Rank1"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentTomOfHealth@Rank3"/>
+    </CButton>
+    <CButton id="TalentTomOfMastery" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_TomeOfMastery.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentTomOfMastery"/>
+    </CButton>
+    <CButton id="TemplateDashAbilityApplyForce"/>
+    <CButton id="TemplateDashAbilityIssueMoveOrder"/>
+    <CButton id="TemplateTalent" parent="CoreButtonParentHideInfo"/>
+    <CButton id="TemplateTalentCarryBehavior" parent="CoreButtonParentHideInfo"/>
+    <CButton id="TemplateTalentQuest" parent="CoreButtonParentHideInfo"/>
+    <CButton id="WallCrush" parent="StormButtonParent">
+        <TooltipVitalName index="Energy" value=""/>
+        <Icon value="Assets\Textures\storm_btn_d3_wizard_waveofforce.dds"/>
+    </CButton>
+    <CButton id="GardensObeliskActivate" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btnelvenguardtower.dds"/>
+    </CButton>
+    <CButton id="VehicleDragonFireBreath" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btnfirerocks.dds"/>
+    </CButton>
+    <CButton id="GhostShipCannonBombard" parent="StormButtonParent">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-330mmbarragecannon.dds"/>
+    </CButton>
+    <CButton id="BullRushWeaponCooldown" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btnreplay-speeddown.dds"/>
+    </CButton>
+    <CButton id="VehicleDragonDragonRoar" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btnhowlofterror.dds"/>
+    </CButton>
+    <CButton id="HeroGenericCaptureMacGuffin">
+        <Icon value="Assets\Textures\btn-ability-protoss-voidrayprismaticalignment.dds"/>
+    </CButton>
+    <CButton id="TowerDeadMorph" parent="StormButtonParent">
+        <Icon value="Assets\Textures\btn-ability-zerg-root.dds"/>
+    </CButton>
+    <CButton id="LockedUltimateAbility" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Textures\hud_btn_bg_ability_locked.dds"/>
+    </CButton>
+    <CButton id="LeaveVehicle" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btnunloaddwarf.dds"/>
+    </CButton>
+    <CButton id="UseVehicle" parent="StormButtonParent">
+        <Icon value="assets\Icons\Common_Temporary\Icon_Temporary_Epicmount.dds"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+    </CButton>
+    <CButton id="MercLanerOgreBruiserTaunt" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btntaunt.dds"/>
+    </CButton>
+    <CButton id="MercLanerOgreBuffAbility" parent="StormButtonParent">
+        <Icon value="Assets\Textures\storm_temp_war3_btndefendstop.dds"/>
+    </CButton>
+    <CButton id="HeroGenericMount@Dismount">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Mount_Cancel.dds"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CButton>
+    <CButton id="HeroGenericMount@SummonMount">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Mount.dds"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CButton>
+    <CButton id="TalentBurningRage" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_BurningRage.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentBurningRage"/>
+    </CButton>
+    <CButton id="TalentRegenerationMaster">
+        <Icon value="Assets\Icons\Common_General\Icon_General_RegenerationMaster.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentRegenerationMasterSimple"/>
+    </CButton>
+    <CButton id="TalentConjurersPursuit">
+        <Icon value="Assets\Icons\Common_General\Icon_General_ConjurersPursuit.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_ConjurersPursuit/Simple"/>
+    </CButton>
+    <CButton id="TalentSpellBlock" parent="CoreButtonParentHideInfo">
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentSpellBlock"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_Block_Energetic.dds"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentSpellBlockSimple"/>
+    </CButton>
+    <CButton id="TalentPhysicalBlock" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_Block_Kinetic.dds"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentPhysicalBlock_Simple"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipCooldownOverrideText value="Button/Information/TalentPhysicalBlock"/>
+    </CButton>
+    <CButton id="DebugUnknownAbility">
+        <Icon value="assets\Icons\Common_Placeholder\Icon_Placeholder.dds"/>
+    </CButton>
+    <CButton id="HeroGenericFountainDrink">
+        <Icon value="assets\Icons\Common_General\Icon_General_Gidbin_2.dds"/>
+    </CButton>
+</Catalog>

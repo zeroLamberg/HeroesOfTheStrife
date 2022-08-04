@@ -1,0 +1,41 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Talandar
+//--------------------------------------------------------------------------------------------------
+// Constants
+const fixed libHTld_gv_heroTalandarChannelingScaleFactorMax = 2.0;
+const fixed libHTld_gv_heroTalandarChannelingRangeDefault = 7.0;
+const int libHTld_gv_heroTalandarChannelingMaxCycles = 32;
+const int libHTld_gv_heroTalandarChannelingMaxCyclesMedium = 24;
+const int libHTld_gv_heroTalandarChannelingMaxCyclesUpgraded = 16;
+const fixed libHTld_gv_heroTalandarSolariteFlareRadiusDefault = 2.0;
+const fixed libHTld_gv_heroTalandarSolariteFlareMissileScaleDefault = 1.0;
+const fixed libHTld_gv_heroTalandarAccumulatedShieldDefaultShieldsDuration = 5.0;
+
+// Variable Declarations
+fixed libHTld_gv_heroTalandarChannelingRangeCharged;
+fixed libHTld_gv_heroTalandarSolariteFlareRadiusCharged;
+fixed libHTld_gv_heroTalandarSolariteFlareMissileScaleCharged;
+
+// Function Declarations
+void libHTld_gf_HeroTalandarAccumulatedShield (unit lp_talandar, fixed lp_damageAmount, unit lp_damagingUnit);
+
+// Trigger Declarations
+trigger libHTld_gt_HeroTalandarSolarCannon;
+trigger libHTld_gt_HeroTalandarSolariteFlare;
+trigger libHTld_gt_HeroTalandarVOController;
+trigger libHTld_gt_HeroTalandarArmorSuitSwap;
+trigger libHTld_gt_HeroTalandarSecondSuitUIController;
+trigger libHTld_gt_HeroTalandarAccumulatedShieldDamaged;
+trigger libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed;
+trigger libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior;
+trigger libHTld_gt_HeroTalandarTalentArsenalOvercharge;
+trigger libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor;
+trigger libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal;
+trigger libHTld_gt_HeroTalandarTalentPurificationDamaged;
+trigger libHTld_gt_HeroTalandarTalentPurificationAbsorbed;
+
+// Library Initialization
+void libHTld_InitVariables ();
+

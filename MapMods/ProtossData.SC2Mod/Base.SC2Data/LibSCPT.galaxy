@@ -1,0 +1,289 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+include "LibMapM"
+include "LibUIUI"
+
+include "LibSCPT_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: StarCraft Protoss
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libSCPT_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libMapM_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #Include SCPT
+//--------------------------------------------------------------------------------------------------
+bool libSCPT_gt_IncludeSCPT_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libCore_gv_sYSCustomRunAnimationsEnabled = true;
+    libCore_gv_sYSCustomMinionsEnabled = true;
+    libCore_gf_DataInitializeMinion("MinionProtossMelee", libCore_ge_MinionType_Footmen, 3, libGame_gv_teamOrderIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossMelee", libCore_ge_MinionType_Footmen, 3, libGame_gv_teamChaosIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossWizard", libCore_ge_MinionType_Wizard, 1, libGame_gv_teamOrderIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossWizard", libCore_ge_MinionType_Wizard, 1, libGame_gv_teamChaosIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossRanged", libCore_ge_MinionType_Ranged, 3, libGame_gv_teamOrderIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossRanged", libCore_ge_MinionType_Ranged, 3, libGame_gv_teamChaosIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossCatapult", libCore_ge_MinionType_Catapult, 1, libGame_gv_teamOrderIndex_C);
+    libCore_gf_DataInitializeMinion("MinionProtossCatapult", libCore_ge_MinionType_Catapult, 1, libGame_gv_teamChaosIndex_C);
+    TriggerExecute(libSCPT_gt_InitializeVanguardMercType, true, true);
+    TriggerExecute(libSCPT_gt_InitializeHybridMercType, true, true);
+    TriggerExecute(libSCPT_gt_InitializeColossusMercType, true, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libSCPT_gt_IncludeSCPT_Init () {
+    libSCPT_gt_IncludeSCPT = TriggerCreate("libSCPT_gt_IncludeSCPT_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Run Animations (Protoss Map Special Case)
+//--------------------------------------------------------------------------------------------------
+bool libSCPT_gt_RunAnimationsProtossMapSpecialCase_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itTown;
+    int lv_itStructure;
+
+    // Automatic Variable Declarations
+    int autoCA9EB662_ae;
+    const int autoCA9EB662_ai = 1;
+    int auto1AA3F360_ae;
+    const int auto1AA3F360_ai = 1;
+    int auto1D12FBBB_ae;
+    const int auto1D12FBBB_ai = 1;
+    int auto0FE1DD25_ae;
+    const int auto0FE1DD25_ai = 1;
+    int auto36331680_ae;
+    const int auto36331680_ai = 1;
+    int auto68F30B91_ae;
+    const int auto68F30B91_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoCA9EB662_ae = libGame_gv_townTownCount;
+    lv_itTown = 1;
+    for ( ; ( (autoCA9EB662_ai >= 0 && lv_itTown <= autoCA9EB662_ae) || (autoCA9EB662_ai < 0 && lv_itTown >= autoCA9EB662_ae) ) ; lv_itTown += autoCA9EB662_ai ) {
+        auto1AA3F360_ae = libGame_gv_townTownData[lv_itTown].lv_structureCount;
+        lv_itStructure = 1;
+        for ( ; ( (auto1AA3F360_ai >= 0 && lv_itStructure <= auto1AA3F360_ae) || (auto1AA3F360_ai < 0 && lv_itStructure >= auto1AA3F360_ae) ) ; lv_itStructure += auto1AA3F360_ai ) {
+            UnitBehaviorSetDuration(libGame_gv_townTownData[lv_itTown].lv_structureUnits[lv_itStructure], "TownProtossWarpIn", 26.0);
+        }
+    }
+    Wait(4.0, c_timeGame);
+    libNtve_gf_SendActorMessageToUnit(libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core, "Signal PlayBuild");
+    libNtve_gf_SendActorMessageToUnit(libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core, "Signal PlayBuild");
+    Wait(6.0, c_timeGame);
+    auto1D12FBBB_ae = libGame_gv_townTownCount;
+    lv_itTown = 1;
+    for ( ; ( (auto1D12FBBB_ai >= 0 && lv_itTown <= auto1D12FBBB_ae) || (auto1D12FBBB_ai < 0 && lv_itTown >= auto1D12FBBB_ae) ) ; lv_itTown += auto1D12FBBB_ai ) {
+        auto0FE1DD25_ae = libGame_gv_townTownData[lv_itTown].lv_structureCount;
+        lv_itStructure = 1;
+        for ( ; ( (auto0FE1DD25_ai >= 0 && lv_itStructure <= auto0FE1DD25_ae) || (auto0FE1DD25_ai < 0 && lv_itStructure >= auto0FE1DD25_ae) ) ; lv_itStructure += auto0FE1DD25_ai ) {
+            if ((libGame_gv_townTownData[lv_itTown].lv_structureTypes[lv_itStructure] != libGame_ge_TownStructureTypes_Gate) && (UnitHasBehavior2(libGame_gv_townTownData[lv_itTown].lv_structureUnits[lv_itStructure], "TownDeadController@GateTower") == false)) {
+                libNtve_gf_SendActorMessageToUnit(libGame_gv_townTownData[lv_itTown].lv_structureUnits[lv_itStructure], "Signal PlayBuild");
+            }
+
+        }
+    }
+    libNtve_gf_WaitForTimer(libGame_gv_openTheGatesTimer, 6.0, false);
+    auto36331680_ae = libGame_gv_townTownCount;
+    lv_itTown = 1;
+    for ( ; ( (auto36331680_ai >= 0 && lv_itTown <= auto36331680_ae) || (auto36331680_ai < 0 && lv_itTown >= auto36331680_ae) ) ; lv_itTown += auto36331680_ai ) {
+        auto68F30B91_ae = libGame_gv_townTownData[lv_itTown].lv_structureCount;
+        lv_itStructure = 1;
+        for ( ; ( (auto68F30B91_ai >= 0 && lv_itStructure <= auto68F30B91_ae) || (auto68F30B91_ai < 0 && lv_itStructure >= auto68F30B91_ae) ) ; lv_itStructure += auto68F30B91_ai ) {
+            if (((libGame_gv_townTownData[lv_itTown].lv_structureTypes[lv_itStructure] == libGame_ge_TownStructureTypes_Gate) || (UnitHasBehavior2(libGame_gv_townTownData[lv_itTown].lv_structureUnits[lv_itStructure], "TownDeadController@GateTower") == true))) {
+                libNtve_gf_SendActorMessageToUnit(libGame_gv_townTownData[lv_itTown].lv_structureUnits[lv_itStructure], "Signal PlayBuild");
+            }
+
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libSCPT_gt_RunAnimationsProtossMapSpecialCase_Init () {
+    libSCPT_gt_RunAnimationsProtossMapSpecialCase = TriggerCreate("libSCPT_gt_RunAnimationsProtossMapSpecialCase_Func");
+    libGame_gf_GateOpenTimerStarted(libSCPT_gt_RunAnimationsProtossMapSpecialCase);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Vanguard Merc Type
+//--------------------------------------------------------------------------------------------------
+bool libSCPT_gt_InitializeVanguardMercType_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_campTypeIndex = libMapM_gf_JungleCampDefenderTypeIndex(libMapM_ge_JungleCampDefenderTypes_SiegeCamp1);
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsSoloable = true;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsElite = false;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel = StringExternal("Param/Value/lib_SCPT_ACAFCE24");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeMinimapLabel = StringExternal("Param/Value/lib_SCPT_D86CE974");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_respawnTime = 210.0;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfCreeps = 2;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[1] = "MercenaryVanguard@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[2] = "MercenaryVanguard@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_xPAwardForCapture = libCore_gv_data_XP_VanguardCapture_C;
+    libMapM_gf_DataInitializeScalingDataForDefender(lv_campTypeIndex, "MercenaryVanguard@ScalingDefender");
+    lv_campTypeIndex = libMapM_gf_JungleCampMercTypesIndex(libMapM_ge_JungleCampMercTypes_SiegeCamp1);
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfMinionsSpawned = 2;
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[1] = "MercenaryVanguard@Laner";
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[2] = "MercenaryVanguard@Laner";
+    libMapM_gf_DataInitializeScalingDataForMerc(lv_campTypeIndex, "MercenaryVanguard@ScalingLaner");
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryVanguard@Defender", false, libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel, StringExternal("Param/Value/lib_SCPT_E1AA68AC"), StringExternal("Param/Value/lib_SCPT_4BC2A1DC"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetHumanAISourceHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackMercCamp, libCore_ge_HeroVOEvents_AIMercCapture);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryVanguard@Laner", false, UnitTypeGetName("MercenaryVanguard@Laner"), StringExternal("Param/Value/lib_SCPT_2A50F82D"), StringExternal("Param/Value/lib_SCPT_02E88D73"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetAllyEnemyTargetHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackHere, libCore_ge_HeroVOEvents_PingAttackHere);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libSCPT_gt_InitializeVanguardMercType_Init () {
+    libSCPT_gt_InitializeVanguardMercType = TriggerCreate("libSCPT_gt_InitializeVanguardMercType_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Hybrid Merc Type
+//--------------------------------------------------------------------------------------------------
+bool libSCPT_gt_InitializeHybridMercType_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_campTypeIndex = libMapM_gf_JungleCampDefenderTypeIndex(libMapM_ge_JungleCampDefenderTypes_BruiserCamp1);
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsSoloable = true;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsElite = false;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel = StringExternal("Param/Value/lib_SCPT_879FFFE7");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeMinimapLabel = StringExternal("Param/Value/lib_SCPT_CECA79B5");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_respawnTime = 240.0;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfCreeps = 3;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[1] = "MercenaryHybridReaver@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[2] = "MercenaryHybridDominator@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[3] = "MercenaryHybridNemesis@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_xPAwardForCapture = libCore_gv_data_XP_HybridCapture_C;
+    libMapM_gf_DataInitializeScalingDataForDefender(lv_campTypeIndex, "MercenaryHybridReaver@ScalingDefender");
+    lv_campTypeIndex = libMapM_gf_JungleCampMercTypesIndex(libMapM_ge_JungleCampMercTypes_BruiserCamp1);
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfMinionsSpawned = 3;
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[1] = "MercenaryHybridReaver@Laner";
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[2] = "MercenaryHybridDominator@Laner";
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[3] = "MercenaryHybridNemesis@Laner";
+    libMapM_gf_DataInitializeScalingDataForMerc(lv_campTypeIndex, "MercenaryHybridReaver@ScalingLaner");
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryHybridReaver@Defender", false, libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel, StringExternal("Param/Value/lib_SCPT_6B723FCD"), StringExternal("Param/Value/lib_SCPT_F37DC720"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetHumanAISourceHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackMercCamp, libCore_ge_HeroVOEvents_AIMercCapture);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryHybridDominator@Defender", false, libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel, StringExternal("Param/Value/lib_SCPT_22B1CA28"), StringExternal("Param/Value/lib_SCPT_98ACC070"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetHumanAISourceHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackMercCamp, libCore_ge_HeroVOEvents_AIMercCapture);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryHybridNemesis@Defender", false, libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel, StringExternal("Param/Value/lib_SCPT_D0812D6A"), StringExternal("Param/Value/lib_SCPT_3E086AB5"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetHumanAISourceHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackMercCamp, libCore_ge_HeroVOEvents_AIMercCapture);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryHybridReaver@Laner", false, UnitTypeGetName("MercenaryHybridReaver@Laner"), StringExternal("Param/Value/lib_SCPT_5D8908CC"), StringExternal("Param/Value/lib_SCPT_A5C42327"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetAllyEnemyTargetHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackHere, libCore_ge_HeroVOEvents_PingAttackHere);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryHybridDominator@Laner", false, UnitTypeGetName("MercenaryHybridDominator@Laner"), StringExternal("Param/Value/lib_SCPT_101BA3EB"), StringExternal("Param/Value/lib_SCPT_27B6D2E6"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetAllyEnemyTargetHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackHere, libCore_ge_HeroVOEvents_PingAttackHere);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryHybridNemesis@Laner", false, UnitTypeGetName("MercenaryHybridNemesis@Laner"), StringExternal("Param/Value/lib_SCPT_8023D801"), StringExternal("Param/Value/lib_SCPT_434D746A"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetAllyEnemyTargetHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackHere, libCore_ge_HeroVOEvents_PingAttackHere);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libSCPT_gt_InitializeHybridMercType_Init () {
+    libSCPT_gt_InitializeHybridMercType = TriggerCreate("libSCPT_gt_InitializeHybridMercType_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Colossus Merc Type
+//--------------------------------------------------------------------------------------------------
+bool libSCPT_gt_InitializeColossusMercType_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_campTypeIndex = libMapM_gf_JungleCampDefenderTypeIndex(libMapM_ge_JungleCampDefenderTypes_BossCamp1);
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsSoloable = false;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsElite = true;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel = StringExternal("Param/Value/lib_SCPT_67A3093E");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeMinimapLabel = StringExternal("Param/Value/lib_SCPT_80937A16");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_respawnTime = 240.0;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfCreeps = 1;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[1] = "MercenaryColossus@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_xPAwardForCapture = libCore_gv_data_XP_ColossusCapture_C;
+    libMapM_gf_DataInitializeScalingDataForDefender(lv_campTypeIndex, "MercenaryColossus@ScalingDefender");
+    lv_campTypeIndex = libMapM_gf_JungleCampMercTypesIndex(libMapM_ge_JungleCampMercTypes_BossCamp1);
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_numberOfMinionsSpawned = 1;
+    libMapM_gv_dataJungleCampMercData[lv_campTypeIndex].lv_spawnedMinionUnitTypes[1] = "MercenaryColossus@Laner";
+    libMapM_gf_DataInitializeScalingDataForMerc(lv_campTypeIndex, "MercenaryColossus@ScalingLaner");
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryColossus@Defender", false, libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel, StringExternal("Param/Value/lib_SCPT_D29FCAA7"), StringExternal("Param/Value/lib_SCPT_5DC80A71"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetHumanAISourceHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackMercCamp, libCore_ge_HeroVOEvents_AIMercCapture);
+    libUIUI_gf_PingCreateNewPingTarget("MercenaryColossus@Laner", false, UnitTypeGetName("MercenaryColossus@Laner"), StringExternal("Param/Value/lib_SCPT_7804C242"), StringExternal("Param/Value/lib_SCPT_99DB4A07"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetAllyEnemyTargetHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackHere, libCore_ge_HeroVOEvents_PingAttackHere);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libSCPT_gt_InitializeColossusMercType_Init () {
+    libSCPT_gt_InitializeColossusMercType = TriggerCreate("libSCPT_gt_InitializeColossusMercType_Func");
+}
+
+void libSCPT_InitTriggers () {
+    libSCPT_gt_IncludeSCPT_Init();
+    libSCPT_gt_RunAnimationsProtossMapSpecialCase_Init();
+    libSCPT_gt_InitializeVanguardMercType_Init();
+    libSCPT_gt_InitializeHybridMercType_Init();
+    libSCPT_gt_InitializeColossusMercType_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libSCPT_InitLib_completed = false;
+
+void libSCPT_InitLib () {
+    if (libSCPT_InitLib_completed) {
+        return;
+    }
+
+    libSCPT_InitLib_completed = true;
+
+    libSCPT_InitLibraries();
+    libSCPT_InitTriggers();
+}
+

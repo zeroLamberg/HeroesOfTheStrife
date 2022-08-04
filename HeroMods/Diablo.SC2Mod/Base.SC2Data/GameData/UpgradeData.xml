@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="HeroDiablo@SkinUltimateBlue">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroDiablo@SkinUltimateWhite">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinArchangelGreen">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinArchangelPurple">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinArchangelVar3">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinArchangelVar4">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinPrimeVar1">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinSummer18Var1">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinPrimeVar2">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinPrimeVar3">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinPrimeVar4">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinSummer18Var2">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinSummer18Var3">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinSummer18Var4">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroDiablo@BaseGreen">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroDiablo@BaseBlack">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroDiablo@BasePink">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinKaijoePurple">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinKaijoeRed">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinLurkabloArgent">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="DiabloSkinLurkabloPale">
+        <EditorCategories value="CoreHero:Diablo,UpgradeType:Skins"/>
+    </CUpgrade>
+</Catalog>

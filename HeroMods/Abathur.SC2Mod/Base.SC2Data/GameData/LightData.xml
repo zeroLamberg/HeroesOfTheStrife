@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CLight id="HeroAbathur@BasePortrait" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Storm_Portrait_Abathur_Base"/>
+            <AmbientColor value="0.439216,0.439216,0.439216"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDRBloomThreshold" value="0.900000"/>
+            <Param index="HDRWhitePoint" value="1.850000"/>
+            <Param index="TerrainSpecularExp" value="73.000000"/>
+            <Param index="CreepSpecularExp" value="30.000000"/>
+            <Param index="CreepHDRSpecMultiplier" value="3.000000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <Param index="ShadowPenumbraSize" value="0.010000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.184314,0.000000,0.839216"/>
+                <ColorMultiplier value="0.804000"/>
+                <SpecularColor value="0.909804,0.000000,0.909804"/>
+                <SpecColorMultiplier value="3.311000"/>
+                <Direction value="0.295415,0.415842,-0.860119"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.047059,0.654902,0.486275" ColorMultiplier="0.385000" Direction="0.345740,0.475347,-0.809017"/>
+            <DirectionalLight index="Back" Color="0.000000,0.956863,0.670588" ColorMultiplier="3.981000" Direction="-0.835446,-0.145658,0.529919"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="HeroAbathur@SkinUltimatePortrait" parent="default">
+        <ToDInfoArray>
+            <Id value="Storm_Portrait_Abathur_Ultimate"/>
+            <AmbientColor value="0.219608,0.219608,0.219608"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+</Catalog>

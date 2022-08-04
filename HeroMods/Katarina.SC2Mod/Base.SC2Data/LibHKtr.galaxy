@@ -1,0 +1,1306 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+include "LibUIUI"
+
+include "LibHKtr_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Katarina
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHKtr_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libHKtr_InitVariables_completed = false;
+
+void libHKtr_InitVariables () {
+    int init_i;
+
+    if (libHKtr_InitVariables_completed) {
+        return;
+    }
+
+    libHKtr_InitVariables_completed = true;
+
+    for (init_i = 0; init_i <= libCore_gv_bALMaxEnginePlayerCount; init_i += 1) {
+        libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[init_i] = UnitGroupEmpty();
+    }
+}
+
+// Presets
+// Functions
+string libHKtr_gf_HeroKatarinaCarriedWeaponBehavior (unit lp_unit) {
+    // Variable Declarations
+    string lv_carriedWeaponBehavior;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponAutorifle@WeaponCarried";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponFlamethrower@WeaponCarried") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponFlamethrower@WeaponCarried";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponSnipe@WeaponCarried") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponSnipe@WeaponCarried";
+    }
+    return lv_carriedWeaponBehavior;
+}
+
+string libHKtr_gf_HeroKatarinaEquippedWeaponBehavior (unit lp_unit) {
+    // Variable Declarations
+    string lv_equippedWeaponBehavior;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponAutorifle@WeaponEquipped") == true)) {
+        lv_equippedWeaponBehavior = "HeroKatarinaWeaponAutorifle@WeaponEquipped";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") == true)) {
+        lv_equippedWeaponBehavior = "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponFlamethrower@WeaponEquipped") == true)) {
+        lv_equippedWeaponBehavior = "HeroKatarinaWeaponFlamethrower@WeaponEquipped";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponSnipe@WeaponEquipped") == true)) {
+        lv_equippedWeaponBehavior = "HeroKatarinaWeaponSnipe@WeaponEquipped";
+    }
+    return lv_equippedWeaponBehavior;
+}
+
+string libHKtr_gf_HeroKatarinaChangeEquippedWeaponToCarried (unit lp_unit) {
+    // Variable Declarations
+    string lv_carriedWeaponBehavior;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponAutorifle@WeaponEquipped") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponAutorifle@WeaponCarried";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponFlamethrower@WeaponEquipped") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponFlamethrower@WeaponCarried";
+    }
+    else if ((UnitHasBehavior2(lp_unit, "HeroKatarinaWeaponSnipe@WeaponEquipped") == true)) {
+        lv_carriedWeaponBehavior = "HeroKatarinaWeaponSnipe@WeaponCarried";
+    }
+    return lv_carriedWeaponBehavior;
+}
+
+void libHKtr_gf_HeroKatarinaSwapModelActorMessage (unit lp_katarina, string lp_newModel) {
+    // Automatic Variable Declarations
+    // Implementation
+    ActorSend(libNtve_gf_MainActorofUnit(lp_katarina), (("ModelSwap " + (lp_newModel))));
+}
+
+string libHKtr_gf_HeroKatarinaGetNextCarriedWeapon (unit lp_katarina) {
+    // Variable Declarations
+    int lv_itItem;
+    int lv_currentCarriedPosition;
+    string lv_currentCarriedBehavior;
+    string lv_currentCarriedItem;
+    int lv_currentEquippedPosition;
+    string lv_currentEquippedBehavior;
+    string lv_currentEquippedItem;
+    unit lv_itInventoryItem;
+    unit[libCore_gv_bALPlayerTotalInventorySlots + 1] lv_itemPosition;
+
+    // Automatic Variable Declarations
+    string autoE8814540_val;
+    string autoB47D8998_val;
+    unitgroup autoC93BF51E_g;
+    int autoC93BF51E_u;
+    const int auto1B84CBD3_ae = libCore_gv_bALPlayerTotalInventorySlots;
+    const int auto1B84CBD3_ai = 1;
+    int auto3BFA4167_ae;
+    const int auto3BFA4167_ai = 1;
+    int autoB0820B61_ae;
+    const int autoB0820B61_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_currentEquippedBehavior = libHKtr_gf_HeroKatarinaEquippedWeaponBehavior(lp_katarina);
+    autoE8814540_val = lv_currentEquippedBehavior;
+    if (autoE8814540_val == "HeroKatarinaWeaponAutorifle@WeaponEquipped") {
+        lv_currentEquippedItem = "HeroKatarinaEquipAutorifle";
+    }
+    else if (autoE8814540_val == "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") {
+        lv_currentEquippedItem = "HeroKatarinaEquipGrenadeLauncher";
+    }
+    else if (autoE8814540_val == "HeroKatarinaWeaponFlamethrower@WeaponEquipped") {
+        lv_currentEquippedItem = "HeroKatarinaEquipFlamethrower";
+    }
+    else if (autoE8814540_val == "HeroKatarinaWeaponSnipe@WeaponEquipped") {
+        lv_currentEquippedItem = "HeroKatarinaEquipSnipe";
+    }
+    else {
+    }
+    lv_currentEquippedPosition = libCore_gf_UnitInventoryItemPositionInInventoryOfUnit(lv_currentEquippedItem, lp_katarina);
+    lv_currentCarriedBehavior = libHKtr_gf_HeroKatarinaCarriedWeaponBehavior(lp_katarina);
+    autoB47D8998_val = lv_currentCarriedBehavior;
+    if (autoB47D8998_val == "HeroKatarinaWeaponAutorifle@WeaponCarried") {
+        lv_currentCarriedItem = "HeroKatarinaEquipAutorifle";
+    }
+    else if (autoB47D8998_val == "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") {
+        lv_currentCarriedItem = "HeroKatarinaEquipGrenadeLauncher";
+    }
+    else if (autoB47D8998_val == "HeroKatarinaWeaponFlamethrower@WeaponCarried") {
+        lv_currentCarriedItem = "HeroKatarinaEquipFlamethrower";
+    }
+    else if (autoB47D8998_val == "HeroKatarinaWeaponSnipe@WeaponCarried") {
+        lv_currentCarriedItem = "HeroKatarinaEquipSnipe";
+    }
+    else {
+    }
+    lv_currentCarriedPosition = libCore_gf_UnitInventoryItemPositionInInventoryOfUnit(lv_currentCarriedItem, lp_katarina);
+    autoC93BF51E_g = UnitInventoryGroup(lp_katarina);
+    autoC93BF51E_u = UnitGroupCount(autoC93BF51E_g, c_unitCountAll);
+    for (;; autoC93BF51E_u -= 1) {
+        lv_itInventoryItem = UnitGroupUnitFromEnd(autoC93BF51E_g, autoC93BF51E_u);
+        if (lv_itInventoryItem == null) { break; }
+        lv_itemPosition[UnitInventoryContainer(lv_itInventoryItem)] = lv_itInventoryItem;
+    }
+    if ((lv_currentCarriedPosition == libCore_gv_bALPlayerTotalInventorySlots)) {
+        autoB0820B61_ae = (libCore_gv_bALPlayerTotalInventorySlots-1);
+        lv_itItem = 1;
+        for ( ; ( (autoB0820B61_ai >= 0 && lv_itItem <= autoB0820B61_ae) || (autoB0820B61_ai < 0 && lv_itItem >= autoB0820B61_ae) ) ; lv_itItem += autoB0820B61_ai ) {
+            if ((lv_currentCarriedItem != "HeroKatarinaEquipAutorifle") && (lv_currentEquippedItem != "HeroKatarinaEquipAutorifle") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipAutorifle")) {
+                return "HeroKatarinaWeaponAutorifle@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipGrenadeLauncher") && (lv_currentEquippedItem != "HeroKatarinaEquipGrenadeLauncher") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipGrenadeLauncher")) {
+                return "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipFlamethrower") && (lv_currentEquippedItem != "HeroKatarinaEquipFlamethrower") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipFlamethrower")) {
+                return "HeroKatarinaWeaponFlamethrower@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipSnipe") && (lv_currentEquippedItem != "HeroKatarinaEquipSnipe") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipSnipe")) {
+                return "HeroKatarinaWeaponSnipe@WeaponCarried";
+            }
+        }
+    }
+    else {
+        lv_itItem = (lv_currentCarriedPosition+1);
+        for ( ; ( (auto1B84CBD3_ai >= 0 && lv_itItem <= auto1B84CBD3_ae) || (auto1B84CBD3_ai < 0 && lv_itItem >= auto1B84CBD3_ae) ) ; lv_itItem += auto1B84CBD3_ai ) {
+            if ((lv_currentCarriedItem != "HeroKatarinaEquipAutorifle") && (lv_currentEquippedItem != "HeroKatarinaEquipAutorifle") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipAutorifle")) {
+                return "HeroKatarinaWeaponAutorifle@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipGrenadeLauncher") && (lv_currentEquippedItem != "HeroKatarinaEquipGrenadeLauncher") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipGrenadeLauncher")) {
+                return "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipFlamethrower") && (lv_currentEquippedItem != "HeroKatarinaEquipFlamethrower") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipFlamethrower")) {
+                return "HeroKatarinaWeaponFlamethrower@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipSnipe") && (lv_currentEquippedItem != "HeroKatarinaEquipSnipe") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipSnipe")) {
+                return "HeroKatarinaWeaponSnipe@WeaponCarried";
+            }
+        }
+        auto3BFA4167_ae = (lv_currentCarriedPosition-1);
+        lv_itItem = 1;
+        for ( ; ( (auto3BFA4167_ai >= 0 && lv_itItem <= auto3BFA4167_ae) || (auto3BFA4167_ai < 0 && lv_itItem >= auto3BFA4167_ae) ) ; lv_itItem += auto3BFA4167_ai ) {
+            if ((lv_currentCarriedItem != "HeroKatarinaEquipAutorifle") && (lv_currentEquippedItem != "HeroKatarinaEquipAutorifle") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipAutorifle")) {
+                return "HeroKatarinaWeaponAutorifle@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipGrenadeLauncher") && (lv_currentEquippedItem != "HeroKatarinaEquipGrenadeLauncher") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipGrenadeLauncher")) {
+                return "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipFlamethrower") && (lv_currentEquippedItem != "HeroKatarinaEquipFlamethrower") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipFlamethrower")) {
+                return "HeroKatarinaWeaponFlamethrower@WeaponCarried";
+            }
+            else if ((lv_currentCarriedItem != "HeroKatarinaEquipSnipe") && (lv_currentEquippedItem != "HeroKatarinaEquipSnipe") && (UnitGetType(lv_itemPosition[lv_itItem]) == "HeroKatarinaEquipSnipe")) {
+                return "HeroKatarinaWeaponSnipe@WeaponCarried";
+            }
+        }
+    }
+    return null;
+}
+
+void libHKtr_gf_HeroKatarinaAutorifleHealingSystem (unit lp_damagingUnit, unit lp_triggeringUnit, string lp_damagingEffect, fixed lp_damage, int lp_equippedCarried) {
+    // Variable Declarations
+    bool lv_isCritical;
+    string lv_style;
+    fixed lv_percent;
+    fixed lv_healingAmountTotal;
+    fixed lv_healingVital;
+    fixed lv_healingShields;
+    fixed lv_currentShields;
+    fixed lv_currentShields2;
+    fixed lv_newShields;
+    int lv_owner;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_owner = UnitGetOwner(lp_damagingUnit);
+
+    // Implementation
+    lv_isCritical = libCore_gf_CheckForCriticalDamage(lp_triggeringUnit, lp_damagingUnit, lp_damagingEffect, c_unitDamageTypeAny);
+    if ((lp_equippedCarried == libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Equipped)) {
+        lv_percent += libHKtr_gv_heroKatarinaAutorifleEquippedPercentHealValue;
+    }
+    else {
+        lv_percent += libHKtr_gv_heroKatarinaAutorifleCarriedPercentHealValue;
+    }
+    if ((UnitHasBehavior2(lp_damagingUnit, "HeroKatarinaTalentWeaponMasterToTheLimit@ActiveBuff") == true)) {
+        lv_percent *= (libHKtr_gv_heroKatarinaTalentWeaponMasterToTheLimitModifier + 1.0);
+    }
+
+    lv_healingAmountTotal = (lp_damage * lv_percent);
+    if ((UnitGetPropertyFixed(lp_damagingUnit, c_unitPropLifePercent, c_unitPropCurrent) >= 100.0)) {
+        lv_healingShields = lv_healingAmountTotal;
+    }
+    else {
+        if (((UnitGetPropertyFixed(lp_damagingUnit, c_unitPropLifeMax, c_unitPropCurrent) - UnitGetPropertyFixed(lp_damagingUnit, c_unitPropLife, c_unitPropCurrent)) >= lv_healingAmountTotal)) {
+            lv_healingVital = lv_healingAmountTotal;
+        }
+        else {
+            lv_healingVital = (UnitGetPropertyFixed(lp_damagingUnit, c_unitPropLifeMax, c_unitPropCurrent) - UnitGetPropertyFixed(lp_damagingUnit, c_unitPropLife, c_unitPropCurrent));
+            lv_healingShields = (lv_healingAmountTotal - lv_healingVital);
+        }
+    }
+    if ((lv_healingVital > 0.0)) {
+        libGame_gf_UnitStatsLifestealCalculation(lp_damage, lv_percent, false, true, lp_triggeringUnit, lp_damagingUnit, lp_damagingEffect);
+    }
+    if ((PlayerHasTalent(lv_owner, "HeroKatarinaTalentMasterAutorifle") == true) && (lv_healingShields > 0.0)) {
+        lv_currentShields = UnitBehaviorDamageModifyRemaining(lp_damagingUnit, "HeroKatarinaTalentMasterAutorifle@ShieldBuff");
+        lv_currentShields2 = (UnitGetPropertyFixed(lp_damagingUnit, c_unitPropLifeMax, c_unitPropCurrent) * libHKtr_gv_heroKatarinaAutorifleMaximumShieldsValue);
+        if ((lv_currentShields < lv_currentShields2)) {
+            lv_newShields = (lv_currentShields + lv_healingShields);
+            if ((lv_newShields > lv_currentShields2)) {
+                lv_newShields = lv_currentShields2;
+            }
+
+            libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogBehavior, "HeroKatarinaTalentMasterAutorifle@ShieldBuff", "DamageResponse.ModifyLimit", UnitGetOwner(lp_damagingUnit), lv_newShields);
+            UnitBehaviorAdd(lp_damagingUnit, "HeroKatarinaTalentMasterAutorifle@ShieldBuff", lp_damagingUnit, 1);
+            if ((lv_isCritical == false)) {
+                lv_style = "FCT_Shield_Normal";
+            }
+            else {
+                lv_style = "FCT_Shield_Crit";
+            }
+            if ((lv_currentShields == lv_currentShields2)) {
+                libUIUI_gf_UICombatFloatingElementsCreateTextTagatUnitForPlayers(lp_damagingUnit, FixedToText((lv_currentShields2 - lv_currentShields), 0), lv_style, libUIUI_ge_UIFCTDirection_Random, libCore_gv_playerGroupFromPlayer[lv_owner], 0, "EventAnimate", false);
+            }
+            else {
+                libUIUI_gf_UICombatFloatingElementsCreateTextTagatUnitForPlayers(lp_damagingUnit, FixedToText(lv_healingShields, 0), lv_style, libUIUI_ge_UIFCTDirection_Random, libCore_gv_playerGroupFromPlayer[lv_owner], 0, "EventAnimate", false);
+            }
+        }
+
+    }
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Change Carry Weapon (Weapon Swap)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_oldCarriedWeaponBehavior;
+    string lv_newCarriedWeaponBehavior;
+    unit lv_unit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_oldCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaCarriedWeaponBehavior(lv_unit);
+    lv_newCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaGetNextCarriedWeapon(lv_unit);
+    UnitBehaviorRemove(lv_unit, lv_oldCarriedWeaponBehavior, 1);
+    UnitBehaviorAdd(lv_unit, lv_newCarriedWeaponBehavior, lv_unit, 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap_Init () {
+    libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap = TriggerCreate("libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap_Func");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap, c_playerAny, "HeroKatarinaWeaponSwap");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Change Equipped Weapon
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaChangeEquippedWeapon_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_effect;
+    unit lv_katarina;
+    string lv_newEquippedWeaponBehavior;
+    string lv_newCarriedWeaponBehavior;
+    string lv_oldCarriedWeaponBehavior;
+    string lv_oldEquippedWeaponBehavior;
+
+    // Automatic Variable Declarations
+    string auto7C65ECB9_val;
+
+    // Variable Initialization
+    lv_effect = EventPlayerEffectUsed();
+    lv_katarina = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_oldEquippedWeaponBehavior = libHKtr_gf_HeroKatarinaEquippedWeaponBehavior(lv_katarina);
+    lv_oldCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaCarriedWeaponBehavior(lv_katarina);
+    auto7C65ECB9_val = lv_effect;
+    if (auto7C65ECB9_val == "HeroKatarinaEquipAutorifle") {
+        lv_newEquippedWeaponBehavior = "HeroKatarinaWeaponAutorifle@WeaponEquipped";
+        if ((lv_oldCarriedWeaponBehavior == "HeroKatarinaWeaponAutorifle@WeaponCarried")) {
+            lv_newCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaChangeEquippedWeaponToCarried(lv_katarina);
+        }
+        else {
+            lv_newCarriedWeaponBehavior = lv_oldCarriedWeaponBehavior;
+        }
+    }
+    else if (auto7C65ECB9_val == "HeroKatarinaEquipGrenadeLauncher") {
+        lv_newEquippedWeaponBehavior = "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped";
+        if ((lv_oldCarriedWeaponBehavior == "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried")) {
+            lv_newCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaChangeEquippedWeaponToCarried(lv_katarina);
+        }
+        else {
+            lv_newCarriedWeaponBehavior = lv_oldCarriedWeaponBehavior;
+        }
+    }
+    else if (auto7C65ECB9_val == "HeroKatarinaEquipFlamethrower") {
+        lv_newEquippedWeaponBehavior = "HeroKatarinaWeaponFlamethrower@WeaponEquipped";
+        if ((lv_oldCarriedWeaponBehavior == "HeroKatarinaWeaponFlamethrower@WeaponCarried")) {
+            lv_newCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaChangeEquippedWeaponToCarried(lv_katarina);
+        }
+        else {
+            lv_newCarriedWeaponBehavior = lv_oldCarriedWeaponBehavior;
+        }
+    }
+    else if (auto7C65ECB9_val == "HeroKatarinaEquipSnipe") {
+        lv_newEquippedWeaponBehavior = "HeroKatarinaWeaponSnipe@WeaponEquipped";
+        if ((lv_oldCarriedWeaponBehavior == "HeroKatarinaWeaponSnipe@WeaponCarried")) {
+            lv_newCarriedWeaponBehavior = libHKtr_gf_HeroKatarinaChangeEquippedWeaponToCarried(lv_katarina);
+        }
+        else {
+            lv_newCarriedWeaponBehavior = lv_oldCarriedWeaponBehavior;
+        }
+    }
+    else {
+    }
+    if ((lv_oldCarriedWeaponBehavior != lv_newCarriedWeaponBehavior)) {
+        UnitBehaviorRemove(lv_katarina, lv_oldCarriedWeaponBehavior, 1);
+        UnitBehaviorAdd(lv_katarina, lv_newCarriedWeaponBehavior, lv_katarina, 1);
+    }
+
+    UnitBehaviorRemove(lv_katarina, lv_oldEquippedWeaponBehavior, 1);
+    UnitBehaviorAdd(lv_katarina, lv_newEquippedWeaponBehavior, lv_katarina, 1);
+    UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponMaster@RestoreAmmunition", lv_katarina);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaChangeEquippedWeapon_Init () {
+    libHKtr_gt_HeroKatarinaChangeEquippedWeapon = TriggerCreate("libHKtr_gt_HeroKatarinaChangeEquippedWeapon_Func");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaChangeEquippedWeapon, c_playerAny, "HeroKatarinaEquipAutorifle");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaChangeEquippedWeapon, c_playerAny, "HeroKatarinaEquipGrenadeLauncher");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaChangeEquippedWeapon, c_playerAny, "HeroKatarinaEquipFlamethrower");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaChangeEquippedWeapon, c_playerAny, "HeroKatarinaEquipSnipe");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Katarina Is Revived
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaKatarinaIsRevived_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_heroUnit;
+    string lv_carriedWeaponBehavior;
+    string lv_equippedWeaponBehavior;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_heroUnit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_carriedWeaponBehavior = libHKtr_gf_HeroKatarinaCarriedWeaponBehavior(lv_heroUnit);
+    lv_equippedWeaponBehavior = libHKtr_gf_HeroKatarinaEquippedWeaponBehavior(lv_heroUnit);
+    UnitBehaviorRemove(lv_heroUnit, lv_carriedWeaponBehavior, 1);
+    UnitBehaviorRemove(lv_heroUnit, lv_equippedWeaponBehavior, 1);
+    UnitBehaviorAdd(lv_heroUnit, lv_equippedWeaponBehavior, lv_heroUnit, 1);
+    UnitBehaviorAdd(lv_heroUnit, lv_carriedWeaponBehavior, lv_heroUnit, 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaKatarinaIsRevived_Init () {
+    libHKtr_gt_HeroKatarinaKatarinaIsRevived = TriggerCreate("libHKtr_gt_HeroKatarinaKatarinaIsRevived_Func");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaKatarinaIsRevived, c_playerAny, "HeroKatarina@ReviveSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Swap Hero Models (Carried)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaSwapHeroModelsCarried_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_carriedBehavior;
+    unit lv_katarina;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_carriedBehavior = EventUnitBehavior();
+    lv_katarina = EventUnit();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((lv_carriedBehavior == "HeroKatarinaWeaponAutorifle@WeaponCarried")) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaGrenadeLauncherAutorifled");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaFlamethrowerAutorifled");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaSniperAutorifled");
+        }
+    }
+    else if ((lv_carriedBehavior == "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried")) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaAutoriflerGrenadeLaunched");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaFlamethrowerGrenadeLaunched");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaSniperGrenadeLaunched");
+        }
+    }
+    else if ((lv_carriedBehavior == "HeroKatarinaWeaponFlamethrower@WeaponCarried")) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaAutoriflerFlamethrowered");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaGrenadeLauncherFlamethrowered");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaSniperFlamethrowered");
+        }
+    }
+    else if ((lv_carriedBehavior == "HeroKatarinaWeaponSnipe@WeaponCarried")) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaAutoriflerSniped");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaGrenadeLauncherSniped");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponEquipped") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaFlamethrowerSniped");
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaSwapHeroModelsCarried_Init () {
+    libHKtr_gt_HeroKatarinaSwapHeroModelsCarried = TriggerCreate("libHKtr_gt_HeroKatarinaSwapHeroModelsCarried_Func");
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaSwapHeroModelsCarried, null, "HeroKatarinaWeaponAutorifle@WeaponCarried", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaSwapHeroModelsCarried, null, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaSwapHeroModelsCarried, null, "HeroKatarinaWeaponFlamethrower@WeaponCarried", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaSwapHeroModelsCarried, null, "HeroKatarinaWeaponSnipe@WeaponCarried", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Swap Hero Models (Equipped)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_effect;
+    unit lv_katarina;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_effect = EventPlayerEffectUsed();
+    lv_katarina = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponEquipped") == true)) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaAutoriflerGrenadeLaunched");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaAutoriflerFlamethrowered");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaAutoriflerSniped");
+        }
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped") == true)) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaGrenadeLauncherAutorifled");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaGrenadeLauncherFlamethrowered");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaGrenadeLauncherSniped");
+        }
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponEquipped") == true)) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaFlamethrowerAutorifled");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaFlamethrowerGrenadeLaunched");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaFlamethrowerSniped");
+        }
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponEquipped") == true)) {
+        if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaSniperAutorifled");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaSniperGrenadeLaunched");
+        }
+        else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaSwapModelActorMessage(lv_katarina, "HeroKatarina@KatarinaSniperFlamethrowered");
+        }
+    }
+    libNtve_gf_SendActorMessageToUnit(lv_katarina, "Signal TakeWeapon");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped_Init () {
+    libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped = TriggerCreate("libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped_Func");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped, c_playerAny, "HeroKatarinaWeaponMaster@RestoreAmmunition");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Aimed Shot (Damaged)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaAimedShotDamaged_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gf_UnitStatsLifestealCalculation((EventUnitDamageAmount() + EventUnitDamageBehaviorShield()), libHKtr_gv_heroKatarinaAimedShotLifesteal, false, false, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaAimedShotDamaged_Init () {
+    libHKtr_gt_HeroKatarinaAimedShotDamaged = TriggerCreate("libHKtr_gt_HeroKatarinaAimedShotDamaged_Func");
+    TriggerAddEventUnitDamaged(libHKtr_gt_HeroKatarinaAimedShotDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroKatarinaAimedShot@Damage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Aimed Shot (Absorbed)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaAimedShotAbsorbed_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((EventUnitDamageEffect() == "HeroKatarinaAimedShot@Damage"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gf_UnitStatsLifestealCalculation(EventUnitDamageAbsorbed(), libHKtr_gv_heroKatarinaAimedShotLifesteal, false, false, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaAimedShotAbsorbed_Init () {
+    libHKtr_gt_HeroKatarinaAimedShotAbsorbed = TriggerCreate("libHKtr_gt_HeroKatarinaAimedShotAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHKtr_gt_HeroKatarinaAimedShotAbsorbed, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Exclusion Zone
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaExclusionZone_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    unit[4] lv_tower;
+    point lv_targetPoint;
+    point[4] lv_towerPoint;
+    int lv_enemyNPC;
+
+    // Automatic Variable Declarations
+    unitgroup auto48672E76_g;
+    int auto48672E76_u;
+    unit auto48672E76_var;
+    unitgroup auto7DDA494C_g;
+    int auto7DDA494C_u;
+    unit auto7DDA494C_var;
+    unitgroup autoDCE8E737_g;
+    int autoDCE8E737_u;
+    unit autoDCE8E737_var;
+
+    // Variable Initialization
+    lv_player = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!((libHKtr_gv_heroKatarinaExclusionZoneCreated[lv_player] == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_targetPoint = EventPlayerEffectUsedPoint(c_effectLocationTargetPoint);
+    libHKtr_gv_heroKatarinaExclusionZoneCreated[lv_player] = true;
+    UnitBehaviorAdd(libGame_gv_players[lv_player].lv_heroUnit, "HeroKatarinaExclusionZone@TimedBehaviorCaster", libGame_gv_players[lv_player].lv_heroUnit, 1);
+    auto48672E76_g = UnitGroup("HeroKatarinaExclusionZone@Tower1", lv_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto48672E76_u = UnitGroupCount(auto48672E76_g, c_unitCountAll);
+    for (;; auto48672E76_u -= 1) {
+        auto48672E76_var = UnitGroupUnitFromEnd(auto48672E76_g, auto48672E76_u);
+        if (auto48672E76_var == null) { break; }
+        lv_tower[1] = auto48672E76_var;
+    }
+    auto7DDA494C_g = UnitGroup("HeroKatarinaExclusionZone@Tower2", lv_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto7DDA494C_u = UnitGroupCount(auto7DDA494C_g, c_unitCountAll);
+    for (;; auto7DDA494C_u -= 1) {
+        auto7DDA494C_var = UnitGroupUnitFromEnd(auto7DDA494C_g, auto7DDA494C_u);
+        if (auto7DDA494C_var == null) { break; }
+        lv_tower[2] = auto7DDA494C_var;
+    }
+    autoDCE8E737_g = UnitGroup("HeroKatarinaExclusionZone@Tower3", lv_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoDCE8E737_u = UnitGroupCount(autoDCE8E737_g, c_unitCountAll);
+    for (;; autoDCE8E737_u -= 1) {
+        autoDCE8E737_var = UnitGroupUnitFromEnd(autoDCE8E737_g, autoDCE8E737_u);
+        if (autoDCE8E737_var == null) { break; }
+        lv_tower[3] = autoDCE8E737_var;
+    }
+    UnitCreateEffectUnit(lv_tower[1], "HeroKatarinaExclusionZone@LaserBeamSearchPersistent", lv_tower[2]);
+    UnitCreateEffectUnit(lv_tower[2], "HeroKatarinaExclusionZone@LaserBeamSearchPersistent", lv_tower[3]);
+    UnitCreateEffectUnit(lv_tower[3], "HeroKatarinaExclusionZone@LaserBeamSearchPersistent", lv_tower[1]);
+    Wait(1.0, c_timeGame);
+    lv_enemyNPC = libGame_gf_ComputerPlayerInTeam(libGame_gf_EnemyTeamNumberOfPlayer(lv_player));
+    lv_towerPoint[1] = UnitGetPosition(lv_tower[1]);
+    lv_towerPoint[2] = UnitGetPosition(lv_tower[2]);
+    lv_towerPoint[3] = UnitGetPosition(lv_tower[3]);
+    while ((libHKtr_gv_heroKatarinaExclusionZoneCreated[lv_player] == true)) {
+        if (((VisIsVisibleForPlayer(lv_enemyNPC, lv_towerPoint[1]) == true) || (VisIsVisibleForPlayer(lv_enemyNPC, lv_towerPoint[2]) == true) || (VisIsVisibleForPlayer(lv_enemyNPC, lv_towerPoint[3]) == true) || (VisIsVisibleForPlayer(lv_enemyNPC, lv_targetPoint) == true))) {
+            libNtve_gf_ShareVisionofUnit(lv_tower[1], true, lv_enemyNPC);
+            libNtve_gf_ShareVisionofUnit(lv_tower[2], true, lv_enemyNPC);
+            libNtve_gf_ShareVisionofUnit(lv_tower[3], true, lv_enemyNPC);
+        }
+        else {
+            libNtve_gf_ShareVisionofUnit(lv_tower[1], false, lv_enemyNPC);
+            libNtve_gf_ShareVisionofUnit(lv_tower[2], false, lv_enemyNPC);
+            libNtve_gf_ShareVisionofUnit(lv_tower[3], false, lv_enemyNPC);
+        }
+        Wait(0.125, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaExclusionZone_Init () {
+    libHKtr_gt_HeroKatarinaExclusionZone = TriggerCreate("libHKtr_gt_HeroKatarinaExclusionZone_Func");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaExclusionZone, c_playerAny, "HeroKatarinaExclusionZone@ZoneSearch");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Exclusion Zone - Search
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaExclusionZoneSearch_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventPlayerEffectUsed() == "HeroKatarinaExclusionZone@LasetBeamTriggerSet")) {
+        UnitCreateEffectUnit(libGame_gv_players[EventPlayer()].lv_heroUnit, "HeroKatarinaExclusionZone@LaserBeamImpactSet", EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    }
+    else {
+        UnitCreateEffectUnit(libGame_gv_players[EventPlayer()].lv_heroUnit, "HeroKatarinaExclusionZone@ZoneImpactSet", EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaExclusionZoneSearch_Init () {
+    libHKtr_gt_HeroKatarinaExclusionZoneSearch = TriggerCreate("libHKtr_gt_HeroKatarinaExclusionZoneSearch_Func");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaExclusionZoneSearch, c_playerAny, "HeroKatarinaExclusionZone@LasetBeamTriggerSet");
+    TriggerAddEventPlayerEffectUsed(libHKtr_gt_HeroKatarinaExclusionZoneSearch, c_playerAny, "HeroKatarinaExclusionZone@ZoneTriggerSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Exclusion Zone - End
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaExclusionZoneEnd_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    unit lv_itHero;
+    unit[4] lv_tower;
+
+    // Automatic Variable Declarations
+    unitgroup autoABB67059_g;
+    int autoABB67059_u;
+    unit autoABB67059_var;
+    unitgroup autoB2EC2E51_g;
+    int autoB2EC2E51_u;
+    unit autoB2EC2E51_var;
+    unitgroup auto835858ED_g;
+    int auto835858ED_u;
+    unit auto835858ED_var;
+
+    // Variable Initialization
+    lv_player = EventPlayer();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libHKtr_gv_heroKatarinaExclusionZoneCreated[lv_player] = false;
+    UnitBehaviorRemove(libGame_gv_players[lv_player].lv_heroUnit, "HeroKatarinaExclusionZone@CasterDurationBuff", 1);
+    autoABB67059_g = UnitGroup("HeroKatarinaExclusionZone@Tower1", lv_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoABB67059_u = UnitGroupCount(autoABB67059_g, c_unitCountAll);
+    for (;; autoABB67059_u -= 1) {
+        autoABB67059_var = UnitGroupUnitFromEnd(autoABB67059_g, autoABB67059_u);
+        if (autoABB67059_var == null) { break; }
+        lv_tower[1] = autoABB67059_var;
+    }
+    autoB2EC2E51_g = UnitGroup("HeroKatarinaExclusionZone@Tower2", lv_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoB2EC2E51_u = UnitGroupCount(autoB2EC2E51_g, c_unitCountAll);
+    for (;; autoB2EC2E51_u -= 1) {
+        autoB2EC2E51_var = UnitGroupUnitFromEnd(autoB2EC2E51_g, autoB2EC2E51_u);
+        if (autoB2EC2E51_var == null) { break; }
+        lv_tower[2] = autoB2EC2E51_var;
+    }
+    auto835858ED_g = UnitGroup("HeroKatarinaExclusionZone@Tower3", lv_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto835858ED_u = UnitGroupCount(auto835858ED_g, c_unitCountAll);
+    for (;; auto835858ED_u -= 1) {
+        auto835858ED_var = UnitGroupUnitFromEnd(auto835858ED_g, auto835858ED_u);
+        if (auto835858ED_var == null) { break; }
+        lv_tower[3] = auto835858ED_var;
+    }
+    UnitKill(lv_tower[1]);
+    UnitKill(lv_tower[2]);
+    UnitKill(lv_tower[3]);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaExclusionZoneEnd_Init () {
+    libHKtr_gt_HeroKatarinaExclusionZoneEnd = TriggerCreate("libHKtr_gt_HeroKatarinaExclusionZoneEnd_Func");
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaExclusionZoneEnd, null, "HeroKatarinaExclusionZone@TimedBehaviorCaster", c_unitBehaviorChangeDecrease);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Flash Grenade - Multi-Hero Isolation Controller
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_katarinaPlayer;
+    int lv_isolatedPlayer;
+    unitgroup lv_isolatedPlayerVisionGroup;
+    unit lv_targetHero;
+    int lv_targetPlayer;
+    playergroup lv_allyPlayerGroup;
+    int lv_p;
+
+    // Automatic Variable Declarations
+    playergroup auto2AAE60A1_g;
+
+    // Variable Initialization
+    lv_isolatedPlayer = UnitGetOwner(EventUnit());
+    lv_isolatedPlayerVisionGroup = UnitGroupEmpty();
+    lv_targetHero = EventUnit();
+    lv_targetPlayer = UnitGetOwner(EventUnit());
+    lv_allyPlayerGroup = PlayerGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(EventUnit(), "HeroKatarinaFlashGrenade@VisionSource") == true))) {
+            return false;
+        }
+
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, lv_isolatedPlayer) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_katarinaPlayer = UnitBehaviorEffectPlayer(EventUnit(), "HeroKatarinaFlashGrenade@VisionSource", c_effectPlayerCaster, 0);
+    UnitGroupRemove(libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer], EventUnit());
+    if ((UnitGroupCount(libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer], c_unitCountAlive) > 0)) {
+        libGame_gf_ShareUnshareVisionOfAlliesForPlayer(false, lv_targetPlayer);
+        lv_allyPlayerGroup = libGame_gf_AlliedPlayerGroupOfPlayer(lv_targetPlayer);
+        auto2AAE60A1_g = lv_allyPlayerGroup;
+        lv_p = -1;
+        while (true) {
+            lv_p = PlayerGroupNextPlayer(auto2AAE60A1_g, lv_p);
+            if (lv_p < 0) { break; }
+            PlayerSetAlliance(lv_p, c_allianceIdGiveHelp, lv_targetPlayer, false);
+            PlayerSetAlliance(lv_p, c_allianceIdSeekHelp, lv_targetPlayer, false);
+        }
+    }
+    else {
+        DialogControlFadeTransparency(libUIUI_gv_fullscreenOverlaysPanel.lv_flashBangImage, libCore_gv_playerGroupFromPlayer[lv_targetPlayer], 0.0, 100.0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController_Init () {
+    libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController = TriggerCreate("libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController_Func");
+    TriggerEnable(libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController, false);
+    TriggerAddEventUnitDied(libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Flash Grenade - Apply Ally Vision Supression
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_katarinaPlayer;
+    unit lv_targetHero;
+    int lv_targetPlayer;
+    unitgroup lv_targetPlayerVisionGroup;
+    playergroup lv_allyPlayerGroup;
+    int lv_p;
+
+    // Automatic Variable Declarations
+    unitgroup auto51DCF166_g;
+    int auto51DCF166_u;
+    unit auto51DCF166_var;
+    playergroup auto12357155_g;
+
+    // Variable Initialization
+    lv_katarinaPlayer = UnitBehaviorEffectPlayer(EventUnit(), "HeroKatarinaFlashGrenade@VisionReduction", c_effectPlayerSource, 0);
+    lv_targetHero = EventUnit();
+    lv_targetPlayer = UnitGetOwner(lv_targetHero);
+    lv_targetPlayerVisionGroup = UnitGroupEmpty();
+    lv_allyPlayerGroup = PlayerGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, lv_targetPlayer) == true))) {
+            return false;
+        }
+
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, lv_katarinaPlayer) == true))) {
+            return false;
+        }
+
+        if (!((UnitTypeTestAttribute(UnitGetType(lv_targetHero), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+
+        if (!(((lv_targetHero == libGame_gv_players[lv_targetPlayer].lv_heroUnit)))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer] = UnitGroupEmpty();
+    libHKtr_gv_heroKatarinaFlashGrenadeActiveFlashedTargets += 1;
+    UnitGroupAdd(libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer], lv_targetHero);
+    auto51DCF166_g = UnitGroup(null, lv_targetPlayer, RegionEntireMap(), UnitFilter((1 << c_targetFilterHeroic), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+    auto51DCF166_u = UnitGroupCount(auto51DCF166_g, c_unitCountAll);
+    for (;; auto51DCF166_u -= 1) {
+        auto51DCF166_var = UnitGroupUnitFromEnd(auto51DCF166_g, auto51DCF166_u);
+        if (auto51DCF166_var == null) { break; }
+        if ((UnitHasBehavior2(EventUnit(), "HeroKatarinaFlashGrenade@VisionReduction") == false)) {
+            UnitGroupAdd(libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer], auto51DCF166_var);
+            UnitBehaviorAdd(auto51DCF166_var, "HeroKatarinaFlashGrenade@VisionSource", UnitBehaviorEffectUnit(lv_targetHero, "HeroKatarinaFlashGrenade@VisionReduction", c_effectUnitCaster, 0), 1);
+        }
+
+    }
+    if ((UnitGroupCount(libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer], c_unitCountAlive) > 0)) {
+        libGame_gf_ShareUnshareVisionOfAlliesForPlayer(false, lv_targetPlayer);
+        lv_allyPlayerGroup = libGame_gf_AlliedPlayerGroupOfPlayer(lv_targetPlayer);
+        auto12357155_g = lv_allyPlayerGroup;
+        lv_p = -1;
+        while (true) {
+            lv_p = PlayerGroupNextPlayer(auto12357155_g, lv_p);
+            if (lv_p < 0) { break; }
+            PlayerSetAlliance(lv_p, c_allianceIdSeekHelp, lv_targetPlayer, false);
+            PlayerSetAlliance(lv_p, c_allianceIdGiveHelp, lv_targetPlayer, false);
+        }
+    }
+
+    if ((libHKtr_gv_heroKatarinaFlashGrenadeActiveFlashedTargets > 0) && (UnitGroupCount(libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer], c_unitCountAlive) > 0)) {
+        TriggerEnable(libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController, true);
+    }
+
+    DialogControlFadeTransparency(libUIUI_gv_fullscreenOverlaysPanel.lv_flashBangImage, libCore_gv_playerGroupFromPlayer[lv_targetPlayer], 0.0, 65.0);
+    DialogControlFadeTransparency(libUIUI_gv_fullscreenOverlaysPanel.lv_flashBangImage, libCore_gv_playerGroupFromPlayer[lv_targetPlayer], UnitBehaviorDuration(lv_targetHero, "HeroKatarinaFlashGrenade@VisionReduction"), 100.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression_Init () {
+    libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression = TriggerCreate("libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression_Func");
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression, null, "HeroKatarinaFlashGrenade@VisionReduction", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Flash Grenade - Remove Ally Vision Supression
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_targetHero;
+    int lv_targetPlayer;
+    unitgroup lv_targetPlayerVisionGroup;
+    playergroup lv_allyPlayerGroup;
+    int lv_p;
+
+    // Automatic Variable Declarations
+    unitgroup auto442E60F3_g;
+    int auto442E60F3_u;
+    unit auto442E60F3_var;
+    playergroup auto5C881A76_g;
+
+    // Variable Initialization
+    lv_targetHero = EventUnit();
+    lv_targetPlayer = UnitGetOwner(lv_targetHero);
+    lv_targetPlayerVisionGroup = UnitGroupEmpty();
+    lv_allyPlayerGroup = PlayerGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, lv_targetPlayer) == true))) {
+            return false;
+        }
+
+        if (!((UnitTypeTestAttribute(UnitGetType(lv_targetHero), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto442E60F3_g = libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups[lv_targetPlayer];
+    auto442E60F3_u = UnitGroupCount(auto442E60F3_g, c_unitCountAll);
+    for (;; auto442E60F3_u -= 1) {
+        auto442E60F3_var = UnitGroupUnitFromEnd(auto442E60F3_g, auto442E60F3_u);
+        if (auto442E60F3_var == null) { break; }
+        UnitBehaviorRemove(auto442E60F3_var, "HeroKatarinaFlashGrenade@VisionSource", 1);
+    }
+    if ((libGame_gf_BehaviorCategoriesUnitHasBehaviorFromCategory(lv_targetHero, libGame_ge_BehaviorCategories_VisionRemoval) == false)) {
+        libGame_gf_ShareUnshareVisionOfAlliesForPlayer(true, lv_targetPlayer);
+        auto5C881A76_g = lv_allyPlayerGroup;
+        lv_p = -1;
+        while (true) {
+            lv_p = PlayerGroupNextPlayer(auto5C881A76_g, lv_p);
+            if (lv_p < 0) { break; }
+            PlayerSetAlliance(lv_p, c_allianceIdSeekHelp, lv_targetPlayer, true);
+            PlayerSetAlliance(lv_p, c_allianceIdGiveHelp, lv_targetPlayer, true);
+        }
+        libHKtr_gv_heroKatarinaFlashGrenadeActiveFlashedTargets -= 1;
+    }
+
+    if ((libHKtr_gv_heroKatarinaFlashGrenadeActiveFlashedTargets == 0)) {
+        DialogControlFadeTransparency(libUIUI_gv_fullscreenOverlaysPanel.lv_flashBangImage, libCore_gv_playerGroupFromPlayer[lv_targetPlayer], 0.0, 100.0);
+        TriggerEnable(libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController, false);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression_Init () {
+    libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression = TriggerCreate("libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression_Func");
+    TriggerAddEventUnitBehaviorChange(libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression, null, "HeroKatarinaFlashGrenade@VisionReduction", c_unitBehaviorChangeDeactivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Weapon - Main and Secondary Effects (Damaged)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_damageAmount;
+    unit lv_casterUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_damageAmount = (EventUnitDamageAmount() + EventUnitDamageBehaviorShield());
+    lv_casterUnit = EventUnitDamageSourceUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_damageAmount > 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitDamageEffect() == "HeroKatarinaWeaponAutorifle@Damage")) {
+        libHKtr_gf_HeroKatarinaAutorifleHealingSystem(lv_casterUnit, EventUnit(), EventUnitDamageEffect(), lv_damageAmount, libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Equipped);
+    }
+    else {
+        if ((UnitHasBehavior2(lv_casterUnit, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaAutorifleHealingSystem(lv_casterUnit, EventUnit(), EventUnitDamageEffect(), lv_damageAmount, libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Carried);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged_Init () {
+    libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged = TriggerCreate("libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged_Func");
+    TriggerAddEventUnitDamaged(libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged, null, c_unitDamageTypeAny, c_unitDamageNonFatal, "HeroKatarinaWeaponAutorifle@Damage");
+    TriggerAddEventUnitDamaged(libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged, null, c_unitDamageTypeAny, c_unitDamageNonFatal, "HeroKatarinaWeaponGrenadeLauncher@Damage");
+    TriggerAddEventUnitDamaged(libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged, null, c_unitDamageTypeAny, c_unitDamageNonFatal, "HeroKatarinaWeaponFlamethrower@Damage");
+    TriggerAddEventUnitDamaged(libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged, null, c_unitDamageTypeAny, c_unitDamageNonFatal, "HeroKatarinaWeaponSnipe@Damage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Weapon - Main and Secondary Effects (Absorbed)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_damageAmount;
+    unit lv_casterUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_damageAmount = EventUnitDamageAbsorbed();
+    lv_casterUnit = EventUnitDamageSourceUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_damageAmount > 0.0))) {
+            return false;
+        }
+
+        if (!(((EventUnitDamageEffect() == "HeroKatarinaWeaponAutorifle@Damage") || (EventUnitDamageEffect() == "HeroKatarinaWeaponGrenadeLauncher@Damage") || (EventUnitDamageEffect() == "HeroKatarinaWeaponFlamethrower@Damage") || (EventUnitDamageEffect() == "HeroKatarinaWeaponSnipe@Damage")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitDamageEffect() == "HeroKatarinaWeaponAutorifle@Damage")) {
+        libHKtr_gf_HeroKatarinaAutorifleHealingSystem(lv_casterUnit, EventUnit(), EventUnitDamageEffect(), lv_damageAmount, libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Equipped);
+    }
+    else {
+        if ((UnitHasBehavior2(lv_casterUnit, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+            libHKtr_gf_HeroKatarinaAutorifleHealingSystem(lv_casterUnit, EventUnit(), EventUnitDamageEffect(), lv_damageAmount, libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Carried);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed_Init () {
+    libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed = TriggerCreate("libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Talent - Advanced Charge (Damaged)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_katarina;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitTypeTestAttribute(UnitGetType(EventUnit()), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+
+        if (!((PlayerHasTalent(EventUnitDamageSourcePlayer(), "HeroKatarinaTalentClusterChargeAdvancedCharge") == true))) {
+            return false;
+        }
+
+        if (!((libGame_gf_BehaviorCategoriesUnitHasBehaviorFromCategory(EventUnit(), libGame_ge_BehaviorCategories_Avoidance) == false))) {
+            return false;
+        }
+
+        if (!(((EventUnitDamageAmount() + EventUnitDamageBehaviorShield()) > 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_katarina = EventUnitDamageSourceUnit();
+    if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+        libHKtr_gf_HeroKatarinaAutorifleHealingSystem(lv_katarina, EventUnit(), EventUnitDamageEffect(), (EventUnitDamageAmount() + EventUnitDamageBehaviorShield()), libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Carried);
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponCarried") == true)) {
+        UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponFlamethrower@ApplyArmorBuffCarried", lv_katarina);
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") == true)) {
+        UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffCarried", EventUnit());
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponCarried") == true)) {
+        UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponSnipe@ApplySpellPowerCarried", EventUnit());
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged_Init () {
+    libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged = TriggerCreate("libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged_Func");
+    TriggerAddEventUnitDamaged(libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroKatarinaClusterCharge@TimedLifeDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Katarina - Talent - Advanced Charge (Absorbed)
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_katarina;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((EventUnitDamageEffect() == "HeroKatarinaClusterCharge@TimedLifeDamage"))) {
+            return false;
+        }
+
+        if (!((UnitTypeTestAttribute(UnitGetType(EventUnit()), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+
+        if (!((PlayerHasTalent(EventUnitDamageSourcePlayer(), "HeroKatarinaTalentClusterChargeAdvancedCharge") == true))) {
+            return false;
+        }
+
+        if (!((libGame_gf_BehaviorCategoriesUnitHasBehaviorFromCategory(EventUnit(), libGame_ge_BehaviorCategories_Avoidance) == false))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageAbsorbed() > 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_katarina = EventUnitDamageSourceUnit();
+    if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponAutorifle@WeaponCarried") == true)) {
+        libHKtr_gf_HeroKatarinaAutorifleHealingSystem(lv_katarina, EventUnit(), EventUnitDamageEffect(), EventUnitDamageAbsorbed(), libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Carried);
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponFlamethrower@WeaponCarried") == true)) {
+        UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponFlamethrower@ApplyArmorBuffCarried", lv_katarina);
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@WeaponCarried") == true)) {
+        UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffCarried", EventUnit());
+    }
+    else if ((UnitHasBehavior2(lv_katarina, "HeroKatarinaWeaponSnipe@WeaponCarried") == true)) {
+        UnitCreateEffectUnit(lv_katarina, "HeroKatarinaWeaponSnipe@ApplySpellPowerCarried", EventUnit());
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed_Init () {
+    libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed = TriggerCreate("libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed, null, null);
+}
+
+void libHKtr_InitTriggers () {
+    libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap_Init();
+    libHKtr_gt_HeroKatarinaChangeEquippedWeapon_Init();
+    libHKtr_gt_HeroKatarinaKatarinaIsRevived_Init();
+    libHKtr_gt_HeroKatarinaSwapHeroModelsCarried_Init();
+    libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped_Init();
+    libHKtr_gt_HeroKatarinaAimedShotDamaged_Init();
+    libHKtr_gt_HeroKatarinaAimedShotAbsorbed_Init();
+    libHKtr_gt_HeroKatarinaExclusionZone_Init();
+    libHKtr_gt_HeroKatarinaExclusionZoneSearch_Init();
+    libHKtr_gt_HeroKatarinaExclusionZoneEnd_Init();
+    libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController_Init();
+    libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression_Init();
+    libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression_Init();
+    libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged_Init();
+    libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed_Init();
+    libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged_Init();
+    libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHKtr_InitLib_completed = false;
+
+void libHKtr_InitLib () {
+    if (libHKtr_InitLib_completed) {
+        return;
+    }
+
+    libHKtr_InitLib_completed = true;
+
+    libHKtr_InitLibraries();
+    libHKtr_InitVariables();
+    libHKtr_InitTriggers();
+}
+

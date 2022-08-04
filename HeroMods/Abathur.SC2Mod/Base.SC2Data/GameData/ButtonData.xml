@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="HeroAbathurDeepTunnelMonstrosity" parent="CoreButtonParent">
+        <TooltipAppender Validator="HasPregameSuppressionBehavior" Text="Button/TooltipAppender/LockedUntilGameStarts"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Mount.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentCarapaceReinforcedCarapace" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Carapace.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurEvolveMonstrosityActivate" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentLocustNest" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_LocustNest.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentToxicNestEnvenomedNest" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="AbathurUltimateEvolutionEvolutionMasterTalentSimple" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+    </CButton>
+    <CButton id="AbathurUltimateEvolutionEvolutionMasterUltimateEvolutionTalent" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentLocustBrood" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentToxicNestVileNest" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentLocustStrainSurvivalInstinct" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentLocustStrainBombardStrain" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust_Var1.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="AbathurLocustStrainAssaultStrainTalent" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+    </CButton>
+    <CButton id="AbathurLocustStrainCombatAdaptationTalent" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <HotkeyAlias value="HeroAbathurTalentLocustStrainBombardStrain"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentSpikeBurstEnvenomedSpikes" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpikeBurst.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentCarapaceAdrenalineBoost" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Carapace.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentStabSpatialEfficiency" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Stab.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentSpikeBurstPressurizedGlands" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpikeBurst.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentStabNeedlespine" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Stab.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="AbathurToxicNestBallistosporesTalent" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest_Var1.dds"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentToxicNestProlificDispersal" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurToxicNest" parent="CoreButtonParent">
+        <TooltipAppender Validator="HasPregameSuppressionBehavior" Text="Button/TooltipAppender/LockedUntilGameStarts"/>
+        <TooltipAppender Validator="HeroAbathurTalentToxicNestEnvenomedNest" Face="HeroAbathurTalentToxicNestEnvenomedNest"/>
+        <TooltipAppender Validator="HeroAbathurTalentToxicNestProlificDispersal" Face="HeroAbathurTalentToxicNestProlificDispersal"/>
+        <TooltipAppender Validator="AbathurHasMasteryBallistospores" Face="AbathurToxicNestBallistosporesTalent"/>
+        <TooltipAppender Validator="HeroAbathurTalentToxicNestVileNest" Face="HeroAbathurTalentToxicNestVileNest"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentEvolveMonstrosityEvolutionComplete" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentVolatileMutation" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_VolatileMutation.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurUltimateEvolution" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroAbathurTalentVolatileMutation" Face="HeroAbathurTalentVolatileMutation"/>
+        <TooltipAppender Validator="HeroAbathurTalentUltimateEvolutionEvolutionaryLink" Face="HeroAbathurTalentUltimateEvolutionEvolutionaryLink"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurSpikeBurst" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroAbathurTalentSpikeBurstPressurizedGlands" Face="HeroAbathurTalentSpikeBurstPressurizedGlands"/>
+        <TooltipAppender Validator="HeroAbathurTalentSpikeBurstSomaTransference" Face="HeroAbathurTalentSpikeBurstSomaTransference"/>
+        <TooltipAppender Validator="HeroAbathurTalentSpikeBurstEnvenomedSpikes" Face="HeroAbathurTalentSpikeBurstEnvenomedSpikes"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpikeBurst.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurCarapace" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroAbathurTalentCarapaceReinforcedCarapace" Face="HeroAbathurTalentCarapaceReinforcedCarapace"/>
+        <TooltipAppender Validator="AbathurHasSymbioteCarapaceSustainedCarapace" Face="AbathurSymbioteCarapaceSustainedCarapaceTalent"/>
+        <TooltipAppender Validator="HeroAbathurTalentCarapaceNetworkedCarapace" Face="HeroAbathurTalentCarapaceNetworkedCarapace"/>
+        <TooltipAppender Validator="HeroAbathurTalentCarapaceAdrenalineBoost" Face="HeroAbathurTalentCarapaceAdrenalineBoost"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Carapace.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurStab" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroAbathurTalentStabNeedlespine" Face="HeroAbathurTalentStabNeedlespine"/>
+        <TooltipAppender Validator="HeroAbathurTalentStabSpatialEfficiency" Face="HeroAbathurTalentStabSpatialEfficiency"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Stab.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurSymbiote" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroAbathurTalentSpikeBurstPressurizedGlands" Face="HeroAbathurTalentSpikeBurstPressurizedGlands"/>
+        <TooltipAppender Validator="HasAbathurMasteryRegenerativeMicrobes" Face="AbathurSymbioteRegenerativeMicrobesTalent"/>
+        <TooltipAppender Validator="AbathurHasSymbioteCarapaceSustainedCarapace" Face="AbathurSymbioteCarapaceSustainedCarapaceTalent"/>
+        <TooltipAppender Validator="HeroAbathurTalentSymbioteAdrenalOverload" Face="HeroAbathurTalentSymbioteAdrenalOverload"/>
+        <TooltipAppender Validator="HeroAbathurTalentStabNeedlespine" Face="HeroAbathurTalentStabNeedlespine"/>
+        <TooltipAppender Validator="HeroAbathurTalentCarapaceNetworkedCarapace" Face="HeroAbathurTalentCarapaceNetworkedCarapace"/>
+        <TooltipAppender Validator="HeroAbathurTalentStabSpatialEfficiency" Face="HeroAbathurTalentStabSpatialEfficiency"/>
+        <TooltipAppender Validator="HeroAbathurTalentSpikeBurstSomaTransference" Face="HeroAbathurTalentSpikeBurstSomaTransference"/>
+        <TooltipAppender Validator="HeroAbathurTalentSpikeBurstEnvenomedSpikes" Face="HeroAbathurTalentSpikeBurstEnvenomedSpikes"/>
+        <TooltipAppender Validator="HeroAbathurTalentCarapaceAdrenalineBoost" Face="HeroAbathurTalentCarapaceAdrenalineBoost"/>
+        <TooltipAppender Validator="HeroAbathurTalentSymbioteHivemind" Face="HeroAbathurTalentSymbioteHivemind"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurEvolveMonstrosity" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroAbathurTalentVolatileMutation" Face="HeroAbathurTalentVolatileMutation"/>
+        <TooltipAppender Validator="HeroAbathurEvolveMonstrosity" Face="HeroAbathurTalentEvolveMonstrosityEvolutionComplete"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="AbathurSymbioteOrganicDynamoTalent" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+    </CButton>
+    <CButton id="AbathurSymbioteOrganicDynamoTalentSimple" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentSymbioteAdrenalOverload" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentCarapaceNetworkedCarapace" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Carapace.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentSpikeBurstSomaTransference" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpikeBurst.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurTalentSymbioteHivemind" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="AbathurToxicNestTalent" parent="StormButtonParent">
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+    </CButton>
+    <CButton id="HeroAbathurAssumingDirectControl@CancelSymbiote" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\hud_btn_bg_ability_cancel.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurLocustStrain" parent="CoreButtonParent">
+        <TooltipAppender Validator="HasPregameSuppressionMinionBehavior" Text="Button/TooltipAppender/LockedUntilMinionsSpawn"/>
+        <TooltipAppender Validator="HeroAbathurTalentLocustStrainSurvivalInstinct" Face="HeroAbathurTalentLocustStrainSurvivalInstinct"/>
+        <TooltipAppender Validator="HasAbathurCombatStyleAssaultStrain" Face="AbathurLocustStrainAssaultStrainTalent"/>
+        <TooltipAppender Validator="HeroAbathurTalentLocustStrainBombardStrain" Face="HeroAbathurTalentLocustStrainBombardStrain"/>
+        <TooltipAppender/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+    <CButton id="HeroAbathurDeepTunnel" parent="CoreButtonParent">
+        <TooltipAppender Validator="HasPregameSuppressionBehavior" Text="Button/TooltipAppender/LockedUntilGameStarts"/>
+        <Icon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Mount.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CButton>
+</Catalog>

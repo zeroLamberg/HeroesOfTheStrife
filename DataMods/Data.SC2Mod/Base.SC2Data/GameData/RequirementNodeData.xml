@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementConst id="10"/>
+    <CRequirementConst id="15"/>
+    <CRequirementConst id="40">
+        <Tooltip value=""/>
+        <Value value="40"/>
+    </CRequirementConst>
+    <CRequirementConst id="5"/>
+    <CRequirementAnd id="And"/>
+    <CRequirementAnd id="And280918052NotCountBehaviorSiegeModeCompleteOnlyAtUnitNotCountBehaviorMaelstromCannonSiegeModeCompleteOnlyAtUnitNotCountBehaviorCrucioX2CannonSiegeModeCompleteOnlyAtUnit">
+        <OperandArray value="NotCountBehaviorSiegeModeCompleteOnlyAtUnit"/>
+        <OperandArray value="NotCountBehaviorMaelstromCannonSiegeModeCompleteOnlyAtUnit"/>
+        <OperandArray value="NotCountBehaviorCrucioX2CannonSiegeModeCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorDruidsGiftControllerCompleteOnlyAtUnit1EqCountBehaviorShandosClarityCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorDruidsGiftControllerCompleteOnlyAtUnit1"/>
+        <OperandArray value="EqCountBehaviorShandosClarityCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorDruidsGiftControllerCompleteOnlyAtUnit1EqCountBehaviorShandosClarityCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorDruidsGiftControllerCompleteOnlyAtUnit1"/>
+        <OperandArray value="EqCountBehaviorShandosClarityCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit0EqCountBehaviorMountedFlyerCompleteOnlyAtUnit0">
+        <OperandArray value="EqCountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorMountedFlyerCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorInnervationCDDummyCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorInnervationCDDummyCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNotOrCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnit">
+        <OperandArray value="NotOrCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorBribeStacksCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="BribeStacks" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorCategorySuppressVisibilityCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CategorySuppressVisibility" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorDeadCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Dead" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorDeadQueuedOrBetterAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Dead" State="QueuedOrBetterAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorDruidsGiftControllerCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="DruidsGiftController" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHallOfStormsProtectionBuffCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HallOfStormsProtectionBuff" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroGenericInventoryController" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroGenericMount@Mounted" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSJCloakedMineQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="SJCloakedMine"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorInnervationCDDummyCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="InnervationCDDummy" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorInnervationCompleteOnlyAtUnit1806803505">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Innervation" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorL90ETCWeaponUberRockstarBehaviorCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="L90ETCWeaponUberRockstarBehavior" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorLightningBreathCasterCompleteOnlyAtUnit">
+        <Count Link="LightningBreathCaster" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorLightningBreathTargetedControllerCompleteOnlyAtUnitTechTreeCheat">
+        <Tooltip value=""/>
+        <Count Link="LightningBreathTargetedController" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorMaelstromCannonSiegeModeCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="MaelstromCannonSiegeMode" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorMirrorImageActiveCompleteOnlyAtUnitTechTreeCheat2">
+        <Count Link="StitchesStinklingActive" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorMountedFlyerCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="MountedFlyer" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorCrucioX2CannonSiegeModeCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="CrucioX2CannonSiegeMode" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorRavenousSoulsChannelCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="RavenousSoulsChannel" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorShadowFlameActiveCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ShadowFlameActive" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorShadowFlameActiveCompleteOnlyAtUnitTechTreeCheat">
+        <Tooltip value=""/>
+        <Count Link="ShadowFlameActive" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorShandosClarityCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="ShandosClarity" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSiegeModeCompleteOnlyAtUnit">
+        <Count Link="SiegeMode" State="CompleteOnlyAtUnit"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSiegeModeLv2CompleteOnlyAtUnit">
+        <Count Link="SiegeModeLv2" State="CompleteOnlyAtUnit"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSiegeModeLv3CompleteOnlyAtUnit">
+        <Count Link="SiegeModeLv3" State="CompleteOnlyAtUnit"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSiegeModeLv4CompleteOnlyAtUnit">
+        <Count Link="SiegeModeLv4" State="CompleteOnlyAtUnit"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSiegeModeLv5CompleteOnlyAtUnit">
+        <Count Link="SiegeModeLv5" State="CompleteOnlyAtUnit"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Ultimate1Unlocked" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorUltimate2UnlockedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="Ultimate2Unlocked" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorUltimate3UnlockedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Ultimate3Unlocked" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorVirophageMindControlCompleteOnlyAtUnitTechTreeCheat">
+        <Tooltip value=""/>
+        <Count Link="VirophageMindControl" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorWeaponCarryDiabloFastCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="WeaponCarryDiabloFast" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountUpgrade id="CountUpgradeGatesAreOpenCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GatesAreOpen" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIsHeroPlayerCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="IsHeroPlayer" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIsOnChaosTeamCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IsOnChaosTeam" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIsOnOrderTeamCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IsOnOrderTeam" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIsPlayer11CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IsPlayer11" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIsPlayer12CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IsPlayer12" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMinionsAreSpawningCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MinionsAreSpawning" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountBehaviorCategorySuppressVisibilityCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorCategorySuppressVisibilityCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorDeadQueuedOrBetterAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorDeadQueuedOrBetterAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorDeadCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorDeadCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorDruidsGiftControllerCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorDruidsGiftControllerCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHallOfStormsProtectionBuffCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHallOfStormsProtectionBuffCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroGenericMount@MountedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorInnervationCDDummyCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorInnervationCDDummyCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorL90ETCWeaponUberRockstarBehaviorCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorL90ETCWeaponUberRockstarBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorMountedFlyerCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorMountedFlyerCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorMountedFlyerCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorMountedFlyerCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorDeadCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorDeadCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorShandosClarityCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorShandosClarityCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorShandosClarityCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorShandosClarityCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorRavenousSoulsChannelCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorRavenousSoulsChannelCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorWeaponCarryDiabloFastCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorWeaponCarryDiabloFastCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorWeaponCarryDiabloFastCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorWeaponCarryDiabloFastCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIsOnChaosTeamCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeIsOnChaosTeamCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIsOnOrderTeamCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeIsOnOrderTeamCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIsPlayer11CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeIsPlayer11CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIsPlayer12CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeIsPlayer12CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementGTE id="GTECountBehaviorBribeStacksCompleteOnlyAtUnit40">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorBribeStacksCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="40"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTE1961982974CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTECountBehaviorUltimate3UnlockedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorUltimate3UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTECountBehaviorUltimate2UnlockedCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorUltimate2UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementNot id="NotCountBehaviorMaelstromCannonSiegeModeCompleteOnlyAtUnit">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorMaelstromCannonSiegeModeCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorLightningBreathCasterCompleteOnlyAtUnit">
+        <OperandArray index="0" value="CountBehaviorLightningBreathCasterCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorCrucioX2CannonSiegeModeCompleteOnlyAtUnit">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorCrucioX2CannonSiegeModeCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorSiegeModeCompleteOnlyAtUnit">
+        <OperandArray index="0" value="CountBehaviorSiegeModeCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorSiegeModeLv2CompleteOnlyAtUnit">
+        <OperandArray index="0" value="CountBehaviorSiegeModeLv2CompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorSiegeModeLv3CompleteOnlyAtUnit">
+        <OperandArray index="0" value="CountBehaviorSiegeModeLv3CompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorSiegeModeLv4CompleteOnlyAtUnit">
+        <OperandArray index="0" value="CountBehaviorSiegeModeLv4CompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorSiegeModeLv5CompleteOnlyAtUnit">
+        <OperandArray index="0" value="CountBehaviorSiegeModeLv5CompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotOrCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnit">
+        <OperandArray index="0" value="OrCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotTechTreeCheatCountBehaviorShadowFlameActiveCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorShadowFlameActiveCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementOr id="Or"/>
+    <CRequirementOr id="OrCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorUltimate2UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorUltimate3UnlockedCompleteOnlyAtUnit"/>
+    </CRequirementOr>
+    <CRequirementConst id="2"/>
+    <CRequirementConst id="20"/>
+</Catalog>

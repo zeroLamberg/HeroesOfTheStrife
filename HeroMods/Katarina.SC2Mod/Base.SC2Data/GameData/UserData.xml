@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Instances Id="[Default]"/>
+        <Instances Id="AimedShot">
+            <GameLink GameLink="HeroKatarinaAimedShot">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaAimedShot">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="MegaShot">
+            <GameLink GameLink="HeroKatarinaMegaShot">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaMegaShot">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="FlameStream">
+            <GameLink GameLink="HeroKatarinaFlameStream">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaFlameStream">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="LaserShot">
+            <GameLink GameLink="HeroKatarinaLaserShot">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaLaserShot">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="ClusterCharge">
+            <GameLink GameLink="HeroKatarinaClusterCharge">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaClusterCharge">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="WeaponSwap">
+            <GameLink GameLink="HeroKatarinaWeaponSwap">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaWeaponSwap">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+        </Instances>
+        <Instances Id="WeaponMaster">
+            <GameLink GameLink="HeroKatarinaWeaponMaster">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaWeaponMaster">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Trait">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Trait (D)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="ExclusionZone">
+            <GameLink GameLink="HeroKatarinaExclusionZone">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaExclusionZone">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="FlashGrenade">
+            <GameLink GameLink="HeroKatarinaFlashGrenade">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaFlashGrenade">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="EquipAutorifle">
+            <GameLink GameLink="HeroKatarinaEquipAutorifle">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipAutorifle">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipAutorifle">
+                <Field Id="InventoryUnitEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Inventory (Active)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Inventory">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="EquipGrenadeLauncher">
+            <GameLink GameLink="HeroKatarinaEquipGrenadeLauncher">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipGrenadeLauncher">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipGrenadeLauncher">
+                <Field Id="InventoryUnitEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Inventory">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Inventory (Active)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="EquipFlamethrower">
+            <GameLink GameLink="HeroKatarinaFlameStream">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipFlamethrower">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipFlamethrower">
+                <Field Id="InventoryUnitEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Inventory">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Inventory (Active)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="EquipSnipe">
+            <GameLink GameLink="HeroKatarinaEquipSnipe">
+                <Field Id="InventoryUnitEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipSnipe">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaEquipSnipe">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Inventory">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Inventory (Active)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Katarina">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Instances Id="Katarina">
+            <GameLink GameLink="HeroKatarina">
+                <Field Id="Hero Link"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarina@LevelScalingModification">
+                <Field Id="Hero Level Scaling Effect"/>
+            </GameLink>
+            <User Type="HeroRole" Instance="AssassinRanged">
+                <Field Id="Role"/>
+            </User>
+            <User Type="HeroOptionSelectingStatus" Instance="PTR and Live">
+                <Field Id="Selecting Status"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Ammo Master">
+                <Field Id="TalentTier1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Ammo Restoration">
+                <Field Id="TalentTier1" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Universal Ammo">
+                <Field Id="TalentTier1" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Autorifle">
+                <Field Id="TalentTier2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Flamethrower">
+                <Field Id="TalentTier2" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Grenade Launcher">
+                <Field Id="TalentTier2" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Snipe">
+                <Field Id="TalentTier2" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Target Practice">
+                <Field Id="TalentTier3"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - To The Limit">
+                <Field Id="TalentTier3" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Target Acquired">
+                <Field Id="TalentTier3" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Exclusion Zone">
+                <Field Id="TalentTier4"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Flash Grenade">
+                <Field Id="TalentTier4" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Cluster Recharge">
+                <Field Id="TalentTier5"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Advanced Charge">
+                <Field Id="TalentTier5" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Crippling Charge">
+                <Field Id="TalentTier5" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Special Ops">
+                <Field Id="TalentTier6"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Overcharge">
+                <Field Id="TalentTier6" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Arsenal">
+                <Field Id="TalentTier6" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Exclusion Prison">
+                <Field Id="TalentTier7"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Silence Grenade">
+                <Field Id="TalentTier7" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Best Equipment">
+                <Field Id="TalentTier7" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Rearmament">
+                <Field Id="TalentTier7" Index="3"/>
+            </User>
+            <User Type="Skin" Instance="KatarinaBase">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="Mount Category Array"/>
+            </User>
+            <User Type="Ability" Instance="AimedShot">
+                <Field Id="Abilities"/>
+            </User>
+            <User Type="Ability" Instance="MegaShot">
+                <Field Id="Abilities" Index="1"/>
+            </User>
+            <User Type="Ability" Instance="FlameStream">
+                <Field Id="Abilities" Index="2"/>
+            </User>
+            <User Type="Ability" Instance="LaserShot">
+                <Field Id="Abilities" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="ClusterCharge">
+                <Field Id="Abilities" Index="4"/>
+            </User>
+            <User Type="Ability" Instance="WeaponSwap">
+                <Field Id="Abilities" Index="5"/>
+            </User>
+            <User Type="Ability" Instance="WeaponMaster">
+                <Field Id="Abilities" Index="6"/>
+            </User>
+            <User Type="Ability" Instance="ExclusionZone">
+                <Field Id="Abilities" Index="7"/>
+            </User>
+            <User Type="Ability" Instance="FlashGrenade">
+                <Field Id="Abilities" Index="8"/>
+            </User>
+            <User Type="Ability" Instance="EquipAutorifle">
+                <Field Id="Abilities" Index="9"/>
+            </User>
+            <User Type="Ability" Instance="EquipGrenadeLauncher">
+                <Field Id="Abilities" Index="10"/>
+            </User>
+            <User Type="Ability" Instance="EquipFlamethrower">
+                <Field Id="Abilities" Index="11"/>
+            </User>
+            <User Type="Ability" Instance="EquipSnipe">
+                <Field Id="Abilities" Index="12"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Instances Id="KatarinaBase">
+            <GameLink GameLink="HeroKatarina@BaseBlue">
+                <Field Id="VariationUpgradeLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarina@BaseGolden">
+                <Field Id="VariationUpgradeLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarina@BaseGreen">
+                <Field Id="VariationUpgradeLink" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarina@BaseGrey">
+                <Field Id="VariationUpgradeLink" Index="4"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarina@BasePurple">
+                <Field Id="VariationUpgradeLink" Index="5"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarina@BaseRed">
+                <Field Id="VariationUpgradeLink" Index="6"/>
+            </GameLink>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName_003">
+                <Field Id="VariationName" Index="3"/>
+            </Text>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName_004">
+                <Field Id="VariationName" Index="4"/>
+            </Text>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName_005">
+                <Field Id="VariationName" Index="5"/>
+            </Text>
+            <Text Text="UserData/Skin/KatarinaBase_VariationName_006">
+                <Field Id="VariationName" Index="6"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="6"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="3"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="4"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="5"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="3"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="4"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="5"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="6"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Instances Id="Katarina - Ammo Master">
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterAmmoMaster">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterAmmoMaster">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterAmmoMaster">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="WeaponMaster">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Ammo Restoration">
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterAmmoRestoration@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterAmmoRestoration">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterAmmoRestoration">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="WeaponMaster">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Universal Ammo">
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterUniversalAmmo">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterUniversalAmmo">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="WeaponMaster">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Master Autorifle">
+            <GameLink GameLink="HeroKatarinaTalentMasterAutorifle">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentMasterAutorifle">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Master Flamethrower">
+            <GameLink GameLink="HeroKatarinaTalentMasterFlamethrower">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentMasterFlamethrower">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentMasterFlamethrower@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Master Grenade Launcher">
+            <GameLink GameLink="HeroKatarinaTalentMasterGrenadeLauncher@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentMasterGrenadeLauncher">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentMasterGrenadeLauncher">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Master Snipe">
+            <GameLink GameLink="HeroKatarinaTalentMasterSnipe">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentMasterSnipe">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Target Practice">
+            <GameLink GameLink="HeroKatarinaTalentTargetPractice">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentTargetPractice">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentTargetPractice@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AimedShot">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Target Acquired">
+            <GameLink GameLink="HeroKatarinaTalentTargetAcquired">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentTargetAcquired">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentTargetAcquired">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - To The Limit">
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterToTheLimit">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterToTheLimit">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterToTheLimit@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="WeaponMaster">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Exclusion Zone">
+            <GameLink GameLink="HeroKatarinaExclusionZone">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaExclusionZone">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ExclusionZone">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Flash Grenade">
+            <GameLink GameLink="HeroKatarinaFlashGrenade">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaFlashGrenade">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ExclusionZone">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Cluster Recharge">
+            <GameLink GameLink="HeroKatarinaTalentClusterChargeClusterRecharge">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentClusterChargeClusterRecharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentClusterChargeClusterRecharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ClusterCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Advanced Charge">
+            <GameLink GameLink="HeroKatarinaTalentClusterChargeAdvancedCharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentClusterChargeAdvancedCharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ClusterCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Crippling Charge">
+            <GameLink GameLink="KatarinaTalentClusterChargeCripplingCharge">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="KatarinaTalentClusterChargeCripplingCharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="KatarinaTalentClusterChargeCripplingCharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ClusterCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Arsenal">
+            <GameLink GameLink="HeroKatarinaTalentArsenal">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentArsenal">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentArsenal">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Special Ops">
+            <GameLink GameLink="HeroKatarinaTalentSpecialOps">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentSpecialOps">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentSpecialOps">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AimedShot">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Overcharge">
+            <GameLink GameLink="KatarinaTalentClusterChargeOvercharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="KatarinaTalentClusterChargeOvercharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ClusterCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Exclusion Prison">
+            <GameLink GameLink="HeroKatarinaTalentExclusionZoneExclusionPrison">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentExclusionZoneExclusionPrison">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Exclusion Zone">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="ExclusionZone">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Silence Grenade">
+            <GameLink GameLink="HeroKatarinaTalentFlashGrenadeSilenceGrenade">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentFlashGrenadeSilenceGrenade">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentFlashGrenadeSilenceGrenade@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Flash Grenade">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="FlashGrenade">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Best Equipment">
+            <GameLink GameLink="HeroKatarinaTalentBestEquipment">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentBestEquipment@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentBestEquipment">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AimedShot">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Katarina - Rearmament">
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterRearmament">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroKatarinaTalentWeaponMasterRearmament">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Autorifle">
+                <Field Id="TalentAdditionalTalent"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Flamethrower">
+                <Field Id="TalentAdditionalTalent" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Grenade Launcher">
+                <Field Id="TalentAdditionalTalent" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Katarina - Master Snipe">
+                <Field Id="TalentAdditionalTalent" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="WeaponMaster">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="HeroSelendisSolarLance@Mover">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Speed value="12"/>
+            <MaxSpeed value="12"/>
+            <IgnoresTerrain value="1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroSelendisCalldownVindicator@WeaponCloseMissile" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="36"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroSelendisCalldownVindicator@WeaponMissile" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="12"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroSelendisZealousRush">
+        <Flags index="RestoreHeight" value="1"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <Speed value="40"/>
+            <MaxSpeed value="40"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

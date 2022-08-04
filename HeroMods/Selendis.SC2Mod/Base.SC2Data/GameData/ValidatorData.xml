@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--        <CombineArray value="ArthasHasFrostmourneHungersPrimed"/>-->
+    <!--        <CombineArray value="DiabloHasBlackSoulstoneAvailable"/>-->
+    <CValidatorCombine id="AbilButtonAttentionDDamage">
+        <CombineArray value="HeroSelendisExecutorsGuard@TargetHasWeaponBuff"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisExecutorsGuard@TargetHasWeaponBuff" parent="TargetIsParent">
+        <Behavior value="HeroSelendisExecutorsGuard@WeaponBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisExecutorsGuard@CasterHasWeaponBuff" parent="CasterIsParent">
+        <Behavior value="HeroSelendisExecutorsGuard@WeaponBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitOrderQueue id="HeroSelendisZealousRush@HasOrder">
+        <AbilLink value="HeroSelendisZealousRush"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="HeroSelendisZealousRush@HasOrderCombine">
+        <CombineArray value="HeroSelendisZealousRush@HasOrder"/>
+        <CombineArray value="HeroSelendisZealousRushApproach@HasApproachOrder"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="HeroSelendisZealousRush@TargetRange">
+        <WhichLocation Effect="HeroSelendisZealousRush@InitialSet" Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="12"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareChargeUsed id="HeroSelendisTalentInTheHeatOfBattle@ChargesNotFull">
+        <Compare value="NE"/>
+        <ChargeLink value="Abil/HeroSelendisTalentInTheHeatOfBattle"/>
+        <Location value="Unit"/>
+        <Ability value="HeroSelendisTalentInTheHeatOfBattle"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroSelendisTalentInTheHeatOfBattle@ChargesNot0">
+        <Compare value="LT"/>
+        <ChargeLink value="Abil/HeroSelendisTalentInTheHeatOfBattle"/>
+        <Location value="Unit"/>
+        <Ability value="HeroSelendisTalentInTheHeatOfBattle"/>
+        <Value value="25"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorPlayerTalent id="HeroSelendisTalentBladesofaZealot" parent="PlayerTalent"/>
+    <CValidatorUnitCompareChargeUsed id="HeroSelendisTalentBladesofaZealot@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroSelendisTalentBladesofaZealot@TokenCounter"/>
+    <CValidatorUnitCompareChargeUsed id="HeroSelendisTalentBladesofaZealot@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroSelendisTalentBladesofaZealot@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroSelendisTalentExecutorBladeExecutorPower@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroSelendisTalentExecutorBladeExecutorPower@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisTalentTemplarBlades@TargetHasNoMarkBuffCasterReq">
+        <Behavior value="HeroSelendisTalentTemplarBlades@TargetMarkBuff"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisTalentTemplarBlades@TargetHasMarkBuffCasterReq">
+        <Compare value="NE"/>
+        <Behavior value="HeroSelendisTalentTemplarBlades@TargetMarkBuff"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarWillpowerPhaseBulwark" parent="PlayerTalent"/>
+    <CValidatorLocationEnumArea id="HeroSelendisTalentTemplarBlades@Search">
+        <AreaArray>
+            <Compare value="GT"/>
+            <Count value="0"/>
+            <Radius value="1000"/>
+            <Validator value="HeroSelendisTalentTemplarBlades@Target"/>
+        </AreaArray>
+        <SearchFilters value="Heroic;Player,Ally,Neutral"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorPlayerTalent id="HeroSelendisTalentCalldownVindicatorMothership" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarBlades" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisZealotofAiur@CasterHasProtection" parent="CasterIsParent">
+        <Behavior value="HeroSelendisZealotofAiur@Protection"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroSelendisTalentZealotofAiurTrueTemplar" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisTalentVindicatorsBeamInduction@SourceHasBeamPercentDamageController" parent="SourceIsParent">
+        <WhichUnit Effect="HeroSelendisVindicatorsBeam@MissileSet"/>
+        <Behavior value="HeroSelendisTalentVindicatorsBeamInduction@BeamPercentDamageController"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisTemplarWillpower@CasterHasShieldBehavior" parent="CasterIsParent">
+        <Behavior value="HeroSelendisTemplarWillpower"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroSelendisTalentInTheHeatOfBattle" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentVindicatorsBeamInduction" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisCalldownVindicator" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentIntuitiveAttack" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroSelendisTalentTemplarWillpowerInspiration@CasterHasShieldBehaviorAndInspirationTalent">
+        <Type value="And"/>
+        <CombineArray value="HeroSelendisTemplarWillpower@CasterHasShieldBehavior"/>
+        <CombineArray value="HeroSelendisTalentTemplarWillpowerInspiration"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroSelendisTemplarWillpower@CriticalCombine">
+        <CombineArray value="TargetLifeLT25Percent"/>
+        <CombineArray value="CasterLifeGT75Percent"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroSelendisTalentPhaseWeapon" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarWillPowerPlasmaShield" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarWillpowerReconfigurationShield" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisPowerStrike@CasterHasSpeedBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="HeroSelendisPowerStrike@Speed"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisExecutorCharge@TargetHasCasterBehaviorUI" parent="TargetIsParent">
+        <Behavior value="HeroSelendisExecutorCharge@CasterBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="HeroSelendisExecutorCharge@TargetInCasterRange">
+        <WhichLocation Effect="HeroSelendisExecutorCharge@ApplyTargetBehavior" Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="6"/>
+        <Value Effect="HeroSelendisExecutorBlade"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisExecutorCharge@TargetHasBehavior" parent="TargetIsParent">
+        <WhichUnit Effect="HeroSelendisExecutorCharge@ApplyTargetBehavior"/>
+        <Behavior value="HeroSelendisExecutorCharge@TargetBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisZealousRush@TargetHasMark" parent="TargetIsParent">
+        <Behavior value="HeroSelendisZealousRush@Mark"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitOrderQueue id="HeroSelendisZealousRushApproach@HasApproachOrder">
+        <AbilLink value="HeroSelendisZealousRushApproach"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitType id="IsSelendis">
+        <Value value="HeroSelendis"/>
+    </CValidatorUnitType>
+    <CValidatorPlayerTalent id="HeroSelendisTalentVindicatorsBeamThermalFire" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentExecutorBladeAdvancedCharge" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarWillpowerInspiration" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentPowerStrikeTemplarsZeal" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentPowerStrikePsionicDash" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentExecutorBladeImpalingBlade" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentPowerStrikeFinalCut" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarWillpowerDeflectionShield" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroSelendisTalentTemplarWillpowerForceOfWill" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisTalentIntuitiveAttack@HasStacks" parent="CasterIsParent">
+        <Behavior value="HeroSelendisTalentIntuitiveAttack"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroSelendisExecutorCharge@TargetCombine">
+        <Type value="And"/>
+        <CombineArray value="TargetIsEnemy"/>
+        <CombineArray value="TargetNotStasis"/>
+        <CombineArray value="TargetNotInvulnerable"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroSelendisTalentVindicatorsBeamThermalFire@HasNoMarker">
+        <Behavior value="HeroSelendisTalentVindicatorsBeamThermalFire@MarkerBehavior"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroSelendisTalentExecutorBladeExecutorPower" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroSelendisExecutorCharge@HasOrderCombine">
+        <CombineArray value="HeroSelendisExecutorCharge@HasOrder"/>
+        <CombineArray value="HeroSelendisExecutorChargeApproach@HasApproachOrder"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="HeroSelendisExecutorCharge@TargetRange">
+        <WhichLocation Effect="HeroSelendisExecutorCharge@CastingSet" Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="12"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitOrderQueue id="HeroSelendisExecutorCharge@HasOrder">
+        <AbilLink value="HeroSelendisExecutorCharge"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="HeroSelendisExecutorChargeApproach@HasApproachOrder">
+        <AbilLink value="HeroSelendisExecutorChargeApproach"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="AbilButtonAttentionQDamage">
+        <CombineArray value="HeroSelendisExecutorCharge@TargetHasCasterBehaviorUI"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroSelendisTalentExecutorBladeUpstage" parent="PlayerTalent"/>
+</Catalog>

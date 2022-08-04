@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="SlaynSupplicantWeapon">
+        <Name value="Weapon/Name/Ascendant"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="SlaynSupplicantWeapon@Damage"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="Visible;Neutral,Creep,NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <MinScanRange value="6"/>
+        <Range value="0.5"/>
+        <Period value="1"/>
+        <Effect value="SlaynSupplicantWeapon@Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MercenarySlaynElementalWeapon">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <TargetFilters value="Visible;NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AcquireFilters value="-;Player,Ally,Neutral,Enemy"/>
+        <Period value="1.5"/>
+        <Effect value="MercenarySlaynElementalWeapon@Damage"/>
+    </CWeaponLegacy>
+</Catalog>

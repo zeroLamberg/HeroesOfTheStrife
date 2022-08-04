@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorDoodad id="Slayn_Braziers_2">
+        <On Terms="ActorCreation" Send="Create Slayn_Brazier_Fire"/>
+        <Model value="Slayn_Braziers"/>
+        <ModelFlags index="OutlineOccluder" value="1"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
+    </CActorDoodad>
+</Catalog>

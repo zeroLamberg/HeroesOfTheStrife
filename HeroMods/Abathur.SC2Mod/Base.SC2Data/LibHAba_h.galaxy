@@ -1,0 +1,86 @@
+include "LibCore"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Abathur
+//--------------------------------------------------------------------------------------------------
+// Constants
+const string libHAba_gv_eventID_AbathurUltimateEvolutionEnded_C = "AbathurUltimateEvolutionEnded";
+const string libHAba_gv_eventParam_AbathurUltimateEvolution_AbathurPlayer_C = "AbathurPlayer";
+const string libHAba_gv_eventParam_AbathurUltimateEvolution_ClonedUnit_C = "SymbioteUnit";
+const string libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_C = "AbathurUltimateEvolutionHeroCopied";
+const string libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_AbathurOwner_C = "AbathurOwner";
+const string libHAba_gv_eventID_AbathurUltimateEvolutionHeroCopied_TargetOwner_C = "TargetOwner";
+const string libHAba_gv_eventID_AbathurSymbiote_C = "AbathurSymbiote";
+const string libHAba_gv_eventParam_AbathurSymbiote_AbathurPlayer_C = "AbathurPlayer";
+const string libHAba_gv_eventParam_AbathurSymbiote_SymbioteUnit_C = "SymbioteUnit";
+const string libHAba_gv_eventParam_AbathurSymbiote_SymbioteTarget_C = "SymbioteTarget";
+const int libHAba_gv_abathurSymbioteHivemindMaxHosts_C = 1;
+const fixed libHAba_gv_abathurSymbioteHivemindCastRange_C = 8.0;
+const fixed libHAba_gv_abathurSymbioteHivemindMaxRange_C = 12.0;
+const fixed libHAba_gv_heroAbathurVolatileMutationLeechPercent = 1.0;
+
+// Structures
+struct libHAba_gs_SymbioteHivemind {
+    unit lv_symbioteUnit;
+    unit lv_hostUnit;
+};
+
+// Variable Declarations
+unit[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_abathurSymbioteMonstrosity;
+unit[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_abathurMonstrosity;
+sound[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurSymbioteScreenSound;
+point[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurSymbioteLookAt;
+bool[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurSymbioteActive;
+bool[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurSymbioteEventAdded;
+fixed libHAba_gv_heroAbathurSpikeBurstSplatScalar;
+int[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurDeepTunnelPings;
+timer[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurDeepTunnelPingTextLockoutTimer;
+int[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurMonstrosityDeepTunnelPings;
+timer[libCore_gv_bALMaxEnginePlayerCount + 1] libHAba_gv_heroAbathurMonstrosityDeepTunnelPingTextLockoutTimer;
+fixed libHAba_gv_heroAbathurMonstrosityTimedLifeIncrease;
+fixed libHAba_gv_heroAbathurMonstrosityHealthIncreasePerLevel;
+fixed libHAba_gv_heroAbathurEvolutionCompleteStacksCarryover;
+
+// Function Declarations
+void libHAba_gf_AbathurUltimateEvolutionEnded (trigger t);
+void libHAba_gf_SendEventAbathurUltimateEvolutionEnded (int lp_abathurPlayer, unit lp_clonedUnit);
+int libHAba_gf_AbathurUltimateEvolutionAbathurPlayer ();
+unit libHAba_gf_AbathurUltimateEvolutionClonedUnit ();
+void libHAba_gf_AbathurUltimateEvolutionHeroCopied (trigger t);
+void libHAba_gf_SendEventAbathurUltimateEvolutionHeroCopied (int lp_abathurOwner, int lp_targetOwner);
+int libHAba_gf_AbathurUltimateEvolutionHeroCopiedAbathurOwner ();
+int libHAba_gf_AbathurUltimateEvolutionHeroCopiedTargetOwner ();
+void libHAba_gf_AbathurSymbiote (trigger t);
+void libHAba_gf_SendEventAbathurSymbiote (int lp_abathurPlayer, unit lp_symbioteUnit, unit lp_symbioteTarget);
+int libHAba_gf_AbathurSymbioteAbathurPlayer ();
+unit libHAba_gf_AbathurSymbioteUnit ();
+unit libHAba_gf_AbathurSymbioteTarget ();
+void libHAba_gf_HeroAbathurReturnControlledUnittoLaneAI (unit lp_unit);
+
+// Trigger Declarations
+trigger libHAba_gt_HeroAbathurSymbioteScreenEffect;
+trigger libHAba_gt_HeroAbathurLocustNestSetFacing;
+trigger libHAba_gt_HeroAbathurLocustSpawned;
+trigger libHAba_gt_HeroAbathurSymbiote;
+trigger libHAba_gt_HeroAbathurCarapaceRegenerativeMicrobes;
+trigger libHAba_gt_HeroAbathurUltimateEvolutionStartControl;
+trigger libHAba_gt_HeroAbathurUltimateEvolutionStopControl;
+trigger libHAba_gt_HeroAbathurUltimateEvolutionUnitDead;
+trigger libHAba_gt_HeroAbathurDeepTunnelPing;
+trigger libHAba_gt_HeroAbathurLocustMasterCast;
+trigger libHAba_gt_HeroAbathurMonstrosityDeepTunnelPing;
+trigger libHAba_gt_HeroAbathurMonstrosityAddMinionKillStacks;
+trigger libHAba_gt_HeroAbathurMonstrosityAddSymbioteStacks;
+trigger libHAba_gt_HeroAbathurMonstrosityInitialHooktoAI;
+trigger libHAba_gt_HeroAbathurMonstrositySymbioteendHooktoAI;
+trigger libHAba_gt_HeroAbathurMonstrosityDeselectedHooktoAI;
+trigger libHAba_gt_HeroAbathurMonstrosityUnhookAI;
+trigger libHAba_gt_HeroAbathurMonstrosityKillInitialTarget;
+trigger libHAba_gt_HeroAbathurSymbiotedMonstrositySymbioted;
+trigger libHAba_gt_HeroAbathurSymbioteHivemindSingleTarget;
+trigger libHAba_gt_HeroAbathurSymbioteHivemindStab;
+trigger libHAba_gt_HeroAbathurVolatileMutationLeech;
+
+// Library Initialization
+void libHAba_InitVariables ();
+

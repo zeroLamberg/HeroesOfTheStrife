@@ -1,0 +1,3313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="MercenaryColossusFireBeam@ArmorReduction" parent="CoreArmorStats">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <MaxStackCount value="25"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercenaryColossusWeapon@TurretDisabler">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <RemoveValidatorArray value="SourceHasnotJungleSoftLeashing"/>
+        <RemoveValidatorArray value="SourceHasnotJungleSoftLeashingNoHeal"/>
+        <Duration value="1"/>
+        <Modification>
+            <TurretDisableArray value="MercenaryColossus@Turret"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TownDeadController@DeadBehavior">
+        <Modification>
+            <TurretDisableArray value="TownProtossTownHallTurret"/>
+            <TurretDisableArray value="TownProtossCannonTowerStandaloneTurret"/>
+            <TurretDisableArray value="TownProtossCannonTowerTurret"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TownProtossTownHallDeadController">
+        <DamageResponse Fatal="1" Handled="TownDeadController@ApplyDeadBehavior" ModifyFraction="0">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TownProtossWarpIn">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <TurretDisableArray value="TownProtossTownHallTurret"/>
+            <TurretDisableArray value="TownProtossCannonTowerStandaloneTurret"/>
+            <TurretDisableArray value="TownProtossCannonTowerTurret"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericProtossWarping">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="6"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unstoppable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Mercenary_Colossus_ThermalLances_Marker">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="MercenaryColossus@ScalingDefender">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="4.5"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="300"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="4.5"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="300"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="4.5"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="300"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="4.5"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="300"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="4.5"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="300"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="6.75"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="450"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="6.75"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="450"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="6.75"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="450"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="6.75"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="450"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="6.75"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="450"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="9"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="9"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="9"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="9"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="9"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="11.25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="750"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="11.25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="750"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="11.25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="750"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="11.25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="750"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="11.25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="750"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="10">
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="13.5"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="MercenaryColossusChargedBlast@Debuff" parent="CoreUnitStatsModificator">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="MercenaryColossus@ScalingLaner">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <DamageDealtFraction index="Spell" value="0.05"/>
+                <VitalMaxArray index="Life" value="600"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="15"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="15"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="15"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="15"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="15"/>
+                <DamageDealtFraction index="Spell" value="0.06"/>
+                <VitalMaxArray index="Life" value="900"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="20"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="1200"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="20"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="1200"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="20"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="1200"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="20"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="1200"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="20"/>
+                <DamageDealtFraction index="Spell" value="0.07"/>
+                <VitalMaxArray index="Life" value="1200"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="1500"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="1500"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="1500"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="1500"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="25"/>
+                <DamageDealtFraction index="Spell" value="0.08"/>
+                <VitalMaxArray index="Life" value="1500"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.09"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.1"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.11"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.11"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.11"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.11"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.11"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.12"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.12"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.12"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.12"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.12"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.13"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.13"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.13"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.13"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.13"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.16"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.16"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.16"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.16"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.16"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.17"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.17"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.17"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.17"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.17"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.18"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.18"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.18"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.18"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="30"/>
+                <DamageDealtFraction index="Spell" value="0.18"/>
+                <VitalMaxArray index="Life" value="1800"/>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="MercenaryColossusFireBeam@MarkerBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <Duration value="0.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercenaryColossusWeapon@GroundFireDamageBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <Duration value="0.625"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="MercenaryColossusWeapon@GroundFireDamage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercenaryColossusFireBeam@BeamUnitTimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <RemoveValidatorArray value="CasterNotDead"/>
+        <TimeScaleSource Value="Caster"/>
+        <Duration value="1.5"/>
+        <PeriodicEffect value="MercenaryColossusFireBeam@GroundFirePersistent"/>
+        <FinalEffect value="MercenaryColossusFireBeam@FinalSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercenaryColossusFireBeam@RotatorDelayBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <Duration value="0.0625"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="MercenaryColossusFireBeam@ApplyKineticFollow"/>
+        <PeriodicEffect value="MercenaryColossusFireBeam@ApplyKineticRotator"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercenaryHybridReaverWeapon@ArmorReduced" parent="CoreUnitStatsModificator">
+        <Alignment value="Negative"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="8"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="MercenaryHybridDominator@ScalingLaner">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="18"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="18"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="18"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="18"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="18"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="27"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="27"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="27"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="27"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="27"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="36"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="36"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="36"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="36"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="36"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="45"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="45"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="45"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="45"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="45"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="54"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="MercenaryHybridNemesis@ScalingLaner">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="4"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="4"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="4"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="4"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="4"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="6"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="MercenaryHybridReaver@ScalingLaner">
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.1"/>
+                <DamageDealtScaled index="Ranged" value="1.1"/>
+                <VitalMaxArray index="Life" value="38"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.1"/>
+                <DamageDealtScaled index="Ranged" value="1.1"/>
+                <VitalMaxArray index="Life" value="38"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.1"/>
+                <DamageDealtScaled index="Ranged" value="1.1"/>
+                <VitalMaxArray index="Life" value="38"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.1"/>
+                <DamageDealtScaled index="Ranged" value="1.1"/>
+                <VitalMaxArray index="Life" value="38"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.1"/>
+                <DamageDealtScaled index="Ranged" value="1.1"/>
+                <VitalMaxArray index="Life" value="38"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.65"/>
+                <DamageDealtScaled index="Ranged" value="1.65"/>
+                <VitalMaxArray index="Life" value="57"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.65"/>
+                <DamageDealtScaled index="Ranged" value="1.65"/>
+                <VitalMaxArray index="Life" value="57"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.65"/>
+                <DamageDealtScaled index="Ranged" value="1.65"/>
+                <VitalMaxArray index="Life" value="57"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.65"/>
+                <DamageDealtScaled index="Ranged" value="1.65"/>
+                <VitalMaxArray index="Life" value="57"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.65"/>
+                <DamageDealtScaled index="Ranged" value="1.65"/>
+                <VitalMaxArray index="Life" value="57"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.2"/>
+                <DamageDealtScaled index="Ranged" value="2.2"/>
+                <VitalMaxArray index="Life" value="76"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.2"/>
+                <DamageDealtScaled index="Ranged" value="2.2"/>
+                <VitalMaxArray index="Life" value="76"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.2"/>
+                <DamageDealtScaled index="Ranged" value="2.2"/>
+                <VitalMaxArray index="Life" value="76"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.2"/>
+                <DamageDealtScaled index="Ranged" value="2.2"/>
+                <VitalMaxArray index="Life" value="76"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.2"/>
+                <DamageDealtScaled index="Ranged" value="2.2"/>
+                <VitalMaxArray index="Life" value="76"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.75"/>
+                <DamageDealtScaled index="Ranged" value="2.75"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.75"/>
+                <DamageDealtScaled index="Ranged" value="2.75"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.75"/>
+                <DamageDealtScaled index="Ranged" value="2.75"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.75"/>
+                <DamageDealtScaled index="Ranged" value="2.75"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="2.75"/>
+                <DamageDealtScaled index="Ranged" value="2.75"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="3.3"/>
+                <DamageDealtScaled index="Ranged" value="3.3"/>
+                <VitalMaxArray index="Life" value="114"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="MercenaryHybridDominator@ScalingDefender">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="20"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="20"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="20"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="20"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="20"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="30"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="30"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="30"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="30"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="2.25"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="30"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="3.75"/>
+                <DamageDealtScaled index="Ranged" value="5"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="3">
+                <DamageDealtScaled index="Spell" value="4.5"/>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="MercenaryHybridDominatorWeapon@PowerReduced" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="8"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="16" Points="-3"/>
+            <AttributeChangeArray index="17" Points="-3"/>
+            <AttributeChangeArray index="18" Points="-3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="MercenaryHybridNemesis@ScalingDefender">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="25"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="25"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="25"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="25"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="2"/>
+                <VitalMaxArray index="Life" value="25"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="15"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="15"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="15"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="15"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="15"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="55"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="55"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="55"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="55"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="1"/>
+                <VitalMaxArray index="Life" value="55"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Melee" value="3"/>
+                <VitalMaxArray index="Life" value="95"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="MercenaryHybridNemesisWeapon@ReducedAttackSpeed" parent="CoreDamageReductionAttackSpeedSlow">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <BuffFlags index="UpdateDurationWhileDisabled" value="0"/>
+        <MaxStackCount value="8"/>
+        <Duration value="5"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="-0.03"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="MercenaryHybridReaver@ScalingDefender">
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Spell" value="1"/>
+                <DamageDealtScaled index="Ranged" value="1"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1"/>
+                <DamageDealtScaled index="Ranged" value="1"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1"/>
+                <DamageDealtScaled index="Ranged" value="1"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1"/>
+                <DamageDealtScaled index="Ranged" value="1"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1"/>
+                <DamageDealtScaled index="Ranged" value="1"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="1.5"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="1.5"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="1.5"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="1.5"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="1.5"/>
+                <DamageDealtScaled index="Ranged" value="1.5"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2"/>
+                <DamageDealtScaled index="Ranged" value="2"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2.5"/>
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2.5"/>
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2.5"/>
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="2.5"/>
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Spell" value="3"/>
+                <DamageDealtScaled index="Ranged" value="3"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="MercenaryVanguard@ScalingDefender">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="1.25"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.25"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.25"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.25"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.25"/>
+                <VitalMaxArray index="Life" value="50"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.875"/>
+                <VitalMaxArray index="Life" value="75"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.875"/>
+                <VitalMaxArray index="Life" value="75"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.875"/>
+                <VitalMaxArray index="Life" value="75"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.875"/>
+                <VitalMaxArray index="Life" value="75"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="1.875"/>
+                <VitalMaxArray index="Life" value="75"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="2.5"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.125"/>
+                <VitalMaxArray index="Life" value="125"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.125"/>
+                <VitalMaxArray index="Life" value="125"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.125"/>
+                <VitalMaxArray index="Life" value="125"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.125"/>
+                <VitalMaxArray index="Life" value="125"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.125"/>
+                <VitalMaxArray index="Life" value="125"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification KillXPBonus="2">
+                <DamageDealtScaled index="Ranged" value="3.75"/>
+                <VitalMaxArray index="Life" value="150"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+        <VeterancyLevelArray MinVeterancyXP="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="MercenaryVanguard@ScalingLaner">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="4"/>
+                <VitalMaxArray index="Life" value="40"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="6"/>
+                <VitalMaxArray index="Life" value="60"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="8"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="8"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="8"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="8"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="8"/>
+                <VitalMaxArray index="Life" value="80"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="10"/>
+                <VitalMaxArray index="Life" value="100"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <DamageDealtScaled index="Ranged" value="12"/>
+                <VitalMaxArray index="Life" value="120"/>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+</Catalog>

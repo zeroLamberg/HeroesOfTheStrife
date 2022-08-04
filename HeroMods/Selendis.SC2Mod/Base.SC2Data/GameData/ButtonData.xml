@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="HeroSelendisDecisiveStrike" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-ability-nova-neckbreaker.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisExecutorsGuard" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisSolarLance" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_VindicatorsBeam_var3.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarWillpowerPhaseBulwark" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentCalldownVindicatorMothership" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\ui_commandertraiticon_artanis.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarBlades" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarBlades.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentZealotofAiurTrueTemplar" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentVindicatorsBeamInduction" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_VindicatorsBeam_var3.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisZealotofAiur" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisExecutorCharge" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentPhaseWeapon" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentIntuitiveAttack" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentExecutorBladeImpalingBlade" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentExecutorBladeAdvancedCharge" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentInTheHeatOfBattle" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarWillpowerDeflectionShield" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarWillpowerInspiration" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentVindicatorsBeamThermalFire" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_VindicatorsBeam_var3.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarWillpowerReconfigurationShield" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarWillpowerForceOfWill" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentTemplarWillPowerPlasmaShield" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentPowerStrikeFinalCut" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_PowerStrikes.DDS"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentPowerStrikePsionicDash" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_PowerStrikes.DDS"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentPowerStrikeTemplarsZeal" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_PowerStrikes.DDS"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisExecutorBlade" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroSelendisTalentExecutorBladeAdvancedCharge" Face="HeroSelendisTalentExecutorBladeAdvancedCharge"/>
+        <TooltipAppender Validator="HeroSelendisTalentExecutorBladeUpstage" Face="HeroSelendisTalentExecutorBladeUpstage"/>
+        <TooltipAppender Validator="HeroSelendisTalentExecutorBladeExecutorPower" Face="HeroSelendisTalentExecutorBladeExecutorPower"/>
+        <TooltipAppender Validator="HeroSelendisTalentExecutorBladeImpalingBlade" Face="HeroSelendisTalentExecutorBladeImpalingBlade"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentExecutorBladeExecutorPower" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisPowerStrike" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroSelendisTalentPowerStrikeFinalCut" Face="HeroSelendisTalentPowerStrikeFinalCut"/>
+        <TooltipAppender Validator="HeroSelendisTalentPowerStrikeTemplarsZeal" Face="HeroSelendisTalentPowerStrikeTemplarsZeal"/>
+        <TooltipAppender Validator="HeroSelendisTalentPowerStrikePsionicDash" Face="HeroSelendisTalentPowerStrikePsionicDash"/>
+        <TooltipAppender Validator="SelendisPowerStrikeProtectedByKhala@HasProtectedByKhala" Face="SelendisPowerStrikeProtectedByKhala"/>
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_PowerStrikes.DDS"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTemplarWillpower" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroSelendisTalentTemplarWillpowerInspiration" Face="HeroSelendisTalentTemplarWillpowerInspiration"/>
+        <TooltipAppender Validator="SelendisBucket_HasPlasmaShields" Face="HeroSelendisTalentTemplarWillPowerPlasmaShield"/>
+        <TooltipAppender Validator="SelendisBucket_HasPhaseBulwark" Face="SelendisBucket_TemplarWillPower_PhaseBulwark"/>
+        <TooltipAppender Validator="SelendisBucket_HasReconfigurationShields" Face="HeroSelendisTalentTemplarWillpowerReconfigurationShield"/>
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisCalldownVindicator" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\ui_commandertraiticon_artanis.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisVindicatorsBeam" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroSelendisTalentVindicatorsBeamThermalFire" Face="HeroSelendisTalentVindicatorsBeamThermalFire"/>
+        <TooltipAppender Validator="HeroSelendisTalentVindicatorsBeamInduction" Face="HeroSelendisTalentVindicatorsBeamInduction"/>
+        <Icon value="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_VindicatorsBeam_var3.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentBladesofaZealot" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisTalentExecutorBladeUpstage" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shadowblade.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+    <CButton id="HeroSelendisZealousRush" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CButton>
+</Catalog>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+<Frame type="SelectionUnitStatusPanel" name="DiabloFrame" template="StandardHeroUITemplates/CircularHeroUITemplate">
+  <SpecificUnit val="HeroDiablo"/>
+
+  <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+
+    <Frame type="Image" name="MechanicTexture">
+      <Texture val="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone.dds"/>
+    </Frame>
+
+    <Frame type="BehaviorIcon" name="BlackSoulstoneTooltip" template="StandardHeroUITemplates/SmallBehaviorTooltiptemplate">
+      <Behavior val="HeroDiabloBlackSoulstone@TokenCounter"/>
+    </Frame>
+
+    <Frame type="UnitStatusBehaviorIcon" name="SoulStoneLargeCounterLabel" template="StandardHeroUITemplates/LargeCounterLabelTemplate">
+      <Behavior val="HeroDiabloBlackSoulstone@TokenCounter"/>
+      
+      <Frame type="BehaviorIcon" name="BehaviorIcon">
+          <MinStackCountDisplayed val="0"/>
+      </Frame>
+
+      <Frame type="Label" name="CounterLabel">
+          <Text val=""/>
+      </Frame>
+
+    </Frame>
+
+  </Frame>
+</Frame>
+
+</Desc>

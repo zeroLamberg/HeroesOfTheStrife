@@ -1,0 +1,1188 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+include "LibMapM"
+include "LibUIUI"
+
+include "LibMMBS_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: MM Battle For Slayn
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libMMBS_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libMapM_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libMMBS_InitVariables_completed = false;
+
+void libMMBS_InitVariables () {
+    int init_i1;
+
+    if (libMMBS_InitVariables_completed) {
+        return;
+    }
+
+    libMMBS_InitVariables_completed = true;
+
+    libMMBS_gv_mMBattleForSlaynData.lv_unitGroup = UnitGroupEmpty();
+    libMMBS_gv_mMSlaynSpawnTimer = TimerCreate();
+    libMMBS_gv_mMSlaynWarningTimer = TimerCreate();
+    libMMBS_gv_mMSlaynPingsTimer = TimerCreate();
+    libMMBS_gv_mMSlaynEventFirstTime = true;
+    libMMBS_gv_mMSlaynVoidThrasherMissileTargetPing = c_invalidPingId;
+    libMMBS_gv_mMSlaynPanel.lv_slaynPanel = c_invalidDialogControlId;
+    libMMBS_gv_mMSlaynPanel.lv_slaynVoidThrasherModeFrame = c_invalidDialogControlId;
+    libMMBS_gv_mMSlaynPanel.lv_slaynWarningModeFrame = c_invalidDialogControlId;
+    libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantsModeFrame = c_invalidDialogControlId;
+    libMMBS_gv_mMSlaynPanel.lv_slaynWarningTimerLabel = c_invalidDialogControlId;
+    for (init_i1 = 0; init_i1 <= libCore_gv_bALMaxTeams; init_i1 += 1) {
+        libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantCounterLabel[init_i1] = c_invalidDialogControlId;
+    }
+    for (init_i1 = 0; init_i1 <= libCore_gv_bALMaxTeams; init_i1 += 1) {
+        libMMBS_gv_mMSlaynPanel.lv_slaynShotCounterLabel[init_i1] = c_invalidDialogControlId;
+    }
+    for (init_i1 = 0; init_i1 <= libMMBS_gv_mapMechanicsSlaynShotsCount_C; init_i1 += 1) {
+        libMMBS_gv_mMSlaynPanel.lv_slaynShotFrame[init_i1] = c_invalidDialogControlId;
+    }
+}
+
+// Presets
+// Functions
+void libMMBS_gf_MMSlaynAddEventLocation (int lp_event, point lp_point, region lp_region) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[lp_event] = lp_point;
+    libMMBS_gv_mMBattleForSlaynData.lv_eventRegion[lp_event] = lp_region;
+}
+
+void libMMBS_gf_MMSlaynAddRegenGlobeLocation (int lp_event, point lp_point1, point lp_point2) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMMBS_gv_mMBattleForSlaynData.lv_eventRegenGlobePoints[lp_event][1] = lp_point1;
+    libMMBS_gv_mMBattleForSlaynData.lv_eventRegenGlobePoints[lp_event][2] = lp_point2;
+}
+
+void libMMBS_gf_MMSlaynAddVoidThrasherTargetOrder (int lp_eventPoint, unit lp_team1AttackTown1, unit lp_team1AttackTown2, unit lp_team1AttackTown3, unit lp_team1AttackTown4, unit lp_team1AttackTown5, unit lp_team1AttackTown6, unit lp_team2AttackTown1, unit lp_team2AttackTown2, unit lp_team2AttackTown3, unit lp_team2AttackTown4, unit lp_team2AttackTown5, unit lp_team2AttackTown6) {
+    // Automatic Variable Declarations
+    // Implementation
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamChaosIndex_C, lp_team1AttackTown1, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamChaosIndex_C, lp_team1AttackTown2, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamChaosIndex_C, lp_team1AttackTown3, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamChaosIndex_C, lp_team1AttackTown4, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamChaosIndex_C, lp_team1AttackTown5, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamChaosIndex_C, lp_team1AttackTown6, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamOrderIndex_C, lp_team2AttackTown1, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamOrderIndex_C, lp_team2AttackTown2, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamOrderIndex_C, lp_team2AttackTown3, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamOrderIndex_C, lp_team2AttackTown4, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamOrderIndex_C, lp_team2AttackTown5, lp_eventPoint);
+    libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown(libGame_gv_teamOrderIndex_C, lp_team2AttackTown6, lp_eventPoint);
+}
+
+void libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown (int lp_attackingTeam, unit lp_town, int lp_eventPoint) {
+    // Variable Declarations
+    int lv_ordersCount;
+    int lv_townIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_townIndex = libGame_gf_TownGetTownForUnit(lp_town);
+
+    // Implementation
+    libMMBS_gv_mMSlaynVoidThrasherTargetTownOrdersCount[lp_attackingTeam][lp_eventPoint] += 1;
+    lv_ordersCount = libMMBS_gv_mMSlaynVoidThrasherTargetTownOrdersCount[lp_attackingTeam][lp_eventPoint];
+    libMMBS_gv_mMSlaynVoidThrasherTargetTownOrders[lp_attackingTeam][lp_eventPoint][lv_ordersCount] = lv_townIndex;
+}
+
+void libMMBS_gf_MMSlaynRandomSpawnPointIndex () {
+    // Variable Declarations
+    int[libMMBS_gv_mMSlaynMaxEventPoints + 1] lv_availableSpawnPointIndex;
+    int lv_availableSpawnPointsCount;
+    int lv_itPointIndex;
+
+    // Automatic Variable Declarations
+    const int auto84145184_ae = libMMBS_gv_mMSlaynMaxEventPoints;
+    const int auto84145184_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libMMBS_gv_mMSlaynEventFirstTime == true)) {
+        libMMBS_gv_mMSlaynLastEventPointIndex1 = 2;
+        libMMBS_gv_mMSlaynEventFirstTime = false;
+    }
+    else {
+        if ((libMMBS_gv_mMSlaynSpawnGroupIndex == libMMBS_gv_mMSlaynMaxEventPoints)) {
+            libMMBS_gv_mMSlaynLastEventPointIndex2 = libMMBS_gv_mMSlaynLastEventPointIndex1;
+            libMMBS_gv_mMSlaynLastEventPointIndex1 = 0;
+            libMMBS_gv_mMSlaynSpawnGroupIndex = 0;
+        }
+
+        lv_itPointIndex = 1;
+        for ( ; ( (auto84145184_ai >= 0 && lv_itPointIndex <= auto84145184_ae) || (auto84145184_ai < 0 && lv_itPointIndex >= auto84145184_ae) ) ; lv_itPointIndex += auto84145184_ai ) {
+            if ((lv_itPointIndex != libMMBS_gv_mMSlaynLastEventPointIndex1) && (lv_itPointIndex != libMMBS_gv_mMSlaynLastEventPointIndex2)) {
+                lv_availableSpawnPointsCount += 1;
+                lv_availableSpawnPointIndex[lv_availableSpawnPointsCount] = lv_itPointIndex;
+            }
+
+        }
+        libMMBS_gv_mMSlaynLastEventPointIndex2 = libMMBS_gv_mMSlaynLastEventPointIndex1;
+        libMMBS_gv_mMSlaynLastEventPointIndex1 = lv_availableSpawnPointIndex[RandomInt(1, lv_availableSpawnPointsCount)];
+    }
+    libMMBS_gv_mMSlaynSpawnGroupIndex += 1;
+}
+
+trigger auto_libMMBS_gf_MMSlaynSpawnMinions_Trigger = null;
+
+void libMMBS_gf_MMSlaynSpawnMinions () {
+    if (auto_libMMBS_gf_MMSlaynSpawnMinions_Trigger == null) {
+        auto_libMMBS_gf_MMSlaynSpawnMinions_Trigger = TriggerCreate("auto_libMMBS_gf_MMSlaynSpawnMinions_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libMMBS_gf_MMSlaynSpawnMinions_Trigger, false, false);
+}
+
+bool auto_libMMBS_gf_MMSlaynSpawnMinions_TriggerFunc (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_repeatTimes;
+
+    // Automatic Variable Declarations
+    int autoCA59E742_n;
+    int autoCA59E742_i;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_repeatTimes = (libMMBS_gv_mMSlaynMaximumMinions_C - UnitGroupCount(libMMBS_gv_mMBattleForSlaynData.lv_unitGroup, c_unitCountAlive));
+    if ((lv_repeatTimes > 0)) {
+        autoCA59E742_n = lv_repeatTimes;
+        for (autoCA59E742_i = 1; autoCA59E742_i <= autoCA59E742_n; autoCA59E742_i += 1) {
+            Wait(0.0, c_timeGame);
+            if ((libMMBS_gv_mMSlaynEventActive == false)) {
+                return true;
+            }
+
+            UnitCreateEffectPoint(libMMBS_gv_mMBattleForSlaynData.lv_voidRift, "SlaynVoidRiftSpawn@LM", RegionRandomPoint(libMMBS_gv_mMBattleForSlaynData.lv_eventRegion[libMMBS_gv_mMSlaynLastEventPointIndex1]));
+        }
+    }
+
+    return true;
+}
+
+void libMMBS_gf_MMSlaynClearMinions () {
+    // Automatic Variable Declarations
+    unitgroup auto7FA59AA4_g;
+    int auto7FA59AA4_u;
+    unit auto7FA59AA4_var;
+
+    // Implementation
+    UnitKill(libMMBS_gv_mMBattleForSlaynData.lv_voidRift);
+    auto7FA59AA4_g = libMMBS_gv_mMBattleForSlaynData.lv_unitGroup;
+    auto7FA59AA4_u = UnitGroupCount(auto7FA59AA4_g, c_unitCountAll);
+    for (;; auto7FA59AA4_u -= 1) {
+        auto7FA59AA4_var = UnitGroupUnitFromEnd(auto7FA59AA4_g, auto7FA59AA4_u);
+        if (auto7FA59AA4_var == null) { break; }
+        UnitKill(auto7FA59AA4_var);
+    }
+    UnitGroupClear(libMMBS_gv_mMBattleForSlaynData.lv_unitGroup);
+}
+
+void libMMBS_gf_MMSlaynSpawnVoidThrasher (int lp_team) {
+    // Automatic Variable Declarations
+    const int autoAD9A2752_ae = libMMBS_gv_mMSlaynRegenGlobeMaxPointsPerEvent;
+    int autoAD9A2752_var;
+
+    // Implementation
+    if ((libCore_gv_sYSEventsEnabled == true) && (libCore_gv_gameOver == false)) {
+    }
+    else {
+        return ;
+    }
+    autoAD9A2752_var = 1;
+    for ( ; autoAD9A2752_var <= autoAD9A2752_ae; autoAD9A2752_var += 1 ) {
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "RegenGlobe", c_unitCreateIgnorePlacement | c_unitCreateIgnoreBirth, libGame_gf_ComputerPlayerInTeam(lp_team), libMMBS_gv_mMBattleForSlaynData.lv_eventRegenGlobePoints[libMMBS_gv_mMSlaynLastEventPointIndex1][autoAD9A2752_var]);
+    }
+    SoundPlayForPlayer(SoundLink("UI_Game_Ping_Shrine_Captured_Ally", -1), c_maxPlayers, libGame_gv_teams[lp_team].lv_teamPlayerGroupNoNPCPlayers, 100.0, 0.0);
+    SoundPlayForPlayer(SoundLink("UI_Game_Ping_Shrine_Captured_Enemy", -1), c_maxPlayers, libGame_gv_teams[libGame_gf_EnemyTeamNumberOfTeam(lp_team)].lv_teamPlayerGroupNoNPCPlayers, 100.0, 0.0);
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(StringExternal("Param/Value/lib_MMBS_6B528391"), Color(100.00, 50.20, 25.10)));
+    Wait(0.125, c_timeGame);
+    libMMBS_gf_MapMechanicsBattleForSlaynSetMode(libMMBS_ge_MapMechanicsBattleForSlaynModes_VoidThrasher);
+    libMMBS_gf_MapMechanicsBattleForSlaynShowShotsForTeam(lp_team);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "Blocker4x4", c_unitCreateIgnorePlacement | c_unitCreateIgnoreBirth, libCore_gv_cOMPUTER_Neutral, libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1]);
+    libMMBS_gv_mMBattleForSlaynData.lv_pathingBlocker = UnitLastCreated();
+    UnitCreate(1, "SlaynVoidThrasher", c_unitCreateIgnorePlacement | c_unitCreateIgnoreBirth, libGame_gv_teams[lp_team].lv_nPCPlayer, libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1], 270.0);
+    libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher = UnitLastCreated();
+    TerrainShowRegion(RegionCircle(UnitGetPosition(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher), 3.0), false);
+    Wait(1.875, c_timeGame);
+    libMMBS_gf_MMSlaynVoidThrasherBehavior();
+}
+
+void libMMBS_gf_MMSlaynEventEnds () {
+    // Variable Declarations
+    int lv_team;
+    int lv_enemyTeam;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_team = libGame_gf_TeamNumberOfPlayer(UnitGetOwner(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher));
+    lv_enemyTeam = libGame_gf_EnemyTeamNumberOfTeam(lv_team);
+    SoundtrackPlay(libGame_gv_teams[lv_team].lv_teamPlayerGroupNoNPCPlayers, c_soundtrackCategoryMusic, "MX_Event_Slayn_VoidThrasher_Ally_End", c_soundtrackCueAny, c_soundtrackIndexAny, false);
+    SoundtrackPlay(libGame_gv_teams[lv_enemyTeam].lv_teamPlayerGroupNoNPCPlayers, c_soundtrackCategoryMusic, "MX_Event_Slayn_VoidThrasher_Enemy_End", c_soundtrackCueAny, c_soundtrackIndexAny, false);
+    libMMBS_gf_MapMechanicsBattleForSlaynShowHidePanel(false);
+    UnitKill(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher);
+    UnitRemove(libMMBS_gv_mMBattleForSlaynData.lv_minimapUnit);
+    UnitRemove(libMMBS_gv_mMBattleForSlaynData.lv_pathingBlocker);
+    libMMBS_gv_mMBattleForSlaynData.lv_minimapUnit = null;
+    VisRevealerDestroy(libMMBS_gv_mMBattleForSlaynData.lv_teamRevealer[libGame_gv_teamOrderIndex_C]);
+    VisRevealerDestroy(libMMBS_gv_mMBattleForSlaynData.lv_teamRevealer[libGame_gv_teamChaosIndex_C]);
+    TerrainShowRegion(RegionCircle(UnitGetPosition(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher), 3.0), true);
+    libMMBS_gf_MMSlaynStartSpawning();
+}
+
+unit libMMBS_gf_MMSlaynNextTarget () {
+    // Variable Declarations
+    int lv_nextTownIndex;
+    int lv_enemyPlayer;
+    int lv_enemyTeam;
+    unitgroup lv_townOuterLoop;
+    unitgroup lv_townInnerLoop;
+    unit lv_townHall;
+    unit lv_enemyCore;
+    int lv_town;
+    unitgroup lv_buildings;
+    unit lv_itBuilding;
+    unit lv_target;
+
+    // Automatic Variable Declarations
+    unitgroup auto0BFAE841_g;
+    int auto0BFAE841_u;
+    unitgroup auto24EE8D68_g;
+    int auto24EE8D68_u;
+
+    // Variable Initialization
+    lv_townOuterLoop = UnitGroupEmpty();
+    lv_townInnerLoop = UnitGroupEmpty();
+    lv_buildings = UnitGroupEmpty();
+
+    // Implementation
+    if ((UnitGetOwner(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher) == libCore_gv_cOMPUTER_TeamChaos)) {
+        lv_enemyPlayer = libCore_gv_cOMPUTER_TeamOrder;
+        lv_enemyCore = libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core;
+    }
+    else {
+        lv_enemyPlayer = libCore_gv_cOMPUTER_TeamChaos;
+        lv_enemyCore = libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core;
+    }
+    lv_enemyTeam = libGame_gf_TeamNumberOfPlayer(lv_enemyPlayer);
+    if ((libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1] > 0)) {
+        lv_town = libMMBS_gv_mMSlaynVoidThrasherTargetTownOrders[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1][libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1]];
+        if ((libMMBS_gf_MMSlaynTownAlive(lv_town, lv_enemyPlayer) == true)) {
+            lv_nextTownIndex = libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1];
+        }
+
+    }
+
+    if ((lv_nextTownIndex <= 0)) {
+        while (true) {
+            if ((libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1] >= libMMBS_gv_mMSlaynVoidThrasherTargetTownOrdersCount[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1])) {
+                break;
+            }
+
+            libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1] += 1;
+            lv_town = libMMBS_gv_mMSlaynVoidThrasherTargetTownOrders[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1][libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1]];
+            if ((libMMBS_gf_MMSlaynTownAlive(lv_town, lv_enemyPlayer) == true)) {
+                lv_nextTownIndex = libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1];
+                break;
+            }
+
+            Wait(0.0, c_timeGame);
+        }
+    }
+
+    if ((lv_nextTownIndex <= 0)) {
+        if ((UnitIsAlive(lv_enemyCore) == true)) {
+            return lv_enemyCore;
+        }
+        else {
+            return null;
+        }
+    }
+
+    lv_town = libMMBS_gv_mMSlaynVoidThrasherTargetTownOrders[lv_enemyTeam][libMMBS_gv_mMSlaynLastEventPointIndex1][lv_nextTownIndex];
+    lv_buildings = UnitGroup(null, lv_enemyPlayer, libGame_gv_townTownData[lv_town].lv_townRegion, UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterBenign - 32))), 0);
+    lv_townHall = libGame_gv_townTownData[lv_town].lv_structureUnits[libGame_gv_townTownData[lv_town].lv_townHallIndex];
+    auto0BFAE841_g = lv_buildings;
+    auto0BFAE841_u = UnitGroupCount(auto0BFAE841_g, c_unitCountAll);
+    for (;; auto0BFAE841_u -= 1) {
+        lv_itBuilding = UnitGroupUnitFromEnd(auto0BFAE841_g, auto0BFAE841_u);
+        if (lv_itBuilding == null) { break; }
+        if ((UnitHasBehavior2(lv_itBuilding, "TownDeadController@DeadBehavior") == true)) {
+            UnitGroupRemove(lv_buildings, lv_itBuilding);
+        }
+
+    }
+    if ((libGame_gf_TownTownHallIsAlive(lv_town) == false)) {
+        UnitGroupRemove(lv_buildings, UnitGroupUnit(libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition("RagnarosBigRag", "", "", c_playerAny, -1, libGame_gv_townTownData[lv_town].lv_townRegion, UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterBenign - 32))), 0), 1));
+        return UnitGroupClosestToPoint(lv_buildings, UnitGetPosition(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher));
+    }
+
+    auto24EE8D68_g = lv_buildings;
+    auto24EE8D68_u = UnitGroupCount(auto24EE8D68_g, c_unitCountAll);
+    for (;; auto24EE8D68_u -= 1) {
+        lv_itBuilding = UnitGroupUnitFromEnd(auto24EE8D68_g, auto24EE8D68_u);
+        if (lv_itBuilding == null) { break; }
+        if (((UnitHasBehavior2(lv_itBuilding, "TownDeadController@GateTower") == true) || (UnitTypeTestFlag(UnitGetType(lv_itBuilding), c_unitFlagTownStructureGate) == true)) && (UnitHasBehavior2(lv_itBuilding, "SlaynVoidThrasherShooting@Target") == false)) {
+            UnitGroupAdd(lv_townOuterLoop, lv_itBuilding);
+        }
+        else {
+            if ((UnitHasBehavior2(lv_itBuilding, "SlaynVoidThrasherShooting@Target") == false)) {
+                UnitGroupAdd(lv_townInnerLoop, lv_itBuilding);
+            }
+
+        }
+    }
+    if ((libNtve_gf_UnitGroupIsDead(lv_townOuterLoop) == false)) {
+        return UnitGroupClosestToPoint(lv_townOuterLoop, UnitGetPosition(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher));
+    }
+
+    if ((libNtve_gf_UnitGroupIsDead(lv_townInnerLoop) == false)) {
+        return UnitGroupClosestToPoint(lv_townInnerLoop, UnitGetPosition(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher));
+    }
+
+    if ((libCore_gf_UnitStoredForUnit(lv_townHall, 99) != null)) {
+        return libCore_gf_UnitStoredForUnit(lv_townHall, 99);
+    }
+    else {
+        return lv_townHall;
+    }
+}
+
+bool libMMBS_gf_MMSlaynTownAlive (int lp_town, int lp_player) {
+    // Variable Declarations
+    unitgroup lv_buildings;
+    unit lv_itBuilding;
+
+    // Automatic Variable Declarations
+    unitgroup auto367E02D4_g;
+    int auto367E02D4_u;
+    playergroup auto58FFDF5A_g;
+    int auto58FFDF5A_var;
+
+    // Variable Initialization
+    lv_buildings = UnitGroupEmpty();
+
+    // Implementation
+    lv_buildings = UnitGroup(null, lp_player, libGame_gv_townTownData[lp_town].lv_townRegion, UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterBenign - 32))), 0);
+    auto367E02D4_g = lv_buildings;
+    auto367E02D4_u = UnitGroupCount(auto367E02D4_g, c_unitCountAll);
+    for (;; auto367E02D4_u -= 1) {
+        lv_itBuilding = UnitGroupUnitFromEnd(auto367E02D4_g, auto367E02D4_u);
+        if (lv_itBuilding == null) { break; }
+        if ((UnitHasBehavior2(lv_itBuilding, "TownDeadController@DeadBehavior") == true)) {
+            UnitGroupRemove(lv_buildings, lv_itBuilding);
+        }
+
+    }
+    if ((UnitGroupHasUnit(lv_buildings, libGame_gf_TownTownHall(lp_town)) == false)) {
+        auto58FFDF5A_g = libGame_gf_PlayersOnTeamHeroes(libGame_gf_TeamNumberOfPlayer(lp_player), false);
+        auto58FFDF5A_var = -1;
+        while (true) {
+            auto58FFDF5A_var = PlayerGroupNextPlayer(auto58FFDF5A_g, auto58FFDF5A_var);
+            if (auto58FFDF5A_var < 0) { break; }
+            UnitGroupAddUnitGroup(lv_buildings, UnitGroup(null, auto58FFDF5A_var, libGame_gv_townTownData[lp_town].lv_townRegion, UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterBenign - 32))), 0));
+        }
+    }
+
+    return !(libNtve_gf_UnitGroupIsDead(lv_buildings));
+}
+
+trigger auto_libMMBS_gf_MMSlaynVoidThrasherBehavior_Trigger = null;
+
+void libMMBS_gf_MMSlaynVoidThrasherBehavior () {
+    if (auto_libMMBS_gf_MMSlaynVoidThrasherBehavior_Trigger == null) {
+        auto_libMMBS_gf_MMSlaynVoidThrasherBehavior_Trigger = TriggerCreate("auto_libMMBS_gf_MMSlaynVoidThrasherBehavior_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libMMBS_gf_MMSlaynVoidThrasherBehavior_Trigger, false, false);
+}
+
+bool auto_libMMBS_gf_MMSlaynVoidThrasherBehavior_TriggerFunc (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_voidThrasherTeam;
+    int lv_enemyTeam;
+    int lv_itPlayer;
+    unit lv_target;
+    int lv_shotsLeftInBarrage;
+    bool lv_needsNewTarget;
+    int lv_nextTeam;
+    int lv_shotsToTheTarget;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_shotsLeftInBarrage = libMMBS_gv_mMShotsPerBarrage_C;
+
+    // Implementation
+    lv_voidThrasherTeam = libGame_gf_TeamNumberOfPlayer(UnitGetOwner(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher));
+    lv_enemyTeam = libGame_gf_EnemyTeamNumberOfTeam(lv_voidThrasherTeam);
+    libMMBS_gv_mMSlaynVoidThrasherTotalAmmo = libMMBS_gv_mMVoidThrasherShootsStocked_C;
+    Wait(3.0, c_timeGame);
+    while (true) {
+        if (((libCore_gv_gameOver == true) || (libMMBS_gv_mMSlaynVoidThrasherTotalAmmo <= 0))) {
+            return true;
+        }
+
+        while ((lv_shotsLeftInBarrage > 0)) {
+            lv_target = libMMBS_gf_MMSlaynNextTarget();
+            lv_needsNewTarget = false;
+            if (((UnitTypeTestFlag(UnitGetType(lv_target), c_unitFlagTownStructureTownHall) == true) || (UnitGetType(lv_target) == "RagnarosBigRag")) && (UnitHasBehavior2(lv_target, "SlaynVoidThrasherShooting@Target") == true)) {
+                lv_shotsLeftInBarrage = 0;
+            }
+
+            while ((lv_needsNewTarget == false) && (lv_shotsLeftInBarrage > 0)) {
+                if ((UnitHasBehavior2(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, "SlaynVoidThrasherShooting@Active") == false)) {
+                    UnitIssueOrder(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, OrderTargetingUnit(AbilityCommand("move", 4), lv_target), c_orderQueueReplace);
+                    UnitBehaviorAdd(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, "SlaynVoidThrasherShooting@Active", libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, 1);
+                    Wait(1.5, c_timeGame);
+                }
+
+                libMMBS_gf_MMSlaynVoidThrasherShooting(lv_target);
+                lv_shotsLeftInBarrage -= 1;
+                libMMBS_gv_mMSlaynVoidThrasherTotalAmmo -= 1;
+                lv_shotsToTheTarget += 1;
+                libMMBS_gf_MapMechanicsBattleForSlaynSetShotCountForTeam(libMMBS_gv_mMSlaynVoidThrasherTotalAmmo, lv_voidThrasherTeam);
+                if (((UnitGetPropertyFixed(lv_target, c_unitPropVitality, c_unitPropCurrent) + UnitBehaviorDamageModifyRemaining(lv_target, null)) <= (StringToFixed(CatalogFieldValueGet(c_gameCatalogEffect, ("SlaynVoidThrasherShooting@Damage"), "Amount", 0)) * IntToFixed(lv_shotsToTheTarget)))) {
+                    lv_needsNewTarget = true;
+                    lv_shotsToTheTarget = 0;
+                    lv_shotsLeftInBarrage = 0;
+                }
+
+                Wait(0.5, c_timeGame);
+            }
+        }
+        if ((UnitHasBehavior2(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, "SlaynVoidThrasherShooting@Active") == true)) {
+            Wait(0.75, c_timeGame);
+            UnitBehaviorRemove(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, "SlaynVoidThrasherShooting@Active", 1);
+        }
+
+        while (!((libMMBS_gv_mMSlaynVoidThrasherShooting == false))) {
+            Wait(0.125, c_timeGame);
+        }
+        lv_shotsLeftInBarrage = libMMBS_gv_mMSlaynVoidThrasherTotalAmmo;
+        if ((libMMBS_gv_mMSlaynVoidThrasherTotalAmmo <= 0)) {
+            libMMBS_gf_MMSlaynEventEnds();
+            return true;
+        }
+
+        Wait(4.0, c_timeGame);
+    }
+    return true;
+}
+
+trigger auto_libMMBS_gf_MMSlaynVoidThrasherShooting_Trigger = null;
+unit auto_libMMBS_gf_MMSlaynVoidThrasherShooting_lp_target;
+
+void libMMBS_gf_MMSlaynVoidThrasherShooting (unit lp_target) {
+    auto_libMMBS_gf_MMSlaynVoidThrasherShooting_lp_target = lp_target;
+
+    if (auto_libMMBS_gf_MMSlaynVoidThrasherShooting_Trigger == null) {
+        auto_libMMBS_gf_MMSlaynVoidThrasherShooting_Trigger = TriggerCreate("auto_libMMBS_gf_MMSlaynVoidThrasherShooting_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libMMBS_gf_MMSlaynVoidThrasherShooting_Trigger, false, false);
+}
+
+bool auto_libMMBS_gf_MMSlaynVoidThrasherShooting_TriggerFunc (bool testConds, bool runActions) {
+    unit lp_target = auto_libMMBS_gf_MMSlaynVoidThrasherShooting_lp_target;
+
+    // Variable Declarations
+    unit lv_missile;
+    int lv_pingTarget;
+    int lv_pingBall;
+    int lv_pingTrail;
+    int lv_localOrderWaitingIndex;
+    int lv_localMissionWaitingIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_pingTarget = c_invalidPingId;
+    lv_pingBall = c_invalidPingId;
+    lv_pingTrail = c_invalidPingId;
+
+    // Implementation
+    if (((UnitHasBehavior2(lp_target, "TownDeadController@DeadBehavior") == true) || (UnitIsAlive(lp_target) == false))) {
+        return true;
+    }
+
+    if ((libMMBS_gv_mMSlaynVoidThrasherMissileTargetPing == c_invalidPingId)) {
+        libCore_gf_CreateMinimapPingCore(PlayerGroupAll(), "StandardGhostShipImpact", UnitGetPosition(lp_target), Color(100.00, 0.00, 0.00), 3.0);
+        libMMBS_gv_mMSlaynVoidThrasherMissileTargetPing = PingLastCreated();
+    }
+
+    while (!((libMMBS_gv_mMSlaynVoidThrasherShooting == false))) {
+        Wait(0.0625, c_timeGame);
+    }
+    libMMBS_gv_mMSlaynVoidThrasherShooting = true;
+    UnitBehaviorAdd(lp_target, "SlaynVoidThrasherShooting@Target", lp_target, 1);
+    UnitIssueOrder(libMMBS_gv_mMBattleForSlaynData.lv_voidThrasher, OrderTargetingUnit(AbilityCommand("SlaynVoidThrasherShooting", 0), lp_target), c_orderQueueReplace);
+    Wait(0.75, c_timeGame);
+    libMMBS_gv_mMSlaynVoidThrasherShooting = false;
+    Wait(1.25, c_timeGame);
+    Wait(2.0, c_timeGame);
+    libMMBS_gv_mMSlaynVoidThrasherMissileTargetPing = c_invalidPingId;
+    return true;
+}
+
+void libMMBS_gf_MMSlaynStartSpawning () {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libCore_gv_sYSEventsEnabled == false)) {
+        return ;
+    }
+
+    if ((GameIsOnline() == true)) {
+        TimerStart(libMMBS_gv_mMSlaynSpawnTimer, libMMBS_gv_mMSlaynSpawnTime_C, false, c_timeGame);
+        TimerStart(libMMBS_gv_mMSlaynWarningTimer, (libMMBS_gv_mMSlaynSpawnTime_C-libMMBS_gv_mMSlaynSpawnWarningTimerTime_C), false, c_timeGame);
+        TimerStart(libMMBS_gv_mMSlaynPingsTimer, (libMMBS_gv_mMSlaynSpawnTime_C-libMMBS_gv_mMSlaynSpawnPingsTimerTime_C), false, c_timeGame);
+    }
+    else {
+        TimerStart(libMMBS_gv_mMSlaynSpawnTimer, 20.0, false, c_timeGame);
+        TimerStart(libMMBS_gv_mMSlaynWarningTimer, 10.0, false, c_timeGame);
+        TimerStart(libMMBS_gv_mMSlaynPingsTimer, 5.0, false, c_timeGame);
+    }
+}
+
+void libMMBS_gf_MapMechanicsBattleForSlaynInit (int lp_parentPanel) {
+    int init_i;
+
+    // Variable Declarations
+    int lv_itTeam;
+    int lv_itShot;
+    int[6] lv_panels;
+    int lv_currentPanelLayer;
+    int lv_enemyTeam;
+
+    // Automatic Variable Declarations
+    const int auto7AB65758_ae = libCore_gv_bALMaxTeams;
+    const int auto7AB65758_ai = 1;
+    const int auto457D938D_ae = libCore_gv_bALMaxTeams;
+    const int auto457D938D_ai = 1;
+    const int auto7CA528F3_ae = libMMBS_gv_mapMechanicsSlaynShotsCount_C;
+    const int auto7CA528F3_ai = 1;
+
+    // Variable Initialization
+    for (init_i = 0; init_i <= 5; init_i += 1) {
+        lv_panels[init_i] = c_invalidDialogControlId;
+    }
+
+    // Implementation
+    DialogControlCreateInPanelFromTemplate(lp_parentPanel, c_triggerControlTypePanel, "BattleForSlayn/BattleForSlaynPanel");
+    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
+    lv_currentPanelLayer += 1;
+    lv_panels[lv_currentPanelLayer] = DialogControlLastCreated();
+    libMMBS_gv_mMSlaynPanel.lv_slaynPanel = DialogControlLastCreated();
+    DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypePanel, "WarningModeFrame");
+    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
+    lv_currentPanelLayer += 1;
+    lv_panels[lv_currentPanelLayer] = DialogControlLastCreated();
+    libMMBS_gv_mMSlaynPanel.lv_slaynWarningModeFrame = DialogControlLastCreated();
+    DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypeLabel, "WarningTimerLabel");
+    libMMBS_gv_mMSlaynPanel.lv_slaynWarningTimerLabel = DialogControlLastCreated();
+    lv_currentPanelLayer -= 1;
+    DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypePanel, "SupplicantsModeFrame");
+    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
+    lv_currentPanelLayer += 1;
+    lv_panels[lv_currentPanelLayer] = DialogControlLastCreated();
+    libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantsModeFrame = DialogControlLastCreated();
+    lv_itTeam = 1;
+    for ( ; ( (auto7AB65758_ai >= 0 && lv_itTeam <= auto7AB65758_ae) || (auto7AB65758_ai < 0 && lv_itTeam >= auto7AB65758_ae) ) ; lv_itTeam += auto7AB65758_ai ) {
+        DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("Team" + IntToString(lv_itTeam) + "SupplicantCounter")));
+        libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantCounterLabel[lv_itTeam] = DialogControlLastCreated();
+    }
+    lv_currentPanelLayer -= 1;
+    DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypePanel, "VoidThrasherModeFrame");
+    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), false);
+    lv_currentPanelLayer += 1;
+    lv_panels[lv_currentPanelLayer] = DialogControlLastCreated();
+    libMMBS_gv_mMSlaynPanel.lv_slaynVoidThrasherModeFrame = DialogControlLastCreated();
+    lv_itTeam = 1;
+    for ( ; ( (auto457D938D_ai >= 0 && lv_itTeam <= auto457D938D_ae) || (auto457D938D_ai < 0 && lv_itTeam >= auto457D938D_ae) ) ; lv_itTeam += auto457D938D_ai ) {
+        DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("Team" + IntToString(lv_itTeam) + "ShotCounter")));
+        libMMBS_gv_mMSlaynPanel.lv_slaynShotCounterLabel[lv_itTeam] = DialogControlLastCreated();
+    }
+    lv_itShot = 1;
+    for ( ; ( (auto7CA528F3_ai >= 0 && lv_itShot <= auto7CA528F3_ae) || (auto7CA528F3_ai < 0 && lv_itShot >= auto7CA528F3_ae) ) ; lv_itShot += auto7CA528F3_ai ) {
+        DialogControlHookup(lv_panels[lv_currentPanelLayer], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("ShotFrame" + IntToString(lv_itShot) + "/ActiveCannonBall")));
+        libMMBS_gv_mMSlaynPanel.lv_slaynShotFrame[lv_itShot] = DialogControlLastCreated();
+    }
+    lv_currentPanelLayer -= 1;
+}
+
+void libMMBS_gf_MapMechanicsBattleForSlaynShowHidePanel (bool lp_showHide) {
+    // Automatic Variable Declarations
+    // Implementation
+    DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynPanel, PlayerGroupAll(), lp_showHide);
+}
+
+void libMMBS_gf_MapMechanicsBattleForSlaynSetMode (int lp_mode) {
+    // Automatic Variable Declarations
+    int auto526A70A9_val;
+
+    // Implementation
+    auto526A70A9_val = lp_mode;
+    if (auto526A70A9_val == libMMBS_ge_MapMechanicsBattleForSlaynModes_Warning) {
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynWarningModeFrame, PlayerGroupAll(), true);
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantsModeFrame, PlayerGroupAll(), false);
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynVoidThrasherModeFrame, PlayerGroupAll(), false);
+    }
+    else if (auto526A70A9_val == libMMBS_ge_MapMechanicsBattleForSlaynModes_Supplicant) {
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynWarningModeFrame, PlayerGroupAll(), false);
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantsModeFrame, PlayerGroupAll(), true);
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynVoidThrasherModeFrame, PlayerGroupAll(), false);
+    }
+    else if (auto526A70A9_val == libMMBS_ge_MapMechanicsBattleForSlaynModes_VoidThrasher) {
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynWarningModeFrame, PlayerGroupAll(), false);
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantsModeFrame, PlayerGroupAll(), false);
+        DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynVoidThrasherModeFrame, PlayerGroupAll(), true);
+    }
+    else {
+    }
+}
+
+void libMMBS_gf_MapMechanicsBattleForSlaynSetRemainingWarningTime (int lp_remainingSeconds) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetDialogItemText(libMMBS_gv_mMSlaynPanel.lv_slaynWarningTimerLabel, TextTimeFormat(StringToText("<mintotal/>:<sec2/>"), lp_remainingSeconds), PlayerGroupAll());
+}
+
+void libMMBS_gf_MapMechanicsBattleForSlaynShowShotsForTeam (int lp_team) {
+    // Variable Declarations
+    int lv_itShot;
+    int lv_enemyTeam;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if (((lp_team <= 0) || (lp_team > libCore_gv_bALMaxTeams))) {
+        return ;
+    }
+
+    lv_enemyTeam = (3 - lp_team);
+    DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynShotCounterLabel[lv_enemyTeam], PlayerGroupAll(), false);
+    DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynShotCounterLabel[lp_team], PlayerGroupAll(), true);
+}
+
+void libMMBS_gf_MapMechanicsBattleForSlaynSetShotCountForTeam (int lp_count, int lp_team) {
+    // Variable Declarations
+    int lv_itShot;
+
+    // Automatic Variable Declarations
+    const int auto8F26D0C7_ae = libMMBS_gv_mapMechanicsSlaynShotsCount_C;
+    const int auto8F26D0C7_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    TextExpressionSetToken("Param/Expression/lib_MMBS_007FD625", "A", IntToText(lp_count));
+    TextExpressionSetToken("Param/Expression/lib_MMBS_007FD625", "B", IntToText(libMMBS_gv_mapMechanicsSlaynShotsCount_C));
+    libNtve_gf_SetDialogItemText(libMMBS_gv_mMSlaynPanel.lv_slaynShotCounterLabel[lp_team], TextExpressionAssemble("Param/Expression/lib_MMBS_007FD625"), PlayerGroupAll());
+    lv_itShot = 1;
+    for ( ; ( (auto8F26D0C7_ai >= 0 && lv_itShot <= auto8F26D0C7_ae) || (auto8F26D0C7_ai < 0 && lv_itShot >= auto8F26D0C7_ae) ) ; lv_itShot += auto8F26D0C7_ai ) {
+        if ((lp_count >= lv_itShot)) {
+            DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynShotFrame[lv_itShot], PlayerGroupAll(), true);
+        }
+        else {
+            DialogControlSetVisible(libMMBS_gv_mMSlaynPanel.lv_slaynShotFrame[lv_itShot], PlayerGroupAll(), false);
+        }
+    }
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #Include MM Battle For Slayn
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_IncludeMMBattleForSlayn_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libMMBS_gt_InitializeSlaynElementalMercType, true, true);
+    TriggerExecute(libMMBS_gt_MapObjectPingData, true, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_IncludeMMBattleForSlayn_Init () {
+    libMMBS_gt_IncludeMMBattleForSlayn = TriggerCreate("libMMBS_gt_IncludeMMBattleForSlayn_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Map Object Ping Data
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MapObjectPingData_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libUIUI_gf_PingCreateNewPingTarget("SlaynVoidRift@Static", false, StringExternal("Param/Value/lib_MMBS_85C0290A"), StringExternal("Param/Value/lib_MMBS_9FA3038B"), StringExternal("Param/Value/lib_MMBS_1B315B66"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MapObjectPingData_Init () {
+    libMMBS_gt_MapObjectPingData = TriggerCreate("libMMBS_gt_MapObjectPingData_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Slayn Elemental Merc Type
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_InitializeSlaynElementalMercType_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_campTypeIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_campTypeIndex = libMapM_gf_JungleCampDefenderTypeIndex(libMapM_ge_JungleCampDefenderTypes_BossCamp2);
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsSoloable = false;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campIsElite = false;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel = StringExternal("Param/Value/lib_MMBS_A703D099");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeMinimapLabel = UnitTypeGetName("MercenarySlaynElemental@Defender");
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_respawnTime = 240.0;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_numberOfCreeps = 1;
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_creepUnitTypes[1] = "MercenarySlaynElemental@Defender";
+    libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_xPAwardForCapture = libCore_gv_data_XP_SlaynElementalCapture_C;
+    libMapM_gf_DataInitializeScalingDataForDefender(lv_campTypeIndex, "MercenarySlaynElemental@ScalingDefender");
+    libUIUI_gf_PingCreateNewPingTarget("MercenarySlaynElemental@Defender", false, libMapM_gv_dataJungleCampDefenderData[lv_campTypeIndex].lv_campTypeNameLabel, StringExternal("Param/Value/lib_MMBS_6D8DC86D"), StringExternal("Param/Value/lib_MMBS_FC8DADD7"), SoundLink("UI_Game_Ping_Attack", -1), SoundLink("UI_Game_Ping_Attack", -1));
+    libUIUI_gf_PingSetHumanAISourceHeroVOForPingTarget(libUIUI_gf_PingLastCreatedPingTarget(), libCore_ge_HeroVOEvents_PingAttackMercCamp, libCore_ge_HeroVOEvents_AIMercCapture);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_InitializeSlaynElementalMercType_Init () {
+    libMMBS_gt_InitializeSlaynElementalMercType = TriggerCreate("libMMBS_gt_InitializeSlaynElementalMercType_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Timer Pings
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynTimerPings_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSEventsEnabled == true))) {
+            return false;
+        }
+
+        if (!((libCore_gv_gameOver == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMMBS_gf_MMSlaynRandomSpawnPointIndex();
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "JungleObjectiveThrasherIcon", c_unitCreateIgnorePlacement, libCore_gv_cOMPUTER_Neutral, libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1]);
+    libMMBS_gv_mMBattleForSlaynData.lv_minimapUnit = UnitLastCreated();
+    libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[libGame_gv_teamOrderIndex_C] = 0;
+    libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[libGame_gv_teamChaosIndex_C] = 0;
+    TextExpressionSetToken("Param/Expression/lib_MMBS_0C78B589", "A", IntToText(libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[libGame_gv_teamOrderIndex_C]));
+    TextExpressionSetToken("Param/Expression/lib_MMBS_0C78B589", "B", IntToText(libMMBS_gv_mMSlaynRequiredKilledMinions_C));
+    libNtve_gf_SetDialogItemText(libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantCounterLabel[libGame_gv_teamOrderIndex_C], TextExpressionAssemble("Param/Expression/lib_MMBS_0C78B589"), PlayerGroupAll());
+    TextExpressionSetToken("Param/Expression/lib_MMBS_81B1BA76", "A", IntToText(libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[libGame_gv_teamChaosIndex_C]));
+    TextExpressionSetToken("Param/Expression/lib_MMBS_81B1BA76", "B", IntToText(libMMBS_gv_mMSlaynRequiredKilledMinions_C));
+    libNtve_gf_SetDialogItemText(libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantCounterLabel[libGame_gv_teamChaosIndex_C], TextExpressionAssemble("Param/Expression/lib_MMBS_81B1BA76"), PlayerGroupAll());
+    libMMBS_gf_MapMechanicsBattleForSlaynSetShotCountForTeam(libMMBS_gv_mapMechanicsSlaynShotsCount_C, libGame_gv_teamOrderIndex_C);
+    libMMBS_gf_MapMechanicsBattleForSlaynSetShotCountForTeam(libMMBS_gv_mapMechanicsSlaynShotsCount_C, libGame_gv_teamChaosIndex_C);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynTimerPings_Init () {
+    libMMBS_gt_MMSlaynTimerPings = TriggerCreate("libMMBS_gt_MMSlaynTimerPings_Func");
+    TriggerAddEventTimer(libMMBS_gt_MMSlaynTimerPings, libMMBS_gv_mMSlaynPingsTimer);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Timer Warning
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynTimerWarning_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_ping;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_ping = c_invalidPingId;
+
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSEventsEnabled == true))) {
+            return false;
+        }
+
+        if (!((libCore_gv_gameOver == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMMBS_gf_MapMechanicsBattleForSlaynShowHidePanel(true);
+    libMMBS_gf_MapMechanicsBattleForSlaynSetMode(libMMBS_ge_MapMechanicsBattleForSlaynModes_Warning);
+    libCore_gf_CreateMinimapPingCore(PlayerGroupAll(), "CorePingMapMechanic", libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1], ColorWithAlpha(0,0,0,0), 0);
+    lv_ping = PingLastCreated();
+    SoundPlayForPlayer(SoundLink("MX_Event_Slayn_VoidRift_Spawn", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    if ((libMMBS_gv_mMSlaynLastEventPointIndex1 == 1)) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(StringExternal("Param/Value/lib_MMBS_D8F9550B"), Color(100.00, 50.20, 25.10)));
+        SoundPlayForPlayer(SoundLink("UI_Game_Ping_VoidThrasher_Spawn_Top", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    }
+    else if ((libMMBS_gv_mMSlaynLastEventPointIndex1 == 2)) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(StringExternal("Param/Value/lib_MMBS_C5756119"), Color(100.00, 50.20, 25.10)));
+        SoundPlayForPlayer(SoundLink("UI_Game_Ping_VoidThrasher_Spawn_Mid", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    }
+    else if ((libMMBS_gv_mMSlaynLastEventPointIndex1 == 3)) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(StringExternal("Param/Value/lib_MMBS_8B83121E"), Color(100.00, 50.20, 25.10)));
+        SoundPlayForPlayer(SoundLink("UI_Game_Ping_VoidThrasher_Spawn_Bot", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    }
+    while ((TimerGetRemaining(libMMBS_gv_mMSlaynSpawnTimer) > 0.0)) {
+        libMMBS_gf_MapMechanicsBattleForSlaynSetRemainingWarningTime(FixedToInt(TimerGetRemaining(libMMBS_gv_mMSlaynSpawnTimer)));
+        if ((TimerGetRemaining(libMMBS_gv_mMSlaynSpawnTimer) == 6.0)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "SlaynVoidRift@Static", c_unitCreateIgnorePlacement | c_unitCreateIgnoreBirth, libCore_gv_cOMPUTER_Neutral, libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1]);
+            libMMBS_gv_mMBattleForSlaynData.lv_voidRift = UnitLastCreated();
+        }
+
+        Wait(0.0625, c_timeGame);
+    }
+    PingDestroy(lv_ping);
+    libNtve_gf_SendActorMessageToUnit(libMMBS_gv_mMBattleForSlaynData.lv_minimapUnit, "MinimapIconTintColor 255,255,232,121");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynTimerWarning_Init () {
+    libMMBS_gt_MMSlaynTimerWarning = TriggerCreate("libMMBS_gt_MMSlaynTimerWarning_Func");
+    TriggerAddEventTimer(libMMBS_gt_MMSlaynTimerWarning, libMMBS_gv_mMSlaynWarningTimer);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Timer Spawn
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynTimerSpawn_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itTeam;
+    unit lv_itUnit;
+
+    // Automatic Variable Declarations
+    const int auto366F7F2F_ae = libCore_gv_bALMaxTeams;
+    const int auto366F7F2F_ai = 1;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSEventsEnabled == true))) {
+            return false;
+        }
+
+        if (!((libCore_gv_gameOver == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMMBS_gf_MapMechanicsBattleForSlaynSetMode(libMMBS_ge_MapMechanicsBattleForSlaynModes_Supplicant);
+    TextExpressionSetToken("Param/Expression/lib_MMBS_F1F7F0BA", "A", IntToText(libMMBS_gv_mMSlaynRequiredKilledMinions_C));
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(TextExpressionAssemble("Param/Expression/lib_MMBS_F1F7F0BA"), Color(100.00, 50.20, 25.10)));
+    libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), "CorePingGeneral", libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1], Color(100.00, 100.00, 100.00), 3.0, 270.0);
+    if ((libMMBS_gv_mMSlaynLastEventPointIndex1 == 1)) {
+        SoundPlayForPlayer(SoundLink("UI_Game_Ping_VoidThrasher_Spawn_Top", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    }
+    else if ((libMMBS_gv_mMSlaynLastEventPointIndex1 == 2)) {
+        SoundPlayForPlayer(SoundLink("UI_Game_Ping_VoidThrasher_Spawn_Mid", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    }
+    else if ((libMMBS_gv_mMSlaynLastEventPointIndex1 == 3)) {
+        SoundPlayForPlayer(SoundLink("UI_Game_Ping_VoidThrasher_Spawn_Bot", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    }
+    TriggerEnable(libMMBS_gt_MMSlaynMinionsDies, true);
+    libMMBS_gv_mMSlaynEventActive = true;
+    lv_itTeam = 1;
+    for ( ; ( (auto366F7F2F_ai >= 0 && lv_itTeam <= auto366F7F2F_ae) || (auto366F7F2F_ai < 0 && lv_itTeam >= auto366F7F2F_ae) ) ; lv_itTeam += auto366F7F2F_ai ) {
+        VisRevealerCreate(libGame_gf_ComputerPlayerInTeam(lv_itTeam), RegionCircle(libMMBS_gv_mMBattleForSlaynData.lv_eventPoint[libMMBS_gv_mMSlaynLastEventPointIndex1], 6.5));
+        libMMBS_gv_mMBattleForSlaynData.lv_teamRevealer[lv_itTeam] = VisRevealerLastCreated();
+    }
+    while ((libMMBS_gv_mMSlaynEventActive == true)) {
+        libMMBS_gf_MMSlaynSpawnMinions();
+        Wait(libMMBS_gv_mMSlaynMonstersSpawnTime, c_timeGame);
+    }
+    TriggerEnable(libMMBS_gt_MMSlaynMinionsDies, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynTimerSpawn_Init () {
+    libMMBS_gt_MMSlaynTimerSpawn = TriggerCreate("libMMBS_gt_MMSlaynTimerSpawn_Func");
+    TriggerAddEventTimer(libMMBS_gt_MMSlaynTimerSpawn, libMMBS_gv_mMSlaynSpawnTimer);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Minions Dies
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynMinionsDies_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_team;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSEventsEnabled == true))) {
+            return false;
+        }
+
+        if (!((libCore_gv_gameOver == false))) {
+            return false;
+        }
+
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+
+        if (!((libGame_gf_PlayerIsHeroPlayer(libNtve_gf_KillingPlayer()) == true))) {
+            return false;
+        }
+
+        if (!((UnitGroupHasUnit(libMMBS_gv_mMBattleForSlaynData.lv_unitGroup, EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_team = libGame_gf_TeamNumberOfPlayer(libNtve_gf_KillingPlayer());
+    libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[lv_team] += 1;
+    TextExpressionSetToken("Param/Expression/lib_MMBS_8B647587", "A", IntToText(libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[lv_team]));
+    TextExpressionSetToken("Param/Expression/lib_MMBS_8B647587", "B", IntToText(libMMBS_gv_mMSlaynRequiredKilledMinions_C));
+    libNtve_gf_SetDialogItemText(libMMBS_gv_mMSlaynPanel.lv_slaynSupplicantCounterLabel[lv_team], TextExpressionAssemble("Param/Expression/lib_MMBS_8B647587"), PlayerGroupAll());
+    if ((libMMBS_gv_mMBattleForSlaynData.lv_teamKilledMinions[lv_team] >= libMMBS_gv_mMSlaynRequiredKilledMinions_C)) {
+        TriggerEnable(TriggerGetCurrent(), false);
+        libMMBS_gv_mMSlaynEventActive = false;
+        libMMBS_gf_MMSlaynClearMinions();
+        libMMBS_gf_MMSlaynSpawnVoidThrasher(lv_team);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynMinionsDies_Init () {
+    libMMBS_gt_MMSlaynMinionsDies = TriggerCreate("libMMBS_gt_MMSlaynMinionsDies_Func");
+    TriggerEnable(libMMBS_gt_MMSlaynMinionsDies, false);
+    TriggerAddEventUnitDied(libMMBS_gt_MMSlaynMinionsDies, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Spawn Minions
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynSpawnMinions_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSEventsEnabled == true))) {
+            return false;
+        }
+
+        if (!((libCore_gv_gameOver == false))) {
+            return false;
+        }
+
+        if (!((libMMBS_gv_mMSlaynEventActive == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitCreate(1, "SlaynSupplicant", c_unitCreateIgnorePlacement | c_unitCreateIgnoreBirth, libCore_gv_cOMPUTER_Hostile, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), libNtve_gf_RandomAngle());
+    UnitGroupAdd(libMMBS_gv_mMBattleForSlaynData.lv_unitGroup, UnitLastCreated());
+    UnitCreateEffectUnit(UnitLastCreated(), "SlaynVoidRiftSpawn@DummyVisualSet", UnitLastCreated());
+    libGame_gf_UpdateScalingForUnit(UnitLastCreated(), libGame_gv_scalingTicks, 0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynSpawnMinions_Init () {
+    libMMBS_gt_MMSlaynSpawnMinions = TriggerCreate("libMMBS_gt_MMSlaynSpawnMinions_Func");
+    TriggerAddEventPlayerEffectUsed(libMMBS_gt_MMSlaynSpawnMinions, c_playerAny, "SlaynVoidRiftSpawn@ImpactSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Void Thrasher Missiles
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynVoidThrasherMissiles_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_missile;
+    int lv_pingBall;
+    int lv_pingTrail;
+    point lv_missilePosition;
+    sound lv_ballLoopingSound;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_pingBall = c_invalidPingId;
+    lv_pingTrail = c_invalidPingId;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_missile = EventUnit();
+    Wait(0.125, c_timeGame);
+    libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), "KaiserWormScourgeMissile", UnitGetPosition(lv_missile), ColorWithAlpha(100.00, 100.00, 100.00, 0.00), 0.0, UnitGetFacing(lv_missile));
+    lv_pingBall = PingLastCreated();
+    PingSetUnit(lv_pingBall, lv_missile);
+    PingSetScale(lv_pingBall, 0.05);
+    Wait(0.125, c_timeGame);
+    while (true) {
+        if ((UnitIsAlive(lv_missile) == false)) {
+            PingDestroy(lv_pingBall);
+            return true;
+        }
+
+        lv_missilePosition = UnitGetPosition(lv_missile);
+        Wait(0.0625, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynVoidThrasherMissiles_Init () {
+    libMMBS_gt_MMSlaynVoidThrasherMissiles = TriggerCreate("libMMBS_gt_MMSlaynVoidThrasherMissiles_Func");
+    TriggerAddEventUnitBehaviorChange(libMMBS_gt_MMSlaynVoidThrasherMissiles, null, "SlaynVoidThrasherShooting@Missile", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Void Thrasher Shooting Missile Created
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynVoidThrasherShootingMissileCreated_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynVoidThrasherShootingMissileCreated_Init () {
+    libMMBS_gt_MMSlaynVoidThrasherShootingMissileCreated = TriggerCreate("libMMBS_gt_MMSlaynVoidThrasherShootingMissileCreated_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MM Slayn Start Spawning
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MMSlaynStartSpawning_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_sYSEventsEnabled == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMMBS_gf_MMSlaynStartSpawning();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MMSlaynStartSpawning_Init () {
+    libMMBS_gt_MMSlaynStartSpawning = TriggerCreate("libMMBS_gt_MMSlaynStartSpawning_Func");
+    TriggerAddEventTimer(libMMBS_gt_MMSlaynStartSpawning, libGame_gv_openTheGatesTimer);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Map Mechanics Battle For Slayn UI Initialize
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_gt_MapMechanicsBattleForSlaynUIInitialize_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMMBS_gf_MapMechanicsBattleForSlaynInit(libUIUI_gv_mapMechanicsPanel.lv_mainPanel);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMMBS_gt_MapMechanicsBattleForSlaynUIInitialize_Init () {
+    libMMBS_gt_MapMechanicsBattleForSlaynUIInitialize = TriggerCreate("libMMBS_gt_MapMechanicsBattleForSlaynUIInitialize_Func");
+}
+
+void libMMBS_InitTriggers () {
+    libMMBS_gt_IncludeMMBattleForSlayn_Init();
+    libMMBS_gt_MapObjectPingData_Init();
+    libMMBS_gt_InitializeSlaynElementalMercType_Init();
+    libMMBS_gt_MMSlaynTimerPings_Init();
+    libMMBS_gt_MMSlaynTimerWarning_Init();
+    libMMBS_gt_MMSlaynTimerSpawn_Init();
+    libMMBS_gt_MMSlaynMinionsDies_Init();
+    libMMBS_gt_MMSlaynSpawnMinions_Init();
+    libMMBS_gt_MMSlaynVoidThrasherMissiles_Init();
+    libMMBS_gt_MMSlaynVoidThrasherShootingMissileCreated_Init();
+    libMMBS_gt_MMSlaynStartSpawning_Init();
+    libMMBS_gt_MapMechanicsBattleForSlaynUIInitialize_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libMMBS_InitLib_completed = false;
+
+void libMMBS_InitLib () {
+    if (libMMBS_InitLib_completed) {
+        return;
+    }
+
+    libMMBS_InitLib_completed = true;
+
+    libMMBS_InitLibraries();
+    libMMBS_InitVariables();
+    libMMBS_InitTriggers();
+}
+

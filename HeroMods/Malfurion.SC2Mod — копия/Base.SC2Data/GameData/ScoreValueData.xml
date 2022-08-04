@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CScoreValueCustom id="Malfurion_Regrowth_NaturesBlessing" parent="QuestScoreValue">
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+</Catalog>

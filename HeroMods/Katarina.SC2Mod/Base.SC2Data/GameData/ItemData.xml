@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CItemAbil id="HeroKatarinaEquipAutorifle">
+        <Class value="Item"/>
+        <Requirements value="HeroKatarinaEquipAutorifle"/>
+    </CItemAbil>
+    <CItemAbil id="HeroKatarinaEquipGrenadeLauncher">
+        <Class value="Item"/>
+        <Requirements value="HeroKatarinaEquipGrenadeLauncher"/>
+    </CItemAbil>
+    <CItemAbil id="HeroKatarinaEquipSnipe">
+        <Class value="Item"/>
+        <Requirements value="HeroKatarinaEquipSnipe"/>
+    </CItemAbil>
+    <CItemAbil id="HeroKatarinaEquipFlamethrower">
+        <Class value="Item"/>
+        <Requirements value="HeroKatarinaEquipFlamethrower"/>
+    </CItemAbil>
+</Catalog>

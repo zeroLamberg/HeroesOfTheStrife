@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="MercenaryColossusFireBeam@ApplyArmorReduction">
+        <ValidatorArray value="TargetNotStructure"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryColossusFireBeam@ArmorReduction"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="MercenaryColossusWeapon@ApplyTurretDisabler">
+        <EditorCategories value="Race:Neutral,StandardHero:Mercenaries"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MercenaryColossusWeapon@TurretDisabler"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="MercenaryColossusWeapon@RemoveTurretDisabler">
+        <EditorCategories value="Race:Neutral,StandardHero:Mercenaries"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="MercenaryColossusWeapon@TurretDisabler"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="MinionProtossCatapultWeapon@ImpactSearch">
+        <EditorCategories value="StandardHero:Minions"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1" Effect="MinionProtossCatapultWeapon@Damage"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="MinionProtossCatapultWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AttributeFactor index="Structure" value="1"/>
+        <Visibility value="Snapshot"/>
+        <Amount value="60"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MinionProtossCatapultWeapon@CP">
+        <ValidatorArray value="CasterNotDead"/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <InitialDelay value="0.25"/>
+        <InitialEffect value="MinionProtossCatapultWeapon@LM"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="1.25"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="MinionProtossCatapultWeapon@LM">
+        <EditorCategories value="StandardHero:Minions"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="MinionProtossCatapultWeapon@ImpactSearch"/>
+        <AmmoUnit value="MinionProtossCatapultWeapon@AttackMissile"/>
+        <ImpactRange value="1"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="MinionProtossWizardWeapon@ImpactSet">
+        <EditorCategories value="StandardHero:Minions"/>
+        <EffectArray value="MinionProtossWizardWeapon@Damage"/>
+    </CEffectSet>
+    <CEffectDamage id="MinionProtossWizardWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AttributeFactor index="Biological" value="1"/>
+        <AttributeFactor index="Robotic" value="1"/>
+        <AttributeFactor index="Structure" value="1"/>
+        <AttributeFactor index="User1" value="1"/>
+        <Amount value="17"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="MinionProtossWizardWeapon@LM">
+        <EditorCategories value="StandardHero:Minions"/>
+        <ImpactEffect value="MinionProtossWizardWeapon@ImpactSet"/>
+        <AmmoUnit value="MinionProtossWizardWeapon@AttackMissile"/>
+        <Movers Link="HighTemplarWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="MinionProtossRangedWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AttributeFactor index="Biological" value="0.8"/>
+        <AttributeFactor index="Robotic" value="0.8"/>
+        <AttributeFactor index="Structure" value="2"/>
+        <AttributeFactor index="User1" value="0.8"/>
+        <Amount value="40"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="MinionProtossRangedWeapon@LaunchMissile">
+        <EditorCategories value="StandardHero:Minions"/>
+        <ImpactEffect value="MinionProtossRangedWeapon@Damage"/>
+        <AmmoUnit value="MinionProtossRangedWeapon@AttackMissile"/>
+        <Movers Link="MinionProtossRangedWeapon@Mover"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="MinionProtossMeleeWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AttributeFactor index="Biological" value="-0.75"/>
+        <AttributeFactor index="Robotic" value="-0.75"/>
+        <AttributeFactor index="Structure" value="2"/>
+        <AttributeFactor index="User1" value="-0.75"/>
+        <Amount value="20"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MercenaryColossusChargedBlast@PrepareEffect">
+        <EditorCategories value="Race:Neutral,StandardHero:Mercenaries"/>
+        <InitialEffect value="MercenaryColossusChargedBlast@LockTurret"/>
+        <ExpireDelay value="1.5"/>
+        <PeriodicPeriodArray value="1.5"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="MercenaryColossusFireBeam@PersistentRing2">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Marker Duration="0.5">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterUnit"/>
+        <OffsetVectorStartLocation Value="CasterUnit"/>
+        <OffsetVectorEndLocation Effect="MercenaryColossusFireBeam@StartPersistent"/>
+        <InitialEffect value="MercenaryColossusFireBeam@BeamCreateUnit"/>
+        <InitialOffset value="0,-5.75,0"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="MercenaryColossusFireBeam@PersistentRing3">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Marker Duration="0.5">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterUnit"/>
+        <OffsetVectorStartLocation Value="CasterUnit"/>
+        <OffsetVectorEndLocation Effect="MercenaryColossusFireBeam@StartPersistent"/>
+        <InitialEffect value="MercenaryColossusFireBeam@BeamCreateUnit"/>
+        <InitialOffset value="0,-4.5,0"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="1.5"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="MercenaryColossusFireBeam@StartPersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Marker Duration="0.5">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterPoint"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="MercenaryColossusFireBeam@PersistentRing1"/>
+        <PeriodicEffectArray value="MercenaryColossusFireBeam@PersistentRing2"/>
+        <PeriodicEffectArray value="MercenaryColossusFireBeam@PersistentRing3"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="1.5625"/>
+        <PeriodicPeriodArray value="1.5625"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodicValidator value="SourceHasnotJungleSoftLeashing"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="MercenaryColossusFireBeam@InitialSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusFireBeam@StartPersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="MercenaryColossusFireBeam@SetFacing">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Turret="MercenaryColossus@Turret">
+            <Target Value="TargetUnit"/>
+            <Flags index="Tracking" value="1"/>
+            <Flags index="ClearTargetOnAimComplete" value="1"/>
+        </ModifyTurret>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="MercenaryColossusFireBeam@ApplyMarkerBehavior">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryColossusFireBeam@MarkerBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="MercenaryColossusFireBeam@BeamDamage" parent="CoreSpellDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <AttributeFactor index="Biological" value="1"/>
+        <Amount value="140"/>
+    </CEffectDamage>
+    <CEffectSet id="MercenaryColossusFireBeam@BeamImpactSet">
+        <ValidatorArray value="MercenaryColossusFireBeam@HasNoMarker"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusFireBeam@ApplyMarkerBehavior"/>
+        <EffectArray value="MercenaryColossusFireBeam@BeamDamage"/>
+    </CEffectSet>
+    <CEffectEnumArea id="MercenaryColossusFireBeam@GroundFirePeriodicSearchArea">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.75" Effect="MercenaryColossusFireBeam@GroundFirePeriodicImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="MercenaryColossusFireBeam@BeamSearchArea">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.75" Effect="MercenaryColossusFireBeam@BeamImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="MercenaryColossusFireBeam@GroundFirePeriodicImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusFireBeam@GroundFirePeriodicDamage"/>
+        <EffectArray value="MercenaryColossusFireBeam@ApplyArmorReduction"/>
+    </CEffectSet>
+    <CEffectDamage id="MercenaryColossusFireBeam@GroundFirePeriodicDamage" parent="CoreSpellDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <AttributeFactor index="Biological" value="1"/>
+        <Amount value="25"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MercenaryColossusFireBeam@GroundFirePersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="SourcePoint"/>
+        <InitialEffect value="MercenaryColossusFireBeam@BeamSearchArea"/>
+        <PeriodCount value="24"/>
+        <PeriodicEffectArray value="MercenaryColossusFireBeam@GroundFirePeriodicSearchArea"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="MercenaryColossusWeapon@ApplyMarker">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="Mercenary_Colossus_ThermalLances_Marker"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveKinetic id="MercenaryColossusFireBeam@RemoveRotateKinetic">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <KineticLink value="MercenaryColossusFireBeam@RotateKinetic"/>
+    </CEffectRemoveKinetic>
+    <CEffectApplyBehavior id="MercenaryColossusChargedBlast@ApplyDebuff">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryColossusChargedBlast@Debuff"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="MercenaryColossusFireBeam@FinalSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusFireBeam@ClearTurret"/>
+        <EffectArray value="MercenaryColossusFireBeam@RemoveRotateKinetic"/>
+        <EffectArray value="MercenaryColossusFireBeam@RemoveFollowKinetic"/>
+        <EffectArray value="TimedLifeFate"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="MercenaryColossusFireBeam@ClearTurret">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Action="ClearTarget" Turret="MercenaryColossus@Turret"/>
+    </CEffectModifyUnit>
+    <CEffectRemoveKinetic id="MercenaryColossusFireBeam@RemoveFollowKinetic">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <KineticLink value="MercenaryColossusFireBeam@FollowCasterKinetic"/>
+    </CEffectRemoveKinetic>
+    <CEffectModifyUnit id="MercenaryColossusFireBeam@LockTurret">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Turret="MercenaryColossus@Turret">
+            <Target Value="TargetUnit"/>
+            <Flags index="Tracking" value="1"/>
+        </ModifyTurret>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="MercenaryColossusFireBeam@BeamApplyTimedLifeBehavior">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryColossusFireBeam@BeamUnitTimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="Mercenary_Colossus_ChargedBlast_RemoveWarningUnit">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ModifyFlags index="Remove" value="1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="MercenaryColossusChargedBlast@LockTurret">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Turret="MercenaryColossus@Turret">
+            <Target Value="TargetPoint"/>
+            <Flags index="Tracking" value="1"/>
+            <Flags index="ClearTargetOnAimComplete" value="1"/>
+        </ModifyTurret>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="Mercenary_Colossus_ChargedBlast_ClearTurret">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Action="ClearTarget" Turret="MercenaryColossus@Turret"/>
+    </CEffectModifyUnit>
+    <CEffectCreatePersistent id="Mercenary_Colossus_ChargedBlast_TimedLifePersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="MercenaryColossusChargedBlast@LockTurret"/>
+        <ExpireEffect value="Mercenary_Colossus_ChargedBlast_RemoveWarningUnit"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="Mercenary_Colossus_ChargedBlast_ClearTurret"/>
+        <PeriodicPeriodArray value="1.5"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateUnit id="Mercenary_Colossus_ChargedBlast_CreateWarningUnit">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <SpawnEffect value="Mercenary_Colossus_ChargedBlast_TimedLifePersistent"/>
+        <SpawnUnit value="Mercenary_Colossus_ChargedBlast_WarningUnit"/>
+    </CEffectCreateUnit>
+    <CEffectDamage id="MercenaryColossusChargedBlast@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AttributeFactor index="Biological" value="1"/>
+        <Amount value="300"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="MercenaryColossusChargedBlast@LM">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="MercenaryColossusChargedBlast@Search"/>
+        <AmmoUnit value="MercenaryColossusChargedBlast@Weapon"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="MercenaryColossusWeapon@InitialSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusWeapon@ForwardPersistent"/>
+        <EffectArray value="MercenaryColossusWeapon@ReversePersistent"/>
+        <EffectArray value="MercenaryColossusWeapon@GroundFirePlacementCP"/>
+        <EffectArray value="MercenaryColossusWeapon@ApplyTurretDisabler"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+    </CEffectSet>
+    <CEffectDamage id="MercenaryColossusWeapon@Damage" parent="CorePhysicalDamage">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="140"/>
+        <DamageInheritEffect value="MercenaryColossusWeapon@ApplyMarker"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MercenaryColossusWeapon@DamageDelay">
+        <Name value="Effect/Name/MercenaryColossusWeapon@DamageDelay2"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.25"/>
+        <FinalEffect value="MercenaryColossusWeapon@Damage"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="MercenaryColossusWeapon@ForwardPersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.375"/>
+        <ExpireEffect value="MercenaryColossusWeapon@Damage"/>
+        <PeriodCount value="11"/>
+        <PeriodicEffectArray value="MercenaryColossusWeapon@ForwardSearch"/>
+        <PeriodicOffsetArray value="-1.25,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="1.25,0,0"/>
+        <PeriodicPeriodArray value="0.0312"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="MercenaryColossusFireBeam@ApplyRotatorDelayBehavior">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryColossusFireBeam@RotatorDelayBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="MercenaryColossusWeapon@ReversePersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.375"/>
+        <ExpireEffect value="MercenaryColossusWeapon@Damage"/>
+        <PeriodCount value="11"/>
+        <PeriodicEffectArray value="MercenaryColossusWeapon@ReverseSearch"/>
+        <PeriodicOffsetArray value="1.25,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-1.25,0,0"/>
+        <PeriodicPeriodArray value="0.0312"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyKinetic id="MercenaryColossusFireBeam@ApplyKineticRotator">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Kinetic value="MercenaryColossusFireBeam@RotateKinetic"/>
+    </CEffectApplyKinetic>
+    <CEffectEnumArea id="MercenaryColossusChargedBlast@Search">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="MercenaryColossusChargedBlast@ImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="MercenaryColossusChargedBlast@ImpactSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusChargedBlast@Damage"/>
+        <EffectArray value="MercenaryColossusChargedBlast@ApplyDebuff"/>
+    </CEffectSet>
+    <CEffectApplyKinetic id="MercenaryColossusFireBeam@ApplyKineticFollow">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Kinetic value="MercenaryColossusFireBeam@FollowCasterKinetic"/>
+    </CEffectApplyKinetic>
+    <CEffectCreatePersistent id="MercenaryColossusFireBeam@PersistentRing1">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Marker Duration="0.5">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterUnit"/>
+        <OffsetVectorStartLocation Value="CasterUnit"/>
+        <OffsetVectorEndLocation Effect="MercenaryColossusFireBeam@StartPersistent"/>
+        <InitialEffect value="MercenaryColossusFireBeam@BeamCreateUnit"/>
+        <InitialOffset value="0,-7,0"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateUnit id="MercenaryColossusFireBeam@BeamCreateUnit">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="TargetPoint"/>
+        <Origin Value="TargetPoint"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnEffect value="MercenaryColossusFireBeam@BeamSpawnSet"/>
+        <SpawnUnit value="MercenaryColossusFireBeam@BeamTargetUnit"/>
+    </CEffectCreateUnit>
+    <CEffectEnumArea id="MercenaryColossusWeapon@ForwardSearch">
+        <Name value="Effect/Name/MercenaryColossusWeapon@ForwardSearch2"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Player,Ally,Neutral,NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="MercenaryColossusWeapon@DamageDelay"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="MercenaryColossusFireBeam@BeamSpawnSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryColossusFireBeam@BeamApplyTimedLifeBehavior"/>
+        <EffectArray value="MercenaryColossusFireBeam@LockTurret"/>
+        <EffectArray value="MercenaryColossusFireBeam@ApplyRotatorDelayBehavior"/>
+    </CEffectSet>
+    <CEffectEnumArea id="MercenaryColossusWeapon@ReverseSearch">
+        <Name value="Effect/Name/MercenaryColossusWeapon@ReverseSearch2"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Player,Ally,Neutral,NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="MercenaryColossusWeapon@DamageDelay"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="MercenaryColossusWeapon@GroundFirePlacementCP">
+        <Name value="Effect/Name/MercenaryColossusWeapon@GroundFirePlacementCP2"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <ExpireDelay value="0.375"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="MercenaryColossusWeapon@GroundFireCP"/>
+        <PeriodicOffsetArray value="-1.5,0,0"/>
+        <PeriodicOffsetArray value="1.5,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="MercenaryColossusWeapon@GroundFireApplyDamageBehavior">
+        <ValidatorArray value="Mercenary_Colossus_ThermalLances_TargetHasNoBehavior"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryColossusWeapon@GroundFireDamageBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="MercenaryColossusWeapon@GroundFireCP">
+        <Name value="Effect/Name/MercenaryColossusWeapon@GroundFireCP2"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="MercenaryColossusWeapon@GroundFireSearch"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="MercenaryColossusWeapon@GroundFireDamage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="MercenaryColossusWeapon@GroundFireSearch">
+        <Name value="Effect/Name/MercenaryColossusWeapon@GroundFireSearch2"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.5" Effect="MercenaryColossusWeapon@GroundFireApplyDamageBehavior"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="MercenaryHybridReaverWeapon@ApplyArmorReduction">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryHybridReaverWeapon@ArmorReduced"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="MercenaryHybridDominatorWeapon@DamageLaner" parent="CorePhysicalDamage">
+        <ValidatorArray value="SourceIsMercenary"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AttributeFactor index="Biological" value="1"/>
+        <AttributeFactor index="Structure" value="1"/>
+        <Amount value="65"/>
+    </CEffectDamage>
+    <CEffectDamage id="MercenaryHybridReaverWeapon@DamageDefender" parent="CorePhysicalDamage">
+        <ValidatorArray value="SourceIsCreep"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="55"/>
+    </CEffectDamage>
+    <CEffectDamage id="MercenaryHybridNemesisWeapon@DamageLaner" parent="CorePhysicalDamage">
+        <ValidatorArray value="SourceIsMercenary"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AttributeFactor index="Biological" value="1.5"/>
+        <AttributeFactor index="Structure" value="1.5"/>
+        <Amount value="75"/>
+    </CEffectDamage>
+    <CEffectDamage id="MercenaryHybridReaverWeapon@DamageLaner" parent="CorePhysicalDamage">
+        <ValidatorArray value="SourceIsMercenary"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AttributeFactor index="Biological" value="1"/>
+        <AttributeFactor index="Structure" value="1"/>
+        <Amount value="75"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="MercenaryHybridNemesisWeapon@ApplyReducedAttackSpeed">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenaryHybridNemesisWeapon@ReducedAttackSpeed"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <ValidatorArray value="TargetNotStructure"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="MercenaryHybridDominatorWeapon@ApplyPowerReduction">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Chance value="0"/>
+        <Behavior value="MercenaryHybridDominatorWeapon@PowerReduced"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="MercenaryHybridNemesisWeapon@DamageDefender" parent="CorePhysicalDamage">
+        <ValidatorArray value="SourceIsCreep"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="55"/>
+    </CEffectDamage>
+    <CEffectSet id="MercenaryHybridReaverWeapon@ImpactSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryHybridReaverWeapon@DamageDefender"/>
+        <EffectArray value="MercenaryHybridReaverWeapon@DamageLaner"/>
+        <EffectArray value="MercenaryHybridReaverWeapon@ApplyArmorReduction"/>
+        <EffectArray value="RemoveBenignBehaviorCaster"/>
+    </CEffectSet>
+    <CEffectDamage id="MercenaryHybridDominatorWeapon@DamageDefender" parent="CorePhysicalDamage">
+        <ValidatorArray value="SourceIsCreep"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="40"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MercenaryHybridNemesisWeapon@CP">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="MercenaryHybridNemesisWeapon@ImpactSet"/>
+        <PeriodicValidator value="TargetNotStasisOrInvulnerableOrDead"/>
+        <PeriodicEffectArray value="MercenaryHybridNemesisWeapon@ImpactSet"/>
+        <PeriodicPeriodArray value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="MercenaryHybridDominatorWeapon@ImpactSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryHybridDominatorWeapon@DamageDefender"/>
+        <EffectArray value="MercenaryHybridDominatorWeapon@DamageLaner"/>
+        <EffectArray value="MercenaryHybridDominatorWeapon@ApplyPowerReduction"/>
+    </CEffectSet>
+    <CEffectSet id="MercenaryHybridNemesisWeapon@ImpactSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryHybridNemesisWeapon@DamageDefender"/>
+        <EffectArray value="MercenaryHybridNemesisWeapon@DamageLaner"/>
+        <EffectArray value="MercenaryHybridNemesisWeapon@ApplyReducedAttackSpeed"/>
+    </CEffectSet>
+    <CEffectDamage id="MercenaryVanguardWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <Amount value="160">
+            <AccumulatorArray value="MercenaryVanguardWeapon@DefenderDamageSwitch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSet id="MercenaryVanguardWeapon@StructureDamageSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CEffectSet>
+    <CEffectSet id="MercenaryVanguardWeapon@DamageSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryVanguardWeapon@Damage"/>
+        <ValidatorArray value="noMarkers"/>
+    </CEffectSet>
+    <CEffectSet id="MercenaryVanguardWeapon@InitialSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryVanguardWeapon@InitialPersistent"/>
+        <EffectArray value="MercenaryVanguardWeapon@Warning"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="MercenaryVanguardWeapon@LM">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ImpactLocation Effect="MercenaryVanguardWeapon@InitialSet" Value="TargetPoint"/>
+        <ImpactEffect value="MercenaryVanguardWeapon@DummyImpactSet"/>
+        <AmmoUnit value="MercenaryVanguardWeapon@Missile"/>
+        <Movers Link="MercenaryVanguardWeapon@Mover" IfRangeLTE="500"/>
+        <Flags index="PointFallback" value="0"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="MercenaryVanguardWeapon@StructureLM">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ImpactEffect value="MercenaryVanguardWeapon@StructureDamageSet"/>
+        <AmmoUnit value="MercenaryVanguardWeapon@Missile"/>
+        <Movers Link="MercenaryVanguardWeapon@Mover" IfRangeLTE="500"/>
+    </CEffectLaunchMissile>
+    <CEffectEnumArea id="MercenaryVanguardWeapon@Search">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <DebugTrace value="1"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="MercenaryVanguardWeapon@DamageSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="MercenaryVanguardWeapon@LMSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryVanguardWeapon@LM"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="MercenaryVanguardWeapon@InitialPersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodCount value="5"/>
+        <PeriodicValidator value="CasterNotDeadOrStunnedOrPolymorphedOrFeared"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@LMSet"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@LMSet"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@LMSet"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@LMSet"/>
+        <PeriodicEffectArray value=""/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="0,-0.75,0"/>
+        <PeriodicOffsetArray value="0,0.75,0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="1"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Flags index="Channeled" value="1"/>
+        <InitialDelay value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="MercenaryVanguardWeapon@DummyImpactSet">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <EffectArray value="MercenaryVanguardWeapon@Search"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="MercenaryVanguardWeapon@StructureInitialPersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="5"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@StructureLM"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@StructureLM"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@StructureLM"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@StructureLM"/>
+        <PeriodicEffectArray value="MercenaryVanguardWeapon@Damage"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="1"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <PeriodicValidator value="CasterNotDeadOrStunnedOrPolymorphedOrFeared"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="MercenaryVanguardWeapon@StructureSwitch">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <CaseArray Validator="IsStructure" Effect="MercenaryVanguardWeapon@StructureInitialPersistent"/>
+        <CaseDefault value="MercenaryVanguardWeapon@InitialSet"/>
+    </CEffectSwitch>
+    <CEffectCreatePersistent id="MercenaryVanguardWeapon@Warning">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ExpireDelay value="1"/>
+    </CEffectCreatePersistent>
+</Catalog>

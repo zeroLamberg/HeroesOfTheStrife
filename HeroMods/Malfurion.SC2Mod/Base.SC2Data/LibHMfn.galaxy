@@ -1,0 +1,284 @@
+include "TriggerLibs/NativeLib"
+include "LibAIAI"
+include "LibCore"
+include "LibGame"
+include "LibUIUI"
+
+include "LibHMfn_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Malfurion
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHMfn_InitLibraries () {
+    libNtve_InitVariables();
+    libAIAI_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libHMfn_InitVariables_completed = false;
+
+void libHMfn_InitVariables () {
+    if (libHMfn_InitVariables_completed) {
+        return;
+    }
+
+    libHMfn_InitVariables_completed = true;
+
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Talent - Dangerous Roots - Treant Spawned
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libAIAI_gf_SummonedAIInitialAttackLogic(false, EventUnit(), libGame_gv_players[EventPlayer()].lv_heroUnit, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned_Init () {
+    libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned = TriggerCreate("libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned_Func");
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned, null, "HeroMalfurionTreant@TimedLife", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Moonfire - Celestial Alignment (Damaged)
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_damageValue;
+    string lv_effectLink;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_damageValue = (EventUnitDamageAmount() + EventUnitDamageBehaviorShield());
+    if ((lv_damageValue <= 0.0)) {
+        return true;
+    }
+    lv_effectLink = "HeroMalfurionTalentMoonfireCelestialAlignment@Heal";
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, lv_effectLink, "VitalArray[" + IntToString(0) + "].Change", EventUnitDamageSourcePlayer(), lv_damageValue);
+    UnitCreateEffectUnit(EventUnitDamageSourceUnit(), "HeroMalfurionTalentMoonfireCelestialAlignment@Search", EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged_Init () {
+    libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged = TriggerCreate("libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged_Func");
+    TriggerAddEventUnitDamaged(libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Moonfire - Celestial Alignment (Absorbed)
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    string lv_effectLink;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((EventUnitDamageEffect() == "HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage"))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageAbsorbed() > 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_effectLink = "HeroMalfurionTalentMoonfireCelestialAlignment@Heal";
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, lv_effectLink, "VitalArray[" + IntToString(0) + "].Change", EventUnitDamageSourcePlayer(), EventUnitDamageAbsorbed());
+    UnitCreateEffectUnit(EventUnitDamageSourceUnit(), "HeroMalfurionTalentMoonfireCelestialAlignment@Search", EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed_Init () {
+    libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed = TriggerCreate("libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Regrowth - Nature's Protection
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionRegrowthNaturesProtection_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_target;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_target = EventUnit();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitBehavior() == "HeroMalfurionRegrowthNaturesProtection@Controller")) {
+        if ((UnitHasBehavior2(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeGE33") == true)) {
+            UnitBehaviorSetDuration(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeGE33", UnitBehaviorDurationTotal(lv_target, "HeroMalfurionRegrowth"));
+            UnitBehaviorSetDurationRemaining(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeGE33", UnitBehaviorDuration(lv_target, "HeroMalfurionRegrowth"));
+        }
+        else if ((UnitHasBehavior2(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeLT33") == true)) {
+            UnitBehaviorSetDuration(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeLT33", UnitBehaviorDurationTotal(lv_target, "HeroMalfurionRegrowth"));
+            UnitBehaviorSetDurationRemaining(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeLT33", UnitBehaviorDuration(lv_target, "HeroMalfurionRegrowth"));
+        }
+    }
+    else if ((EventUnitBehavior() == "HeroMalfurionRegrowthNaturesProtection@LifeGE33")) {
+        UnitBehaviorSetDuration(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeGE33", UnitBehaviorDurationTotal(lv_target, "HeroMalfurionRegrowth"));
+        UnitBehaviorSetDurationRemaining(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeGE33", UnitBehaviorDuration(lv_target, "HeroMalfurionRegrowth"));
+    }
+    else if ((EventUnitBehavior() == "HeroMalfurionRegrowthNaturesProtection@LifeLT33")) {
+        UnitBehaviorSetDuration(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeLT33", UnitBehaviorDurationTotal(lv_target, "HeroMalfurionRegrowth"));
+        UnitBehaviorSetDurationRemaining(lv_target, "HeroMalfurionRegrowthNaturesProtection@LifeLT33", UnitBehaviorDuration(lv_target, "HeroMalfurionRegrowth"));
+    }
+    libUIUI_gf_UIUnitStatusUpdateArmorAndHealthOfUnit(lv_target);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionRegrowthNaturesProtection_Init () {
+    libHMfn_gt_HeroMalfurionRegrowthNaturesProtection = TriggerCreate("libHMfn_gt_HeroMalfurionRegrowthNaturesProtection_Func");
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthNaturesProtection, null, "HeroMalfurionRegrowthNaturesProtection@Controller", c_unitBehaviorChangeAny);
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthNaturesProtection, null, "HeroMalfurionRegrowthNaturesProtection@LifeGE33", c_unitBehaviorChangeAny);
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthNaturesProtection, null, "HeroMalfurionRegrowthNaturesProtection@LifeLT33", c_unitBehaviorChangeAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Innervate - Cooldown Modifier
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionInnervateCooldownModifier_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gf_CooldownUniversalHeroCDR(EventPlayerEffectUsedUnit(c_effectUnitTarget), libHMfn_gv_heroMalfurionInnervateCooldownModifier, false, false, false, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionInnervateCooldownModifier_Init () {
+    libHMfn_gt_HeroMalfurionInnervateCooldownModifier = TriggerCreate("libHMfn_gt_HeroMalfurionInnervateCooldownModifier_Func");
+    TriggerAddEventPlayerEffectUsed(libHMfn_gt_HeroMalfurionInnervateCooldownModifier, c_playerAny, "HeroMalfurionInnervate@SearchImpactSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Regrowth - Life Seed
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionRegrowthLifeSeed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_malfurion;
+    int lv_trackedUnitCount;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_malfurion = UnitBehaviorEffectUnit(EventUnit(), EventUnitBehavior(), c_effectUnitCaster, 0);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(lv_malfurion, "HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorRemove(lv_malfurion, "HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff", 0);
+    lv_trackedUnitCount = UnitGroupCount(UnitGetTrackedUnitGroup(lv_malfurion, "HeroMalfurionRegrowth@TrackedUnitCounter"), c_unitCountAlive);
+    UnitBehaviorAdd(lv_malfurion, "HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff", lv_malfurion, lv_trackedUnitCount);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionRegrowthLifeSeed_Init () {
+    libHMfn_gt_HeroMalfurionRegrowthLifeSeed = TriggerCreate("libHMfn_gt_HeroMalfurionRegrowthLifeSeed_Func");
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthLifeSeed, null, "HeroMalfurionRegrowth", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthLifeSeed, null, "HeroMalfurionRegrowth", c_unitBehaviorChangeDeactivate);
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthLifeSeed, null, "HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionRegrowthLifeSeed, null, "HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff", c_unitBehaviorChangeDeactivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Malfurion - Tranquility - Serenity
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_gt_HeroMalfurionTranquilitySerenity_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_malfurion;
+    unit lv_targetHero;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_targetHero = EventUnit();
+    lv_malfurion = UnitBehaviorEffectUnit(lv_targetHero, "HeroMalfurionTalentTranquilitySerenity@Armor", c_effectUnitCaster, 0);
+    UnitBehaviorSetDurationRemaining(lv_targetHero, "HeroMalfurionTalentTranquilitySerenity@Armor", UnitBehaviorDuration(lv_malfurion, "HeroMalfurionTranquility"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHMfn_gt_HeroMalfurionTranquilitySerenity_Init () {
+    libHMfn_gt_HeroMalfurionTranquilitySerenity = TriggerCreate("libHMfn_gt_HeroMalfurionTranquilitySerenity_Func");
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionTranquilitySerenity, null, "HeroMalfurionTalentTranquilitySerenity@Armor", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libHMfn_gt_HeroMalfurionTranquilitySerenity, null, "HeroMalfurionTalentTranquilitySerenity@Armor", c_unitBehaviorChangeRefresh);
+}
+
+void libHMfn_InitTriggers () {
+    libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned_Init();
+    libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged_Init();
+    libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed_Init();
+    libHMfn_gt_HeroMalfurionRegrowthNaturesProtection_Init();
+    libHMfn_gt_HeroMalfurionInnervateCooldownModifier_Init();
+    libHMfn_gt_HeroMalfurionRegrowthLifeSeed_Init();
+    libHMfn_gt_HeroMalfurionTranquilitySerenity_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHMfn_InitLib_completed = false;
+
+void libHMfn_InitLib () {
+    if (libHMfn_InitLib_completed) {
+        return;
+    }
+
+    libHMfn_InitLib_completed = true;
+
+    libHMfn_InitLibraries();
+    libHMfn_InitVariables();
+    libHMfn_InitTriggers();
+}
+

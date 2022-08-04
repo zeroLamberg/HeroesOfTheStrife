@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorModel id="HeroAbathur@SkinUltimatePortraitAddition" parent="CoreCompositePortraitAddition">
+        <Macros value="HeroAbathur@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorModel>
+    <CActorPortrait id="HeroAbathur@SkinUltimatePortrait" parent="CoreCompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorPortrait>
+    <CActorEventMacro id="HeroAbathur@SkinEventMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroAbathur@BaseAlbino" Send="EventMacroRun HeroAbathur@BaseAlbinoMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroAbathur@BaseChar" Send="EventMacroRun HeroAbathur@BaseCharMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroAbathur@BaseVar3" Send="EventMacroRun HeroAbathur@BaseVar3Macro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroAbathur@SkinUltimateGrey" Send="EventMacroRun HeroAbathur@SkinUltimateGreyMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroAbathur@SkinUltimatePurple" Send="EventMacroRun HeroAbathur@SkinUltimatePurpleMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroAbathur@SkinUltimateRed" Send="EventMacroRun HeroAbathur@SkinUltimateRedMacro"/>
+    </CActorEventMacro>
+    <CActorEventMacroRunnable id="HeroAbathur@BaseAlbinoMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Do Send="TextureSelectById Storm_Abathur_Albino_Diff"/>
+        <Do Send="TextureSelectById Storm_Abathur_Albino_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroAbathur@BaseCharMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Do Send="TextureSelectById Storm_Abathur_Char_Diff"/>
+        <Do Send="TextureSelectById Storm_Abathur_Char_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroAbathur@BaseVar3Macro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Base_Var3_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Base_Var3_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorModel id="AbathurMonstrosityDeepTunnelVisualWarning" parent="CoreModelAnimationStyleContinuous">
+        <Inherits index="TeamColor" value="1"/>
+        <On Terms="Effect.HeroAbathurDeepTunnelMonstrosity@TargetPersistent.Start; At Effect" Send="Create"/>
+        <On Terms="Effect.HeroAbathurDeepTunnelMonstrosity@TargetPersistent.Stop; FromEffectTreeDescendant" Send="Destroy"/>
+        <Model value="MonstrosityDeepTunnelWarningVisual"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurDeepTunnel@WorldPing" parent="CoreModelAnimationStyleOneShot">
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurDeepTunnel@DummyPing.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint SOpForwardCasterUnit SOp2DRotation SOpShadow"/>
+        <Scale value="1.800000"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurTalentLocustBrood" parent="CoreItemBase" unitName="HeroAbathurTalentLocustBrood">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorUnit>
+    <CActorUnit id="HeroAbathurTalentLocustNest@Item" parent="CoreItemBase" unitName="HeroAbathurTalentLocustNest@Item">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorUnit>
+    <CActorSound id="HeroAbathurTauntVO" parent="SoundOneShot">
+        <Sound value="AbathurHero_Taunt"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurTauntUEVO" parent="SoundOneShot">
+        <Sound value="AbathurHero_Taunt_Evo"/>
+    </CActorSound>
+    <CActorSound id="AbathurMonstrosityBirthUnburrowSound" parent="SoundOneShot">
+        <Host Subject="_Unit"/>
+        <Sound value="Abathur_Monstrosity_Birth_Unburrow"/>
+    </CActorSound>
+    <CActorSound id="MonstrosityBirthVOXSound" parent="SoundOneShot">
+        <Host Subject="_Unit"/>
+        <Sound value="Abathur_Monstrosity_Birth_Vox"/>
+    </CActorSound>
+    <CActorSound id="Abathur_Monstrosity_Attack_Launch" parent="SoundOneShot">
+        <Host Subject="_Unit"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurCarapace@RegenerativeMicrobesHealModel" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="Effect.HeroAbathurCarapace@RegenerativeMicrobesCreateHealer.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="$Birth"/>
+        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
+        <Model value="Storm_FX_GenericHeal_Regen_Minion"/>
+        <Scale value="1.500000"/>
+    </CActorModel>
+    <CActorSiteOpDeltaSum id="SOpSymbioteAwareOffset">
+        <Deltas Subject="HeroAbathurSymbiote@HostAwareness">
+            <AttachQuerySource Methods="Origin"/>
+            <AttachQueryTarget Methods="Overhead"/>
+        </Deltas>
+        <DeltaSumFlags index="ZOffsetOnly" value="1"/>
+    </CActorSiteOpDeltaSum>
+    <CActorModel id="HeroAbathurLocust@DeathLow" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorModel>
+    <CActorModel id="AbathurGooTrailModel" parent="CoreModelAddition">
+        <On Terms="ActorCreation" Send="AnimGroupRemove A"/>
+        <On Terms="ActorCreation" Send="AnimGroupApply B"/>
+        <Host Subject="::Creator"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft"/>
+    </CActorModel>
+    <CActorModel id="AbathurLocustAssaultDeathExplosionImpact" parent="CoreModelAnimationStyleOneShot">
+        <On Terms="Effect.AbathurLocustAssaultExplodeDamage; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Host Subject="_Unit"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurWeaponLocustAssault@AttackCleave" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurWeaponLocustAssault@AttackSet.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurWeaponLocustAssault@AttackImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurWeaponLocustAssault@Damage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroAbathurWeaponLocustAssault@CleaveDamage.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="AbathurLocustAssaultStrainEffect" parent="CoreModelAddition">
+        <Macros value="GlobalLoopMacro"/>
+        <Host Subject="::Creator"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+    </CActorModel>
+    <CActorAction id="HeroAbathurWeaponLocustBombard@CloseRangeAttack" parent="RangedMinionAttackParent" effectImpact="HeroAbathurWeaponLocustBombard@CloseRangeDamage" effectLaunch="HeroAbathurWeaponLocustBombard@CloseRangeLaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <LaunchAssets Model="" Sound="Abathur_Locust_AttackLaunch"/>
+        <Missile value="HeroAbathurWeaponLocustNormal@AttackMissile"/>
+        <ImpactMap index="None" Model="HeroAbathurWeaponLocustNormal@AttackImpact" Sound="Abathur_Locust_AttackImpact" ModelReaction="AbathurLocustAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="AbathurLocustAttackImpactShield" ModelReaction="AbathurLocustAttackImpactReactionShield"/>
+    </CActorAction>
+    <CActorAction id="AbathurAoEShieldImpactActor" parent="CoreAoEShieldImpactBase">
+        <On Terms="Effect.HeroAbathurSpikeBurst@BurstDamage.Start" Send="Create"/>
+        <On Terms="Effect.HeroAbathurSpikeBurst@BurstDamage.Start" Send="ActionDamage"/>
+        <On Terms="Effect.HeroAbathurSpikeBurst@BurstDamage.Stop" Send="Destroy"/>
+    </CActorAction>
+    <CActorSiteOpDeltaSum id="SOpVisIconAwareOffset">
+        <Deltas index="2" Subject="HeroAbathurSymbiote@HostAwareness"/>
+    </CActorSiteOpDeltaSum>
+    <CActorEventMacro id="SymbioteVisibilityMacro">
+        <On Terms="Signal.*.SymbioteHide" Send="SetFilter Enemy"/>
+        <On Terms="Signal.*.SymbioteHide" Target="HeroAbathurSymbiote@Detachable" Send="SetFilter Enemy"/>
+        <On Terms="Signal.*.SymbioteShow" Send="SetFilter Enemy Clear"/>
+        <On Terms="Signal.*.SymbioteShow" Target="HeroAbathurSymbiote@Detachable" Send="SetFilter Enemy Clear"/>
+        <Supporter Subject="_Unit"/>
+    </CActorEventMacro>
+    <CActorModel id="AbathurLocustNestPlacement" parent="CorePlacementModel">
+        <Filter index="Ally" value="1"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathur" parent="CoreHeroBasePredictive" unitName="HeroAbathur">
+        <Macros value="HeroAbathur@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="AnimPlay; AnimName Spell" Send="AnimGroupApply Ready"/>
+        <Remove Terms="AnimPlay; AnimName Spell" Send="TimerKill StandReadyOutroDuration"/>
+        <Remove Terms="AnimPlay; AnimName Spell" Send="TimerSet 5.000000 StandReadyOutroDuration"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.On; !AnimPlaying Channel" Send="AnimBracketStart SpellE Stand,Cover,Start Stand,Cover Stand,Cover,End 0 1.000000 AsTimeScale"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.Off" Send="AnimBracketStop SpellE"/>
+        <On Terms="Abil.HeroAbathurToxicNest.SourceCastStart" Send="$Spell,B 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStart" Send="AnimBracketStart Spell Spell,E,Start Spell,E Spell,E,End"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStop" Send="AnimBracketStop Spell"/>
+        <On Terms="Abil.HeroAbathurUltimateEvolution.SourceCastStart" Send="$Spell,E,Start 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroAbathurUltimateEvolution.SourceCastStart" Send="AnimSetTime Spell 1.500000"/>
+        <On Terms="Abil.HeroAbathurUltimateEvolution.SourceCastStop" Send="AnimClear Spell"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@VehicleCasterBehavior.On" Target="HeroAura" Send="Destroy"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@VehicleCasterBehavior.On" Send="Signal InvisibleModel"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@VehicleCasterBehavior.On" Send="StatusIncrement StatusBarHide"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@VehicleCasterBehavior.Off" Send="Signal RestoreModel"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@VehicleCasterBehavior.Off" Send="StatusDecrement StatusBarHide"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@VehicleCasterBehavior.Off" Send="$Spell,E,End 0 0.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="UnitDeath" Send="AnimClear Spell"/>
+        <On Terms="ActorCreation" Send="Create AbathurGooTrailModel"/>
+        <On Terms="ActorDestruction" Target="AbathurGooTrailModel" Send="Destroy"/>
+        <On Terms="Behavior.UsingVehicle.On" Target="AbathurGooTrailModel" Send="Destroy"/>
+        <On Terms="Behavior.UsingVehicle.Off" Send="Create AbathurGooTrailModel"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.On" Target="AbathurGooTrailModel" Send="Destroy"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.Off" Send="Create AbathurGooTrailModel"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Target="AbathurGooTrailModel" Send="AnimGroupRemove B"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Target="AbathurGooTrailModel" Send="AnimGroupApply A"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Target="AbathurGooTrailModel" Send="AnimGroupRemove A"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Target="AbathurGooTrailModel" Send="AnimGroupApply B"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStart" Send="Create AbathurDeepTunnelIn"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStop" Target="HeroAbathurDeepTunnel@In" Send="Destroy"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStart; AnimPlaying Spell Spell,E" Send="AnimSetTime Spell"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.Off" Send="AnimGroupRemove Ready Instant"/>
+        <Model value="HeroAbathur@Base"/>
+        <AnimBlendTime value="0.200000"/>
+        <BuildModel value="HeroAbathur@Base"/>
+        <DeathArray index="Normal" ModelLink="AbathurDeath" SoundLink="AbathurHero_Death"/>
+        <PlacementModel value="HeroAbathur@Base"/>
+        <PortraitActor value="HeroAbathur@BasePortrait"/>
+        <PortraitModel value="HeroAbathur@BasePortrait"/>
+        <AbilSoundArray AbilCmd="HeroAbathurDeepTunnel,255" Sound="AbathurHero_VOX_CastingA"/>
+        <AbilSoundArray AbilCmd="HeroAbathurSymbiote,255" Sound="StormNoSound"/>
+        <AbilSoundArray AbilCmd="HeroAbathurToxicNest,255" Sound="AbathurHero_VOX_CastingB"/>
+        <AbilSoundArray AbilCmd="HeroAbathurUltimateEvolution,255" Sound="AbathurHero_Ultimate1Used"/>
+        <AbilSoundArray AbilCmd="HeroAbathurEvolveMonstrosity,255" Sound="AbathurHero_Ultimate2Used"/>
+        <CustomUnitStatusFrame value="UnitStatus/HeroUnitStatusFrameNoEnergyTemplate"/>
+        <ErrorArray Error="NotEnoughEnergy" Sound="HeroAbathur_LowMana"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\storm_ui_ingame_partyframe_abathur.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\ui_targetportrait_hero_abathur.dds"/>
+        <MinimapIcon value="Assets\Textures\UI_MinimapIcon_Hero_Abathur.dds"/>
+        <MinimapIconBackgroundScale value="0.950000"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Ready" value="AbathurHero_Revive"/>
+        <SoundArray index="Yes" value="AbathurHero_Yes"/>
+        <SoundArray index="Attack" value="AbathurHero_Attack"/>
+        <SoundArray index="Pissed" value="AbathurHero_Pissed"/>
+        <UnitIcon value="Assets\Textures\ui_targetportrait_hero_abathur.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_hero_abathur.dds"/>
+        </Wireframe>
+        <DeathCustoms index="1">
+            <ActorModel value="HeroAbathur@DeathRagdoll"/>
+            <ModelLink value="HeroAbathur@BaseDeathRagdoll"/>
+            <Name value="RagdollMidair"/>
+            <InheritsFrom value="RagdollBasic"/>
+        </DeathCustoms>
+        <DeathCustoms index="2" ActorModel="HeroAbathur@DeathRagdoll" ModelLink="HeroAbathur@BaseDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms index="3" ActorModel="HeroAbathur@DeathRagdoll" ModelLink="HeroAbathur@BaseDeathRagdoll" Name="RagdollFire"/>
+        <DeathCustoms index="4" ActorModel="HeroAbathur@DeathRagdoll" ModelLink="HeroAbathur@BaseDeathRagdoll" Name="RagdollAcid"/>
+    </CActorUnit>
+    <CActorPortrait id="AbathurSkinSkelethurPortrait" parent="CoreCompositePortrait"/>
+    <CActorModel id="AbathurSkinSkelethurPortraitAddition" parent="CoreCompositePortraitAddition"/>
+    <CActorPortrait id="HeroAbathur@BasePortrait" parent="CoreCompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorPortrait>
+    <CActorModel id="HeroAbathur@BasePortraitAddition" parent="CoreCompositePortraitAddition">
+        <Macros value="HeroAbathur@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathur@DeathRagdoll" parent="CoreHeroDeathRagdoll">
+        <Macros value="HeroAbathur@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorModel>
+    <CActorPortrait id="AbathurSkinPajamathurPortrait" parent="CoreCompositePortrait"/>
+    <CActorModel id="AbathurSkinPajamathurPortraitAddition" parent="CoreCompositePortraitAddition"/>
+    <CActorAction id="HeroAbathurWeaponEvolveMonstrosity@Attack" parent="MeleeMinionAttackParent" effectAttack="HeroAbathurWeaponEvolveMonstrosity@Damage">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Preload value="AbathurEvolveMonstrosityAttackAction"/>
+        <LaunchAssets Sound=""/>
+        <Beam value="AbathurEvolveMonstrosityAttackActionBeam"/>
+        <Missile value="AbathurEvolveMonstrosityAttackActionMissile"/>
+        <ImpactMap index="None" Sound="HeroAbathurWeaponEvolveMonstrosity@Attack_Impact_Unit" ModelReaction="AbathurEvolveMonstrosityAttackActionImpactReaction"/>
+        <ImpactMap index="Rock" Sound="HeroAbathurWeaponEvolveMonstrosity@Attack_Impact_Building" ModelReaction="AbathurEvolveMonstrosityAttackActionImpactReaction"/>
+        <ImpactMap index="Shield" Sound="Gen_Hero_Melee_AttackImpact_Shield" ModelReaction="AbathurEvolveMonstrosityAttackActionImpactReactionShield"/>
+        <ImpactSound value="MeleeHeroAttackImpactSound"/>
+        <DamageMap index="None" Model="AbathurEvolveMonstrosityAttackActionDamage" Sound="AbathurEvolveMonstrosityAttackActionDamage" ModelReaction="AbathurEvolveMonstrosityAttackActionDamageReaction"/>
+        <DamageMap index="Shield" Sound="AbathurEvolveMonstrosityAttackActionDamageShield" ModelReaction="AbathurEvolveMonstrosityAttackActionDamageReactionShield"/>
+        <ActionFlags index="ImpactSuppressUnitSound" value="1"/>
+    </CActorAction>
+    <CActorSplat id="HeroAbathurTalentLocustNest@RangeSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Preload index="0" value="AbathurLocustSwarmRangeSplat"/>
+        <Scale value="6.312500"/>
+    </CActorSplat>
+    <CActorRange id="HeroAbathurTalentLocustNest@Range" parent="CoreRangeAbilPlusSplat" abil="HeroAbathurTalentLocustNest">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Preload value="AbathurLocustSwarmRange"/>
+    </CActorRange>
+    <CActorAction id="HeroAbathurWeapon@Attack" parent="MeleeHeroAttack" effectAttack="HeroAbathurWeapon@Damage">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <ImpactMap index="None" Model="HeroAbathurWeapon@AttackImpact" Sound="Abathur_Attack_Impact"/>
+    </CActorAction>
+    <CActorModel id="HeroAbathurDeepTunnel@Out" parent="CoreModelAnimationStyleOneShot">
+        <Flags index="VisionTestCenterOnly" value="1"/>
+        <InheritType value="OneShot"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurDeepTunnel@Teleport.Stop; At Source" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginHoldPosition"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurDeepTunnel@In" parent="CoreModelAnimationStyleContinuous">
+        <Flags index="VisionTestCenterOnly" value="1"/>
+        <InheritType value="OneShot"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurDeepTunnel@Teleport.Start" Send="HostSiteOpsSet ::Host {SOpAttachCenterStationary SOp2DRotation SgtHammerConcussiveBlastOffset} 1 1"/>
+        <HostSiteOps Ops="SOpAttachCenter SOp2DRotation SOpMoveBy1"/>
+    </CActorModel>
+    <CActorSound id="HeroAbathurDeepTunnel@CastSound" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.HeroAbathurDeepTunnel.SourceCastStop" Send="Destroy"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStop" Send="Destroy"/>
+        <On Terms="Effect.HeroAbathurDeepTunnelMonstrosity@TargetPersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroAbathurDeepTunnelMonstrosity@TargetPersistent.Stop" Send="Destroy"/>
+        <Sound value="Abathur_DeepTunnel_Cast"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurDeepTunnel@EndSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurDeepTunnel@Teleport.Stop; At Source" Send="Create"/>
+        <Sound value="Abathur_DeepTunnel_End"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurAssumingDirectControl@Buff" parent="CoreModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurAssumingDirectControl.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="AbathurControlledUnitDeathExplosion" parent="CoreModelAnimationStyleOneShot">
+        <On Terms="Effect.UnstableMutationSearchArea.Start; At Effect" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create AbathurControlledUnitDeathExplosionSound"/>
+    </CActorModel>
+    <CActorSound id="AbathurControlledUnitDeathExplosionSound" parent="SoundOneShot">
+        <Sound value="Abathur_Locust_AssaultStrain_Explosion"/>
+    </CActorSound>
+    <CActorUnit id="HeroAbathurLocust@Normal" parent="CoreMinionBase" unitName="HeroAbathurLocust@Normal">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="UnitDeathCustomize" Send="DeathCustomize RagdollBasic"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimClear Attack"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimPlay Attack Spell,C"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurLocust@Birth"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurLocust@BirthSound"/>
+        <On Terms="Behavior.CombatAdaptation" Send="SetScale 1.150000"/>
+        <On Terms="Behavior.HeroAbathurTalentLocustStrainSurvivalInstinct.On" Send="SetScale 1.150000"/>
+        <On Terms="UnitDeathCustomize; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="UnitDeathCustomize; !CanApplyActionPhysics RagdollBasic; !Death Timeout" Send="DeathCustomize Variation0"/>
+        <Model value="HeroAbathurLocust"/>
+        <BuildModel value="HeroAbathurLocust"/>
+        <DeathArray index="Normal" ModelLink="HeroAbathurLocust@Death" SoundLink="Abathur_Locust_Death"/>
+        <DeathArray index="Timeout" AnimProps="Burrow" ModelLink="HeroAbathurLocust"/>
+        <DeathCustomData index="0" Name="RagdollBasic" SyncPassChance="100"/>
+        <DeathCustomData index="4" Name="RagdollFire" Supersedes="RagdollBasic,RagdollOverkillDOI,RagdollOverkillDPRH" SyncPassChance="100"/>
+        <DeathCustomData index="5" Name="RagdollAcid" Supersedes="RagdollBasic,RagdollOverkillDOI,RagdollOverkillDPRH" SyncPassChance="100"/>
+        <DeathActorModelLow value="HeroAbathurLocust@DeathLow"/>
+        <ImpactSound value="Pet_Small_Dry_Impact"/>
+        <PlacementModel value="HeroAbathurLocust"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Abathur_Locust.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <HighlightTooltip value="Unit/Name/AbathurLocust"/>
+        <SoundArray index="Birth" value="Abathur_Locust_Birth"/>
+        <UnitIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+    </CActorUnit>
+    <CActorModel id="HeroAbathurLocust@Burrow" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="UnitDeath.HeroAbathurLocust@Bombard; Death Timeout" Send="Create"/>
+        <On Terms="UnitDeath.HeroAbathurLocust@Normal; Death Timeout" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenterStationary" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="AbathurLocustDeathRagdoll" parent="CoreMinionDeathRagdoll"/>
+    <CActorMissile id="HeroAbathurWeaponLocustNormal@AttackMissile" parent="CoreMissileWithDeath" unitName="HeroAbathurWeaponLocustNormal@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Model value="HeroAbathurWeaponLocustNormal@AttackMissile"/>
+    </CActorMissile>
+    <CActorAction id="HeroAbathurWeaponLocustNormal@Attack" parent="RangedMinionAttackParent" effectImpact="HeroAbathurWeaponLocustNormal@Damage" effectLaunch="HeroAbathurWeaponLocustNormal@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <LaunchAssets Model="" Sound="Abathur_Locust_AttackLaunch"/>
+        <ImpactMap index="None" Model="HeroAbathurWeaponLocustNormal@AttackImpact" Sound="Abathur_Locust_AttackImpact"/>
+    </CActorAction>
+    <CActorSound id="HeroAbathurLocust@BirthSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Sound value="Abathur_Locust_Birth"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurLocust@Birth" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostSiteOps HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurLocust@Assault" parent="CoreMinionBase" unitName="HeroAbathurLocust@Assault">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimClear Attack"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimPlay Attack Spell,A"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurLocust@Birth"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurLocust@BirthSound"/>
+        <On Terms="UnitDeathCustomize; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="Behavior.CombatAdaptation" Send="SetScale 1.150000"/>
+        <On Terms="Behavior.HeroAbathurTalentLocustStrainSurvivalInstinct.On" Send="SetScale 1.150000"/>
+        <On Terms="ActorCreation" Send="Create AbathurLocustAssaultStrainEffect"/>
+        <Model value="HeroAbathurLocust"/>
+        <BuildModel value="HeroAbathurLocust"/>
+        <DeathArray index="Normal" SoundLink="Abathur_Locust_Death"/>
+        <ImpactSound value="Pet_Small_Dry_Impact"/>
+        <PlacementModel value="HeroAbathurLocust"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Abathur_Locust.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <HighlightTooltip value="Unit/Name/AbathurLocust"/>
+        <SoundArray index="Birth" value="Abathur_Locust_Birth"/>
+        <UnitIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+    </CActorUnit>
+    <CActorAction id="HeroAbathurWeaponLocustAssault@Attack" effectAttack="AbathurLocustAssaultAttackSet" effectImpact="Bogus" effectLaunch="Bogus">
+        <Aliases value="_ActorAction"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Preload value="AbathurLocustAssaultStrainAttack"/>
+        <On Terms="Effect.HeroAbathurWeaponLocustAssault@AttackSet.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.Bogus.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On Terms="Effect.Bogus.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.SplashDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.SplashDamage.Stop; FromEffectTreeDescendant" Send="ActionDamagePhysics"/>
+        <On Terms="Effect.HeroAbathurWeaponLocustAssault@AttackSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.Bogus.Start; At Caster" Send="Create"/>
+        <LaunchGuideAlias value="_LaunchGuide"/>
+        <LaunchSiteOps Ops="SOpAttachHarness"/>
+        <LaunchSite value="GenericAttackLaunchSite"/>
+        <LaunchSiteFallback value="GenericAttackLaunchFallbackSite"/>
+        <LaunchAttachQuery Methods="$GenericAttackLaunchMethods" Fallback="Center"/>
+        <LaunchAssets Sound="Melee_Minion_AttackLaunch"/>
+        <LaunchModel value="GenericAttackLaunchModel"/>
+        <LaunchSound value="GenericAttackLaunchSound"/>
+        <LaunchTerrainSquibModel value="GenericAttackLaunchTerrainSquibModel"/>
+        <LaunchTerrainSquibSound value="GenericAttackLaunchTerrainSquibSound"/>
+        <ContainerSiteOps Ops="SOpAttachHarness SOpForwardTargetPoint"/>
+        <ContainerSite value="GenericAttackLaunchSite"/>
+        <ContainerAttachQuery Methods="$SpaceStationValerianAttackLaunchMethods AMPortAllocatorBunker" Fallback="Center"/>
+        <ContainerAssets Model="AbathurLocustAssaultAttackSetBunkerAttackLaunch" Sound="AbathurLocustAssaultAttackSetBunkerAttackLaunch"/>
+        <ContainerModel value="GenericAttackLaunchModel"/>
+        <ContainerSound value="GenericAttackLaunchSound"/>
+        <ContainerTerrainSquibModel value="GenericAttackLaunchTerrainSquibModel"/>
+        <ContainerTerrainSquibSound value="GenericAttackLaunchTerrainSquibSound"/>
+        <Beam value="AbathurLocustAssaultStrainAttackBeam"/>
+        <BeamScope value="Effect"/>
+        <Missile value="AbathurLocustAssaultStrainAttackMissile"/>
+        <ImpactGuideAlias value="_ImpactGuide"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard"/>
+        <ImpactSite value="GenericAttackImpactSite"/>
+        <ImpactSiteFallback value="GenericAttackImpactFallbackSite"/>
+        <ImpactAttachQuery Methods="$GenericAttackTargetMethods" Fallback="Center"/>
+        <ImpactReattachQuery Methods="AMVolumesRequery" Fallback="Center"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary"/>
+        <ImpactPointSite value="GenericAttackImpactPointSite"/>
+        <ImpactMap index="None" Sound="Melee_Minion_AttackImpact" ModelReaction="AbathurLocustAssaultStrainAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="AbathurLocustAssaultStrainAttackImpactShield" ModelReaction="AbathurLocustAssaultStrainAttackImpactReactionShield"/>
+        <ImpactModel value="GenericAttackImpactModel"/>
+        <ImpactModelReaction value="GenericAttackImpactModelReaction"/>
+        <ImpactSound value="GenericAttackImpactSound"/>
+        <ImpactTerrainSquibModel value="GenericAttackImpactTerrainSquibModel"/>
+        <ImpactTerrainSquibSound value="GenericAttackImpactTerrainSquibSound"/>
+        <DamageSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard"/>
+        <DamageSite value="GenericAttackDamageSite"/>
+        <DamageAttachQuery Methods="$GenericAttackTargetMethods" Fallback="Center"/>
+        <DamageReattachQuery Methods="AMVolumesRequery" Fallback="Center"/>
+        <DamageMap index="None" Model="AbathurLocustAssaultStrainAttackDamage" Sound="AbathurLocustAssaultStrainAttackDamage" ModelReaction="AbathurLocustAssaultStrainAttackDamageReaction"/>
+        <DamageMap index="Shield" Sound="AbathurLocustAssaultStrainAttackDamageShield" ModelReaction="AbathurLocustAssaultStrainAttackDamageReactionShield"/>
+        <DamageModel value="GenericAttackDamageModel"/>
+        <DamageModelReaction value="GenericAttackDamageModelReaction"/>
+        <DamageSound value="GenericAttackDamageSound"/>
+        <DamageTerrainSquibModel value="GenericAttackDamageTerrainSquibModel"/>
+        <DamageTerrainSquibSound value="GenericAttackDamageTerrainSquibSound"/>
+        <ActionFlags index="ImpactSuppressUnitSound" value="1"/>
+        <AttackAnimSource value="::Main"/>
+        <AttackAnimName value="Attack"/>
+        <Lifetime value="0.100000"/>
+    </CActorAction>
+    <CActorModel id="AbathurLocustAssaultDeathExplosion" parent="CoreModelAnimationStyleOneShot">
+        <On Terms="Effect.AbathurLocustAssaultExplodeSearch.Start; At Effect" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create AbathurLocustAssaultDeathExplosionSound"/>
+        <Scale value="1.500000"/>
+    </CActorModel>
+    <CActorSound id="AbathurLocustAssaultDeathExplosionSound" parent="SoundOneShot">
+        <Sound value="Abathur_Locust_AssaultStrain_Explosion"/>
+    </CActorSound>
+    <CActorUnit id="HeroAbathurLocust@Bombard" parent="CoreMinionBase" unitName="HeroAbathurLocust@Bombard">
+        <AcceptedHostedPropTransfers index="TintColor" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="UnitDeathCustomize" Send="DeathCustomize RagdollBasic"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimClear Attack"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimPlay Attack Spell,B"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurLocust@Birth"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurLocust@BirthSound"/>
+        <On Terms="Behavior.CombatAdaptation" Send="SetScale 1.150000"/>
+        <On Terms="Behavior.HeroAbathurTalentLocustStrainSurvivalInstinct.On" Send="SetScale 1.150000"/>
+        <On Terms="UnitDeathCustomize; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="UnitDeathCustomize; !CanApplyActionPhysics RagdollBasic; !Death Timeout" Send="DeathCustomize Variation0"/>
+        <Model value="HeroAbathurLocust"/>
+        <BuildModel value="HeroAbathurLocust"/>
+        <DeathArray index="Normal" ModelLink="HeroAbathurLocust@Death" SoundLink="Abathur_Locust_Death"/>
+        <DeathArray index="Timeout" AnimProps="Burrow" ModelLink="HeroAbathurLocust"/>
+        <DeathCustomData index="0" Name="RagdollBasic" SyncPassChance="100"/>
+        <DeathCustomData index="4" Name="RagdollFire" Supersedes="RagdollBasic,RagdollOverkillDOI,RagdollOverkillDPRH" SyncPassChance="100"/>
+        <DeathCustomData index="5" Name="RagdollAcid" Supersedes="RagdollBasic,RagdollOverkillDOI,RagdollOverkillDPRH" SyncPassChance="100"/>
+        <DeathActorModelLow value="HeroAbathurLocust@DeathLow"/>
+        <ImpactSound value="Pet_Small_Dry_Impact"/>
+        <PlacementModel value="HeroAbathurLocust"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Abathur_Locust.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+        <HighlightTooltip value="Locust"/>
+        <SoundArray index="Birth" value="Abathur_Locust_Birth"/>
+        <UnitIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_SpawnLocust.dds"/>
+    </CActorUnit>
+    <CActorModel id="AbathurLocustBombardStrainDeathRagdoll" parent="CoreMinionDeathRagdoll">
+        <On Terms="ActorCreation" Send="SetTintColor {112,198,74 1.500000}"/>
+    </CActorModel>
+    <CActorAction id="HeroAbathurWeaponLocustBombard@Attack" parent="RangedMinionAttackParent" effectImpact="HeroAbathurWeaponLocustBombard@ImpactSearch" effectLaunch="HeroAbathurWeaponLocustBombard@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon01"/>
+        <LaunchAssets Model="HeroAbathurWeaponLocustBombard@AttackLaunch" Sound="Abathur_Locust_AttackLaunch"/>
+        <Missile value="HeroAbathurWeaponLocustBombard@Missile"/>
+        <ImpactMap index="None" Model="HeroAbathurWeaponLocustBombard@AttackImpact" Sound="Abathur_Locust_AttackImpact"/>
+        <ImpactSound value="GenericAttackImpactSoundPoint"/>
+    </CActorAction>
+    <CActorMissile id="HeroAbathurWeaponLocustBombard@Missile" parent="CoreMissileWithDeath" unitName="HeroAbathurWeaponLocustBombard@Missile">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorMissile>
+    <CActorUnit id="AbathurLocustSwarmItem" parent="CoreItemBase" unitName="AbathurLocustSwarm"/>
+    <CActorRange id="HeroAbathurTalentLocustBrood@Range" parent="CoreRangeAbilPlusSplat" abil="HeroAbathurTalentLocustBrood">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorRange>
+    <CActorSplat id="HeroAbathurTalentLocustBrood@RangeSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Scale value="6.312500"/>
+    </CActorSplat>
+    <CActorSound id="HeroAbathurTalentLocustBrood@Sound" parent="CoreSoundOneShot">
+        <Macros index="0" removed="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurTalentLocustBrood@CreatePersistent.Start; At Effect" Send="Create"/>
+        <Sound value="Abathur_DeepTunnel_End"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurTalentLocustBrood@Cast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurTalentLocustBrood@CreatePersistent.Start; At Effect" Send="Create"/>
+        <Model value="HeroAbathurDeepTunnel@Out"/>
+    </CActorModel>
+    <CActorModel id="AbathurNeuralParasiteImpact" parent="CoreModelAnimationStyleOneShotUnit">
+        <On Terms="Effect.NeuralParasiteLinkPersistent.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create AbathurNeuralParasiteImpactSound"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="AbathurNeuralParasiteImpactSound" parent="SoundOneShot">
+        <Sound value="Abathur_NeuralParasite_Impact"/>
+    </CActorSound>
+    <CActorModel id="AbathurNeuralParasiteBuff" parent="CoreModelAddition">
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+        <AutoScaleFactor value="1.000000"/>
+        <On Terms="Behavior.AbathurNeuralParasiteBuff.On" Send="Create"/>
+        <On Terms="Behavior.AbathurNeuralParasiteBuff.Off" Send="AnimBracketStop BSD"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurSymbiote" parent="CoreMinionStandard" unitName="HeroAbathurSymbiote">
+        <Macros value="SymbioteVisibilityMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorCreation" Send="$Birth 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="ActorCreation" Send="Create HeroAbathurSymbiote@Detachable"/>
+        <On Terms="Abil.HeroAbathurStab.SourceCastStart" Target="HeroAbathurSymbiote@Detachable" Send="$Spell,A 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroAbathurSpikeBurst.SourceCastStart" Target="HeroAbathurSymbiote@Detachable" Send="$Spell,B 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroAbathurCarapace.SourceCastStart" Target="HeroAbathurSymbiote@Detachable" Send="$Spell,C 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="ActorCreation" Send="StatusSet DummyAOn 0"/>
+        <On Terms="Effect.HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA.Start" Send="Create HeroAbathurTalentSymbioteHivemind@SiteModelA"/>
+        <On Terms="Effect.HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA.Start" Send="StatusSet DummyAOn 1"/>
+        <On Terms="Abil.HeroAbathurStab.TargetOn" Send="StatusSet HivemindCursorFind 1"/>
+        <On Terms="Abil.HeroAbathurStab.TargetOn" Send="TimerSet 0.062500 HivemindCursorFind"/>
+        <On Terms="Abil.HeroAbathurStab.TargetOff" Send="StatusSet HivemindCursorFind 0"/>
+        <On Terms="TimerExpired; TimerName HivemindCursorFind; IsStatus DummyAOn 0" Target="::global.NewGuideA" Send="Destroy"/>
+        <On Terms="TimerExpired; TimerName HivemindCursorFind" Target="::global.NewGuideA" Send="Signal LinkAbathurSymbioteHivemindStabA"/>
+        <On Terms="Signal.*.LinkCursorHivemindStabA" Send="RefSetFromMsg ::scope.SymbioteHivemindCursorA ::Sender"/>
+        <On Terms="Signal.*.LinkCursorHivemindStabA; IsStatus HasHivemind 1" Send="Create HeroAbathurTalentSymbioteHivemind@StabGuideA"/>
+        <On Terms="Abil.HeroAbathurStab.TargetOff" Target="HeroAbathurTalentSymbioteHivemind@StabGuideA" Send="Destroy"/>
+        <On Terms="Signal.*.RemoveStabCursors" Target="HeroAbathurTalentSymbioteHivemind@StabGuideA" Send="Destroy"/>
+        <On Terms="Signal.*.RemoveStabCursors" Send="StatusSet DummyAOn 0"/>
+        <On Terms="Effect.HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA.Stop" Target="HeroAbathurTalentSymbioteHivemind@StabGuideA" Send="Destroy"/>
+        <On Terms="AnimPlay; AnimName Victory" Target="HeroAbathurSymbiote@Detachable" Send="AnimPlay Attack Stand,Victory PlayForever"/>
+        <On Terms="UnitTaunt.*.Start; Taunt Dance" Target="HeroAbathurSymbiote@Detachable" Send="AnimPlay Dance Stand,Dance 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Signal.*.HivemindScale" Target="HeroAbathurSymbiote@Detachable" Send="SetScale 0.500000"/>
+        <On Terms="Signal.*.HivemindActive" Send="StatusSet HasHivemind 1"/>
+        <On Terms="Signal.*.HivemindInActive" Send="StatusSet HasHivemind 0"/>
+        <On Terms="Effect.HeroAbathurSymbiote@ActorLink.Start; At Target" Send="RefSetFromRequest ::actor.SymbioteHost ::LastCasterUnit"/>
+        <On Terms="Effect.HeroAbathurSymbiote@ActorLink.Start; At Target" Target="HeroAbathurSymbiote@Detachable" Send="RefSet ::actor.SymbioteHost ::actor.SymbioteHost"/>
+        <On Terms="Effect.HeroAbathurSymbiote@ActorLink.Start; At Target" Target="HeroAbathurSymbiote@Detachable" Send="RefSet ::HostForProps ::actor.SymbioteHost"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@SuperStealthVisibilityController.On" Target="HeroAbathurSymbiote@Detachable" Send="ModelFlagsSet CloakedUndetectedIsHidden"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@SuperStealthVisibilityController.Off" Target="HeroAbathurSymbiote@Detachable" Send="ModelFlagsClear CloakedUndetectedIsHidden"/>
+        <Model value="Invisible"/>
+        <DeathArray index="Normal" ModelLink="" SoundLink="" VoiceLink=""/>
+        <PortraitActor value="HeroAbathur@BasePortrait"/>
+        <PortraitModel value="HeroAbathur@BasePortrait"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_hero_symbiote.dds"/>
+        </GroupIcon>
+        <MinimapIcon value="Assets\Textures\UI_MinimapIcon_Hero_Abathur_Hat.dds"/>
+        <StatusBarFlags index="Custom" value="0"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_hero_symbiote.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorModel id="HeroAbathurTalentSymbioteHivemind@StabCursorModelA">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Abil.HeroAbathurStab.Guide; ValidatePlayer HeroAbathurTalentSymbioteHivemind" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefSet ::global.NewGuideA ::Self"/>
+        <On Terms="Signal.*.LinkAbathurSymbioteHivemindStabA" Send="RefSetFromMsg ::actor.AbathurSymbioteA ::Sender"/>
+        <On Terms="Signal.*.LinkAbathurSymbioteHivemindStabA" Target="::actor.AbathurSymbioteA" Send="Signal LinkCursorHivemindStabA"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow"/>
+        <Model value="Invisible"/>
+    </CActorModel>
+    <CActorQuad id="HeroAbathurTalentSymbioteHivemind@StabGuideA">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorDestruction" Target="_GuideQuadSegment" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_SymbioteHivemindSiteModelA" Actor="Find"/>
+        <HostSiteOps Ops="HeroAbathurTalentSymbioteHivemind@SOpStabGuideA SOp2DRotation"/>
+        <LaunchActor value="GuideVisualQuadLaunch"/>
+        <CenterActor value="GuideVisualQuadCenter"/>
+        <ImpactActor value="GuideVisualQuadImpact"/>
+        <Quad value="-0.500000,-1.000000,0.500000,0.000000"/>
+        <Height value="9.000000"/>
+        <Width value="1.250000"/>
+    </CActorQuad>
+    <CActorSplat id="HeroAbathurTalentSymbioteHivemind@CursorSplat" parent="GuideVisualCircle" abil="HeroAbathurSymbiote">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <On index="0" Terms="Abil.HeroAbathurSymbiote.Guide; ValidatePlayer HeroAbathurTalentSymbioteHivemind@HasTalentSource"/>
+        <Model value="HeroAbathurTalentSymbioteHivemind@CursorSplat"/>
+    </CActorSplat>
+    <CActorSiteOpForward id="HeroAbathurTalentSymbioteHivemind@SOpStabGuideA">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostForward Subject="::scope.SymbioteHivemindCursorA" Actor="Find"/>
+    </CActorSiteOpForward>
+    <CActorModel id="HeroAbathurTalentSymbioteHivemind@SiteModelA">
+        <Aliases value="_SymbioteHivemindSiteModelA"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetUnit SOpAttachCenter"/>
+        <Model value="Invisible"/>
+    </CActorModel>
+    <CActorSound id="HeroAbathurSymbiote@SelfEnd" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@CasterDummyBehavior.Off" Send="Create"/>
+        <Sound value="HeroAbathurSymbiote@Self_End"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurSymbiote@SelfLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@CasterDummyBehavior.On" Send="Create"/>
+        <Sound value="HeroAbathurSymbiote@Self_Launch"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurSymbiote@SelfLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@CasterDummyBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@CasterDummyBehavior.Off" Send="Destroy"/>
+        <Sound value="HeroAbathurSymbiote@Self_Loop"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurSymbiote@Detachable" parent="CoreModelAnimationStyleBase">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSymbiote@ActorLink.Start; At Target" Send="Create HeroAbathurSymbiote@OverheadSite"/>
+        <On Terms="ActorCreation; IsActorLocalPlayer" Send="HostSiteOpsSet ::Host {SOpLookAtCursor SOp2DRotation SOpRotationSmooth}"/>
+        <On Terms="Signal.*.SymbioteSiteReady" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.SymbioteSiteReady" Send="RefSetFromMsg ::Host ::Sender"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death DontResetOnUnhide"/>
+        <On Terms="ActorOrphan" Send="RefClear ::Host"/>
+        <On Terms="ActorOrphan" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <Model value="HeroAbathurSymbiote"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurSymbiote@HostAwareness" parent="ModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@HostBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@HostBehavior.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <Model value="HeroAbathurSymbiote@HostProxy"/>
+    </CActorModel>
+    <CActorSite id="HeroAbathurSymbiote@OverheadSite">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorCreation" Target="::Creator" Send="Signal SymbioteSiteReady"/>
+        <HostSiteOps Ops="SOpGrabCaster SOpAttachOverhead SOpMoveUpBy2 SOp2DRotation"/>
+    </CActorSite>
+    <CActorModel id="HeroAbathurSymbiote@Cast" parent="CoreModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@CasterDummyBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurSymbiote@CasterDummyBehavior.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurSymbiote@Host" parent="CoreModelAddition">
+        <Inherits index="TimeScale" value="0"/>
+        <AcceptedTransfers index="Rotation" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostSiteOps Ops="SOpAttachOverheadSoft SOpPointSouthWorld" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurSymbiote@Impact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSymbiote@ApplyHostBehavior.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create HeroAbathurSymbiote@ImpactSound"/>
+        <HostSiteOps Ops="SOpAttachOverhead SOpMoveUpBy2"/>
+    </CActorModel>
+    <CActorSound id="HeroAbathurSymbiote@ImpactSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSymbiote@RemoveAbilityDisabler.Start; At Target" Send="Create"/>
+        <Sound value="HeroAbathurSymbiote@Impact"/>
+    </CActorSound>
+    <CActorSiteOpLocalOffset id="HeroAbathurStab@Offset">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <LocalOffset value="0.000000,0.000000,1.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorQuad id="HeroAbathurStab@GuideVisual" parent="CoreGuideVisualQuadDownClosestFantasy" abil="HeroAbathurStab">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Height value="9.000000"/>
+        <Width value="1.250000"/>
+    </CActorQuad>
+    <CActorMissile id="HeroAbathurStab@AttackMissile" parent="CoreMissileWithDeath" unitName="HeroAbathurStab@Missile">
+        <Macros value="GlobalLoopMacro"/>
+        <AcceptedHostedPropTransfers index="CloakEffect" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorMissile>
+    <CActorAction id="HeroAbathurStab@Attack1" parent="CoreGenericAttackPoint" effectImpact="HeroAbathurStab@Damage" effectLaunch="HeroAbathurStab@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <LaunchSiteOps Ops="SOpAttachCenter"/>
+        <LaunchAssets Sound="Abathur_Symbiote_Stab_AttackLaunch"/>
+        <Missile value="HeroAbathurStab@AttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow HeroAbathurStab@Offset"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorAction id="HeroAbathurStab@ImpactAction" parent="RangedHeroAttack" effectAttack="HeroAbathurStab@ImpactSet">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <ImpactMap index="None" Model="HeroAbathurStab@MissileImpact" Sound="Abathur_Symbiote_Stab_AttackImpact"/>
+    </CActorAction>
+    <CActorForceConeRoundedEnd id="AbathurSymbioteStabMissileForce">
+        <Host Subject="_Missile"/>
+        <HostSiteOps Ops="SOpMoveBackBy2" HoldPosition="1" HoldRotation="1"/>
+        <HostEnd Subject="_Missile"/>
+        <HostEndSiteOps Ops="SOpMoveBy2 SOpMoveUpByDot5" HoldPosition="1" HoldRotation="1"/>
+        <Magnitude value="15.000000,10.000000"/>
+        <Duration value="0.250000"/>
+        <Angle value="35.000000"/>
+        <On Terms="Effect.HeroAbathurStab@MissileScan.Start" Send="Create"/>
+        <On Terms="Effect.StabMissileScan2.Start" Send="Create"/>
+        <ForceFlags index="FallOff" value="0"/>
+    </CActorForceConeRoundedEnd>
+    <CActorRange id="HeroAbathurSpikeBurst@Range" parent="CoreRangeAbilPlusSplat" abil="HeroAbathurSpikeBurst">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorRange>
+    <CActorSplat id="HeroAbathurSpikeBurst@RangeSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Scale value="4.000000"/>
+    </CActorSplat>
+    <CActorSound id="HeroAbathurSpikeBurst@CastSound" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Sound value="Abathur_Symbiote_SpikeBlast_Cast"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurSpikeBurst@Cast" parent="CoreModelAnimationStyleOneShotUnit">
+        <Inherits index="CloakEffect" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSpikeBurst@DamageSearch.Start; ValidateUnit NotStructureTarget; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create HeroAbathurSpikeBurst@CastSound"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpMoveUpBy1 SOpRotationRandomDisc" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurSpikeBurst@CastBuilding" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSpikeBurst@DamageSearch.Start; ValidateUnit IsStructureTarget; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create HeroAbathurSpikeBurst@CastSound"/>
+        <On Terms="ActorCreation; ValidateUnit IsTownHallLvl3" Send="SetScale 0.900000"/>
+        <On Terms="ActorCreation; ValidateUnit IsTownHallLvl2" Send="SetScale 0.850000"/>
+        <On Terms="ActorCreation; ValidateUnit TownStructureCannonTower" Send="SetScale 0.660000"/>
+        <On Terms="ActorCreation; ValidateUnit TownStructureMoonwell" Send="SetScale 0.660000"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpMoveUpBy1 SOpRotationRandomDisc" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurSpikeBurst@Impact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSpikeBurst@BurstDamage.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create HeroAbathurSpikeBurst@ImpactSound"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorSound id="HeroAbathurSpikeBurst@ImpactSound" parent="HeroAttackImpactSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Sound value="Abathur_Symbiote_SpikeBlast_Impact"/>
+    </CActorSound>
+    <CActorForceSphere id="HeroAbathurSpikeBurst@OutForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurSpikeBurst@CastSearch.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+        <Duration value="0.250000"/>
+        <Magnitude value="55.000000"/>
+        <Radius value="1.750000"/>
+    </CActorForceSphere>
+    <CActorSound id="HeroAbathurCarapace@OnSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.On" Send="Create"/>
+        <Sound value="Abathur_CarapaceEvolution_Cast"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurCarapace@LoopSound" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.Off" Send="Destroy"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.Off" Send="Destroy"/>
+        <Sound value="Abathur_CarapaceEvolution_Loop"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurCarapace@OffSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.Off" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.Off" Send="Create"/>
+        <Sound value="Abathur_CarapaceEvolution_End"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurCarapace@BuffHero" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.On; ValidateUnit TargetIsHero" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.On; ValidateUnit TargetIsHero" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurTalentCarapaceNetworkedCarapace@Shield.On; ValidateUnit TargetIsHero" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurTalentCarapaceNetworkedCarapace@Shield.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit TargetIsFat" Send="SetScale 1.300000"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurCarapace@BuffMinion" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="$Birth"/>
+        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.On; ValidateUnit NotHeroorStructure" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.On; ValidateUnit NotHeroorStructure" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurTalentCarapaceNetworkedCarapace@Shield.On; ValidateUnit NotHeroorStructure" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+        <Scale value="1.350000"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurCarapace@BuffBuilding" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.On; ValidateUnit IsStructureTarget" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@Shield.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.On; ValidateUnit IsStructureTarget" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurCarapace@ShieldHivemind.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit TargetIsCannonTower" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit TargetIsTownTownHallL3" Send="SetScale 1.100000"/>
+        <On Terms="ActorCreation; ValidateUnit TargetIsTownTownHallL2" Send="SetScale 0.850000"/>
+        <On Terms="ActorCreation; ValidateUnit IsCore" Send="SetScale 1.300000"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+    </CActorModel>
+    <CActorModel id="AbathurSymbioteSpikeBurstSomaTransference" parent="CoreModelAnimationStyleOneShotUnit">
+        <Terms value="Cap 1"/>
+        <On Terms="Effect.AbathurSymbioteSpikeBurstSomaTransferenceCreateHealer.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter SOp2DRotation"/>
+        <Model value="Storm_Effect_GenericHeal_Impact"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurToxicNest" parent="CoreMinionStandard" unitName="HeroAbathurToxicNest">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurToxicNest@SpawnSoundFriendly"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurToxicNest@SpawnSoundEnemy"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurToxicNest@BuildAlly"/>
+        <On Terms="UnitBirth" Send="Create HeroAbathurToxicNest@BuildEnemy"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Target="HeroAbathurToxicNest@BuildEnemy" Send="SetFilter Enemy"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Send="TimerSet 0.550000 NestDeath"/>
+        <On Terms="TimerExpired; TimerName NestDeath" Target="HeroAbathurToxicNest@BuildAlly" Send="SetScale 0.400000 0.125000"/>
+        <On Terms="TimerExpired; TimerName NestDeath" Target="HeroAbathurToxicNest@BuildEnemy" Send="SetScale 0.400000 0.125000"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Target="HeroAbathurToxicNest@BuildAlly" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Target="HeroAbathurToxicNest@BuildEnemy" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Send="ModelSwap HeroAbathurToxicNest"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Send="$Birth 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Send="Create HeroAbathurToxicNest@ArmedSound"/>
+        <On Terms="UnitDeath" Send="Create HeroAbathurToxicNest@ExplosionWarningSound"/>
+        <On Terms="Effect.HeroAbathurToxicNest@SuicideSet.Start; At Source" Send="StatusSet Suicide 1"/>
+        <On Terms="Effect.HeroAbathurToxicNest@SuicideSet.Start; At Source" Send="StatusSet IntentionalDeath 1"/>
+        <On Terms="UnitDeath; HasStatus Suicide" Send="Create HeroAbathurToxicNest@DeathModel"/>
+        <On Terms="Effect.HeroAbathurToxicNest@TriggerSet.Start; At Source" Send="StatusSet Damaging 1"/>
+        <On Terms="Effect.HeroAbathurToxicNest@TriggerSet.Start; At Source" Send="StatusSet IntentionalDeath 1"/>
+        <On Terms="UnitDeath; HasStatus Damaging" Send="Create HeroAbathurToxicNest@DeathModel"/>
+        <On Terms="UnitDeath; IsStatus IntentionalDeath 0" Send="Create HeroAbathurToxicNest@NoDamageDeathModel"/>
+        <Model value="HeroAbathurToxicNest@Invisible"/>
+        <DeathArray index="Normal" ModelLink="Invisible"/>
+        <ImpactSound value="Pet_Small_Wet_Impact"/>
+        <PlacementActorModel value="HeroAbathurToxicNest@PlacementModel"/>
+        <PlaceholderActorModel value="HeroAbathurToxicNest@PlacementModel"/>
+        <BarOffset value="25"/>
+        <BarWidth value="36"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Abathur_ToxicNest.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-techupgrade-terran-extramines.dds"/>
+        <NameOffset value="10"/>
+    </CActorUnit>
+    <CActorModel id="HeroAbathurToxicNest@DeathModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD {} {} Death ContentPlayOnce"/>
+        <Model value="HeroAbathurToxicNest@Death"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurToxicNest@NoDamageDeathModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD {} {} Death ContentPlayOnce"/>
+        <Model value="AbathurToxicNestBuild"/>
+    </CActorModel>
+    <CActorSound id="HeroAbathurToxicNest@SpawnSoundEnemy" parent="CoreSoundOneShot">
+        <Filter index="Self" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Sound value="Abathur_ToxicNest_Spawn"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurToxicNest@SpawnSoundFriendly" parent="CoreSoundOneShot">
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Sound value="Abathur_ToxicNest_Spawn"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurToxicNest@Impact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurToxicNest@Damage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurToxicNest@BuildAlly" parent="CoreModelAddition">
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Model value="AbathurToxicNestBuild"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurToxicNest@BuildEnemy" parent="CoreModelAddition">
+        <Filter index="Self" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Model value="AbathurToxicNestBuild"/>
+    </CActorModel>
+    <CActorRange id="HeroAbathurToxicNest@Range" parent="CoreRangeAbil" abil="HeroAbathurToxicNest">
+        <Filter index="Self" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorCreation; ValidateUnit AbathurDoesNotHaveMasteryBallistospores" Send="SetFilter Self Clear"/>
+        <Icon value="Assets\Textures\UI_Ingame_Radius_Tower.dds"/>
+        <RangeFlags index="Minimap" value="1"/>
+    </CActorRange>
+    <CActorModel id="HeroAbathurToxicNest@PlacementModel" parent="CorePlacementModel">
+        <Filter index="Ally" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Model value="HeroAbathurToxicNest@PlacementModel"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurToxicNest@PlaceholderModel" parent="CoreMinionStandard" unitName="HeroAbathurToxicNest@PlaceholderDummy">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Model value="HeroAbathurToxicNest@PlacementModel"/>
+        <PlacementModel value="HeroAbathurToxicNest@PlacementModel"/>
+        <PlacementActorModel value="HeroAbathurToxicNest@PlacementModel"/>
+        <PlaceholderActorModel value="HeroAbathurToxicNest@PlacementModel"/>
+    </CActorUnit>
+    <CActorSound id="HeroAbathurToxicNest@ArmingSound" parent="CoreSoundOneShot">
+        <Macros index="0" removed="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurToxicNest@ArmingBehavior.Off" Send="Create"/>
+        <Sound value="Abathur_ToxicNest_Arming"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurToxicNest@ArmedSound" parent="CoreSoundContinuous">
+        <Macros index="0" removed="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Sound value="Abathur_ToxicNest_Armed"/>
+    </CActorSound>
+    <CActorSound id="AbathurToxicNestExplosionWarningSound" parent="SoundOneShot">
+        <Sound value="Abathur_ToxicNest_Warning"/>
+    </CActorSound>
+    <CActorForceCylinder id="HeroAbathurToxicNest@ExplosionUpForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurToxicNest@SearchAreaImpact.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create AbathurToxicNestExplosionOutForce"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+        <Duration value="0.500000"/>
+        <Magnitude value="55.000000"/>
+        <HostEndSiteOps Ops="SOpTargetPoint SOpMoveUpBy2"/>
+    </CActorForceCylinder>
+    <CActorForceSphere id="HeroAbathurToxicNest@ExplosionOutForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+        <Duration value="0.250000"/>
+        <Magnitude value="55.000000"/>
+        <Radius value="1.750000"/>
+    </CActorForceSphere>
+    <CActorModel id="HeroAbathurTalentToxicNestEnvenomedNest@Damage" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurTalentToxicNestEnvenomedNest@Damage.Start; At Source" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="HeroAbathurTalentToxicNestEnvenomedNest"/>
+    </CActorModel>
+    <CActorUnit id="AbathurVolatileMutationItem" parent="CoreItemBase" unitName="AbathurVolatileMutationItem"/>
+    <CActorModel id="AbathurVolatileMutationDelay" parent="CoreModelAddition">
+        <On Terms="Behavior.HeroAbathurTalentVolatileMutation@Delay.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurTalentVolatileMutation@Delay.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <AutoScaleFactor value="1.000000"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="AbathurVolatileMutationExplosion" parent="CoreModelAnimationStyleOneShot">
+        <On Terms="Effect.HeroAbathurTalentVolatileMutation@FinalExplosionSearch.Start; At Effect" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create AbathurVolatileMutationExplosionSound"/>
+        <Scale value="1.200000"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurTalentVolatileMutation@Pulse" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurTalentVolatileMutation@ExplosionSearch.Start; At Effect" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create AbathurVolatileMutationExplosionSound"/>
+    </CActorModel>
+    <CActorSound id="AbathurVolatileMutationExplosionSound" parent="SoundOneShot">
+        <Sound value="Abathur_VolatileMutation_Explosion"/>
+        <Host Subject="::Creator"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurEvolveMonstrosity@Birth" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurEvolveMonstrosity" parent="CoreMinionStandard" unitName="HeroAbathurEvolveMonstrosity">
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="SymbioteVisibilityMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorCreation" Send="Create AbathurEvolveMonstrosityBirth"/>
+        <On Terms="ActorCreation" Send="$Birth 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="WeaponStart.HeroAbathurWeaponEvolveMonstrosity@Melee.AttackStart" Send="AnimPlay Attack Attack,Inferior 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="WeaponStart.HeroAbathurWeaponEvolveMonstrosity.AttackStart" Send="AnimPlay Attack Attack 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStart" Send="AnimBracketStart Spell Spell,A,Start Spell,A Spell,A,End"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStop" Send="AnimBracketStop Spell"/>
+        <On Terms="ActorCreation" Send="Create AbathurMonstrosityBirthUnburrowSound"/>
+        <On Terms="ActorCreation" Send="Create MonstrosityBirthVOXSound"/>
+        <On Terms="UnitDeath" Send="DestroyParticles"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStart" Send="Create AbathurDeepTunnelIn"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStop" Target="HeroAbathurDeepTunnel@In" Send="Destroy"/>
+        <On Terms="Abil.HeroAbathurDeepTunnelMonstrosity.SourceCastStart; AnimPlaying Spell Spell,A" Send="AnimSetTime Spell"/>
+        <DeathArray index="Normal" ModelLink="HeroAbathurEvolveMonstrosity@Death" SoundLink="Abathur_Monstrosity_Death_Splat" VoiceLink="Abathur_Monstrosity_Death_Vox"/>
+        <DeathArray index="Eviscerate" ModelLink="HeroAbathurEvolveMonstrosity@Death"/>
+        <DeathArray index="Silentkill" ModelLink="HeroAbathurEvolveMonstrosity@Death"/>
+        <DeathArray index="Timeout" ModelLink="HeroAbathurEvolveMonstrosity@Death" SoundLink="Abathur_Monstrosity_Death_Burrow"/>
+        <ImpactSound value="Pet_Large_Dry_Impact"/>
+        <PortraitActor value="HeroAbathur@BasePortrait"/>
+        <PortraitModel value="HeroAbathur@BasePortrait"/>
+        <BarWidth value="180"/>
+        <CustomUnitStatusFrame value="UnitStatus/LargeMinionUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Abathur_Monstrosity.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <MinimapIcon value="Assets\Textures\UI_MinimapIcon_Hero_Abathur_Monstrosity.dds"/>
+        <MinimapIconIsTeamColored value="1"/>
+        <MinimapIconScale value="0.800000"/>
+        <MinimapRenderPriority value="Merc"/>
+        <UnitIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+    </CActorUnit>
+    <CActorSimple id="HeroAbathurUltimateEvolution@UnitFadeIn">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Target="_Unit" Send="SetOpacity 0.000000 0.000000 UEBuild"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Target="_Unit" Send="PhysicsTerminate"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Target="_Unit" Send="SetScale 0.500000"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Target="_Unit" Send="SetTintColor 115,31,171"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.Off" Target="_Unit" Send="SetScale 1.000000 0.250000"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.Off" Send="TimerSet 0.250000 ScaleDone"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.Off" Target="_Unit" Send="ClearOpacity 0.000000 UEBuild"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.Off" Send="TimerSet 1.000000 AbathurFadeTimer"/>
+        <On Terms="TimerExpired; TimerName ScaleDone" Target="_Unit" Send="PhysicsInitialize"/>
+        <On Terms="TimerExpired; TimerName AbathurFadeTimer" Target="_Unit" Send="SetTintColor 209,165,239 1.000000"/>
+        <On Terms="TimerExpired; TimerName AbathurFadeTimer" Send="Destroy"/>
+    </CActorSimple>
+    <CActorModel id="HeroAbathurUltimateEvolution@In" parent="CoreModelAnimationStyleOneShot">
+        <InheritType value="OneShot"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Abil.HeroAbathurUltimateEvolution.SourceCastStart" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginHoldPosition"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurUltimateEvolution@Impact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurUltimateEvolution@DeathEffect" parent="CoreModelAnimationStyleOneShotNoOrphan">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Buff.Off" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroAbathurUltimateEvolution@Death"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurUltimateEvolution@TunnelOut" parent="CoreModelAnimationStyleOneShot">
+        <Inherits index="Visibility" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurAssumingDirectControl@ApplyFinalStun.Start; At Caster" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginHoldPosition" HoldRotation="1"/>
+        <Model value="HeroAbathurDeepTunnel@Out"/>
+    </CActorModel>
+    <CActorSound id="HeroAbathurUltimateEvolution@ImpactSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Effect.HeroAbathurUltimateEvolution@CastDummy.Start; At Target" Send="Create"/>
+        <Sound value="Abathur_UltimateEvolution_Impact"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurUltimateEvolution@BuildSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Send="Create"/>
+        <Sound value="HeroAbathurUltimateEvolution@Build"/>
+    </CActorSound>
+    <CActorSound id="HeroAbathurUltimateEvolution@BirthSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.Off" Send="Create"/>
+        <Sound value="HeroAbathurUltimateEvolution@Birth"/>
+    </CActorSound>
+    <CActorModel id="HeroAbathurUltimateEvolution@Build" parent="CoreModelAddition">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Build.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="AnimPlay Build Build PlayForever -1.000000 -1.000000 1.333000 AsTimeScale"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft SOp225" HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroAbathurUltimateEvolution@EvolutionBuild"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurUltimateEvolution@BirthAlly" parent="CoreModelAnimationStyleOneShotUnit">
+        <Filter index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostSiteOps HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroAbathurUltimateEvolution@Birth"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurUltimateEvolution@BirthEnemy" parent="CoreModelAnimationStyleOneShotUnit">
+        <Filter index="Self" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <HostSiteOps HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroAbathurUltimateEvolution@Birth"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurUltimateEvolution@Buff" parent="CoreModelAdditionNoOrphan">
+        <Macros value="GlobalLoopMacroMore"/>
+        <Inherits index="Visibility" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="ActorOrphan" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Buff.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Buff.On" Target="::Main" Send="SetSoundSuffix _Evo"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Buff.Off" Target="::Main" Send="SetSoundSuffix"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@Buff.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@AlternateHero.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@AlternateHero.On" Target="::Main" Send="SetSoundSuffix _Evo"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@AlternateHero.Off" Target="::Main" Send="SetSoundSuffix"/>
+        <On Terms="Behavior.HeroAbathurUltimateEvolution@AlternateHero.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.StageDivePersistent.Start" Send="SetOpacity 0.000000 0.500000"/>
+        <On Terms="Effect.StageDiveLandDummySet.Start" Send="SetOpacity 1.000000 0.250000"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow SOpShadow" HoldRotation="1"/>
+        <AutoScaleFactor value="1.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield" parent="CoreModelAddition">
+        <Macros value="GlobalLoopMacroMore"/>
+        <Inherits index="Visibility" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="Behavior.HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield.On" Send="Create"/>
+        <On Terms="Behavior.HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+        <AutoScaleFactor value="1.300000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorUnit id="HeroAbathurTalentLocustNest" parent="CoreMinionStandard" unitName="HeroAbathurTalentLocustNest">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <On Terms="UnitBirth" Send="Create AbathurToxicNestSpawnSoundFriendly"/>
+        <On Terms="UnitBirth" Send="Create AbathurToxicNestSpawnSoundEnemy"/>
+        <On Terms="Effect.HeroAbathurLocustStrain@LocustSwitch.Start" Send="$Spell"/>
+        <DeathArray index="Normal" SoundLink="SC2_Shared_Zerg_ExplosionSmall"/>
+        <PlacementModel value="HeroAbathurTalentLocustNest@Placement"/>
+        <PlacementActorModel value="AbathurLocustNestPlacement"/>
+        <PlaceholderActorModel value="AbathurLocustNestPlacement"/>
+        <BarOffset value="25"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Abathur_LocustNest.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\storm_temp_btn-techupgrade-terran-extramines.dds"/>
+        <NameOffset value="10"/>
+    </CActorUnit>
+    <CActorUnit id="HeroAbathurTalentLocustNest@PlaceholderModel" parent="CoreMinionStandard" unitName="HeroAbathurTalentLocustNest@PlaceholderDummy">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Model value="HeroAbathurTalentLocustNest@Placement"/>
+        <PlacementModel value="HeroAbathurTalentLocustNest@Placement"/>
+        <PlacementActorModel value="AbathurLocustNestPlacement"/>
+        <PlaceholderActorModel value="AbathurLocustNestPlacement"/>
+    </CActorUnit>
+    <CActorSound id="PulledSoundHeroAbathur" parent="SoundOneShot">
+        <Sound value="AbathurHero_VOX_Pulled"/>
+    </CActorSound>
+    <CActorEventMacroRunnable id="HeroAbathur@SkinUltimateGreyMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Ultimate_Grey_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Ultimate_Grey_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroAbathur@SkinUltimateRedMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Ultimate_Red_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Ultimate_Red_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroAbathur@SkinUltimatePurpleMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Abathur"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Ultimate_Purple_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Abathur_Ultimate_Purple_Emis"/>
+    </CActorEventMacroRunnable>
+</Catalog>

@@ -1,0 +1,17 @@
+﻿Library/Name/HMfn=Malfurion
+Trigger/Name/lib_HMfn_22DD9635=Hero - Malfurion - Innervate - Cooldown Modifier
+Trigger/Name/lib_HMfn_5C8C02E1=Hero - Malfurion - Regrowth - Nature's Protection
+Trigger/Name/lib_HMfn_6864C1A3=Hero - Malfurion - Talent - Dangerous Roots - Treant Spawned
+Trigger/Name/lib_HMfn_8032500C=Hero - Malfurion - Tranquility - Serenity
+Trigger/Name/lib_HMfn_9220E8FC=Hero - Malfurion - Moonfire - Celestial Alignment (Damaged)
+Trigger/Name/lib_HMfn_C92590DF=Hero - Malfurion - Moonfire - Celestial Alignment (Absorbed)
+Trigger/Name/lib_HMfn_EF5BB1E2=Hero - Malfurion - Regrowth - Life Seed
+Variable/Name/lib_HMfn_13E09FC4=Hero - Malfurion - Innervate - Cooldown Modifier
+Variable/Name/lib_HMfn_2E220ACA=EffectLink
+Variable/Name/lib_HMfn_2F80532E=Target
+Variable/Name/lib_HMfn_39F656AD=Damage Value
+Variable/Name/lib_HMfn_5A821758=TrackedUnitCount
+Variable/Name/lib_HMfn_76723F94=EffectLink
+Variable/Name/lib_HMfn_799A6313=TargetHero
+Variable/Name/lib_HMfn_C2B7262E=Malfurion
+Variable/Name/lib_HMfn_CFB5DEB5=Malfurion

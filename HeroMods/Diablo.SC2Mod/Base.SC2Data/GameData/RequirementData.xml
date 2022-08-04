@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HeroDiablo@SkinUltimateBlue">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroDiablo@SkinUltimateBlueCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroDiablo@SkinUltimateWhite">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroDiablo@SkinUltimateWhiteCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinArchangelGreen">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinArchangelGreenCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinArchangelPurple">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinArchangelPurpleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinArchangelVar3">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinArchangelVar3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinArchangelVar4">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinArchangelVar4CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinPrimeVar1">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinPrimeVar1CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinSummer18Var1">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinSummer18Var1CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinPrimeVar2">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinPrimeVar2CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinPrimeVar3">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinPrimeVar3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinPrimeVar4">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinPrimeVar4CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinSummer18Var2">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinSummer18Var2CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinSummer18Var3">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinSummer18Var3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinSummer18Var4">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinSummer18Var4CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroDiablo@BaseGreen">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroDiablo@BaseGreenCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroDiablo@BaseBlack">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroDiablo@BaseBlackCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroDiablo@BasePink">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroDiablo@BasePinkCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinKaijoePurple">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinKaijoePurpleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinKaijoeRed">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinKaijoeRedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinLurkabloPale">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinLurkabloPaleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveDiabloSkinLurkabloArgent">
+        <EditorCategories value="TechType:Skins,CoreHero:Diablo"/>
+        <NodeArray index="Use" Link="CountUpgradeDiabloSkinLurkabloArgentCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroDiabloLightningBreath@Active">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroDiabloLightningBreathCompleteOnlyAtUnitTechTreeCheat"/>
+    </CRequirement>
+</Catalog>

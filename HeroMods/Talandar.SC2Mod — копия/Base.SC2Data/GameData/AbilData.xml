@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectInstant id="HeroTalandarAccelerationProtocol">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarAccelerationProtocol" Requirements="HeroTalandarDragoonArmorSuit@IsDragoon">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarArsenalOvercharge">
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Link="Abil/HeroTalandarPurifierArmaments" Location="Unit" TimeUse="75"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarArsenalOvercharge" Requirements="HeroTalandarArsenalOvercharge"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroTalandarArsenalOvercharge"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarTalentAccumulatedShieldImmortal">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="180"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarTalentAccumulatedShieldImmortal">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarTalentPhaseBomb">
+        <Effect value="HeroTalandarTalentPhaseBomb@CasterAB"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="60"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarTalentPhaseBomb" Requirements="HeroTalandarDragoonArmorSuit@IsDragoon"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <PrepEffect index="0" removed="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarPurifierShield">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarPurifierShield@ApplyCasterBehavior"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="60"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarPurifierShield"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarSolarCannonChannel">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarSolarCannonChannel@InitialSet"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Charge CountMax="4" HideCount="1" Location="Unit"/>
+            <Cooldown Location="Unit" TimeUse="11"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarSolarCannon" Requirements="HeroTalandarSolarCannonChannel@HasNoChannelAndIsDragoon"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarDragoonArmorSuit">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarDragoonArmorSuit@InitialPersistent"/>
+        <Cost>
+            <Cooldown Link="Abil/HeroTalandarArmorSuit" Location="Unit" TimeUse="11"/>
+        </Cost>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarDragoonArmorSuit" Requirements="HeroTalandarPraetorArmorSuit@IsPraetorOrHasPurifierBeam"/>
+        <FinishTime value="0.25"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarPurifierBeam@PraetorArmorSuit">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <DataCollection value="HeroTalandarPraetorArmorSuit"/>
+        <Effect value="HeroTalandarPurifierBeam@PraetorArmorSuitInitialSet"/>
+        <PrepTime value="0.5"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarPraetorArmorSuit" Requirements="HeroTalandarPurifierBeam@HasPurifierBeam"/>
+        <FinishTime value="0.25"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarPurifierBeam@DragoonArmorSuit">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <DataCollection value="HeroTalandarDragoonArmorSuit"/>
+        <Effect value="HeroTalandarPurifierBeam@DragoonArmorSuitInitialSet"/>
+        <PrepTime value="0.5"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarDragoonArmorSuit" Requirements="HeroTalandarPurifierBeam@HasPurifierBeam"/>
+        <FinishTime value="0.25"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarPraetorArmorSuit">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarPraetorArmorSuit@InitialPersistent"/>
+        <Cost>
+            <Cooldown Link="Abil/HeroTalandarArmorSuit" Location="Unit" TimeUse="11"/>
+        </Cost>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarPraetorArmorSuit" Requirements="HeroTalandarDragoonArmorSuit@IsDragoonOrHasPurifierBeam"/>
+        <FinishTime value="0.25"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroTalandarPurificationBlast">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <Effect value="HeroTalandarPurificationBlast@InitialPersistent"/>
+        <Cost>
+            <Cooldown Link="Abil/HeroTalandarPurifierArmaments" Location="Unit" TimeUse="75"/>
+        </Cost>
+        <Range value="10"/>
+        <CastIntroTime value="0.55"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <CursorEffect value="HeroTalandarPurificationBlast@ExpireSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarPurificationBlast" Requirements="HeroTalandarPurificationBlast"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroTalandarPurifierBeam">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <Effect value="HeroTalandarPurifierBeam@InitialPersistent"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="90"/>
+        </Cost>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <CursorEffect value="HeroTalandarPurifierBeam@Search"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarPurifierBeam" Requirements="Ultimate2Unlocked"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroTalandarAccumulatedShield">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarAccumulatedShield">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroTalandarSolariteFlare">
+        <Effect value="HeroTalandarSolariteFlare@StartSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CursorEffect value="HeroTalandarSolariteFlare@AirBombSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarSolariteFlare" Requirements="HeroTalandarSolariteFlareChannel@HasActiveBehaviorShow"/>
+        <Cost>
+            <Charge>
+                <CountMax value="4"/>
+                <HideCount value="1"/>
+                <Link value="Abil/HeroTalandarSolariteFlareChannel"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CursorRangeMode value="Clamp"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroTalandarSolariteFlareChannel">
+        <Effect value="HeroTalandarSolariteFlareChannel@InitialSet"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Charge CountMax="4" HideCount="1" Location="Unit"/>
+            <Cooldown Location="Unit" TimeUse="14"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarSolariteFlare" Requirements="HeroTalandarSolariteFlareChannel@HasNoChannelAndIsDragoon"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarWarbringerProtocol">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarWarbringerProtocol" Requirements="HeroTalandarPraetorArmorSuit@IsPraetor">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroTalandarWhirlwind">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarWhirlwind@InitialSet"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarWhirlwind" Requirements="HeroTalandarPraetorArmorSuit@IsPraetor"/>
+        <Cost>
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Location value="Unit"/>
+                <TimeUse value="10"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="2"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroTalandarThunderousCharge">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarThunderousCharge@InitialPersistent"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="11"/>
+        </Cost>
+        <Range value="10"/>
+        <CursorEffect value="HeroTalandarThunderousCharge@NonHeroicSearchTargets"/>
+        <AINotifyEffect value="HeroTalandarThunderousCharge@InitialPersistent"/>
+        <EffectRange index="0" value="20,1000"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarThunderousCharge" Requirements="HeroTalandarPraetorArmorSuit@IsPraetor"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <CursorRangeMode value="ForceToMax"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroTalandarSolarCannon">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Effect value="HeroTalandarSolarCannon@StartSet"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Charge>
+                <CountMax value="4"/>
+                <HideCount value="1"/>
+                <Link value="Abil/HeroTalandarSolarCannonChannel"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroTalandarSolarCannon" Requirements="HeroTalandarSolarCannonChannel@Show"/>
+    </CAbilEffectTarget>
+</Catalog>

@@ -1,0 +1,260 @@
+include "LibCore_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Maps
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libMapM_ge_JungleCampDefenderTypes_Custom = 0;
+const int libMapM_ge_JungleCampDefenderTypes_SiegeGiants = 1;
+const int libMapM_ge_JungleCampDefenderTypes_Knights = 2;
+const int libMapM_ge_JungleCampDefenderTypes_GraveGolem = 3;
+const int libMapM_ge_JungleCampDefenderTypes_Doubloons = 4;
+const int libMapM_ge_JungleCampDefenderTypes_SiegeCamp1 = 5;
+const int libMapM_ge_JungleCampDefenderTypes_SiegeCamp2 = 6;
+const int libMapM_ge_JungleCampDefenderTypes_SiegeCamp3 = 7;
+const int libMapM_ge_JungleCampDefenderTypes_BruiserCamp1 = 8;
+const int libMapM_ge_JungleCampDefenderTypes_BruiserCamp2 = 9;
+const int libMapM_ge_JungleCampDefenderTypes_BruiserCamp3 = 10;
+const int libMapM_ge_JungleCampDefenderTypes_BossCamp1 = 11;
+const int libMapM_ge_JungleCampDefenderTypes_BossCamp2 = 12;
+const int libMapM_ge_JungleCampDefenderTypes_BossCamp3 = 13;
+const int libMapM_ge_JungleCampDefenderTypes_SiegeVanguards = 14;
+const int libMapM_ge_JungleCampDefenderTypes_BruiserHybrids = 15;
+const int libMapM_ge_JungleCampDefenderTypes_BossColossus = 16;
+const int libMapM_ge_JungleCampDefenderTypes_BossSlaynElemental = 17;
+string libMapM_ge_JungleCampDefenderTypes_Ident (int lp_val);
+const int libMapM_ge_JungleCampMercTypes_Custom = 0;
+const int libMapM_ge_JungleCampMercTypes_SiegeGiants = 1;
+const int libMapM_ge_JungleCampMercTypes_Ogres = 2;
+const int libMapM_ge_JungleCampMercTypes_GraveGolem = 3;
+const int libMapM_ge_JungleCampMercTypes_AshenvaleAncients = 4;
+const int libMapM_ge_JungleCampMercTypes_SiegeCamp1 = 5;
+const int libMapM_ge_JungleCampMercTypes_SiegeCamp2 = 6;
+const int libMapM_ge_JungleCampMercTypes_SiegeCamp3 = 7;
+const int libMapM_ge_JungleCampMercTypes_BruiserCamp1 = 8;
+const int libMapM_ge_JungleCampMercTypes_BruiserCamp2 = 9;
+const int libMapM_ge_JungleCampMercTypes_BruiserCamp3 = 10;
+const int libMapM_ge_JungleCampMercTypes_BossCamp1 = 11;
+const int libMapM_ge_JungleCampMercTypes_BossCamp2 = 12;
+const int libMapM_ge_JungleCampMercTypes_BossCamp3 = 13;
+const int libMapM_ge_JungleCampMercTypes_SiegeVanguards = 14;
+const int libMapM_ge_JungleCampMercTypes_BruiserHybrids = 15;
+const int libMapM_ge_JungleCampMercTypes_BossColossus = 16;
+const int libMapM_ge_JungleCampMercTypes_BossSlaynElemental = 17;
+const int libMapM_ge_JungleCampTypes_MercCamp = 0;
+const int libMapM_ge_JungleCampTypes_DoubloonCamp = 1;
+const int libMapM_ge_JungleCampTypes_DoubloonCampSmall = 2;
+const int libMapM_ge_JungleCampTypes_RewardCamp = 3;
+const int libMapM_ge_JungleCampTypes_AshenvaleForestGuardians = 4;
+const int libMapM_ge_JungleCampTypes_TryMeCamp = 5;
+const int libMapM_ge_JungleCampTextTagTypes_Helper = 0;
+const int libMapM_ge_JungleCampTextTagTypes_Respawn = 1;
+const int libMapM_ge_JungleCampTextTagTypes_Special = 2;
+const int libMapM_ge_JungleCampStates_Idle = 0;
+const int libMapM_ge_JungleCampStates_Busy = 1;
+const int libMapM_ge_JungleCampStates_Dead = 2;
+const int libMapM_ge_JungleCampStates_Paused = 3;
+const int libMapM_ge_JungleCampStates_Hibernating = 4;
+const int libMapM_ge_JungleCampStates_HibernetingReadyToSpawn = 5;
+string libMapM_ge_JungleCampStates_Ident (int lp_val);
+const int libMapM_ge_MapMechanicType_None = 0;
+const int libMapM_ge_MapMechanicType_BattleforSlayn = 1;
+const int libMapM_ge_MapMechanicType_CurseofRavenLord = 2;
+const int libMapM_ge_MapMechanicType_AlwaysLastIndex = 3;
+
+// Constants
+const fixed libMapM_gv_bALJungleBirthDelay = 3.0;
+const fixed libMapM_gv_bALJungleCampCaptureTime = 1.5;
+const fixed libMapM_gv_bALJungleCampCaptureRadius = 3.0;
+const int libMapM_gv_dataJungleMaxNumberOfDefenderTypes = 15;
+const int libMapM_gv_dataJungleMaxNumberOfDefendersPerCamp = 10;
+const int libMapM_gv_dataJungleMaxNumberOfMercTypes = 15;
+const int libMapM_gv_dataJungleMaxNumberOfMercsSpawned = 10;
+const int libMapM_gv_dataJungleMaxNumberOfPaths = 6;
+const int libMapM_gv_jungleMaxCamps = 15;
+const int libMapM_gv_mapMechanicsMaxCount_C = 2;
+const int libMapM_gv_mMRepulseRegionPunchTargetMax_C = 4;
+
+// Structures
+struct libMapM_gs_JungleCampDefenderData {
+    bool lv_campIsSoloable;
+    bool lv_campIsElite;
+    bool lv_defendersCoweronDeath;
+    bool[libMapM_gv_dataJungleMaxNumberOfDefendersPerCamp + 1] lv_defenderCoweringUnit;
+    fixed lv_respawnTime;
+    int lv_numberOfCreeps;
+    text lv_campTypeMinimapLabel;
+    text lv_campTypeNameLabel;
+    string[libMapM_gv_dataJungleMaxNumberOfDefendersPerCamp + 1] lv_creepUnitTypes;
+    fixed lv_xPAwardForCapture;
+    int lv_numberOfRanks;
+};
+
+struct libMapM_gs_JungleCampPathData {
+    region lv_townRegion;
+    point lv_waypoint;
+};
+
+struct libMapM_gs_JungleCampMercData {
+    int lv_numberOfMinionsSpawned;
+    string[libMapM_gv_dataJungleMaxNumberOfMercsSpawned + 1] lv_spawnedMinionUnitTypes;
+    int lv_numberOfRanks;
+};
+
+struct libMapM_gs_JungleCreepCamps {
+    int lv_mapDataCampType;
+    int lv_mapDataCampDefenderType;
+    point lv_mapDataCampCaptainSpawnPoint;
+    point[libMapM_gv_dataJungleMaxNumberOfDefendersPerCamp + 1] lv_mapDataDefenderSpawnPoints;
+    region lv_mapDataDefenderLeashRegion;
+    string lv_mapDataCapturePointSplatModel;
+    point lv_mapDataBannerPoint;
+    int lv_mapDataMercSpawnType;
+    int lv_mapDataRewardSpawnType;
+    int lv_mapDataBattleshipSpawnType;
+    unit lv_mapDataCampBuildingBuilding;
+    bool lv_defenderCampIsSoloable;
+    bool lv_defenderCampIsElite;
+    int lv_defenderNumberofCreeps;
+    string[libMapM_gv_dataJungleMaxNumberOfDefendersPerCamp + 1] lv_defenderUnitTypes;
+    fixed lv_defenderRespawnTime;
+    int lv_defenderNumberOfRanks;
+    fixed lv_defenderCaptureXPValue;
+    bool lv_defenderDefendersCoweronDeath;
+    text lv_defenderCampTypeNameLabel;
+    text lv_defenderCampTypeMinimapLabel;
+    bool lv_defenderDefendersHaveStaggeredBirth;
+    fixed lv_defenderDefendersStaggeredBirthPeriod;
+    bool[libMapM_gv_dataJungleMaxNumberOfDefendersPerCamp + 1] lv_defenderCoweringUnit;
+    unitgroup lv_defenderCoweringUnitGroup;
+    bool lv_defenderSiegesCoreOnCapture;
+    int lv_mercNumberOfMinionsSpawned;
+    string[libMapM_gv_dataJungleMaxNumberOfMercsSpawned + 1] lv_mercSpawnedMinionUnitType;
+    int lv_mercNumberOfRanks;
+    bool[libCore_gv_bALMaxTeams + 1] lv_mercMercCampHasSingleWaypoint;
+    libMapM_gs_JungleCampPathData[libMapM_gv_dataJungleMaxNumberOfPaths + 1] lv_mercOrderMercCampPathing;
+    libMapM_gs_JungleCampPathData[libMapM_gv_dataJungleMaxNumberOfPaths + 1] lv_mercChaosMercCampPathing;
+    int[libCore_gv_bALMaxTeams + 1] lv_mercLaneToSpawnIn;
+    int[libCore_gv_bALMaxTeams + 1] lv_mercLaneLastSpawnedIn;
+    int[libCore_gv_bALMaxTeams + 1] lv_mercSpawnFirstWaypointIndex;
+    int lv_piratesNumberOfRanks;
+    int lv_rewardNumberOfRanks;
+    string lv_campActorMessageUponSpawn;
+    unit lv_campIconUnit;
+    unit lv_campOwnershipFlagUnit;
+    int lv_campHelperTextTag;
+    int lv_campRespawnTextTag;
+    int lv_campSpecialTextTag;
+    int lv_campTextTagType;
+    timer lv_stateCreepBirthTimer;
+    timer lv_stateCreepRespawnTimer;
+    timer lv_stateCreepActiveTimer;
+    int lv_stateCurrentDefenderScalingTicks;
+    int lv_stateCurrentMercScalingTicks;
+    int lv_aIState;
+    int lv_aIDefenderAIIndex;
+    region lv_captureCaptureRegion;
+    unit lv_captureCircleOfPowerUnit;
+    bool lv_captureCaptureEnabled;
+    int lv_captureCaptureCounter;
+    int lv_captureCapturePointIndex;
+    int lv_statTrackingOrderCaptures;
+    int lv_statTrackingChaosCaptures;
+    fixed lv_statTrackingDamageDoneByLastCapture;
+};
+
+struct libMapM_gs_MapMechanicUsedTracker {
+    bool lv_healingFountainUsed;
+    bool lv_ravenTribute;
+};
+
+// Variable Declarations
+fixed libMapM_gv_bALJungleLeashRespawnTime;
+fixed libMapM_gv_bALJungleCampScalingTimerDuration;
+libMapM_gs_JungleCampDefenderData[libMapM_gv_dataJungleMaxNumberOfDefenderTypes + 1] libMapM_gv_dataJungleCampDefenderData;
+libMapM_gs_JungleCampMercData[libMapM_gv_dataJungleMaxNumberOfMercTypes + 1] libMapM_gv_dataJungleCampMercData;
+libMapM_gs_JungleCreepCamps[libMapM_gv_jungleMaxCamps + 1] libMapM_gv_jungleCreepCamps;
+int libMapM_gv_jungleNumberOfCreepCamps;
+unitgroup[libMapM_gv_jungleMaxCamps + 1] libMapM_gv_jungleMiniMapIconGroup;
+unit[libMapM_gv_jungleMaxCamps + 1] libMapM_gv_jungleMiniMapLeader;
+int[libMapM_gv_jungleMaxCamps + 1] libMapM_gv_jungleMiniMapOrderPath;
+int[libMapM_gv_jungleMaxCamps + 1] libMapM_gv_jungleMiniMapChaosPath;
+int[libMapM_gv_jungleMaxCamps + 1] libMapM_gv_jungleMiniMapObserverPath;
+timer libMapM_gv_jungleScalingTimer;
+int libMapM_gv_jungleScalingTicks;
+bool libMapM_gv_jungleCampsShouldBeHibernating;
+actor libMapM_gv_mapMechanicControllerActor;
+int[libMapM_gv_mapMechanicsMaxCount_C + 1] libMapM_gv_mapMechanics;
+int libMapM_gv_mapMechanicsCount;
+trigger[libMapM_gv_mapMechanicsMaxCount_C + 1] libMapM_gv_mapMechanicsInitCallbacks;
+libMapM_gs_MapMechanicUsedTracker[libCore_gv_bALMaxPlayers + 1] libMapM_gv_mapMechanicUsedTracker;
+region[libCore_gv_bALMaxTeams + 1] libMapM_gv_mMRepulseRegions;
+point[libCore_gv_bALMaxTeams + 1][libMapM_gv_mMRepulseRegionPunchTargetMax_C + 1] libMapM_gv_mMRepulseRegionPunchTarget;
+unitgroup libMapM_gv_mMRepulseRegionPunchedGroup;
+region[libCore_gv_bALMaxTeams + 1] libMapM_gv_mMSafeRegions;
+
+// Function Declarations
+int libMapM_gf_JungleCampDefenderTypeIndex (int lp_defenderType);
+void libMapM_gf_DataInitializeScalingDataForDefender (int lp_defenderTypeIndex, string lp_scalingBehavior);
+int libMapM_gf_JungleCampMercTypesIndex (int lp_mercType);
+void libMapM_gf_DataInitializeScalingDataForMerc (int lp_mercTypeIndex, string lp_scalingBehavior);
+void libMapM_gf_JungleInitializeDefenderData (int lp_camp);
+void libMapM_gf_JungleInitializeMercCampData (int lp_camp);
+point libMapM_gf_JungleDetermineMercWaypoint (int lp_owningTeam, int lp_camp);
+void libMapM_gf_JungleInitializeRewardCampData (int lp_camp);
+void libMapM_gf_JungleInitializeDoubloonCampData (int lp_camp);
+void libMapM_gf_JungleInitializeDoubloonSmallCampData (int lp_camp);
+void libMapM_gf_JungleInitializeCreepCamp (int lp_camp);
+int libMapM_gf_JungleGetJungleCampForUnit (unit lp_unit);
+string libMapM_gf_JungleGetCurrentIconForJungleCamp (int lp_camp, bool lp_alive);
+int libMapM_gf_JungleGetCampIndexFromDefenderIndex (int lp_defenderIndex);
+void libMapM_gf_JungleUpdateTextTagForCamp (int lp_camp, int lp_type);
+void libMapM_gf_JungleSwitchToTextTagForCamp (int lp_camp, int lp_type);
+void libMapM_gf_JungleUpdateMinimapTooltipForCamp (int lp_camp);
+void libMapM_gf_JungleRespawnCreepsForCamp (int lp_camp);
+void libMapM_gf_JungleCreepCampRespawnTimerExpiresCreateEvent (int lp_camp);
+void libMapM_gf_JungleTransitionCampIntoState (int lp_camp, int lp_state);
+void libMapM_gf_JungleHibernateCampDefender (unit lp_defender);
+void libMapM_gf_JungleStopHibernatingCampDefender (unit lp_defender, point lp_location);
+void libMapM_gf_JungleTurnOnCampCaptureBeacon (int lp_camp);
+void libMapM_gf_JungleTurnOffCampCaptureBeacon (int lp_camp, int lp_owner);
+void libMapM_gf_JungleTransitionCampCaptureBeacontoHidden (int lp_camp);
+void libMapM_gf_JungleGrantCaptureRewards (int lp_camp, int lp_owner, bool lp_hasMercLordTalent);
+void libMapM_gf_JungleMercCampCapturedAnnouncement (int lp_camp, int lp_owner);
+void libMapM_gf_JungleSpawnMercMinions (int lp_camp, int lp_owner, bool lp_hasMercLordTalent);
+int libMapM_gf_JungleGetMercCampForUnit (unit lp_unit);
+void libMapM_gf_JungleSetMiniMapIconForMercMinions (int lp_camp, unitgroup lp_mercUnitGroup);
+void libMapM_gf_JungleCreateMercPath (unit lp_mercLeader, bool lp_newPath);
+void libMapM_gf_JungleUpdateMercDamageTracker (int lp_camp, fixed lp_damageDealt);
+void libMapM_gf_MapMechanicAdd (int lp_mechanic, trigger lp_initializeCallback);
+int libMapM_gf_MapMechanicIndex (int lp_mechanic);
+bool libMapM_gf_MapMechanicExistsOnMap (int lp_mechanic);
+int libMapM_gf_PrimaryMapMechanic ();
+void libMapM_gf_MapSetRepulseRegion (int lp_team, region lp_pulseRegion, point lp_punchTargetLocation1, point lp_punchTargetLocation2, point lp_punchTargetLocation3, point lp_punchTargetLocation4);
+void libMapM_gf_MMRepulseRegionAddToPunchedGroup (unit lp_punchedUnit);
+void libMapM_gf_MapSetSafeRegion (int lp_team, region lp_safeRegion);
+
+// Trigger Declarations
+trigger libMapM_gt_IncludeMapMechanics;
+trigger libMapM_gt_DataJungleCampDefenderData;
+trigger libMapM_gt_DataJungleCampMercData;
+trigger libMapM_gt_InitializeJungleCamps;
+trigger libMapM_gt_JungleTurnOnCamps;
+trigger libMapM_gt_JungleCreepCampRespawnTimerExpires;
+trigger libMapM_gt_JungleRespawnTimerTextTagCountdown;
+trigger libMapM_gt_JungleDefendersBeginFighting;
+trigger libMapM_gt_JungleDefendersEndFighting;
+trigger libMapM_gt_JungleAllDefendersKilled;
+trigger libMapM_gt_JungleHibernateCampsStart;
+trigger libMapM_gt_JungleHibernateCampsEnd;
+trigger libMapM_gt_JungleHibernateDefendersThatLeash;
+trigger libMapM_gt_JungleHibernateDefendersThatJustSpawned;
+trigger libMapM_gt_JungleCampOwnershipChange;
+trigger libMapM_gt_JungleMercLeaderDies;
+trigger libMapM_gt_InitializeMapMechanics;
+trigger libMapM_gt_MMRepulseRegionPunchBehavior;
+trigger libMapM_gt_MMSafeRegionBehavior;
+
+// Library Initialization
+void libMapM_InitVariables ();
+

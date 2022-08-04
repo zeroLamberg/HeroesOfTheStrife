@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="HeroKatarina@BaseBlue">
+        <EditorCategories value="CoreHero:Katarina,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroKatarina@BaseGrey">
+        <EditorCategories value="CoreHero:Katarina,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroKatarina@BaseGreen">
+        <EditorCategories value="CoreHero:Katarina,UpgradeType:Skins"/>
+        <LeaderAlias value="HeroKatarina@BaseGrey"/>
+    </CUpgrade>
+    <CUpgrade id="HeroKatarina@BasePurple">
+        <EditorCategories value="CoreHero:Katarina,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroKatarina@BaseRed">
+        <EditorCategories value="CoreHero:Katarina,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroKatarina@BaseGolden">
+        <EditorCategories value="CoreHero:Katarina,UpgradeType:Skins"/>
+    </CUpgrade>
+</Catalog>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="HeroMalfurion@BasePurple">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroMalfurion@BaseWhite">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinBetrayerRed">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinWinterVar1">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinFlameVar2">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinFlameVar3">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinSotrmrageWhite">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinSotrmrageVar3">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinUltimateRed">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinBetrayerBrown">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinSotrmragePurple">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinUltimateWhite">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinFlameVar1">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinWinterVar2">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinWinterVar3">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="MalfurionSkinWinterVar4">
+        <EditorCategories value="CoreHero:Malfurion,UpgradeType:Skins"/>
+    </CUpgrade>
+</Catalog>

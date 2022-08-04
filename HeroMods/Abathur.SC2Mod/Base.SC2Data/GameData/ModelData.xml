@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel default="1" id="HeroAbathur@Common" parent="HeroModelParent">
+        <Model value="Assets\Units\Neutral\HeroAbathur@Common\HeroAbathur@Common.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Abathur_RequiredAnims\Storm_Hero_Abathur_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Abathur_PortraitAnims\Storm_Hero_Abathur_PortraitAnims.m3a"/>
+        <AttachProps Id="Ref_Center" RadiusShield="1.500000"/>
+        <AttachProps Id="Ref_Chest">
+            <Keys index="MacGuffin" value="0"/>
+        </AttachProps>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="Abathur_Attack_Launch"/>
+            <Type value="Sound"/>
+            <Time value="0.177000"/>
+            <Payload value="Abathur_Attack_Launch"/>
+        </Events>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="HeroAbathur@Common"/>
+        <Occlusion value="Show"/>
+        <Tipability value="0.675000"/>
+        <TipabilityLength value="1.300000"/>
+        <TipabilityWidth value="0.300000"/>
+    </CModel>
+    <CModel id="HeroAbathur@SkinUltimatePortraitAddition" parent="CorePortrait">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Abathur_Ultimate\Storm_Hero_Abathur_Ultimate.m3"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Abathur_PortraitAnims\Storm_Hero_Abathur_PortraitAnims.m3a"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <TextureDeclares Prefix="Storm_Hero_Abathur_Ultimate" Slot="main"/>
+    </CModel>
+    <CModel id="HeroAbathur@SkinUltimatePortrait" parent="CorePortrait">
+        <Model value="Assets\Portraits\Storm_Portrait_Abathur_Ultimate_Background\Storm_Portrait_Abathur_Ultimate_Background.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathur@SkinUltimate" parent="HeroAbathur@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Abathur_Ultimate\Storm_Hero_Abathur_Ultimate.m3"/>
+        <Lighting value="HeroAbathur@SkinUltimatePortrait"/>
+        <TextureDeclares Prefix="Storm_Hero_Abathur_Ultimate" Slot="main"/>
+    </CModel>
+    <CModel id="HeroAbathur@SkinUltimateDeathRagdoll" parent="HeroDeathRagdoll">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Abathur_Ultimate_DeathRagdoll\Storm_Hero_Abathur_Ultimate_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <TextureDeclares Prefix="Storm_Abathur" Slot="main"/>
+    </CModel>
+    <CModel id="HeroAbathur@StoreModelBase" parent="HeroModelParentStore">
+        <Model value="Assets\Store\Store_Hero_AbathurBase\Store_Hero_AbathurBase.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Abathur_RequiredAnims\Storm_Hero_Abathur_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Abathur_PortraitAnims\Storm_Hero_Abathur_PortraitAnims.m3a"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="HeroAbathur@StoreModelUltimate" parent="HeroModelParentStore">
+        <Model value="Assets\Store\Store_Hero_AbathurUltimate\Store_Hero_AbathurUltimate.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Abathur_RequiredAnims\Storm_Hero_Abathur_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Abathur_PortraitAnims\Storm_Hero_Abathur_PortraitAnims.m3a"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="HeroAbathurDeepTunnel@WorldPing">
+        <Model value="Assets\UI\Cursors\Storm_UI_Dehaka_Mount\Storm_UI_Dehaka_Mount.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="MonstrosityDeepTunnelWarningVisual" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Dehaka_Base_Teleport_Splat\Storm_FX_Dehaka_Base_Teleport_Splat.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurCarapace@BuffMinion" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Carapace_Minion\Storm_FX_Abathur_Base_Carapace_Minion.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurToxicNest@Impact" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest_Impact\Storm_FX_Abathur_Base_ToxicNest_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurUltimateEvolution@Death" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_UltimateEvolution_Death\Storm_FX_Abathur_Base_UltimateEvolution_Death.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Abathur_UltimateEvolution_End"/>
+            <Type value="Sound"/>
+            <Time value="0.001000"/>
+            <Payload value="Abathur_UltimateEvolution_End"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroAbathurLocust@Death" parent="OneShotSpellFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Death\Storm_Pet_AbathurLocust_Base_Death.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="AbathurGooTrailModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Gootrail\Storm_FX_Abathur_Base_Gootrail.m3"/>
+    </CModel>
+    <CModel id="AbathurLocustAssaultDeathExplosionImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_Pet_AbathurLocust_Base_Assault_Death_Impact\Storm_Pet_AbathurLocust_Base_Assault_Death_Impact.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustAssault@AttackCleave" parent="OneShotSpellFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Assault_Cleave\Storm_Pet_AbathurLocust_Base_Assault_Cleave.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Abathur_Locust_AssaultStrain_Cleave_Attack"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Abathur_Locust_AssaultStrain_Cleave_Attack"/>
+        </Events>
+    </CModel>
+    <CModel id="AbathurLocustAssaultStrainEffect" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Talent_Abathur_Base_Locust_AssaultStrain\Storm_FX_Talent_Abathur_Base_Locust_AssaultStrain.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurLocust@DeathLow" parent="OneShotSpellFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Normal_Death\Storm_Pet_AbathurLocust_Base_Normal_Death.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurLocust@DeathRagdoll" parent="MinionDeathRagdoll">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_DeathRagdoll\Storm_Pet_AbathurLocust_Base_DeathRagdoll.m3"/>
+        <LowQualityModel value="HeroAbathurLocust@DeathLow"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurTalentToxicNestEnvenomedNest" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest_Dot\Storm_FX_Abathur_Base_ToxicNest_Dot.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurSymbiote@Cast" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_Cast\Storm_FX_Abathur_Base_Symbiote_Cast.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="HeroAbathurUltimateEvolution@In" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Burrow\Storm_FX_Abathur_Base_Burrow.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustNormal@AttackImpact" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_EvolutionMaster_Impact\Storm_FX_Abathur_Base_EvolutionMaster_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustNormal@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_EvolutionMaster_Missile\Storm_FX_Abathur_Base_EvolutionMaster_Missile.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurSpikeBurst@Impact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_SpikeBurst_Impact\Storm_FX_Abathur_Base_Symbiote_SpikeBurst_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurDeepTunnel@Out" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_DeepTunnel_Out\Storm_FX_Abathur_Base_DeepTunnel_Out.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurDeepTunnel@In" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_DeepTunnel_In\Storm_FX_Abathur_Base_DeepTunnel_In.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurLocust" parent="Unit">
+        <Model value="assets\Units\Pets\Storm_Pet_AbathurLocust_Base\Storm_Pet_AbathurLocust_Base.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Radius value="0.375000"/>
+    </CModel>
+    <CModel id="HeroAbathurLocust@Burrow" parent="OneShotSpellFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Burrow\Storm_Pet_AbathurLocust_Base_Burrow.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="AbathurLocustAssaultDeathExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_Pet_AbathurLocust_Base_Assault_Death\Storm_Pet_AbathurLocust_Base_Assault_Death.m3"/>
+        <LowQualityModel value="HeroAbathurLocust@DeathLow"/>
+    </CModel>
+    <CModel id="AbathurControlledUnitDeathExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Zagara_Base_BanelingBarrage_Explosion\Storm_FX_Zagara_Base_BanelingBarrage_Explosion.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustAssault@AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Assault_Cleave_Impact\Storm_Pet_AbathurLocust_Base_Assault_Cleave_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Abathur_Locust_AssaultStrain_Cleave_Impact"/>
+            <Type value="Sound"/>
+            <Payload value="Abathur_Locust_AssaultStrain_Cleave_Impact"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustBombard@AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Bombard_Missile_Impact\Storm_Pet_AbathurLocust_Base_Bombard_Missile_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurLocust@Birth" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Physics\Storm_Effect_PhysicsImpact_Creep_Light\Storm_Effect_PhysicsImpact_Creep_Light.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustBombard@Missile" parent="MissileFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Bombard_Missile\Storm_Pet_AbathurLocust_Base_Bombard_Missile.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurWeaponLocustBombard@AttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_Placeholder_Bug_Launch\Storm_FX_Placeholder_Bug_Launch.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="AbathurToxicNestBuild" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest_Build\Storm_FX_Abathur_Base_ToxicNest_Build.m3"/>
+        <Priority value="32"/>
+    </CModel>
+    <CModel id="HeroAbathurToxicNest@Invisible">
+        <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Radius value="-1.000000"/>
+        <SelectionRadius value="0.562500"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
+    <CModel id="HeroAbathurUltimateEvolution@EvolutionBuild" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_UltimateEvolution_Build\Storm_FX_Abathur_Base_UltimateEvolution_Build.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurUltimateEvolution@Birth" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_UltimateEvolution_Build_Death\Storm_FX_Abathur_Base_UltimateEvolution_Build_Death.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="CloakCheck"/>
+            <Type value="Custom"/>
+            <Time value="2.000000"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroAbathurUltimateEvolution@Impact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_NeuralParasite_Impact\Storm_FX_Abathur_Base_NeuralParasite_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ScaleMax value="1.300000,1.300000,1.000000"/>
+        <ScaleMin value="1.300000,1.300000,1.000000"/>
+    </CModel>
+    <CModel id="HeroAbathurUltimateEvolution@Buff" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_UltimateEvolution_Target\Storm_FX_Abathur_Base_UltimateEvolution_Target.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurSymbiote@Impact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_Target\Storm_FX_Abathur_Base_Symbiote_Target.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ScaleMax value="1.300000,1.300000,1.000000"/>
+        <ScaleMin value="1.300000,1.300000,1.000000"/>
+    </CModel>
+    <CModel id="HeroAbathurCarapace@BuffBuilding" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Carapace_Building\Storm_FX_Abathur_Base_Carapace_Building.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurCarapace@BuffHero" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Carapace_Hero\Storm_FX_Abathur_Base_Carapace_Hero.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurSpikeBurst@Cast" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_SpikeBurst\Storm_FX_Abathur_Base_Symbiote_SpikeBurst.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RadiusLoose value="4.000000"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="HeroAbathurSpikeBurst@CastBuilding" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_SpikeBurst_Building\Storm_FX_Abathur_Base_SpikeBurst_Building.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RadiusLoose value="4.000000"/>
+    </CModel>
+    <CModel id="HeroAbathurStab@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_Stab_Missile\Storm_FX_Abathur_Base_Symbiote_Stab_Missile.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="AbathurNeuralParasiteImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_NeuralParasite_Impact\Storm_FX_Abathur_Base_NeuralParasite_Impact.m3"/>
+        <ScaleMax value="1.300000,1.300000,1.000000"/>
+        <ScaleMin value="1.300000,1.300000,1.000000"/>
+    </CModel>
+    <CModel id="HeroAbathurStab@MissileImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_Stab_Impact\Storm_FX_Abathur_Base_Symbiote_Stab_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurToxicNest" parent="Unit">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest\Storm_FX_Abathur_Base_ToxicNest.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurToxicNest@Death" parent="CoreUnitDeath">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest\Storm_FX_Abathur_Base_ToxicNest.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Abathur_ToxicNest_Explosion"/>
+            <Type value="Sound"/>
+            <Time value="0.548000"/>
+            <Payload value="Abathur_ToxicNest_Explosion"/>
+        </Events>
+        <RadiusLoose value="3.000000"/>
+    </CModel>
+    <CModel id="AbathurToxicNestExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest_Impact\Storm_FX_Abathur_Base_ToxicNest_Impact.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurToxicNest@PlacementModel" parent="Placement">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest\Storm_FX_Abathur_Base_ToxicNest.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="AbathurToxicNestSlow" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_ToxicNest_Dot\Storm_FX_Abathur_Base_ToxicNest_Dot.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurWeapon@AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Basic_Impact\Storm_FX_Abathur_Base_Basic_Impact.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurAssumingDirectControl@Buff" parent="BuffFX">
+        <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+    </CModel>
+    <CModel id="AbathurNeuralParasiteBuff" parent="BuffFX">
+        <Model value="Assets\Units\Pets\Storm_Pet_ZagaraInfestedTerran_Base_Egg\Storm_Pet_ZagaraInfestedTerran_Base_Egg.m3"/>
+    </CModel>
+    <CModel id="HeroAbathur@BasePortrait" parent="CorePortrait">
+        <Model value="Assets\Portraits\Storm_Portrait_Abathur_Base_Background\Storm_Portrait_Abathur_Base_Background.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurSymbiote@HostProxy" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_HostProxy\Storm_FX_Abathur_Base_Symbiote_HostProxy.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurSymbiote" parent="Unit">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote\Storm_FX_Abathur_Base_Symbiote.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Abathur_Symbiote_Vox_Idle"/>
+            <Type value="Sound"/>
+            <Time value="0.651000"/>
+            <Payload value="Abathur_Symbiote_Vox_Idle"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,A,00"/>
+            <Name value="Abathur_Symbiote_Vox_SpellA"/>
+            <Type value="Sound"/>
+            <Time value="0.050000"/>
+            <Payload value="Abathur_Symbiote_Vox_SpellA"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Abathur_Symbiote_Vox_SpellB"/>
+            <Type value="Sound"/>
+            <Payload value="Abathur_Symbiote_Vox_SpellB"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Abathur_Symbiote_Vox_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.080000"/>
+            <Payload value="Abathur_Symbiote_Vox_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Abathur_Symbiote_Vox_Death"/>
+            <Type value="Sound"/>
+            <Time value="0.065000"/>
+            <Payload value="Abathur_Symbiote_Vox_Death"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroAbathurSymbiote@Host" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote\Storm_FX_Abathur_Base_Symbiote.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Abathur_Symbiote_Vox_Idle"/>
+            <Type value="Sound"/>
+            <Time value="0.651000"/>
+            <Payload value="Abathur_Symbiote_Vox_Idle"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,A,00"/>
+            <Name value="Abathur_Symbiote_Vox_SpellA"/>
+            <Type value="Sound"/>
+            <Time value="0.050000"/>
+            <Payload value="Abathur_Symbiote_Vox_SpellA"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Abathur_Symbiote_Vox_SpellB"/>
+            <Type value="Sound"/>
+            <Payload value="Abathur_Symbiote_Vox_SpellB"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Abathur_Symbiote_Vox_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.080000"/>
+            <Payload value="Abathur_Symbiote_Vox_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Abathur_Symbiote_Vox_Death"/>
+            <Type value="Sound"/>
+            <Time value="0.065000"/>
+            <Payload value="Abathur_Symbiote_Vox_Death"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroAbathur@Base" parent="HeroAbathur@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Abathur_Base\Storm_Hero_Abathur_Base.m3"/>
+        <TextureDeclares Prefix="Storm_Abathur" Slot="main"/>
+        <Lighting value="HeroAbathur@BasePortrait"/>
+    </CModel>
+    <CModel id="HeroAbathur@BaseDeathRagdoll" parent="HeroDeathRagdoll">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Abathur_Base_DeathRagdoll\Storm_Hero_Abathur_Base_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <TextureDeclares Prefix="Storm_Abathur" Slot="main"/>
+    </CModel>
+    <CModel id="HeroAbathurTalentLocustNest@Placement" parent="Unit">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Nest\Storm_Pet_AbathurLocust_Base_Nest.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathur@BasePortraitAddition" parent="CorePortrait">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Abathur_Base\Storm_Hero_Abathur_Base.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Abathur_RequiredAnims\Storm_Hero_Abathur_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Abathur_PortraitAnims\Storm_Hero_Abathur_PortraitAnims.m3a"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <TextureDeclares Prefix="Storm_Abathur" Slot="main"/>
+    </CModel>
+    <CModel id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_Symbiote_Carapace\Storm_FX_Abathur_Base_Symbiote_Carapace.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="AbathurVolatileMutationDelay" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_FX_Talent_Abathur_Base_Locust_AssaultStrain\Storm_FX_Talent_Abathur_Base_Locust_AssaultStrain.m3"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="AbathurVolatileMutationExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_BioKillswitch\Storm_FX_Abathur_Base_BioKillswitch.m3"/>
+    </CModel>
+    <CModel id="HeroAbathurTalentVolatileMutation@Pulse" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Abathur_Base_BioKillswitch_Pulse\Storm_FX_Abathur_Base_BioKillswitch_Pulse.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurEvolveMonstrosity" parent="Unit">
+        <Model value="Assets\Units\Heroes\Storm_Morph_Abathur_Base_Megathur\Storm_Morph_Abathur_Base_Megathur.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Morph_Abathur_Base_Megathur_RequiredAnims\Storm_Morph_Abathur_Base_Megathur_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="Abathur_Monstrosity_Attack_Launch"/>
+            <Type value="Actor"/>
+            <Payload value="Abathur_Monstrosity_Attack_Launch"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="Abathur_Monstrosity_Attack_Launch"/>
+            <Type value="Actor"/>
+            <Payload value="Abathur_Monstrosity_Attack_Launch"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="Abathur_Monstrosity_Attack_Launch"/>
+            <Type value="Actor"/>
+            <Payload value="Abathur_Monstrosity_Attack_Launch"/>
+        </Events>
+        <Radius value="0.750000"/>
+    </CModel>
+    <CModel id="HeroAbathurEvolveMonstrosity@Birth" parent="Splat">
+        <Model value="Assets\Units\Pets\Storm_Pet_WitchDoctor_Gargantuan_Base_Birth\Storm_Pet_WitchDoctor_Gargantuan_Base_Birth.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurEvolveMonstrosity@Death" parent="CoreUnitDeath">
+        <Model value="Assets\Units\Heroes\Storm_Morph_Abathur_Base_Megathur_Death\Storm_Morph_Abathur_Base_Megathur_Death.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurTalentLocustNest" parent="Unit">
+        <Model value="Assets\Units\Pets\Storm_Pet_AbathurLocust_Base_Nest\Storm_Pet_AbathurLocust_Base_Nest.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CModel>
+    <CModel id="HeroAbathurTalentSymbioteHivemind@CursorSplat" parent="UI">
+        <Model value="Assets\UI\Cursors\Storm_UI_AOECursor_Fantasy\Storm_UI_AOECursor_Fantasy.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ScaleMax value="8.000000,8.000000,8.000000"/>
+        <ScaleMin value="8.000000,8.000000,8.000000"/>
+        <SelectionRadius value="2.500000"/>
+        <ShadowRadius value="2.500000"/>
+    </CModel>
+    <CModel id="HeroAbathurDeepTunnel@ModelMiniMap">
+        <Model value="Assets\UI\Feedback\Storm_UI_Alert_Dehaka_Mount\Storm_UI_Alert_Dehaka_Mount.m3"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+</Catalog>

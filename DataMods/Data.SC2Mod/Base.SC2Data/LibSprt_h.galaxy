@@ -1,0 +1,43 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Support
+//--------------------------------------------------------------------------------------------------
+// Constants
+const string libSprt_gv_performanceTestFPSLogFile = "FPS_Log";
+
+// Variable Declarations
+bool libSprt_gv_performanceTestPerformanceTestRunning;
+playergroup libSprt_gv_dEBUGAdminTeam;
+bool libSprt_gv_dEBUGHelpTextTagsEnabled;
+bool libSprt_gv_dEBUGTooltipsEnabled;
+bool libSprt_gv_dEBUGMinionTooltipsEnabled;
+bool libSprt_gv_dEBUGDebuggingEnabled;
+bool libSprt_gv_dEBUGDeathRecapEnabled;
+revealer libSprt_gv_dEBUGRevealMapRevealer;
+bool libSprt_gv_dEBUGSelectionEnabled;
+bool libSprt_gv_dEBUGTalentDebugEnabled;
+bool libSprt_gv_dEBUGCombatTextEnabled;
+bool libSprt_gv_dEBUGXPTextEnabled;
+bool libSprt_gv_dEBUGHeroSelectWait;
+bool libSprt_gv_dEBUGHeroMimic;
+bool libSprt_gv_dEBUG60SecondPauseOnOff;
+bool libSprt_gv_dEBUGDebugMessagesEnabled;
+bool libSprt_gv_dEBUGCinematicsModeEnabled;
+bool libSprt_gv_dEBUGMapTextEnabled;
+fixed libSprt_gv_debug_GameTimeDelta;
+
+// Trigger Declarations
+trigger libSprt_gt_IncludeSupport;
+trigger libSprt_gt_DEBUGTextTags;
+trigger libSprt_gt_DEBUGResetCDofPlayer1dcdr;
+trigger libSprt_gt_DEBUGAddPlayertoAdminGroup;
+trigger libSprt_gt_DEBUGInvul;
+trigger libSprt_gt_DEBUGLevelUp;
+trigger libSprt_gt_DEBUGResetHeroTalentsresetTalents;
+trigger libSprt_gt_DEBUGCompleteQuests;
+trigger libSprt_gt_DEBUGRespawnCamps;
+
+// Library Initialization
+void libSprt_InitVariables ();
+

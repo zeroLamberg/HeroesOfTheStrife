@@ -1,0 +1,398 @@
+﻿Abil/Name/HeroKatarinaAimedShot=Aimed Shot (Autorifle)
+Abil/Name/HeroKatarinaClusterCharge=Cluster Charge
+Abil/Name/HeroKatarinaEquipAutorifle=Equip Autorifle
+Abil/Name/HeroKatarinaEquipFlamethrower=Equip Flamethrower
+Abil/Name/HeroKatarinaEquipGrenadeLauncher=Equip Grenade Launcher
+Abil/Name/HeroKatarinaEquipSnipe=Equip Snipe
+Abil/Name/HeroKatarinaExclusionZone=Exclusion Zone
+Abil/Name/HeroKatarinaExclusionZone@Activate=Activate
+Abil/Name/HeroKatarinaFlameStream=Flame Stream (Flamethrower)
+Abil/Name/HeroKatarinaFlashGrenade=Flash Grenade
+Abil/Name/HeroKatarinaLaserShot=Laser Shot (Snipe)
+Abil/Name/HeroKatarinaMegaShot=Mega Shot (Grenade Launcher)
+Abil/Name/HeroKatarinaTalentWeaponMasterToTheLimit=To The Limit
+Abil/Name/HeroKatarinaWeaponMaster=Weapon Master
+Abil/Name/HeroKatarinaWeaponSwap=Weapon Swap
+Behavior/Name/HeroKatarinaExclusionZone@TimedBehaviorCaster=Exclusion Zone
+Behavior/Name/HeroKatarinaFlameStream=Flame Stream
+Behavior/Name/HeroKatarinaTalentArsenal=Arsenal
+Behavior/Name/HeroKatarinaTalentTargetAcquired=Target Acquired
+Button/Information/HeroKatarinaAimedShot=Ammunition: <d ref="Abil,HeroKatarinaAimedShot,Cost[0].Vital[Energy]"  player="0"/><n/>Cooldown: <d ref="Abil,HeroKatarinaAimedShot,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Actor,HeroKatarinaAimedShot@CursorGuide,Height"/> m.
+Button/Information/HeroKatarinaClusterCharge=Cooldown: <d ref="Abil,HeroKatarinaClusterCharge,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Abil,HeroKatarinaClusterCharge,Range[0]"/> m.
+Button/Information/HeroKatarinaEquipAutorifle=Cooldown: <d ref="Behavior,HeroKatarinaEquipAutorifle@Cooldown,Duration"/> seconds
+Button/Information/HeroKatarinaEquipFlamethrower=Cooldown: <d ref="Behavior,HeroKatarinaEquipFlamethrower@Cooldown,Duration"/> seconds
+Button/Information/HeroKatarinaEquipGrenadeLauncher=Cooldown: <d ref="Behavior,HeroKatarinaEquipGrenadeLauncher@Cooldown,Duration"/> seconds
+Button/Information/HeroKatarinaEquipSnipe=Cooldown: <d ref="Behavior,HeroKatarinaEquipSnipe@Cooldown,Duration"/> seconds
+Button/Information/HeroKatarinaExclusionZone=Cooldown: <d ref="Abil,HeroKatarinaExclusionZone,Cost[0].Cooldown.TimeUse"/> seconds<n/>Range: <d ref="Abil,HeroKatarinaExclusionZone,Range[0]"/> m.
+Button/Information/HeroKatarinaFlameStream=Ammunition: <d ref="Abil,HeroKatarinaFlameStream,Cost[0].Vital[Energy]" player="0"/><n/>Cooldown: <d ref="Abil,HeroKatarinaFlameStream,Cost[0].Cooldown.TimeUse" player="0"/> seconds
+Button/Information/HeroKatarinaFlashGrenade=Cooldown: <d ref="Abil,HeroKatarinaFlashGrenade,Cost[0].Cooldown.TimeUse"/> seconds<n/>Range: <d ref="Abil,HeroKatarinaFlashGrenade,Range[0]"/> m.
+Button/Information/HeroKatarinaLaserShot=Ammunition: <d ref="Abil,HeroKatarinaLaserShot,Cost[0].Vital[Energy]" player="0"/><n/>Cooldown: <d ref="Abil,HeroKatarinaLaserShot,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Effect,HeroKatarinaLaserShot@Search,AreaArray[0].RectangleHeight"  player="0"/> m.
+Button/Information/HeroKatarinaMegaShot=Ammunition: <d ref="Abil,HeroKatarinaMegaShot,Cost[0].Vital[Energy]" player="0"/><n/>Cooldown: <d ref="Abil,HeroKatarinaMegaShot,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Actor,HeroKatarinaMegaShot@CursorGuide,Height"/> m.
+Button/Information/HeroKatarinaTalentWeaponMasterToTheLimit=Cooldown: <d ref="Abil,HeroKatarinaTalentWeaponMasterToTheLimit,Cost[0].Cooldown.TimeUse"/> seconds
+Button/Name/HeroKatarina@Hearthstone=Hearthstone
+Button/Name/HeroKatarinaAimedShot=Aimed Shot
+Button/Name/HeroKatarinaClusterCharge=Cluster Charge
+Button/Name/HeroKatarinaEquipAutorifle=Equip Autorifle
+Button/Name/HeroKatarinaEquipFlamethrower=Equip Flamethrower
+Button/Name/HeroKatarinaEquipGrenadeLauncher=Equip Grenade Launcher
+Button/Name/HeroKatarinaEquipSnipe=Equip Snipe
+Button/Name/HeroKatarinaExclusionZone=Exclusion Zone
+Button/Name/HeroKatarinaExclusionZone@Activate=Activate
+Button/Name/HeroKatarinaFlameStream=Flame Stream
+Button/Name/HeroKatarinaFlashGrenade=Flash Grenade
+Button/Name/HeroKatarinaLaserShot=Laser Shot
+Button/Name/HeroKatarinaMegaShot=Mega Shot
+Button/Name/HeroKatarinaTalentArsenal=Arsenal
+Button/Name/HeroKatarinaTalentBestEquipment=Best Equipment
+Button/Name/HeroKatarinaTalentClusterChargeAdvancedCharge=Advanced Charge
+Button/Name/HeroKatarinaTalentClusterChargeClusterRecharge=Cluster Recharge
+Button/Name/HeroKatarinaTalentExclusionZoneExclusionPrison=Exclusion Prison
+Button/Name/HeroKatarinaTalentFlashGrenadeSilenceGrenade=Silence Grenade
+Button/Name/HeroKatarinaTalentMasterAutorifle=Master Autorifle
+Button/Name/HeroKatarinaTalentMasterFlamethrower=Master Flamethrower
+Button/Name/HeroKatarinaTalentMasterGrenadeLauncher=Master Grenade Launcher
+Button/Name/HeroKatarinaTalentMasterSnipe=Master Snipe
+Button/Name/HeroKatarinaTalentSpecialOps=Special Ops
+Button/Name/HeroKatarinaTalentTargetAcquired=Target Acquired
+Button/Name/HeroKatarinaTalentTargetPractice=Target Practice
+Button/Name/HeroKatarinaTalentWeaponMasterAmmoMaster=Ammo Master
+Button/Name/HeroKatarinaTalentWeaponMasterAmmoRestoration=Ammo Restoration
+Button/Name/HeroKatarinaTalentWeaponMasterRearmament=Rearmament
+Button/Name/HeroKatarinaTalentWeaponMasterToTheLimit=To The Limit
+Button/Name/HeroKatarinaTalentWeaponMasterUniversalAmmo=Universal Ammo
+Button/Name/HeroKatarinaWeaponMaster=Weapon Master
+Button/Name/HeroKatarinaWeaponSwap=Carried Weapon Swap
+Button/Name/KatarinaTalentClusterChargeCripplingCharge=Crippling Charge
+Button/Name/KatarinaTalentClusterChargeOvercharge=Overcharge
+Button/SimpleDisplayText/HeroKatarinaAimedShot=Fire a shot damaging enemies and healing Katarina
+Button/SimpleDisplayText/HeroKatarinaClusterCharge=Toss Cluster Charge that Slows and deals high damage upon explosion
+Button/SimpleDisplayText/HeroKatarinaEquipAutorifle=Basic Attacks Heal
+Button/SimpleDisplayText/HeroKatarinaEquipFlamethrower=Basic Attacks increase Damage Dealt
+Button/SimpleDisplayText/HeroKatarinaEquipGrenadeLauncher=Basic Attacks reduce Armor
+Button/SimpleDisplayText/HeroKatarinaEquipSnipe=Basic Attacks grant Spell Power
+Button/SimpleDisplayText/HeroKatarinaExclusionZone=Damage and disable enemy Heroes
+Button/SimpleDisplayText/HeroKatarinaFlameStream=Increase Basic Attack size
+Button/SimpleDisplayText/HeroKatarinaFlashGrenade=Toss a grenade to Silence, Blind, and reduce vision of enemies
+Button/SimpleDisplayText/HeroKatarinaLaserShot=Deal damage in a lane and Silence enemy Heroes
+Button/SimpleDisplayText/HeroKatarinaMegaShot=Fire a bolt dealing AOE damage
+Button/SimpleDisplayText/HeroKatarinaTalentArsenal=Basic Attacks reduce Ability cooldowns 
+Button/SimpleDisplayText/HeroKatarinaTalentBestEquipment=Reduce Ability cost and cooldown
+Button/SimpleDisplayText/HeroKatarinaTalentClusterChargeAdvancedCharge=«Cluster Charge» applies <c val="#ColorViolet">Carried</c> weapon effects
+Button/SimpleDisplayText/HeroKatarinaTalentClusterChargeClusterRecharge=Hero hits reduce «Cluster Charge» cooldown
+Button/SimpleDisplayText/HeroKatarinaTalentExclusionZoneExclusionPrison=Increase Basic Attack damage
+Button/SimpleDisplayText/HeroKatarinaTalentFlashGrenadeSilenceGrenade=Increase Silence duration
+Button/SimpleDisplayText/HeroKatarinaTalentMasterAutorifle=Shielding at max Health
+Button/SimpleDisplayText/HeroKatarinaTalentMasterFlamethrower=Increase Bonus duration
+Button/SimpleDisplayText/HeroKatarinaTalentMasterGrenadeLauncher=Increase Armor reduction time
+Button/SimpleDisplayText/HeroKatarinaTalentMasterSnipe=Increase Basic Attack damage against disabled enemies
+Button/SimpleDisplayText/HeroKatarinaTalentSpecialOps=Reduce Heroic Ability cooldown
+Button/SimpleDisplayText/HeroKatarinaTalentTargetAcquired=Increase Basic Attack damage
+Button/SimpleDisplayText/HeroKatarinaTalentTargetPractice=Using «Primary Battle Ability» grants Movespeed and Attack Speed
+Button/SimpleDisplayText/HeroKatarinaTalentWeaponMasterAmmoMaster=Increase maximum Ammo
+Button/SimpleDisplayText/HeroKatarinaTalentWeaponMasterAmmoRestoration=Periodically restores Ammo
+Button/SimpleDisplayText/HeroKatarinaTalentWeaponMasterRearmament=Gain the benefits of several talents
+Button/SimpleDisplayText/HeroKatarinaTalentWeaponMasterToTheLimit=Active to increase weapons bonuses
+Button/SimpleDisplayText/HeroKatarinaWeaponMaster=Able to change Weapons
+Button/SimpleDisplayText/HeroKatarinaWeaponSwap=Swap <c val="#ColorViolet">Carried</c> weapon
+Button/SimpleDisplayText/KatarinaTalentClusterChargeCripplingCharge=Hero hits reduce their Damage Dealt
+Button/SimpleDisplayText/KatarinaTalentClusterChargeOvercharge=Spread second time
+Button/Tooltip/HeroKatarina@Hearthstone=After Channeling for <c val="#TooltipNumbers"><d ref="Abil,HeroGenericHearthstone,CastIntroTime[0]" player="0" precision="2"/></c> seconds, teleport back to the Hall of Storms, instantly restoring <c val="#TooltipNumbers"><d ref="Effect,HeroGenericHearthstone@Health,VitalArray[Life].Change"/></c> Health and <c val="#TooltipNumbers"><d ref="100*Effect,HeroKatarina@HearthstoneSetEnergyFull,VitalArray.ChangeFraction"/>%</c> Ammunition.
+Button/Tooltip/HeroKatarinaAimedShot=Primary Battle Ability<n/>After <c val="#TooltipNumbers"><d ref="Abil,HeroKatarinaAimedShot,CastIntroTime[0]" precision="2"/></c> seconds, fires a bullet that deals <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaAimedShot@Damage,Amount" option="player"/></c> damage and Heals Katarina for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHKtr_gv_heroKatarinaAimedShotLifesteal$*100" player="0" />%</c> damage dealt.
+Button/Tooltip/HeroKatarinaClusterCharge=Toss bomb to the target point, which detonates after <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaClusterCharge@TimedLife,Duration" precision="2"/></c> seconds dealing <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaClusterCharge@TimedLifeDamage,Amount" option="player"/></c> damage and Slows enemies by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroKatarinaClusterCharge@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaClusterCharge@Slow,Duration" precision="2" player="0"/></c> seconds and spreads for additional <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaClusterCharge@SpreadPersistent,PeriodCount" player="0"/></c> bombs with the same effect each.<n/><n/>The initial bomb instantly detonates when landing on an enemy.<n/><n/><c val="ffff8a">Deals <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroKatarinaClusterCharge@StructureCaseDamageModifier,Amount"/>%</c> damage to structures.</c>
+Button/Tooltip/HeroKatarinaEquipAutorifle=<c val="#ColorCreamYellow">Equipped</c> Bonus: Basic Attacks heal for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHKtr_gv_heroKatarinaAutorifleEquippedPercentHealValue$*100"/>%</c> damage dealt.<n/><c val="#ColorViolet">Carried</c> Bonus: Basic Attacks heal for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHKtr_gv_heroKatarinaAutorifleCarriedPercentHealValue$*100"/>%</c> damage dealt.<n/><n/>Attack Damage: <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaWeaponAutorifle@Damage,Amount" option="player"/></c><n/>Attack Speed: <c val="#TooltipNumbers"><d ref="1/Weapon,HeroKatarinaWeaponAutorifle,Period" precision="2" player="0"/></c> per second<n/>Attack Range: <c val="#TooltipNumbers"><d ref="Weapon,HeroKatarinaWeaponAutorifle,Range" precision="2" player="0"/></c> m.<n/>Ammunition: <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaWeaponAutorifle@RemoveAmmo,VitalArray.Change" player="0"/></c>
+Button/Tooltip/HeroKatarinaEquipFlamethrower=<c val="#ColorCreamYellow">Equipped</c> Bonus: Basic Attacks increase Damage Dealt by <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped,Modification.AttributeChangeArray[16].Points" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped,Duration"/></c> seconds. Stacks up to <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped,Modification.AttributeChangeArray[16].Points * Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped,MaxStackCount" player="0"/>%</c>.<n/><c val="#ColorViolet">Carried</c> Bonus: Basic Attacks increase Damage Dealt by <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried,Modification.AttributeChangeArray[16].Points" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried,Duration"/></c> seconds. Stacks up to <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried,Modification.AttributeChangeArray[16].Points * Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried,MaxStackCount" player="0"/>%</c>.<n/><n/>Attack Damage: <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaWeaponFlamethrower@Damage,Amount" option="player"/></c><n/>Attack Speed: <c val="#TooltipNumbers"><d ref="1/Weapon,HeroKatarinaWeaponFlamethrower,Period" precision="2" player="0"/></c> per second<n/>Attack Range: <c val="#TooltipNumbers"><d ref="Weapon,HeroKatarinaWeaponFlamethrower,Range" precision="2" player="0"/></c> m.<n/>Ammunition: <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaWeaponFlamethrower@RemoveAmmo,VitalArray.Change" player="0"/></c>
+Button/Tooltip/HeroKatarinaEquipGrenadeLauncher=<c val="#ColorCreamYellow">Equipped</c> Bonus: Basic Attacks reduce non-structure target Armor by <c val="#TooltipNumbers"><d ref="-Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped,Modification.AttributeChangeArray[0].Points"/></c> up to <c val="#TooltipNumbers"><d ref="-Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped,Modification.AttributeChangeArray[0].Points * Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped,MaxStackCount"/></c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped,Duration" player="0"/></c> seconds.<n/><c val="#ColorViolet">Carried</c> Bonus: Basic Attacks reduce non-structure target Armor by <c val="#TooltipNumbers"><d ref="-Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried,Modification.AttributeChangeArray[0].Points"/></c> up to <c val="#TooltipNumbers"><d ref="-Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried,Modification.AttributeChangeArray[0].Points * Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried,MaxStackCount"/></c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried,Duration" player="0"/></c> seconds.<n/><n/>Attack Damage: <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaWeaponGrenadeLauncher@Damage,Amount" option="player"/></c><n/>Attack Speed: <c val="#TooltipNumbers"><d ref="1/Weapon,HeroKatarinaWeaponGrenadeLauncher,Period" precision="2" player="0"/></c> per second<n/>Attack Range: <c val="#TooltipNumbers"><d ref="Weapon,HeroKatarinaWeaponGrenadeLauncher,Range" precision="2" player="0"/></c> m.<n/>Ammunition: <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaWeaponGrenadeLauncher@RemoveAmmo,VitalArray.Change" player="0"/></c>
+Button/Tooltip/HeroKatarinaEquipSnipe=<c val="#ColorCreamYellow">Equipped</c> Bonus: Basic Attacks increase Spell Damage by <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerEquipped,Modification.AttributeChangeArray[17].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerEquipped,Duration"/></c> seconds. Stacks up to <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerEquipped,Modification.AttributeChangeArray[17].Points*Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerEquipped,MaxStackCount"/>%</c>.<n/><c val="#ColorViolet">Carried</c> Bonus: Basic Attacks increase Spell Damage by <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerCarried,Modification.AttributeChangeArray[17].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerCarried,Duration"/></c> seconds. Stacks up to <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerCarried,Modification.AttributeChangeArray[17].Points*Behavior,HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerCarried,MaxStackCount"/>%</c>.<n/><n/>Attack Damage: <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaWeaponSnipe@Damage,Amount" option="player"/></c><n/>Attack Speed: <c val="#TooltipNumbers"><d ref="1/Weapon,HeroKatarinaWeaponSnipe,Period" precision="2" player="0"/></c> per second<n/>Attack Range: <c val="#TooltipNumbers"><d ref="Weapon,HeroKatarinaWeaponSnipe,Range" precision="2" player="0"/></c> m.<n/>Ammunition: <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaWeaponSnipe@RemoveAmmo,VitalArray.Change" player="0"/></c>
+Button/Tooltip/HeroKatarinaExclusionZone=Throws a grenade that creates three electrified pillars linked by electric beams. Each electric beam deals <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaExclusionZone@LaserBeamDamage,Amount" option="player"/></c> damage to enemies and slows them by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroKatarinaExclusionZone@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaExclusionZone@Slow,Duration" precision="2" player="0"/></c> seconds every <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaExclusionZone@PeriodicSearcher,PeriodicPeriodArray[1]" precision="2" player="0"/></c> seconds.<n/><n/>After <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaExclusionZone@TimedBehaviorCaster,Duration" player="0"/></c> seconds (Or upon reactivation) heroes in the area take <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaExclusionZone@FinalDamage,Amount" option="player"/></c> damage, become Rooted and Silenced for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaExclusionZone@FinalRoots,Duration" player="0"/></c> second. The duration of the effect is increased by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroKatarinaExclusionZone@AdditionalDurationPercentConstant,Amount" player="0"/>%</c> of the time heroes spent in the area.
+Button/Tooltip/HeroKatarinaExclusionZone@Activate=Activate to catch enemies.
+Button/Tooltip/HeroKatarinaFlameStream=Primary Battle Ability<n/>Increase Basic Attack size by <c val="#TooltipNumbers"><d ref="100*((Effect,HeroKatarinaWeaponFlamethrower@TargetSearchFlameStream,AreaArray[0].RectangleHeight/Effect,HeroKatarinaWeaponFlamethrower@TargetSearchDefault,AreaArray[0].RectangleHeight)-1)"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaFlameStream,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroKatarinaFlashGrenade=Toss a grenade that deals <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaFlashGrenade@Damage,Amount" option="player"/></c> damage to enemies. Also Silencing enemy Heroes for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaFlashGrenade@Silence,Duration" precision="2" player="0"/></c> seconds, Blinding them for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaFlashGrenade@Blind,Duration" player="0"/></c> seconds. Additionally, reduces vision radius of enemy Heroes decaying over <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaFlashGrenade@VisionReduction,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroKatarinaLaserShot=Primary Battle Ability<n/>After <c val="#TooltipNumbers"><d ref="Abil,HeroKatarinaLaserShot,CastIntroTime[0]" precision="2"/></c> seconds, deals <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaLaserShot@Damage,Amount" option="player"/></c> damage to enemies in a line and Silence Heroes for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaLaserShot@Silence,Duration" precision="2" player="0"/></c> seconds.
+Button/Tooltip/HeroKatarinaMegaShotShot=Primary Battle Ability<n/>After <c val="#TooltipNumbers"><d ref="Abil,HeroKatarinaMegaShot,CastIntroTime[0]" precision="2"/></c> seconds, fire bolt toward the targeted area that hits first enemy dealing <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaMegaShot@Damage,Amount" option="player"/></c> AOE damage.
+Button/Tooltip/HeroKatarinaTalentArsenal=Each <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaTalentArsenal,DamageResponse.Cost.Charge.CountMax"/>rd</c> Basic Attack reduces Abilitiy cooldowns by <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaTalentArsenal@CDR,Cost[0].CooldownTimeUse" precision="2"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentBestEquipment=Reduce «Primary Battle Ability» cost to <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentBestEquipment@Modification,EffectArray[0].Value"/></c> Ammunition and reduce Ability cooldown from <c val="#TooltipNumbers"><d ref="Abil,HeroKatarinaAimedShot,Cost[0].Cooldown.TimeUse" player="0"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentBestEquipment@Modification,EffectArray[5].Value"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentClusterChargeAdvancedCharge=«Cluster Charge» applies <c val="#ColorViolet">Carried</c> weapon effects whenever it damages enemy Heroes.
+Button/Tooltip/HeroKatarinaTalentClusterChargeClusterRecharge=Hitting an enemy Hero with «Cluster Charge» reduces its cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaTalentClusterChargeClusterRecharge@CooldownModifier,Cost[0].CooldownTimeUse" precision="2" player="0"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentExclusionZoneExclusionPrison=Increase Basic Attack damage against enemy Heroes inside Zone by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroKatarinaTalentExclusionZoneExclusionPrison@DamageBonus,Amount" player="0"/>%</c>.
+Button/Tooltip/HeroKatarinaTalentFlashGrenadeSilenceGrenade=Increase Silence duration from <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaFlashGrenade@Silence,Duration" precision="2" player="0"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentFlashGrenadeSilenceGrenade@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentMasterAutorifle=Autorifle <c val="#ColorCreamYellow">equipped</c> and <c val="#ColorViolet">carried</c> weapon Basic Attacks shielding Katarina at max Health. Shielding up to <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHKtr_gv_heroKatarinaAutorifleMaximumShieldsValue$*100"/>%</c> of max Health.
+Button/Tooltip/HeroKatarinaTalentMasterFlamethrower=Flamethrower <c val="#ColorCreamYellow">equipped</c> and <c val="#ColorViolet">carried</c> weapon Bonus duration increased from <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped,Duration" player="0"/></c> seconds to <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentMasterFlamethrower@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentMasterGrenadeLauncher=Grenade Launcher <c val="#ColorCreamYellow">equipped</c> and <c val="#ColorViolet">carried</c> weapon Armor reduction duration increased from <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped,Duration" player="0"/></c> seconds to <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentMasterGrenadeLauncher@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentMasterSnipe=Snipe <c val="#ColorCreamYellow">equipped</c> and <c val="#ColorViolet">carried</c> Basic Attack weapon damage increased by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroKatarinaTalentMasterSnipe@DamageBonus,Amount"/>%</c> against Slowed, Rooted or Stunned enemies.
+Button/Tooltip/HeroKatarinaTalentSpecialOps=Whenever «Primary Battle Ability»<k val="CommandButton00" count="1"/> damages enemy Heroes, Katarina's Heroic Ability cooldown reduces by <c val="#TooltipNumbers"><d ref="-Effect,HeroKatarinaTalentSpecialOps@CDR,Cost[0].CooldownTimeUse"/></c> seconds.<n/><n/><c val="ffff8a">«Flame Stream» doesn't trigger this talent.</c>
+Button/Tooltip/HeroKatarinaTalentTargetAcquired=Each <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaTalentTargetAcquired,DamageResponse.Cost.Charge.CountMax"/>rd</c> Basic Attack damage increased by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroKatarinaTalentTargetAcquired@DamageModifier,Amount"/>%</c>.
+Button/Tooltip/HeroKatarinaTalentTargetPractice=Whenever Katarina uses «Primary Battle Ability»<k val="CommandButton00" count="1"/> she gains <c val="#TooltipNumbers"><d ref="100*Behavior,HeroKatarinaTalentTargetPractice@AttackSpeed,Modification.AdditiveAttackSpeedFactor"/>%</c> Attack Speed and <c val="#TooltipNumbers"><d ref="100*Behavior,HeroKatarinaTalentTargetPractice@Movespeed,Modification.AdditiveMoveSpeedFactor"/>%</c> Movement Speed for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaTalentTargetPractice@AttackSpeed,Duration"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Primary Battle Ability» cost from <c val="#TooltipNumbers"><d ref="Abil,HeroKatarinaAimedShot,Cost[0].Vital[Energy]" player="0"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentTargetPractice@Modification,EffectArray[0].Value"/></c> Ammunition.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterAmmoMaster=Increase maximum Ammo by <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaTalentWeaponMasterAmmoMaster,Modification.VitalMaxArray"/></c>.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterAmmoRestoration=Every <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaTalentWeaponMasterAmmoRestoration@Periodic,Duration"/></c> seconds Katarina restores <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentWeaponMasterAmmoRestoration@AddAmmo,VitalArray[Energy].Change"/></c> Ammo.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterRearmament=Katarina gains the benefits of all level <c val="#TooltipNumbers">4</c> talents.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterToTheLimit=Activate to increase <c val="#ColorCreamYellow">equipped</c> and <c val="#ColorViolet">carried</c> weapon bonuses by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroKatarinaTalentWeaponMasterToTheLimit@Bonus,Amount"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarinaTalentWeaponMasterToTheLimit@ActiveBuff,Duration"/></c> seconds.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterToTheLimit@AbilityButton=Katarina has several types of weapons in the arsenal. Each <c val="#ColorCreamYellow">Equipped</c> weapon gives major bonuses and each <c val="#ColorViolet">Carried</c> gives minor bonuses.<n/><n/><c val="#ColorCreamYellow">Equipped</c> weapon affect on Attack Damage and Attack Speed.<n/><n/>Each weapon uses Ammunition, with the exhaustion of which Katarina needs to equip another weapon to restore <c val="#TooltipNumbers"><d ref="100*Effect,HeroKatarinaWeaponMaster@RestoreAmmunition,VitalArray.ChangeFraction"/>%</c> Ammunition.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterUniversalAmmo=Gathering a Regeneration Globe restores <c val="#TooltipNumbers"><d ref="Effect,HeroKatarinaTalentWeaponMasterUniversalAmmo@AddEnergy,VitalArray.Change"/></c> Ammo.
+Button/Tooltip/HeroKatarinaTalentWeaponMasterUniversalAmmo_Simple=Gathering a Regeneration Globe restores Ammo
+Button/Tooltip/HeroKatarinaWeaponMaster=Katarina has several types of weapons in the arsenal. Each <c val="#ColorCreamYellow">Equipped</c> weapon gives major bonuses and each <c val="#ColorViolet">Carried</c> gives minor bonuses.<n/><n/><c val="#ColorCreamYellow">Equipped</c> weapon affects on Attack Damage and Attack Speed.<n/><n/>Weapons and «Primary Battle Ability»<k val="CommandButton00" count="1"/> use Ammunition, with the exhaustion of which Katarina needs to equip another weapon to restore <c val="#TooltipNumbers"><d ref="100*Effect,HeroKatarinaWeaponMaster@RestoreAmmunition,VitalArray.ChangeFraction"/>%</c> Ammunition.<n/><n/>Whenever Katarina equips new weapon she gains <c val="#TooltipNumbers"><d ref="100*Behavior,HeroKatarina@EquipMovespeed,Modification.AdditiveMoveSpeedFactor" player="0"/>%</c> Movespeed bonus for <c val="#TooltipNumbers"><d ref="Behavior,HeroKatarina@EquipMovespeed,Duration" player="0"/></c> second.
+Button/Tooltip/HeroKatarinaWeaponSwap=Swap <c val="#ColorViolet">Carried</c> weapon to the next. Weapons are swapped in the order they are placed.
+Button/Tooltip/KatarinaTalentClusterChargeCripplingCharge=Hitting an enemy Hero with «Cluster Round» reduces their Damage Dealt by <c val="#TooltipNumbers"><d ref="-Behavior,KatarinaTalentClusterChargeCripplingCharge@StatsDebuff,Modification.AttributeChangeArray[0].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,KatarinaTalentClusterChargeCripplingCharge@StatsDebuff,Duration"/></c> seconds up to <c val="#TooltipNumbers"><d ref="-Behavior,KatarinaTalentClusterChargeCripplingCharge@StatsDebuff,Modification.AttributeChangeArray[0].Points*Behavior,KatarinaTalentClusterChargeCripplingCharge@StatsDebuff,MaxStackCount"/>%</c>.
+Button/Tooltip/KatarinaTalentClusterChargeOvercharge=«Cluster Charge» spreads second time for additional <c val="#TooltipNumbers"><d ref="Effect,KatarinaTalentClusterChargeOvercharge@SecondSpread,PeriodCount"/></c> bombs.
+Button/Tooltip/Katarina_CarriedWeaponSwap/Info= 
+Button/Tooltip/Katarina_EquipAutorifle/Time= 
+Button/Tooltip/Katarina_EquipChaingun/Time= 
+Button/Tooltip/Katarina_EquipFlamethrower/Time= 
+Button/Tooltip/Katarina_EquipSnipe/Time= 
+Button/Tooltip/Katarina_TossEMPGrenade_Autorifler=<n/>Equipped <c val="#ColorCreamYellow">Autorifle </c>Bonus: Impact search radius increased by <c val="#TooltipNumbers"><d ref="$UpgradeEffectArrayValue:Katarina_ChangeEMPtoAutorifle:Effect,Katarina_TossEMPGrenade_ImpactSearch,AreaArray[0].Radius$"/></c> m.
+Button/Tooltip/Katarina_TossEMPGrenade_Chainguner=<n/>Equipped <c val="#ColorCreamYellow">Chaingun </c>Bonus: Damage increased by <c val="#TooltipNumbers">100%</c>.
+Button/Tooltip/Katarina_TossEMPGrenade_Flamethrower=<n/>Equipped <c val="#ColorCreamYellow">Flamethrower </c>Bonus: Armor reducion increased by <c val="#TooltipNumbers"><d ref="$UpgradeEffectArrayValue:Katarina_ChangeEMPtoFlamethrower:Behavior,Katarina_TossEMPGrenade_SlowBehavior_Base,Modification.AttributeChangeArray[0].Points$ "/></c> up to <c val="#TooltipNumbers">25</c>.
+Button/Tooltip/Katarina_TossEMPGrenade_HeroSelection_Autorifler=<n/><c val="#AbilityPassive">[Autorifle] </c>Impact search radius increased by <c val="#TooltipNumbers"><d ref="$UpgradeEffectArrayValue:Katarina_ChangeEMPtoAutorifle:Effect,Katarina_TossEMPGrenade_ImpactSearch,AreaArray[0].Radius$"/></c> m.
+Button/Tooltip/Katarina_TossEMPGrenade_HeroSelection_Chainguner=<n/><c val="#AbilityPassive">[Chaingun] </c>Damage increased by <c val="#TooltipNumbers">100%</c>.
+Button/Tooltip/Katarina_TossEMPGrenade_HeroSelection_Flamethrower=<n/><c val="#AbilityPassive">[Flamethrower] </c>Armor reducion increased by <c val="#TooltipNumbers"><d ref="$UpgradeEffectArrayValue:Katarina_ChangeEMPtoFlamethrower:Effect,Katarina_TossEMPGrenade_ArmorKineticDebuff,Count$ "/></c> up to <c val="#TooltipNumbers">25</c>.
+Button/Tooltip/Katarina_TossEMPGrenade_HeroSelection_HeleSelection=<n/><c val="#AbilityPassive">[Autorifle] </c>Impact search radius increased by <c val="#TooltipNumbers"><d ref="$UpgradeEffectArrayValue:Katarina_ChangeEMPtoAutorifle:Effect,Katarina_TossEMPGrenade_ImpactSearch,AreaArray[0].Radius$"/></c> m.<n/><n/><c val="#AbilityPassive">[Chaingun] </c>Damage increased by <c val="#TooltipNumbers">100%</c>.<n/><n/><c val="#AbilityPassive">[Flamethrower] </c>Armor reducion increased by <c val="#TooltipNumbers"><d ref="$UpgradeEffectArrayValue:Katarina_ChangeEMPtoFlamethrower:Effect,Katarina_TossEMPGrenade_ArmorKineticDebuff,Count$ "/></c> up to <c val="#TooltipNumbers">25</c>.<n/><n/><c val="#AbilityPassive">[Snipe] </c>Slow increased  by <c val="#TooltipNumbers">100%</c>.
+Button/Tooltip/Katarina_TossEMPGrenade_HeroSelection_Sniper=<n/><c val="#AbilityPassive">[Snipe] </c>Slow increased  by <c val="#TooltipNumbers">100%</c>.
+Button/Tooltip/Katarina_TossEMPGrenade_Sniper=<n/>Equipped <c val="#ColorCreamYellow">Snipe </c>Bonus: Slow increased by <c val="#TooltipNumbers">100%</c>.
+Button/Tooltip/Katarina_UltimateWeapon/Time= 
+DataCollection/Name/HeroKatarina=[Katarina] - Hero
+DataCollection/Name/HeroKatarinaAimedShot=[Katarina] - Aimed Shot
+DataCollection/Name/HeroKatarinaClusterCharge=[Katarina] - Cluster Charge
+DataCollection/Name/HeroKatarinaEquipAutorifle=[Katarina] - Equip Autorifle
+DataCollection/Name/HeroKatarinaEquipFlamethrower=[Katarina] - Equip Flamethrower
+DataCollection/Name/HeroKatarinaEquipGrenadeLauncher=[Katarina] - Equip Grenade Launcher
+DataCollection/Name/HeroKatarinaEquipSnipe=[Katarina] - Equip Snipe
+DataCollection/Name/HeroKatarinaExclusionZone=[Katarina] - Exclusion Zone
+DataCollection/Name/HeroKatarinaFlameStream=[Katarina] - Flame Stream
+DataCollection/Name/HeroKatarinaFlashGrenade=[Katarina] - Flash Grenade
+DataCollection/Name/HeroKatarinaLaserShot=[Katarina] - Laser Shot
+DataCollection/Name/HeroKatarinaMegaShot=[Katarina] - Mega Shot
+DataCollection/Name/HeroKatarinaTalentArsenal=[Katarina Talent] - Arsenal
+DataCollection/Name/HeroKatarinaTalentBestEquipment=[Katarina Talent] - Best Equipment
+DataCollection/Name/HeroKatarinaTalentClusterChargeAdvancedCharge=[Katarina Talent] - (Cluster Charge) @ Advanced Charge
+DataCollection/Name/HeroKatarinaTalentClusterChargeClusterRecharge=[Katarina Talent] - (Cluster Charge) @ Cluster Recharge
+DataCollection/Name/HeroKatarinaTalentExclusionZoneExclusionPrison=[Katarina Talent] - (Exclusion Zone) @ Exclusion Prison
+DataCollection/Name/HeroKatarinaTalentFlashGrenadeSilenceGrenade=[Katarina Talent] - (Flash Grenade) @ Silence Grenade
+DataCollection/Name/HeroKatarinaTalentMasterAutorifle=[Katarina Talent] - Master Autorifle
+DataCollection/Name/HeroKatarinaTalentMasterFlamethrower=[Katarina Talent] - Master Flamethrower
+DataCollection/Name/HeroKatarinaTalentMasterGrenadeLauncher=[Katarina Talent] - Master Grenade Launcher
+DataCollection/Name/HeroKatarinaTalentMasterSnipe=[Katarina Talent] - Master Snipe
+DataCollection/Name/HeroKatarinaTalentSpecialOps=[Katarina Talent] - Special Ops
+DataCollection/Name/HeroKatarinaTalentTargetAcquired=[Katarina Talent] - Target Acquired
+DataCollection/Name/HeroKatarinaTalentTargetPractice=[Katarina Talent] - Target Practice
+DataCollection/Name/HeroKatarinaTalentWeaponMasterAmmoMaster=[Katarina Talent] - (Weapon Master) @ Ammo Master
+DataCollection/Name/HeroKatarinaTalentWeaponMasterAmmoRestoration=[Katarina Talent] - (Weapon Master) @ Ammo Restoration
+DataCollection/Name/HeroKatarinaTalentWeaponMasterRearmament=[Katarina Talent] - (Weapon Master) @ Rearmament
+DataCollection/Name/HeroKatarinaTalentWeaponMasterToTheLimit=[Katarina Talent] - (Weapon Master) @ To The Limit
+DataCollection/Name/HeroKatarinaTalentWeaponMasterUniversalAmmo=[Katarina Talent] - (Weapon Master) @ Universal Ammo
+DataCollection/Name/HeroKatarinaWeaponAutorifle=[Katarina] - Weapon Autorifle
+DataCollection/Name/HeroKatarinaWeaponFlamethrower=[Katarina] - Weapon Flamethrower
+DataCollection/Name/HeroKatarinaWeaponGrenadeLauncher=[Katarina] - Weapon Grenade Launcher
+DataCollection/Name/HeroKatarinaWeaponMaster=[Katarina] - Weapon Master
+DataCollection/Name/HeroKatarinaWeaponSnipe=[Katarina] - Weapon Snipe
+DataCollection/Name/HeroKatarinaWeaponSwap=[Katarina] - Weapon Swap
+DataCollection/Name/KatarinaTalentClusterChargeCripplingCharge=[Katarina Talent] - (Cluster Charge) @ Crippling Charge
+DataCollection/Name/KatarinaTalentClusterChargeOvercharge=[Katarina Talent] - (Cluster Charge) @ Overcharge
+DocInfo/Name=Hero Katarina Mod
+Effect/Name/HeroKatarina@ApplyEquipMovespeed=Apply Equip Movespeed
+Effect/Name/HeroKatarina@HearthstoneSetEnergyFull=Hearthstone Set Energy Full
+Effect/Name/HeroKatarina@LevelScalingModification=Level Scaling Modification
+Effect/Name/HeroKatarina@RegenGlobePickUpImpactSet=PickUp Impact Set
+Effect/Name/HeroKatarina@RegenGlobePickupImpactSet=Regen Globe Pickup Impact Set
+Effect/Name/HeroKatarina@ReviveSet=Revive Set
+Effect/Name/HeroKatarina@WeaponCooldown=Weapon Cooldown
+Effect/Name/HeroKatarinaAimedShot@Damage=Damage
+Effect/Name/HeroKatarinaAimedShot@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaAimedShot@InitialPersistent=Initial Persistent
+Effect/Name/HeroKatarinaAimedShot@InitialSet=Initial Set
+Effect/Name/HeroKatarinaAimedShot@LM=Launch Missile
+Effect/Name/HeroKatarinaAimedShot@MissileSearch=Missile Search
+Effect/Name/HeroKatarinaClusterCharge@CreateClusterBomb=Create Cluster Bomb
+Effect/Name/HeroKatarinaClusterCharge@CreationSet=Creation Set
+Effect/Name/HeroKatarinaClusterCharge@InitialInstaExplosionSet=Initial Insta Explosion Set
+Effect/Name/HeroKatarinaClusterCharge@InitialInstaExplosionSwitch=Initial Insta Exlposion Switch
+Effect/Name/HeroKatarinaClusterCharge@LaunchMissile=Launch Missile
+Effect/Name/HeroKatarinaClusterCharge@SplreadLaunchBomb=Spread Launch Bomb
+Effect/Name/HeroKatarinaClusterCharge@SpreadApplyBehavior=Spread Apply Behavior
+Effect/Name/HeroKatarinaClusterCharge@SpreadBombCreationSet=Spread Bomb Creation Set
+Effect/Name/HeroKatarinaClusterCharge@SpreadCreateNewBomb=Spread Create New Bomb
+Effect/Name/HeroKatarinaClusterCharge@SpreadPersistent=Spread Persistent
+Effect/Name/HeroKatarinaClusterCharge@TimedLifeApplyBehavior=Apply Behavior
+Effect/Name/HeroKatarinaClusterCharge@TimedLifeApplySlow=Timed Life Apply Slow
+Effect/Name/HeroKatarinaClusterCharge@TimedLifeDamage=Timed Life Damage
+Effect/Name/HeroKatarinaClusterCharge@TimedLifeSearch=Timed Life Search
+Effect/Name/HeroKatarinaClusterCharge@TimedLifeSearchImpactSet=Timed Life Search Impact Set
+Effect/Name/HeroKatarinaClusterCharge@TimedLifeSet=Timed Life Set
+Effect/Name/HeroKatarinaEquipAutorifle=Equip Autorifle
+Effect/Name/HeroKatarinaEquipAutorifle@ApplyCooldown=Apply Cooldown
+Effect/Name/HeroKatarinaEquipFlamethrower=Equip Flamethrower
+Effect/Name/HeroKatarinaEquipFlamethrower@ApplyCooldown=Apply Cooldown
+Effect/Name/HeroKatarinaEquipGrenadeLauncher=Equip Grenade Launcher
+Effect/Name/HeroKatarinaEquipGrenadeLauncher@ApplyCooldown=Apply Cooldown
+Effect/Name/HeroKatarinaEquipSnipe=Equip Snipe
+Effect/Name/HeroKatarinaEquipSnipe@ApplyCooldown=Apply Cooldown
+Effect/Name/HeroKatarinaExclusionZone@ApplyCasterDurationBuff=Apply Caster Duration Buff
+Effect/Name/HeroKatarinaExclusionZone@ApplyHeroInZoneController=Apply Hero In Zone Controller
+Effect/Name/HeroKatarinaExclusionZone@ApplyHeroTimedBehavior=Apply Hero Timed Behavior
+Effect/Name/HeroKatarinaExclusionZone@ApplySlow=Apply Slow
+Effect/Name/HeroKatarinaExclusionZone@ApplyTimedLife=Apply Timed Life
+Effect/Name/HeroKatarinaExclusionZone@CreateTower1=Create Tower 1
+Effect/Name/HeroKatarinaExclusionZone@CreateTower2=Create Tower 2
+Effect/Name/HeroKatarinaExclusionZone@CreateTower3=Create Tower 3
+Effect/Name/HeroKatarinaExclusionZone@FinalApplyRoots=Final - Apply Roots
+Effect/Name/HeroKatarinaExclusionZone@FinalApplySilence=Final - Apply Silence
+Effect/Name/HeroKatarinaExclusionZone@FinalDamage=Final - Damage
+Effect/Name/HeroKatarinaExclusionZone@FinalHeroImpactSet=Final Hero Impact Set
+Effect/Name/HeroKatarinaExclusionZone@FinalSearchAffectedHeroes=Final Search Affected Heroes
+Effect/Name/HeroKatarinaExclusionZone@IncreaseAdditionalDuration=Increase Additional Duration
+Effect/Name/HeroKatarinaExclusionZone@LaserBeamDamage=Laser Beam Damage
+Effect/Name/HeroKatarinaExclusionZone@LaserBeamImpactSet=Laser Beam Impact Set
+Effect/Name/HeroKatarinaExclusionZone@LaserBeamSearch=Laser Beam Search
+Effect/Name/HeroKatarinaExclusionZone@LaserBeamSearchPersistent=Laser Beam Search Persistent
+Effect/Name/HeroKatarinaExclusionZone@LasetBeamTriggerSet=Laset Beam Trigger Set
+Effect/Name/HeroKatarinaExclusionZone@LaunchMissileFromCaster=Launch Missile From Caster
+Effect/Name/HeroKatarinaExclusionZone@LaunchMissileFromExplosion1=Launch Missile From Explosion 1
+Effect/Name/HeroKatarinaExclusionZone@LaunchMissileFromExplosion2=Launch Missile From Explosion 2
+Effect/Name/HeroKatarinaExclusionZone@LaunchMissileFromExplosion3=Launch Missile From Explosion 3
+Effect/Name/HeroKatarinaExclusionZone@PeriodicSearcher=Periodic Searcher
+Effect/Name/HeroKatarinaExclusionZone@RefreshAdditionalDuration=Refresh Additional Duration
+Effect/Name/HeroKatarinaExclusionZone@RemoveCasterTimedBehavior=Remove Caster Timed Behavior
+Effect/Name/HeroKatarinaExclusionZone@RemoveHeroTimedBehavior=Remove Hero Timed Behavior
+Effect/Name/HeroKatarinaExclusionZone@SpawnTowersPersistent=Spawn Towers Persistent
+Effect/Name/HeroKatarinaExclusionZone@ZoneImpactSet=Zone Impact Set
+Effect/Name/HeroKatarinaExclusionZone@ZoneSearch=Zone Search
+Effect/Name/HeroKatarinaExclusionZone@ZoneTriggerSet=Zone Trigger Set
+Effect/Name/HeroKatarinaFlameStream@ApplyBehavior=Apply Behavior
+Effect/Name/HeroKatarinaFlameStream@InitialSet=Initial Set
+Effect/Name/HeroKatarinaFlashGrenade@ApplyBlind=Apply Blind
+Effect/Name/HeroKatarinaFlashGrenade@ApplySilence=Apply Silence
+Effect/Name/HeroKatarinaFlashGrenade@ApplyVisionReduction=Apply Vision Reduction
+Effect/Name/HeroKatarinaFlashGrenade@Damage=Damage
+Effect/Name/HeroKatarinaFlashGrenade@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaFlashGrenade@InitialSet=Initial Set
+Effect/Name/HeroKatarinaFlashGrenade@LaunchMissileClose=Launch Missile Close
+Effect/Name/HeroKatarinaFlashGrenade@LaunchMissileFar=Launch Missile Far
+Effect/Name/HeroKatarinaFlashGrenade@LaunchMissileMedium=Launch Missile Medium
+Effect/Name/HeroKatarinaFlashGrenade@LaunchMissileSwitch=Launch Missile Switch
+Effect/Name/HeroKatarinaFlashGrenade@RemoveStack=Remove Stack
+Effect/Name/HeroKatarinaFlashGrenade@RemoveStacksCreatePersistent=Remove Stacks Create Persistent
+Effect/Name/HeroKatarinaFlashGrenade@TargetSearch=Target Search
+Effect/Name/HeroKatarinaLaserShot@ApplySilence=Apply Silence
+Effect/Name/HeroKatarinaLaserShot@Damage=Damage
+Effect/Name/HeroKatarinaLaserShot@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaLaserShot@InitialPersistent=Initial Persistent
+Effect/Name/HeroKatarinaLaserShot@InitialSet=Initial Set
+Effect/Name/HeroKatarinaLaserShot@PointForVisual=Point For Visual
+Effect/Name/HeroKatarinaLaserShot@Search=Search
+Effect/Name/HeroKatarinaMegaShot@Damage=Damage
+Effect/Name/HeroKatarinaMegaShot@ImpactSearch=Impact Search
+Effect/Name/HeroKatarinaMegaShot@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaMegaShot@InitialSet=Initial Set
+Effect/Name/HeroKatarinaMegaShot@LaunchMissile=Launch Missile
+Effect/Name/HeroKatarinaMegaShot@LaunchPersistent=Launch Persistent
+Effect/Name/HeroKatarinaMegaShot@PeriodicSearch=Periodic Search
+Effect/Name/HeroKatarinaTalentArsenal@CDR=CDR
+Effect/Name/HeroKatarinaTalentArsenal@DecreaseToken=Decrease Token
+Effect/Name/HeroKatarinaTalentArsenal@IncreaseToken=Increase Token
+Effect/Name/HeroKatarinaTalentArsenal@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroKatarinaTalentArsenal@ResetToken=Reset Token
+Effect/Name/HeroKatarinaTalentArsenal@TokenCounterController=Token Counter Controller
+Effect/Name/HeroKatarinaTalentBestEquipment@Modification=Modification
+Effect/Name/HeroKatarinaTalentClusterChargeClusterRecharge@CooldownModifier=Cooldown Modifier
+Effect/Name/HeroKatarinaTalentFlashGrenadeSilenceGrenade@Modification=Modification
+Effect/Name/HeroKatarinaTalentMasterFlamethrower@Modification=Modification
+Effect/Name/HeroKatarinaTalentMasterGrenadeLauncher@Modification=Modification
+Effect/Name/HeroKatarinaTalentSpecialOps@CDR=CDR
+Effect/Name/HeroKatarinaTalentTargetAcquired@DecreaseToken=Decrease Token
+Effect/Name/HeroKatarinaTalentTargetAcquired@IncreaseToken=Increase Token
+Effect/Name/HeroKatarinaTalentTargetAcquired@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroKatarinaTalentTargetAcquired@ResetToken=Reset Token
+Effect/Name/HeroKatarinaTalentTargetAcquired@TokenCounterController=Token Counter Controller
+Effect/Name/HeroKatarinaTalentTargetPractice@ApplyAttackSpeedBuff=Apply Attack Speed Buff
+Effect/Name/HeroKatarinaTalentTargetPractice@ApplyMovespeedBuff=Apply Movespeed Buff
+Effect/Name/HeroKatarinaTalentTargetPractice@Modification=Modification
+Effect/Name/HeroKatarinaTalentTargetPractice@Set=Set
+Effect/Name/HeroKatarinaTalentWeaponMasterAmmoRestoration@AddAmmo=Add Ammo
+Effect/Name/HeroKatarinaTalentWeaponMasterAmmoRestoration@ApplyPeriodic=Apply Periodic Buff
+Effect/Name/HeroKatarinaTalentWeaponMasterToTheLimit@ApplyBehavior=Apply Behavior
+Effect/Name/HeroKatarinaTalentWeaponMasterUniversalAmmo@AddEnergy=Add Energy
+Effect/Name/HeroKatarinaWeaponAutorifle@Damage=Damage
+Effect/Name/HeroKatarinaWeaponAutorifle@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaWeaponAutorifle@InitialPersitent=Initial Persistent
+Effect/Name/HeroKatarinaWeaponAutorifle@LaunchMissile=Launch Missile
+Effect/Name/HeroKatarinaWeaponAutorifle@OutOfAmmo=Out Of Ammo
+Effect/Name/HeroKatarinaWeaponAutorifle@PersistentSet=Persistent Set
+Effect/Name/HeroKatarinaWeaponAutorifle@RemoveAmmo=Remove Ammo
+Effect/Name/HeroKatarinaWeaponFlamethrower@ApplyArmorBuffCarried=Apply Armor Buff (Carried)
+Effect/Name/HeroKatarinaWeaponFlamethrower@ApplyArmorBuffEquipped=Apply Armor Buff (Equipped)
+Effect/Name/HeroKatarinaWeaponFlamethrower@Damage=Damage
+Effect/Name/HeroKatarinaWeaponFlamethrower@DamageSwitch=Damage Switch
+Effect/Name/HeroKatarinaWeaponFlamethrower@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaWeaponFlamethrower@InitialCreatePersistent=Initial Create Persistent
+Effect/Name/HeroKatarinaWeaponFlamethrower@OutOfAmmo=Out Of Ammo
+Effect/Name/HeroKatarinaWeaponFlamethrower@PersistentSet=Persistent Set
+Effect/Name/HeroKatarinaWeaponFlamethrower@RemoveAmmo=Remove Ammo
+Effect/Name/HeroKatarinaWeaponFlamethrower@TargetSearchDefault=Target Search (Default)
+Effect/Name/HeroKatarinaWeaponFlamethrower@TargetSearchFlameStream=Target Search (Flame Stream)
+Effect/Name/HeroKatarinaWeaponFlamethrower@TargetSearchSwitch=Target Search Switch
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffCarried=Apply Armor Debuff (Carried)
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffEquipped=Apply Armor Debuff (Equipped)
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@Damage=Damage
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@InitialPersistent=Initial Persistent
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@LaunchMissile=Launch Missile
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@OutOfAmmo=Out Of Ammo
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@PersistentSet=Persistent Set
+Effect/Name/HeroKatarinaWeaponGrenadeLauncher@RemoveAmmo=Remove Ammo
+Effect/Name/HeroKatarinaWeaponMaster@RestoreAmmunition=Restore Ammunition
+Effect/Name/HeroKatarinaWeaponMaster@SetWeaponsCDs=Set Weapons CDs
+Effect/Name/HeroKatarinaWeaponSnipe@ApplySpellPowerCarried=Apply Spell Power (Carried)
+Effect/Name/HeroKatarinaWeaponSnipe@ApplySpellPowerEquipped=Apply Spell Power (Equipped)
+Effect/Name/HeroKatarinaWeaponSnipe@Damage=Damage
+Effect/Name/HeroKatarinaWeaponSnipe@ImpactSet=Impact Set
+Effect/Name/HeroKatarinaWeaponSnipe@InitialSet=Initial Set
+Effect/Name/HeroKatarinaWeaponSnipe@LaunchMissile=Launch Missile
+Effect/Name/HeroKatarinaWeaponSnipe@OutOfAmmo=Out Of Ammo
+Effect/Name/HeroKatarinaWeaponSnipe@RemoveAmmo=Remove Ammo
+Effect/Name/HeroKatarinaWeaponSwap=Weapon Swap
+Effect/Name/KatarinaTalentClusterChargeCripplingCharge@ApplyStatsDebuff=Apply Stats Debuff
+Effect/Name/KatarinaTalentClusterChargeOvercharge@SecondSpread=Second Spread
+Effect/Name/Katarina_ApplyEquipped_Autorifle_CarriedAutorifleSwitch=Carried Autorifle Switch
+Effect/Name/Katarina_ApplyEquipped_Chaingun_CarriedChaingunSwitch=Carried Chaingun Switch
+Effect/Name/Katarina_ApplyEquipped_Flamethrower_CarriedFlamethrowerSwitch=Carried Flamethrower Switch
+Effect/Name/Katarina_ApplyEquipped_Snipe_CarriedSnipeSwitch=Carried Snipe Switch
+Hero/Name/HeroKatarina=Katarina
+Param/Value/lib_GDHL_33C78C88=Invalid Katarina Next Carried weapon
+Unit/Name/HeroKatarina=Katarina
+Unit/Name/HeroKatarinaClusterCharge@ClusterBomb=Cluster Bomb
+Unit/Name/HeroKatarinaClusterCharge@Missile=Missile
+Unit/Name/HeroKatarinaEquipAutorifle=Equip Autorifle
+Unit/Name/HeroKatarinaEquipAutorifle_Item=Blood For Blood
+Unit/Name/HeroKatarinaEquipFlamethrower=Equip Flamethrower
+Unit/Name/HeroKatarinaEquipFlamethrower_Item=Blood For Blood
+Unit/Name/HeroKatarinaEquipGrenadeLauncher=Equip Grenade Launcher
+Unit/Name/HeroKatarinaEquipGrenadeLauncher_Item=Blood For Blood
+Unit/Name/HeroKatarinaEquipSnipe=Equip Snipe
+Unit/Name/HeroKatarinaEquipSnipe_Item=Blood For Blood
+Unit/Name/HeroKatarinaExclusionZone@Missile=Missile
+Unit/Name/HeroKatarinaExclusionZone@Tower1=Tower 1
+Unit/Name/HeroKatarinaExclusionZone@Tower2=Tower 2
+Unit/Name/HeroKatarinaExclusionZone@Tower3=Tower 3
+Unit/Name/HeroKatarinaFlashGrenade@Missile=Missile
+Unit/Name/HeroKatarinaWeaponAutorifle@Missile=Missile
+Unit/Name/HeroKatarinaWeaponGrenadeLauncher@Missile=Missile
+Unit/Name/HeroKatarinaWeaponSnipe@Missile=Missile
+Unit/Name/Katarina_AimedShot_Missile=Aimed Shot Missile
+Unit/Name/Katarina_TripleShot_AttackMissile=Missile
+Upgrade/Name/HeroKatarina@BaseBlue=Base Blue
+Upgrade/Name/HeroKatarina@BaseGolden=Base Golden
+Upgrade/Name/HeroKatarina@BaseGreen=Base Green
+Upgrade/Name/HeroKatarina@BaseGrey=Base Grey
+Upgrade/Name/HeroKatarina@BasePurple=Base Purple
+Upgrade/Name/HeroKatarina@BaseRed=Base Red
+UserData/DataIngame_Heroes_Skins_Katarina/Katarina_Base_Red_Skin Name=Katarina Red
+UserData/DataIngame_Heroes_Skins_Katarina/Katarina_Base_Skin Name=Katarina
+UserData/Skin/KatarinaBase_VariationName=Katarina
+UserData/Skin/KatarinaBase_VariationName_001=Blue Katarina
+UserData/Skin/KatarinaBase_VariationName_002=Golden Katarina
+UserData/Skin/KatarinaBase_VariationName_003=Green Katarina
+UserData/Skin/KatarinaBase_VariationName_004=Grey Katarina
+UserData/Skin/KatarinaBase_VariationName_005=Purple Katarina
+UserData/Skin/KatarinaBase_VariationName_006=Red Katarina
+Weapon/Name/HeroKatarinaWeaponAutorifle=Autorifle
+Weapon/Name/HeroKatarinaWeaponFlamethrower=Flamethrower
+Weapon/Name/HeroKatarinaWeaponGrenadeLauncher=Grenade Launcher
+Weapon/Name/HeroKatarinaWeaponSnipe=Snipe

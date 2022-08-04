@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CScoreValueCustom default="1" id="QuestScoreValue" parent="BaseScoreValue">
+        <Flags index="TriggerAchievement" value="1"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="FractionalTeamLevel" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="DeadHeroLastKnownHealth"/>
+    <CScoreValueCustom id="DeadHeroLastKnownShields"/>
+    <CScoreValueCustom id="CoreDamageDealtHeroicHeroes" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroicTypeDoT" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroicTypeSpell" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroicTypePercent" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroicVehicle" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroicHallucination" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroicTypePhysical" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeTypeDoT" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeTypePhysical" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeBuilding" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeMercenary" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeMonster" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameKillStreak" parent="StatScoreValue"/>
+    <CScoreValueCustom id="IngameAssists" parent="StatScoreValue">
+        <Flags index="TriggerAchievement" value="1"/>
+        <Flags index="PerformanceMeasure" value="0"/>
+        <Flags index="ProfileStat" value="1"/>
+        <UniqueTag value="ASST"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameXPContribution" parent="StatScoreValue">
+        <UniqueTag value="XpCn"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiege" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeSummon" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeMercenaryDefender" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeMinion" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtHeroic" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeMercenaryLaner" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingAndShieldingReceivedTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingAndShieldingCreatedTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingCreatedToAllyBuilding" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingCreatedToAllyHero" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingCreatedToAllyMinion" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingCreatedToAllySummoned" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingReceivedToSelf" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingCreatedToAllyMinion" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingCreatedToAllySummoned" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingCreatedToAllyBuilding" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingReceivedSelf" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingCreatedTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingCreatedTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingReceivedAlly" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingReceivedAlly" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingReceivedMoonwell" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingReceivedGlobe" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingReceivedTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameShieldingReceivedTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeTypeSpell" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageDealtSiegeTypePercent" parent="StatScoreValue">
+        <Icon value="assets\Textures\Storm_UI_Play_Filter_Assassin-on.dds"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="CoreDamageTakenTotal" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_warrior-on.dds"/>
+        <UniqueTag value="DmgT"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameHealingCreatedToAllyHero" parent="StatScoreValue">
+        <Icon value="Assets\Textures\storm_ui_play_filter_support-on.dds"/>
+        <Flags index="TriggerAchievement" value="1"/>
+        <Type value="Fixed"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="IngameGameScore" parent="StatScoreValue">
+        <UniqueTag value="GSco"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom id="TeamTakedowns" parent="QuestScoreValue"/>
+    <CScoreValueCustom id="TeamTownKills" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="TeamMercCampCaptures" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="ExperienceFromTownsDestroyed" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="ExperienceFromMinionsAndCreeps" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="ExperienceFromTrickle" parent="BaseScoreValue"/>
+    <CScoreValueCustom id="ExperienceFromTakedowns" parent="BaseScoreValue"/>
+</Catalog>

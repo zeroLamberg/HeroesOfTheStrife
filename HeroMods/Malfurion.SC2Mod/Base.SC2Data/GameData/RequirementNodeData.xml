@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementCountUpgrade id="CountUpgradeHeroMalfurion@BasePurpleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroMalfurion@BasePurple" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroMalfurion@BaseWhiteCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroMalfurion@BaseWhite" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinBetrayerBrownCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinBetrayerBrown" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinBetrayerRedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinBetrayerRed" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinFlameVar1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinFlameVar1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinFlameVar2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinFlameVar2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinFlameVar3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinFlameVar3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinSotrmragePurpleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinSotrmragePurple" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinSotrmrageVar3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinSotrmrageVar3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinSotrmrageWhiteCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinSotrmrageWhite" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinUltimateRedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinUltimateRed" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinUltimateWhiteCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinUltimateWhite" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinWinterVar1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinWinterVar1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinWinterVar2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinWinterVar2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinWinterVar3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinWinterVar3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMalfurionSkinWinterVar4CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MalfurionSkinWinterVar4" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+</Catalog>

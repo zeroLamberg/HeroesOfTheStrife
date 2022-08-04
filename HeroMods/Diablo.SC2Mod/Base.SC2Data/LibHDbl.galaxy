@@ -1,0 +1,400 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+
+include "LibHDbl_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Diablo
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHDbl_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+}
+
+// Variable Initialization
+bool libHDbl_InitVariables_completed = false;
+
+void libHDbl_InitVariables () {
+    if (libHDbl_InitVariables_completed) {
+        return;
+    }
+
+    libHDbl_InitVariables_completed = true;
+
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Black Soulstone - Eternal Soulstone (10 LvL)
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorAdd(EventPlayerEffectUsedUnit(c_effectUnitTarget), "HeroDiabloBlackSoulstoneEternalSoulstone", EventPlayerEffectUsedUnit(c_effectUnitTarget), 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL_Init () {
+    libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL = TriggerCreate("libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL_Func");
+    TriggerAddEventPlayerEffectUsed(libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL, c_playerAny, "HeroDiabloBlackSoulstoneEternalSoulstone@Modification");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Diablo Dies
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloDiabloDies_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_deadUnit;
+    int lv_deadPlayer;
+    int lv_killingPlayer;
+    fixed lv_respawnTime;
+    bool lv_soulstoneRes;
+    point lv_deadUnitOriginalPosition;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_deadUnit = EventUnit();
+    lv_deadPlayer = EventPlayer();
+    lv_killingPlayer = libNtve_gf_KillingPlayer();
+    lv_deadUnitOriginalPosition = UnitGetPosition(EventUnit());
+
+    // Conditions
+    if (testConds) {
+        if (!((libCore_gv_gameOver == false))) {
+            return false;
+        }
+
+        if (!((libGame_gf_PlayerIsHeroPlayer(lv_deadPlayer) == true))) {
+            return false;
+        }
+
+        if (!((lv_deadUnit == libGame_gv_players[lv_deadPlayer].lv_heroUnit))) {
+            return false;
+        }
+
+        if (!((UnitGetType(lv_deadUnit) == "HeroDiablo"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gv_players[lv_deadPlayer].lv_isDead = true;
+    UnitSetState(lv_deadUnit, c_unitStateStatusBar, false);
+    if ((UnitHasBehavior(lv_deadUnit, "HeroDiabloBlackSoulstone@CanReviveActiveCarry") == true)) {
+        lv_soulstoneRes = true;
+        PlayerCreateEffectPoint(lv_deadPlayer, "HeroDiabloBlackSoulstone@ResurrectDummyPersistent", libNtve_gf_PointWithZOffset(lv_deadUnitOriginalPosition, 2.0));
+        UnitCreateEffectUnit(lv_deadUnit, "HeroDiabloBlackSoulstone@ResetTokensPersistent", lv_deadUnit);
+    }
+
+    libGame_gf_SendEventHeroKilled(lv_killingPlayer, lv_deadUnit);
+    if ((lv_soulstoneRes == true)) {
+        lv_respawnTime = libHDbl_gv_heroDiabloBlackSoulstoneResurrectTime;
+    }
+    else {
+        lv_respawnTime = libCore_gf_HeroDeathTime(lv_deadPlayer, UnitLevel(libGame_gv_players[lv_deadPlayer].lv_heroUnit));
+    }
+    libGame_gf_HeroDeathStartRespawnTimer(lv_deadPlayer, lv_respawnTime);
+    libGame_gf_HeroDeathUpdateUIElementsForDeath(true, true, true, lv_deadPlayer, lv_killingPlayer);
+    libGame_gf_HeroDeathEnableDisableDeadSoundStateForPlayer(true, lv_deadPlayer);
+    libGame_gf_HeroDeathPortHeroBackAndSetDeathState(lv_deadPlayer, libGame_gv_players[lv_deadPlayer].lv_spawnPoint);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloDiabloDies_Init () {
+    libHDbl_gt_HeroDiabloDiabloDies = TriggerCreate("libHDbl_gt_HeroDiabloDiabloDies_Func");
+    TriggerAddEventUnitDied(libHDbl_gt_HeroDiabloDiabloDies, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Firestomp Lifesteal
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloFirestompLifesteal_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_soulsCount;
+    fixed lv_percent;
+    fixed lv_damageTaken;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitIsAlive(EventUnitDamageSourceUnit()) == true))) {
+            return false;
+        }
+
+        if (!((UnitTypeTestAttribute(UnitGetType(EventUnit()), c_unitAttributeHeroic) == true))) {
+            return false;
+        }
+
+        if (!(((EventUnitDamageEffect() == "HeroDiabloFireStomp@StartDamage") || (EventUnitDamageEffect() == "HeroDiabloFireStomp@ReturnDamage")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_damageTaken = libCore_gf_CombatCalculateDamageAmount();
+    lv_percent = libHDbl_gv_heroDiabloFirestompLifesteal;
+    if ((PlayerHasTalent(EventUnitDamageSourcePlayer(), "HeroDiabloTalentFireStompSoulstotheFlame") == true)) {
+        lv_soulsCount = UnitBehaviorCount(EventUnitDamageSourceUnit(), "HeroDiabloBlackSoulstone@Stacks");
+        lv_percent += (lv_soulsCount * libHDbl_gv_heroDiabloFirestompLifestealSoulsToTheFlame);
+    }
+
+    libGame_gf_UnitStatsLifestealCalculation(lv_damageTaken, lv_percent, false, false, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloFirestompLifesteal_Init () {
+    libHDbl_gt_HeroDiabloFirestompLifesteal = TriggerCreate("libHDbl_gt_HeroDiabloFirestompLifesteal_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHDbl_gt_HeroDiabloFirestompLifesteal, null, null);
+    TriggerAddEventUnitDamaged(libHDbl_gt_HeroDiabloFirestompLifesteal, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroDiabloFireStomp@StartDamage");
+    TriggerAddEventUnitDamaged(libHDbl_gt_HeroDiabloFirestompLifesteal, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroDiabloFireStomp@ReturnDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Overpower - Facing
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloOverpowerFacing_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_diablo;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_diablo = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitSetFacing(lv_diablo, (UnitGetFacing(lv_diablo) + 180.0), 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloOverpowerFacing_Init () {
+    libHDbl_gt_HeroDiabloOverpowerFacing = TriggerCreate("libHDbl_gt_HeroDiabloOverpowerFacing_Func");
+    TriggerAddEventPlayerEffectUsed(libHDbl_gt_HeroDiabloOverpowerFacing, c_playerAny, "HeroDiabloOverpower@MakeCasterLookAtTarget");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Lightning Breath Cast
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloLightningBreathCast_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_itPlayer = UnitGetOwner(EventUnit());
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libHDbl_gv_heroDiabloLightningBreathActive[lv_itPlayer] = true;
+    CatalogFieldValueSet(c_gameCatalogUnit, "HeroDiablo", "StationaryTurningRate", lv_itPlayer, FixedToString(libHDbl_gv_heroDiabloLightningBreathTurningRate, 0));
+    if ((libHDbl_gv_heroDiabloLightningBreathEventAdded[lv_itPlayer] == false)) {
+        TriggerAddEventMouseMoved(libHDbl_gt_HeroDiabloLightningBreathAim, lv_itPlayer);
+    }
+
+    libHDbl_gv_heroDiabloLightningBreathEventAdded[lv_itPlayer] = true;
+    TriggerEnable(libHDbl_gt_HeroDiabloLightningBreathAim, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloLightningBreathCast_Init () {
+    libHDbl_gt_HeroDiabloLightningBreathCast = TriggerCreate("libHDbl_gt_HeroDiabloLightningBreathCast_Func");
+    TriggerAddEventUnitBehaviorChange(libHDbl_gt_HeroDiabloLightningBreathCast, null, "HeroDiabloLightningBreath", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Lightning Breath Aim
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloLightningBreathAim_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_itPlayer = EventPlayer();
+
+    // Conditions
+    if (testConds) {
+        if (!((libHDbl_gv_heroDiabloLightningBreathActive[lv_itPlayer] == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitIssueOrder(libGame_gv_players[lv_itPlayer].lv_heroUnit, OrderTargetingPoint(AbilityCommand("move", 4), Point(EventMouseMovedPosXWorld(), EventMouseMovedPosYWorld())), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloLightningBreathAim_Init () {
+    libHDbl_gt_HeroDiabloLightningBreathAim = TriggerCreate("libHDbl_gt_HeroDiabloLightningBreathAim_Func");
+    TriggerEnable(libHDbl_gt_HeroDiabloLightningBreathAim, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo - Lightning Breath End
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloLightningBreathEnd_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_owner;
+    bool lv_infernoBreathAimTriggerEnabled;
+    int lv_diabloIndex;
+    int lv_triggeringDiabloPlayer;
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    playergroup auto39922C91_g;
+
+    // Variable Initialization
+    lv_owner = UnitGetOwner(EventUnit());
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    CatalogFieldValueSet(c_gameCatalogUnit, "HeroDiablo", "StationaryTurningRate", lv_owner, CatalogFieldValueGet(c_gameCatalogUnit, "HeroDiablo", "StationaryTurningRate", 0));
+    libHDbl_gv_heroDiabloLightningBreathActive[lv_owner] = false;
+    auto39922C91_g = libCore_gv_heroPlayersIncludeAIHeroPlayers;
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(auto39922C91_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        if ((libHDbl_gv_heroDiabloLightningBreathActive[lv_itPlayer] == true)) {
+            lv_infernoBreathAimTriggerEnabled = true;
+            break;
+        }
+
+    }
+    if ((lv_infernoBreathAimTriggerEnabled == false)) {
+        TriggerEnable(libHDbl_gt_HeroDiabloLightningBreathAim, false);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloLightningBreathEnd_Init () {
+    libHDbl_gt_HeroDiabloLightningBreathEnd = TriggerCreate("libHDbl_gt_HeroDiabloLightningBreathEnd_Func");
+    TriggerAddEventUnitBehaviorChange(libHDbl_gt_HeroDiabloLightningBreathEnd, null, "HeroDiabloLightningBreath", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo Talent - Lord of Terror
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloTalentLordofTerror_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((EventUnitDamageEffect() == "HeroDiabloTalentLordofTerror@PercentDamage"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libGame_gf_UnitStatsLifestealCalculation(libCore_gf_CombatCalculateDamageAmount(), libHDbl_gv_heroDiabloTalentLordofTerrorLifesteal, false, false, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloTalentLordofTerror_Init () {
+    libHDbl_gt_HeroDiabloTalentLordofTerror = TriggerCreate("libHDbl_gt_HeroDiabloTalentLordofTerror_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHDbl_gt_HeroDiabloTalentLordofTerror, null, null);
+    TriggerAddEventUnitDamaged(libHDbl_gt_HeroDiabloTalentLordofTerror, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroDiabloTalentLordofTerror@PercentDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Diablo Talent - Dying Breath CDR
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_gt_HeroDiabloTalentDyingBreathCDR_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_diablo;
+    fixed lv_cooldown;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_diablo = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_cooldown = UnitGetCooldown(lv_diablo, "Abil/HeroDiabloApocalypse");
+    lv_cooldown -= libHDbl_gv_heroDiabloTalentDyingBreathCDR;
+    if ((lv_cooldown > libHDbl_gv_heroDiabloTalentDyingBreathThreshold)) {
+        UnitModifyCooldown(lv_diablo, "Abil/HeroDiabloApocalypse", lv_cooldown, c_cooldownOperationSet);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHDbl_gt_HeroDiabloTalentDyingBreathCDR_Init () {
+    libHDbl_gt_HeroDiabloTalentDyingBreathCDR = TriggerCreate("libHDbl_gt_HeroDiabloTalentDyingBreathCDR_Func");
+    TriggerAddEventPlayerEffectUsed(libHDbl_gt_HeroDiabloTalentDyingBreathCDR, c_playerAny, "HeroDiabloTalentApocalypseDyingBreath@TriggerDummyImpactSet");
+}
+
+void libHDbl_InitTriggers () {
+    libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL_Init();
+    libHDbl_gt_HeroDiabloDiabloDies_Init();
+    libHDbl_gt_HeroDiabloFirestompLifesteal_Init();
+    libHDbl_gt_HeroDiabloOverpowerFacing_Init();
+    libHDbl_gt_HeroDiabloLightningBreathCast_Init();
+    libHDbl_gt_HeroDiabloLightningBreathAim_Init();
+    libHDbl_gt_HeroDiabloLightningBreathEnd_Init();
+    libHDbl_gt_HeroDiabloTalentLordofTerror_Init();
+    libHDbl_gt_HeroDiabloTalentDyingBreathCDR_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHDbl_InitLib_completed = false;
+
+void libHDbl_InitLib () {
+    if (libHDbl_InitLib_completed) {
+        return;
+    }
+
+    libHDbl_InitLib_completed = true;
+
+    libHDbl_InitLibraries();
+    libHDbl_InitVariables();
+    libHDbl_InitTriggers();
+}
+

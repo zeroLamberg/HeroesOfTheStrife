@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="HeroKatarinaExclusionZone@TowerMissileMover" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="12"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+        <MotionPhases index="1" removed="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Katarina_Mover_MegaShot">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="-80"/>
+            <Speed value="35"/>
+            <MinSpeed value="35"/>
+            <MaxSpeed value="35"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaWeaponAutorifle@Mover">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Speed value="60"/>
+            <MinSpeed value="60"/>
+            <MaxSpeed value="60"/>
+            <IgnoresTerrain value="1"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaAimedShot@Mover">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="-80"/>
+            <Speed value="35"/>
+            <MinSpeed value="35"/>
+            <MaxSpeed value="35"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaWeaponGrenadeLauncher@Mover">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Speed value="60"/>
+            <MinSpeed value="60"/>
+            <MaxSpeed value="60"/>
+            <IgnoresTerrain value="1"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaWeaponSnipe@Mover">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Speed value="60"/>
+            <MinSpeed value="60"/>
+            <MaxSpeed value="60"/>
+            <IgnoresTerrain value="1"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaFlashGrenade@MissileClose">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="-7"/>
+            <Speed value="21"/>
+            <MinSpeed value="7"/>
+            <MaxSpeed value="21"/>
+            <Timeout value="10"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaFlashGrenade@MissileMedium">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-7"/>
+            <Speed value="21"/>
+            <MinSpeed value="7"/>
+            <MaxSpeed value="21"/>
+            <Gravity value="25"/>
+            <Timeout value="10"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaFlashGrenade@MissileFar">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-7"/>
+            <Speed value="21"/>
+            <MinSpeed value="7"/>
+            <MaxSpeed value="21"/>
+            <Gravity value="50"/>
+            <Timeout value="10"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="Katarina_TossGrenade_Mover_Close">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="12"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <FlightTime value="0.0625"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="Katarina_TossGrenade_Mover_BigDistance">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="12"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <FlightTime value="0.2"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroKatarinaExclusionZone@MissileMover">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-1"/>
+            <Gravity value="30"/>
+            <Outro value="-0.25,-0.1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <FlightTime value="0.3125,-1"/>
+        </MotionPhases>
+        <MotionPhases Driver="Guidance" MaxSpeed="40" YawPitchRoll="MAX"/>
+    </CMoverMissile>
+</Catalog>

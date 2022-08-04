@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CCharacter id="Abathur">
+        <Voice value="NaturalSoft Ryan"/>
+        <Color value="255,0,64,0"/>
+        <Image value="Assets\Textures\ui_targetportrait_hero_abathur.dds"/>
+        <Age value="40"/>
+        <Unit value="HeroAbathur"/>
+    </CCharacter>
+</Catalog>

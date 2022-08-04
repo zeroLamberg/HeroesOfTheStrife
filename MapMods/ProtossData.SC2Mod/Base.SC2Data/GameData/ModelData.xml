@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel default="1" id="MercenaryVanguard@DeathParent" parent="UnitDeath">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Events>
+            <Variation value="0"/>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.450000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="0"/>
+            <Anim value="Death,02"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.450000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryVanguard@Explode_Legs_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.160000"/>
+            <Payload value="MercenaryVanguard@Explode_Legs_Start"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryVanguard@Explode_Legs_Mech"/>
+            <Type value="Sound"/>
+            <Time value="0.703000"/>
+            <Payload value="MercenaryVanguard@Explode_Legs_Mech"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryVanguard@Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="1.050000"/>
+            <Payload value="MercenaryVanguard@Explode_Legs_Impact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryVanguard@Explode_Var"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="MercenaryVanguard@Explode_Var"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryVanguard@Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="0.800000"/>
+            <Payload value="MercenaryVanguard@Explode_Legs_Impact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryVanguard@Explode_Body_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.187000"/>
+            <Payload value="MercenaryVanguard@Explode_Body_Start"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryVanguard@Explode_Body_Impact"/>
+            <Type value="Sound"/>
+            <Time value="0.887000"/>
+            <Payload value="MercenaryVanguard@Explode_Body_Impact"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryVanguard@Explode_Var"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="MercenaryVanguard@Explode_Var"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.450000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,03"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.450000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="MercenaryVanguard@Explode"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="MercenaryVanguard@Explode"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryVanguard@Explode"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="MercenaryVanguard@Explode"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+    </CModel>
+    <CModel default="1" id="MercenaryVanguard@ModelParent" parent="Unit">
+        <RequiredAnims value="Assets\Units\Protoss\Immortal_SwarmAnims\Immortal_SwarmAnims.m3a"/>
+        <AttachProps Id="Ref_Weapon Right">
+            <Keys index="Weapon" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon Left">
+            <Keys index="Weapon" value="1"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Hardpoint">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigh08"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="0.866400"/>
+        <ShadowRadius value="0.866400"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh08"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.800000"/>
+        <TipabilityWidth value="0.800000"/>
+        <UnitGlossaryCamera value="Star2CameraHigh08"/>
+        <AnimAliases Anim="Attack,Superior" Alias="Attack"/>
+    </CModel>
+    <CModel default="1" id="MercenaryVanguard@WarpInParent" parent="Unit">
+        <Model value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Occlusion value="Show"/>
+        <Priority value="16"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL3PlacementParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="1.100000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL3BirthParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL3ModelParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossAscend"/>
+            <Type value="Sound"/>
+            <Payload value="Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossPowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="TownProtossPowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossDescend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="TownProtossDescend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossPowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="TownProtossPowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="1.100000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL3DeathUnpoweredParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL3DeathParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCoreModelParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+        <TextureDeclares Prefix="nexus_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
+        </TextureDeclares>
+        <AttachProps Id="Ref_Overhead">
+            <Keys index="Weapon" value="0"/>
+        </AttachProps>
+    </CModel>
+    <CModel default="1" id="TownProtossCoreBirthParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="TownProtossBuildingSoundEnd"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="TownProtossBuildingSoundEnd"/>
+        </Events>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+        <TextureDeclares Prefix="nexus_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="campaign"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="campaign"/>
+            <Adaptions TriggerOnSubstring="_Emissive" Slot="campaign"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel default="1" id="TownProtossCorePlacementParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCoreDeathParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <Model value="Assets\Buildings\Protoss\TownProtossCoreDeathParent\TownProtossCoreDeathParent.m3"/>
+        <AnimSpeed value="0.750000"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TownProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="TownProtossPreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TownProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.300000"/>
+            <Payload value="TownProtossPreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TownProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.733000"/>
+            <Payload value="TownProtossPreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TownProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="1.133000"/>
+            <Payload value="TownProtossPreExplosionSmall"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TownProtossExplosionLarge"/>
+            <Type value="Sound"/>
+            <Time value="1.433000"/>
+            <Payload value="TownProtossExplosionLarge"/>
+        </Events>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossMoonwellBirthParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="TownProtossBuildingSoundEnd"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="TownProtossBuildingSoundEnd"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossMoonwellDeathParent" parent="BuildingDeath">
+        <?token id="low"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossMoonwellPlacementParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossMoonwellModelParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL2BirthParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="TownProtossBuildingSoundEnd"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+            <Payload value="TownProtossBuildingSoundEnd"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL2DeathParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL3DeathParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL2DeathUnpoweredParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL2PlacementParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <Model value="Assets\Buildings\Protoss\TownProtossTownHallL2PlacementParent\TownProtossTownHallL2PlacementParent.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL2ModelParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossAscend"/>
+            <Type value="Sound"/>
+            <Payload value="Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossPowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="TownProtossPowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossDescend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="TownProtossDescend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossPowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="TownProtossPowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL3BirthParent" parent="Building">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="TownProtossBuildingSoundEnd"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+            <Payload value="TownProtossBuildingSoundEnd"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL3DeathUnpoweredParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL3ModelParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossAscend"/>
+            <Type value="Sound"/>
+            <Payload value="Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossPowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="TownProtossPowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossDescend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="TownProtossDescend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossPowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="TownProtossPowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossTownHallL3PlacementParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL2DeathParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL2DeathUnpoweredParent" parent="BuildingDeath">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL2ModelParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossAscend"/>
+            <Type value="Sound"/>
+            <Payload value="Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="TownProtossPowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="TownProtossPowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossDescend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="TownProtossDescend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="TownProtossPowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="TownProtossPowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="1.100000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL2BirthParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="TownProtossCannonTowerL2PlacementParent" parent="Building">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="1.100000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossCatapult@DeathParent" parent="UnitDeath">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,01"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,02"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.600000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossCatapult@ModelParent" parent="Unit">
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraLow07"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.750000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraLow07"/>
+        <UnitGlossaryCamera value="Star2CameraLow07"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossCatapult@WarpInParent" parent="Unit">
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Priority value="16"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.750000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossMelee@DeathParent" parent="UnitDeath">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossMelee@ModelParent" parent="Unit">
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossMelee@WarpInParent" parent="Unit">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.555400"/>
+        <ShadowRadius value="0.555400"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossRanged@DeathParent" parent="UnitDeath">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossRanged@ModelParent" parent="Unit">
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossRanged@WarpInParent" parent="Unit">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossWizard@ModelParent" parent="Unit">
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <AnimAliases Anim="Spell,A" Alias="Attack"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossWizard@WarpInParent" parent="Unit">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:Minions"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.526100"/>
+        <ShadowRadius value="0.526100"/>
+    </CModel>
+    <CModel default="1" id="MercenaryColossus@DeathRagdollParent" parent="UnitDeathRagdoll">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Ragdoll_A"/>
+            <Type value="Sound"/>
+            <Time value="0.507000"/>
+            <Payload value="MercenaryColossus@Explode_Ragdoll_A"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Ragdoll_B"/>
+            <Type value="Sound"/>
+            <Time value="1.167000"/>
+            <Payload value="MercenaryColossus@Explode_Ragdoll_B"/>
+        </Events>
+    </CModel>
+    <CModel default="1" id="MercenaryColossus@DeathParent" parent="UnitDeath">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.400000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="MercenaryColossus@Explode_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="MercenaryColossus@Explode_Vocalize"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Vocalize"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.400000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="MercenaryColossus@Explode_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="MercenaryColossus@Explode_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="MercenaryColossus@Explode_Vocalize"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Vocalize"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.400000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryColossus@Explode_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="MercenaryColossus@Explode_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,02"/>
+            <Name value="MercenaryColossus@Explode_Vocalize"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Vocalize"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryColossus@Explode_Small"/>
+            <Type value="Sound"/>
+            <Time value="0.400000"/>
+            <Payload value="MercenaryColossus@Explode_Small"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryColossus@Explode_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="MercenaryColossus@Explode_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,03"/>
+            <Name value="MercenaryColossus@Explode_Vocalize"/>
+            <Type value="Sound"/>
+            <Payload value="MercenaryColossus@Explode_Vocalize"/>
+        </Events>
+        <Events>
+            <Anim value="Death,04"/>
+            <Name value="MercenaryColossus@Explode_Large"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="MercenaryColossus@Explode_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,04"/>
+            <Name value="MercenaryColossus@Explode_Legs_Whoosh"/>
+            <Type value="Sound"/>
+            <Time value="0.437000"/>
+            <Payload value="MercenaryColossus@Explode_Legs_Whoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Death,04"/>
+            <Name value="MercenaryColossus@Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="2.000000"/>
+            <Payload value="MercenaryColossus@Explode_Legs_Impact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,04"/>
+            <Name value="MercenaryColossus@Explode_Legs_Spark_A"/>
+            <Type value="Sound"/>
+            <Time value="2.981000"/>
+            <Payload value="MercenaryColossus@Explode_Legs_Spark_A"/>
+        </Events>
+        <Events>
+            <Anim value="Death,04"/>
+            <Name value="MercenaryColossus@Explode_Legs_Spark_B"/>
+            <Type value="Sound"/>
+            <Time value="4.445000"/>
+            <Payload value="MercenaryColossus@Explode_Legs_Spark_B"/>
+        </Events>
+    </CModel>
+    <CModel default="1" id="MercenaryColossus@ModelParent" parent="Unit">
+        <RequiredAnims value="Assets\Units\Protoss\Colossus_SwarmAnims\Colossus_SwarmAnims.m3a"/>
+        <AttachProps Id="Ref_Target 02">
+            <Keys index="Ground" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Target 03">
+            <Keys index="Ground" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Target 04">
+            <Keys index="Ground" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Target 05">
+            <Keys index="Ground" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 02">
+            <Keys index="CustomA" value="2"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 03">
+            <Keys index="CustomA" value="3"/>
+        </AttachProps>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <PlanetPanelCamera value="Star2CameraHigher22"/>
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.333200"/>
+        <ShadowRadius value="1.333200"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigher22"/>
+        <UnitGlossaryCamera value="Star2CameraHigher22"/>
+    </CModel>
+    <CModel default="1" id="MercenaryHybridDominator@DeathParent" parent="UnitDeath">
+        <?token id="Race" value="Protoss"?>
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <SelectionRadius value="0.555400"/>
+        <ShadowRadius value="0.555400"/>
+    </CModel>
+    <CModel default="1" id="MercenaryHybridNemesis@DeathParent" parent="UnitDeath">
+        <?token id="Race" value="Zerg"?>
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="HybridNemesisDeathSound"/>
+            <Type value="Actor"/>
+            <Time value="3.017000"/>
+            <Payload value="HybridNemesisDeathSound"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXAcid"/>
+            <Type value="Sound"/>
+            <Time value="0.021000"/>
+            <Payload value="Uni_DeathFXAcid"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXAcid"/>
+            <Type value="Sound"/>
+            <Time value="3.004000"/>
+            <Payload value="Uni_DeathFXAcid"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Hybrid_Nemesis_DeathScreams"/>
+            <Type value="Sound"/>
+            <Time value="0.011000"/>
+            <Payload value="Hybrid_Nemesis_DeathScreams"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Hybrid_Nemesis_DeathScreams"/>
+            <Type value="Sound"/>
+            <Time value="0.810000"/>
+            <Payload value="Hybrid_Nemesis_DeathScreams"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Hybrid_Nemesis_DeathScreams"/>
+            <Type value="Sound"/>
+            <Time value="1.607000"/>
+            <Payload value="Hybrid_Nemesis_DeathScreams"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Hybrid_Nemesis_DeathScreams"/>
+            <Type value="Sound"/>
+            <Time value="2.389000"/>
+            <Payload value="Hybrid_Nemesis_DeathScreams"/>
+        </Events>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel default="1" id="MercenaryHybridReaver@DeathParent" parent="UnitDeath">
+        <?token id="Race" value="Zerg"?>
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <RadiusLoose value="1.250000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+    </CModel>
+    <CModel default="1" id="MercenaryHybridDominator@ModelParent" parent="Unit">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigher08"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionRadius value="1.111000"/>
+        <ShadowRadius value="1.111000"/>
+        <TechPurchaseCamera value="Star2CameraHigher08"/>
+        <UnitGlossaryCamera value="Star2CameraHigher08"/>
+    </CModel>
+    <CModel default="1" id="MercenaryHybridNemesis@ModelParent" parent="Unit">
+        <?token id="Race" value="Zerg"?>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraLow08"/>
+        <Radius value="1.250000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.400000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraLow08"/>
+        <UnitGlossaryCamera value="Star2CameraLow08"/>
+        <AnimAliases Anim="Stand" Alias="Birth"/>
+    </CModel>
+    <CModel default="1" id="MercenaryHybridReaver@ModelParent" parent="Unit">
+        <?token id="Race" value="Protoss"?>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigher14"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <TechPurchaseCamera value="Star2CameraHigher14"/>
+        <UnitGlossaryCamera value="Star2CameraHigher14"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossCatapult@DeathRagdollParent" parent="UnitDeathRagdoll">
+        <?token id="Race" value="Protoss"?>
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <Events>
+            <Variation value="0"/>
+            <Anim value="Death,00"/>
+            <Name value="MinionProtossCatapult@DeathExplosion"/>
+            <Type value="Sound"/>
+            <Time value="1.370000"/>
+            <Payload value="MinionProtossCatapult@DeathExplosion"/>
+        </Events>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossMelee@DeathRagdollParent" parent="UnitDeathRagdoll">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossRanged@DeathRagdollParent" parent="UnitDeathRagdoll">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel default="1" id="MinionProtossWizard@DeathParent" parent="UnitDeath">
+        <LowQualityModel value=""/>
+        <EditorCategories value="StandardHero:Minions"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2DeathTaldarim" parent="TownProtossMoonwellDeathParent">
+        <Model value="Assets\Buildings\Protoss\ShieldBattery_Forged_Death\ShieldBattery_Forged_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2BirthKhala" parent="TownProtossMoonwellBirthParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_WarpIn\ProtossShield_Battery_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2DeathKhala" parent="TownProtossMoonwellDeathParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Death\ProtossShield_Battery_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2Khala" parent="TownProtossMoonwellModelParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery\ProtossShield_Battery.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2PlacementKhala" parent="TownProtossMoonwellPlacementParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Placement\ProtossShield_Battery_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2BirthTaldarim" parent="TownProtossMoonwellBirthParent">
+        <Model value="Assets\Buildings\Protoss\ShieldBattery_Forged_WarpIn\ShieldBattery_Forged_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2PlacementTaldarim" parent="TownProtossMoonwellPlacementParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Placement\ProtossShield_Battery_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL2Taldarim" parent="TownProtossMoonwellModelParent">
+        <Model value="Assets\Buildings\Protoss\ShieldBattery_Forged\ShieldBattery_Forged.m3"/>
+    </CModel>
+    <CModel id="TownProtossTowerMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\DetonateMissile\DetonateMissile.m3"/>
+    </CModel>
+    <CModel id="TownProtossTowerMissileImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\DragoonMissileImpact\DragoonMissileImpact.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossus@DeathRagdollTaldarim" parent="MercenaryColossus@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Colossus_Taldarim_DeathRagdoll\Colossus_Taldarim_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossus@DeathTaldarim" parent="MercenaryColossus@DeathParent">
+        <Model value="Assets\Units\Protoss\Colossus_Taldarim_Death\Colossus_Taldarim_Death.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossus@ModelTaldarim" parent="MercenaryColossus@ModelParent">
+        <Model value="Assets\Units\Protoss\Colossus_Taldarim\Colossus_Taldarim.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossusChargedBlast@PowerUpTaldarim" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusTaldarim_Powerup\ColossusTaldarim_Powerup.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusChargedBlast@WeaponTaldarim" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ColossusTaldarim_Missile\ColossusTaldarim_Missile.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusFireBeam@PowerUpTaldarim" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusTaldarim_Powerup\ColossusTaldarim_Powerup.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryVanguard@DeathTaldarim" parent="MercenaryVanguard@DeathParent">
+        <Model value="Assets\Units\Protoss\Immortal_Taldarim_Death\Immortal_Taldarim_Death.m3"/>
+        <Events index="2">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Legs_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.160000"/>
+            <Payload value="Immortal_Explode_Legs_Start"/>
+        </Events>
+        <Events index="3">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Legs_Mech"/>
+            <Type value="Sound"/>
+            <Time value="0.703000"/>
+            <Payload value="Immortal_Explode_Legs_Mech"/>
+        </Events>
+        <Events index="4">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="1.050000"/>
+            <Payload value="Immortal_Explode_Legs_Impact"/>
+        </Events>
+        <Events index="5">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Var"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode_Var"/>
+        </Events>
+        <Events index="6">
+            <Anim value="Death,02"/>
+            <Name value="Immortal_Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="0.800000"/>
+            <Payload value="Immortal_Explode_Legs_Impact"/>
+        </Events>
+        <Events index="7">
+            <Anim value="Death,03"/>
+            <Name value="Immortal_Explode_Body_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.187000"/>
+            <Payload value="Immortal_Explode_Body_Start"/>
+        </Events>
+        <Events index="8">
+            <Anim value="Death,03"/>
+            <Name value="Immortal_Explode_Body_Impact"/>
+            <Type value="Sound"/>
+            <Time value="0.887000"/>
+            <Payload value="Immortal_Explode_Body_Impact"/>
+        </Events>
+        <Events index="9">
+            <Variation value="1"/>
+            <Anim value="Death,03"/>
+            <Name value="Immortal_Explode_Var"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode_Var"/>
+        </Events>
+        <Events index="12">
+            <Anim value="Death,01"/>
+            <Name value="Immortal_Explode"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode"/>
+        </Events>
+        <Events index="13">
+            <Anim value="Death,02"/>
+            <Name value="Immortal_Explode"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode"/>
+        </Events>
+    </CModel>
+    <CModel id="MercenaryVanguard@ModelTaldarim" parent="MercenaryVanguard@ModelParent">
+        <Model value="Assets\Units\Protoss\Immortal_Taldarim\Immortal_Taldarim.m3"/>
+    </CModel>
+    <CModel id="MercenaryVanguard@WarpInTaldarim" parent="MercenaryVanguard@WarpInParent">
+        <Model value="Assets\Units\Protoss\Immortal_Taldarim_WarpIn\Immortal_Taldarim_WarpIn.m3"/>
+        <Flags index="CloakedDetectedIsFullyVisible" value="1"/>
+        <Flags index="CloakedUndetectedIsHidden" value="1"/>
+        <Flags index="FreezeParticlesAndRibbonsOnAnimPause" value="1"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Flags index="Wait" value="0"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@AttackLaunchTaldarim" parent="LaunchFX">
+        <Model value="Assets\Effects\Protoss\ScatterCannonLaunch\ScatterCannonLaunch.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@ImpactTaldarim" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ScatterCannonMissileImpact\ScatterCannonMissileImpact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@MissileTaldarim" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ScatterCannonMissile\ScatterCannonMissile.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@DeathRagdollTaldarim" parent="MinionProtossCatapult@DeathRagdollParent">
+        <Model value="Assets\Units\Minions\Storm_Minion_StarCraft_ProtossTaldarim_Catapult_DeathRagdoll\Storm_Minion_StarCraft_ProtossTaldarim_Catapult_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@DeathTaldarim" parent="MinionProtossCatapult@DeathParent">
+        <Model value="Assets\Units\Minions\Storm_Minion_StarCraft_ProtossTaldarim_Catapult_Death\Storm_Minion_StarCraft_ProtossTaldarim_Catapult_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@ModelTaldarim" parent="MinionProtossCatapult@ModelParent">
+        <Model value="Assets\Units\Minions\Storm_Minion_StarCraft_ProtossTaldarim_Catapult\Storm_Minion_StarCraft_ProtossTaldarim_Catapult.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@WarpInTaldarim" parent="MinionProtossCatapult@WarpInParent">
+        <Model value="Assets\Units\Minions\Storm_Minion_StarCraft_ProtossTaldarim_Catapult_WarpIn\Storm_Minion_StarCraft_ProtossTaldarim_Catapult_WarpIn.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapultWeapon@Warning" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Fantasy_TeamColor\Storm_UI_AOECursor_Fantasy_TeamColor.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="GenericProtossModelWarpIn" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\ProtossUnitWarpIn\ProtossUnitWarpIn.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="MinionProtossCatapultWeapon@Impact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Reaver_Missile_Impact\Reaver_Missile_Impact.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="MinionProtossCatapultWeapon@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Reaver_Missile\Reaver_Missile.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@DeathRagdollTaldarim" parent="MinionProtossMelee@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Zealot_Taldarim_Collection_DeathRagdoll\Zealot_Taldarim_Collection_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@DeathTaldarim" parent="MinionProtossMelee@DeathParent">
+        <Model value="Assets\Units\Protoss\Zealot_Taldarim_Collection\Zealot_Taldarim_Collection.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@ModelTaldarim" parent="MinionProtossMelee@ModelParent">
+        <Model value="Assets\Units\Protoss\Zealot_Taldarim_Collection\Zealot_Taldarim_Collection.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@WarpInTaldarim" parent="MinionProtossMelee@WarpInParent">
+        <Model value="Assets\Units\Protoss\Zealot_Taldarim_Collection_WarpIn\Zealot_Taldarim_Collection_WarpIn.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@DeathRagdollTaldarim" parent="MinionProtossRanged@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Adept_Taldarim_Collection_DeathRagdoll\Adept_Taldarim_Collection_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@DeathTaldarim" parent="MinionProtossRanged@DeathParent">
+        <Model value="Assets\Units\Protoss\Adept_Taldarim_Collection_Death\Adept_Taldarim_Collection_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@ModelTaldarim" parent="MinionProtossRanged@ModelParent">
+        <Model value="Assets\Units\Protoss\Adept_Taldarim_Collection\Adept_Taldarim_Collection.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@WarpInTaldarim" parent="MinionProtossRanged@WarpInParent">
+        <Model value="Assets\Units\Protoss\Adept_Taldarim_Collection_WarpIn\Adept_Taldarim_Collection_WarpIn.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@DeathTaldarim" parent="MinionProtossWizard@DeathParent">
+        <Model value="Assets\Units\Protoss\HighTemplar_Taldarim_Death\HighTemplar_Taldarim_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@ModelTaldarim" parent="MinionProtossWizard@ModelParent">
+        <Model value="Assets\Units\Protoss\HighTemplar_Taldarim_Collection\HighTemplar_Taldarim_Collection.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@WarpInTaldarim" parent="MinionProtossWizard@WarpInParent">
+        <Model value="Assets\Units\Protoss\HighTemplar_Taldarim_Collection_WarpIn\HighTemplar_Taldarim_Collection_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2WeaponAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\PhotonCannonMissileImpact\PhotonCannonMissileImpact.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2WeaponAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_MinionRanged_Missile_Launch\Storm_FX_MinionRanged_Missile_Launch.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2WeaponAttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\PhotonMissile\PhotonMissile.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3WeaponAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\PhotonCannonMissileImpact\PhotonCannonMissileImpact.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3WeaponAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_MinionRanged_Missile_Launch\Storm_FX_MinionRanged_Missile_Launch.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3WeaponAttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\PhotonMissile\PhotonMissile.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2DeathUnpoweredKhala" parent="TownProtossCannonTowerL2DeathUnpoweredParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_DeathUnpowered\MonolithCannon_Zeratul_COOP_DeathUnpowered.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2DeathUnpoweredTaldarim" parent="TownProtossCannonTowerL2DeathUnpoweredParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_DeathUnpowered\MonolithCannon_Zeratul_COOP_DeathUnpowered.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3Khala" parent="TownProtossCannonTowerL3ModelParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP\MonolithCannon_Zeratul_COOP.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3Taldarim" parent="TownProtossCannonTowerL3ModelParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP\MonolithCannon_Zeratul_COOP.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3BirthKhala" parent="TownProtossCannonTowerL3BirthParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_WarpIn\MonolithCannon_Zeratul_COOP_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2BirthTaldarim" parent="TownProtossCannonTowerL2BirthParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_WarpIn\MonolithCannon_Zeratul_COOP_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3BirthTaldarim" parent="TownProtossCannonTowerL3BirthParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_WarpIn\MonolithCannon_Zeratul_COOP_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2DeathTaldarim" parent="TownProtossCannonTowerL2DeathParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Death\MonolithCannon_Zeratul_COOP_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2Taldarim" parent="TownProtossCannonTowerL2ModelParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP\MonolithCannon_Zeratul_COOP.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3DeathKhala" parent="TownProtossCannonTowerL3DeathParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Death\MonolithCannon_Zeratul_COOP_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3DeathTaldarim" parent="TownProtossCannonTowerL3DeathParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Death\MonolithCannon_Zeratul_COOP_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3DeathUnpoweredKhala" parent="TownProtossCannonTowerL3DeathUnpoweredParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_DeathUnpowered\MonolithCannon_Zeratul_COOP_DeathUnpowered.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3DeathUnpoweredTaldarim" parent="TownProtossCannonTowerL3DeathUnpoweredParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_DeathUnpowered\MonolithCannon_Zeratul_COOP_DeathUnpowered.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2PlacementKhala" parent="TownProtossCannonTowerL2PlacementParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Placement\MonolithCannon_Zeratul_COOP_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3PlacementTaldarim" parent="TownProtossCannonTowerL3PlacementParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Placement\MonolithCannon_Zeratul_COOP_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2PlacementTaldarim" parent="TownProtossCannonTowerL2PlacementParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Placement\MonolithCannon_Zeratul_COOP_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossCoreBirthTaldarim" parent="TownProtossCoreBirthParent">
+        <Model value="Assets\Buildings\Protoss\Nexus_Forged_WarpIn\Nexus_Forged_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossCoreDeathTaldarim" parent="TownProtossCoreDeathParent">
+        <Model value="Assets\Buildings\Protoss\Nexus_Forged_Death\Nexus_Forged_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossCoreTaldarim" parent="TownProtossCoreModelParent">
+        <Model value="Assets\Buildings\Protoss\Nexus_Forged\Nexus_Forged.m3"/>
+    </CModel>
+    <CModel id="TownProtossCorePlacementTaldarim" parent="TownProtossCorePlacementParent">
+        <Model value="Assets\Buildings\Protoss\Nexus_Taldarim_Placement\Nexus_Taldarim_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3BirthTaldarim" parent="TownProtossMoonwellBirthParent">
+        <Model value="Assets\Buildings\Protoss\ShieldBattery_Forged_WarpIn\ShieldBattery_Forged_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3DeathTaldarim" parent="TownProtossMoonwellDeathParent">
+        <Model value="Assets\Buildings\Protoss\ShieldBattery_Forged_Death\ShieldBattery_Forged_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3PlacementTaldarim" parent="TownProtossMoonwellPlacementParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Placement\ProtossShield_Battery_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3Taldarim" parent="TownProtossMoonwellModelParent">
+        <Model value="Assets\Buildings\Protoss\ShieldBattery_Forged\ShieldBattery_Forged.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2BirthTaldarim" parent="TownProtossTownHallL2BirthParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort_Birth\Storm_Building_StarCraft_ProtossTaldarim_Fort_Birth.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2DeathTaldarim" parent="TownProtossTownHallL2DeathParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort_Death\Storm_Building_StarCraft_ProtossTaldarim_Fort_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3DeathTaldarim" parent="TownProtossTownHallL3DeathParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort_Death\Storm_Building_StarCraft_ProtossTaldarim_Fort_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2DeathUnpoweredTaldarim" parent="TownProtossTownHallL2DeathUnpoweredParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort_DeathUnpowered\Storm_Building_StarCraft_ProtossTaldarim_Fort_DeathUnpowered.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3DeathUnpoweredTaldarim" parent="TownProtossTownHallL3DeathUnpoweredParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort_DeathUnpowered\Storm_Building_StarCraft_ProtossTaldarim_Fort_DeathUnpowered.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2PlacementTaldarim" parent="TownProtossTownHallL2PlacementParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3BirthTaldarim" parent="TownProtossTownHallL3BirthParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort_Birth\Storm_Building_StarCraft_ProtossTaldarim_Fort_Birth.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2Taldarim" parent="TownProtossTownHallL2ModelParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort\Storm_Building_StarCraft_ProtossTaldarim_Fort.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3PlacementTaldarim" parent="TownProtossTownHallL3PlacementParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3Taldarim" parent="TownProtossTownHallL3ModelParent">
+        <Model value="assets\Buildings\Storm_Building_StarCraft_ProtossTaldarim_Fort\Storm_Building_StarCraft_ProtossTaldarim_Fort.m3"/>
+    </CModel>
+    <CModel id="TownWallKhalaDeath01" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall_Death\Storm_Building_Heaven_Wall_Death_01.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallKhalaDeath02" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall_Death\Storm_Building_Heaven_Wall_Death_02.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallKhalaDeath03" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall_Death\Storm_Building_Heaven_Wall_Death_03.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallKhalaDeath04" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall_Death\Storm_Building_Heaven_Wall_Death_04.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallKhalaDeath05" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall_Death\Storm_Building_Heaven_Wall_Death_05.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarimDeath00" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall_Death\Storm_Building_Hell_Wall_Death_00.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL3PlacementKhala" parent="TownProtossCannonTowerL3PlacementParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Placement\MonolithCannon_Zeratul_COOP_Placement.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizardWeapon@AttackImpact" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\AdeptSoulMissileImpact\AdeptSoulMissileImpact.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="MinionProtossWizardWeapon@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\AdeptSoulMissile\AdeptSoulMissile.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="MinionProtossRangedWeapon@AttackImpact" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Adept_Missile_Impact\Adept_Missile_Impact.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="MinionProtossRangedWeapon@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Adept_Missile\Adept_Missile.m3"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CModel>
+    <CModel id="TownWallKhalaDeath00" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall_Death\Storm_Building_Heaven_Wall_Death_00.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarimDeath01" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall_Death\Storm_Building_Hell_Wall_Death_01.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarimDeath02" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall_Death\Storm_Building_Hell_Wall_Death_02.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarimDeath03" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall_Death\Storm_Building_Hell_Wall_Death_03.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarimDeath04" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall_Death\Storm_Building_Hell_Wall_Death_04.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarimDeath05" parent="CoreUnitDeath">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall_Death\Storm_Building_Hell_Wall_Death_05.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+    </CModel>
+    <CModel id="TownWallTaldarim" parent="Building" Race="Protoss">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall\Storm_Building_Hell_Wall.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Radius value="0.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionOffset value="0.000000,0.000000,0.200000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+        <VariationCount value="6"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2Khala" parent="TownProtossCannonTowerL2ModelParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP\MonolithCannon_Zeratul_COOP.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2BirthKhala" parent="TownProtossCannonTowerL2BirthParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_WarpIn\MonolithCannon_Zeratul_COOP_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerL2DeathKhala" parent="TownProtossCannonTowerL2DeathParent">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Death\MonolithCannon_Zeratul_COOP_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2Khala" parent="TownProtossTownHallL2ModelParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2\DarkProtossTurretEx2.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2BirthKhala" parent="TownProtossTownHallL2BirthParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_WarpIn\DarkProtossTurretEx2_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2DeathUnpoweredKhala" parent="TownProtossTownHallL2DeathUnpoweredParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Unpowered_Death\DarkProtossTurretEx2_Unpowered_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2PlacementKhala" parent="TownProtossTownHallL2PlacementParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2DeathKhala" parent="TownProtossTownHallL2DeathParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Death\DarkProtossTurretEx2_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossCorePlacementKhala" parent="TownProtossCorePlacementParent">
+        <Model value="Assets\Buildings\Protoss\NexusPlacement\NexusPlacement.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3PlacementKhala" parent="TownProtossMoonwellPlacementParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Placement\ProtossShield_Battery_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossCoreKhala" parent="TownProtossCoreModelParent">
+        <Model value="Assets\Buildings\Protoss\NexusEx1\NexusEx1.m3"/>
+    </CModel>
+    <CModel id="TownProtossCoreDeathKhala" parent="TownProtossCoreDeathParent">
+        <Model value="Assets\Buildings\Protoss\NexusDeathEx1\NexusDeathEx1.m3"/>
+    </CModel>
+    <CModel id="TownProtossCoreBirthKhala" parent="TownProtossCoreBirthParent">
+        <Model value="Assets\Buildings\Protoss\NexusWarpIn\NexusWarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3PlacementKhala" parent="TownProtossTownHallL3PlacementParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3Khala" parent="TownProtossMoonwellModelParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery\ProtossShield_Battery.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3BirthKhala" parent="TownProtossMoonwellBirthParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_WarpIn\ProtossShield_Battery_WarpIn.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@DeathRagdollKhala" parent="MinionProtossCatapult@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Reaver_Ragdoll_Death\Reaver_Ragdoll_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@DeathKhala" parent="MinionProtossCatapult@DeathParent">
+        <Model value="Assets\Units\Protoss\Reaver_Death\Reaver_Death_01.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@WarpInKhala" parent="MinionProtossCatapult@WarpInParent">
+        <Model value="Assets\Units\Protoss\Reaver_WarpIn\Reaver_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3Khala" parent="TownProtossTownHallL3ModelParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2\DarkProtossTurretEx2.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@ModelKhala" parent="MinionProtossCatapult@ModelParent">
+        <Model value="Assets\Units\Protoss\Reaver\Reaver.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3BirthKhala" parent="TownProtossTownHallL3BirthParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_WarpIn\DarkProtossTurretEx2_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3DeathKhala" parent="TownProtossTownHallL3DeathParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Death\DarkProtossTurretEx2_Death.m3"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellL3DeathKhala" parent="TownProtossMoonwellDeathParent">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Death\ProtossShield_Battery_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@WarpInKhala" parent="MinionProtossRanged@WarpInParent">
+        <Model value="Assets\Units\Protoss\Adept_Golden_WarpIn\Adept_Golden_WarpIn.m3"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3DeathUnpoweredKhala" parent="TownProtossTownHallL3DeathUnpoweredParent">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Unpowered_Death\DarkProtossTurretEx2_Unpowered_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@WarpInKhala" parent="MinionProtossWizard@WarpInParent">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden_WarpIn\HighTemplar_Golden_WarpIn.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@WarpInKhala" parent="MinionProtossMelee@WarpInParent">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_WarpIn\Zealot_Golden_WarpIn.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@DeathKhala" parent="MinionProtossMelee@DeathParent">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_Death\Zealot_Golden_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@DeathRagdollKhala" parent="MinionProtossMelee@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_DeathRagdoll\Zealot_Golden_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@DeathKhala" parent="MinionProtossRanged@DeathParent">
+        <Model value="Assets\Units\Protoss\Adept_Golden_Death\Adept_Golden_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@DeathRagdollKhala" parent="MinionProtossRanged@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Adept_Golden_DeathRagdoll\Adept_Golden_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@DeathKhala" parent="MinionProtossWizard@DeathParent">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden_Death\HighTemplar_Golden_Death.m3"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@ModelKhala" parent="MinionProtossMelee@ModelParent">
+        <Model value="Assets\Units\Protoss\Zealot_Golden\Zealot_Golden.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@ModelKhala" parent="MinionProtossRanged@ModelParent">
+        <Model value="Assets\Units\Protoss\Adept_Golden\Adept_Golden.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@ModelKhala" parent="MinionProtossWizard@ModelParent">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden\HighTemplar_Golden.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossusChargedBlast@PowerUpKhala" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Merc_StarCraft_ProtossKhala_Colossus_Powerup\Storm_FX_Merc_StarCraft_ProtossKhala_Colossus_Powerup.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModelFoliage id="MercenaryColossusFireBeam@SplatInner">
+        <Model value="assets\Effects\Storm_FX_Fenix_Base_Sweep_Reticle_InnerTC\Storm_FX_Fenix_Base_Sweep_Reticle_InnerTC.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ScaleMax value="3.500000,3.500000,3.500000"/>
+        <ScaleMin value="3.500000,3.500000,3.500000"/>
+    </CModelFoliage>
+    <CModelFoliage id="MercenaryColossusFireBeam@SplatOuter">
+        <Model value="assets\Effects\Storm_FX_Fenix_Base_Sweep_Reticle_OuterTC\Storm_FX_Fenix_Base_Sweep_Reticle_OuterTC.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ScaleMax value="8.000000,8.000000,8.000000"/>
+        <ScaleMin value="6.750000,6.750000,6.750000"/>
+    </CModelFoliage>
+    <CModel id="MercenaryColossusFireBeam@BeamHitModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeamImpact\ColossusBeamImpact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusFireBeam@GroundFireImpactModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_Impact\Colossus_FireBeam_Impact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusFireBeam@GroundFireModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_GroundFire\Colossus_FireBeam_GroundFire.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusFireBeam@BeamTargetModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_Impact\Colossus_FireBeam_Impact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusFireBeam@BeamModel" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam\Colossus_FireBeam.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="MercenaryColossusFireBeam@PowerUpKhala" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Merc_StarCraft_ProtossKhala_Colossus_Powerup\Storm_FX_Merc_StarCraft_ProtossKhala_Colossus_Powerup.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusChargedBlast@WarningModel" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Modern_TeamColor\Storm_UI_AOECursor_Modern_TeamColor.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="MercenaryColossusChargedBlast@GroundImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\HybridPlasmaMissileImpact\HybridPlasmaMissileImpact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="MercenaryColossusWeapon@AttackBeamImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_Impact\Colossus_FireBeam_Impact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusChargedBlast@WeaponKhala" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\HybridPlasmaMissile\HybridPlasmaMissile.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossusWeapon@AttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam\Colossus_FireBeam.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MercenaryColossusWeapon@AttackBeamUnitImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_Unit_Impact\Colossus_FireBeam_Unit_Impact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryColossus@ModelKhala" parent="MercenaryColossus@ModelParent">
+        <Model value="Assets\Units\Protoss\Colossus_Golden\Colossus_Golden.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossus@DeathKhala" parent="MercenaryColossus@DeathParent">
+        <Model value="Assets\Units\Protoss\Colossus_Golden_Death\Colossus_Golden_Death_00.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossus@DeathRagdollKhala" parent="MercenaryColossus@DeathRagdollParent">
+        <Model value="Assets\Units\Protoss\Colossus_Golden_DeathRagdoll\Colossus_Golden_DeathRagdoll.m3"/>
+    </CModel>
+    <CModel id="MercenaryColossusWeapon@FireBeamModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_GroundFire\Colossus_FireBeam_GroundFire.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="MercenaryHybridDominatorWeapon@AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ArchonBeamImpact\ArchonBeamImpact.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryHybridNemesisWeapon@AttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\HybridEnergizeBeamLarge\HybridEnergizeBeamLarge.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MercenaryHybridReaver@Model" parent="MercenaryHybridReaver@ModelParent">
+        <Model value="assets\Units\Mercs\Storm_Merc_StarCraft_HybridMelee\Storm_Merc_StarCraft_HybridMelee.m3"/>
+    </CModel>
+    <CModel id="MercenaryHybridReaver@Death" parent="MercenaryHybridReaver@DeathParent">
+        <Model value="Assets\Units\Zerg\HybridZergDeath\HybridZergDeath.m3"/>
+    </CModel>
+    <CModel id="MercenaryHybridDominator@Model" parent="MercenaryHybridDominator@ModelParent">
+        <Model value="assets\Units\Mercs\Storm_Merc_StarCraft_HybridCaster\Storm_Merc_StarCraft_HybridCaster.m3"/>
+    </CModel>
+    <CModel id="MercenaryHybridDominatorWeapon@AttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\HybridBeam\HybridBeam.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryHybridDominator@Death" parent="MercenaryHybridDominator@DeathParent">
+        <Model value="Assets\Units\Protoss\HybridProtossDeathEx1\HybridProtossDeathEx1.m3"/>
+    </CModel>
+    <CModel id="MercenaryHybridNemesis@Model" parent="MercenaryHybridNemesis@ModelParent">
+        <Model value="assets\Units\Mercs\Storm_Merc_StarCraft_HybridRanged\Storm_Merc_StarCraft_HybridRanged.m3"/>
+    </CModel>
+    <CModel id="MercenaryHybridNemesis@Death" parent="MercenaryHybridNemesis@DeathParent">
+        <Model value="Assets\Units\Protoss\Hybrid_Nemesis_Death\Hybrid_Nemesis_Death.m3"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@AttackLaunchKhala" parent="LaunchFX">
+        <Model value="Assets\Effects\Protoss\ScatterCannonLaunch_COOP\ScatterCannonLaunch_COOP.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@ImpactKhala" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ScatterCannonMissileImpact_COOP\ScatterCannonMissileImpact_COOP.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@MissileKhala" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ScatterCannonMissile_COOP\ScatterCannonMissile_COOP.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CModel>
+    <CModel id="MercenaryVanguard@ModelKhala" parent="MercenaryVanguard@ModelParent">
+        <Model value="Assets\Units\Protoss\Immortal\Immortal.m3"/>
+    </CModel>
+    <CModel id="MercenaryVanguard@DeathKhala" parent="MercenaryVanguard@DeathParent">
+        <Model value="Assets\Units\Protoss\ImmortalDeath\ImmortalDeath.m3"/>
+        <Events index="2">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Legs_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.160000"/>
+            <Payload value="Immortal_Explode_Legs_Start"/>
+        </Events>
+        <Events index="3">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Legs_Mech"/>
+            <Type value="Sound"/>
+            <Time value="0.703000"/>
+            <Payload value="Immortal_Explode_Legs_Mech"/>
+        </Events>
+        <Events index="4">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="1.050000"/>
+            <Payload value="Immortal_Explode_Legs_Impact"/>
+        </Events>
+        <Events index="5">
+            <Anim value="Death,00"/>
+            <Name value="Immortal_Explode_Var"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode_Var"/>
+        </Events>
+        <Events index="6">
+            <Anim value="Death,02"/>
+            <Name value="Immortal_Explode_Legs_Impact"/>
+            <Type value="Sound"/>
+            <Time value="0.800000"/>
+            <Payload value="Immortal_Explode_Legs_Impact"/>
+        </Events>
+        <Events index="7">
+            <Anim value="Death,03"/>
+            <Name value="Immortal_Explode_Body_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.187000"/>
+            <Payload value="Immortal_Explode_Body_Start"/>
+        </Events>
+        <Events index="8">
+            <Anim value="Death,03"/>
+            <Name value="Immortal_Explode_Body_Impact"/>
+            <Type value="Sound"/>
+            <Time value="0.887000"/>
+            <Payload value="Immortal_Explode_Body_Impact"/>
+        </Events>
+        <Events index="9">
+            <Variation value="1"/>
+            <Anim value="Death,03"/>
+            <Name value="Immortal_Explode_Var"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode_Var"/>
+        </Events>
+        <Events index="12">
+            <Anim value="Death,01"/>
+            <Name value="Immortal_Explode"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode"/>
+        </Events>
+        <Events index="13">
+            <Anim value="Death,02"/>
+            <Name value="Immortal_Explode"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Immortal_Explode"/>
+        </Events>
+    </CModel>
+    <CModel id="MercenaryVanguard@WarpInKhala" parent="MercenaryVanguard@WarpInParent">
+        <Model value="Assets\Units\Protoss\ImmortalWarpIn\ImmortalWarpIn.m3"/>
+        <Flags index="CloakedDetectedIsFullyVisible" value="1"/>
+        <Flags index="CloakedUndetectedIsHidden" value="1"/>
+        <Flags index="FreezeParticlesAndRibbonsOnAnimPause" value="1"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Flags index="Wait" value="0"/>
+    </CModel>
+    <CModel id="MercenaryVanguardWeapon@Warning" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Fantasy_TeamColor\Storm_UI_AOECursor_Fantasy_TeamColor.m3"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="TownWallKhala" parent="Building" Race="Protoss">
+        <Model value="assets\Buildings\Storm_Building_Heaven_Wall\Storm_Building_Heaven_Wall.m3"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Radius value="0.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionOffset value="0.000000,0.000000,0.200000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+        <VariationCount value="10"/>
+    </CModel>
+    <CModel id="BaseProtossRepulsor" parent="Unit">
+        <Model value="Assets\Effects\Protoss\XelNagaShieldDome\XelNagaShieldDome.m3"/>
+        <ScaleMax value="2.750000,2.750000,2.750000"/>
+        <ScaleMin value="2.750000,2.750000,2.750000"/>
+    </CModel>
+    <CModel id="TownProtossGateForceWall">
+        <Model value="Assets\Doodads\ShipForceFieldWall\ShipForceFieldWall_00.m3"/>
+        <ScaleMax value="1.250000,1.250000,1.000000"/>
+        <ScaleMin value="1.250000,1.250000,1.000000"/>
+    </CModel>
+    <CModel id="TownProtossGate" parent="Building">
+        <Model value="Assets\Doodads\XelNaga_Caverns_Door\XelNaga_Caverns_Door.m3"/>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Xelnaga_Door_StandWorkEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="1.123000"/>
+            <Payload value="Xelnaga_Door_StandWorkEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Xelnaga_Door_StandWorkEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="3.298000"/>
+            <Payload value="Xelnaga_Door_StandWorkEnd_B"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Xelnaga_Door_StandWorkEnd_C"/>
+            <Type value="Sound"/>
+            <Time value="3.960000"/>
+            <Payload value="Xelnaga_Door_StandWorkEnd_C"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Xelnaga_Door_StandWorkEnd_D"/>
+            <Type value="Sound"/>
+            <Time value="4.576000"/>
+            <Payload value="Xelnaga_Door_StandWorkEnd_D"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Xelnaga_Door_StandWorkEnd_E"/>
+            <Type value="Sound"/>
+            <Time value="5.839000"/>
+            <Payload value="Xelnaga_Door_StandWorkEnd_E"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Xelnaga_Door_StandWorkEnd_F"/>
+            <Type value="Sound"/>
+            <Time value="7.630000"/>
+            <Payload value="Xelnaga_Door_StandWorkEnd_F"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_A"/>
+            <Type value="Sound"/>
+            <Time value="0.674000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_A"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_B"/>
+            <Type value="Sound"/>
+            <Time value="1.345000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_B"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_C"/>
+            <Type value="Sound"/>
+            <Time value="3.274000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_C"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_D"/>
+            <Type value="Sound"/>
+            <Time value="4.442000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_D"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_E"/>
+            <Type value="Sound"/>
+            <Time value="5.117000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_E"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_F"/>
+            <Type value="Sound"/>
+            <Time value="6.581000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_F"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_G"/>
+            <Type value="Sound"/>
+            <Time value="7.272000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_G"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Xelnaga_Door_StandWorkStart_H"/>
+            <Type value="Sound"/>
+            <Time value="9.166000"/>
+            <Payload value="Xelnaga_Door_StandWorkStart_H"/>
+        </Events>
+        <Flags index="TeenSafe" value="1"/>
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <SelectionRadius value="0.750000"/>
+    </CModel>
+    <CModel id="TownProtossGateDeath" parent="Unit">
+        <Model value="Assets\Effects\Protoss\Xelnaga_Construct_EntropicBlast_Explosion\Xelnaga_Construct_EntropicBlast_Explosion.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <SelectionRadius value="3.000000"/>
+    </CModel>
+</Catalog>

@@ -1,0 +1,105 @@
+include "LibCore"
+
+//--------------------------------------------------------------------------------------------------
+// Library: MM Battle For Slayn
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libMMBS_ge_MapMechanicsBattleForSlaynModes_Warning = 0;
+const int libMMBS_ge_MapMechanicsBattleForSlaynModes_Supplicant = 1;
+const int libMMBS_ge_MapMechanicsBattleForSlaynModes_VoidThrasher = 2;
+
+// Constants
+const int libMMBS_gv_mMSlaynMaxEventPoints = 3;
+const int libMMBS_gv_mMSlaynRegenGlobeMaxPointsPerEvent = 2;
+const fixed libMMBS_gv_mMSlaynSpawnTime_C = 180.0;
+const fixed libMMBS_gv_mMSlaynSpawnPingsTimerTime_C = 120.0;
+const fixed libMMBS_gv_mMSlaynSpawnWarningTimerTime_C = 30.0;
+const int libMMBS_gv_mMSlaynMaximumMinions_C = 10;
+const int libMMBS_gv_mMSlaynRequiredKilledMinions_C = 40;
+const fixed libMMBS_gv_mMSlaynMonstersSpawnTime = 10.0;
+const int libMMBS_gv_mMVoidThrasherShootsStocked_C = 12;
+const int libMMBS_gv_mMShotsPerBarrage_C = 12;
+const int libMMBS_gv_mapMechanicsSlaynShotsCount_C = 12;
+
+// Structures
+struct libMMBS_gs_BattleForSlaynData {
+    point[libMMBS_gv_mMSlaynMaxEventPoints + 1] lv_eventPoint;
+    region[libMMBS_gv_mMSlaynMaxEventPoints + 1] lv_eventRegion;
+    point[libMMBS_gv_mMSlaynMaxEventPoints + 1][libMMBS_gv_mMSlaynRegenGlobeMaxPointsPerEvent + 1] lv_eventRegenGlobePoints;
+    unit lv_voidThrasher;
+    unitgroup lv_unitGroup;
+    unit lv_minimapUnit;
+    revealer[libCore_gv_bALMaxTeams + 1] lv_teamRevealer;
+    int[libCore_gv_bALMaxTeams + 1] lv_teamKilledMinions;
+    unit lv_voidRift;
+    unit lv_pathingBlocker;
+};
+
+struct libMMBS_gs_MMSlaynPanel {
+    int lv_slaynPanel;
+    int lv_slaynVoidThrasherModeFrame;
+    int lv_slaynWarningModeFrame;
+    int lv_slaynSupplicantsModeFrame;
+    int lv_slaynWarningTimerLabel;
+    int[libCore_gv_bALMaxTeams + 1] lv_slaynSupplicantCounterLabel;
+    int[libCore_gv_bALMaxTeams + 1] lv_slaynShotCounterLabel;
+    int[libMMBS_gv_mapMechanicsSlaynShotsCount_C + 1] lv_slaynShotFrame;
+};
+
+// Variable Declarations
+libMMBS_gs_BattleForSlaynData libMMBS_gv_mMBattleForSlaynData;
+int libMMBS_gv_mMSlaynLastEventPointIndex1;
+int libMMBS_gv_mMSlaynLastEventPointIndex2;
+timer libMMBS_gv_mMSlaynSpawnTimer;
+timer libMMBS_gv_mMSlaynWarningTimer;
+timer libMMBS_gv_mMSlaynPingsTimer;
+bool libMMBS_gv_mMSlaynEventFirstTime;
+bool libMMBS_gv_mMSlaynEventActive;
+int libMMBS_gv_mMSlaynSpawnGroupIndex;
+int libMMBS_gv_mMSlaynVoidThrasherMissileTargetPing;
+int[libCore_gv_bALMaxTeams + 1][libMMBS_gv_mMSlaynMaxEventPoints + 1] libMMBS_gv_mMSlaynVoidThrasherTargetTownIndex;
+int[libCore_gv_bALMaxTeams + 1][libMMBS_gv_mMSlaynMaxEventPoints + 1][8] libMMBS_gv_mMSlaynVoidThrasherTargetTownOrders;
+int[libCore_gv_bALMaxTeams + 1][libMMBS_gv_mMSlaynMaxEventPoints + 1] libMMBS_gv_mMSlaynVoidThrasherTargetTownOrdersCount;
+bool libMMBS_gv_mMSlaynVoidThrasherShooting;
+int libMMBS_gv_mMSlaynVoidThrasherTotalAmmo;
+libMMBS_gs_MMSlaynPanel libMMBS_gv_mMSlaynPanel;
+
+// Function Declarations
+void libMMBS_gf_MMSlaynAddEventLocation (int lp_event, point lp_point, region lp_region);
+void libMMBS_gf_MMSlaynAddRegenGlobeLocation (int lp_event, point lp_point1, point lp_point2);
+void libMMBS_gf_MMSlaynAddVoidThrasherTargetOrder (int lp_eventPoint, unit lp_team1AttackTown1, unit lp_team1AttackTown2, unit lp_team1AttackTown3, unit lp_team1AttackTown4, unit lp_team1AttackTown5, unit lp_team1AttackTown6, unit lp_team2AttackTown1, unit lp_team2AttackTown2, unit lp_team2AttackTown3, unit lp_team2AttackTown4, unit lp_team2AttackTown5, unit lp_team2AttackTown6);
+void libMMBS_gf_MMSlaynAddVoidThrasherTargetOrderTown (int lp_attackingTeam, unit lp_town, int lp_eventPoint);
+void libMMBS_gf_MMSlaynRandomSpawnPointIndex ();
+void libMMBS_gf_MMSlaynSpawnMinions ();
+void libMMBS_gf_MMSlaynClearMinions ();
+void libMMBS_gf_MMSlaynSpawnVoidThrasher (int lp_team);
+void libMMBS_gf_MMSlaynEventEnds ();
+unit libMMBS_gf_MMSlaynNextTarget ();
+bool libMMBS_gf_MMSlaynTownAlive (int lp_town, int lp_player);
+void libMMBS_gf_MMSlaynVoidThrasherBehavior ();
+void libMMBS_gf_MMSlaynVoidThrasherShooting (unit lp_target);
+void libMMBS_gf_MMSlaynStartSpawning ();
+void libMMBS_gf_MapMechanicsBattleForSlaynInit (int lp_parentPanel);
+void libMMBS_gf_MapMechanicsBattleForSlaynShowHidePanel (bool lp_showHide);
+void libMMBS_gf_MapMechanicsBattleForSlaynSetMode (int lp_mode);
+void libMMBS_gf_MapMechanicsBattleForSlaynSetRemainingWarningTime (int lp_remainingSeconds);
+void libMMBS_gf_MapMechanicsBattleForSlaynShowShotsForTeam (int lp_team);
+void libMMBS_gf_MapMechanicsBattleForSlaynSetShotCountForTeam (int lp_count, int lp_team);
+
+// Trigger Declarations
+trigger libMMBS_gt_IncludeMMBattleForSlayn;
+trigger libMMBS_gt_MapObjectPingData;
+trigger libMMBS_gt_InitializeSlaynElementalMercType;
+trigger libMMBS_gt_MMSlaynTimerPings;
+trigger libMMBS_gt_MMSlaynTimerWarning;
+trigger libMMBS_gt_MMSlaynTimerSpawn;
+trigger libMMBS_gt_MMSlaynMinionsDies;
+trigger libMMBS_gt_MMSlaynSpawnMinions;
+trigger libMMBS_gt_MMSlaynVoidThrasherMissiles;
+trigger libMMBS_gt_MMSlaynVoidThrasherShootingMissileCreated;
+trigger libMMBS_gt_MMSlaynStartSpawning;
+trigger libMMBS_gt_MapMechanicsBattleForSlaynUIInitialize;
+
+// Library Initialization
+void libMMBS_InitVariables ();
+

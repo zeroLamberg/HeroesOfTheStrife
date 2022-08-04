@@ -1,0 +1,1355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSkin default="1"/>
+    <CSkin default="1" id="ArthasCommon">
+        <ModelGroups Name="ArthasModels">
+            <Models value="HeroArthas"/>
+            <Models value="ArthasPortraitAddition"/>
+            <Models value="HeroArthasDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="ArthasDeathKnightCommon">
+        <ReplacementArray Catalog="Model" From="HeroArthas" To="ArthasSkinDeathKnight"/>
+        <ReplacementArray Catalog="Model" From="HeroArthasDeathRagdoll" To="ArthasDeathKnightDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="ArthasPortrait" To="ArthasSkinDeathKnightPortrait"/>
+        <ReplacementArray Catalog="Actor" From="ArthasPortrait" To="ArthasSkinDeathKnightPortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="LichKing" To="Arthas"/>
+        <ModelGroups Name="ArthasDeathKnightModels">
+            <Models value="ArthasSkinDeathKnight"/>
+            <Models value="ArthasSkinDeathKnightPortraitAddition"/>
+            <Models value="ArthasDeathKnightDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel value="ArthasSkinDeathKnight"/>
+    </CSkin>
+    <CSkin default="1" id="ArthasFrostWyrmCommon">
+        <ReplacementArray Catalog="Model" From="HeroArthas" To="ArthasSkinDragonbone"/>
+        <ReplacementArray Catalog="Model" From="HeroArthasDeathRagdoll" To="ArthasDragonboneRagdoll"/>
+        <ReplacementArray Catalog="Model" From="ArthasPortrait" To="ArthasSkinDragonbonePortrait"/>
+        <ReplacementArray Catalog="Actor" From="ArthasPortrait" To="ArthasSkinDragonbonePortrait"/>
+        <ModelGroups Name="ArthasDragonBoneModels">
+            <Models value="ArthasSkinDragonbone"/>
+            <Models value="ArthasSkinDragonbonePortraitAddition"/>
+            <Models value="ArthasDragonboneRagdoll"/>
+        </ModelGroups>
+        <DisplayModel value="ArthasSkinDragonbone"/>
+    </CSkin>
+    <CSkin default="1" id="ArthasLichPrinceCommon">
+        <ReplacementArray Catalog="Model" From="HeroArthas" To="ArthasSkinLichPrince"/>
+        <ReplacementArray Catalog="Model" From="HeroArthasDeathRagdoll" To="ArthasLichPrinceDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="ArthasPortrait" To="ArthasSkinLichPrincePortrait"/>
+        <ReplacementArray Catalog="Actor" From="ArthasPortrait" To="ArthasSkinLichPrincePortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="LichKing" To="Arthas"/>
+        <ModelGroups Name="ArthasLichPrinceModels">
+            <Models value="ArthasSkinLichPrince"/>
+            <Models value="ArthasSkinLichPrincePortraitAddition"/>
+            <Models value="ArthasLichPrinceDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel value="ArthasSkinLichPrince"/>
+    </CSkin>
+    <CSkin default="1" id="DemonHunterCommon">
+        <ModelGroups Name="DemonHunterModels">
+            <Models value="HeroDemonHunter"/>
+            <Models value="DemonHunterPortraitAddition"/>
+            <Models value="HeroDemonHunterDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel value="HeroDemonHunter"/>
+    </CSkin>
+    <CSkin default="1" id="DemonHunterAngelCommon">
+        <ReplacementArray Catalog="Model" From="HeroDemonHunter" To="DemonHunterSkinAngelic"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunterDeathRagdoll" To="DemonHunterAngelicDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="DemonHunterPortrait" To="DemonHunterSkinAngelicPortrait"/>
+        <ReplacementArray Catalog="Actor" From="DemonHunterPortrait" To="DemonHunterSkinAngelicPortrait"/>
+        <DisplayModel value="DemonHunterSkinAngelic"/>
+        <ModelGroups Name="DemonHunterAngelModels">
+            <Models value="DemonHunterSkinAngelic"/>
+            <Models value="DemonHunterSkinAngelicPortraitAddition"/>
+            <Models value="DemonHunterAngelicDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="ETCCommon">
+        <ModelGroups Name="ETCModels">
+            <Models value="HeroL90ETC"/>
+            <Models value="L90ETCPortraitAddition"/>
+            <Models value="HeroL90ETCDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel value="HeroL90ETC"/>
+    </CSkin>
+    <CSkin default="1" id="ETCGlamCommon">
+        <ReplacementArray Catalog="Model" From="HeroL90ETC" To="L90ETCSkinGlam"/>
+        <ReplacementArray Catalog="Model" From="HeroL90ETCDeathRagdoll" To="L90ETCGlamDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="L90ETCPortrait" To="L90ETCSkinGlamPortrait"/>
+        <ReplacementArray Catalog="Actor" From="L90ETCPortrait" To="L90ETCSkinGlamPortrait"/>
+        <DisplayModel value="L90ETCSkinGlam"/>
+        <ModelGroups Name="ETCGlamModels">
+            <Models value="L90ETCSkinGlam"/>
+            <Models value="L90ETCSkinGlamPortraitAddition"/>
+            <Models value="L90ETCGlamDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="ETCPureCountryCommon">
+        <ReplacementArray Catalog="Model" From="HeroL90ETC" To="L90ETCSkinPureCountry"/>
+        <ReplacementArray Catalog="Model" From="L90ETCPortrait" To="L90ETCSkinPureCountryPortrait"/>
+        <ReplacementArray Catalog="Actor" From="L90ETCPortrait" To="L90ETCSkinPureCountryPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroL90ETCDeathRagdoll" To="L90ETCPureCountryDeathRagdoll"/>
+        <DisplayModel value="L90ETCSkinPureCountry"/>
+        <ModelGroups Name="ETCPureCountryModels">
+            <Models value="L90ETCSkinPureCountry"/>
+            <Models value="L90ETCSkinPureCountryPortraitAddition"/>
+            <Models value="L90ETCPureCountryDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="IllidanCommon">
+        <DisplayModel value="HeroIllidan"/>
+        <ModelGroups Name="IllidanModels">
+            <Models value="HeroIllidan"/>
+            <Models value="IllidanPortraitAddition"/>
+            <Models value="HeroIllidanDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="IllidanShandoCommon">
+        <ReplacementArray Catalog="Model" From="HeroIllidan" To="IllidanSkinShando"/>
+        <ReplacementArray Catalog="Model" From="HeroIllidanDeathRagdoll" To="IllidanSkinShandoDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="IllidanPortrait" To="IllidanSkinShandoPortrait"/>
+        <ReplacementArray Catalog="Actor" From="IllidanPortrait" To="IllidanSkinShandoPortrait"/>
+        <DisplayModel value="IllidanSkinShando"/>
+        <ModelGroups Name="IllidanShandoModels">
+            <Models value="IllidanSkinShando"/>
+            <Models value="IllidanSkinShandoPortraitAddition"/>
+            <Models value="IllidanSkinShandoDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="KerriganCommon">
+        <DisplayModel value="HeroKerrigan"/>
+        <ModelGroups Name="KerriganModels">
+            <Models value="HeroKerrigan"/>
+            <Models value="KerriganPortraitAddition"/>
+            <Models value="HeroKerriganDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="KerriganSuccubusCommon">
+        <ReplacementArray Catalog="Model" From="HeroKerrigan" To="KerriganSkinDemonQueen"/>
+        <ReplacementArray Catalog="Model" From="HeroKerriganDeathRagdoll" To="KerriganDemonQueenDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="KerriganPortrait" To="KerriganSkinDemonQueenPortrait"/>
+        <ReplacementArray Catalog="Model" From="KerriganPortraitAddition" To="KerriganSkinDemonQueenPortraitAddition"/>
+        <DisplayModel value="KerriganSkinDemonQueen"/>
+        <ModelGroups Name="KerriganSuccubusModels">
+            <Models value="KerriganSkinDemonQueen"/>
+            <Models value="KerriganSkinDemonQueenPortraitAddition"/>
+            <Models value="KerriganDemonQueenDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="MuradinCommon">
+        <DisplayModel value="HeroMuradin"/>
+        <ModelGroups Name="MuradinModels">
+            <Models value="HeroMuradin"/>
+            <Models value="MuradinPortraitAddition"/>
+            <Models value="HeroMuradinDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="MuradinMagniCommon">
+        <ReplacementArray Catalog="Model" From="HeroMuradin" To="MuradinSkinMagni"/>
+        <ReplacementArray Catalog="Model" From="MuradinPortrait" To="MuradinSkinMagniPortrait"/>
+        <ReplacementArray Catalog="Actor" From="MuradinPortrait" To="MuradinSkinMagniPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroMuradinDeathRagdoll" To="MuradinSkinMagniDeathRagdoll"/>
+        <ReplacementArray Catalog="Sound" From="Muradin_AttackImpact_Axe_Building" To="Muradin_AttackImpact_Hammer_Building"/>
+        <ReplacementArray Catalog="Sound" From="Muradin_AttackImpact_Axe_Unit" To="Muradin_AttackImpact_Hammer_Unit"/>
+        <DisplayModel value="MuradinSkinMagni"/>
+        <ModelGroups Name="MuradinMagniModels">
+            <Models value="MuradinSkinMagni"/>
+            <Models value="MuradinSkinMagniPortraitAddition"/>
+            <Models value="MuradinSkinMagniDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="MalfurionCommon">
+        <DisplayModel value="HeroMalfurion"/>
+        <ModelGroups Name="MalfurionModels">
+            <Models value="HeroMalfurion"/>
+            <Models value="HeroMalfurion@PortraitAddition"/>
+            <Models value="HeroMalfurion@DeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="RaynorPatriotCommon">
+        <ReplacementArray Catalog="Model" From="HeroRaynor" To="RaynorSkinPatriot"/>
+        <ReplacementArray Catalog="Model" From="HeroRaynorDeathRagdoll" To="RaynorPatriotDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="RaynorPortrait" To="RaynorSkinPatriotPortrait"/>
+        <ReplacementArray Catalog="Actor" From="RaynorPortrait" To="RaynorSkinPatriotPortrait"/>
+        <DisplayModel value="RaynorSkinPatriot"/>
+        <ModelGroups Name="RaynorPatriotModels">
+            <Models value="RaynorSkinPatriot"/>
+            <Models value="RaynorSkinPatriotPortraitAddition"/>
+            <Models value="RaynorPatriotDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="RaynorCommon">
+        <ModelGroups Name="RaynorBaseModels">
+            <Models value="HeroRaynorDeathRagdoll"/>
+        </ModelGroups>
+        <ModelGroups Name="RaynorBaseModelsDecal">
+            <Models value="HeroRaynor"/>
+            <Models value="RaynorPortraitAddition"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="BarbarianBase">
+        <ModelGroups Name="BarbarianModels">
+            <Models value="HeroBarbarian"/>
+            <Models value="BarbarianPortraitAddition"/>
+            <Models value="HeroBarbarianDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="TassadarCommon">
+        <DisplayModel value="HeroTassadar"/>
+        <ModelGroups Name="TassadarModels">
+            <Models value="HeroTassadar"/>
+            <Models value="TassadarPortraitAddition"/>
+            <Models value="HeroTassadarDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="TyrandeCommon">
+        <DisplayModel value="HeroTyrande"/>
+        <ModelGroups Name="TyrandeModels">
+            <Models value="HeroTyrande"/>
+            <Models value="TyrandePortraitAddition"/>
+            <Models value="HeroTyrandeDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="BarbarianWrathBase">
+        <ReplacementArray Catalog="Model" From="HeroBarbarian" To="BarbarianWrathModelFemale"/>
+        <ReplacementArray Catalog="Model" From="HeroBarbarianDeathRagdoll" To="D3BarbarianFWrathDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="BarbarianPortrait" To="BarbarianSkinWrathFemalePortrait"/>
+        <DisplayModel value="BarbarianWrathModelFemale"/>
+        <ModelGroups Name="BarbarianWrathModels">
+            <Models value="BarbarianWrathModelFemale"/>
+            <Models value="BarbarianSkinWrathFemalePortraitAddition"/>
+            <Models value="D3BarbarianFWrathDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="BarbarianWrathMaleBase">
+        <ReplacementArray Catalog="Model" From="HeroBarbarian" To="BarbarianSkinWrathMale"/>
+        <ReplacementArray Catalog="Model" From="HeroBarbarianDeathRagdoll" To="BarbarianWrathMaleDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="BarbarianPortrait" To="BarbarianSkinWrathMalePortrait"/>
+        <DisplayModel value="BarbarianSkinWrathMale"/>
+        <ModelGroups Name="BarbarianWrathMaleModels">
+            <Models value="BarbarianSkinWrathMale"/>
+            <Models value="BarbarianSkinWrathMalePortraitAddition"/>
+            <Models value="BarbarianWrathMaleDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="StitchesCommon">
+        <ModelGroups Name="HeroStitchesModels">
+            <Models value="HeroStitches"/>
+            <Models value="StitchesPortraitAddition"/>
+            <Models value="HeroStitchesDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="StitchesPsychoCommon">
+        <ReplacementArray Catalog="Model" From="HeroStitches" To="StitchesSkinPsycho"/>
+        <ReplacementArray Catalog="Model" From="HeroStitchesDeathRagdoll" To="StitchesPsychoDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="StitchesPortrait" To="StitchesSkinPsychoPortrait"/>
+        <ReplacementArray Catalog="Actor" From="StitchesPortrait" To="StitchesSkinPsychoPortrait"/>
+        <ReplacementArray Catalog="Sound" From="Stitches_Cleaver_Whoosh" To="Stitches_Costume_Psycho_Chainsaw_Whoosh"/>
+        <ReplacementArray Catalog="Sound" From="Stitches_Chain_Whoosh" To="Stitches_Costume_Psycho_Pickaxe_Whoosh"/>
+        <ReplacementArray Catalog="Sound" From="StitchesAttackImpactBuildingChain" To="StitchesAttackImpactBuildingPickaxe"/>
+        <ReplacementArray Catalog="Sound" From="StitchesAttackImpactUnitChain" To="StitchesAttackImpactUnitPickaxe"/>
+        <DisplayModel value="StitchesSkinPsycho"/>
+        <ModelGroups Name="StitchesPsychoModels">
+            <Models value="StitchesSkinPsycho"/>
+            <Models value="StitchesSkinPsychoPortraitAddition"/>
+            <Models value="StitchesPsychoDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="StitchesTearinCommon">
+        <ReplacementArray Catalog="Model" From="HeroStitches" To="StitchesSkinMarineArmor"/>
+        <ReplacementArray Catalog="Model" From="HeroStitchesDeathRagdoll" To="StitchesMarineArmorDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="StitchesPortrait" To="StitchesSkinMarineArmorPortrait"/>
+        <ReplacementArray Catalog="Actor" From="StitchesPortrait" To="StitchesSkinMarineArmorPortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="Stitches" To="StitchesMarine"/>
+        <DisplayModel value="StitchesSkinMarineArmor"/>
+        <ModelGroups Name="StitchesMarineArmorModels">
+            <Models value="StitchesSkinMarineArmor"/>
+            <Models value="StitchesSkinMarineArmorPortraitAddition"/>
+            <Models value="StitchesMarineArmorDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="TinkerCommon">
+        <ModelGroups Name="TinkerSCVModels">
+            <Models value="HeroTinker"/>
+            <Models value="HeroTinkerDeathRagdoll"/>
+            <Models value="TinkerPortraitAddition"/>
+        </ModelGroups>
+        <ModelGroups Name="TinkerRobotModels">
+            <Models value="HeroTinkerRobot"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="TychusCommon">
+        <ModelGroups Name="TychusModels">
+            <Models value="HeroTychusDeathRagdoll"/>
+        </ModelGroups>
+        <ModelGroups Name="TychusModelsDecal">
+            <Models value="HeroTychus"/>
+            <Models value="TychusPortraitAddition"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="ZeratulCommon">
+        <ModelGroups Name="HeroZeratulModels">
+            <Models value="HeroZeratul"/>
+            <Models value="ZeratulPortraitAddition"/>
+            <Models value="HeroZeratulDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="ZeratulHighTemplarBase">
+        <ReplacementArray Catalog="Model" From="HeroZeratul" To="ZeratulSkinHighTemplar"/>
+        <ReplacementArray Catalog="Actor" From="ZeratulPortrait" To="ZeratulSkinHighTemplarPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroZeratulDeathRagdoll" To="ZeratulHighTemplarDeathRagdoll"/>
+        <DisplayModel value="ZeratulSkinHighTemplar"/>
+        <ModelGroups Name="ZeratulHighTemplarModels">
+            <Models value="ZeratulSkinHighTemplar"/>
+            <Models value="ZeratulSkinHighTemplarPortraitAddition"/>
+            <Models value="ZeratulHighTemplarDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="ZeratulRoninBase">
+        <ReplacementArray Catalog="Model" From="HeroZeratul" To="ZeratulSkinNinja"/>
+        <ReplacementArray Catalog="Actor" From="ZeratulPortrait" To="ZeratulSkinNinjaPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroZeratulDeathRagdoll" To="ZeratulNinjaDeathRagdoll"/>
+        <DisplayModel value="ZeratulSkinNinja"/>
+        <ModelGroups Name="ZeratulNinjaModels">
+            <Models value="ZeratulSkinNinja"/>
+            <Models value="ZeratulSkinNinjaPortraitAddition"/>
+            <Models value="ZeratulNinjaDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="NovaBaseCommon">
+        <ModelGroups Name="NovaBaseModels">
+            <Models value="HeroNova"/>
+            <Models value="NovaHoloClone"/>
+            <Models value="NovaHoloCloneDeath"/>
+            <Models value="NovaPortraitAddition"/>
+            <Models value="HeroNovaDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="WitchDoctorGrimskullCommon">
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinGrimskull"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorGrimskullDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinGrimskullPortrait"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinGrimskullPortrait"/>
+        <DisplayModel value="WitchDoctorSkinGrimskull"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Bright.dds"/>
+        <ModelGroups Name="WitchDoctorGrimskullModels">
+            <Models value="WitchDoctorSkinGrimskull"/>
+            <Models value="WitchDoctorSkinGrimskullPortraitAddition"/>
+            <Models value="WitchDoctorGrimskullDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <!-- NOVA -->
+    <CSkin default="1" id="NovaCommon">
+        <ModelGroups Name="NovaBaseModels">
+            <Models value="HeroNova"/>
+            <Models value="NovaPortraitAddition"/>
+            <Models value="HeroNovaDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin default="1" id="NovaSpectreCommon">
+        <ReplacementArray Catalog="Model" From="HeroNova" To="NovaSkinSpectre"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloClone" To="NovaSkinSpectre"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloCloneDeath" To="NovaSkinSpectre"/>
+        <ReplacementArray Catalog="Model" From="HeroNovaDeathRagdoll" To="NovaSpectreDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="NovaPortrait" To="NovaSkinSpectrePortrait"/>
+        <ReplacementArray Catalog="Actor" From="NovaPortrait" To="NovaSkinSpectrePortrait"/>
+        <DisplayModel value="NovaSkinSpectre"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Dark.dds"/>
+        <ModelGroups Name="NovaSpectreModels">
+            <Models value="NovaSkinSpectre"/>
+            <Models value="NovaSkinSpectrePortraitAddition"/>
+            <Models value="NovaSpectreDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <!-- ARTHAS -->
+    <CSkin id="ArthasBlue" parent="ArthasCommon">
+        <AttributeId value="Art1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+        <ModelMacroRun Models="ArthasModels" Macro="ArthasBlueMacro"/>
+    </CSkin>
+    <CSkin id="ArthasWhite" parent="ArthasCommon">
+        <AttributeId value="Art2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+        <ModelMacroRun Models="ArthasModels" Macro="ArthasWhiteMacro"/>
+    </CSkin>
+    <CSkin id="ArthasDeathKnight" parent="ArthasDeathKnightCommon">
+        <AttributeId value="Art3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Yellow_Gray.dds"/>
+    </CSkin>
+    <CSkin id="ArthasDeathKnightBlue" parent="ArthasDeathKnightCommon">
+        <AttributeId value="Art4"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+        <ModelMacroRun Models="ArthasDeathKnightModels" Macro="ArthasDeathKnightBlueMacro"/>
+    </CSkin>
+    <CSkin id="ArthasDeathKnightWhite" parent="ArthasDeathKnightCommon">
+        <AttributeId value="Art5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+        <ModelMacroRun Models="ArthasDeathKnightModels" Macro="ArthasDeathKnightWhiteMacro"/>
+    </CSkin>
+    <CSkin id="ArthasBloodPrince">
+        <ReplacementArray Catalog="Model" From="HeroArthas" To="ArthasSkinBloodPrince"/>
+        <ReplacementArray Catalog="Model" From="ArthasDeathRagdoll" To="ArthasBloodPrinceDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="ArthasPortrait" To="ArthasSkinBloodPrincePortrait"/>
+        <ReplacementArray Catalog="Actor" From="ArthasPortrait" To="ArthasSkinBloodPrincePortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="LichKing" To="Arthas"/>
+        <DisplayModel value="ArthasSkinBloodPrince"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="ArthasLichPrince" parent="ArthasLichPrinceCommon">
+        <AttributeId value="Art6"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="ArthasLichPrinceRed" parent="ArthasLichPrinceCommon">
+        <AttributeId value="Art7"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+        <ModelMacroRun Models="ArthasLichPrinceModels" Macro="ArthasLichPrinceRedMacro"/>
+    </CSkin>
+    <CSkin id="ArthasLichPrinceWhite" parent="ArthasLichPrinceCommon">
+        <AttributeId value="Art8"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_WhiteEggshell.dds"/>
+        <ModelMacroRun Models="ArthasLichPrinceModels" Macro="ArthasLichPrinceWhiteMacro"/>
+    </CSkin>
+    <CSkin id="ArthasFrostWyrm" parent="ArthasFrostWyrmCommon">
+        <AttributeId value="Art9"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple.dds"/>
+    </CSkin>
+    <CSkin id="ArthasFrostWyrmGreen" parent="ArthasFrostWyrmCommon">
+        <AttributeId value="ArtA"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+        <ModelMacroRun Models="ArthasDragonBoneModels" Macro="FrostWyrmGreenMacro"/>
+    </CSkin>
+    <CSkin id="ArthasFrostWyrmRed" parent="ArthasFrostWyrmCommon">
+        <AttributeId value="ArtB"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Dark.dds"/>
+        <ModelMacroRun Models="ArthasDragonBoneModels" Macro="FrostWyrmRedMacro"/>
+    </CSkin>
+    <!-- ETC -->
+    <CSkin id="ETCRed" parent="ETCCommon">
+        <AttributeId value="Etc1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+        <ModelMacroRun Models="ETCModels" Macro="ETCRedMacro"/>
+    </CSkin>
+    <CSkin id="ETCDark">
+        <AttributeId value="Etc2"/>
+        <ReplacementArray Catalog="Model" From="HeroL90ETC" To="L90ETCSkinTemp1"/>
+        <ReplacementArray Catalog="Model" From="HeroL90ETCDeathRagdoll" To="L90ETCTempSkin1DeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="L90ETCPortrait" To="L90ETCSkinTemp1Portrait"/>
+        <ReplacementArray Catalog="Actor" From="L90ETCPortrait" To="L90ETCSkinTemp1Portrait"/>
+        <DisplayModel value="L90ETCSkinTemp1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Yellow_Gray.dds"/>
+    </CSkin>
+    <CSkin id="ETCLight">
+        <AttributeId value="Etc3"/>
+        <ReplacementArray Catalog="Model" From="HeroL90ETC" To="L90ETCSkinTemp2"/>
+        <ReplacementArray Catalog="Model" From="HeroL90ETCDeathRagdoll" To="L90ETCTempSkin2DeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="L90ETCPortrait" To="L90ETCSkinTemp2Portrait"/>
+        <ReplacementArray Catalog="Actor" From="L90ETCPortrait" To="L90ETCSkinTemp2Portrait"/>
+        <DisplayModel value="L90ETCSkinTemp2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Pink_Pale.dds"/>
+    </CSkin>
+    <CSkin id="ETCGlam" parent="ETCGlamCommon">
+        <AttributeId value="Etc4"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple_Dark.dds"/>
+    </CSkin>
+    <CSkin id="ETCGlamBlue" parent="ETCGlamCommon">
+        <AttributeId value="Etc5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+        <ModelMacroRun Models="ETCGlamModels" Macro="ETCGlamBlueMacro"/>
+    </CSkin>
+    <CSkin id="ETCGlamWhite" parent="ETCGlamCommon">
+        <AttributeId value="Etc6"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_WhiteEggshell.dds"/>
+        <ModelMacroRun Models="ETCGlamModels" Macro="ETCGlamWhiteMacro"/>
+    </CSkin>
+    <CSkin id="ETCPureCountry" parent="ETCPureCountryCommon">
+        <AttributeId value="Etc7"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Gray_Medium.dds"/>
+    </CSkin>
+    <CSkin id="ETCPureCountryCheckered" parent="ETCPureCountryCommon">
+        <AttributeId value="Etc8"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+        <ModelMacroRun Models="ETCPureCountryModels" Macro="ETCPureCountryCheckeredMacro"/>
+    </CSkin>
+    <CSkin id="ETCPureCountryFire" parent="ETCPureCountryCommon">
+        <AttributeId value="Etc9"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange.dds"/>
+        <ModelMacroRun Models="ETCPureCountryModels" Macro="ETCPureCountryFireMacro"/>
+    </CSkin>
+    <!-- FALSTAD -->
+    <CSkin id="FalstadDarkIron">
+        <AttributeId value="Fal1"/>
+        <ReplacementArray Catalog="Model" From="HeroFalstad" To="FalstadSkinDarkIron"/>
+        <ReplacementArray Catalog="Model" From="HeroFalstadDeathRagdoll" To="FalstadDarkIronDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="FalstadPortrait" To="FalstadSkinDarkIronPortrait"/>
+        <ReplacementArray Catalog="Actor" From="FalstadPortrait" To="FalstadSkinDarkIronPortrait"/>
+        <DisplayModel value="FalstadSkinDarkIron"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="FalstadNordic">
+        <AttributeId value="Fal2"/>
+        <ReplacementArray Catalog="Model" From="HeroFalstad" To="FalstadSkinTemp1"/>
+        <ReplacementArray Catalog="Model" From="HeroFalstadDeathRagdoll" To="FalstadTempSkin1DeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="FalstadPortrait" To="FalstadSkinTemp1Portrait"/>
+        <ReplacementArray Catalog="Actor" From="FalstadPortrait" To="FalstadSkinTemp1Portrait"/>
+        <DisplayModel value="FalstadSkinTemp1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+    </CSkin>
+    <CSkin id="ImmortalAdun2" parent="ImmortalBase" collection="Adun">
+        <ReplacementArray Catalog="Sound" From="Immortal_Attack" To="Immortal02_Attack"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Attack_NP" To="Immortal02_Attack_NP"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Death_NP" To="Immortal02_Death_NP"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Help" To="Immortal02_Help"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Pissed" To="Immortal02_Pissed"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Ready" To="Immortal02_Ready"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Ready_NP" To="Immortal02_Ready_NP"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_What" To="Immortal02_What"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_What_NP" To="Immortal02_What_NP"/>
+        <ReplacementArray Catalog="Sound" From="Immortal_Yes" To="Immortal02_Yes"/>
+        <VariationIcon value="Assets\Textures\btn-unit-collection-adun-immortal.dds"/>
+        <DisplayModel index="1" removed="1"/>
+        <ModelGroups index="0" removed="1"/>
+    </CSkin>
+    <!-- GAZLOWE (TINKER) -->
+    <CSkin id="TinkerAzure" parent="TinkerCommon">
+        <AttributeId value="Tin1"/>
+        <ModelMacroRun Models="TinkerSCVModels" Macro="TinkerSCVBlueMacro"/>
+        <ModelMacroRun Models="TinkerRobotModels" Macro="TinkerRobotBlueMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Dark.dds"/>
+    </CSkin>
+    <CSkin id="TinkerCamo" parent="TinkerCommon">
+        <AttributeId value="Tin2"/>
+        <ModelMacroRun Models="TinkerSCVModels" Macro="TinkerSCVCamoMacro"/>
+        <ModelMacroRun Models="TinkerRobotModels" Macro="TinkerRobotCamoMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_TinkerCamo.dds"/>
+    </CSkin>
+    <!-- ILLIDAN -->
+    <CSkin id="IllidanBlack" parent="IllidanCommon">
+        <AttributeId value="Ill1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+        <ModelMacroRun Models="IllidanModels" Macro="IllidanBlackMacro"/>
+    </CSkin>
+    <CSkin id="IllidanGreen" parent="IllidanCommon">
+        <AttributeId value="Ill2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+        <ModelMacroRun Models="IllidanModels" Macro="IllidanGreenMacro"/>
+    </CSkin>
+    <CSkin id="IllidanFelMagic">
+        <ReplacementArray Catalog="Model" From="HeroIllidan" To="IllidanSkinFelMagic"/>
+        <ReplacementArray Catalog="Model" From="HeroIllidanDeathRagdoll" To="IllidanFelMagicDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="IllidanPortrait" To="IllidanSkinFelMagicPortrait"/>
+        <ReplacementArray Catalog="Actor" From="IllidanPortrait" To="IllidanSkinFelMagicPortrait"/>
+        <DisplayModel value="IllidanSkinFelMagic"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple_Bright.dds"/>
+    </CSkin>
+    <CSkin id="IllidanBloodElf">
+        <ReplacementArray Catalog="Model" From="HeroIllidan" To="IllidanSkinBloodElf"/>
+        <ReplacementArray Catalog="Model" From="HeroIllidanDeathRagdoll" To="IllidanBloodElfDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="IllidanPortrait" To="IllidanSkinBloodElfPortrait"/>
+        <ReplacementArray Catalog="Actor" From="IllidanPortrait" To="IllidanSkinBloodElfPortrait"/>
+        <DisplayModel value="IllidanSkinBloodElf"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Dark.dds"/>
+    </CSkin>
+    <CSkin id="IllidanShando" parent="IllidanShandoCommon">
+        <AttributeId value="Ill3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="IllidanShandoPurple" parent="IllidanShandoCommon">
+        <AttributeId value="Ill4"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple.dds"/>
+        <ModelMacroRun Models="IllidanShandoModels" Macro="IllidanShandoPurpleMacro"/>
+    </CSkin>
+    <CSkin id="IllidanShandoWhite" parent="IllidanShandoCommon">
+        <AttributeId value="Ill5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Sky.dds"/>
+        <ModelMacroRun Models="IllidanShandoModels" Macro="IllidanShandoWhiteMacro"/>
+    </CSkin>
+    <!-- KERRIGAN -->
+    <CSkin id="KerriganOrange" parent="KerriganCommon">
+        <AttributeId value="Ker1"/>
+        <ModelMacroRun Models="KerriganModels" Macro="KerriganOrangeMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange.dds"/>
+    </CSkin>
+    <CSkin id="KerriganChar" parent="KerriganCommon">
+        <ModelMacroRun Models="KerriganModels" Macro="KerriganCharMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="KerriganToxic">
+        <AttributeId value="Ker2"/>
+        <ReplacementArray Catalog="Model" From="HeroKerrigan" To="KerriganSkinTemp1"/>
+        <ReplacementArray Catalog="Model" From="HeroKerriganDeathRagdoll" To="KerriganSkinTemp1DeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="KerriganPortrait" To="KerriganSkinTemp1Portrait"/>
+        <ReplacementArray Catalog="Actor" From="KerriganPortrait" To="KerriganSkinTemp1Portrait"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green_Bright.dds"/>
+        <DisplayModel value="KerriganSkinTemp1"/>
+    </CSkin>
+    <CSkin id="KerriganSuccubus" parent="KerriganSuccubusCommon">
+        <AttributeId value="Ker3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Skin.dds"/>
+    </CSkin>
+    <CSkin id="KerriganSuccubusDeathwing" parent="KerriganSuccubusCommon">
+        <AttributeId value="Ker4"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange.dds"/>
+        <ModelMacroRun Models="KerriganSuccubusModels" Macro="KerriganSuccubusDeathwingMacro"/>
+    </CSkin>
+    <CSkin id="KerriganSuccubusGreen" parent="KerriganSuccubusCommon">
+        <AttributeId value="Ker5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+        <ModelMacroRun Models="KerriganSuccubusModels" Macro="KerriganSuccubusGreenMacro"/>
+    </CSkin>
+    <!-- MALFURION -->
+    <CSkin id="MalfurionGrey" parent="MalfurionCommon">
+        <AttributeId value="Mal1"/>
+        <ModelMacroRun Models="MalfurionModels" Macro="MalfurionGreyMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Gray.dds"/>
+    </CSkin>
+    <CSkin id="MalfurionRaven" parent="MalfurionCommon">
+        <AttributeId value="Mal6"/>
+        <ModelMacroRun Models="MalfurionModels" Macro="MalfurionRavenMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Dark.dds"/>
+    </CSkin>
+    <CSkin id="MalfurionBloodRaven" parent="MalfurionCommon">
+        <AttributeId value="Mal2"/>
+        <ModelMacroRun Models="MalfurionModels" Macro="MalfurionBloodRavenMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Brown_Bright.dds"/>
+    </CSkin>
+    <CSkin id="MalfurionStormMantle">
+        <AttributeId value="Mal3"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinStormrage"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionStormrageDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinStormragePortrait"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinStormragePortrait"/>
+        <DisplayModel value="MalfurionSkinStormrage"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange.dds"/>
+    </CSkin>
+    <CSkin id="MalfurionStormMantleEmerald">
+        <AttributeId value="Mal4"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinStormrageEmerald"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionStormrageEmeraldDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinStormrageEmeraldPortrait"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinStormrageEmeraldPortrait"/>
+        <DisplayModel value="MalfurionSkinStormrageEmerald"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="MalfurionStormMantleCrimson">
+        <AttributeId value="Mal5"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinStormrageBlood"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionStormrageBloodDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinStormrageBloodPortrait"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinStormrageBloodPortrait"/>
+        <DisplayModel value="MalfurionSkinStormrageBlood"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <!-- MURADIN -->
+    <CSkin id="MuradinIron" parent="MuradinCommon">
+        <AttributeId value="Mur5"/>
+        <ModelMacroRun Models="MuradinModels" Macro="MuradinIronMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="MuradinRed" parent="MuradinCommon">
+        <AttributeId value="Mur6"/>
+        <ModelMacroRun Models="MuradinModels" Macro="MuradinRedMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="MuradinTemp1" parent="MuradinCommon">
+        <AttributeId value="Mur1"/>
+        <ModelMacroRun Models="MuradinModels" Macro="MuradinTemp1Macro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Gray_Medium.dds"/>
+    </CSkin>
+    <CSkin id="MuradinMagni" parent="MuradinMagniCommon">
+        <AttributeId value="Mur2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="MuradinMagniArctic" parent="MuradinMagniCommon">
+        <AttributeId value="Mur3"/>
+        <ModelMacroRun Models="MuradinMagniModels" Macro="SkinMuradinMagniArctic"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+    </CSkin>
+    <CSkin id="MuradinMagniDarkIron" parent="MuradinMagniCommon">
+        <AttributeId value="Mur4"/>
+        <ModelMacroRun Models="MuradinMagniModels" Macro="SkinMuradinMagniDarkIron"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <!-- NAZEEBA (WITCH DOCTOR) -->
+    <CSkin id="WitchDoctorBlood">
+        <AttributeId value="Wit1"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinBlood"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorBloodDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinBloodPortrait"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinBloodPortrait"/>
+        <DisplayModel value="WitchDoctorSkinBlood"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorToxic">
+        <AttributeId value="Wit2"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinToxic"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorToxicDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinToxicPortrait"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinToxicPortrait"/>
+        <DisplayModel value="WitchDoctorSkinToxic"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green_Dark.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorGrimskull" parent="WitchDoctorGrimskullCommon">
+        <AttributeId value="Wit3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorGrimskullToxicskull" parent="WitchDoctorGrimskullCommon">
+        <AttributeId value="Wit4"/>
+        <ModelMacroRun Models="WitchDoctorGrimskullModels" Macro="WitchdoctorToxicskullMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorGrimskullBlueskull" parent="WitchDoctorGrimskullCommon">
+        <AttributeId value="Wit5"/>
+        <ModelMacroRun Models="WitchDoctorGrimskullModels" Macro="WitchdoctorBlueskullMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorFemale">
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinFemale"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinFemalePortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorFemaleDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinFemalePortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="WitchDoctor" To="WitchDoctorFemale"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox1" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox2" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox3" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox4" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <DisplayModel value="WitchDoctorSkinFemale"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple_Bright.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorFemaleBlood">
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinFemaleBlood"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorFemaleBloodDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinFemaleBloodPortrait"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinFemaleBloodPortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="WitchDoctor" To="WitchDoctorFemale"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox1" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox2" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox3" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox4" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <DisplayModel value="WitchDoctorSkinFemaleBlood"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Bright.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorFemaleToxic">
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinFemaleToxic"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorFemaleToxicDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinFemaleToxicPortrait"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinFemaleToxicPortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="WitchDoctor" To="WitchDoctorFemale"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox1" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox2" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox3" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox4" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <DisplayModel value="WitchDoctorSkinFemaleToxic"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green_Bright.dds"/>
+    </CSkin>
+    <CSkin id="WitchDoctorFemaleGrimskull">
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctor" To="WitchDoctorSkinFemaleGrimskull"/>
+        <ReplacementArray Catalog="Model" From="HeroWitchDoctorDeathRagdoll" To="WitchDoctorFemaleGrimskullDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="WitchDoctorPortrait" To="WitchDoctorSkinFemaleGrimskullPortrait"/>
+        <ReplacementArray Catalog="Actor" From="WitchDoctorPortrait" To="WitchDoctorSkinFemaleGrimskullPortrait"/>
+        <ReplacementArray Catalog="VoiceOver" From="WitchDoctor" To="WitchDoctorFemale"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox1" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox2" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox3" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <ReplacementArray Catalog="Sound" From="WitchDoctor_SpellCast_Vox4" To="WitchDoctor_SpellCast_Vox_FemaleSkin"/>
+        <DisplayModel value="WitchDoctorSkinFemaleGrimskull"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Bright.dds"/>
+    </CSkin>
+    <CSkin id="NovaGreen" parent="NovaCommon">
+        <AttributeId value="Nov1"/>
+        <ModelMacroRun Models="NovaBaseModels" Macro="NovaGreenMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="NovaRed" parent="NovaCommon">
+        <AttributeId value="Nov2"/>
+        <ModelMacroRun Models="NovaBaseModels" Macro="NovaRedMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="NovaSpectre" parent="NovaSpectreCommon">
+        <AttributeId value="Nov3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange.dds"/>
+    </CSkin>
+    <CSkin id="NovaSpectreGreen" parent="NovaSpectreCommon">
+        <AttributeId value="Nov4"/>
+        <ModelMacroRun Models="NovaSpectreModels" Macro="NovaSpectreGreen"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="NovaSpectreWhite" parent="NovaSpectreCommon">
+        <AttributeId value="Nov5"/>
+        <ModelMacroRun Models="NovaSpectreModels" Macro="NovaSpectreWhite"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+    </CSkin>
+    <CSkin id="NovaRollerDerby">
+        <AttributeId value="Nov6"/>
+        <ReplacementArray Catalog="Model" From="HeroNova" To="NovaSkinRollerDerby"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloClone" To="NovaSkinRollerDerby"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloCloneDeath" To="NovaSkinRollerDerby"/>
+        <ReplacementArray Catalog="Model" From="HeroNovaDeathRagdoll" To="NovaRollerDerbyDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="NovaPortrait" To="NovaSkinRollerDerbyPortrait"/>
+        <ReplacementArray Catalog="Actor" From="NovaPortrait" To="NovaSkinRollerDerbyPortrait"/>
+        <DisplayModel value="NovaSkinRollerDerby"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Bright.dds"/>
+    </CSkin>
+    <CSkin id="NovaRollerDerbyGold">
+        <AttributeId value="Nov7"/>
+        <ReplacementArray Catalog="Model" From="HeroNova" To="NovaSkinRollerDerbyGold"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloClone" To="NovaSkinRollerDerbyGold"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloCloneDeath" To="NovaSkinRollerDerbyGold"/>
+        <ReplacementArray Catalog="Model" From="HeroNovaDeathRagdoll" To="NovaRollerDerbyGoldDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="NovaPortrait" To="NovaSkinRollerDerbyGoldPortrait"/>
+        <ReplacementArray Catalog="Actor" From="NovaPortrait" To="NovaSkinRollerDerbyGoldPortrait"/>
+        <DisplayModel value="NovaSkinRollerDerbyGold"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Yellow_Gold.dds"/>
+    </CSkin>
+    <CSkin id="NovaRollerDerbyViolet">
+        <AttributeId value="Nov8"/>
+        <ReplacementArray Catalog="Model" From="HeroNova" To="NovaSkinRollerDerbyViolet"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloClone" To="NovaSkinRollerDerbyViolet"/>
+        <ReplacementArray Catalog="Model" From="NovaHoloCloneDeath" To="NovaSkinRollerDerbyViolet"/>
+        <ReplacementArray Catalog="Model" From="HeroNovaDeathRagdoll" To="NovaRollerDerbyVioletDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="NovaPortrait" To="NovaSkinRollerDerbyVioletPortrait"/>
+        <ReplacementArray Catalog="Actor" From="NovaPortrait" To="NovaSkinRollerDerbyVioletPortrait"/>
+        <DisplayModel value="NovaSkinRollerDerbyViolet"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple_Bright.dds"/>
+    </CSkin>
+    <!-- RAYNOR -->
+    <CSkin id="RaynorGrey" parent="RaynorCommon">
+        <AttributeId value="Ray1"/>
+        <ModelMacroRun Models="RaynorBaseModels" Macro="RaynorGreyMacro"/>
+        <ModelMacroRun Models="RaynorBaseModelsDecal" Macro="RaynorGreyMacroDecal"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Gray.dds"/>
+    </CSkin>
+    <CSkin id="RaynorRed" parent="RaynorCommon">
+        <AttributeId value="Ray2"/>
+        <ModelMacroRun Models="RaynorBaseModels" Macro="RaynorRedMacro"/>
+        <ModelMacroRun Models="RaynorBaseModelsDecal" Macro="RaynorRedMacroDecal"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="RaynorPatriot" parent="RaynorPatriotCommon">
+        <AttributeId value="Ray3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="RaynorPatriotRed" parent="RaynorPatriotCommon">
+        <AttributeId value="Ray6"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+        <ModelMacroRun Models="RaynorPatriotModels" Macro="RaynorPatriotRedMacro"/>
+    </CSkin>
+    <CSkin id="RaynorPatriotBlack" parent="RaynorPatriotCommon">
+        <AttributeId value="Ray5"/>
+        <ModelMacroRun Models="RaynorPatriotModels" Macro="RaynorPatriotBlackMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="RaynorTemp2">
+        <ReplacementArray Catalog="Model" From="HeroRaynor" To="RaynorSkinTemp2"/>
+        <DisplayModel value="RaynorSkinTemp2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <!-- SGT HAMMER -->
+    <CSkin id="SgtHammerBlue">
+        <AttributeId value="Sgt1"/>
+        <ReplacementArray Catalog="Model" From="HeroSgtHammer" To="SgtHammerSkinTemp1"/>
+        <ReplacementArray Catalog="Actor" From="SgtHammerPortrait" To="SgtHammerSkinTemp1Portrait"/>
+        <ReplacementArray Catalog="Model" From="SgtHammerDeathRagdoll" To="SgtHammerBlueDeathRagdoll"/>
+        <DisplayModel value="SgtHammerSkinTemp1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="SgtHammerBlack">
+        <AttributeId value="Sgt2"/>
+        <ReplacementArray Catalog="Model" From="HeroSgtHammer" To="SgtHammerSkinTemp2"/>
+        <ReplacementArray Catalog="Actor" From="SgtHammerPortrait" To="SgtHammerSkinTemp2Portrait"/>
+        <ReplacementArray Catalog="Model" From="SgtHammerDeathRagdoll" To="SgtHammerOnyxDeathRagdoll"/>
+        <DisplayModel value="SgtHammerSkinTemp2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <!-- SONYA (BARBARIAN)-->
+    <CSkin id="BarbarianRedSonya" parent="BarbarianBase">
+        <AttributeId value="Bar1"/>
+        <ReplacementArray Catalog="Model" From="BarbarianPortrait" To="BarbarianSkinRedSonyaPortrait"/>
+        <ModelMacroRun Models="BarbarianModels" Macro="BarbarianRedSonya"/>
+        <DisplayModel value="BarbarianSkinRedSonya"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianNordicSonya" parent="BarbarianBase">
+        <AttributeId value="Bar2"/>
+        <ReplacementArray Catalog="Model" From="BarbarianPortrait" To="BarbarianSkinNordicSonyaPortrait"/>
+        <ModelMacroRun Models="BarbarianModels" Macro="BarbarianNordicSonya"/>
+        <DisplayModel value="BarbarianSkinNordicSonya"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Gray.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianWrathFemale" parent="BarbarianWrathBase">
+        <AttributeId value="Bar3"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Dark.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianWrathFemalePink" parent="BarbarianWrathBase">
+        <AttributeId value="Bar4"/>
+        <ModelMacroRun Models="BarbarianWrathModels" Macro="SkinBarbarianWrathFemalePink"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Pink.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianWrathFemaleRed" parent="BarbarianWrathBase">
+        <AttributeId value="Bar5"/>
+        <ModelMacroRun Models="BarbarianWrathModels" Macro="SkinBarbarianWrathFemaleRed"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Bright.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianWrathMale" parent="BarbarianWrathMaleBase">
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Dark.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianWrathMalePink" parent="BarbarianWrathMaleBase">
+        <ModelMacroRun Models="BarbarianWrathMaleModels" Macro="SkinBarbarianWrathMalePink"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Pink.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianWrathMaleRed" parent="BarbarianWrathMaleBase">
+        <ModelMacroRun Models="BarbarianWrathMaleModels" Macro="SkinBarbarianWrathMaleRed"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Bright.dds"/>
+    </CSkin>
+    <CSkin id="BarbarianMale">
+        <ReplacementArray Catalog="Model" From="HeroBarbarian" To="BarbarianSkinMale"/>
+        <ReplacementArray Catalog="Model" From="BarbarianWrathModelFemale" To="BarbarianWrathModelMale"/>
+        <ReplacementArray Catalog="Model" From="HeroBarbarianDeathRagdoll" To="D3BarbarianMBaseDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="BarbarianPortrait" To="BarbarianSkinMalePortrait"/>
+        <ReplacementArray Catalog="Sound" From="Barb_Fem_Leap_Vox" To="Barb_Male_Leap_Cast_Vox"/>
+        <ReplacementArray Catalog="Sound" From="Barb_Fem_LeapImpact_Vox" To="StormNoSound"/>
+        <ReplacementArray Catalog="Sound" From="Barb_Fem_BattleCry_Vox" To="Barb_Male_BattleCry_Vox"/>
+        <ReplacementArray Catalog="Sound" From="Barb_Fem_Bash_Vox" To="Barb_Male_Bash_Vox"/>
+        <ReplacementArray Catalog="Sound" From="Barb_Fem_Frenzy_Vox" To="Barb_Male_Frenzy_Vox"/>
+        <ReplacementArray Catalog="Sound" From="Barbarian_Attack_Whoosh" To="Barbarian_Attack_Axe_Whoosh"/>
+        <ReplacementArray Catalog="VoiceOver" From="Barbarian" To="BarbarianMale"/>
+        <DisplayModel value="BarbarianSkinMale"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Dark.dds"/>
+    </CSkin>
+    <!-- STITCHES -->
+    <CSkin id="StitchesGreen" parent="StitchesCommon">
+        <AttributeId value="Sti1"/>
+        <ModelMacroRun Models="HeroStitchesModels" Macro="StitchesGreenMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="StitchesPink" parent="StitchesCommon">
+        <AttributeId value="Sti2"/>
+        <ModelMacroRun Models="HeroStitchesModels" Macro="StitchesPinkMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Pink.dds"/>
+    </CSkin>
+    <CSkin id="StitchesPsycho" parent="StitchesPsychoCommon">
+        <AttributeId value="Sti3"/>
+        <ReplacementArray Catalog="Model" From="StitchesHookTentacle" To="StitchesPsychoHookTentacle"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Bright.dds"/>
+    </CSkin>
+    <CSkin id="StitchesSkinPsychoBrown" parent="StitchesPsychoCommon">
+        <AttributeId value="Sti4"/>
+        <ReplacementArray Catalog="Model" From="StitchesHookTentacle" To="StitchesPsychoHookTentacle"/>
+        <ModelMacroRun Models="StitchesPsychoModels" Macro="StitchesPsychoBrown"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Brown.dds"/>
+    </CSkin>
+    <CSkin id="StitchesSkinPsychoCamo" parent="StitchesPsychoCommon">
+        <AttributeId value="Sti5"/>
+        <ReplacementArray Catalog="Model" From="StitchesHookTentacle" To="StitchesPsychoHookTentacle"/>
+        <ModelMacroRun Models="StitchesPsychoModels" Macro="StitchesPsychoCamo"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_StitchesCamo.dds"/>
+    </CSkin>
+    <CSkin id="StitchesChef">
+        <AttributeId value="Sti6"/>
+        <ReplacementArray Catalog="Model" From="HeroStitches" To="StitchesSkinChef"/>
+        <ReplacementArray Catalog="Model" From="HeroStitchesDeathRagdoll" To="StitchesChefDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="StitchesPortrait" To="StitchesSkinChefPortrait"/>
+        <ReplacementArray Catalog="Actor" From="StitchesPortrait" To="StitchesSkinChefPortrait"/>
+        <ReplacementArray Catalog="Model" From="StitchesHookTentacle" To="StitchesChefHookTentacle"/>
+        <DisplayModel value="StitchesSkinChef"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_WhiteEggshell.dds"/>
+    </CSkin>
+    <CSkin id="StitchesChefRed">
+        <AttributeId value="Sti7"/>
+        <ReplacementArray Catalog="Model" From="HeroStitches" To="StitchesSkinChefRed"/>
+        <ReplacementArray Catalog="Model" From="HeroStitchesDeathRagdoll" To="StitchesChefRedDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="StitchesPortrait" To="StitchesSkinChefRedPortrait"/>
+        <ReplacementArray Catalog="Actor" From="StitchesPortrait" To="StitchesSkinChefRedPortrait"/>
+        <ReplacementArray Catalog="Model" From="StitchesHookTentacle" To="StitchesChefHookTentacle"/>
+        <DisplayModel value="StitchesSkinChefRed"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="StitchesChefBlack">
+        <AttributeId value="Sti8"/>
+        <ReplacementArray Catalog="Model" From="HeroStitches" To="StitchesSkinChefBlack"/>
+        <ReplacementArray Catalog="Model" From="HeroStitchesDeathRagdoll" To="StitchesChefBlackDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="StitchesPortrait" To="StitchesSkinChefBlackPortrait"/>
+        <ReplacementArray Catalog="Actor" From="StitchesPortrait" To="StitchesSkinChefBlackPortrait"/>
+        <ReplacementArray Catalog="Model" From="StitchesHookTentacle" To="StitchesChefHookTentacle"/>
+        <DisplayModel value="StitchesSkinChefBlack"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="StitchesTearin" parent="StitchesTearinCommon">
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Bright.dds"/>
+    </CSkin>
+    <CSkin id="StitchesSkinTearinBlack" parent="StitchesTearinCommon">
+        <ModelMacroRun Models="StitchesMarineArmorModels" Macro="StitchesMarineArmorBlack"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="StitchesSkinTearinRed" parent="StitchesTearinCommon">
+        <ModelMacroRun Models="StitchesMarineArmorModels" Macro="StitchesMarineArmorRed"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <!-- TASSADAR -->
+    <CSkin id="TassadarDarkProtoss">
+        <AttributeId value="Tas1"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarSkinDarkProtoss"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarSkinDarkProtossPortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarSkinDarkProtossPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarDarkProtossDeathRagdoll"/>
+        <DisplayModel value="TassadarSkinDarkProtoss"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green_Pale.dds"/>
+    </CSkin>
+    <CSkin id="TassadarArgent" parent="TassadarCommon">
+        <AttributeId value="Tas2"/>
+        <ModelMacroRun Models="TassadarModels" Macro="TassadarArgentMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Bright.dds"/>
+    </CSkin>
+    <CSkin id="TassadarPurple" parent="TassadarCommon">
+        <AttributeId value="Tas6"/>
+        <ModelMacroRun Models="TassadarModels" Macro="TassadarPurpleMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple.dds"/>
+    </CSkin>
+    <CSkin id="TassadarMecha">
+        <AttributeId value="Tas3"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarSkinMechaAzure"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarSkinMechaAzurePortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarSkinMechaAzurePortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarMechaAzureDeathRagdoll"/>
+        <ReplacementArray Catalog="VoiceOver" From="Tassadar" To="MechaTassadar"/>
+        <DisplayModel value="TassadarSkinMechaAzure"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="TassadarMechaYellow">
+        <AttributeId value="Tas4"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarSkinMecha"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarSkinMechaPortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarSkinMechaPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarMechaDeathRagdoll"/>
+        <ReplacementArray Catalog="VoiceOver" From="Tassadar" To="MechaTassadar"/>
+        <DisplayModel value="TassadarSkinMecha"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Bright.dds"/>
+    </CSkin>
+    <CSkin id="TassadarMechaRed">
+        <AttributeId value="Tas5"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarSkinMechaBlood"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarSkinMechaBloodPortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarSkinMechaBloodPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarMechaBloodDeathRagdoll"/>
+        <ReplacementArray Catalog="VoiceOver" From="Tassadar" To="MechaTassadar"/>
+        <DisplayModel value="TassadarSkinMechaBlood"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="TassadarPharaoh">
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarPharaoh"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarPharaohPortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarPharaohPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarPharaohDeathRagdoll"/>
+        <DisplayModel value="TassadarPharaoh"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Bright.dds"/>
+    </CSkin>
+    <CSkin id="TassadarPharaohMithril">
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarPharaohMithril"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarPharaohMithrilPortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarPharaohMithrilPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarPharaohMithrilDeathRagdoll"/>
+        <DisplayModel value="TassadarPharaohMithril"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+    </CSkin>
+    <CSkin id="TassadarPharaohCrimson">
+        <ReplacementArray Catalog="Model" From="HeroTassadar" To="TassadarPharaohCrimson"/>
+        <ReplacementArray Catalog="Model" From="TassadarPortrait" To="TassadarPharaohCrimsonPortrait"/>
+        <ReplacementArray Catalog="Actor" From="TassadarPortrait" To="TassadarPharaohCrimsonPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroTassadarDeathRagdoll" To="TassadarPharaohCrimsonDeathRagdoll"/>
+        <DisplayModel value="TassadarPharaohCrimson"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Dark.dds"/>
+    </CSkin>
+    <!-- TYCHUS -->
+    <CSkin id="TychusBlueDark" parent="TychusCommon">
+        <AttributeId value="Tyc1"/>
+        <ModelMacroRun Models="TychusModels" Macro="TychusBlueDarkMacro"/>
+        <ModelMacroRun Models="TychusModelsDecal" Macro="TychusBlueDarkMacroDecal"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Dark.dds"/>
+    </CSkin>
+    <CSkin id="TychusBlueLight" parent="TychusCommon">
+        <AttributeId value="Tyc2"/>
+        <ModelMacroRun Models="TychusModels" Macro="TychusBlueLightMacro"/>
+        <ModelMacroRun Models="TychusModelsDecal" Macro="TychusBlueLightMacroDecal"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Sky.dds"/>
+    </CSkin>
+    <CSkin id="TychusInfestedCommon">
+        <AttributeId value="Tyc3"/>
+        <ReplacementArray Catalog="Model" From="HeroTychus" To="TychusSkinInfested"/>
+        <ReplacementArray Catalog="Model" From="HeroTychusDeathRagdoll" To="TychusInfestedDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="TychusPortrait" To="TychusSkinInfestedPortrait"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red_Rose.dds"/>
+        <DisplayModel value="TychusSkinInfested"/>
+        <ModelGroups Name="TychusInfestedModels">
+            <Models value="TychusSkinInfested"/>
+            <Models value="TychusSkinInfestedPortrait"/>
+            <Models value="TychusInfestedDeathRagdoll"/>
+            <Models value="TychusSkinInfestedPortraitAddition"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin id="TychusInfestedBase" parent="TychusInfestedCommon">
+        <Name value="Skin/Name/TychusInfestedBase"/>
+        <AttributeId value="Tyc4"/>
+    </CSkin>
+    <CSkin id="TychusInfestedBrown" parent="TychusInfestedCommon">
+        <Name value="Skin/Name/TychusInfestedBrown"/>
+        <AttributeId value="Tyc5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Brown.dds"/>
+        <ModelMacroRun Models="TychusInfestedModels" Macro="TychusInfestedBrownMacro"/>
+    </CSkin>
+    <CSkin id="TychusInfestedPurple" parent="TychusInfestedCommon">
+        <Name value="Skin/Name/TychusInfestedPurple"/>
+        <AttributeId value="Tyc5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple.dds"/>
+        <ModelMacroRun Models="TychusInfestedModels" Macro="TychusInfestedPurpleMacro"/>
+    </CSkin>
+    <!-- TYRANDE -->
+    <CSkin id="TyrandeBlack" parent="TyrandeCommon">
+        <AttributeId value="Tyd3"/>
+        <ModelMacroRun Models="TyrandeModels" Macro="TyrandeBlackMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="TyrandeShadow" parent="TyrandeCommon">
+        <AttributeId value="Tyd1"/>
+        <ModelMacroRun Models="TyrandeModels" Macro="TyrandeShadowMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple.dds"/>
+    </CSkin>
+    <CSkin id="TyrandeBloodElfCommon">
+        <AttributeId value="Tyd2"/>
+        <ReplacementArray Catalog="Model" From="HeroTyrande" To="TyrandeSkinBloodElf"/>
+        <ReplacementArray Catalog="Model" From="HeroTyrandeDeathRagdoll" To="TyrandeBloodElfDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="TyrandePortrait" To="TyrandeSkinBloodElfPortrait"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+        <DisplayModel value="TyrandeSkinBloodElf"/>
+        <ModelGroups Name="TyrandeBloodElfModels">
+            <Models value="TyrandeSkinBloodElf"/>
+            <Models value="TyrandeSkinBloodElfPortraitAddition"/>
+            <Models value="TyrandeBloodElfDeathRagdoll"/>
+        </ModelGroups>
+    </CSkin>
+    <CSkin id="TyrandeBloodElfBase" parent="TyrandeBloodElfCommon">
+        <AttributeId value="Tyd4"/>
+        <Name value="Skin/Name/TyrandeBloodElfBase"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Yellow_Gold.dds"/>
+    </CSkin>
+    <CSkin id="TyrandeBloodElfRed" parent="TyrandeBloodElfCommon">
+        <AttributeId value="Tyd5"/>
+        <Name value="Skin/Name/TyrandeBloodElfRed"/>
+        <ModelMacroRun Models="TyrandeBloodElfModels" Macro="TyrandeBloodElfRed"/>
+    </CSkin>
+    <CSkin id="TyrandeBloodElfBlue" parent="TyrandeBloodElfCommon">
+        <AttributeId value="Tyd6"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Gray.dds"/>
+        <Name value="Skin/Name/TyrandeBloodElfBlue"/>
+        <ModelMacroRun Models="TyrandeBloodElfModels" Macro="TyrandeBloodElfBlue"/>
+    </CSkin>
+    <!-- UTHER -->
+    <CSkin id="UtherSilverHand">
+        <AttributeId value="Uth1"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinSilverHand"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinSilverHandPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinSilverHandPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherSilverHandDeathRagdoll"/>
+        <DisplayModel value="UtherSkinSilverHand"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_WhiteEggshell.dds"/>
+    </CSkin>
+    <CSkin id="UtherBlackHand">
+        <AttributeId value="Uth2"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinTemp1"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinTemp1Portrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinTemp1Portrait"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherTempSkin1DeathRagdoll"/>
+        <DisplayModel value="UtherSkinTemp1"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="UtherJudgement">
+        <AttributeId value="Uth3"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinJudgement"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherJudgementDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinJudgementPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinJudgementPortrait"/>
+        <DisplayModel value="UtherSkinJudgement"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Bright.dds"/>
+    </CSkin>
+    <CSkin id="UtherPenanceJudgement">
+        <AttributeId value="Uth4"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinPenanceJudgement"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherJudgementPurpleDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinPenanceJudgementPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinPenanceJudgementPortrait"/>
+        <DisplayModel value="UtherSkinPenanceJudgement"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Purple.dds"/>
+    </CSkin>
+    <CSkin id="UtherAzureJudgement">
+        <AttributeId value="Uth5"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinAzureJudgement"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherJudgementBlueDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinAzureJudgementPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinAzureJudgementPortrait"/>
+        <DisplayModel value="UtherSkinAzureJudgement"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="UtherMedic">
+        <AttributeId value="Uth6"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinMedic"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherMedicDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinMedicPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinMedicPortrait"/>
+        <DisplayModel value="UtherSkinMedic"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="UtherMedicBlood">
+        <AttributeId value="Uth7"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinMedicBlood"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherMedicBloodDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinMedicBloodPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinMedicBloodPortrait"/>
+        <DisplayModel value="UtherSkinMedicBlood"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="UtherMedicArgent">
+        <AttributeId value="Uth8"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinMedicArgent"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherMedicArgentDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinMedicArgentPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinMedicArgentPortrait"/>
+        <DisplayModel value="UtherSkinMedicArgent"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Bright.dds"/>
+    </CSkin>
+    <CSkin id="UtherLumberjack">
+        <AttributeId value="Uth9"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinLumberjack"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinLumberjackPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinLumberjackPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherLumberjackDeathRagdoll"/>
+        <DisplayModel value="UtherSkinLumberjack"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="UtherLumberjackAzure">
+        <AttributeId value="UthA"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinLumberjackAzure"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinLumberjackAzurePortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinLumberjackAzurePortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherLumberjackAzureDeathRagdoll"/>
+        <DisplayModel value="UtherSkinLumberjackAzure"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Dark.dds"/>
+    </CSkin>
+    <CSkin id="UtherLumberjackOnyx">
+        <AttributeId value="UthB"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinLumberjackOnyx"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinLumberjackOnyxPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinLumberjackOnyxPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherLumberjackOnyxDeathRagdoll"/>
+        <DisplayModel value="UtherSkinLumberjackOnyx"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="UtherLumberjackEmerald">
+        <AttributeId value="UthC"/>
+        <ReplacementArray Catalog="Model" From="HeroUther" To="UtherSkinLumberjackEmerald"/>
+        <ReplacementArray Catalog="Model" From="UtherPortrait" To="UtherSkinLumberjackEmeraldPortrait"/>
+        <ReplacementArray Catalog="Actor" From="UtherPortrait" To="UtherSkinLumberjackEmeraldPortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroUtherDeathRagdoll" To="UtherLumberjackEmeraldDeathRagdoll"/>
+        <DisplayModel value="UtherSkinLumberjackEmerald"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green_Dark.dds"/>
+    </CSkin>
+    <!-- VALLA (DEMON HUNTER) -->
+    <CSkin id="DemonHunterPink" parent="DemonHunterCommon">
+        <AttributeId value="Dem1"/>
+        <ModelMacroRun Models="DemonHunterModels" Macro="DemonHunterPinkMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Pink.dds"/>
+    </CSkin>
+    <CSkin id="DemonHunterGreen" parent="DemonHunterCommon">
+        <AttributeId value="Dem2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+        <ModelMacroRun Models="DemonHunterModels" Macro="DemonHunterGreenMacro"/>
+    </CSkin>
+    <CSkin id="DemonHunterVampireHunter">
+        <AttributeId value="Dem3"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunter" To="DemonHunterSkinVampireHunter"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunterDeathRagdoll" To="DemonHunterVampireHunterDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterPortrait"/>
+        <ReplacementArray Catalog="Actor" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterPortrait"/>
+        <DisplayModel value="DemonHunterSkinVampireHunter"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue.dds"/>
+    </CSkin>
+    <CSkin id="DemonHunterVampireHunterDark">
+        <AttributeId value="Dem4"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunter" To="DemonHunterSkinVampireHunterDark"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunterDeathRagdoll" To="DemonHunterVampireHunterDarkDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterDarkPortrait"/>
+        <ReplacementArray Catalog="Actor" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterDarkPortrait"/>
+        <DisplayModel value="DemonHunterSkinVampireHunterDark"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+    <CSkin id="DemonHunterVampireHunterWhite">
+        <AttributeId value="Dem5"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunter" To="DemonHunterSkinVampireHunterWhite"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunterDeathRagdoll" To="DemonHunterVampireHunterWhiteDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterWhitePortrait"/>
+        <ReplacementArray Catalog="Actor" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterWhitePortrait"/>
+        <DisplayModel value="DemonHunterSkinVampireHunterWhite"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_WhiteEggshell.dds"/>
+    </CSkin>
+    <CSkin id="DemonHunterVampireHunterPoison">
+        <AttributeId value="Dem6"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunter" To="DemonHunterSkinVampireHunterPoison"/>
+        <ReplacementArray Catalog="Model" From="HeroDemonHunterDeathRagdoll" To="DemonHunterVampireHunterPoisonDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterPoisonPortrait"/>
+        <ReplacementArray Catalog="Actor" From="DemonHunterPortrait" To="DemonHunterSkinVampireHunterPoisonPortrait"/>
+        <DisplayModel value="DemonHunterSkinVampireHunterPoison"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green_Dark.dds"/>
+    </CSkin>
+    <CSkin id="DemonHunterAngel" parent="DemonHunterAngelCommon">
+        <AttributeId value="Dem7"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Yellow_Gold.dds"/>
+    </CSkin>
+    <CSkin id="DemonHunterAngelBlue" parent="DemonHunterAngelCommon">
+        <AttributeId value="Dem8"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Sky.dds"/>
+        <ModelMacroRun Models="DemonHunterAngelModels" Macro="DemonHunterAngelBlueMacro"/>
+    </CSkin>
+    <CSkin id="DemonHunterAngelBlack" parent="DemonHunterAngelCommon">
+        <AttributeId value="Dem9"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Pink_Pale.tga"/>
+        <ModelMacroRun Models="DemonHunterAngelModels" Macro="DemonHunterAngelBlackMacro"/>
+    </CSkin>
+    <!-- ZERATUL -->
+    <CSkin id="ZeratulArgent" parent="ZeratulCommon">
+        <AttributeId value="Zer1"/>
+        <ModelMacroRun Models="HeroZeratulModels" Macro="ZeratulArgentMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange_Dark.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulGreen" parent="ZeratulCommon">
+        <AttributeId value="Zer8"/>
+        <ModelMacroRun Models="HeroZeratulModels" Macro="ZeratulGreenMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Green.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulHighTemplar" parent="ZeratulHighTemplarBase">
+        <AttributeId value="Zer2"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Bright.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulHighTemplarOrange" parent="ZeratulHighTemplarBase">
+        <AttributeId value="Zer3"/>
+        <ModelMacroRun Models="ZeratulHighTemplarModels" Macro="SkinZeratulHighTemplarOrange"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Orange.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulHighTemplarWhite" parent="ZeratulHighTemplarBase">
+        <AttributeId value="Zer4"/>
+        <ModelMacroRun Models="ZeratulHighTemplarModels" Macro="SkinZeratulHighTemplarWhite"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_White_Cold.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulRonin" parent="ZeratulRoninBase">
+        <AttributeId value="Zer5"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulRoninTeal" parent="ZeratulRoninBase">
+        <AttributeId value="Zer6"/>
+        <ModelMacroRun Models="ZeratulNinjaModels" Macro="ZeratulNinjaTealMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Blue_Green.dds"/>
+    </CSkin>
+    <CSkin id="ZeratulRoninYellow" parent="ZeratulRoninBase">
+        <AttributeId value="Zer7"/>
+        <ModelMacroRun Models="ZeratulNinjaModels" Macro="ZeratulNinjaYellowMacro"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Black.dds"/>
+    </CSkin>
+</Catalog>

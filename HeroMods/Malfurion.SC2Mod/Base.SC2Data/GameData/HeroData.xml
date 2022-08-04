@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CHero id="HeroMalfurion" HeroID="Malfurion">
+        <AttributeId value="HMlf"/>
+        <Role value="Support"/>
+        <IntroCutsceneSize value="Medium"/>
+        <SpecificKillVOArray Target="HeroIllidan" Sound="Malfurion_KillIllidan"/>
+        <SpecificKillVOArray Target="HeroDiablo" Sound="Malfurion_KillDiablo"/>
+        <SpecificKillVOArray Target="HeroTyrande" Sound="Malfurion_KillTyrande"/>
+        <SpecificKillVOArray Target="HeroStitches" Sound="Malfurion_KillStitches"/>
+        <SpecificKillVOArray Target="HeroArthas" Sound="Malfurion_KillArthas"/>
+        <SpecificKillVOArray Target="HeroDemonHunter" Sound="Malfurion_KillDemonHunter"/>
+        <SpecificIntroVOArray Target="HeroIllidan" Question="Malfurion_IntroQuestion_Illidan" Response="Malfurion_IntroResponse_Illidan"/>
+        <SpecificIntroVOArray Target="HeroTyrande" Question="Malfurion_IntroResponse_Tyrande" Response="Malfurion_IntroResponse_Tyrande"/>
+        <Universe value="Warcraft"/>
+        <UniverseIcon value="Assets\Textures\UI_Glues_Store_GameIcon_Wow.dds"/>
+        <Model value="HeroMalfurion@Base"/>
+    </CHero>
+</Catalog>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDamage id="HeroSelendisExecutorsGuard@WeaponResponse">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisExecutorsGuard@ApplyWeaponBuff"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroSelendisSolarLance@Damage"/>
+        <RequireEffectArray value="HeroSelendisZealousRush@Damage"/>
+        <RequireEffectArray value="HeroSelendisDecisiveStrike@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisExecutorsGuard@ArmorResponse">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisExecutorsGuard@ArmorResponseSet"/>
+        <ValidatorArray value="HeroSelendisExecutorsGuard@CasterHasWeaponBuff"/>
+        <RequireEffectArray value="HeroSelendisWeapon@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentInTheHeatOfBattle">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentInTheHeatOfBattle@ImpactSet"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroSelendisTalentInTheHeatOfBattle@ChargesNotFull"/>
+        <RequireEffectArray value="HeroSelendisWeapon@Damage"/>
+        <RequireEffectArray value="HeroSelendisWeapon@DamageCritical"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentPowerStrikeFinalCut">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentPowerStrikeFinalCut@ApplyArmorDebuff"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@Damage"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@ExpireDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentExecutorBladeAdvancedCharge">
+        <Handled value="HeroSelendisTalentExecutorBladeAdvancedCharge@ApplyAttackSpeed"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroSelendisExecutorChargeApproach@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentExecutorBladeImpalingBlade">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentExecutorBladeImpalingBlade@ApplyCooldownBehavior"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroSelendisExecutorBlade@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentIntuitiveAttack@StacksGatheringController">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentIntuitiveAttack@ApplyBehaviorStack"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroSelendisExecutorBlade@Damage"/>
+        <RequireEffectArray value="HeroSelendisExecutorChargeApproach@Damage"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@Damage"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@ExpireDamage"/>
+        <RequireEffectArray value="HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage"/>
+        <RequireEffectArray value="HeroSelendisVindicatorsBeam@Damage"/>
+        <RequireEffectArray value="HeroSelendisTalentVindicatorsBeamThermalFire@Damage"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentIntuitiveAttack@DamageController">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentIntuitiveAttack@ImpactSet"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroSelendisTalentIntuitiveAttack@HasStacks"/>
+        <RequireEffectArray value="HeroSelendisWeapon@Damage"/>
+        <RequireEffectArray value="HeroSelendisWeapon@DamageCritical"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentPowerStrikePsionicDash">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentPowerStrikePsionicDash@ApplyShieldBuff"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@Damage"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@ExpireDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentPowerStrikeTemplarsZeal">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentPowerStrikeTemplarsZeal@ApplyTimedDamageBehavior"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="-;Player,Ally,Neutral,Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@Damage"/>
+        <RequireEffectArray value="HeroSelendisPowerStrike@ExpireDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentBladesofaZealot">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentBladesofaZealot@RefreshTokenCounter"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroSelendisTalentBladesofaZealot@QuestNotCompleted"/>
+        <RequireEffectArray value="HeroSelendisWeapon@Damage"/>
+        <RequireEffectArray value="HeroSelendisWeapon@DamageCritical"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentExecutorBladeExecutorPower">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentExecutorBladeExecutorPower@RefreshTokenCounter"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <ValidatorArray value="HeroSelendisTalentExecutorBladeExecutorPower@QuestNotCompleted"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroSelendisExecutorBlade@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisTalentExecutorBladeUpstage">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisTalentExecutorBladeUpstage@ApplyAvoidance"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroSelendisExecutorBlade@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroSelendisZealousRush@MarkResponse">
+        <Location value="Attacker"/>
+        <Handled value="HeroSelendisZealousRush@ApplyMark"/>
+        <TargetFilters value="-;Dead"/>
+        <ValidatorArray value="TargetNotSpecialDeathState"/>
+        <RequireEffectArray value="HeroSelendisSolarLance@Damage"/>
+        <RequireEffectArray value="HeroSelendisDecisiveStrike@Damage"/>
+    </CPlayerResponseUnitDamage>
+</Catalog>

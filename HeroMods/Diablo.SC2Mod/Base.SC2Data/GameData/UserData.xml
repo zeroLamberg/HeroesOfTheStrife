@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Instances Id="[Default]"/>
+        <Instances Id="DevilCharge">
+            <GameLink GameLink="HeroDiabloDevilCharge">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloDevilCharge">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="Hero" Instance="Diablo">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+        </Instances>
+        <Instances Id="FireStomp">
+            <GameLink GameLink="HeroDiabloFireStomp">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloFireStomp">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Diablo">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="Overpower">
+            <GameLink GameLink="HeroDiabloOverpower">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloOverpower">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Diablo">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="BlackSoulstone">
+            <GameLink GameLink="HeroDiabloBlackSoulstone">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloBlackSoulstone">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Trait">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Trait (D)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Diablo">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="Apocalypse">
+            <GameLink GameLink="HeroDiabloApocalypse">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloApocalypse">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Diablo">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="LightningBreath">
+            <GameLink GameLink="HeroDiabloLightningBreath">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloLightningBreath">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Diablo">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Instances Id="Diablo">
+            <GameLink GameLink="HeroDiablo">
+                <Field Id="Hero Link"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@LevelScalingModification">
+                <Field Id="Hero Level Scaling Effect"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloBlackSoulstone">
+                <Field Id="QuestDataButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloBlackSoulstone@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloBlackSoulstoneEternalSoulstone@Modification">
+                <Field Id="Level Effect" Index="9"/>
+            </GameLink>
+            <User Type="HeroRole" Instance="Tank">
+                <Field Id="Role"/>
+            </User>
+            <User Type="HeroOptionSelectingStatus" Instance="PTR and Live">
+                <Field Id="Selecting Status"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Devil&apos;s Due">
+                <Field Id="TalentTier1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Feast on Fear">
+                <Field Id="TalentTier1" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Soul Shield">
+                <Field Id="TalentTier1" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Sacrificial Soul">
+                <Field Id="TalentTier2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Souls to the Flame">
+                <Field Id="TalentTier2" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Life Leech">
+                <Field Id="TalentTier2" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Eternal Flames">
+                <Field Id="TalentTier3"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Diabolical Momentum">
+                <Field Id="TalentTier3" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Malevolence">
+                <Field Id="TalentTier3" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Apocalypse">
+                <Field Id="TalentTier4"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Lightning Breath">
+                <Field Id="TalentTier4" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Devastating Charge">
+                <Field Id="TalentTier5"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Hellfire">
+                <Field Id="TalentTier5" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Cruelty">
+                <Field Id="TalentTier5" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Domination">
+                <Field Id="TalentTier6"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Debilitating Flames">
+                <Field Id="TalentTier6" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Overpowering Nightmare">
+                <Field Id="TalentTier6" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Dying Breath">
+                <Field Id="TalentTier7"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Hellstorm">
+                <Field Id="TalentTier7" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Lord of Terror">
+                <Field Id="TalentTier7" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Hellgate">
+                <Field Id="TalentTier7" Index="3"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier1" Index="3"/>
+            </User>
+            <User Type="Mount" Instance="DiabloRun">
+                <Field Id="Default Mount"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ride">
+                <Field Id="Mount Category Array"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridebeast">
+                <Field Id="Mount Category Array" Index="1"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridebike">
+                <Field Id="Mount Category Array" Index="2"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="Mount Category Array" Index="3"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridenone">
+                <Field Id="Mount Category Array" Index="4"/>
+            </User>
+            <User Type="Skin" Instance="DiabloBase">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Skin" Instance="DiabloUltimate">
+                <Field Id="Skins" Index="1"/>
+            </User>
+            <User Type="Ability" Instance="DevilCharge">
+                <Field Id="Abilities"/>
+            </User>
+            <User Type="Ability" Instance="FireStomp">
+                <Field Id="Abilities" Index="1"/>
+            </User>
+            <User Type="Ability" Instance="Overpower">
+                <Field Id="Abilities" Index="2"/>
+            </User>
+            <User Type="Ability" Instance="BlackSoulstone">
+                <Field Id="Abilities" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="Apocalypse">
+                <Field Id="Abilities" Index="4"/>
+            </User>
+            <User Type="Ability" Instance="LightningBreath">
+                <Field Id="Abilities" Index="5"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Hero Abnormal Death"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Mount">
+        <Instances Id="DiabloRun">
+            <GameLink GameLink="HeroDiablo@MountFX">
+                <Field Id="Model"/>
+            </GameLink>
+            <GameLink GameLink="Mount_TerrorCharge_Move_Loop">
+                <Field Id="VO Moving"/>
+            </GameLink>
+            <Text Text="UserData/Mount/DiabloRun_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Mount/DiabloRun_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Mount/DiabloRun_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <User Type="MountMountCategory" Instance="Ridenone">
+                <Field Id="MountCategory"/>
+            </User>
+            <User Type="MountCollectionCategory" Instance="Unique">
+                <Field Id="CollectionCategory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Show In Store"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Instances Id="DiabloBase">
+            <GameLink GameLink="HeroDiablo@BaseBlack">
+                <Field Id="VariationUpgradeLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@BasePink">
+                <Field Id="VariationUpgradeLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@BaseGreen">
+                <Field Id="VariationUpgradeLink" Index="3"/>
+            </GameLink>
+            <Text Text="UserData/Skin/DiabloBase_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationName_003">
+                <Field Id="VariationName" Index="3"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationAdditionalSearchText_003">
+                <Field Id="VariationAdditionalSearchText" Index="3"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloBase_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="3"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="3"/>
+            </User>
+        </Instances>
+        <Instances Id="DiabloUltimate">
+            <GameLink GameLink="HeroDiablo@SkinUltimateWhite">
+                <Field Id="VariationUpgradeLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@SkinUltimateBlue">
+                <Field Id="VariationUpgradeLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@Ultimate">
+                <Field Id="VariationSkinLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@Ultimate">
+                <Field Id="VariationSkinLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiablo@Ultimate">
+                <Field Id="VariationSkinLink" Index="2"/>
+            </GameLink>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Skin/DiabloUltimate_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Instances Id="Diablo - Feast on Fear">
+            <GameLink GameLink="HeroDiabloTalentFeastonFear">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFeastonFear">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFeastonFear">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Soul Shield">
+            <GameLink GameLink="HeroDiabloTalentSoulShield">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentSoulShield">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentSoulShield">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentSoulShield@CDRControllerWeapon">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentSoulShield@CDRControllerAbilities">
+                <Field Id="TalentPlayerResponse" Index="1"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Devil&apos;s Due">
+            <GameLink GameLink="HeroDiabloTalentBlackSoulstoneDevilsDue">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentBlackSoulstoneDevilsDue">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="BlackSoulstone">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Souls to the Flame">
+            <GameLink GameLink="HeroDiabloTalentFireStompSoulstotheFlame@TokenCounter">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompSoulstotheFlame">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompSoulstotheFlame">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompSoulstotheFlame">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="FireStomp">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Sacrificial Soul">
+            <GameLink GameLink="HeroDiabloTalentDevilChargeSacrificialSoul">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeSacrificialSoul">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeSacrificialSoul">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="DevilCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Life Leech">
+            <GameLink GameLink="HeroDiabloTalentLifeLeech">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentLifeLeech">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentLifeLeech">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Eternal Flames">
+            <GameLink GameLink="HeroDiabloTalentFireStompEternalFlames">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompEternalFlames">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompEternalFlames">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="FireStomp">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Diabolical Momentum">
+            <GameLink GameLink="HeroDiabloTalentDiabolicalMomentum">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDiabolicalMomentum">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDiabolicalMomentum">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Malevolence">
+            <GameLink GameLink="HeroDiabloTalentMalevolence">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentMalevolence">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentMalevolence">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Apocalypse">
+            <GameLink GameLink="HeroDiabloApocalypse">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloApocalypse">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Apocalypse">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Lightning Breath">
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloLightningBreath">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloLightningBreath">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="LightningBreath">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Devastating Charge">
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDevastatingCharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDevastatingCharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDevastatingCharge@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDevastatingCharge">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDevastatingCharge@ResetTokens">
+                <Field Id="TalentEffectOnRemove"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+            <User Type="Ability" Instance="DevilCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Hellfire">
+            <GameLink GameLink="HeroDiabloTalentFireStompHellfire@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompHellfire">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompHellfire">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompHellfire">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="FireStomp">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Domination">
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDomination">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentDevilChargeDomination">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="DevilCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Cruelty">
+            <GameLink GameLink="HeroDiabloTalentCruelty">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentCruelty">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentCruelty">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="Ability" Instance="[Default]">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Debilitating Flames">
+            <GameLink GameLink="HeroDiabloTalentFireStompDebilitatingFlames">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompDebilitatingFlames">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentFireStompDebilitatingFlames">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="FireStomp">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Overpowering Nightmare">
+            <GameLink GameLink="HeroDiabloTalentOverpowerOverpoweringNightmare">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentOverpowerOverpoweringNightmare">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentOverpowerOverpoweringNightmare@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Overpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Dying Breath">
+            <GameLink GameLink="HeroDiabloTalentApocalypseDyingBreath">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentApocalypseDyingBreath">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentApocalypseDyingBreath">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Apocalypse">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="Apocalypse">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Hellstorm">
+            <GameLink GameLink="HeroDiabloTalentLightningBreathHellstorm">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentLightningBreathHellstorm">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentLightningBreathHellstorm@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Diablo - Lightning Breath">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="LightningBreath">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Lord of Terror">
+            <GameLink GameLink="HeroDiabloTalentLordofTerror">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentLordofTerror">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentLordofTerror">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Diablo - Hellgate">
+            <GameLink GameLink="HeroDiabloTalentHellgate">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentHellgate">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroDiabloTalentHellgate">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

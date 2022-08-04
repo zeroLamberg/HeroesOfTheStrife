@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="MercenarySlaynElementalEssenceLeech@ApplyUnifiedArmorReduction" parent="CoreApplyArmorStats">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenarySlaynElementalEssenceLeech@UnifiedArmorReduction"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="MercenarySlaynElementalEssenceLeech@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="250"/>
+    </CEffectDamage>
+    <CEffectDamage id="SlaynVoidThrasherShooting@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <Amount value="2815"/>
+    </CEffectDamage>
+    <CEffectDamage id="SlaynSupplicantWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <Amount value="12"/>
+    </CEffectDamage>
+    <CEffectSet id="SlaynVoidRiftSpawn@ImpactSet">
+        <TargetLocationType value="Point"/>
+        <EditorCategories value="Race:Neutral,StandardHero:MapEvents"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="SlaynVoidRiftSpawn@LM">
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="SlaynVoidRiftSpawn@ImpactSet"/>
+        <AmmoUnit value="SlaynVoidRiftSpawn@Missile"/>
+        <Movers Link="SlaynVoidRiftSpawn@Mover"/>
+        <EditorCategories value="Race:Neutral,StandardHero:MapEvents"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="MercenarySlaynElementalEssenceLeech@ImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EffectArray value="MercenarySlaynElementalEssenceLeech@Damage"/>
+        <EffectArray value="MercenarySlaynElementalEssenceLeech@ApplyStunBehavior"/>
+        <EffectArray value="MercenarySlaynElementalEssenceLeech@ApplyUnifiedArmorReduction"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+    </CEffectSet>
+    <CEffectEnumArea id="MercenarySlaynElementalEssenceLeech@InitialSearch">
+        <AreaArray Radius="10" Effect="MercenarySlaynElementalEssenceLeech@CreateWarningPersistent"/>
+        <EditorCategories value="Race:Neutral,StandardHero:Mercenaries"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,Dead,Hidden"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="MercenarySlaynElementalEssenceLeech@SearchToStun">
+        <AreaArray Radius="1.5" Effect="MercenarySlaynElementalEssenceLeech@ImpactSet"/>
+        <EditorCategories value="Race:Neutral,StandardHero:Mercenaries"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,ImmuneToAOE,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="MercenarySlaynElementalWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Amount value="178"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="SlaynVoidThrasherShooting@LM">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <ImpactEffect value="SlaynVoidThrasherShooting@Damage"/>
+        <AmmoUnit value="SlaynVoidThrasherShooting@Missile"/>
+        <Movers Link="SlaynVoidThrasherShooting@Mover" IfRangeLTE="75"/>
+        <Movers Link="SlaynVoidThrasherShooting@MoverBigDistance" IfRangeLTE="500"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="MercenarySlaynElementalEssenceLeech@CreateWarningPersistent">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <InitialDelay value="2"/>
+        <InitialEffect value="MercenarySlaynElementalEssenceLeech@SearchToStun"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="MercenarySlaynElementalEssenceLeech@ApplyStunBehavior" parent="CoreApplyStun">
+        <ValidatorArray value="TargetNotStasis"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <Behavior value="MercenarySlaynElementalEssenceLeech@Encased"/>
+    </CEffectApplyBehavior>
+</Catalog>

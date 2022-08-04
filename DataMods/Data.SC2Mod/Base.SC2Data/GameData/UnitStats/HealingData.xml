@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="CoreHealingTakenNegative01" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative01"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.01"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative02" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative02"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.02"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative03" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative03"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.03"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative04" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative04"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.04"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative05" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative05"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.05"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative06" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative06"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.06"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative07" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative07"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.07"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative08" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative08"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.08"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative09" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative09"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.09"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative10" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative10"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative11" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative11"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.11"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative12" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative12"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.12"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative13" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative13"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.13"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative14" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative14"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.14"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative15" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative15"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative16" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative16"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.16"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative17" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative17"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.17"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative18" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative18"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.18"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative19" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative19"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.19"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative20" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative20"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative21" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative21"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.21"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative22" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative22"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.22"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative23" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative23"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.23"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative24" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative24"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.24"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative25" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative25"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative26" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative26"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.26"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative27" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative27"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.27"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative28" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative28"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.28"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative29" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative29"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.29"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative30" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative30"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative31" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative31"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.31"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative32" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative32"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.32"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative33" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative33"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.33"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative34" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative34"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.34"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative35" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative35"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.35"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative36" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative36"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.36"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative37" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative37"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.37"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative38" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative38"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.38"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative39" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative39"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.39"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative40" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative40"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.4"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative41" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative41"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.41"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative42" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative42"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.42"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative43" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative43"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.43"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative44" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative44"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.44"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative45" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative45"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.45"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative46" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative46"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.46"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative47" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative47"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.47"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative48" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative48"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.48"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative49" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative49"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.49"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative50" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative50"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative51" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative51"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.51"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative52" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative52"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.52"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative53" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative53"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.53"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative54" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative54"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.54"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative55" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative55"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.55"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative56" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative56"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.56"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative57" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative57"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.57"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative58" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative58"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.58"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative59" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative59"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.59"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative60" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative60"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.6"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative61" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative61"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.61"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative62" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative62"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.62"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative63" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative63"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.63"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative64" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative64"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.64"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative65" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative65"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.65"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative66" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative66"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.66"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative67" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative67"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.67"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative68" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative68"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.68"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative69" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative69"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.69"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative70" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative70"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.7"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative71" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative71"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.71"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative72" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative72"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.72"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative73" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative73"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.73"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative74" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative74"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.74"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative75" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative75"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.75"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative76" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative76"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.76"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative77" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative77"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.77"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative78" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative78"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.78"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative79" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative79"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.79"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative80" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative80"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.8"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative81" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative81"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.81"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative82" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative82"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.82"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative83" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative83"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.83"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative84" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative84"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.84"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative85" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative85"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.85"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative86" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative86"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.86"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative87" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative87"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.87"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative88" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative88"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.88"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative89" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative89"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.89"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative90" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative90"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.9"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative91" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative91"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.91"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative92" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative92"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.92"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative93" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative93"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.93"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative94" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative94"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.94"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative95" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative95"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.95"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative96" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative96"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.96"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative97" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative97"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.97"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative98" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative98"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.98"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative99" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative99"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="-0.99"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenNegative100" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenNegative100"/>
+        <Modification>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive01" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive01"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.01"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive02" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive02"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.02"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive03" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive03"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.03"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive04" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive04"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.04"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive05" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive05"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.05"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive06" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive06"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.06"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive07" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive07"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.07"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive08" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive08"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.08"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive09" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive09"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.09"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive10" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive10"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive11" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive11"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.11"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive12" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive12"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.12"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive13" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive13"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.13"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive14" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive14"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.14"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive15" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive15"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive16" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive16"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.16"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive17" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive17"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.17"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive18" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive18"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.18"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive19" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive19"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.19"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive20" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive20"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive21" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive21"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.21"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive22" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive22"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.22"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive23" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive23"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.23"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive24" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive24"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.24"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive25" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive25"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive26" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive26"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.26"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive27" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive27"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.27"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive28" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive28"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.28"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive29" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive29"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.29"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive30" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive30"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive31" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive31"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.31"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive32" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive32"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.32"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive33" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive33"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.33"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive34" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive34"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.34"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive35" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive35"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.35"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive36" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive36"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.36"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive37" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive37"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.37"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive38" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive38"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.38"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive39" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive39"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.39"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive40" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive40"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.4"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive41" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive41"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.41"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive42" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive42"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.42"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive43" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive43"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.43"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive44" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive44"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.44"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive45" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive45"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.45"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive46" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive46"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.46"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive47" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive47"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.47"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive48" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive48"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.48"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive49" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive49"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.49"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive50" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive50"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive51" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive51"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.51"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive52" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive52"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.52"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive53" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive53"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.53"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive54" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive54"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.54"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive55" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive55"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.55"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive56" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive56"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.56"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive57" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive57"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.57"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive58" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive58"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.58"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive59" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive59"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.59"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive60" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive60"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.6"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive61" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive61"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.61"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive62" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive62"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.62"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive63" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive63"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.63"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive64" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive64"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.64"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive65" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive65"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.65"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive66" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive66"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.66"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive67" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive67"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.67"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive68" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive68"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.68"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive69" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive69"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.69"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive70" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive70"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.7"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive71" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive71"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.71"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive72" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive72"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.72"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive73" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive73"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.73"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive74" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive74"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.74"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive75" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive75"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.75"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive76" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive76"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.76"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive77" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive77"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.77"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive78" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive78"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.78"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive79" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive79"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.79"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive80" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive80"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.8"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive81" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive81"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.81"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive82" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive82"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.82"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive83" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive83"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.83"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive84" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive84"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.84"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive85" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive85"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.85"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive86" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive86"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.86"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive87" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive87"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.87"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive88" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive88"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.88"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive89" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive89"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.89"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive90" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive90"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.9"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive91" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive91"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.91"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive92" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive92"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.92"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive93" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive93"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.93"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive94" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive94"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.94"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive95" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive95"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.95"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive96" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive96"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.96"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive97" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive97"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.97"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive98" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive98"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.98"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive99" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive99"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="0.99"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive100" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive100"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive101" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive101"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.01"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive102" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive102"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.02"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive103" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive103"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.03"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive104" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive104"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.04"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive105" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive105"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.05"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive106" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive106"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.06"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive107" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive107"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.07"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive108" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive108"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.08"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive109" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive109"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.09"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive110" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive110"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive111" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive111"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.11"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive112" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive112"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.12"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive113" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive113"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.13"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive114" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive114"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.14"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive115" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive115"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive116" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive116"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.16"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive117" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive117"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.17"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive118" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive118"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.18"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive119" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive119"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.19"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive120" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive120"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive121" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive121"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.21"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive122" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive122"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.22"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive123" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive123"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.23"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive124" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive124"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.24"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive125" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive125"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive126" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive126"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.26"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive127" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive127"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.27"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive128" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive128"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.28"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive129" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive129"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.29"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive130" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive130"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive131" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive131"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.31"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive132" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive132"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.32"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive133" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive133"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.33"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive134" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive134"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.34"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive135" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive135"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.35"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive136" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive136"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.36"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive137" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive137"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.37"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive138" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive138"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.38"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive139" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive139"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.39"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive140" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive140"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.4"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive141" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive141"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.41"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive142" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive142"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.42"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive143" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive143"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.43"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive144" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive144"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.44"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive145" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive145"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.45"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive146" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive146"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.46"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive147" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive147"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.47"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive148" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive148"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.48"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive149" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive149"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.49"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive150" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive150"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive151" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive151"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.51"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive152" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive152"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.52"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive153" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive153"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.53"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive154" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive154"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.54"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive155" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive155"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.55"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive156" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive156"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.56"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive157" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive157"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.57"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive158" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive158"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.58"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive159" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive159"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.59"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive160" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive160"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.6"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive161" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive161"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.61"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive162" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive162"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.62"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive163" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive163"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.63"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive164" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive164"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.64"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive165" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive165"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.65"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive166" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive166"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.66"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive167" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive167"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.67"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive168" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive168"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.68"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive169" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive169"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.69"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive170" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive170"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.7"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive171" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive171"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.71"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive172" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive172"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.72"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive173" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive173"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.73"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive174" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive174"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.74"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive175" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive175"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.75"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive176" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive176"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.76"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive177" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive177"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.77"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive178" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive178"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.78"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive179" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive179"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.79"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive180" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive180"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.8"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive181" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive181"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.81"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive182" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive182"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.82"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive183" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive183"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.83"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive184" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive184"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.84"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive185" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive185"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.85"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive186" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive186"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.86"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive187" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive187"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.87"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive188" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive188"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.88"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive189" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive189"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.89"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive190" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive190"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.9"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive191" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive191"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.91"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive192" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive192"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.92"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive193" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive193"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.93"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive194" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive194"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.94"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive195" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive195"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.95"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive196" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive196"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.96"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive197" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive197"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.97"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive198" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive198"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.98"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive199" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive199"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="1.99"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CoreHealingTakenPositive200" parent="CoreHealingTakenParent">
+        <Name value="Behavior/Name/CoreHealingTakenPositive200"/>
+        <Modification>
+            <VitalRegenMultiplier index="Life" value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+</Catalog>

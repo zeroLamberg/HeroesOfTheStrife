@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectTarget id="SlaynVoidThrasherShooting">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <Effect index="0" value="SlaynVoidThrasherShooting@LM"/>
+        <Flags index="AbortOnAllianceChange" value="0"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Flags index="ReApproachable" value="0"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <TargetFilters value="-;Player,Ally,Neutral,Missile,Dead,Hidden"/>
+        <Range value="500"/>
+        <Arc value="59.9963"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BunkerAttack"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="MercenarySlaynElementalEssenceLeech">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <Effect index="0" value="MercenarySlaynElementalEssenceLeech@InitialSearch"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </Cost>
+        <CastIntroTime value="0.15"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercenarySlaynElementalEssenceLeech"/>
+    </CAbilEffectInstant>
+</Catalog>

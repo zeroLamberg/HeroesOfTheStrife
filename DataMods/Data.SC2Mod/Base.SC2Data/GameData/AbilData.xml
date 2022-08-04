@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <const id="ImmuneToAOE" path="CAbilEffectTarget.TargetFilters" value="Mechanical"/>
+    <const id="Merc" path="CAbilEffectTarget.TargetFilters" value="Robotic"/>
+    <const id="NoTowerAggro" path="CAbilEffectTarget.TargetFilters" value="Armored"/>
+    <const id="ImmuneToFriendlyAbilities" path="CAbilEffectTarget.TargetFilters" value="Hover"/>
+    <const id="ImmuneToSkillshots" path="CAbilEffectTarget.TargetFilters" value="Massive"/>
+    <const id="Minion" path="CAbilEffectTarget.TargetFilters" value="Biological"/>
+    <const id="MapCreature" path="CAbilEffectTarget.TargetFilters" value="User1"/>
+    <const id="Creep" path="CAbilEffectTarget.TargetFilters" value="Light"/>
+    <const id="NoMinionAggro" path="CAbilEffectTarget.TargetFilters" value="Psionic"/>
+    <CAbil default="1">
+        <AbilityCategories index="User1" value="1"/>
+        <EditorCategories value=""/>
+    </CAbil>
+    <CAbilArmMagazine default="1">
+        <EditorCategories value=""/>
+    </CAbilArmMagazine>
+    <CAbilAttack default="1">
+        <EditorCategories value=""/>
+    </CAbilAttack>
+    <CAbilAttackModifier default="1">
+        <EditorCategories value=""/>
+    </CAbilAttackModifier>
+    <CAbilBattery default="1">
+        <EditorCategories value=""/>
+    </CAbilBattery>
+    <CAbilBehavior default="1">
+        <AbilityCategories index="User1" value="1"/>
+        <EditorCategories value=""/>
+    </CAbilBehavior>
+    <CAbilBuild default="1">
+        <EditorCategories value=""/>
+    </CAbilBuild>
+    <CAbilBuildable default="1">
+        <EditorCategories value=""/>
+    </CAbilBuildable>
+    <CAbilEffect default="1">
+        <EditorCategories value=""/>
+    </CAbilEffect>
+    <CAbilEffectInstant default="1">
+        <SharedFlags index="DisableWhileDead" value="0"/>
+        <AbilityCategories index="User1" value="1"/>
+        <PrepEffect value="DismountDecloakCasterSet"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <CmdButtonArray index="Execute" AutoQueueId="Spell">
+            <Flags index="Continuous" value="1"/>
+        </CmdButtonArray>
+        <EditorCategories value=""/>
+        <Effect index="0" removed="1"/>
+        <AINotifyEffect value=""/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget default="1">
+        <OrderArray index="0" Model="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3" LineTexture="assets\Textures\storm_waypointline.dds"/>
+        <SharedFlags index="DisableWhileDead" value="0"/>
+        <AbilityCategories index="User1" value="1"/>
+        <PrepEffect value="DismountDecloakCasterSet"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Flags index="UninterruptibleTurn" value="1"/>
+        <CmdButtonArray index="Execute" AutoQueueId="Spell">
+            <Flags index="AllowMinimap" value="0"/>
+            <Flags index="AllowSelfCast" value="1"/>
+        </CmdButtonArray>
+        <Effect index="0" removed="1"/>
+        <AINotifyEffect value=""/>
+        <EditorCategories value=""/>
+    </CAbilEffectTarget>
+    <CAbilHarvest default="1">
+        <EditorCategories value=""/>
+    </CAbilHarvest>
+    <CAbilInventory default="1">
+        <EditorCategories value=""/>
+    </CAbilInventory>
+    <CAbilMerge default="1">
+        <EditorCategories value=""/>
+    </CAbilMerge>
+    <CAbilMergeable default="1">
+        <EditorCategories value=""/>
+    </CAbilMergeable>
+    <CAbilMorph default="1">
+        <EditorCategories value=""/>
+    </CAbilMorph>
+    <CAbilMorphPlacement default="1">
+        <EditorCategories value=""/>
+    </CAbilMorphPlacement>
+    <CAbilMove default="1">
+        <EditorCategories value=""/>
+    </CAbilMove>
+    <CAbilQueue default="1">
+        <EditorCategories value=""/>
+    </CAbilQueue>
+    <CAbilQueueable default="1">
+        <EditorCategories value=""/>
+    </CAbilQueueable>
+    <CAbilRally default="1">
+        <EditorCategories value=""/>
+    </CAbilRally>
+    <CAbilResearch default="1">
+        <EditorCategories value=""/>
+    </CAbilResearch>
+    <CAbilSpecialize default="1">
+        <EditorCategories value=""/>
+    </CAbilSpecialize>
+    <CAbilStop default="1">
+        <EditorCategories value=""/>
+    </CAbilStop>
+    <CAbilTrain default="1">
+        <EditorCategories value=""/>
+    </CAbilTrain>
+    <CAbilTransport default="1">
+        <EditorCategories value=""/>
+    </CAbilTransport>
+    <CAbilWarpTrain default="1">
+        <EditorCategories value=""/>
+    </CAbilWarpTrain>
+    <CAbilWarpable default="1">
+        <EditorCategories value=""/>
+    </CAbilWarpable>
+    <CAbilEffectTarget default="1" id="CaptureMacGuffinParent">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+        <SharedFlags index="DisableWhileDead" value="1"/>
+        <Activity value="Abil/Activity/CaptureMacGuffinParent"/>
+        <Flags index="AllowMovement" value="0"/>
+        <Flags index="AllowTurningSuppressed" value="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="UninterruptibleTurn" value="0"/>
+        <TargetFilters value="-;Self,Player,Enemy"/>
+        <Range value="1.5"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <CancelableArray index="Channel" value="1"/>
+        <ValidatedArray index="Approach" value="0"/>
+        <ValidatedArray index="Channel" value="0"/>
+        <CastOutroTimeEffect value="HeroGenericCaptureMacGuffin@CreatePersistent"/>
+        <ProgressButtonArray index="Channel" value="HeroGenericCaptureMacGuffin"/>
+        <CmdButtonArray index="Execute" AutoQueueId="CaptureMacGuffin" DefaultButtonFace="HeroGenericCaptureMacGuffin" PreemptLevel="-1">
+            <Flags index="AllowMinimap" value="1"/>
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget default="1" id="CoreSkillshotDashParent">
+        <PrepEffect value="DismountDecloakCasterSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Approach" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <OrderArray index="0" Model="Assets\UI\Feedback\WayPointConfirm\WayPointConfirm.m3" LineTexture="assets\Textures\storm_waypointline.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget default="1" id="HeroGenericSelfTeleportAbility">
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Arc value="360"/>
+        <ArcSlop value="0"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <ValidatedArray index="Approach" value="0"/>
+        <ValidatedArray index="Prep" value="0"/>
+        <ValidatedArray index="Channel" value="0"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget default="1" id="SmartTargetingRightClickParent">
+        <OrderArray index="0" Model="Assets\UI\Cursors\WayPointAttack_Void\WayPointAttack_Void.m3" LineTexture="Assets\Textures\WayPointLine.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+        <SharedFlags index="DisableWhileDead" value="1"/>
+        <AbilityCategories index="User1" value="0"/>
+        <Flags index="AllowMovement" value="0"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Flags index="UninterruptibleTurn" value="0"/>
+        <Flags index="UpdateTarget" value="1"/>
+        <TargetFilters value="-;Self,Player,Ally,Dead,Hidden,Invulnerable"/>
+        <Range value="5.5"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" AutoQueueId="" DefaultButtonFace="SmartTargetingRightClick">
+            <Flags index="AllowMinimap" value="1"/>
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroGenericHearthstone">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <Activity value="Abil/Hearthstone/Activity"/>
+        <Effect value="HeroGenericHearthstone@TeleportSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <CastIntroTime value="6"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <PreemptableArray index="Approach" value="0"/>
+        <PreemptableArray index="Prep" value="0"/>
+        <PreemptableArray index="Cast" value="0"/>
+        <PreemptableArray index="Channel" value="0"/>
+        <PreemptableArray index="Finish" value="0"/>
+        <ValidatedArray index="Approach" value="0"/>
+        <ValidatedArray index="Channel" value="0"/>
+        <ProgressButtonArray index="Cast" value="HeroGenericHearthstone"/>
+        <CmdButtonArray index="Execute" AutoQueueId="Hearthstone" DefaultButtonFace="HeroGenericHearthstone" Requirements="HallOfStormsHasNoProtection">
+            <Flags index="Continuous" value="0"/>
+        </CmdButtonArray>
+        <PrepEffect index="0" value="HeroGenericHearthstone@PrepSet"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="TemplateDashAbilityApplyForce">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Effect value="TemplateDashAbilityApplyForce@InitialPersistent"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="1"/>
+        </Cost>
+        <Range value="500"/>
+        <FinishTime value="0.25"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="TemplateDashAbilityApplyForce@InitialPersistent"/>
+        <EffectRange index="0" value="4,1000"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TemplateDashAbilityApplyForce"/>
+        <OrderArray index="0" Model="Assets\UI\Feedback\WayPointConfirm\WayPointConfirm.m3" LineTexture="assets\Textures\storm_waypointline.dds"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="TemplateDashAbilityIssueMoveOrder">
+        <Effect value="TemplateDashAbilityIssueMoveOrder@Persistent"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="1"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="14.9963"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <CursorEffect value="TemplateDashAbilityIssueMoveOrder@TargetSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TemplateDashAbilityIssueMoveOrder"/>
+        <OrderArray index="0" Model="Assets\UI\Feedback\WayPointConfirm\WayPointConfirm.m3" LineTexture="assets\Textures\storm_waypointline.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+    </CAbilEffectTarget>
+    <CAbilAttack id="attack">
+        <OrderArray index="0" Model="assets\UI\Feedback\UI_Confirmation_Attack_Ground\UI_Confirmation_Attack_Ground.m3"/>
+        <SharedFlags index="TargetCursorHiddenForInvalidTargets" value="1"/>
+        <SupportedFilters value="-;Self,Player,Ally,Neutral,Outer"/>
+    </CAbilAttack>
+    <CAbilEffectTarget id="GhostShipBombardChargedStarboard">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="BattleshipBombardPersistentStarboard"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <Cost>
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="10"/>
+                <CountUse value="1"/>
+                <Link value="Abil/BattleshipBombardCharged"/>
+            </Charge>
+            <Cooldown Link="Abil/BattleshipBombardCharged"/>
+        </Cost>
+        <TargetFilters value="Structure;Player,Ally,Neutral"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GhostShipCannonBombard"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MercLanerOgreBuffAbility2HeroOnly">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="MercLanerOgreBuffApplyBehaviorHeroOnly"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="Heroic,Visible;Self,Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Dead"/>
+        <TargetSorts>
+            <SortArray value="TSLifeSmallestFirst"/>
+        </TargetSorts>
+        <Range value="5"/>
+        <AutoCastFilters value="Heroic,Visible;Self,Neutral,Enemy,Structure,Hover"/>
+        <AutoCastRange value="5"/>
+        <AINotifyEffect value="MercLanerOgreBuffAbility"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercLanerOgreBuffAbility"/>
+        <OrderArray index="0">
+            <DisplayType value="Legacy"/>
+            <Color value="0,0,0,0"/>
+            <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+            <LineTexture value=""/>
+        </OrderArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MercLanerOgreBuffAbilityHeroOnly">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="MercLanerOgreBuffApplyBehaviorHeroOnly"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="Heroic,Visible;Self,Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Dead"/>
+        <TargetSorts>
+            <SortArray value="TSLifeSmallestFirst"/>
+        </TargetSorts>
+        <Range value="5"/>
+        <AutoCastFilters value="Heroic,Visible;Self,Neutral,Enemy,Structure,Hover"/>
+        <AutoCastRange value="5"/>
+        <AINotifyEffect value="MercLanerOgreBuffAbility"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercLanerOgreBuffAbility"/>
+        <OrderArray index="0">
+            <DisplayType value="Legacy"/>
+            <Color value="0,0,0,0"/>
+            <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+            <LineTexture value=""/>
+        </OrderArray>
+    </CAbilEffectTarget>
+    <CAbilMorph id="TowerDeadMorph">
+        <AbilSetId value="TowerDeadMorph"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TowerDeadMorph">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="TownCannonTowerDead" RandomDelayMax="0.5"/>
+    </CAbilMorph>
+    <CAbilEffectTarget id="GhostShipBombardChargedPort">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="BattleshipBombardPersistent"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <Cost>
+            <Charge>
+                <CountMax value="100"/>
+                <CountStart value="10"/>
+                <CountUse value="1"/>
+                <Link value="Abil/BattleshipBombardCharged"/>
+            </Charge>
+            <Cooldown Link="Abil/BattleshipBombardCharged"/>
+        </Cost>
+        <TargetFilters value="Structure;Player,Ally,Neutral"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GhostShipCannonBombard"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="GeneratedRegenGlobePickup">
+        <Effect value="GeneratedRegenGlobePickupSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Range value="2"/>
+        <AutoCastFilters value="Heroic;Player,Ally,Enemy,Mechanical,Massive,Structure,Missile,Item,Stasis,Dead"/>
+        <AutoCastRange value="1.25"/>
+        <AutoCastValidatorArray value="NoStageDiveChannel"/>
+        <OrderArray index="0">
+            <DisplayType value="Legacy"/>
+            <Color value="0,0,0,0"/>
+            <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+            <LineTexture value=""/>
+        </OrderArray>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MercLanerOgreBruiserTaunt">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="TauntSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="3"/>
+        </Cost>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Structure,Heroic,RawResource,HarvestableResource,Missile,Buried,Stasis,Invulnerable,Passive"/>
+        <Range value="12"/>
+        <AutoCastFilters value="Visible;Self,Player,Ally,Neutral"/>
+        <AutoCastRange value="12"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercLanerOgreBruiserTaunt"/>
+        <OrderArray index="0">
+            <DisplayType value="Legacy"/>
+            <Color value="0,0,0,0"/>
+            <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+            <LineTexture value=""/>
+        </OrderArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MercLanerOgreBuffAbilityOgreOnly">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="MercLanerOgreBuffApplyBehaviorOgreOnly"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Heroic,Dead"/>
+        <TargetSorts>
+            <SortArray value="TSLifeSmallestFirst"/>
+        </TargetSorts>
+        <Range value="5"/>
+        <AutoCastFilters value="Biological,Visible;Self,Neutral,Enemy,Structure,Hover,Heroic"/>
+        <AutoCastRange value="5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercLanerOgreBuffAbility"/>
+        <OrderArray index="0">
+            <DisplayType value="Legacy"/>
+            <Color value="0,0,0,0"/>
+            <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+            <LineTexture value=""/>
+        </OrderArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MercDefenderOgreBuffAbility">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="MercLanerOgreBuffApplyBehaviorOgreOnly"/>
+        <Range value="5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercLanerOgreBuffAbility"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Heroic,Dead"/>
+        <OrderArray index="0">
+            <DisplayType value="Legacy"/>
+            <Color value="0,0,0,0"/>
+            <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+            <LineTexture value=""/>
+        </OrderArray>
+        <Flags index="RequireTargetVision" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="DismountTest">
+        <Effect value="MountTestRemoveBehavior"/>
+        <Cost>
+            <Charge Link="Abil/Dismount"/>
+            <Cooldown Link="Abil/Dismount" Location="Unit"/>
+        </Cost>
+        <CastIntroTime value="0"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroGenericMount@Dismount"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="MountTest">
+        <Effect value="MountTestApplyBehavior"/>
+        <Cost>
+            <Charge Link="Abil/Mount"/>
+            <Cooldown Link="Abil/Mount" Location="Unit"/>
+        </Cost>
+        <CastIntroTime value="0"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroGenericMount@SummonMount"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+    </CAbilEffectInstant>
+    <CAbilAttack id="AttackAlly" parent="attack">
+        <Name value="Abil/Name/AttackAlly"/>
+        <TargetMessage value="Abil/TargetMessage/AttackAlly"/>
+        <SupportedFilters value="-;Self,Player,Ally,Neutral,Psionic"/>
+        <SmartFilters value="-;Player,Ally,Neutral,Psionic"/>
+        <SharedFlags index="TargetCursorHiddenForInvalidTargets" value="0"/>
+    </CAbilAttack>
+    <CAbilMove id="move">
+        <FollowFilters value="-;Player,Ally,Neutral"/>
+        <MoveFilters value="-;Player,Ally,Neutral"/>
+        <Flags index="ShowIfImmobile" value="1"/>
+        <Flags index="UpdateTarget" value="1"/>
+        <OrderArray index="0" Model="Assets\UI\Cursors\Storm_UI_Confirmation_Move_Ground\Storm_UI_Confirmation_Move_Ground.m3" LineTexture="Assets\Textures\Storm_WayPointLine.dds"/>
+        <OrderArray index="1" DisplayType="Rally" Model="Assets\UI\Cursors\Storm_UI_Confirmation_Move_Ground\Storm_UI_Confirmation_Move_Ground.m3" LineTexture="Assets\Textures\Storm_WayPointLine.dds"/>
+    </CAbilMove>
+    <CAbilEffectTarget id="HeroGenericFountainDrink">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroGenericFountainDrink@InitialSet"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Cost>
+            <Charge Link="Abil/MoonwellDrink"/>
+            <Cooldown Link="Abil/Moonwell" Location="Unit" TimeUse="10"/>
+        </Cost>
+        <TargetFilters value="Structure;Neutral,Enemy,Dead"/>
+        <Range value="1"/>
+        <Arc value="360"/>
+        <SmartPriority value="2"/>
+        <SmartValidatorArray value="TownStructureMoonwell"/>
+        <SmartValidatorArray value="HeroGenericFountainDrink@NoCooldown"/>
+        <AINotifyEffect value="HeroGenericFountainDrink@InitialSet"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroGenericFountainDrink"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroGenericCaptureMacGuffin" parent="CaptureMacGuffinParent">
+        <Activity value="Abil/CaptureMacGuffin/Activity"/>
+        <Effect value="HeroGenericCaptureMacGuffin@CreatePersistent"/>
+        <AINotifyEffect value="HeroGenericCaptureMacGuffin@CreatePersistent"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroGenericCaptureMacGuffinTwo" parent="CaptureMacGuffinParent">
+        <Activity value="Abil/Activity/HeroGenericCaptureMacGuffinTwo"/>
+        <Effect value="HeroGenericCaptureMacGuffinTwo@CreatePersistent"/>
+        <CastOutroTimeEffect index="0" value="HeroGenericCaptureMacGuffinTwo@CreatePersistent"/>
+        <AINotifyEffect value="HeroGenericCaptureMacGuffinTwo@CreatePersistent"/>
+        <ProgressButtonArray index="Channel" value="HeroGenericCaptureMacGuffinTwo"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroGenericCaptureMacGuffinTwo"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="LeaveVehicle">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="LeaveVehicleSwitch"/>
+        <Cost/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LeaveVehicle"/>
+        <Flags index="BestUnit" value="1"/>
+        <CancelableArray index="Channel" value="1"/>
+        <ValidatedArray index="Approach" value="0"/>
+        <ValidatedArray index="Channel" value="0"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="UseVehicle">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="UseVehiclePersistent"/>
+        <Flags index="RequireTargetVision" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <TargetFilters value="-;Self,Player,Enemy"/>
+        <Range value="2"/>
+        <CancelableArray index="Channel" value="1"/>
+        <ValidatedArray index="Approach" value="0"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UseVehicle"/>
+        <Cost/>
+        <Activity value="Activity/UseVehicle"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <CastOutroTimeEffect value="UseVehiclePersistent"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroGenericMount@Dismount">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Common"/>
+        <DataCollection value="HeroGenericDismount"/>
+        <Effect value="HeroGenericMount@RemoveMountBehavior"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.125"/>
+        </Cost>
+        <CastIntroTime value="0"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <PauseableArray index="Cast" value="0"/>
+        <PreemptableArray index="Approach" value="0"/>
+        <PreemptableArray index="Prep" value="0"/>
+        <PreemptableArray index="Cast" value="0"/>
+        <PreemptableArray index="Channel" value="0"/>
+        <PreemptableArray index="Finish" value="0"/>
+        <SetLastTarget value="Move"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroGenericMount@Dismount" Requirements="HeroGenericMount@IsMounted"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroGenericMount">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Common"/>
+        <Activity value="Abil/Mount/Activity"/>
+        <Effect value="HeroGenericMount@ApplyMountBehavior"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="4"/>
+        </Cost>
+        <CastIntroTime value="1"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <PauseableArray index="Approach" value="0"/>
+        <PauseableArray index="Prep" value="0"/>
+        <PauseableArray index="Cast" value="0"/>
+        <PauseableArray index="Channel" value="0"/>
+        <PauseableArray index="Finish" value="0"/>
+        <PreemptableArray index="Approach" value="0"/>
+        <PreemptableArray index="Prep" value="0"/>
+        <PreemptableArray index="Cast" value="0"/>
+        <PreemptableArray index="Channel" value="0"/>
+        <PreemptableArray index="Finish" value="0"/>
+        <ValidatedArray index="Approach" value="0"/>
+        <ValidatedArray index="Channel" value="0"/>
+        <SetLastTarget value="Move"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroGenericMount@SummonMount" Requirements="HeroGenericMount@NotMounted"/>
+    </CAbilEffectInstant>
+    <CAbilInventory id="StormInventory">
+        <TargetFilters value="Item;-"/>
+        <MaxDropRange value="1"/>
+        <InfoArray/>
+        <InfoArray/>
+        <InfoArray/>
+        <InfoArray/>
+        <InfoArray/>
+        <InfoArray/>
+        <SharedFlags index="DisableWhileDead" value="0"/>
+        <SharedFlags index="TargetCursorHiddenForInvalidTargets" value="1"/>
+        <SharedFlags index="RegisterChargeEvent" value="1"/>
+        <SharedFlags index="RegisterCooldownEvent" value="1"/>
+        <CmdButtonArray index="PawnInstant" Requirements="Disabled"/>
+    </CAbilInventory>
+    <CAbilEffectTarget id="RegenGlobePickup">
+        <Effect value="RegenGlobePickupSet"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Range value="2"/>
+        <AutoCastFilters value="Heroic;Player,Neutral,Enemy,Mechanical,Massive,Structure,Missile,Item,Stasis,Dead"/>
+        <AutoCastRange value="1.25"/>
+        <AutoCastValidatorArray value="NoStageDiveChannel"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units"/>
+    </CAbilEffectTarget>
+    <CAbilQueue id="Que1Passive">
+        <QueueSize value="1"/>
+        <Flags index="Passive" value="1"/>
+        <SharedFlags index="DisableWhileDead" value="0"/>
+    </CAbilQueue>
+    <CAbilEffectInstant id="DebugUnknownAbility">
+        <CmdButtonArray index="Execute" DefaultButtonFace="DebugUnknownAbility"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="SmartCommandUnitInteraction">
+        <Effect value="SmartCommandUnitInteractionSwitch"/>
+        <Flags index="AllowTurningSuppressed" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Range value="3"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SmartCommandUnitInteraction"/>
+    </CAbilEffectTarget>
+</Catalog>

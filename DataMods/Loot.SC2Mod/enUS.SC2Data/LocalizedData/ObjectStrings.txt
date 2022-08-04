@@ -1,0 +1,19 @@
+
+Actor/EditorPrefix/DoubloonMountVar01TextureSwap=Mount -
+Actor/EditorPrefix/MountDoubloonVar02TextureSwap=Mount -
+Actor/EditorPrefix/MountDoubloonVar03TextureSwap=Mount -
+Actor/EditorPrefix/MountHearthstoneCardVar02TextureSwap=Mount -
+Actor/EditorPrefix/MountHearthstoneCardVar03TextureSwap=Mount -
+Actor/EditorPrefix/MountHearthstoneCardVar2TextureSwap=Mount -
+Actor/Name/MountDoubloonVar02TextureSwap=Doubloon Var02 Texture Swap (Diablo)
+Actor/Name/MountDoubloonVar03TextureSwap=Doubloon Var03 Texture Swap (Zerg)
+Actor/Name/MountHearthstoneCardVar02TextureSwap=Hearthstone Card Var02 Texture Swap (Brown)
+Actor/Name/MountHearthstoneCardVar03TextureSwap=Hearthstone Card Var03 Texture Swap (Red)
+Model/EditorPrefix/MountBlackheartsDoubloon=Mount -
+Model/EditorPrefix/MountBlackheartsDoubloonStore=Mount -
+Model/EditorPrefix/MountHearthstoneCard=Mount -
+Model/EditorPrefix/MountHearthstoneCardStore=Mount -
+Model/Name/MountBlackheartsDoubloon=Blackhearts Doubloon
+Model/Name/MountBlackheartsDoubloonStore=Blackhearts Doubloon (Store)
+Model/Name/MountHearthstoneCard=Hearthstone Card
+Model/Name/MountHearthstoneCardStore=Hearthstone Card (Store)

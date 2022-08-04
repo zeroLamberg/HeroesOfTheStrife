@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAttachMethodPattern id="MercenaryVanguardWeapon@AMPattern">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Driver value="MercenaryVanguardWeapon@LM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="MercenaryVanguardWeapon@AMPatternStructure">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Driver value="MercenaryVanguardWeapon@StructureLM"/>
+    </CAttachMethodPattern>
+</Catalog>

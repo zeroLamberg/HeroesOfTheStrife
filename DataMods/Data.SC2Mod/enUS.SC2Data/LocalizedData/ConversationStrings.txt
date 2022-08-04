@@ -1,0 +1,3 @@
+﻿Character/Name/DragonKnight=Dragon Knight
+Character/Name/Necromancer=Necromancer
+Conversation/CConversation/Group00001=User Choices

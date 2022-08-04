@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="HeroMalfurionInnervate@Cooldown">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="5"/>
+        <DisableValidatorArray value="TargetNotHidden"/>
+        <DisableValidatorArray value="TargetNotStasisExceptTimeStop"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentTranquilitySerenity@Marker">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="TargetNotStasisExceptTimeStop"/>
+        <Duration value="0.25"/>
+    </CBehaviorBuff>
+    <CBehaviorUnitTracker id="HeroMalfurionRegrowth@TrackedUnitCounter">
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <TrackingValidatorArray value="TargetIsHero"/>
+        <TrackingValidatorArray value="TargetIsAlly"/>
+    </CBehaviorUnitTracker>
+    <CBehaviorBuff id="HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff" parent="CoreSprint">
+        <InfoIcon value="Assets\Textures\btn-missing-kaeo.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentRegrowthLifeseed"/>
+        <Modification UnifiedMoveSpeedFactor="0.06"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff" parent="CoreSprint">
+        <InfoIcon value="Assets\Textures\btn-missing-kaeo.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <DisableValidatorArray value="HeroMalfurionTalentRegrowthLifeseed@CompareTrackedUnitsCount"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentRegrowthLifeseed"/>
+        <MaxStackCount value="4"/>
+        <Modification UnifiedMoveSpeedFactor="0.06"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentEntanglingRootsDangerousRoots@FlatDamageBonus" parent="CoreQuestStackFlatDamageSpellParent">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <DamageResponse>
+            <ModifyAmount value="8">
+                <AccumulatorArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots@DamageConstant"/>
+            </ModifyAmount>
+            <RequireEffectArray value="HeroMalfurionTreant@WeaponDamage"/>
+            <ValidatorArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentElunesChosen@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="75"/>
+        </Cost>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Mana.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentElunesChosen"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="75"/>
+            </Cost>
+        </DamageResponse>
+        <TechAliasArray value="QuestData Limited"/>
+        <RefreshEffect value="HeroMalfurionTalentElunesChosen@TokenCounterController"/>
+        <FinalEffect value="HeroMalfurionTalentElunesChosen@ResetTokenCounter"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="50"/>
+        </Cost>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_EntanglingRoots_b.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <RefreshEffect value="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounterController"/>
+        <FinalEffect value="HeroMalfurionTalentEntanglingRootsDangerousRoots@ResetTokenCounter"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="50"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="30"/>
+        </Cost>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <TechAliasArray value="QuestData ResetOnDeath"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire"/>
+        <RefreshEffect value="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounterController"/>
+        <FinalEffect value="HeroMalfurionTalentMoonfireHinderingMoonfire@ResetTokenCounter"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="30"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentInnervateMoonlitHarmony@TalentCarry">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Modification>
+            <VitalRegenMultiplier index="Energy" value="1.5"/>
+        </Modification>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <PeriodicEffect value="HeroMalfurionTalentInnervateMoonlitHarmony@CooldownModifier"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentMoonfireFullMoonfire@DamageDealtDebuff" parent="CoreDamageReduction">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RemoveValidatorArray index="0" value="HeroMalfurionTalentMoonfireFullMoonfire"/>
+        <MaxStackCount value="5"/>
+        <Duration value="7"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-5"/>
+            <AttributeChangeArray index="1" Points="-5"/>
+            <AttributeChangeArray Attribute="CategoryDebuffSpellPower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentInnervateRevitalize@SpellPower" parent="CoreUnitStatsModificator">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="0"/>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Innerrvate.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentInnervateRevitalize"/>
+        <MaxStackCount value="5"/>
+        <Duration value="10"/>
+        <Modification>
+            <AttributeChangeArray index="17" Points="5"/>
+        </Modification>
+        <BuffFlags index="RefreshStack" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentTwilightDreamAstralCommunion@ArmorDebuff" parent="CoreUnitStatsModificator">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentTwilightDreamAstralCommunion"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-20"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentCourseofLife@CarryBehavior" parent="CoreUnitStatsModificator">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentCourseofLife"/>
+        <Modification>
+            <VitalMaxFractionArray index="Life" value="-0.15"/>
+            <AttributeChangeArray index="16" Points="30"/>
+            <AttributeChangeArray index="17" Points="30"/>
+            <AttributeChangeArray index="18" Points="30"/>
+            <AttributeChangeArray Attribute="CategoryBuffSpellPower"/>
+        </Modification>
+        <BehaviorCategories index="TimedLife" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentNaturesCleanse" parent="CoreUnstoppableParent">
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_Cleanse.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionRegrowthNaturesProtection@Controller" parent="CoreTalentBehaviorParent">
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <DisableValidatorArray value="HeroMalfurionRegrowthNaturesProtection"/>
+        <RemoveValidatorArray value="HeroMalfurionRegrowth@TargetHasRegrowth"/>
+        <InitialEffect value="HeroMalfurionRegrowthNaturesProtection@Switch"/>
+        <PeriodicEffect value="HeroMalfurionRegrowthNaturesProtection@Switch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionRegrowthNaturesProtection@LifeLT33" parent="CoreUnitStatsModificator">
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionRegrowthNaturesProtection"/>
+        <RemoveValidatorArray value="HeroMalfurionRegrowth@TargetHasRegrowth"/>
+        <RemoveValidatorArray value="TargetLifeLT33Percent"/>
+        <Modification>
+            <AttributeChangeArray index="8" Points="75"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentTranquilitySerenity@Armor" parent="CoreUnitStatsModificator">
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Tranquility.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentTranquilitySerenity@TargetHasMarker"/>
+        <Duration value="10"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionRegrowth@PlayerUI">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Malfurion"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentEntanglingRootsOvergrownPath@ArmorDebuff" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentEntanglingRootsOvergrownPath"/>
+        <RemoveValidatorArray value="HeroMalfurionEntanglingRoots@TargetIsRootedCasterRequired"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-15"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionRegrowthNaturesProtection@LifeGE33" parent="CoreUnitStatsModificator">
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="HeroMalfurionRegrowthNaturesProtection"/>
+        <RemoveValidatorArray value="HeroMalfurionRegrowth@TargetHasRegrowth"/>
+        <RemoveValidatorArray value="TargetLifeGE33Percent"/>
+        <Modification>
+            <AttributeChangeArray index="8" Points="25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTalentRegrowthLifeseed" parent="CoreTalentBehaviorParent">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <RemoveValidatorArray value="TargetLifeFull"/>
+        <RemoveValidatorArray value="HeroMalfurionTalentRegrowthLifeseed"/>
+        <InitialEffect value="HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingInfinity"/>
+        <RefreshEffect value="HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingInfinity"/>
+        <FinalEffect value="HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingTimed"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionEntanglingRoots@DamageBehavior" parent="CoreDoT">
+        <InfoIcon value="Assets\Icons\Common_LAO\Skills\Summoner\sm_skill_01_3.DDS"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="1.51"/>
+        <Period value="0.25"/>
+        <PeriodicEffect value="HeroMalfurionEntanglingRoots@DamageImpactSet"/>
+        <PeriodicDisplayEffect value="HeroMalfurionEntanglingRoots@Damage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionEntanglingRoots@RootBehavior" parent="CoreRoot">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="1.5"/>
+        <InitialEffect value="HeroMalfurionTalentEntanglingRootsOvergrownPath@ApplyArmorDebuff"/>
+        <PeriodicEffect value="HeroMalfurionTalentEntanglingRootsOvergrownPath@ApplyArmorDebuff"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionEntanglingRoots@TimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <InitialEffect value="HeroMalfurionEntanglingRoots@CreatePersistent"/>
+        <Modification>
+            <StateFlags index="Benign" value="1"/>
+        </Modification>
+        <Duration value="3.75"/>
+        <FinalEffect value="TimedLifeFate"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionInnervate">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <PeriodicEffect value="HeroMalfurionInnervate@PeriodicSet"/>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Innerrvate.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionMoonfire@Reveal" parent="CoreReveal">
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Moonfire.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionRegrowth">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Regrowth.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="12"/>
+        <Period value="1"/>
+        <PeriodCount value="12"/>
+        <InitialEffect value="HeroMalfurionRegrowth@PeriodicHealingInitialSet"/>
+        <PeriodicEffect value="HeroMalfurionRegrowth@PeriodicHealingPeriodicSet"/>
+        <PeriodicDisplayEffect value="HeroMalfurionRegrowth@PeriodicHealing"/>
+        <DamageResponse Handled="HeroMalfurionTalentNaturesCleanse@ModifyCooldown" DamageValue="Original"/>
+        <FinalEffect value="HeroMalfurionRegrowth@RemoveTrackedUnit"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTranquility">
+        <Alignment value="Positive"/>
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Icons\Hero_Malfurion\Icon_Hero_Malfurion_Tranquility.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="10"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="HeroMalfurionTranquility@PeriodicSet"/>
+        <PeriodicEffect value="HeroMalfurionTranquility@PeriodicSet"/>
+        <Modification>
+            <AbilLinkDisableArray value="HeroGenericMount"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTreant@TimedLife" parent="CoreTimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Duration value="12"/>
+        <FinalEffect value="TimedLifeFate"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroMalfurionTwilightDream@Silence" parent="CoreSilence">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Duration value="3"/>
+    </CBehaviorBuff>
+</Catalog>

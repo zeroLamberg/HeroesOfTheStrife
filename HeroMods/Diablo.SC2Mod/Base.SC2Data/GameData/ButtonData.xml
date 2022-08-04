@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="HeroDiabloTalentCruelty" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Combo_1.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentHellgate" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Common_General\Icon_General_BoltOfTheStorm.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentLightningBreathHellstorm" parent="CoreButtonParentHideInfo">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_LightningBreath.dds"/>
+        <HidesForSimpleText value="0"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentApocalypseDyingBreath" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Apocalypse.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentOverpowerOverpoweringNightmare" parent="CoreButtonParentHideInfo">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Overpower.dds"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentDevilChargeDomination" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentMalevolence" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentFireStompDebilitatingFlames" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentFireStompHellfire" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentDevilChargeDevastatingCharge" parent="CoreButtonParentHideInfo">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentDiabolicalMomentum" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Combo_1.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentFireStompEternalFlames" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentLifeLeech" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_AutoAttack_Heal.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentDevilChargeSacrificialSoul" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentFireStompSoulstotheFlame" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentSoulShield" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Common_General\Icon_General_SpellShield.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentBlackSoulstoneDevilsDue" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentFeastonFear" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Combo_1.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloTalentLordofTerror" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_LordOfTerror.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloDevilCharge" parent="CoreButtonParent">
+        <TooltipAppender Validator="DiabloBucket_DevilCharge_HasFromTheShadows" Face="DiabloBucket_DevilCharge_FromTheShadows"/>
+        <TooltipAppender Validator="DiabloBucket_DevilCharge_HasDevastatingCharge" Face="DiabloBucket_DevilCharge_DevastatingCharge"/>
+        <TooltipAppender Validator="DiabloBucket_DevilCharge_HasDomination" Face="DiabloBucket_DevilCharge_Domination"/>
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloBlackSoulstone" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloLightningBreath" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroDiabloTalentLightningBreathHellstorm" Text="Button/SimpleDisplayText/HeroDiabloTalentLightningBreathHellstorm" Face="HeroDiabloTalentLightningBreathHellstorm"/>
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_LightningBreath.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <HidesForSimpleText value="0"/>
+    </CButton>
+    <CButton id="HeroDiabloApocalypse" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Apocalypse.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloLightningBreath@Cancel" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\hud_btn_bg_ability_cancel.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloFireStomp" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+    <CButton id="HeroDiabloOverpower" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Overpower.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CButton>
+</Catalog>

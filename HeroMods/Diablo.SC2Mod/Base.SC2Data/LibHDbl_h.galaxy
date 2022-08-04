@@ -1,0 +1,32 @@
+include "LibCore"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Diablo
+//--------------------------------------------------------------------------------------------------
+// Constants
+const fixed libHDbl_gv_heroDiabloBlackSoulstoneResurrectTime = 5.0;
+const fixed libHDbl_gv_heroDiabloFirestompLifesteal = 1.3;
+const fixed libHDbl_gv_heroDiabloFirestompLifestealSoulsToTheFlame = 0.013;
+const fixed libHDbl_gv_heroDiabloLightningBreathTurningRate = 110.0;
+const fixed libHDbl_gv_heroDiabloTalentLordofTerrorLifesteal = 1.0;
+const fixed libHDbl_gv_heroDiabloTalentDyingBreathCDR = 25.0;
+const fixed libHDbl_gv_heroDiabloTalentDyingBreathThreshold = 5.0;
+
+// Variable Declarations
+bool[libCore_gv_bALMaxEnginePlayerCount + 1] libHDbl_gv_heroDiabloLightningBreathActive;
+bool[libCore_gv_bALMaxEnginePlayerCount + 1] libHDbl_gv_heroDiabloLightningBreathEventAdded;
+
+// Trigger Declarations
+trigger libHDbl_gt_HeroDiabloBlackSoulstoneEternalSoulstone10LvL;
+trigger libHDbl_gt_HeroDiabloDiabloDies;
+trigger libHDbl_gt_HeroDiabloFirestompLifesteal;
+trigger libHDbl_gt_HeroDiabloOverpowerFacing;
+trigger libHDbl_gt_HeroDiabloLightningBreathCast;
+trigger libHDbl_gt_HeroDiabloLightningBreathAim;
+trigger libHDbl_gt_HeroDiabloLightningBreathEnd;
+trigger libHDbl_gt_HeroDiabloTalentLordofTerror;
+trigger libHDbl_gt_HeroDiabloTalentDyingBreathCDR;
+
+// Library Initialization
+void libHDbl_InitVariables ();
+

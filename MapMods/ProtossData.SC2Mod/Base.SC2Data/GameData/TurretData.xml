@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTurret id="TownProtossCannonTowerStandaloneTurret" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawStart value="-135"/>
+        <YawIdleRate value="9.8437"/>
+        <Fidget TurnAngle="0"/>
+    </CTurret>
+    <CTurret id="TownProtossCannonTowerTurret" parent="FreeRotate">
+        <Fidget TurnAngle="0"/>
+    </CTurret>
+    <CTurret id="TownProtossTownHallTurret" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawStart value="-135"/>
+        <YawIdleRate value="9.8437"/>
+        <Fidget TurnAngle="0"/>
+    </CTurret>
+    <CTurret id="MercenaryColossus@Turret">
+        <Idle value="FollowMovement"/>
+        <YawArc value="360"/>
+        <YawRate value="999.8437"/>
+        <YawIdleRate value="90"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
+</Catalog>

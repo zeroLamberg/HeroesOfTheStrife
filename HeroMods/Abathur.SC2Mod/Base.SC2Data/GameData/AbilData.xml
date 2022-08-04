@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectInstant id="HeroAbathurEvolveMonstrosityActivate">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurEvolveMonstrosityActivate@SymbioteEnumerator"/>
+        <Cost>
+            <Cooldown Link="Abil/AbathurSymbiote" TimeUse="4"/>
+        </Cost>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurEvolveMonstrosityActivate" Requirements="HeroAbathurEvolveMonstrosity@HasActiveMonstrosityNotInStasis"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroAbathurTalentLocustBrood">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurTalentLocustBrood@CreatePersistent"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="45"/>
+        </Cost>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurTalentLocustBrood"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="AbathurNeuralParasite">
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AbathurNeuralParasiteHeroSelect"/>
+        <Cost>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Range value="500"/>
+        <Effect value="NeuralParasiteCastPersistent"/>
+        <Arc value="360"/>
+        <CursorEffect value="NeuralParasiteCastPersistent"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroAbathurDeepTunnel">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AbilityCategories index="User2" value="1"/>
+        <AbilityCategories index="User3" value="1"/>
+        <AbilityCategories index="User4" value="1"/>
+        <AbilityCategories index="User5" value="1"/>
+        <AbilityCategories index="Aura" value="1"/>
+        <Activity value="Abil/Activity/HeroAbathurDeepTunnelActivity"/>
+        <PrepEffect index="0" value="HeroAbathurDeepTunnel@PrepSet"/>
+        <Effect value="HeroAbathurDeepTunnel@Persistent"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="30"/>
+        </Cost>
+        <InterruptArray index="Cast" value="1"/>
+        <InterruptCost>
+            <Cooldown Operation="Set" TimeUse="10"/>
+        </InterruptCost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CastIntroTime value="2.5"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <ValidatedArray index="Cast" value="0"/>
+        <CastOutroTimeEffect value="HeroAbathurDeepTunnel@Persistent"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurDeepTunnel">
+            <Flags index="AllowMinimap" value="1"/>
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroAbathurAssumingDirectControl@Cancel">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurAssumingDirectControl@CancelSet"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown TimeStart="1.5" TimeUse="1.5"/>
+        </Cost>
+        <Arc value="0.9997"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurAssumingDirectControl@CancelSymbiote" Requirements="AbathurHasAssumedDirectControl"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroAbathurLocustStrain">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroAbathurLocustStrain@LocustSwitch"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="15"/>
+        </Cost>
+        <ProducedUnitArray value="HeroAbathurLocust@Normal"/>
+        <ProducedUnitArray value="HeroAbathurLocust@Bombard"/>
+        <ProducedUnitArray value="HeroAbathurLocust@Assault"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurLocustStrain" PreemptLevel="-1">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="AbathurSpawnLocustsAssaultStrain">
+        <Effect value="HeroAbathurLocustStrain@LocustSwitch"/>
+        <Cost>
+            <Cooldown Link="AbathurSpawnLocusts" TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AbathurLocustStrainPassiveAssault" Requirements="AbathurHasAssaultStrainBuffs" PreemptLevel="-1"/>
+        <Flags index="Transient" value="1"/>
+        <ProducedUnitArray value="HeroAbathurLocust@Normal"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="AbathurSpawnLocustsBombardStrain">
+        <Effect value="HeroAbathurLocustStrain@LocustSwitch"/>
+        <Cost>
+            <Cooldown Link="AbathurSpawnLocusts" TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AbathurLocustStrainPassiveBombard" Requirements="AbathurHasBombardStrainBuffs" PreemptLevel="-1"/>
+        <Flags index="Transient" value="1"/>
+        <ProducedUnitArray value="HeroAbathurLocust@Normal"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroAbathurSymbiote">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurSymbiote@InitialDelay"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="4"/>
+        </Cost>
+        <TargetFilters value="-;Self,Neutral,Enemy,ImmuneToFriendlyAbilities,Missile,Item,Stasis,Dead"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurSymbiote"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroAbathurCarapace">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <PrepEffect index="0" value="HeroAbathurSymbiote@ApplySuppressSuperStealthController"/>
+        <Effect value="HeroAbathurCarapace@SearchArea"/>
+        <Cost>
+            <Cooldown TimeStart="0.5" TimeUse="6"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurCarapace"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroAbathurSpikeBurst">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <PrepEffect index="0" value="HeroAbathurSymbiote@ApplySuppressSuperStealthController"/>
+        <Effect value="HeroAbathurSpikeBurst@CastSearch"/>
+        <Cost>
+            <Cooldown TimeStart="0.5" TimeUse="6"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurSpikeBurst"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroAbathurStab">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroAbathurStab@CreateSet"/>
+        <Cost>
+            <Charge>
+                <CountMax value="2"/>
+                <CountStart value="2"/>
+                <CountUse value="1"/>
+                <TimeUse value="3"/>
+            </Charge>
+            <Cooldown TimeStart="0.5" TimeUse="1"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CursorEffect value="HeroAbathurStab@MissileScan"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurStab">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroAbathurToxicNest">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurToxicNest@InitialSet"/>
+        <Cost>
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <Location value="Unit"/>
+                <TimeUse value="10"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="0.0625"/>
+        </Cost>
+        <Placeholder value="HeroAbathurToxicNest@PlaceholderDummy"/>
+        <Range value="70"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurToxicNest"/>
+        <PlaceUnit value="HeroAbathurToxicNest@PlaceholderDummy"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroAbathurUltimateEvolution">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Activity value="Abil/Activity/HeroAbathurUltimateEvolution"/>
+        <Effect value="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="70"/>
+        </Cost>
+        <InterruptArray index="Cast" value="1"/>
+        <InterruptCost>
+            <Cooldown Operation="Set" TimeUse="10"/>
+        </InterruptCost>
+        <TargetFilters value="Heroic;Player,Neutral,Enemy,ImmuneToFriendlyAbilities,Stasis,Dead,Hallucination,Benign"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CastIntroTime value="1"/>
+        <FinishTime value="0.0625"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurUltimateEvolution" Requirements="Ultimate1Unlocked"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroAbathurDeepTunnelMonstrosity">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Activity value="Abil/Activity/DeepTunnelActivity"/>
+        <PrepEffect index="0" value="HeroAbathurDeepTunnelMonstrosity@PrepSet"/>
+        <Effect value="HeroAbathurDeepTunnelMonstrosity@Persistent"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="80"/>
+        </Cost>
+        <InterruptArray index="Cast" value="1"/>
+        <InterruptCost>
+            <Cooldown Location="Player" Operation="Set" TimeUse="10"/>
+        </InterruptCost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CastIntroTime value="2.5"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <ValidatedArray index="Cast" value="0"/>
+        <CastOutroTimeEffect value="HeroAbathurDeepTunnelMonstrosity@Persistent"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurDeepTunnelMonstrosity" Requirements="HeroAbathurDeepTunnelMonstrosity@HasCarry">
+            <Flags index="AllowMinimap" value="1"/>
+            <Flags index="AllowSelfCast" value="0"/>
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroAbathurEvolveMonstrosity">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurEvolveMonstrosity@InitialSet"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="90"/>
+        </Cost>
+        <TargetFilters value="-;Neutral,Enemy,Heroic,Missile,Stasis,Dead"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <ProducedUnitArray value="HeroAbathurEvolveMonstrosity"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurEvolveMonstrosity" Requirements="Ultimate2Unlocked">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroAbathurTalentLocustNest">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Effect value="HeroAbathurTalentLocustNest@InitialSet"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="45"/>
+        </Cost>
+        <Placeholder value="HeroAbathurTalentLocustNest@PlaceholderDummy"/>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroAbathurTalentLocustNest"/>
+        <PlaceUnit value="HeroAbathurTalentLocustNest@PlaceholderDummy"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="ToxicNestMasteryRangeDummy">
+        <Range value="500"/>
+    </CAbilEffectTarget>
+</Catalog>

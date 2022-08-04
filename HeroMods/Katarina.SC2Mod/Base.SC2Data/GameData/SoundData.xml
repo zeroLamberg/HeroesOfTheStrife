@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="HeroKatarinaFlashGrenade@Explosion" parent="_FX_Hero_Spell_AOE">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\FlashBang_Explosion_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Explosion_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Explosion_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Explosion_08.wav" FacialGroup=""/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaFlashGrenade@Cast" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\FlashBang_Pin_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Pin_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Pin_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Pin_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Pin_05.wav" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="1"/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaFlashGrenade@Toss" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_05.wav" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="1"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@FinalDamage" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Tassadar\Tassadar_Archon_Attack_Launch01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Tassadar\Tassadar_Archon_Attack_Launch02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Tassadar\Tassadar_Archon_Attack_Launch03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Tassadar\Tassadar_Archon_Attack_Launch04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Tassadar\Tassadar_Archon_Attack_Launch05.ogg" FacialGroup=""/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@GrenadeExplosion" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Generic_Sml_Explosion_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic_Sml_Explosion_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic_Sml_Explosion_03.wav" FacialGroup=""/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@GrenadeThrow" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FlashBang_Toss_05.wav" FacialGroup=""/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@TowerDeath" parent="_FX_NPC_Death">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge4.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge5.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge6.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge7.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge8.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge9.wav" FacialGroup=""/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.750000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@TowerBirth" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Draken_Laser_Place01.ogg" FacialGroup=""/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="0.750000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@PulseDamageSound" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Draken_Laser_Fire01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Draken_Laser_Fire02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Draken_Laser_Fire03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Draken_Laser_Fire04.ogg" FacialGroup=""/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@PulseBeam" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Q_Mid_02.ogg"/>
+        <LoopCount value="-1"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@PulseBeamLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Q_Launch_01.ogg" FacialGroup=""/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaExclusionZone@PulseBeamEnd" parent="_FX_Hero_Spell_End">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Q_End_01.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.900000"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaClusterCharge@SoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw06.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw07.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw08.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Grenade_Throw09.ogg" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="1"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-4.000000,-3.000000"/>
+        <Volume value="-11.000000,-9.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponSwap@ChangeCarriedWeaponSound" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\NovaAC_LaserTurret_Ready_01.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="HeroKatarina_Weapon_Autorifle_AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Supplicant_AttackImpact08.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <VariationMinimum value="2"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponGrenadeLauncher@AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Odin_Missile_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Odin_Missile_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Odin_Missile_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Odin_Missile_Impact04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Odin_Missile_Impact05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tychus_Base\Tychus_Odin_Missile_Impact06.ogg" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-18.000000,-18.000000"/>
+    </CSound>
+    <CSound id="HeroKatarina_Weapon_Autorifle_AttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_Autorifle_Shoot_01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_Autorifle_Shoot_02.ogg" FacialGroup=""/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Volume value="-13.000000,-12.000000"/>
+    </CSound>
+    <CSound id="HeroKatarina_Attack" parent="Hero_Medium">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_019.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_019"/>
+            <FacialGroup value="GhostFemale_GhostFemale_019"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_019.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_020.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_020"/>
+            <FacialGroup value="GhostFemale_GhostFemale_020"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_020.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_021.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_021"/>
+            <FacialGroup value="GhostFemale_GhostFemale_021"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_021.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_022.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_022"/>
+            <FacialGroup value="GhostFemale_GhostFemale_022"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_022.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_023.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_023"/>
+            <FacialGroup value="GhostFemale_GhostFemale_023"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_023.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_024.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_024"/>
+            <FacialGroup value="GhostFemale_GhostFemale_024"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_024.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_025.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_025"/>
+            <FacialGroup value="GhostFemale_GhostFemale_025"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_025.fxe"/>
+        </AssetArray>
+    </CSound>
+    <CSound id="Katarina_Death" parent="Hero_Death">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_047.wav" Weight="26" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_048.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_049.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_050.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_051.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_052.wav" FacialGroup=""/>
+    </CSound>
+    <CSound id="Katarina_UltimateUsed" parent="Hero_Critical">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_045.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_045"/>
+            <FacialGroup value="GhostFemale_GhostFemale_045"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_045.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_046.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_046"/>
+            <FacialGroup value="GhostFemale_GhostFemale_046"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_046.fxe"/>
+        </AssetArray>
+        <Flags index="HideSubtitle" value="0"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value=""/>
+        <ReverbRolloffBlend value="Unknown"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Volume value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="Katarina_EnergyLow" parent="Hero_High">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_042.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_042"/>
+            <FacialGroup value="GhostFemale_GhostFemale_042"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_042.fxe"/>
+        </AssetArray>
+        <Exclusivity value=""/>
+        <ReverbRolloffBlend value="Unknown"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Volume value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="Katarina_PrimaryBattleAbility" parent="Hero_Critical">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_044.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_044"/>
+            <FacialGroup value="GhostFemale_GhostFemale_044"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_044.fxe"/>
+        </AssetArray>
+        <Flags index="HideSubtitle" value="0"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value=""/>
+        <ReverbRolloffBlend value="Unknown"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Volume value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroKatarina_Pissed" parent="Hero_Pissed">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_027.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_027"/>
+            <FacialGroup value="GhostFemale_GhostFemale_027"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_027.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_028.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_028"/>
+            <FacialGroup value="GhostFemale_GhostFemale_028"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_028.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_029.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_029"/>
+            <FacialGroup value="GhostFemale_GhostFemale_029"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_029.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_030.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_030"/>
+            <FacialGroup value="GhostFemale_GhostFemale_030"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_030.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_031.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_031"/>
+            <FacialGroup value="GhostFemale_GhostFemale_031"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_031.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_032.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_032"/>
+            <FacialGroup value="GhostFemale_GhostFemale_032"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_032.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_033.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_033"/>
+            <FacialGroup value="GhostFemale_GhostFemale_033"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_033.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_034.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_034"/>
+            <FacialGroup value="GhostFemale_GhostFemale_034"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_034.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_035.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_035"/>
+            <FacialGroup value="GhostFemale_GhostFemale_035"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_035.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_036.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_036"/>
+            <FacialGroup value="GhostFemale_GhostFemale_036"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_036.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_037.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_037"/>
+            <FacialGroup value="GhostFemale_GhostFemale_037"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_037.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_038.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_038"/>
+            <FacialGroup value="GhostFemale_GhostFemale_038"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_038.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_039.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_039"/>
+            <FacialGroup value="GhostFemale_GhostFemale_039"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_039.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_040.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_040"/>
+            <FacialGroup value="GhostFemale_GhostFemale_040"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_040.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_041.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_041"/>
+            <FacialGroup value="GhostFemale_GhostFemale_041"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_041.fxe"/>
+        </AssetArray>
+    </CSound>
+    <CSound id="HeroKatarina_Ready" parent="Hero_High">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_001.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_001"/>
+            <FacialGroup value="GhostFemale_GhostFemale_001"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_001.fxe"/>
+        </AssetArray>
+        <Category value="Ready"/>
+        <Exclusivity value=""/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponGrenadeLauncher@AttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\TychusOdin_AC_Barrage_Attk_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\TychusOdin_AC_Barrage_Attk_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\TychusOdin_AC_Barrage_Attk_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\TychusOdin_AC_Barrage_Attk_Launch_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\TychusOdin_AC_Barrage_Attk_Launch_04a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\TychusOdin_AC_Barrage_Attk_Launch_05.wav" FacialGroup=""/>
+        <Volume value="-8.000000,-8.000000"/>
+        <DupeHistoryCount value="32"/>
+    </CSound>
+    <CSound id="Katarina_AimedShot_SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackImpact03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackImpact04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackImpact05.wav" FacialGroup=""/>
+        <DupeDestroyCount value="5"/>
+        <DupeHistoryCount value="3"/>
+        <VariationMinimum value="3"/>
+    </CSound>
+    <CSound id="HeroKatarinaEquipAutorifle@SoundEq" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\UI_SniperRifle_Select.wav" FacialGroup=""/>
+    </CSound>
+    <CSound id="HeroKatarinaEquipGrenadeLauncher@SoundEq" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_GrenadeLauncher_Equip.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponMaster@NoAmmo" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_NoBullet.ogg" FacialGroup=""/>
+        <Category value="Spell"/>
+        <Mode value="2D"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Volume value="6.000000,6.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroKatarinaEquipSnipe@SoundEq" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_Snipe_Equip.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="HeroKatarinaEquipFlamethrower@SoundEq" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Ghost_HoldFire.wav" FacialGroup=""/>
+    </CSound>
+    <CSound id="Katarina_MegaShot_SoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch4.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Marauder\Marauder_AttackLaunch5.wav" FacialGroup=""/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaLaserShot@Prelaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\Raynor\Raynor_PenetratorRoundChargeUp0.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Katarina_AimedShot_AttackLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch06.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch07.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_AimedShot_Launch08.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="5"/>
+        <DupeHistoryCount value="3"/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <VariationMinimum value="3"/>
+        <Volume value="-5.000000,0.000000"/>
+    </CSound>
+    <CSound id="HeroKatarina_Yes" parent="Hero_Low">
+        <EditorCategories value="Race:Terran,CoreHero:Katarina"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_008.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_008"/>
+            <FacialGroup value="GhostFemale_GhostFemale_008"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_008.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_009.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_009"/>
+            <FacialGroup value="GhostFemale_GhostFemale_009"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_009.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_010.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_010"/>
+            <FacialGroup value="GhostFemale_GhostFemale_010"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_010.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_011.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_011"/>
+            <FacialGroup value="GhostFemale_GhostFemale_011"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_011.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_012.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_012"/>
+            <FacialGroup value="GhostFemale_GhostFemale_012"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_012.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_013.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_013"/>
+            <FacialGroup value="GhostFemale_GhostFemale_013"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_013.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_014.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_014"/>
+            <FacialGroup value="GhostFemale_GhostFemale_014"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_014.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_015.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_015"/>
+            <FacialGroup value="GhostFemale_GhostFemale_015"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_015.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_016.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_016"/>
+            <FacialGroup value="GhostFemale_GhostFemale_016"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_016.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_017.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_017"/>
+            <FacialGroup value="GhostFemale_GhostFemale_017"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_017.fxe"/>
+        </AssetArray>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_018.ogg"/>
+            <FacialAnim value="GhostFemale_GhostFemale_018"/>
+            <FacialGroup value="GhostFemale_GhostFemale_018"/>
+            <FacialFile value="LocalizedData\Sounds\TerranUnitVO\GhostFemale\GhostFemale_GhostFemale_018.fxe"/>
+        </AssetArray>
+    </CSound>
+    <CSound id="HeroKatarinaLaserShot@Launch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact05_1ch.wav" FacialGroup=""/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaLaserShot@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\OrbitalStrike_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrbitalStrike_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrbitalStrike_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrbitalStrike_Impact_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\OrbitalStrike_Impact_05.wav" FacialGroup=""/>
+        <Volume value="6.000000,6.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+    </CSound>
+    <CSound id="Katarina_MegaShot_SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall9.wav" Pitch="-3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponFlamethrower@SoundLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\Firebat\Firebat_AttackLaunch0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Firebat\Firebat_AttackLaunch1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Firebat\Firebat_AttackLaunch2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Firebat\Firebat_AttackLaunch3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Firebat\Firebat_AttackLaunch4.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponFlamethrower@SoundImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact4.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponSnipe@AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Marauder_Magrail_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Marauder_Magrail_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Marauder_Magrail_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Marauder_Magrail_Impact_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Marauder_Magrail_Impact_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Marauder_Magrail_Impact_06.wav" FacialGroup=""/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponSnipe@AttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Heroes\Katarina_Base\Katarina_Snipe_Shoot.ogg" FacialGroup=""/>
+        <Volume value="-10.000000,-10.000000"/>
+    </CSound>
+    <CSound id="HeroKatarinaWeaponFlamethrower@SoundLoop" parent="_FX_Hero_Attack_Loop">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Fire_Korhal_Steady_Loop_01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Fire_Korhal_Steady_Loop_02.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Katarina_Footstep_Mv" parent="Movement">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt06.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt07.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Movement\FS_Gen_Dirt08.ogg" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-17.000000,-15.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Katarina_ClusterRound_ClusterChargeSound2" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\Reaper\Reaper_D8ChargeAttackImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Reaper\Reaper_D8ChargeAttackImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Reaper\Reaper_D8ChargeAttackImpact2.wav"/>
+        <Pitch value="0.000000,1.000000"/>
+        <SustainFade index="1" Time="5"/>
+    </CSound>
+    <CSound id="HeroKatarinaClusterCharge@ClusterChargeSound" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Terran\Reaper\Reaper_D8ChargeAttackImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Reaper\Reaper_D8ChargeAttackImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Reaper\Reaper_D8ChargeAttackImpact2.wav"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="0.000000,1.000000"/>
+        <SustainFade index="1" Time="5"/>
+    </CSound>
+    <CSound id="HeroKatarinaClusterCharge@ClusterExplosionSound" parent="_FX_Hero_Spell_AOE">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <AssetArray File="Assets\Sounds\Reaper_KD8ChargeExplosion01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaper_KD8ChargeExplosion02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaper_KD8ChargeExplosion03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaper_KD8ChargeExplosion04.wav" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="3" Volume="-3.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+</Catalog>

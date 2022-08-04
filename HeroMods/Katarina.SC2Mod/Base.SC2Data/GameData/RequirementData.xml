@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HeroKatarina@BaseBlue">
+        <EditorCategories value="CoreHero:Katarina,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroKatarina@BaseBlueCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarina@BasePurple">
+        <EditorCategories value="CoreHero:Katarina,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroKatarina@BasePurpleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarina@BaseGrey">
+        <EditorCategories value="CoreHero:Katarina,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroKatarina@BaseGreyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarina@BaseGreen">
+        <EditorCategories value="CoreHero:Katarina,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroKatarina@BaseGreenCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarina@BaseRed">
+        <EditorCategories value="CoreHero:Katarina,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroKatarina@BaseRedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarina@BaseGolden">
+        <EditorCategories value="CoreHero:Katarina,TechType:Skins"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroKatarina@BaseGoldenCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarinaTalentWeaponMasterToTheLimit">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroKatarinaTalentWeaponMasterToTheLimit@CarryBehaviorCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroKatarinaTalentWeaponMasterToTheLimit@CarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarinaExclusionZone@Activation">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroKatarinaExclusionZone@TimedBehaviorCasterCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroKatarinaExclusionZone@TimedBehaviorCasterCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="Katarina_EquippedAutorifle">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarinaEquipAutorifle">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipAutorifle@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="Katarina_CarryAutorifle">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_AutorifleCompleteOnlyAtUnit0EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="Katarina_CarryChaingun">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_Chain2727456026"/>
+    </CRequirement>
+    <CRequirement id="Katarina_CarryFlamethrower">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_Flamethrowe2429795416"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarinaEquipSnipe">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipSnipe@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarinaEquipFlamethrower">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipFlamethrower@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroKatarinaEquipGrenadeLauncher">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipGrenadeLauncher@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="Katarina_CarrySnipe">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_SnipeCompleteOnlyAtUnit0EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="Katarina_EquippedChaingun">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="Katarina_EquippedFlamethrower">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="Katarina_EquippedSnipe">
+        <EditorCategories value="CoreHero:Katarina,TechType:Ability"/>
+        <NodeArray index="Show" Link="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit1"/>
+    </CRequirement>
+</Catalog>

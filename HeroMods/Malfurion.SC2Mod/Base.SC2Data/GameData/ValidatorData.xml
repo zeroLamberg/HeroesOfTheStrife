@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionInnervate@NotOnCooldown" parent="CasterNotParent">
+        <Behavior value="HeroMalfurionInnervate@Cooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionMoonfire@TargetIsRevealedCasterReq" parent="TargetIsParent">
+        <Behavior value="HeroMalfurionMoonfire@Reveal"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionRegrowthNaturesProtection@TargetHasNotArmorGE33">
+        <Behavior value="HeroMalfurionRegrowthNaturesProtection@LifeGE33"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionRegrowthNaturesProtection@TargetHasNotArmorLT33">
+        <Behavior value="HeroMalfurionRegrowthNaturesProtection@LifeLT33"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentEntanglingRootsOvergrownPath@Target" parent="PlayerTalent">
+        <WhichPlayer Value="Target"/>
+        <Value value="HeroMalfurionTalentEntanglingRootsOvergrownPath"/>
+    </CValidatorPlayerTalent>
+    <CValidatorCompareTrackedUnitsCount id="HeroMalfurionTalentRegrowthLifeseed@CompareTrackedUnitsCount">
+        <Compare value="GT"/>
+        <BehaviorLink value="HeroMalfurionRegrowth@TrackedUnitCounter"/>
+        <TrackedUnitFilters value="Heroic;Player,Neutral,Enemy"/>
+    </CValidatorCompareTrackedUnitsCount>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentElunesChosen@QuestInProgress" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentElunesChosen@TokenCounter">
+        <Compare value="NE"/>
+        <Value value="75"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestInProgress" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter">
+        <Compare value="NE"/>
+        <Value value="50"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter"/>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentElunesChosen@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentElunesChosen@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorCombine id="HeroMalfurionTalentMoonfireHinderingMoonfire@HaveTalentAndQuestNotCompleted">
+        <Type value="And"/>
+        <CombineArray value="HeroMalfurionTalentMoonfireHinderingMoonfire"/>
+        <CombineArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter">
+        <ResultNoUnit value="MustTargetUnit"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestInProgress" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter">
+        <ResultNoUnit value="MustTargetUnit"/>
+        <Compare value="NE"/>
+        <Value value="30"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorLocationEnumArea id="HeroMalfurionMoonfire@FindHero">
+        <AreaArray Radius="2"/>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Neutral,ImmuneToAOE,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorCombine id="HeroMalfurionTalentMoonfireMoonlight@CasterHasMoonlightAndTargetIsMinion">
+        <Type value="And"/>
+        <CombineArray value="TargetIsMinionCombine"/>
+        <CombineArray value="HeroMalfurionTalentMoonfireMoonlight"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroMalfurionTalentMoonfireMoonlight@CasterHasMoonlightAndTargetIsMercLanerOrDefender">
+        <Type value="And"/>
+        <CombineArray value="TargetIsMercLanerorDefender"/>
+        <CombineArray value="HeroMalfurionTalentMoonfireMoonlight"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentMoonfireCelestialAlignment" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentMoonfireFullMoonfire" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionTalentTranquilitySerenity@TargetHasMarker">
+        <Value value="1"/>
+        <Behavior value="HeroMalfurionTalentTranquilitySerenity@Marker"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionTalentTranquilitySerenity@TargetHasNoSerenityArmor">
+        <Behavior value="HeroMalfurionTalentTranquilitySerenity@Armor"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentTwilightDreamAstralCommunion" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentCourseofLife" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroMalfurionMoonfire@TargetIsHeroicAndRevealedByMoonfire">
+        <Type value="And"/>
+        <CombineArray value="TargetIsHero"/>
+        <CombineArray value="HeroMalfurionMoonfire@TargetIsRevealed"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter">
+        <ResultNoUnit value="MustTargetUnit"/>
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionMoonfire@TargetIsRevealed" parent="TargetIsParent">
+        <Behavior value="HeroMalfurionMoonfire@Reveal"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentMoonfireMoonlight" parent="PlayerTalent"/>
+    <CValidatorLocationEnumArea id="HeroMalfurionTalentInnervateMoonlitHarmony@AllyHeroNearby">
+        <AreaArray Compare="GT" Count="0" Radius="6"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFilters value="Heroic,Visible;Self,Neutral,Enemy,Stasis,Dead,Hidden"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionTalentElunesChosen@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroMalfurionTalentElunesChosen@TokenCounter"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentInnervateMoonlitHarmony" parent="PlayerTalent">
+        <WhichPlayer Value="Origin"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentElunesChosen" parent="PlayerTalent"/>
+    <CValidatorLocationEnumArea id="HeroMalfurionTalentMoonfireHinderingMoonfire@Found0Targets">
+        <AreaArray Count="0" Radius="2"/>
+        <Compare value="Eq"/>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Neutral,ImmuneToAOE,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentMoonfireHinderingMoonfire" parent="PlayerTalent"/>
+    <CValidatorLocationEnumArea id="HeroMalfurionInnervate@ValidateTargetsNear">
+        <AreaArray Compare="GT" Count="0" Radius="6"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFilters value="Heroic,Visible;Self,Neutral,Enemy,Stasis,Dead,Hidden"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentTranquilitySerenity" parent="PlayerTalent"/>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionRegrowth@ChargesUsed4">
+        <ChargeLink value="Abil/HeroMalfurionRegrowth"/>
+        <Location value="Unit"/>
+        <Ability value="HeroMalfurionRegrowth"/>
+        <Value value="4"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorPlayerRequirement id="HeroMalfurion@BasePurple">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroMalfurion@BasePurple"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinBetrayerRed">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinBetrayerRed"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinWinterVar1">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinWinterVar1"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinFlameVar2">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinFlameVar2"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinFlameVar3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinFlameVar3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinStormragePurple">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinStormragePurple"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinStormrageWhite">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinStormrageWhite"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinStormrageVar3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinStormrageVar3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinUltimateRed">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinUltimateRed"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroMalfurion@BaseWhite">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroMalfurion@BaseWhite"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentInnervateRevitalize" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentEntanglingRootsDangerousRoots" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionRegrowthLifebloom" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentEntanglingRootsOvergrownPath" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionRegrowthNaturesProtection" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentEntanglingRootsTenaciousRoots" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionRegrowthYserasGift" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroMalfurionTalentRegrowthLifeseed" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroMalfurionTalentRegrowthLifeseed@Combine">
+        <Type value="And"/>
+        <CombineArray value="TargetLifeFull"/>
+        <CombineArray value="HeroMalfurionTalentRegrowthLifeseed"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionEntanglingRoots@TargetIsRootedCasterRequired" parent="TargetIsParent">
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionRegrowth@ChargesUsed2">
+        <ChargeLink value="Abil/HeroMalfurionRegrowth"/>
+        <Location value="Unit"/>
+        <Ability value="HeroMalfurionRegrowth"/>
+        <Value value="2"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionRegrowth@ChargesUsed3">
+        <ChargeLink value="Abil/HeroMalfurionRegrowth"/>
+        <Location value="Unit"/>
+        <Ability value="HeroMalfurionRegrowth"/>
+        <Value value="3"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionRegrowth@ChargesUsed0">
+        <ChargeLink value="Abil/HeroMalfurionRegrowth"/>
+        <Location value="Unit"/>
+        <Ability value="HeroMalfurionRegrowth"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroMalfurionRegrowth@ChargesUsed1">
+        <ChargeLink value="Abil/HeroMalfurionRegrowth"/>
+        <Location value="Unit"/>
+        <Ability value="HeroMalfurionRegrowth"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionRegrowth@TargetHasRegrowth" parent="TargetIsParent">
+        <Behavior value="HeroMalfurionRegrowth"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionRegrowth@TargetHasNotRegrowth" parent="TargetNotParent">
+        <Behavior value="HeroMalfurionRegrowth"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionEntanglingRoots@TargetIsRooted" parent="TargetIsParent">
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroMalfurionRegrowth@TargetHasRegrowthCasterRequired" parent="TargetIsParent">
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinBetrayerBrown">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinBetrayerBrown"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinFlameVar1">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinFlameVar1"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinUltimateWhite">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinUltimateWhite"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinWinterVar2">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinWinterVar2"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinWinterVar3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinWinterVar3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveMalfurionSkinWinterVar4">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveMalfurionSkinWinterVar4"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="HeroMalfurionRegrowthYserasGift@CasterLifeIsGT75_And_CasterHasYserasGrace">
+        <Type value="And"/>
+        <CombineArray value="CasterLifeGT75Percent"/>
+        <CombineArray value="HeroMalfurionRegrowthYserasGift"/>
+    </CValidatorCombine>
+</Catalog>

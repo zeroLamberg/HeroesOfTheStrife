@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentPurifierBeamEmpoweredBeam@PlayerResponse">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentPurifierBeamEmpoweredBeam@CooldownReduction"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroTalandarPurifierBeam@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentTacticalDataWeb">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentTacticalDataWeb@ApplyAttackSpeedBuff"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicDamage"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicCollisionDamage"/>
+        <RequireEffectArray value="HeroTalandarWhirlwind@Damage"/>
+        <RequireEffectArray value="HeroTalandarSolarCannon@DefaultDamage"/>
+        <RequireEffectArray value="HeroTalandarSolarCannon@ChargedDamage"/>
+        <RequireEffectArray value="HeroTalandarSolariteFlare@AirBombDamage"/>
+        <RequireEffectArray value="HeroTalandarSolariteFlare@AirBombDamageCharged"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentAssaultProtocol@SolarCannon">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentAssaultProtocol@ModifyCooldownSolariteFlare"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroTalandarSolarCannon@DefaultDamage"/>
+        <RequireEffectArray value="HeroTalandarSolarCannon@ChargedDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentAssaultProtocol@SolariteFlare">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentAssaultProtocol@ModifyCooldownSolarCannon"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroTalandarSolariteFlare@AirBombDamage"/>
+        <RequireEffectArray value="HeroTalandarSolariteFlare@AirBombDamageCharged"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentAvengingProtocol">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentAvengingProtocol@ApplyDamageReduction"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroTalandarWhirlwind@Damage"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicDamage"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicCollisionDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentPhaseBomb">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentPhaseBomb@ImpactSet"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <RequireEffectArray value="HeroTalandarWeaponDragoon@Damage"/>
+        <RequireEffectArray value="HeroTalandarWeaponDragoon@SplashDamage"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarAccumulatedShield@DamageController">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarAccumulatedShield@EnergyAddDamageDealt"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <RequireEffectArray value="HeroTalandarWeaponPraetor@Damage"/>
+        <RequireEffectArray value="HeroTalandarWeaponDragoon@Damage"/>
+        <RequireEffectArray value="HeroTalandarWeaponDragoon@SplashDamage"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentPurification@Controller">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentPurification@ApplyTimedBonus"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroTalandarWhirlwind@Damage"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicDamage"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicCollisionDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentPurification@RemoveBuff">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentPurification@DelayBeforeRemove"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <ValidatorArray value="HeroTalandarTalentPurification@HasTimedBuff"/>
+        <RequireEffectArray value="HeroTalandarWeaponPraetor@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentTacticalOverload">
+        <Handled value="HeroTalandarTalentTacticalOverload@SpellPowerAB"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroTalandarWeaponPraetor@Damage"/>
+        <RequireEffectArray value="HeroTalandarWeaponDragoon@Damage"/>
+        <RequireEffectArray value="HeroTalandarWeaponDragoon@SplashDamage"/>
+        <Location value="Attacker"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentOperationalEfficiency@QuestController">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentOperationalEfficiency@RefreshTokenCounter"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroTalandarTalentOperationalEfficiency@QuestNotCompleted"/>
+        <RequireEffectArray value="HeroTalandarSolarCannon@ChargedDamage"/>
+        <RequireEffectArray value="HeroTalandarSolariteFlare@AirBombDamageCharged"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentThunderousChargeTrooperChampion">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicDamage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentChampionUpgrade">
+        <Location value="Attacker"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroTalandarThunderousCharge@HeroicDamage"/>
+        <RequireEffectArray value="HeroTalandarWhirlwind@Damage"/>
+        <Handled value="HeroTalandarTalentChampionUpgrade@ApplyArmorReduction"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentTitanDestroyer">
+        <Location value="Attacker"/>
+        <Handled value="HeroTalandarTalentTitanDestroyer@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroTalandarSolariteFlare@AirBombDamageCharged"/>
+        <RequireEffectArray value="HeroTalandarSolarCannon@ChargedDamage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments"/>
+</Catalog>

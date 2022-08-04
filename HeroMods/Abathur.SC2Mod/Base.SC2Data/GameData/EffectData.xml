@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectModifyPlayer id="HeroAbathur@LevelScalingModification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurSpikeBurst@BurstDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurStab@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurToxicNest@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurWeaponEvolveMonstrosity@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurWeaponLocustBombard@CloseRangeDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurWeaponLocustBombard@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurWeaponLocustNormal@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurWeapon@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurTalentToxicNestEnvenomedNest@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurTalentVolatileMutation@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurCarapace@RegenerativeMicrobesCreateHealer,VitalArray[Life].Change" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurEvolveMonstrosityStacks@HealthStackHealer,VitalArray[Life].Change" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroAbathurTalentSpikeBurstSomaTransference@CreateHealer,VitalArray[Life].Change" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathur,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathur,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurLocust@Normal,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurLocust@Normal,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurLocust@Bombard,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurLocust@Bombard,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurToxicNest,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurToxicNest,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurEvolveMonstrosity,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurEvolveMonstrosity,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurCarapace@Shield,DamageResponse.ModifyLimit" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurCarapace@ShieldTooltipDummy,DamageResponse.ModifyLimit" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurTalentCarapaceNetworkedCarapace@Shield,DamageResponse.ModifyLimit" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurTalentCarapaceNetworkedCarapace@ShieldHivemind,DamageResponse.ModifyLimit" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurTalentLocustNest,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroAbathurTalentLocustNest,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurEvolveMonstrosityStacks@HealthStack,Modification.VitalMaxArray[Life]" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurCarapace@ShieldHivemind,DamageResponse.ModifyLimit" Value="1.04"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="HeroAbathurDeepTunnel@DummyPing">
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroAbathurEvolveMonstrosityStacks@AddTokenCounterToCaster">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurEvolveMonstrosityStacks@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyPlayer id="HeroAbathurEvolveMonstrosityStacks@IncreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroAbathurEvolveMonstrosityStacks@TokenCounter">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Accumulator,HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount,Amount" Value="1"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroAbathurEvolveMonstrosityStacks@DecreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroAbathurEvolveMonstrosityStacks@TokenCounter">
+        <ValidatorArray value="HeroAbathurEvolveMonstrosityStacks@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Accumulator,HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount,Amount" Value="-1"/>
+        <Cost>
+            <Charge CountUse="1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroAbathurEvolveMonstrosityStacks@RefreshTokenCounter">
+        <ValidatorArray value="HeroAbathurEvolveMonstrosityStacks@QuestNotCompleted"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurEvolveMonstrosityStacks@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroAbathurEvolveMonstrosityStacks@ResetTokenCounter">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <PeriodCount value="40"/>
+        <PeriodicEffectArray value="HeroAbathurEvolveMonstrosityStacks@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroAbathurEvolveMonstrosityStacks@TokenCounterController">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseArray Validator="HeroAbathurEvolveMonstrosityStacks@QuestNotCompleted" Effect="HeroAbathurEvolveMonstrosityStacks@IncreaseToken" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroAbathurTalentLocustStrainBombardStrain@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Behavior,HeroAbathurLocust@TimedLife,Duration" Value="12.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroAbathurTalentSpikeBurstSomaTransference@CreateHealer" parent="CoreHealingSpell">
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroAbathurTalentSpikeBurstSomaTransference"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Effect="HeroAbathurSpikeBurst@HostPersistent"/>
+        <VitalArray index="Life">
+            <Change value="64"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroAbathurTalentCarapaceReinforcedCarapace@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurCarapace@Shield,DamageResponse.ModifyLimit" Value="1.4"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurTalentCarapaceNetworkedCarapace@ShieldHivemind,DamageResponse.ModifyLimit" Value="1.4"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurCarapace@ShieldHivemind,DamageResponse.ModifyLimit" Value="1.4"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,HeroAbathurTalentCarapaceNetworkedCarapace@Shield,DamageResponse.ModifyLimit" Value="1.4"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroAbathurTalentSpikeBurstPressurizedGlands@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Effect,HeroAbathurSpikeBurst@DamageSearch,AreaArray[0].Radius" Value="1"/>
+        <EffectArray Reference="Actor,HeroAbathurSpikeBurst@RangeSplat,Scale" Value="1.000000"/>
+        <EffectArray Reference="Actor,HeroAbathurSpikeBurst@Cast,Scale" Value="0.250000"/>
+        <EffectArray Reference="Effect,HeroAbathurTalentSpikeBurstSomaTransference@Search,AreaArray[0].Radius" Value="1"/>
+        <EffectArray Reference="Abil,HeroAbathurSpikeBurst,Cost[0].Cooldown.TimeUse" Value="-1.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroAbathurTalentStabNeedlespine@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Effect,HeroAbathurStab@CreatePersistent,PeriodicOffsetArray[0]" Value="0.000000,-1.250000,0.000000"/>
+        <EffectArray Reference="Actor,HeroAbathurStab@GuideVisual,Height" Value="1.250000"/>
+        <EffectArray Reference="Actor,HeroAbathurTalentSymbioteHivemind@StabGuideA,Height" Value="1.250000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroAbathurTalentStabSpatialEfficiency@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Abil,HeroAbathurStab,Cost[0].Charge.TimeUse" Value="-0.500000"/>
+        <EffectArray Reference="Abil,HeroAbathurStab,Cost[0].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,HeroAbathurStab,Cost[0].Charge.CountMax" Value="1"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroAbathurTalentToxicNestEnvenomedNest@ApplyArmorDebuffBehavior">
+        <ValidatorArray value="HeroAbathurTalentToxicNestEnvenomedNest"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentToxicNestEnvenomedNest@ArmorDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurTalentToxicNestEnvenomedNest@Set">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurTalentToxicNestEnvenomedNest@ApplyBehavior"/>
+        <EffectArray value="HeroAbathurTalentToxicNestEnvenomedNest@ApplyArmorDebuffBehavior"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroAbathurTalentToxicNestProlificDispersal@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Abil,HeroAbathurToxicNest,Cost[0].Charge.CountMax" Value="2"/>
+        <EffectArray Reference="Abil,HeroAbathurToxicNest,Cost[0].Charge.TimeUse" Value="-2.000000"/>
+        <EffectArray Reference="Behavior,HeroAbathurToxicNest@TimedLife,Duration" Value="45.000000"/>
+        <EffectArray Reference="Abil,HeroAbathurToxicNest,Cost[0].Charge.CountStart" Value="2"/>
+    </CEffectModifyPlayer>
+    <CEffectAddTrackedUnit id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@AddTrackedUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@UnitTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
+    <CEffectEnumTrackedUnits id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@EnumTrackedUnits">
+        <ValidatorArray value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@UnitTracker"/>
+        <TrackerUnit Value="Source"/>
+        <Effect value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@ApplyShield"/>
+        <TrackedUnitFilters value="-;Dead"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectModifyPlayer id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Modification">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray Reference="Behavior,HeroAbathurUltimateEvolution@TimedLife,Duration" Value="10.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectLaunchMissile id="HeroAbathurWeaponLocustBombard@LaunchMissile">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <ImpactEffect value="HeroAbathurWeaponLocustBombard@ImpactSearch"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <AmmoUnit value="HeroAbathurWeaponLocustBombard@Missile"/>
+        <ImpactRange value="0.5"/>
+    </CEffectLaunchMissile>
+    <CEffectDestroyPersistent id="AbathurMonstrosityDeepTunnelDestroyTargetPersistent">
+        <WhichLocation Value="TargetPoint"/>
+        <Count value="1"/>
+        <Radius value="5"/>
+    </CEffectDestroyPersistent>
+    <CEffectSet id="HeroAbathurDeepTunnelMonstrosity@PrepSet">
+        <ValidatorArray value="Walkable"/>
+        <ValidatorArray value="HasVisionOfTarget"/>
+        <ValidatorArray value="HeroAbathurEvolveMonstrosity@CasterIsMonstrosity"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="DismountDecloakCasterSet"/>
+        <EffectArray value="HeroAbathurDeepTunnelMonstrosity@TargetPersistent"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroAbathurDeepTunnelMonstrosity@TargetPersistent">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <PeriodCount value="40"/>
+        <PeriodicValidator value="HeroAbathurDeepTunnelMonstrosity@IsCastingDeepTunnel"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyPlayer id="HeroAbathurDeepTunnelMonstrosity@CooldownReset">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichPlayer Value="Caster"/>
+        <Cost>
+            <Cooldown>
+                <Link value="Abil/HeroAbathurDeepTunnelMonstrosity"/>
+                <Location value="Player"/>
+                <Operation value="Add"/>
+                <TimeUse value="-100"/>
+            </Cooldown>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectRemoveBehavior id="HeroAbathurCarapace@RegenerativeMicrobesRemoveBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurCarapace@RegenerativeMicrobes"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroAbathurSymbiote@ApplyStealthController">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurSymbiote@VisibilityController"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurSymbiote@ApplySuperStealthController">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurSymbiote@SuperStealthVisibilityController"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurSymbiote@ApplySuppressSuperStealthController">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurSymbiote@SuppressVisibilityController"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurToxicNest@ApplyArmingBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurToxicNest@ArmingBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectAddTrackedUnit id="HeroAbathurEvolveMonstrosity@AddToTrackingBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurEvolveMonstrosity@TrackingBehavior"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
+    <CEffectEnumTrackedUnits id="HeroAbathurEvolveMonstrosityActivate@SymbioteEnumerator">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurEvolveMonstrosity@TrackingBehavior"/>
+        <Effect value="HeroAbathurEvolveMonstrosityActivate@SymbioteLinkSet"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectApplyBehavior id="HeroAbathurTalentCarapaceNetworkedCarapace@ApplyTalentShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentCarapaceNetworkedCarapace@Shield"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="AbathurUltimateEvolutionModifyDeepTunnelCooldown">
+        <Cost Abil="HeroAbathurDeepTunnel,255" CooldownOperation="Set" CooldownTimeUse="0.5"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroAbathurTalentCarapaceNetworkedCarapace@ApplySet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurTalentCarapaceNetworkedCarapace@ApplyTalentShield"/>
+    </CEffectSet>
+    <CEffectSet id="HeroAbathurAssumingDirectControl@Set">
+        <ValidatorArray value="CasterNotDeadOrStunnedAndTargetNotDead"/>
+        <ValidatorArray value="HeroAbathurSymbiote@IsValidSymbioteTarget"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurAssumingDirectControl@ApplyBehavior"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroAbathurSymbiote@InitialDelay">
+        <ValidatorArray value="CasterNotDeadOrStunnedAndTargetNotDead"/>
+        <ValidatorArray value="HeroAbathurSymbiote@IsValidSymbioteTarget"/>
+        <ValidatorArray value="AbathurSymbioteBenignTargetValidatorCombine"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="HeroAbathurAssumingDirectControl@Set"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="HeroAbathurSymbiote@LinkPersistent"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroAbathurToxicNest@ApplySelfRevealer">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroAbathurToxicNest@SelfReveal"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurEvolveMonstrosity@ApplyStasisController">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurEvolveMonstrosity@StasisController"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurEvolveMonstrosityActivate@SymbioteLinkSet">
+        <ValidatorArray value="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurSymbiote@InitialDelay"/>
+    </CEffectSet>
+    <CEffectEnumArea id="AbathurEvolveMonstrosityActiveSymbioteFindMonstrosity">
+        <SearchFilters value="Summoned;Ally,Neutral,Enemy,Heroic"/>
+        <AreaArray Radius="500" Effect="HeroAbathurEvolveMonstrosityActivate@SymbioteLinkSet"/>
+    </CEffectEnumArea>
+    <CEffectModifyUnit id="HeroAbathurTalentLocustNest@InitialSpawnModifyUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Cost Abil="HeroAbathurLocustStrain,Execute" CooldownOperation="Set" CooldownTimeUse="0.65"/>
+    </CEffectModifyUnit>
+    <CEffectRemoveBehavior id="HeroAbathurSymbiote@RemoveAbilityDisabler">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurSymbiote@AbilityDisabler"/>
+    </CEffectRemoveBehavior>
+    <CEffectModifyUnit id="HeroAbathurEvolveMonstrosityStacks@HealthStackHealer">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <VitalArray index="Life">
+            <Change value="78"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroAbathurDeepTunnel@ApplyTravelBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurDeepTunnel@TravelBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroAbathurUltimateEvolution@CleanupKill">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Flags index="Kill" value="1"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="AbathurUltimateEvolutionInterruptModifyCooldown">
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroAbathurUltimateEvolution,255" CooldownOperation="Set" CooldownTimeUse="10"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroAbathurTalentSymbioteAdrenalOverload@ApplyBuff">
+        <ValidatorArray value="HeroAbathurTalentSymbioteAdrenalOverload"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentSymbioteAdrenalOverload"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="UltimateEvolutionApplyInvalidTargetBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurUltimateEvolution@InvalidTarget"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurUltimateEvolution@RemoveInvalidTargetBehavior">
+        <BehaviorLink value="HeroAbathurUltimateEvolution@InvalidTarget"/>
+    </CEffectRemoveBehavior>
+    <CEffectSwitch id="HeroAbathurWeaponLocustAssault@AttackSwitch" parent="SummonedBasicAttackAbilityDamageMissCheck">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseDefault value="HeroAbathurWeaponLocustAssault@AttackSet"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroAbathurWeaponLocustAssault@AttackSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurWeaponLocustAssault@Damage"/>
+        <EffectArray value="HeroAbathurWeaponLocustAssault@CleaveSearchArea"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroAbathurWeaponLocustAssault@CleaveSearchArea">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <ExcludeArray Effect="HeroAbathurWeaponLocustAssault@AttackSet" Value="Target"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Arc="180" Radius="1.25" Effect="HeroAbathurWeaponLocustAssault@CleaveDamage"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroAbathurWeaponLocustAssault@CleaveDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="17">
+            <AccumulatorArray value="HeroAbathurTalentLocustStrainSurvivalInstinct@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroAbathurTalentLocustStrainSurvivalInstinct@ApplyBehavior">
+        <ValidatorArray value="HeroAbathurTalentLocustStrainSurvivalInstinct"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentLocustStrainSurvivalInstinct"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurTalentToxicNestEnvenomedNest@ApplyBehavior">
+        <ValidatorArray value="HeroAbathurTalentToxicNestEnvenomedNest"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentToxicNestEnvenomedNest"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroAbathurTalentToxicNestEnvenomedNest@Damage" parent="CoreDoTAsSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="38.25"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="HeroAbathurUltimateEvolution@InitialCreatePersistent">
+        <ValidatorArray value="NotVehicle"/>
+        <ValidatorArray value="HeroAbathurUltimateEvolution@NotInvalidTarget"/>
+        <ValidatorArray value="TargetNotSpecialDeathState"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="HeroAbathurUltimateEvolution@CastSet"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="HeroAbathurWeaponLocustBombard@CloseRangeLaunchMissile">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ImpactEffect value="HeroAbathurWeaponLocustBombard@CloseRangeDamageSwitch"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <AmmoUnit value="HeroAbathurWeaponLocustNormal@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectSwitch id="HeroAbathurWeaponLocustBombard@CloseRangeDamageSwitch" parent="SummonedBasicAttackAbilityDamageMissCheck">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseDefault value="HeroAbathurWeaponLocustBombard@CloseRangeDamage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="HeroAbathurWeaponLocustBombard@CloseRangeDamage" parent="CorePhysicalDamageAsSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="46">
+            <AccumulatorArray value="HeroAbathurTalentLocustStrainSurvivalInstinct@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSet id="HeroAbathurDeepTunnel@FinalSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurDeepTunnel@RemoveDisablerBehavior"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="DeepTunnelIssueStopOrder">
+        <WhichUnit Value="Caster"/>
+        <Abil value="stop"/>
+        <Player Value="Caster"/>
+    </CEffectIssueOrder>
+    <CEffectEnumArea id="AbathurLocustAssaultExplodeSearch">
+        <ValidatorArray value="HeroAbathurLocust@SourceIsLocustAssaultStrain"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="AbathurLocustAssaultExplodeDamage"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroAbathurWeaponLocustBombard@Damage" parent="CorePhysicalDamageAsSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="46">
+            <AccumulatorArray value="HeroAbathurTalentLocustStrainSurvivalInstinct@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="HeroAbathurWeaponLocustAssault@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="34"/>
+    </CEffectDamage>
+    <CEffectDamage id="AbathurLocustAssaultExplodeDamage" parent="CoreSpellDamage">
+        <Marker Link="Effect/AbathurLocustWeaponDamage"/>
+        <Amount value="102"/>
+    </CEffectDamage>
+    <CEffectSwitch id="HeroAbathurWeaponLocustBombard@ImpactSwitch" parent="SummonedBasicAttackAbilityDamageMissCheck">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseDefault value="HeroAbathurWeaponLocustBombard@ImpactSet"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroAbathurWeaponLocustBombard@ImpactSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurWeaponLocustBombard@Damage"/>
+        <TargetLocationType value="UnitOrPoint"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroAbathurWeaponLocustBombard@ImpactSearch">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.4" Effect="HeroAbathurWeaponLocustBombard@ImpactSwitch"/>
+    </CEffectEnumArea>
+    <CEffectIssueOrder id="HeroAbathurLocustStrain@IssueSpawnOrder">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Abil value="HeroAbathurLocustStrain"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="AbathurLocustSpawnIssueSpawnOrderAssaultStrain">
+        <Abil value="AbathurSpawnLocustsAssaultStrain"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="AbathurLocustSpawnIssueSpawnOrderBombardStrain">
+        <Abil value="AbathurSpawnLocustsBombardStrain"/>
+    </CEffectIssueOrder>
+    <CEffectSwitch id="AbathurLocustSpawnIssueSpawnOrderSwitch">
+        <CaseArray Validator="HasAbathurAssaultStrain" Effect="AbathurLocustSpawnIssueSpawnOrderAssaultStrain"/>
+        <CaseArray Validator="HasAbathurBombardStrain" Effect="AbathurLocustSpawnIssueSpawnOrderBombardStrain"/>
+        <CaseDefault value="HeroAbathurLocustStrain@IssueSpawnOrder"/>
+    </CEffectSwitch>
+    <CEffectLaunchMissile id="HeroAbathurWeaponLocustNormal@LaunchMissile">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <ImpactEffect value="HeroAbathurWeaponLocustNormal@Damage"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <AmmoUnit value="HeroAbathurWeaponLocustNormal@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="HeroAbathurDeepTunnel@ApplyDisablerBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurDeepTunnel@DisablerBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurDeepTunnelMonstrosity@DestroyPersistent"/>
+        <EffectArray value="HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSymbioteIssueOrderSearch"/>
+    </CEffectSet>
+    <CEffectDestroyPersistent id="HeroAbathurDeepTunnelMonstrosity@DestroyPersistent">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Effect="HeroAbathurDeepTunnelMonstrosity@Persistent" Value="TargetPoint"/>
+        <Effect value="HeroAbathurDeepTunnelMonstrosity@Persistent"/>
+        <Count value="1"/>
+        <Radius value="0.25"/>
+    </CEffectDestroyPersistent>
+    <CEffectEnumArea id="HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSymbioteIssueOrderSearch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <SearchFilters value="Visible;Ally,Enemy"/>
+        <AreaArray MaxCount="1" Radius="1" Effect="HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSymbioteIssueOrder"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectIssueOrder id="HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSymbioteIssueOrder">
+        <ValidatorArray value="HeroAbathurSymbiote@IsSymbiote"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Abil value="stop"/>
+    </CEffectIssueOrder>
+    <CEffectDestroyPersistent id="HeroAbathurDeepTunnel@DestroyPersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Effect="HeroAbathurDeepTunnel@Persistent" Value="TargetPoint"/>
+        <Effect value="HeroAbathurDeepTunnel@Persistent"/>
+        <Count value="1"/>
+        <Radius value="0.25"/>
+    </CEffectDestroyPersistent>
+    <CEffectRemoveBehavior id="HeroAbathurDeepTunnel@RemoveDisablerBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroAbathurDeepTunnel@DisablerBehavior"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="DeepTunnelDummy">
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroAbathurSymbiote@VisibilityControllerRemoveBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurSymbiote@VisibilityController"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreatePersistent id="ToxicNestDamageDelay">
+        <ExpireEffect value="ToxicNestSearchAreaDamage"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <InitialEffect value="SuicideUnitXPDummyCreateUnit"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ToxicNestSearchAreaDamage">
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="HeroAbathurToxicNest@Damage"/>
+        <ImpactLocation Value="OriginUnit"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroAbathurToxicNest@TriggerSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurToxicNest@SearchAreaImpact"/>
+        <EffectArray value="HeroAbathurToxicNest@SuicideSet"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroAbathurUltimateEvolution@ApplyHeroicDetector">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurUltimateEvolution@HeroicAbilityDetector"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurUltimateEvolution@RemovePostDeathEffect">
+        <ValidatorArray value="TargetHasPostDeathEffects"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <BehaviorLink value="PostDeathEffects"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroAbathurSymbiote@ApplyCasterBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurSymbiote@CasterDummyBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurSymbiote@RemoveCasterBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroAbathurSymbiote@CasterDummyBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreatePersistent id="HeroAbathurTalentLocustBrood@CreatePersistent">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Flags index="RandomOffset" value="1"/>
+        <InitialDelay value="0.25"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="HeroAbathurTalentLocustBrood@LocustSwitch"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="1,1,0"/>
+        <PeriodicOffsetArray value="0,1,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="-1,-1,0"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroAbathurCarapace@ApplySet">
+        <ValidatorArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurCarapace@ApplyShieldSwitch"/>
+        <EffectArray value="HeroAbathurTalentCarapaceNetworkedCarapace@ApplySearch"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroAbathurCarapace@ApplyShieldSwitch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseArray Validator="HeroAbathurTalentSymbioteHivemind@HivemindTarget" Effect="HeroAbathurTalentSymbioteHivemind@ApplyCarapaceShield"/>
+        <CaseDefault value="HeroAbathurCarapace@ApplyShield"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroAbathurCarapace@TalentBuffsApplySet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurTalentCarapaceAdrenalineBoost@ApplyBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="HeroAbathurDeepTunnel@Set">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurDeepTunnel@Teleport"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroAbathurTalentLocustBrood@LocustSwitch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseArray Validator="HasAbathurAssaultStrain" Effect="HeroAbathurTalentLocustBrood@CreateAssaultUnit"/>
+        <CaseArray Validator="HeroAbathurTalentLocustStrainBombardStrain" Effect="HeroAbathurTalentLocustBrood@CreateBombardUnit"/>
+        <CaseDefault value="HeroAbathurTalentLocustBrood@CreateNormalUnit"/>
+    </CEffectSwitch>
+    <CEffectCreateUnit id="HeroAbathurTalentLocustBrood@CreateAssaultUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="HeroAbathurLocustStrain@LanerDummy"/>
+        <SpawnUnit value="HeroAbathurLocust@Assault"/>
+        <SpawnRange value="2"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="HeroAbathurTalentLocustBrood@CreateBombardUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="HeroAbathurLocustStrain@LanerDummy"/>
+        <SpawnUnit value="HeroAbathurLocust@Bombard"/>
+        <SpawnRange value="2"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="HeroAbathurTalentLocustBrood@CreateNormalUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="HeroAbathurLocustStrain@LanerDummy"/>
+        <SpawnUnit value="HeroAbathurLocust@Normal"/>
+        <SpawnRange value="2"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="HeroAbathurCarapace@RegenerativeMicrobesApplyBehavior">
+        <ValidatorArray value="NotStructureTarget"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurCarapace@RegenerativeMicrobes"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurTalentCarapaceAdrenalineBoost@ApplyBehavior">
+        <ValidatorArray value="HeroAbathurTalentCarapaceAdrenalineBoost"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentCarapaceAdrenalineBoost"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurStab@CreateSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurStab@CreatePersistent"/>
+        <EffectArray value="StabFacingControllerBehavior"/>
+        <EffectArray value="HeroAbathurSymbiote@ApplySuppressSuperStealthController"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroAbathurCarapace@RegenerativeMicrobesCreateHealer" parent="CoreHealingSpell">
+        <ValidatorArray value="HeroAbathurCarapace@TargetIsHeroOrMonstrosity"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <LaunchUnit Value="Caster"/>
+        <VitalArray index="Life">
+            <Change value="22"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectCreatePersistent id="StabNeedlespineCreatePersistent">
+        <WhichLocation Value="CasterPoint"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="HeroAbathurStab@LaunchMissile"/>
+        <PeriodicEffectArray value="StabLaunchMissile2"/>
+        <PeriodicOffsetArray value="0,-11.25,0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.3"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroAbathurTalentSpikeBurstEnvenomedSpikes@ApplySlowBehavior" parent="CoreApplySlow">
+        <ValidatorArray value="HeroAbathurTalentSpikeBurstEnvenomedSpikes"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentSpikeBurstEnvenomedSpikes@Slow"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="StabCreateSetNeedlespine">
+        <EffectArray value="StabNeedlespineCreatePersistent"/>
+        <EffectArray value="StabFacingControllerBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroAbathurUltimateEvolution@ApplyCasterVehicleBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroAbathurUltimateEvolution@VehicleCasterBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="UltimateEvolutionRemoveCasterVehicleBehavior">
+        <BehaviorLink value="HeroAbathurUltimateEvolution@VehicleCasterBehavior"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroAbathurToxicNest@ApplyVisionBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurToxicNest@Reveal"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroAbathurToxicNest@VisionAfterSuicideCreatePersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="SourceUnitOrPoint"/>
+        <ExpireDelay value="4"/>
+        <RevealRadius value="3.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="ToxicityVisionCreatePersistent">
+        <WhichLocation Value="SourceUnit"/>
+        <ExpireDelay value="4"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectDestroyPersistent id="HeroAbathurToxicNest@DestroyVisionDestroyPersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="SourceUnit"/>
+        <Effect value="HeroAbathurToxicNest@VisionCreatePersistent"/>
+        <Count value="1"/>
+    </CEffectDestroyPersistent>
+    <CEffectSet id="HeroAbathurToxicNest@SuicideSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurToxicNest@DestroyVisionDestroyPersistent"/>
+        <EffectArray value="HeroAbathurToxicNest@VisionAfterSuicideCreatePersistent"/>
+        <EffectArray value="StandardSuicide"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroAbathurToxicNest@VisionCreatePersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="SourceUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <PeriodicValidator value="SourceNotDead"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <RevealRadius value="3.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="ApplyAssumingDirectControlBehaviorPreCast">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AssumingDirectControlBehaviorPreControl"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroAbathurWeaponLocustNormal@DamageSwitch" parent="SummonedBasicAttackAbilityDamageMissCheck">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseDefault value="HeroAbathurWeaponLocustNormal@Damage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="HeroAbathurWeaponLocustNormal@Damage" parent="CorePhysicalDamageAsSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="46">
+            <AccumulatorArray value="HeroAbathurTalentLocustStrainSurvivalInstinct@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSet id="HeroAbathurAssumingDirectControl@BehaviorFinalSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="AssumingDirectControlUltimateEvolutionSearch"/>
+        <EffectArray value="HeroAbathurAssumingDirectControl@ApplyFinalStun"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroAbathurAssumingDirectControl@ApplyFinalStun">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurAssumingDirectControl@FinalStun"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="AssumingDirectControlUltimateEvolutionSearch">
+        <SearchFilters value="Heroic;Neutral,Enemy"/>
+        <AreaArray Radius="500" Effect="HeroAbathurUltimateEvolution@RemoveControlBehavior"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreateUnit id="LocustSpawnCreateBombardUnit">
+        <ValidatorArray value="SourceNotDead"/>
+        <WhichLocation Value="SourcePoint"/>
+        <SpawnEffect value="HeroAbathurLocustStrain@LanerDummy"/>
+        <SpawnUnit value="HeroAbathurLocust@Bombard"/>
+        <SpawnRange value="2"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="HeroAbathurLocustStrain@CreateNormalUnit">
+        <ValidatorArray value="SourceNotDead"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="SourcePoint"/>
+        <SpawnEffect value="HeroAbathurLocustStrain@LanerDummy"/>
+        <SpawnUnit value="HeroAbathurLocust@Normal"/>
+        <SpawnRange value="2"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="LocustSpawnCreateAssaultUnit">
+        <ValidatorArray value="SourceNotDead"/>
+        <WhichLocation Value="SourcePoint"/>
+        <SpawnEffect value="HeroAbathurLocustStrain@LanerDummy"/>
+        <SpawnUnit value="HeroAbathurLocust@Assault"/>
+        <SpawnRange value="2"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="HeroAbathurLocustStrain@LanerDummy">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="Summon@CreationSwitch"/>
+        <EffectArray value="HeroAbathurTalentLocustStrainSurvivalInstinct@ApplyBehavior"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroAbathurLocustStrain@LocustSwitch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseArray Validator="HasAbathurAssaultStrain" Effect="LocustSpawnCreateAssaultUnit"/>
+        <CaseArray Validator="HeroAbathurTalentLocustStrainBombardStrain" Effect="LocustSpawnCreateBombardUnit"/>
+        <CaseDefault value="HeroAbathurLocustStrain@CreateNormalUnit"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="NeuralParasiteApplyTargetRelicBuff">
+        <Behavior value="AbathurNeuralParasiteRelicBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="NeuralParasiteControlSet">
+        <ValidatorArray value="CasterNotDeadOrStunnedAndTargetNotDead"/>
+        <EffectArray value="HeroAbathurAssumingDirectControl@ApplyBehavior"/>
+        <EffectArray value="NeuralParasiteApplyTargetControl"/>
+        <EffectArray value="NeuralParasiteLinkPersistent"/>
+    </CEffectSet>
+    <CEffectSet id="HeroAbathurStab@ImpactSet" parent="CoreAbilityImpactSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurStab@RemoveBehavior"/>
+        <EffectArray value="HeroAbathurStab@Damage"/>
+        <EffectArray value="SuicideRemove"/>
+    </CEffectSet>
+    <CEffectSet id="HeroAbathurUltimateEvolution@ControlSet">
+        <ValidatorArray value="CasterNotDeadOrSilencedOrStunned"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurAssumingDirectControl@ApplyBehavior"/>
+        <EffectArray value="HeroAbathurUltimateEvolution@CastDummy"/>
+        <EffectArray value="AbathurUltimateEvolutionEvolutionaryLinkApplyTarget"/>
+    </CEffectSet>
+    <CEffectEnumArea id="SymbioteCancelSearch">
+        <SearchFilters value="-;Neutral,Enemy"/>
+        <AreaArray Radius="10" Effect="HeroAbathurSymbiote@RemoveHostBehavior"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="UnstableMutationSearchArea">
+        <LaunchLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4" Effect="UnstableMutationDamage"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="UnstableMutationDamage" parent="CoreSpellDamage">
+        <Amount value="80"/>
+    </CEffectDamage>
+    <CEffectSwitch id="HeroAbathurTalentCarapaceNetworkedCarapace@Switch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseArray Validator="TargetMinionOrMerc" Effect="HeroAbathurTalentCarapaceNetworkedCarapace@ApplySet"/>
+        <CaseArray Validator="TargetIsHero" Effect="HeroAbathurTalentCarapaceNetworkedCarapace@ApplySet"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroAbathurCarapace@ApplyShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurCarapace@Shield"/>
+        <ValidatorArray value="TargetNotStasis"/>
+        <ValidatorArray value="TargetNotTimeStopped"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="CarapaceEvolutionRemoveShield">
+        <BehaviorLink value="HeroAbathurCarapace@Shield"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroAbathurTalentSymbioteHivemind@ApplyCarapaceShield">
+        <ValidatorArray value="TargetNotStasis"/>
+        <ValidatorArray value="TargetNotTimeStopped"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurCarapace@ShieldHivemind"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurTalentSymbioteHivemind@RemoveCarapaceShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurTalentCarapaceNetworkedCarapace@ShieldHivemind"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="HeroAbathurSpikeBurst@DamageSearch">
+        <ValidatorArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4" Effect="HeroAbathurSpikeBurst@ImpactSet"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroAbathurSpikeBurst@ImpactSet" parent="CoreAbilityImpactSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurSpikeBurst@BurstDamage"/>
+        <EffectArray value="HeroAbathurTalentSpikeBurstSomaTransference@CreateHealer"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroAbathurSpikeBurst@BurstDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="120"/>
+        <Fraction value="1">
+            <AccumulatorArray value="HeroAbathurTalentSymbioteHivemind@DamageSwitch"/>
+        </Fraction>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroAbathurSpikeBurst@CastSearch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <SearchFilters value="-;Neutral,Enemy"/>
+        <AreaArray Radius="30" Effect="HeroAbathurSpikeBurst@HostPersistent"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="HeroAbathurSpikeBurst@HostPersistent">
+        <ValidatorArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="HeroAbathurSpikeBurst@DamageSearch"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroAbathurTalentCarapaceNetworkedCarapace@ApplySearch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ExcludeArray Effect="HeroAbathurCarapace@ApplySet" Value="Target"/>
+        <SearchFilters value="Visible;Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Missile,Item,Dead,Hidden"/>
+        <AreaArray Radius="3" Effect="HeroAbathurTalentCarapaceNetworkedCarapace@Switch"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <ValidatorArray value="HeroAbathurTalentCarapaceNetworkedCarapace"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroAbathurSymbiote@HostBehaviorRemovedSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurSymbiote@RemoveHostThreatBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AbathurUltimateEvolutionEvolutionaryLinkApplyTarget">
+        <Behavior value="AbathurUltimateEvolutionEvolutionaryLinkTarget"/>
+        <Chance value="0"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="AbathurUltimateEvolutionEvolutionaryLinkTargetSearch">
+        <Chance value="0"/>
+        <SearchFilters value="-;Player,Neutral,Enemy,ImmuneToAOE,Missile,Item,Dead,Hidden"/>
+        <AreaArray Radius="500" Effect="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@ApplyShield"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@ApplyShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurUltimateEvolution@TimedLifeFinalSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CEffectSet>
+    <CEffectEnumArea id="AbathurUltimateEvolutionEvolutionaryLinkRemoveTargetSearch">
+        <Chance value="0"/>
+        <SearchFilters value="-;Player,Neutral,Enemy,ImmuneToAOE,Missile,Item,Dead,Hidden"/>
+        <AreaArray Radius="500" Effect="AbathurUltimateEvolutionEvolutionaryLinkRemoveSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="AbathurUltimateEvolutionEvolutionaryLinkRemoveSet">
+        <EffectArray value="AbathurUltimateEvolutionEvolutionaryLinkRemoveTarget"/>
+        <EffectArray value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@RemoveShield"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="AbathurUltimateEvolutionEvolutionaryLinkRemoveTarget">
+        <BehaviorLink value="AbathurUltimateEvolutionEvolutionaryLinkTarget"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="AbathurMonstrosityDeepTunnelOrderSet">
+        <EffectArray value="AbathurMonstrosityDeepTunnelCastSearch"/>
+        <EffectArray value="DismountDecloakCasterSet"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="AbathurMonstrosityDeepTunnelCastSearch">
+        <SearchFilters value="-;Neutral,Enemy"/>
+        <AreaArray Radius="30" Effect="AbathurMonstrosityDeepTunnelIssueOrder"/>
+        <ImpactLocation Value="SourceUnit"/>
+    </CEffectEnumArea>
+    <CEffectIssueOrder id="AbathurMonstrosityDeepTunnelIssueOrder">
+        <Abil value="HeroAbathurDeepTunnelMonstrosity"/>
+        <Target Effect="AbathurMonstrosityDeepTunnelOrderSet" Value="TargetPoint"/>
+        <ValidatorArray value="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity"/>
+        <ValidatorArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+    </CEffectIssueOrder>
+    <CEffectApplyBehavior id="HeroAbathurDeepTunnelMonstrosity@ApplyDisablerBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurEvolveMonstrosity@DeepTunnelDisabler"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurDeepTunnelMonstrosity@RemoveDisablerBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroAbathurEvolveMonstrosity@DeepTunnelDisabler"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="AbathurDeepTunnelApplyCCInterruption">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AbathurDeepTunnelCCInterruption"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroAbathurDeepTunnelMonstrosity@Persistent">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="HeroAbathurDeepTunnelMonstrosity@ApplyDisablerBehavior"/>
+        <ExpireEffect value="HeroAbathurDeepTunnelMonstrosity@Set"/>
+        <FinalEffect value="HeroAbathurDeepTunnelMonstrosity@FinalSet"/>
+        <PeriodCount value="1"/>
+        <PeriodicValidator value="HeroAbathurDeepTunnel@ValidatorCombine"/>
+        <PeriodicEffectArray value="HeroAbathurDeepTunnel@ApplyTravelBehavior"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroAbathurDeepTunnelMonstrosity@Set">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurDeepTunnel@Teleport"/>
+        <EffectArray value="AbathurMonstrosityDeepTunnelModifyRedirectCooldown"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="HeroAbathurDeepTunnelMonstrosity@FinalSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurDeepTunnelMonstrosity@RemoveDisablerBehavior"/>
+    </CEffectSet>
+    <CEffectTeleport id="AbathurMonstrosityDeepTunnelTeleport">
+        <WhichUnit Value="Caster"/>
+        <PlacementRange value="2"/>
+        <TargetLocation Value="TargetPoint"/>
+    </CEffectTeleport>
+    <CEffectEnumArea id="AbathurVolatileMutationCastSearch">
+        <SearchFilters value="-;Ally,Neutral,Enemy"/>
+        <AreaArray Radius="30" Effect="AbathurVolatileMutationApplyDelayBehavior"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="AbathurVolatileMutationApplyDelayBehavior">
+        <Behavior value="HeroAbathurTalentVolatileMutation@Delay"/>
+        <ValidatorArray value="AbathurTargetHasUltimateEvolutionOrIsMonstrosity"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AbathurVolatileMutationDelaySet">
+        <EffectArray value="StandardSuicide"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroAbathurTalentVolatileMutation@ExplosionSearch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <SearchFilters value="-;Player,Ally,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="HeroAbathurTalentVolatileMutation@Damage"/>
+        <RevealerParams Duration="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroAbathurTalentVolatileMutation@FinalExplosionSearch">
+        <ValidatorArray value="HeroAbathurTalentVolatileMutation"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ImpactLocation Value="SourceUnitOrPoint"/>
+        <SearchFilters value="-;Player,Ally,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="HeroAbathurTalentVolatileMutation@Damage"/>
+        <RevealerParams Duration="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroAbathurTalentVolatileMutation@Damage" parent="CoreSpellDamage">
+        <ValidatorArray value="NoJungleBenignTarget"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Visibility value="Hidden"/>
+        <Amount value="137"/>
+    </CEffectDamage>
+    <CEffectDamage id="AbathurVolatileMutationDamageUltimateEvolution" parent="HeroAbathurTalentVolatileMutation@Damage">
+        <AttributeFactor index="Structure" value="-0.2"/>
+        <AttributeFactor index="Heroic" value="-0.2"/>
+        <AttributeFactor index="Summoned" value="-0.2"/>
+        <AttributeFactor index="User1" value="-0.2"/>
+        <Name value="Effect/Name/AbathurVolatileMutationDamage"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <Marker Link="Effect/AbathurVolatileMutationDamage"/>
+        <LeechFraction index="Life" value="0.75"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialDelay value="0.0625"/>
+        <PeriodicValidator value="HeroAbathurSymbiote@TargetNotDeadAndHasSymbioteHost"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroAbathurSymbiote@ApplyHostBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurSymbiote@HostBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurSymbiote@ApplyHostThreatBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurSymbiote@HostThreatBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurSymbiote@RemoveHostThreatBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurSymbiote@HostThreatBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroAbathurSymbiote@FinalSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurSymbiote@RemoveHostBehavior"/>
+        <EffectArray value="HeroAbathurAssumingDirectControl@RemoveBehavior"/>
+        <EffectArray value="HeroAbathurSymbiote@RemoveCasterBehavior"/>
+        <EffectArray value="HeroAbathurSymbiote@VisibilityControllerRemoveBehavior"/>
+        <EffectArray value="AbathurSymbioteEvolveMonstrosityFinalDummy"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroAbathurSymbiote@RemoveHostBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurSymbiote@HostBehavior"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroAbathurSymbiote@Set">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurSymbiote@ApplyCasterBehavior"/>
+        <EffectArray value="HeroAbathurSymbiote@ApplyHostBehavior"/>
+        <EffectArray value="AbathurSymbioteEvolveMonstrosityInitialDummy"/>
+        <EffectArray value="HeroAbathurTalentSymbioteAdrenalOverload@ApplyBuff"/>
+    </CEffectSet>
+    <CEffectSet id="HeroAbathurToxicNest@SearchSet" parent="CoreAbilityImpactSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurToxicNest@Damage"/>
+        <EffectArray value="HeroAbathurToxicNest@ApplyVisionBehavior"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroAbathurSymbiote@ActorLink">
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroAbathurSymbiote@PropertyLink">
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="AssumingDirectControlDeathDummy"/>
+    <CEffectEnumArea id="HeroAbathurToxicNest@SearchAreaTrigger">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Destructible,Item,Stasis,Dead,Hidden,Benign"/>
+        <AreaArray MaxCount="1" Radius="1.5" Effect="HeroAbathurToxicNest@TriggerSet"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroAbathurUltimateEvolution@ApplyTimedLife">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroAbathurUltimateEvolution@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroAbathurUltimateEvolution@RemoveControlBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <BehaviorLink value="HeroAbathurUltimateEvolution@ControlBehavior"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroAbathurTalentToxicNestVileNest@ApplySlowBehavior" parent="CoreApplySlow">
+        <ValidatorArray value="HeroAbathurTalentToxicNestVileNest"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentToxicNestVileNest@Slow"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurToxicNest@InitialSet">
+        <ValidatorArray value="Walkable"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurToxicNest@CreateUnit"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="HeroAbathurToxicNest@CreateUnit">
+        <ValidatorArray value="AbathurToxicNestInRangeorHasProlificDispersalCombine"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="NormalizeSpawnOffset" value="0"/>
+        <SpawnEffect value="HeroAbathurToxicNest@ApplyArmingBehavior"/>
+        <SpawnUnit value="HeroAbathurToxicNest"/>
+        <SpawnRange value="6"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="HeroAbathurToxicNest@ApplySearchBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroAbathurToxicNest@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroAbathurToxicNest@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Visibility value="Hidden"/>
+        <Amount value="153"/>
+        <LaunchLocation Value="CasterUnit"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroAbathurUltimateEvolution@CastSet">
+        <ValidatorArray value="NotVehicle"/>
+        <ValidatorArray value="NoSpiritFormBuffNormal"/>
+        <ValidatorArray value="NoSpiritFormBuffImproved"/>
+        <ValidatorArray value="NoTyraelDeathExplosionBehavior"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurUltimateEvolution@ApplyCasterVehicleBehavior"/>
+        <EffectArray value="HeroAbathurUltimateEvolution@ControlSet"/>
+        <EffectArray value="HeroAbathurUltimateEvolution@ApplyHeroicDetector"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroAbathurToxicNest@SearchAreaImpact">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="HeroAbathurToxicNest@SearchSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroAbathurUltimateEvolution@CastDummy">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroAbathurCarapace@SearchArea">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <SearchFilters value="-;Neutral,Enemy"/>
+        <AreaArray Radius="30" Effect="HeroAbathurCarapace@ApplySet"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroAbathurAssumingDirectControl@ApplyBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurAssumingDirectControl"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurAssumingDirectControl@CancelSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="NeuralParasiteRemoveTargetControl"/>
+        <EffectArray value="SymbioteCancelSearch"/>
+        <EffectArray value="HeroAbathurUltimateEvolution@RemoveControlBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="NeuralParasiteApplyTargetBuff">
+        <Behavior value="AbathurNeuralParasiteBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HeroAbathurStab@MissileScan">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <LaunchLocation Value="OriginPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToSkillshots,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray>
+            <MaxCount value="1"/>
+            <RectangleWidth value="1.25"/>
+            <RectangleHeight value="1.75"/>
+            <Effect value="HeroAbathurStab@ImpactSet"/>
+        </AreaArray>
+        <RevealerParams Duration="0.75" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="NeuralParasiteApplyTargetControl">
+        <Behavior value="AbathurNeuralParasiteControl"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="NeuralParasiteFinalSet">
+        <EffectArray value="NeuralParasiteRemoveTargetControl"/>
+        <EffectArray value="HeroAbathurAssumingDirectControl@RemoveBehavior"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="NeuralParasiteLinkPersistent">
+        <ValidatorArray value="AbathurNeuralParasiteControlActive"/>
+        <WhichLocation Effect="NeuralParasiteCastPersistent" Value="TargetUnit"/>
+        <FinalEffect value="NeuralParasiteFinalSet"/>
+        <PeriodCount value="40"/>
+        <PeriodicPeriodArray value="0.5"/>
+        <InitialEffect value="NeuralParasiteApplyTargetBuff"/>
+        <PeriodicValidator value="AbathurNeuralParasiteControlActive"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NeuralParasiteCastPersistent">
+        <ValidatorArray value="HeroAbathurSymbiote@IsValidSymbioteTarget"/>
+        <ValidatorArray value="NotTownHallL2"/>
+        <ValidatorArray value="NotTownHallL3"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="NeuralParasiteControlSet"/>
+        <PeriodicPeriodArray value="1"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodicValidator value="CasterNotDeadOrStunnedAndTargetNotDead"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="HeroAbathurStab@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="119">
+            <AccumulatorArray value="HeroAbathurTalentStabNeedlespine@Switch"/>
+        </Amount>
+        <Fraction value="1">
+            <AccumulatorArray value="HeroAbathurTalentSymbioteHivemind@DamageSwitch"/>
+        </Fraction>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="HeroAbathurStab@LaunchMissile">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <ImpactLocation Value="TargetPoint"/>
+        <LaunchEffect value="HeroAbathurStab@ApplyMissileScan"/>
+        <ImpactEffect value="SuicideRemove"/>
+        <AmmoUnit value="HeroAbathurStab@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectRemoveBehavior id="NeuralParasiteRemoveTargetControl">
+        <BehaviorLink value="AbathurNeuralParasiteControl"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroAbathurStab@ApplyMissileScan">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroAbathurStab@MissileScan"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroAbathurSymbiote@LinkPersistent">
+        <ValidatorArray value="CasterNotDeadOrStunnedAndTargetNotDead"/>
+        <ValidatorArray value="HeroAbathurSymbiote@IsValidSymbioteTarget"/>
+        <ValidatorArray value="AbathurSymbioteBenignTargetValidatorCombine"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="HeroAbathurSymbiote@Set"/>
+        <FinalEffect value="HeroAbathurSymbiote@FinalSet"/>
+        <PeriodicValidator value="HeroAbathurSymbiote@ControlActive"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroAbathurDeepTunnel@PrepSet">
+        <ValidatorArray value="HasVisionOfTarget"/>
+        <ValidatorArray value="Walkable"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="DismountDecloakCasterSet"/>
+        <EffectArray value="AbathurDeepTunnelApplyCCInterruption"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroAbathurDeepTunnel@Persistent">
+        <ValidatorArray value="HeroAbathurDeepTunnel@ValidatorCombine"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="HeroAbathurDeepTunnel@ApplyDisablerBehavior"/>
+        <ExpireEffect value="HeroAbathurDeepTunnel@Set"/>
+        <FinalEffect value="HeroAbathurDeepTunnel@FinalSet"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="HeroAbathurDeepTunnel@ApplyTravelBehavior"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="StabInitialMissileScan">
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToSkillshots,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSDistance"/>
+        </TargetSorts>
+        <AreaArray>
+            <Arc value="90"/>
+            <MaxCount value="1"/>
+            <Radius value="0.625"/>
+            <Effect value="HeroAbathurStab@Damage"/>
+        </AreaArray>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectRemoveBehavior id="HeroAbathurStab@RemoveBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="HeroAbathurStab@MissileScan"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreatePersistent id="HeroAbathurStab@CreatePersistent">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="CasterPoint"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="HeroAbathurStab@LaunchMissile"/>
+        <PeriodicOffsetArray value="0,-7.75,0"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="HeroAbathurAssumingDirectControl@RemoveBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroAbathurAssumingDirectControl"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectTeleport id="HeroAbathurDeepTunnel@Teleport">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <PlacementRange value="2"/>
+        <TargetLocation Value="TargetPoint"/>
+    </CEffectTeleport>
+    <CEffectSet id="HeroAbathurWeapon@DamageSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurWeapon@Damage"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroAbathurWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="26"/>
+    </CEffectDamage>
+    <CEffectSwitch id="HeroAbathurWeaponEvolveMonstrosity@Switch" parent="SummonedBasicAttackAbilityDamageMissCheck">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseDefault value="HeroAbathurWeaponEvolveMonstrosity@Set"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroAbathurWeaponEvolveMonstrosity@Set">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurWeaponEvolveMonstrosity@Damage"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroAbathurWeaponEvolveMonstrosity@MeleeSwitch" parent="SummonedBasicAttackAbilityDamageMissCheck">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CaseDefault value="HeroAbathurWeaponEvolveMonstrosity@Damage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="HeroAbathurWeaponEvolveMonstrosity@Damage" parent="CorePhysicalDamageAsSpellDamage">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Amount value="85">
+            <AccumulatorArray value="HeroAbathurEvolveMonstrosityStacks@CurrentDamageBonusAdditiveMultiply"/>
+            <AccumulatorArray value="HeroAbathurTalentEvolveMonstrosityEvolutionComplete@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroAbathurEvolveMonstrosity@ApplyCollisionSuppresser">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurEvolveMonstrosity@TargetCollisionSuppresser"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroAbathurEvolveMonstrosity@ApplyTimedLife">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurEvolveMonstrosity@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectCreateUnit id="HeroAbathurEvolveMonstrosity@CreateUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnEffect value="HeroAbathurEvolveMonstrosity@SpawnSet"/>
+        <SpawnUnit value="HeroAbathurEvolveMonstrosity"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="HeroAbathurEvolveMonstrosity@InitialSet">
+        <ValidatorArray value="HeroAbathurLocust@TargetIsLocustorMinion"/>
+        <ValidatorArray value="TargetIsNotABossUnitOrMonsterMinorCombine"/>
+        <ValidatorArray value="TargetNotMercenary"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosityStacks@RemoveAbathurStack"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosity@ApplyCollisionSuppresser"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosity@CreateUnit"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosity@ApplyActiveBehavior"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosityStacks@AddTokenCounterToCaster"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroAbathurEvolveMonstrosityStacks@RemoveAbathurStack">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroAbathurEvolveMonstrosity@AbathurStack"/>
+        <Count value="40"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroAbathurEvolveMonstrosity@SpawnSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="Summon@CreationSwitch"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosity@AddToTrackingBehavior"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosity@ApplyStasisController"/>
+        <EffectArray value="HeroAbathurEvolveMonstrosity@ApplyTimedLife"/>
+        <EffectArray value="HeroAbathurTalentVolatileMutation@ApplyVolatileMutation"/>
+        <EffectArray value="HeroAbathurDeepTunnelMonstrosity@CooldownReset"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroAbathurTalentVolatileMutation@ApplyVolatileMutation">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Behavior value="HeroAbathurTalentVolatileMutation"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurTalentLocustNest@InitialSet">
+        <ValidatorArray value="Walkable"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="HeroAbathurTalentLocustNest@CreateUnit"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="HeroAbathurTalentLocustNest@CreateUnit">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="HeroAbathurTalentLocustNest@SpawnSet"/>
+        <SpawnUnit value="HeroAbathurTalentLocustNest"/>
+        <SpawnRange value="1"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="AbathurLocustNestApplyAssaultStrain">
+        <ValidatorArray value="HasAbathurCombatStyleAssaultStrain"/>
+        <Behavior value="AbathurCombatStyleAssaultStrain"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AbathurLocustNestApplyBombardStrain">
+        <ValidatorArray value="HeroAbathurTalentLocustStrainBombardStrain"/>
+        <Behavior value="AbathurCombatStyleBombardStrain"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroAbathurTalentLocustNest@SpawnSet">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <EffectArray value="Summon@CreationSwitch"/>
+        <EffectArray value="HeroAbathurTalentLocustNest@InitialSpawnModifyUnit"/>
+    </CEffectSet>
+    <CEffectSet id="AbathurSymbioteEvolveMonstrosityInitialDummy">
+        <ValidatorArray value="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity"/>
+    </CEffectSet>
+    <CEffectSet id="AbathurSymbioteEvolveMonstrosityFinalDummy">
+        <ValidatorArray value="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroAbathurEvolveMonstrosity@ApplyActiveBehavior">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurEvolveMonstrosity@Active"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroAbathurEvolveMonstrosity@SetCooldown">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Cost Abil="HeroAbathurEvolveMonstrosity,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="StabFacingControllerBehavior">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurStab@FacingControllerBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="UseVehiclePersistent">
+        <ValidatorArray index="4" value="HeroAbathurUltimateEvolution@CasterDoesNotHaveControl"/>
+    </CEffectCreatePersistent>
+</Catalog>

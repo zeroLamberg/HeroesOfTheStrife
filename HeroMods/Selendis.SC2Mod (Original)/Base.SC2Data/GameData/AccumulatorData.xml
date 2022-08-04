@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorBehavior id="HeroSelendisTemplarWillpower@ShieldsRemainingAmount">
+        <Behavior value="HeroSelendisTemplarWillpower"/>
+        <Type value="DamageModifyRemaining"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorConstant id="HeroSelendisTalentTemplarWillpowerDeflectionShield@Modifier" parent="BaseAccumulator">
+        <Amount value="0.75"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroSelendisTalentTemplarBlades@IncreasedDamage" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.6"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroSelendisTalentTemplarBlades@Switch">
+        <CaseArray Validator="HeroSelendisTalentTemplarBlades@TargetHasMarkBuffCasterReq" Accumulator="HeroSelendisTalentTemplarBlades@IncreasedDamage"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="HeroSelendisTemplarWillpower@CasterHighLife">
+        <CaseArray Validator="CasterLifeGT75Percent" Accumulator="HeroSelendisTemplarWillpower@CasterHighLifeDamage"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroSelendisTemplarWillpower@CasterHighLifeDamage" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.75"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroSelendisTemplarWillpower@TargetLowLife">
+        <CaseArray Validator="TargetLifeLT25Percent" Accumulator="HeroSelendisTemplarWillpower@TargetLowLifeDamage"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroSelendisTemplarWillpower@TargetLowLifeDamage" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroSelendisTalentTemplarWillpowerInspiration@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.2"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroSelendisTalentTemplarWillpowerInspiration@Switch">
+        <CaseArray Validator="HeroSelendisTalentTemplarWillpowerInspiration@CasterHasShieldBehaviorAndInspirationTalent" Accumulator="HeroSelendisTalentTemplarWillpowerInspiration@DamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorBehavior id="HeroSelendisTemplarWillpower@RemaingDurationOfShields">
+        <Behavior value="HeroSelendisTemplarWillpower"/>
+        <Type value="DurationRemaining"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorEffectAmount id="HeroSelendisTalentTemplarWillpowerDeflectionShield@AbsorbedAmount">
+        <AmountType value="Absorbed"/>
+    </CAccumulatorEffectAmount>
+</Catalog>

@@ -1,0 +1,118 @@
+include "LibCore_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Meta Data
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libMeta_ge_MetaDataLoadoutType_Skin = 0;
+const int libMeta_ge_MetaDataLoadoutType_Mount = 1;
+string libMeta_ge_MetaDataLoadoutType_Ident (int lp_val);
+
+// Constants
+const int libMeta_gv_metaDataBasePlayerMaxPlayersCount_C = 256;
+const int libMeta_gv_metaDataBaseSupporterMaximumSubscribeMonths = 60;
+const int libMeta_gv_metaData_MaxRecordedMatchCount_C = 512;
+
+// Structures
+struct libMeta_gs_MetaDataIngame {
+    bool[libCore_gv_dataHeroesMaxAllowedSkinCount_C + 1] lv_skinAllowed;
+    bool[libCore_gv_dataMountsMaxMountCount + 1] lv_mountAllowed;
+};
+
+struct libMeta_gs_MetaDataBasePlayerStaff {
+    bool lv_offlineTester;
+    bool lv_developer;
+    bool lv_moderator;
+    bool lv_vIP;
+    bool lv_regularTester;
+    bool lv_alphaTester;
+    bool lv_betaTester;
+    bool lv_regularPlayer;
+    bool lv_player;
+};
+
+struct libMeta_gs_MetaDataBasePlayerLoadout {
+    string[libCore_gv_dataHeroesMaxAllowedSkinCount_C + 1] lv_skinPersonalID;
+    string[libCore_gv_dataMountsMaxMountCount + 1] lv_mountPersonalID;
+    int lv_skinPersonalIDCount;
+    int lv_mountPersonalIDCount;
+};
+
+struct libMeta_gs_MetaDataBasePlayer {
+    string lv_bNet;
+    int lv_region;
+    string lv_discord;
+    datetime lv_registrationDate;
+    libMeta_gs_MetaDataBasePlayerStaff lv_staffData;
+    libMeta_gs_MetaDataBasePlayerLoadout lv_loadoutData;
+    string lv_supporterTypeCurrent;
+    string[libMeta_gv_metaDataBaseSupporterMaximumSubscribeMonths + 1] lv_supporterTypeSubscribeSinceReleaseAtMonth;
+    datetime[libMeta_gv_metaDataBaseSupporterMaximumSubscribeMonths + 1] lv_supporterTypeSubscribeDateTimeStart;
+    datetime[libMeta_gv_metaDataBaseSupporterMaximumSubscribeMonths + 1] lv_supporterTypeSubscribeDateTimeEnd;
+};
+
+struct libMeta_gs_MetaDataBaseFreeToPlay {
+    bool[libCore_gv_dataHeroesMaxAllowedSkinCount_C + 1] lv_skinAllowed;
+    bool[libCore_gv_dataMountsMaxMountCount + 1] lv_mountAllowed;
+};
+
+struct libMeta_gs_MetaDataBase {
+    string lv_event;
+    libMeta_gs_MetaDataBasePlayer[libMeta_gv_metaDataBasePlayerMaxPlayersCount_C + 1] lv_players;
+    libMeta_gs_MetaDataBaseFreeToPlay lv_freeToPlay;
+};
+
+struct libMeta_gs_MetaDataMatchPlayer {
+    string lv_bNet;
+    string lv_heroID;
+    string[libCore_gv_dataHeroesMaxTalentTiers + 1] lv_talentButton;
+};
+
+struct libMeta_gs_MetaDataMatch {
+    libMeta_gs_MetaDataMatchPlayer[libCore_gv_bALMaxPlayers + 1] lv_playerData;
+    fixed lv_matchDuration;
+    datetime lv_dateTimeMatchStart;
+    datetime lv_dateTimeMatchEnd;
+    string lv_gameVersion;
+};
+
+// Variable Declarations
+bool libMeta_gv_metaDataInitialized;
+int libMeta_gv_metaDataBNetGrabberEditBox;
+libMeta_gs_MetaDataIngame[libCore_gv_bALMaxEnginePlayerCount + 1] libMeta_gv_metaDataIngame;
+playergroup libMeta_gv_metaDataIngameVerifiedPlayerGroup;
+playergroup libMeta_gv_metaDataIngameNonVerifiedPlayerGroup;
+int libMeta_gv_metaDataBasePlayerCurrentPlayerCount;
+libMeta_gs_MetaDataBase libMeta_gv_metaDataBase;
+libMeta_gs_MetaDataMatch[libMeta_gv_metaData_MaxRecordedMatchCount_C + 1] libMeta_gv_metaDataMatch;
+
+// Function Declarations
+void libMeta_gf_MetaDataBNetGrabberInitialization ();
+bool libMeta_gf_MetaDataIngameElementAccessedForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex);
+bool libMeta_gf_MetaDataIngameElementVisibleForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex);
+void libMeta_gf_MetaDataIngameFillPlayersLoadoutData ();
+void libMeta_gf_MetaDataIngameVerifyPlayers ();
+bool libMeta_gf_MetaDataIngameElementIsAlowedForPlayer (int lp_player, int lp_loadoutType, int lp_elementItemIndex);
+bool libMeta_gf_MetaDataPlayerAccessExpanded (int lp_player, int lp_loadoutType, int lp_elementIndex);
+bool libMeta_gf_MetaDataPlayerExistsInDataBase (int lp_player);
+int libMeta_gf_MetaDataMetaDataPlayerIndex (int lp_player);
+bool libMeta_gf_MetaDataPersonalElementIndexAllowedForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex);
+bool libMeta_gf_MetaDataSupporterTypeAccepted (string lp_currentSupporterType, string lp_targetSupporterType);
+void libMeta_gf_MetaDataBasePlayerAddPersonalElementToDataBaseForPlayer (int lp_loadoutType, string lp_elementIDPersonal, int lp_metaDataPlayerIndex);
+bool libMeta_gf_MetaDataBasePlayerPersonalElementIDExistsInDataBaseForPlayer (int lp_loadoutType, string lp_elementIDPersonal, int lp_metaDataPlayerIndex);
+bool libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid ();
+void libMeta_gf_MetaDataBaseFreeToPlayAddPersonalElementToF2PList (int lp_loadoutType, string lp_elementIDPersonal);
+bool libMeta_gf_MetaDataBaseFreeToPlayElementItemIsF2P (int lp_loadoutType, int lp_elementItemIndex);
+void libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate (datetime lp_startDateTime, datetime lp_endDateTime, string lp_supporterType, int lp_playerMetaDataIndex);
+bool libMeta_gf_MetaDataBaseEventEventElementAllowedForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex);
+bool libMeta_gf_MetaDataBaseEventEventElementAllowedDuringEvent (int lp_loadoutType, int lp_elementIndex);
+bool libMeta_gf_MetaDataBaseEventElementHasEvent (int lp_loadoutType, int lp_elementIndex);
+bool libMeta_gf_MetaDataBaseEventElementHasMetaDataEvent (int lp_loadoutType, int lp_elementIndex);
+
+// Trigger Declarations
+trigger libMeta_gt_IncludeMetaData;
+trigger libMeta_gt_InitializeMetaData;
+
+// Library Initialization
+void libMeta_InitVariables ();
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDamage id="HeroMalfurionTalentMoonfireCelestialAlignment">
+        <Location value="Attacker"/>
+        <Handled value="HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage"/>
+        <CasterFilters value="Self;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <ValidatorArray value="HeroMalfurionMoonfire@TargetIsRevealedCasterReq"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroMalfurionWeapon@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroMalfurionTalentMoonfireFullMoonfire">
+        <Location value="Attacker"/>
+        <Handled value="HeroMalfurionTalentMoonfireFullMoonfire@ApplyArmorReduction"/>
+        <CasterFilters value="Self;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroMalfurionMoonfire@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroMalfurionTalentElunesChosen">
+        <Location value="Attacker"/>
+        <Handled value="HeroMalfurionTalentElunesChosen@ImpactSet"/>
+        <RequireEffectArray value="HeroMalfurionWeapon@Damage"/>
+        <CasterFilters value="Self;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroMalfurionTalentMoonfireHinderingMoonfire">
+        <Location value="Attacker"/>
+        <RequireEffectArray value="HeroMalfurionMoonfire@Damage"/>
+        <Handled value="HeroMalfurionTalentMoonfireHinderingMoonfire@ImpactSet"/>
+        <TargetFilters value="Heroic;-"/>
+        <CasterFilters value="Self;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroMalfurionTalentTwilightDreamAstralCommunion@ArmorDebuffController">
+        <Location value="Attacker"/>
+        <Handled value="HeroMalfurionTalentTwilightDreamAstralCommunion@ApplyArmorDebuff"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroMalfurionTwilightDream@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroMalfurionTalentTwilightDreamAstralCommunion@CooldownController">
+        <Location value="Attacker"/>
+        <Handled value="HeroMalfurionTalentTwilightDreamAstralCommunion@CooldownReduction"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroMalfurionMoonfire@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+</Catalog>

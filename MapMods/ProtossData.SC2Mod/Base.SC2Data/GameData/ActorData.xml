@@ -1,0 +1,1568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorUnit default="1" id="CoreMinionStandard">
+        <Macros value="ProtossGenericWarpingUI"/>
+    </CActorUnit>
+    <CActorUnit default="1" id="CoreCreepStandard">
+        <Macros value="ProtossGenericWarpingUI"/>
+    </CActorUnit>
+    <!-- Gates                                                                          -->
+    <!-- Level 2 -->
+    <CActorUnit default="1" id="TownGateL2Parent" parent="CoreTownBaseStructure">
+        <Macros value="GenericTalentCalldownMULE@RepairGateMacro"/>
+        <ImpactSound value="BuildingWall_Impact"/>
+        <!-- Birth -->
+        <On Terms="Signal.*.PlayBuild" Send="AnimPlay Build Stand,Morph,Start"/>
+        <On Terms="AnimDone; AnimName Build" Send="AnimPlay Custom Stand,Work PlayForever"/>
+    </CActorUnit>
+    <CActorUnit default="1" id="TownGateL3Parent" parent="CoreTownBaseStructure">
+        <Macros value="GenericTalentCalldownMULE@RepairGateMacro"/>
+        <ImpactSound value="BuildingWall_Impact"/>
+        <!-- Birth -->
+        <On Terms="Signal.*.PlayBuild" Send="AnimPlay Build Stand,Morph,Start"/>
+        <On Terms="AnimDone; AnimName Build" Send="AnimPlay Custom Stand,Work PlayForever"/>
+    </CActorUnit>
+    <CActorMissile id="KingsCrestTownTowerAttackMissile">
+        <Model value="TownProtossTowerMissile"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTowerMissile"/>
+    </CActorMissile>
+    <CActorAction id="KingsCrestTownTowerL2Attack">
+        <LaunchAssets Sound="TownProtossCannonTowerAttackLaunch"/>
+        <ImpactMap index="None" Model="TownProtossTowerMissileImpact" Sound="TownProtossCannonTowerAttackImpact"/>
+    </CActorAction>
+    <CActorAction id="KingsCrestTownTowerL3Attack">
+        <LaunchAssets Sound="TownProtossCannonTowerAttackLaunch"/>
+        <ImpactMap index="None" Model="TownProtossTowerMissileImpact" Sound="TownProtossCannonTowerAttackImpact"/>
+    </CActorAction>
+    <CActorEventMacro id="MercenaryVanguard@BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth; ModelName MercenaryVanguard@ModelKhala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap MercenaryVanguard@WarpInKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MercenaryVanguard@WarpInKhala" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap MercenaryVanguard@ModelKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MercenaryVanguard@ModelKhala" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MercenaryVanguard@ModelKhala" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Khala" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MercenaryVanguard@BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth; ModelName MercenaryVanguard@ModelTaldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap MercenaryVanguard@WarpInTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MercenaryVanguard@WarpInTaldarim" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap MercenaryVanguard@ModelTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MercenaryVanguard@ModelTaldarim" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MercenaryVanguard@ModelTaldarim" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Taldarim" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossCatapult@BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossCatapult@ModelKhala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap MinionProtossCatapult@WarpInKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@WarpInKhala" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap MinionProtossCatapult@ModelKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@ModelKhala" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@ModelKhala" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Khala" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossCatapult@BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossCatapult@ModelTaldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap MinionProtossCatapult@WarpInTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@WarpInTaldarim" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap MinionProtossCatapult@ModelTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@ModelTaldarim" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@ModelTaldarim" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Taldarim" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossRanged@BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossRanged@ModelKhala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap MinionProtossRanged@WarpInKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@WarpInKhala" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap MinionProtossRanged@ModelKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@ModelKhala" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@ModelKhala" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Khala" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossRanged@BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossRanged@ModelTaldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap MinionProtossRanged@WarpInTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@WarpInTaldarim" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap MinionProtossRanged@ModelTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@ModelTaldarim" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@ModelTaldarim" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Taldarim" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossWizard@BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossWizard@ModelKhala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap MinionProtossWizard@WarpInKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@WarpInKhala" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap MinionProtossWizard@ModelKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@ModelKhala" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@ModelKhala" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Khala" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossWizard@BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossWizard@ModelTaldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap MinionProtossWizard@WarpInTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@WarpInTaldarim" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap MinionProtossWizard@ModelTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@ModelTaldarim" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@ModelTaldarim" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Taldarim" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossMelee@BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossMelee@ModelKhala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap MinionProtossMelee@WarpInKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@WarpInKhala" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap MinionProtossMelee@ModelKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@ModelKhala" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@ModelKhala" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Khala" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="MinionProtossMelee@BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="UnitBirth; ModelName MinionProtossMelee@ModelTaldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap MinionProtossMelee@WarpInTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@WarpInTaldarim" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap MinionProtossMelee@ModelTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@ModelTaldarim" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@ModelTaldarim" Send="AnimBaselineStart"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth; HasStatus Taldarim" Send="AnimClear Birth"/>
+    </CActorEventMacro>
+    <CActorDoodad id="BaseProtossRepulsor"/>
+    <CActorEventMacro id="ProtossGenericWarpingUI">
+        <On Terms="Behavior.GenericProtossWarping.On" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.GenericProtossWarping.Off" Send="SetShowStatusBar 1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Common"/>
+    </CActorEventMacro>
+    <CActorRange id="TownCoreWeaponRangeIndicator">
+        <On Terms="UnitBirth.TownProtossCore.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCore.EditorPlacementCursor" Send="Create"/>
+    </CActorRange>
+    <CActorEventMacro id="TownProtossCannonTowerL2StandaloneBirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossCannonTowerL2Khala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossCannonTowerL2PlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossCannonTowerL2BirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL2BirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossCannonTowerL2Khala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL2Khala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCannonTowerL2StandaloneBirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossCannonTowerL2Taldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossCannonTowerL2PlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossCannonTowerL2BirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL2BirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossCannonTowerL2Taldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL2Taldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCannonTowerL3StandaloneBirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossCannonTowerL3Khala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossCannonTowerL3PlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossCannonTowerL3BirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL3BirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossCannonTowerL3Khala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL3Khala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorUnit id="TownProtossGateL3BRUL" parent="TownGateL3Parent" unitName="TownProtossGateL3BRUL">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL3Vertical180" parent="TownGateL3Parent" unitName="TownProtossGateL3Vertical180">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL3Vertical" parent="TownGateL3Parent" unitName="TownProtossGateL3Vertical">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL3BLUR" parent="TownGateL3Parent" unitName="TownProtossGateL3BLUR">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL315BRUL" parent="TownGateL3Parent" unitName="TownProtossGateL315BRUL">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL315BLUR" parent="TownGateL3Parent" unitName="TownProtossGateL315BLUR">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <Model value="TownProtossGate"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossMoonwellL2" parent="CoreTownBaseStructure" unitName="TownProtossMoonwellL2">
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <Macros value="TownProtossMoonwellL2BirthMacroKhala"/>
+        <Macros value="TownProtossMoonwellL2BirthMacroTaldarim"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossMoonwellL2Khala"/>
+        <BuildModel value="TownProtossMoonwellL2BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossMoonwellL2DeathKhala" SoundLink="TownProtossMoonwell_Explode"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <PlacementModel value="TownProtossMoonwellL2PlacementKhala"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapMoonwellIcon"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-shieldbattery.dds"/>
+    </CActorUnit>
+    <CActorEventMacro id="TownProtossMoonwellL2BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossMoonwellL2Khala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossMoonwellL2PlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossMoonwellL2BirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL2BirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossMoonwellL2Khala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL2Khala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossMoonwellL2BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossMoonwellL2Taldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossMoonwellL2PlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossMoonwellL2BirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL2BirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossMoonwellL2Taldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL2Taldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossTownHallL2BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossTownHallL2Khala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossTownHallL2PlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossTownHallL2BirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL2BirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossTownHallL2Khala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL2Khala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCannonTowerL3StandaloneBirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossCannonTowerL3Taldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossCannonTowerL3PlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossCannonTowerL3BirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL3BirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossCannonTowerL3Taldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerL3Taldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossMoonwellL3BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossMoonwellL3Khala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossMoonwellL3PlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossMoonwellL3BirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL3BirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossMoonwellL3Khala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL3Khala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossMoonwellL3BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossMoonwellL3Taldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossMoonwellL3PlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossMoonwellL3BirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL3BirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossMoonwellL3Taldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellL3Taldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCoreBirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossCoreKhala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossCorePlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossCoreBirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCoreBirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossCoreKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCoreKhala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCoreBirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossCoreTaldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossCorePlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossCoreBirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCoreBirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossCoreTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCoreTaldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCannonTowerL2BirthMacro">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth" Send="AnimBlendTimeApply 0.000000"/>
+        <On Terms="UnitBirth" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.PlayBuild" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossCannonTowerL3BirthMacro">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth" Send="AnimBlendTimeApply 0.000000"/>
+        <On Terms="UnitBirth" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.PlayBuild" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorSound id="TownHallAttackImpact">
+        <Sound value="TownProtossTownHallAttackImpact"/>
+    </CActorSound>
+    <CActorSound id="TownHallAttackLaunch">
+        <Sound value="TownProtossTownHallAttackLaunch"/>
+    </CActorSound>
+    <CActorAction id="TownHallL2Weapon">
+        <LaunchAssets Model="TownProtossTownHallL2WeaponAttackLaunch"/>
+        <ImpactMap index="None" Model="TownProtossTownHallL2WeaponAttackImpact"/>
+    </CActorAction>
+    <CActorMissile id="TownHallL2WeaponAttackMissile">
+        <Model value="TownProtossTownHallL2WeaponAttackMissile"/>
+    </CActorMissile>
+    <CActorAction id="TownHallL3Weapon">
+        <LaunchAssets Model="TownProtossTownHallL3WeaponAttackLaunch"/>
+        <ImpactMap index="None" Model="TownProtossTownHallL3WeaponAttackImpact"/>
+    </CActorAction>
+    <CActorMissile id="TownHallL3WeaponAttackMissile">
+        <Model value="TownProtossTownHallL3WeaponAttackMissile"/>
+    </CActorMissile>
+    <CActorSound id="TownProtossBuildingSoundStart" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorSound>
+    <CActorSound id="TownProtossBuildingSoundEnd" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorSound>
+    <CActorEventMacro id="TownProtossTownHallL3BirthMacroKhala">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossTownHallL3Khala" Send="StatusIncrement Khala"/>
+        <On Terms="StatusIncrement.*.Khala" Send="ModelSwap TownProtossTownHallL3PlacementKhala"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Khala" Send="ModelSwap TownProtossTownHallL3BirthKhala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL3BirthKhala" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Khala" Send="ModelSwap TownProtossTownHallL3Khala"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL3Khala" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossTownHallL2BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossTownHallL2Taldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossTownHallL2PlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossTownHallL2BirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL2BirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossTownHallL2Taldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL2Taldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="TownProtossTownHallL3BirthMacroTaldarim">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="UnitBirth; ModelName TownProtossTownHallL3Taldarim" Send="StatusIncrement Taldarim"/>
+        <On Terms="StatusIncrement.*.Taldarim" Send="ModelSwap TownProtossTownHallL3PlacementTaldarim"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.PlayBuild; HasStatus Taldarim" Send="ModelSwap TownProtossTownHallL3BirthTaldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL3BirthTaldarim" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut; HasStatus Taldarim" Send="ModelSwap TownProtossTownHallL3Taldarim"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL3Taldarim" Send="Signal BuildingComplete"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+    </CActorEventMacro>
+    <CActorTurret id="TownProtossTownHallTurret">
+        <On Terms="TurretEnable.TownProtossTownHallTurret" Send="Create"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorTurret>
+    <CActorUnit id="TownProtossCore" parent="CoreUnitBase" unitName="TownProtossCore">
+        <Aliases value="_CreepEngulfable"/>
+        <Aliases value="_Tower"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On Terms="Behavior.StatusBarController.On" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.StatusBarController.Off" Send="SetShowStatusBar 1"/>
+        <On Terms="ActorCreation; PlayerId 11 11" Send="RefSet ::global.Team1Core ::Self"/>
+        <On Terms="ActorCreation; PlayerId 12 12" Send="RefSet ::global.Team2Core ::Self"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <On Terms="ActorCreation" Send="Create CoreFireBraziersSoundLoop"/>
+        <On Terms="AnimDone; AnimName CoreStart" Send="Create CoreElectricArcSoundLoop"/>
+        <On Terms="Behavior.CoreInvulnerability.On" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Behavior.CoreInvulnerability.Off" Send="AnimBracketStop Cover"/>
+        <On Terms="ActorDestruction" Target="CoreFireBraziersSoundLoop" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="CoreElectricArcSoundLoop" Send="Destroy Immediate"/>
+        <CreepHeightClass value="Medium"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <BuildModel value="TownProtossCoreBirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCoreDeathKhala" SoundLink="Nexus_Explode_Standard"/>
+        <PlacementModel value="TownProtossCorePlacementKhala"/>
+        <VarianceWindowStandIntro value="0.330000"/>
+        <VarianceWindowWalkIntro value="0.330000"/>
+        <VarianceWindowWalkOutro value="0.330000"/>
+        <CustomUnitStatusFrame value="UnitStatus/LordOrderUnitStatusFrameTemplate"/>
+        <MinimapRenderPriority value="Town"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapCoreIcon"/>
+        <Model value="TownProtossCoreKhala"/>
+        <Macros value="ProtossGenericWarpingUI"/>
+        <Macros value="GenericTalentCalldownMULE@RepairCastleMacro"/>
+        <Macros value="PreTargetHaloMacro"/>
+        <Macros value="TownProtossCoreBirthMacroKhala"/>
+        <Macros value="TownProtossCoreBirthMacroTaldarim"/>
+    </CActorUnit>
+    <CActorSound id="MinionProtossCatapultWeapon@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="StandardHero:Minions"/>
+        <On Terms="Effect.MinionProtossCatapultWeapon@LM.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="MinionProtossCatapultWeapon@Warning" parent="CoreModelAnimationStyleContinuous">
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <On Terms="Effect.MinionProtossCatapultWeapon@CP.Start" Send="Create"/>
+        <On Terms="Effect.MinionProtossCatapultWeapon@CP.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+    </CActorModel>
+    <CActorAction id="MinionProtossCatapultWeapon@Attack" parent="GenericAttack" effectImpact="MinionProtossCatapultWeapon@ImpactSearch" effectLaunch="MinionProtossCatapultWeapon@LM">
+        <LaunchAssets Sound=""/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandardSOpForwardLaunchGuide"/>
+        <ImpactMap index="None" Model="MinionProtossCatapultWeapon@Impact" Sound=""/>
+        <ImpactPhysics Name="Explosion" MatchKeys="Basic" Physics="ScarabExplosionForce"/>
+        <ShieldFlashType value="Header"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorAction>
+    <CActorMissile id="MinionProtossCatapultWeapon@AttackMissile" parent="GenericAttackMissileWithDeathAnim" unitName="MinionProtossCatapultWeapon@AttackMissile">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorMissile>
+    <CActorUnit id="TownProtossTownHallL3" parent="CoreTownBaseStructure" unitName="TownProtossTownHallL3">
+        <Macros value="LowAmmoCastleDisabledMacro"/>
+        <Macros value="GenericTalentCalldownMULE@RepairCastleMacro"/>
+        <Macros value="TownProtossTownHallL3BirthMacroKhala"/>
+        <Macros value="TownProtossTownHallL3BirthMacroTaldarim"/>
+        <On Terms="Effect.TownHallL2WeaponLaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetMinimapVisibility"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetTintColor {121,121,121 0.500000} 2.000000 OneShot Dead"/>
+        <BuildModel value="TownProtossTownHallL3BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTownHallL3DeathKhala" SoundLink="TownProtossTownDeath"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossTownHallL3PlacementKhala"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate40Ammo"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <MinimapRenderPriority value="Town"/>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-khaydarinmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapTownIcon"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossTownHallL3Khala"/>
+        <Aliases value="_Tower"/>
+    </CActorUnit>
+    <CActorTurret id="TownProtossCannonTowerTurret">
+        <On Terms="TurretEnable.TownProtossCannonTowerTurret" Send="Create"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorTurret>
+    <CActorTurret id="TownProtossCannonTowerStandaloneTurret">
+        <On Terms="TurretEnable.TownProtossCannonTowerStandaloneTurret" Send="Create"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorTurret>
+    <CActorUnit id="TownProtossTownHallL2" parent="CoreTownBaseStructure" unitName="TownProtossTownHallL2">
+        <Aliases value="_Tower"/>
+        <Macros value="LowAmmoCastleDisabledMacro"/>
+        <Macros value="GenericTalentCalldownMULE@RepairCastleMacro"/>
+        <Macros value="TownProtossTownHallL2BirthMacroKhala"/>
+        <Macros value="TownProtossTownHallL2BirthMacroTaldarim"/>
+        <On Terms="Effect.TownHallL2WeaponLaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetMinimapVisibility"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetTintColor {121,121,121 0.500000} 2.000000 OneShot Dead"/>
+        <BuildModel value="TownProtossTownHallL2BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTownHallL2DeathKhala" SoundLink="TownProtossTownDeath"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossTownHallL2PlacementKhala"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate40Ammo"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <MinimapRenderPriority value="Town"/>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-khaydarinmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapTownIcon"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossTownHallL2Khala"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossMoonwellL3" parent="CoreTownBaseStructure" unitName="TownProtossMoonwellL3">
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <Macros value="TownProtossMoonwellL3BirthMacroKhala"/>
+        <Macros value="TownProtossMoonwellL3BirthMacroTaldarim"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossMoonwellL3Khala"/>
+        <BuildModel value="TownProtossMoonwellL3BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossMoonwellL3DeathKhala" SoundLink="TownProtossMoonwell_Explode"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <PlacementModel value="TownProtossMoonwellL3PlacementKhala"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapMoonwellIcon"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-shieldbattery.dds"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL2" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL2">
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <Macros value="LowAmmoTowerDisabledMacro"/>
+        <Macros value="TownProtossCannonTowerL2BirthMacro"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit TownDeadController@TargetHasDeadBehavior" Send="DeathCustomize Variation1"/>
+        <On Terms="Effect.GuardTowerL2LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <Model value="TownProtossCannonTowerL2Khala"/>
+        <BuildModel value="TownProtossCannonTowerL2BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL2DeathKhala" SoundLink="TownProtossTowerDeath"/>
+        <DeathArray index="UnderConstruction" ModelLink="TownProtossCannonTowerL2DeathUnpoweredKhala" SoundLink="TownProtossTowerDeath"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerL2DeathUnpoweredKhala" Name="Variation1"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTowerL2Khala"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <Aliases value="_Tower"/>
+        <CustomUnitStatusOffset value="0,100"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL3Standalone" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL3Standalone">
+        <Aliases value="_Tower"/>
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <Macros value="LowAmmoTowerDisabledMacro"/>
+        <Macros value="TownProtossCannonTowerL3StandaloneBirthMacroKhala"/>
+        <Macros value="TownProtossCannonTowerL3StandaloneBirthMacroTaldarim"/>
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <On Terms="Effect.GuardTowerL3LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <Model value="TownProtossCannonTowerL3Khala"/>
+        <BuildModel value="TownProtossCannonTowerL3BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL3DeathKhala" SoundLink="TownProtossTowerDeath"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerL3DeathUnpoweredKhala" Name="DeathUnpowered"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTowerL3PlacementKhala"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL3" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL3">
+        <Aliases value="_Tower"/>
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <Macros value="LowAmmoTowerDisabledMacro"/>
+        <Macros value="TownProtossCannonTowerL3BirthMacro"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit TownDeadController@TargetHasDeadBehavior" Send="DeathCustomize Variation1"/>
+        <On Terms="Effect.GuardTowerL3LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <Model value="TownProtossCannonTowerL3Khala"/>
+        <BuildModel value="TownProtossCannonTowerL3BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL3DeathKhala" SoundLink="TownProtossTowerDeath"/>
+        <DeathArray index="UnderConstruction" ModelLink="TownProtossCannonTowerL3DeathUnpoweredKhala" SoundLink="TownProtossTowerDeath"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerL3DeathUnpoweredKhala" Name="Variation1"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTowerL3PlacementKhala"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL2Standalone" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL2Standalone">
+        <Aliases value="_Tower"/>
+        <Macros value="GenericTalentCalldownMULE@TowerMacro"/>
+        <Macros value="LowAmmoTowerDisabledMacro"/>
+        <Macros value="TownProtossCannonTowerL2StandaloneBirthMacroKhala"/>
+        <Macros value="TownProtossCannonTowerL2StandaloneBirthMacroTaldarim"/>
+        <On Terms="Effect.GuardTowerL2LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <Model value="TownProtossCannonTowerL2Khala"/>
+        <BuildModel value="TownProtossCannonTowerL2BirthKhala"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerL2DeathKhala" SoundLink="TownProtossTowerDeath"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerL2DeathUnpoweredKhala" Name="DeathUnpowered"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTowerL2Khala"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorUnit>
+    <CActorSound id="MinionProtossCatapultWeapon@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="StandardHero:Minions"/>
+        <On Terms="UnitDeath.MinionProtossCatapultWeapon@AttackMissile" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="GenericProtossModelWarpIn" parent="CoreModelAnimationStyleContinuous">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <On index="0" Terms="ActorCreation" Send="$Birth 0 -1.000000 -1.000000 5.000000 AsDuration"/>
+        <On index="2" Terms="AnimDone; AnimName Birth" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.100000 WarpIn"/>
+        <On Terms="TimerExpired; TimerName WarpIn" Target="_Unit" Send="SetOpacity 1.000000 4.900000"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpMoveDownBy2"/>
+        <AutoScaleFactor value="1.250000"/>
+    </CActorModel>
+    <CActorModel id="TownProtossBuildingBirth" parent="ModelConstruction">
+        <Aliases value="_ProtossBuildModel"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Build,Start Stand,Build Stand,Build,End ContentPlayOnce 12.000000 AsDuration"/>
+        <On Terms="AnimDone; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create TownProtossBuildingSoundStart"/>
+        <Model value="ProtossBuildingBirth"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorModel>
+    <CActorUnit id="MinionProtossCatapult" parent="CoreMinionStandard" unitName="MinionProtossCatapult">
+        <Model value="MinionProtossCatapult@ModelKhala"/>
+        <BuildModel value="MinionProtossCatapult@WarpInKhala"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossCatapult@DeathKhala" SoundLink="MinionProtossCatapult@Explode"/>
+        <DeathCustoms>
+            <ActorModel value="UnitDeathRagdoll"/>
+            <ModelLink value="MinionProtossCatapult@DeathRagdollKhala"/>
+            <SoundLink value="MinionProtossCatapult@Explode"/>
+            <Name value="RagdollBasic"/>
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PlacementModel value="MinionProtossCatapult@ModelKhala"/>
+        <VarianceWindowStandIntro value="0.330000"/>
+        <VarianceWindowWalkIntro value="0.330000"/>
+        <VarianceWindowWalkOutro value="0.330000"/>
+        <WalkAnimMoveSpeed value="2"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <Macros value="MinionProtossCatapult@BirthMacroKhala"/>
+        <Macros value="MinionProtossCatapult@BirthMacroTaldarim"/>
+        <DeathCustomData index="0" SyncPassChance="100"/>
+    </CActorUnit>
+    <CActorAction id="MinionProtossWizardWeapon@Attack" parent="GenericAttack" effectImpact="MinionProtossWizardWeapon@ImpactSet" effectLaunch="MinionProtossWizardWeapon@LM">
+        <LaunchSiteOps Ops="SOpAttachCenter SOpMoveByDot15"/>
+        <ImpactPhysics Name="HighTemplarPsiBlastImpact" MatchKeys="Basic" Physics="HighTemplarPsiBlastDeathImpactForce"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorAction>
+    <CActorModel id="TownProtossBuildingBirthLarge" parent="ModelConstruction">
+        <Aliases value="_ProtossBuildModel"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Build,Start Stand,Build Stand,Build,End ContentPlayOnce 12.000000 AsDuration"/>
+        <On Terms="AnimDone; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create TownProtossBuildingSoundStart"/>
+        <Model value="ProtossBuildingBirthLarge"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorModel>
+    <CActorSound id="BuildingProtoss_PowerDownSmall" parent="CoreSoundOneShot">
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Tileset"/>
+        <On Terms="Behavior.Building_Town_AmmoReload.On; ValidateUnit NotDeadOrConstruction" Send="Create"/>
+        <On Terms="Behavior.Building_Tower_AmmoReload.On; ValidateUnit NotDeadOrConstruction" Send="Create"/>
+        <Sound value="Protoss_PowerDownSmall"/>
+    </CActorSound>
+    <CActorSound id="BuildingProtoss_PowerUpSmall" parent="CoreSoundOneShot">
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Tileset"/>
+        <On Terms="Behavior.Building_Town_AmmoReload.Off; ValidateUnit NotDeadOrConstruction" Send="Create"/>
+        <Sound value="Protoss_PowerUpSmall"/>
+    </CActorSound>
+    <CActorSound id="GenericProtossWarpLoop" parent="CoreSoundContinuous">
+        <On Terms="Behavior.GenericProtossWarping.On" Send="Create"/>
+        <On Terms="Behavior.GenericProtossWarping.Off" Send="Destroy"/>
+        <On Terms="Behavior.TownProtossWarpIn.On" Send="Create"/>
+        <On Terms="Behavior.TownProtossWarpIn.Off" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorSound>
+    <CActorSound id="GenericProtossWarpStart" parent="CoreSoundOneShot">
+        <On Terms="Behavior.GenericProtossWarping.On" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorSound>
+    <CActorSound id="GenericProtossWarpStop" parent="CoreSoundOneShot">
+        <On Terms="Behavior.GenericProtossWarping.Off" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+    </CActorSound>
+    <CActorMissile id="MinionProtossWizardWeapon@AttackMissile" parent="GenericAttackMissile" unitName="MinionProtossWizardWeapon@AttackMissile">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorMissile>
+    <CActorAction id="MinionProtossRangedWeapon@Attack" parent="GenericAttack" effectImpact="MinionProtossRangedWeapon@Damage" effectLaunch="MinionProtossRangedWeapon@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorAction>
+    <CActorMissile id="MinionProtossRangedWeapon@AttackMissile" parent="GenericAttackMissile" unitName="MinionProtossRangedWeapon@AttackMissile">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorMissile>
+    <CActorUnit id="MinionProtossMelee" parent="CoreMinionStandard" unitName="MinionProtossMelee">
+        <Model value="MinionProtossMelee@ModelKhala"/>
+        <BuildModel value="MinionProtossMelee@WarpInKhala"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossMelee@DeathKhala" SoundLink="Death_Splat2" VoiceLink="MinionProtossMelee@Death"/>
+        <DeathCustoms ActorModel="UnitDeathRagdoll" ModelLink="MinionProtossMelee@DeathRagdollKhala" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PlacementModel value="MinionProtossMelee@ModelKhala"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <BarOffset value="5"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_red.dds"/>
+        </Wireframe>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <Macros value="MinionProtossMelee@BirthMacroKhala"/>
+        <Macros value="MinionProtossMelee@BirthMacroTaldarim"/>
+        <DeathCustomData index="0" SyncPassChance="100"/>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossRanged" parent="CoreMinionStandard" unitName="MinionProtossRanged">
+        <Model value="MinionProtossRanged@ModelKhala"/>
+        <BuildModel value="MinionProtossRanged@WarpInKhala"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossRanged@DeathKhala" SoundLink="Death_Splat2" VoiceLink="MinionProtossRanged@Death"/>
+        <DeathCustoms ActorModel="UnitDeathRagdoll" ModelLink="MinionProtossRanged@DeathRagdollKhala" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <WalkAnimMoveSpeed value="3"/>
+        <BarOffset value="5"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_red.dds"/>
+        </Wireframe>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <Macros value="MinionProtossRanged@BirthMacroKhala"/>
+        <Macros value="MinionProtossRanged@BirthMacroTaldarim"/>
+        <DeathCustomData index="0" SyncPassChance="100"/>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossWizard" parent="CoreMinionStandard" unitName="MinionProtossWizard">
+        <Model value="MinionProtossWizard@ModelKhala"/>
+        <BuildModel value="MinionProtossWizard@WarpInKhala"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossWizard@DeathKhala" SoundLink="Wizard_Minion_Death" VoiceLink="MinionProtossWizard@Death"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_blue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_red.dds"/>
+        </Wireframe>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+        <Macros value="MinionProtossWizard@BirthMacroKhala"/>
+        <Macros value="MinionProtossWizard@BirthMacroTaldarim"/>
+        <DeathCustomData index="0" SyncPassChance="100"/>
+    </CActorUnit>
+    <CActorAction id="MinionProtossMeleeWeapon@Attack" parent="GenericAttack" effectAttack="MinionProtossMeleeWeapon@Damage">
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <ImpactPhysics>
+            <Name value="Attack00"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="00"/>
+            <Physics value="ZealotAttackDeathForce00"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack01"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="01"/>
+            <Physics value="ZealotAttackDeathForce01"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack02"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="02"/>
+            <Physics value="ZealotAttackDeathForce02"/>
+        </ImpactPhysics>
+        <AcquisitionYawHalfArc value="25.000000"/>
+        <AcquisitionPitchHalfArc value="25.000000"/>
+        <ShieldFlashType value="Header"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Minions"/>
+    </CActorAction>
+    <CActorModel id="MercenaryColossusChargedBlast@Warning" parent="CoreModelAnimationStyleContinuous">
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusChargedBlast@PrepareEffect.Start" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusChargedBlast@PrepareEffect.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+        <Model value="MercenaryColossusChargedBlast@WarningModel"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@SplatInner" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Abil.MercenaryColossusFireBeam.SourceCastStart" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@PersistentRing3.Stop; At Caster" Send="Destroy"/>
+        <On Terms="Behavior.JungleCreepSoftLeashing.On" Send="Destroy"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@SplatOuter" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Abil.MercenaryColossusFireBeam.SourceCastStart" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@PersistentRing3.Stop; At Caster" Send="Destroy"/>
+        <On Terms="Behavior.JungleCreepSoftLeashing.On" Send="Destroy"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@BeamHitModel" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.MercenaryColossusFireBeam@BeamUnitTimedLife.On" Send="Create"/>
+        <On Terms="Behavior.MercenaryColossusFireBeam@BeamUnitTimedLife.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachHead"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@GroundFireImpactModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@BeamImpactSet.Start" Send="Create"/>
+        <Scale value="2.000000,1.000000,1.000000"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="MercenaryColossusFireBeam@SoundBeamDamage" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SoundSetPitch Linear 0.000000@0.000000,20.000000@3000.000000"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@BeamImpactSet.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpCasterUnit"/>
+    </CActorSound>
+    <CActorSound id="MercenaryColossusFireBeam@SoundEnd" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SoundSetPitch Linear 0.000000@0.000000,20.000000@3000.000000"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@ClearTurret.Start; At Caster" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpCasterUnit"/>
+    </CActorSound>
+    <CActorSound id="MercenaryColossusFireBeam@SoundLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@BeamSpawnSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@ClearTurret.Start" Send="Destroy"/>
+    </CActorSound>
+    <CActorSound id="MercenaryColossusChargedBlast@LaunchSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Effect.MercenaryColossusChargedBlast@LM.Start; At Caster" Send="Create"/>
+        <Host Subject="_Unit"/>
+    </CActorSound>
+    <CActorModel id="MercenaryColossusChargedBlast@GroundImpactModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusChargedBlast@Search.Start" Send="Create"/>
+        <Model value="MercenaryColossusChargedBlast@GroundImpact"/>
+    </CActorModel>
+    <CActorSound id="MercenaryColossusFireBeam@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SoundSetPitch Linear 0.000000@0.000000,20.000000@3000.000000"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@PersistentRing1.Start; At Caster" Send="Create"/>
+        <Host Subject="_Unit"/>
+    </CActorSound>
+    <CActorSound id="MercenaryColossusChargedBlast@GroundImpactSound" parent="CoreSoundOneShot">
+        <Macros index="0" removed="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusChargedBlast@Search.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="MercenaryColossusFireBeam@PowerUpSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SoundSetPitch Linear 0.000000@0.000000,20.000000@3000.000000"/>
+        <On Terms="Abil.MercenaryColossusFireBeam.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.MercenaryColossusFireBeam.SourceCastStop" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+    </CActorSound>
+    <CActorModel id="MercenaryColossusFireBeam@BeamTargetModel" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.MercenaryColossusFireBeam@BeamUnitTimedLife.On" Send="Create"/>
+        <On Terms="Behavior.MercenaryColossusFireBeam@BeamUnitTimedLife.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachHead"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@GroundFireModel" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@GroundFirePersistent.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 3.000000 {Timed Life}"/>
+        <On Terms="TimerExpired; TimerName {Timed Life}" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpForwardCasterCenterInverted" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusFireBeam@PowerUpModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Abil.MercenaryColossusFireBeam.SourceCastStart" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachHead"/>
+        <Model value="MercenaryColossusFireBeam@PowerUpKhala"/>
+    </CActorModel>
+    <CActorBeamSimple id="MercenaryColossusFireBeam@Model" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusFireBeam@ApplyKineticFollow.Start; At Caster" Send="Create"/>
+        <On Terms="Behavior.MercenaryColossusFireBeam@BeamUnitTimedLife.Off" Send="AnimBracketStop BSD"/>
+        <Model value="MercenaryColossusFireBeam@BeamModel"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachHead"/>
+        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorUnit id="MercenaryColossusFireBeam@BeamTargetUnit" unitName="Mercenary_Colossus_FireBeam_BeamTargetUnit">
+        <Aliases value="_Unit"/>
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth.MercenaryColossusFireBeam@BeamTargetUnit" Send="Create"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Lifetime Birth Stand"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Model value="Invisible"/>
+    </CActorUnit>
+    <CActorModel id="MercenaryColossusWeapon@AttackBeamImpact">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <Supporter Subject="::Creator"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="Create ColossusPurifierAttackImpactSound"/>
+        <On Terms="SupporterDestruction" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Host Subject="MercenaryColossusWeapon@AttackImpactSite"/>
+        <AutoScaleFactor value="2.000000"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusChargedBlast@PowerUpModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Abil.MercenaryColossusChargedBlast.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.MercenaryColossusChargedBlast.SourceCastStop" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachHead"/>
+        <Model value="MercenaryColossusChargedBlast@PowerUpKhala"/>
+    </CActorModel>
+    <CActorSound id="MercenaryColossusChargedBlast@PowerUpSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SoundSetPitch Linear 0.000000@0.000000,20.000000@3000.000000"/>
+        <On Terms="Abil.MercenaryColossusChargedBlast.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.MercenaryColossusChargedBlast.SourceCastStop" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+    </CActorSound>
+    <CActorTurret id="MercenaryColossus@Turret">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="TurretEnable.MercenaryColossus@Turret" Send="Create"/>
+    </CActorTurret>
+    <CActorModel id="MercenaryColossusWeapon@AttackBeamImpactReverse">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <Supporter Subject="::Creator"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="SupporterDestruction" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Host Subject="MercenaryColossusWeapon@AttackImpactSiteReverse"/>
+        <Model value="MercenaryColossusWeapon@AttackBeamImpact"/>
+    </CActorModel>
+    <CActorAction id="MercenaryColossusChargedBlast@Attack" parent="GenericAttack" effectImpact="MercenaryColossusChargedBlast@ImpactSet" effectLaunch="MercenaryColossusChargedBlast@LM">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <LaunchSiteOps Ops="SOpAttachHead"/>
+        <LaunchAttachQuery Methods="AMFilterHead"/>
+    </CActorAction>
+    <CActorBeamSimple id="MercenaryColossusWeapon@AttackBeam">
+        <Terms value="Cap 1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="ActorCreation" Send="Create MercenaryColossusWeapon@AttackBeamImpact"/>
+        <On Terms="ActorCreation" Send="Create ColossusPurifierAttackLaunchSound"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="MercenaryColossusWeapon@AttackImpactSite" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardSearch.Impact" Send="Create"/>
+        <HostLaunch Subject="ColossusPurifierAttackLaunchSite" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="MercenaryColossusWeapon@AttackImpactSite"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="MercenaryColossusWeapon@AttackBeamReverse">
+        <Terms value="Cap 1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="ActorCreation" Send="Create MercenaryColossusWeapon@AttackBeamImpactReverse"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="MercenaryColossusWeapon@AttackImpactSiteReverse" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ReverseSearch.Impact" Send="Create"/>
+        <Model value="MercenaryColossusWeapon@AttackBeam"/>
+        <HostLaunch Subject="ColossusPurifierAttackLaunchSiteReverse" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="MercenaryColossusWeapon@AttackImpactSiteReverse"/>
+    </CActorBeamSimple>
+    <CActorMissile id="MercenaryColossusChargedBlast@AttackMissile" parent="GenericAttackMissileWithDeathAnim" unitName="MercenaryColossusChargedBlast@Weapon">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <Model value="MercenaryColossusChargedBlast@WeaponKhala"/>
+        <DeathArray index="Normal" ModelLink="MercenaryColossusChargedBlast@WeaponKhala"/>
+    </CActorMissile>
+    <CActorSiteMover id="MercenaryColossusWeapon@AttackImpactSite">
+        <Terms value="Cap 1"/>
+        <Sharing value="PerEffectTree"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardSearch.Impact" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardSearch.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="MercenaryColossusWeapon@AttackBeam" Send="Signal Arrival"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Acceleration value="40.000000"/>
+        <Deceleration value="40.000000"/>
+        <Speed value="4.500000"/>
+        <SpeedMax value="4.500000"/>
+    </CActorSiteMover>
+    <CActorSiteMover id="MercenaryColossusWeapon@AttackImpactSiteReverse">
+        <Terms value="Cap 1"/>
+        <Sharing value="PerEffectTree"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ReverseSearch.Impact" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ReverseSearch.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="MercenaryColossusWeapon@AttackBeamReverse" Send="Signal Arrival"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Acceleration value="40.000000"/>
+        <Deceleration value="40.000000"/>
+        <Speed value="4.500000"/>
+        <SpeedMax value="4.500000"/>
+    </CActorSiteMover>
+    <CActorModel id="MercenaryColossusWeapon@AttackBeamUnitImpact" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Behavior.MercenaryColossusWeapon@GroundFireDamageBehavior.On" Send="Create"/>
+        <On Terms="Behavior.MercenaryColossusWeapon@GroundFireDamageBehavior.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorAction id="MercenaryColossusWeapon@AttackShieldHitter" parent="AoEAttackShieldHitter" effectHit="MercenaryColossusWeapon@Damage">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <LaunchRequest Subject="ColossusPurifierAttackLaunchSite" Scope="Caster"/>
+        <ActionFlags index="VictimRevealsAttacker" value="1"/>
+    </CActorAction>
+    <CActorUnit id="MercenaryColossus@Defender" parent="CoreCreepStandard" unitName="MercenaryColossus@Defender">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="WeaponStart.MercenaryColossusWeapon.AttackStart" Send="AnimPlay Attack Stand,Channel,Start"/>
+        <On Terms="WeaponStop.MercenaryColossusWeapon.AttackStop" Send="AnimClear Attack"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardPersistent.Start" Send="AnimBracketStart Attack Stand,Channel,Start Stand,Channel Stand,Channel,End"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardPersistent.Stop" Send="AnimBracketStop Attack"/>
+        <Model value="MercenaryColossus@ModelKhala"/>
+        <DeathArray index="Normal" ModelLink="MercenaryColossus@DeathKhala" SoundLink="" VoiceLink=""/>
+        <DeathCustoms ActorModel="ColossusDeathRagdoll" ModelLink="MercenaryColossus@DeathRagdollKhala" Name="RagdollBasic">
+            <BodySquibs/>
+        </DeathCustoms>
+        <PlacementModel value="MercenaryColossus@ModelKhala"/>
+        <WalkAnimMoveSpeed value="2.1445"/>
+        <CustomUnitStatusFrame value="UnitStatus/SuperCreepNeutralUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_blue.dds"/>
+        </GroupIcon>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,150"/>
+    </CActorUnit>
+    <CActorUnit id="MercenaryColossus@Laner" parent="CoreMinionStandard" unitName="MercenaryColossus@Laner">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="WeaponStart.MercenaryColossusWeapon.AttackStart" Send="AnimPlay Attack Stand,Channel,Start"/>
+        <On Terms="WeaponStop.MercenaryColossusWeapon.AttackStop" Send="AnimClear Attack"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardPersistent.Start" Send="AnimBracketStart Attack Stand,Channel,Start Stand,Channel Stand,Channel,End"/>
+        <On Terms="Effect.MercenaryColossusWeapon@ForwardPersistent.Stop" Send="AnimBracketStop Attack"/>
+        <Model value="MercenaryColossus@ModelKhala"/>
+        <DeathArray index="Normal" ModelLink="MercenaryColossus@DeathKhala"/>
+        <DeathCustoms ActorModel="ColossusDeathRagdoll" ModelLink="MercenaryColossus@DeathRagdollKhala" Name="RagdollBasic">
+            <BodySquibs/>
+        </DeathCustoms>
+        <PlacementModel value="MercenaryColossus@ModelKhala"/>
+        <WalkAnimMoveSpeed value="2.1445"/>
+        <CustomUnitStatusFrame value="UnitStatus/SuperCreepUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_blue.dds"/>
+        </GroupIcon>
+        <MinimapIconIsTeamColored value="1"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,150"/>
+    </CActorUnit>
+    <CActorModel id="MercenaryColossusWeapon@FireBeamModel" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusWeapon@GroundFireCP.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
+        <On Terms="Effect.MercenaryColossusWeapon@GroundFireCP.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpForwardTargetPointFireBeam SOp90" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="MercenaryColossusWeapon@FireBeamTargetModel" parent="CoreModelAnimationStyleContinuous">
+        <Aliases value="_ThermalLancesFireBeamTargetModel"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryColossusWeapon@GroundFirePlacementCP.Start; At Target" Send="Create"/>
+        <On Terms="Effect.MercenaryColossusWeapon@GroundFirePlacementCP.Stop; FromEffectTreeDescendant" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="Invisible"/>
+    </CActorModel>
+    <CActorUnit id="MercenaryHybridReaver@Defender" parent="CoreCreepStandard" unitName="MercenaryHybridReaver@Defender">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="UnitBirth" Send="SetMinimapVisibility"/>
+        <Model value="MercenaryHybridReaver@Model"/>
+        <BuildModel value="MercenaryHybridReaver@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenaryHybridReaver@Death" SoundLink="MercenaryHybridReaverWeapon@Death" VoiceLink=""/>
+        <DeathCustoms ModelLink="MassHallucinationDeath" SoundLink="Tassadar_MassHallucination_DeathLarge" Name="Hallucination"/>
+        <PlacementModel value="MercenaryHybridReaver@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_blue.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\storm_temp_btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <MinimapIconIsTeamColored value="0"/>
+        <MinimapUseSelfColor value="1"/>
+        <MinimapUseSelectionColor value="1"/>
+        <MovementHerdNode value="HerdNode_Infantry_Small"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-xelnaga-viper.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="MercenaryHybridReaverWeapon@Attack" parent="GenericAttack" effectAttack="MercenaryHybridReaverWeapon@ImpactSet">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+    </CActorAction>
+    <CActorUnit id="MercenaryHybridReaver@Laner" parent="CoreMinionStandard" unitName="MercenaryHybridReaver@Laner">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="UnitBirth" Send="SetMinimapVisibility"/>
+        <Model value="MercenaryHybridReaver@Model"/>
+        <BuildModel value="MercenaryHybridReaver@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenaryHybridReaver@Death" SoundLink="MercenaryHybridReaverWeapon@Death" VoiceLink=""/>
+        <PlacementModel value="MercenaryHybridReaver@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_blue.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\storm_temp_btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <MinimapIconIsTeamColored value="1"/>
+        <MinimapRenderPriority value="Merc"/>
+        <UnitIcon value="Assets\Textures\btn-unit-xelnaga-viper.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_footman_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="MercenaryHybridNemesisWeapon@Attack" parent="GenericAttackBase">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Start" Send="Create"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@ImpactSet.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Stop" Send="Destroy"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpForwardLaunchGuide"/>
+        <AcquisitionYawHalfArc value="5.000000"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorUnit id="MercenaryHybridNemesis@Laner" parent="CoreMinionStandard" unitName="MercenaryHybridNemesis@Laner">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="UnitBirth" Send="SetMinimapVisibility"/>
+        <Model value="MercenaryHybridNemesis@Model"/>
+        <BuildModel value="MercenaryHybridNemesis@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenaryHybridNemesis@Death" SoundLink="Hybrid_Zerg_Death" VoiceLink=""/>
+        <PlacementModel value="MercenaryHybridNemesis@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <BarOffset value="5"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+        <MinimapIconIsTeamColored value="1"/>
+        <MinimapRenderPriority value="Merc"/>
+        <UnitIcon value="Assets\Textures\tip_hybridnemesis.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="MercenaryHybridNemesis@Defender" parent="CoreCreepStandard" unitName="MercenaryHybridNemesis@Defender">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="UnitBirth" Send="SetMinimapVisibility"/>
+        <Model value="MercenaryHybridNemesis@Model"/>
+        <BuildModel value="MercenaryHybridNemesis@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenaryHybridNemesis@Death" SoundLink="Hybrid_Zerg_Death" VoiceLink=""/>
+        <PlacementModel value="MercenaryHybridNemesis@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+        <UnitIcon value="Assets\Textures\tip_hybridnemesis.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorBeamSimple id="MercenaryHybridNemesisWeapon@AttackBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Stop; At Effect" Send="AnimBracketStop BSD"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorBeamSimple>
+    <CActorSound id="MercenaryHybridNemesisWeapon@SoundLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Stop" Send="Destroy"/>
+        <Sound value="MercenaryHybridNemesisWeapon@Loop"/>
+    </CActorSound>
+    <CActorSound id="MercenaryHybridNemesisWeapon@SoundStart" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Start; At Target" Send="Create"/>
+        <Sound value="MercenaryHybridNemesisWeapon@Start"/>
+    </CActorSound>
+    <CActorSound id="MercenaryHybridNemesisWeapon@SoundStop" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Start; At Caster" Send="Create"/>
+        <Sound value="MercenaryHybridNemesisWeapon@End"/>
+    </CActorSound>
+    <CActorSound id="MercenaryHybridNemesisWeapon@Sound_VX01" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Start; At Caster" Send="Create"/>
+        <Sound value="MercenaryHybridNemesisWeapon@VX01"/>
+    </CActorSound>
+    <CActorSound id="MercenaryHybridNemesisWeapon@Sound_VX02" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryHybridNemesisWeapon@CP.Stop; At Caster" Send="Create"/>
+        <Sound value="MercenaryHybridNemesisWeapon@VX02"/>
+    </CActorSound>
+    <CActorUnit id="MercenaryHybridDominator@Laner" parent="CoreMinionStandard" unitName="MercenaryHybridDominator@Laner">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="UnitBirth" Send="SetMinimapVisibility"/>
+        <Model value="MercenaryHybridDominator@Model"/>
+        <BuildModel value="MercenaryHybridDominator@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenaryHybridDominator@Death" SoundLink="MercenaryHybridDominator@Death" VoiceLink=""/>
+        <PlacementModel value="MercenaryHybridDominator@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_blue.dds"/>
+        </GroupIcon>
+        <MinimapIconIsTeamColored value="1"/>
+        <MinimapRenderPriority value="Merc"/>
+        <UnitIcon value="Assets\Textures\BTN-Unit-xelnaga-maar.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="MercenaryHybridDominatorWeapon@Attack" parent="GenericAttack" effectAttack="MercenaryHybridDominatorWeapon@ImpactSet">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <LaunchAttachQuery Methods="Weapon"/>
+    </CActorAction>
+    <CActorUnit id="MercenaryHybridDominator@Defender" parent="CoreCreepStandard" unitName="MercenaryHybridDominator@Defender">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="UnitBirth" Send="Create GenericProtossModelWarpIn"/>
+        <On Terms="UnitBirth" Send="SetMinimapVisibility"/>
+        <Model value="MercenaryHybridDominator@Model"/>
+        <BuildModel value="MercenaryHybridDominator@Model"/>
+        <DeathArray index="Normal" ModelLink="MercenaryHybridDominator@Death" SoundLink="MercenaryHybridDominator@Death" VoiceLink=""/>
+        <PlacementModel value="MercenaryHybridDominator@Model"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_blue.dds"/>
+        </GroupIcon>
+        <UnitIcon value="Assets\Textures\BTN-Unit-xelnaga-maar.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorBeamSimple id="MercenaryHybridDominatorWeapon@AttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+    </CActorBeamSimple>
+    <CActorUnit id="MercenaryVanguard@Defender" parent="CoreCreepStandard" unitName="MercenaryVanguard@Defender">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <Model value="MercenaryVanguard@ModelKhala"/>
+        <BuildModel value="MercenaryVanguard@ModelKhala"/>
+        <DeathArray index="Normal" ModelLink="MercenaryVanguard@DeathKhala"/>
+        <PlacementModel value="MercenaryVanguard@ModelKhala"/>
+        <WalkAnimMoveSpeed value="2"/>
+        <Macros value="MercenaryVanguard@BirthMacroKhala"/>
+        <Macros value="MercenaryVanguard@BirthMacroTaldarim"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@InitialPersistent.Stop" Send="AnimClear Attack"/>
+    </CActorUnit>
+    <CActorAction id="MercenaryVanguardWeapon@Attack" parent="CoreGenericAttackPoint" effectImpact="MercenaryVanguardWeapon@DummyImpactSet" effectLaunch="MercenaryVanguardWeapon@LM">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <LaunchAttachQuery Methods="MercenaryVanguardWeapon@AMPattern"/>
+        <Missile value="MercenaryVanguardWeapon@Missile"/>
+        <ImpactMap index="None" Model="MercenaryVanguardWeapon@ImpactKhala"/>
+        <LaunchAssets Model="MercenaryVanguardWeapon@AttackLaunchKhala"/>
+    </CActorAction>
+    <CActorAction id="MercenaryVanguardWeapon@StructureAttack" parent="GenericAttack" effectImpact="MercenaryVanguardWeapon@StructureDamageSet" effectLaunch="MercenaryVanguardWeapon@StructureLM">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <LaunchAttachQuery Methods="MercenaryVanguardWeapon@AMPatternStructure"/>
+        <LaunchAssets Model="MercenaryVanguardWeapon@AttackLaunchKhala" Sound="MercenaryVanguardWeapon@AttackLaunch"/>
+        <Missile value="MercenaryVanguardWeapon@Missile"/>
+        <ImpactMap index="None" Model="MercenaryVanguardWeapon@ImpactKhala" Sound="MercenaryVanguardWeapon@AttackImpact"/>
+    </CActorAction>
+    <CActorForceSphere id="MercenaryVanguardWeapon@AttackImpactForce">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@DummyImpactSet.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint SOpForwardLaunchGuide SOp2DRotation SOpRandomPointInCircleDot35"/>
+        <Duration value="0.150000"/>
+        <Magnitude value="25.000000,12.000000"/>
+        <Radius value="2.150000,0.200000"/>
+    </CActorForceSphere>
+    <CActorModel id="MercenaryVanguardWeapon@AttackLaunchModelLeft" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@InitialPersistent.Start" Send="Create"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@StructureInitialPersistent.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachWeaponLeft SOpPointUp1By1"/>
+        <Model value="MercenaryVanguardWeapon@AttackLaunchKhala"/>
+    </CActorModel>
+    <CActorModel id="MercenaryVanguardWeapon@AttackLaunchModelRight" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@InitialPersistent.Start" Send="Create"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@StructureInitialPersistent.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachWeaponRight SOpPointUp1By1"/>
+        <Model value="MercenaryVanguardWeapon@AttackLaunchKhala"/>
+    </CActorModel>
+    <CActorMissile id="MercenaryVanguardWeapon@Missile" parent="CoreGenericAttackMissileWithDeath" unitName="MercenaryVanguardWeapon@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <Model value="MercenaryVanguardWeapon@MissileKhala"/>
+        <DeathArray index="Normal" ModelLink="MercenaryVanguardWeapon@MissileKhala"/>
+    </CActorMissile>
+    <CActorUnit id="MercenaryVanguard@Laner" parent="CoreMinionStandard" unitName="MercenaryVanguard@Laner">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@InitialPersistent.Stop" Send="AnimClear Attack"/>
+        <Model value="MercenaryVanguard@ModelKhala"/>
+        <BuildModel value="MercenaryVanguard@ModelKhala"/>
+        <DeathArray index="Normal" ModelLink="MercenaryVanguard@DeathKhala"/>
+        <PlacementModel value="MercenaryVanguard@ModelKhala"/>
+        <WalkAnimMoveSpeed value="2"/>
+        <MinimapIconIsTeamColored value="1"/>
+        <Macros value="MercenaryVanguard@BirthMacroKhala"/>
+        <Macros value="MercenaryVanguard@BirthMacroTaldarim"/>
+    </CActorUnit>
+    <CActorModel id="MercenaryVanguardWeapon@Warning" parent="CoreModelAnimationStyleContinuous">
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:Mercenaries"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@InitialSet.Start" Send="Create"/>
+        <On Terms="Effect.MercenaryVanguardWeapon@Warning.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+    </CActorModel>
+    <CActorUnit id="TownProtossGateL2Vertical180" parent="TownGateL2Parent" unitName="TownProtossGateL2Vertical180">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <On Terms="UnitBirth.TownProtossGateL2Vertical180" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.TownProtossGateL2Vertical180" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+    </CActorUnit>
+    <CActorModel id="TownProtossGateForceWall" parent="ModelAddition" unitName="Bogus">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="CastShadows" value="0"/>
+        <Inherits index="CreepEngulfment" value="0"/>
+        <Inherits index="ModelMaterials" value="0"/>
+        <Inherits index="Opacity" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <Inherits index="TeamColor" value="0"/>
+        <Inherits index="TimeScale" value="0"/>
+        <Inherits index="TintColor" value="0"/>
+        <Inherits index="WarpGroup" value="0"/>
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <Supporter Subject="::Creator"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="UnitBirth.TownProtossGateL2Vertical" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossGateL2Vertical180" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossGateL2BRUL" Send="Create {} SOp45"/>
+        <On Terms="UnitBirth.TownProtossGateL2BLUR" Send="Create {} SOp135"/>
+        <On Terms="UnitBirth.TownProtossGateL215BLUR" Send="Create {} SOp45"/>
+        <On Terms="UnitBirth.TownProtossGateL215BRUL" Send="Create {} SOp135"/>
+        <On Terms="UnitBirth.TownProtossGateL3Vertical" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossGateL3Vertical180" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossGateL3BRUL" Send="Create {} SOp45"/>
+        <On Terms="UnitBirth.TownProtossGateL3BLUR" Send="Create {} SOp135"/>
+        <On Terms="UnitBirth.TownProtossGateL315BLUR" Send="Create {} SOp45"/>
+        <On Terms="UnitBirth.TownProtossGateL315BRUL" Send="Create {} SOp135"/>
+    </CActorModel>
+    <CActorUnit id="TownProtossGateL215BRUL" parent="TownGateL2Parent" unitName="TownProtossGateL215BRUL">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <On Terms="UnitBirth.TownProtossGateL215BRUL" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.TownProtossGateL215BRUL" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL2BLUR" parent="TownGateL2Parent" unitName="TownProtossGateL2BLUR">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <On Terms="UnitBirth.TownProtossGateL2BLUR" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.TownProtossGateL2BLUR" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL2BRUL" parent="TownGateL2Parent" unitName="TownProtossGateL2BRUL">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <On Terms="UnitBirth.TownProtossGateL2BRUL" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.TownProtossGateL2BRUL" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL215BLUR" parent="TownGateL2Parent" unitName="TownProtossGateL215BLUR">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <On Terms="UnitBirth.TownProtossGateL215BLUR" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.TownProtossGateL215BLUR" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossGateL2Vertical" parent="TownGateL2Parent" unitName="TownProtossGateL2Vertical">
+        <EditorCategories value="DoodadType:NotDoodad,StandardHero:MapObjects"/>
+        <Model value="TownProtossGate"/>
+        <DeathArray index="Normal" ModelLink="TownProtossGateDeath"/>
+        <On Terms="UnitBirth.TownProtossGateL2Vertical" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.TownProtossGateL2Vertical" Send="AttachModel {} TownProtossHitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Towers                                                                                  -->
+    <!--                                                                                         -->
+    <CActorRange id="TownTowerWeaponRangeIndicator">
+        <On Terms="UnitBirth.TownProtossCannonTowerL2.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL2.EditorPlacementCursor" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL2Standalone.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL2Standalone.EditorPlacementCursor" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL3.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL3.EditorPlacementCursor" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL3Standalone.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossCannonTowerL3Standalone.EditorPlacementCursor" Send="Create"/>
+    </CActorRange>
+    <CActorRange id="TownTownHallWeaponRangeIndicator">
+        <On Terms="UnitBirth.TownProtossTownHallL2.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossTownHallL2.EditorPlacementCursor" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossTownHallL3.EditorPlaced" Send="Create"/>
+        <On Terms="UnitBirth.TownProtossTownHallL3.EditorPlacementCursor" Send="Create"/>
+    </CActorRange>
+</Catalog>

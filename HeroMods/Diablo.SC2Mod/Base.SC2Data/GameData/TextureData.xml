@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTexture id="Diablo_Kaijoe_Purple_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Kaijo_V01_Purple_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Kaijoe_Red_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Kaijo_V01_Red_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Kaijoe_Purple_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Kaijo_V01_Purple_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Kaijoe_Red_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Kaijo_V01_Red_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Storm_Hero_Diablo_Base_v01_Black_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Diablo_Base_Var3_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Diablo_Base_v01_Pink_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Diablo_Base_v01_Pink_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Diablo_Lurkablo_Argent_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Lurkablo_V01_Argent_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Lurkablo_Argent_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Lurkablo_V01_Argent_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Lurkablo_Pale_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Lurkablo_V01_Pale_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Lurkablo_Pale_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Lurkablo_V01_Pale_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Prime_Var1_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Prime_Var1_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Prime_Var1_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Prime_Var1_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Prime_Var2_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Prime_Var2_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Prime_Var2_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Prime_Var2_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Prime_Var3_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Prime_Var3_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Prime_Var4_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Prime_Var4_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Green_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Green_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Green_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Green_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Green_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Green_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Green_Reflection" parent="HeroTexture">
+        <File value="Assets\Textures\gold_reflection.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Purple_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Purple_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Purple_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Purple_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Purple_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Purple_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Purple_Reflection" parent="HeroTexture">
+        <File value="Assets\Textures\reflection_desat.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Var3_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Var3_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Var3_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Var3_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Var3_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Var3_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Var4_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Var4_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Archangel_Var4_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Archangel_Var4_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Storm_Hero_Diablo_Ultimate_v01_White_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Diablo_Ultimate_v01_White_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Diablo_Ultimate_v01_Blue_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Diablo_Ultimate_v01_Blue_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Diablo_Summer18_Var1_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var1_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var1_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var1_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var1_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var1_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var2_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var2_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var2_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var2_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var2_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var2_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var3_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var3_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var3_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var3_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var3_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var3_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var3_Norm" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var3_Norm.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var4_Diff" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var4_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var4_Emis" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var4_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Diablo_Summer18_Var4_Spec" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Diablo_Summer18_Var4_Spec.dds"/>
+    </CTexture>
+</Catalog>

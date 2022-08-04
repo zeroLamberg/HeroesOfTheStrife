@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CHero id="HeroSelendis" HeroID="Selendis">
+        <AttributeId value="HSel"/>
+        <Role value="Damage"/>
+        <Melee value="1"/>
+        <IntroCutsceneSize value="Medium"/>
+        <TalentTreeArray/>
+        <TalentTreeArray Talent="HeroSelendisTalentExecutorBladeAdvancedCharge" Tier="2" Column="1"/>
+        <TalentTreeArray Talent="Selendis_VindicatorsBeam_ImprovedBeamLauncher" Tier="2" Column="2"/>
+        <TalentTreeArray Talent="HeroSelendisTalentPowerStrikeFinalCut" Tier="2" Column="3"/>
+        <TalentTreeArray Talent="HeroSelendisTalentTemplarWillpowerInspiration" Tier="2" Column="4"/>
+        <TalentTreeArray Talent="HeroSelendisTalentExecutorBladeExecutorPower" Tier="3" Column="1"/>
+        <TalentTreeArray Talent="Selendis_VindicatorsBeam_MothershipPower" Tier="3" Column="2"/>
+        <TalentTreeArray Talent="HeroSelendisTalentPowerStrikeTemplarsZeal" Tier="3" Column="3"/>
+        <TalentTreeArray Talent="HeroSelendisTalentBladesofaZealot" Tier="3" Column="4"/>
+        <TalentTreeArray Talent="HeroSelendisTalentTemplarWillPowerPlasmaShield" Tier="4" Column="1"/>
+        <TalentTreeArray Talent="HeroSelendisTalentPhaseWeapon" Tier="4" Column="2"/>
+        <TalentTreeArray Talent="HeroSelendisTalentIntuitiveAttack" Tier="4" Column="3"/>
+        <TalentTreeArray Talent="HeroSelendisTalentVindicatorsBeamThermalFire" Tier="5" Column="1"/>
+        <TalentTreeArray Talent="HeroSelendisTalentPowerStrikePsionicDash" Tier="5" Column="2"/>
+        <TalentTreeArray Talent="HeroSelendisTalentTemplarWillpowerForceOfWill" Tier="5" Column="3"/>
+        <TalentTreeArray Talent="HeroSelendisTalentTemplarWillpowerDeflectionShield" Tier="6" Column="1"/>
+        <TalentTreeArray Talent="HeroSelendisTalentInTheHeatOfBattle" Tier="6" Column="2"/>
+        <TalentTreeArray Talent="Selendis_VindicatorCalldown_MothershipField" Tier="7" Column="1"/>
+        <TalentTreeArray Talent="SelendisPowerStrikeProtectedByKhala" Tier="7" Column="2"/>
+        <TalentTreeArray Talent="HeroSelendisTalentTemplarWillpowerReconfigurationShield" Tier="7" Column="3"/>
+        <Difficulty value="Hard"/>
+        <UniverseIcon value="Assets\Textures\UI_Glues_Store_GameIcon_SC2.dds"/>
+        <LevelScalingArray Ability="HeroSelendisExecutorBlade">
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisExecutorBlade@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisExecutorChargeApproach@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+        </LevelScalingArray>
+        <LevelScalingArray Ability="HeroSelendisVindicatorsBeam">
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisVindicatorsBeam@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications Catalog="Effect" Entry="HeroSelendisTalentVindicatorsBeamInduction@PercentDamage" Field="Amount"/>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisTalentVindicatorsBeamThermalFire@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+        </LevelScalingArray>
+        <LevelScalingArray Ability="HeroSelendisPowerStrike">
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisPowerStrike@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisPowerStrike@ExpireDamage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+        </LevelScalingArray>
+        <LevelScalingArray Ability="HeroSelendisTemplarWillpower">
+            <Modifications Catalog="Effect" Value="0.040000" AffectedByOverdrive="1"/>
+        </LevelScalingArray>
+        <LevelScalingArray Ability="HeroSelendisCalldownVindicator">
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisCalldownVindicator@WeaponDamage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+        </LevelScalingArray>
+        <LevelScalingArray>
+            <Modifications>
+                <Catalog value="Unit"/>
+                <Entry value="HeroSelendis"/>
+                <Field value="LifeMax"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Unit"/>
+                <Entry value="HeroSelendis"/>
+                <Field value="LifeStart"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Unit"/>
+                <Entry value="HeroSelendis"/>
+                <Field value="LifeRegenRate"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisWeapon@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisWeapon@DamageCritical"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+            <Modifications>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisTalentIntuitiveAttack@Damage"/>
+                <Field value="Amount"/>
+                <Value value="0.040000"/>
+                <AffectedByOverdrive value="1"/>
+            </Modifications>
+        </LevelScalingArray>
+    </CHero>
+</Catalog>

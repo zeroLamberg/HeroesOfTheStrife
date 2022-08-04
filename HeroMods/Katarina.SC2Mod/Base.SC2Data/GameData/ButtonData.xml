@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="HeroKatarina@Hearthstone">
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_Hearthstone.dds"/>
+        <AlertIcon value="assets\Icons\Common_General\Icon_General_Hearthstone.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentBestEquipment" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentExclusionZoneExclusionPrison" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_ExclusionZone.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentFlashGrenadeSilenceGrenade" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-nova-flashgrenade.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentWeaponMasterRearmament" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentWeaponMasterToTheLimit" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentArsenal" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_AutoAttack_Cooldown.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentSpecialOps" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="KatarinaTalentClusterChargeOvercharge" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Katarina\Icon_Katarina_ClusterCharge.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentTargetAcquired" parent="CoreButtonParentHideInfo">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Icon value="assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentTargetPractice" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentClusterChargeClusterRecharge" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Katarina\Icon_Katarina_ClusterCharge.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentClusterChargeAdvancedCharge" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Katarina\Icon_Katarina_ClusterCharge_b.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="KatarinaTalentClusterChargeCripplingCharge" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Icons\Hero_Katarina\Icon_Katarina_ClusterCharge_a.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentWeaponMasterAmmoMaster" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaFlashGrenade" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-nova-flashgrenade.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaExclusionZone@Activate" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_ExclusionZone_Activate.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaExclusionZone" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_ExclusionZone.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentWeaponMasterAmmoRestoration" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster_a.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaWeaponSwap" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_Vehicle\Icon_Vehicle_VolskayaRobot_Swap.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+    </CButton>
+    <CButton id="HeroKatarinaClusterCharge" parent="CoreButtonParent">
+        <TooltipAppender Validator="HeroKatarinaTalentClusterChargeAdvancedCharge" Face="HeroKatarinaTalentClusterChargeAdvancedCharge"/>
+        <TooltipAppender Validator="HeroKatarinaTalentClusterChargeClusterRecharge" Face="HeroKatarinaTalentClusterChargeClusterRecharge"/>
+        <TooltipAppender Validator="KatarinaTalentClusterChargeCripplingCharge" Face="KatarinaTalentClusterChargeCripplingCharge"/>
+        <TooltipAppender Validator="KatarinaTalentClusterChargeOvercharge" Face="KatarinaTalentClusterChargeOvercharge"/>
+        <Icon value="Assets\Icons\Hero_Katarina\Icon_Katarina_ClusterCharge.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentMasterGrenadeLauncher" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_GrenadeLauncher_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentMasterSnipe" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Snipe_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentMasterFlamethrower" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Flamethrower_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentMasterAutorifle" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Autorifle_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaEquipFlamethrower" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Flamethrower_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaEquipGrenadeLauncher" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_GrenadeLauncher_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaEquipSnipe" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Snipe_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentWeaponMasterUniversalAmmo" parent="CoreButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster_b.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <SimpleDisplayText value="Button/Tooltip/HeroKatarinaTalentWeaponMasterUniversalAmmo_Simple"/>
+    </CButton>
+    <CButton id="HeroKatarinaEquipAutorifle" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Autorifle_Carried.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaMegaShot" parent="CoreButtonParent">
+        <Tooltip value="Button/Tooltip/HeroKatarinaMegaShotShot"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
+        <AlertTooltip value="Button/Tooltip/HeroKatarinaMegaShotShot"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaWeaponMaster" parent="CoreButtonParentHideInfo">
+        <TooltipAppender Validator="HeroKatarinaTalentWeaponMasterAmmoMaster" Face="HeroKatarinaTalentWeaponMasterAmmoMaster"/>
+        <TooltipAppender Validator="HeroKatarinaTalentWeaponMasterAmmoRestoration" Face="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+        <TooltipAppender Validator="HeroKatarinaTalentWeaponMasterUniversalAmmo" Face="HeroKatarinaTalentWeaponMasterUniversalAmmo"/>
+        <TooltipAppender Validator="HeroKatarinaTalentWeaponMasterToTheLimit" Face="HeroKatarinaTalentWeaponMasterToTheLimit"/>
+        <TooltipAppender Validator="HeroKatarinaTalentWeaponMasterRearmament" Face="HeroKatarinaTalentWeaponMasterRearmament"/>
+        <Icon value="assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaAimedShot" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-engineeringbay-improvedbunkersights.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaLaserShot" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-terran-plasmashot.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaFlameStream" parent="CoreButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-swann-pulsecannon.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CButton>
+    <CButton id="HeroKatarinaTalentWeaponMasterToTheLimit@AbilityButton" parent="HeroKatarinaWeaponMaster">
+        <TooltipCooldownOverrideText value="Button/Information/HeroKatarinaTalentWeaponMasterToTheLimit"/>
+        <HotkeyAlias value="HeroKatarinaTalentWeaponMasterToTheLimit@AbilityButton"/>
+    </CButton>
+</Catalog>

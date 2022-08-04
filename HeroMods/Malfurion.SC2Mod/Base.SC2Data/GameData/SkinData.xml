@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSkin default="1" id="MalfurionCommon">
+        <ModelGroups index="0">
+            <Models index="0" value="HeroMalfurion@Base"/>
+            <Models index="1" value="HeroMalfurion@BasePortraitAddition"/>
+            <Models index="2" value="HeroMalfurion@BaseDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel index="0" value="HeroMalfurion@Base"/>
+    </CSkin>
+    <CSkin id="MalfurionBetrayer">
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinBetrayer"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionSkinBetrayerDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinBetrayerPortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinBetrayerPortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortraitAddition" To="MalfurionSkinBetrayerPortraitAddition"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_BindingRootsModel" To="MalfurionBetrayer_EntanglingRoots_BindingRootsModel"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_Growth" To="MalfurionBetrayer_EntanglingRoots_Growth"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelImpact" To="MalfurionBetrayer_Moonfire_ModelImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelMain" To="MalfurionBetrayer_Moonfire_ModelMain"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelWeaponCast" To="MalfurionBetrayer_Moonfire_ModelWeaponCast"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Attack" To="MalfurionBetrayer_Attack"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Death" To="MalfurionBetrayer_Death"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_LowMana" To="MalfurionBetrayer_LowMana"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Pissed" To="MalfurionBetrayer_Pissed"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Revive" To="MalfurionBetrayer_Revive"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Spec" To="MalfurionBetrayer_Spec"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Ultimate1Used" To="MalfurionBetrayer_Ultimate1Used"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Ultimate2Used" To="MalfurionBetrayer_Ultimate2Used"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_VOX_Attack" To="MalfurionBetrayer_VOX_Attack"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_VOX_Casting" To="MalfurionBetrayer_VOX_Casting"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_VOX_GetHit" To="MalfurionBetrayer_VOX_GetHit"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_VOX_Pulled" To="MalfurionBetrayer_VOX_Pulled"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Yes" To="MalfurionBetrayer_Yes"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_EntanglingRoots_Treant_SoundDeath" To="MalfurionBetrayer_EntanglingRoots_Treant_SoundDeath"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_EntanglingRoots_Treant_SoundWeaponImpact" To="MalfurionBetrayer_EntanglingRoots_Treant_SoundWeaponImpact"/>
+    </CSkin>
+    <CSkin id="MalfurionBloodRaven">
+        <ModelGroups index="0">
+            <Models index="0" value="HeroMalfurion@Base"/>
+            <Models index="1" value="HeroMalfurion@BasePortraitAddition"/>
+            <Models index="2" value="HeroMalfurion@BaseDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel index="0" value="HeroMalfurion@Base"/>
+    </CSkin>
+    <CSkin id="MalfurionFlameVar">
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinFlame"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionSkinFlameDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinFlamePortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinFlamePortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortraitAddition" To="MalfurionSkinFlamePortraitAddition"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_BindingRootsModel" To="MalfurionFlame_EntanglingRoots_BindingRootsModel"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_Growth" To="MalfurionFlame_EntanglingRoots_Growth"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_Treant" To="MalfurionFlame_EntanglingRoots_Treant"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelImpact" To="MalfurionFlame_Moonfire_ModelImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelMain" To="MalfurionFlame_Moonfire_ModelMain"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelCast" To="MalfurionFlame_Tranquility_ModelCast"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelImpact" To="MalfurionFlame_Tranquility_ModelImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelPersistent" To="MalfurionFlame_Tranquility_ModelPersistent"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelWeaponCast" To="MalfurionFlame_Tranquility_ModelWeaponCast"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Weapon_AttackImpact" To="MalfurionFlame_Weapon_AttackImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Weapon_Missile" To="MalfurionFlame_Weapon_Missile"/>
+    </CSkin>
+    <CSkin id="MalfurionFlameVar1" parent="MalfurionFlameVar">
+        <Name value="Skin/Name/MalfurionFlameVar12"/>
+        <ReplacementArray index="3" Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinFlamePortraitVar1"/>
+    </CSkin>
+    <CSkin id="MalfurionFlameVar2" parent="MalfurionFlameVar">
+        <Name value="Skin/Name/MalfurionFlameVar2"/>
+        <ReplacementArray index="3" Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinFlamePortraitVar2"/>
+    </CSkin>
+    <CSkin id="MalfurionFlameVar3" parent="MalfurionFlameVar">
+        <Name value="Skin/Name/MalfurionFlameVar3"/>
+        <ReplacementArray index="3" Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinFlamePortraitVar3"/>
+    </CSkin>
+    <!-- MALFURION -->
+    <CSkin id="MalfurionGrey">
+        <ModelGroups index="0">
+            <Models index="0" value="HeroMalfurion@Base"/>
+            <Models index="1" value="HeroMalfurion@BasePortraitAddition"/>
+            <Models index="2" value="HeroMalfurion@BaseDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel index="0" value="HeroMalfurion@Base"/>
+    </CSkin>
+    <CSkin id="MalfurionRaven">
+        <ModelGroups index="0">
+            <Models index="0" value="HeroMalfurion@Base"/>
+            <Models index="1" value="HeroMalfurion@BasePortraitAddition"/>
+            <Models index="2" value="HeroMalfurion@BaseDeathRagdoll"/>
+        </ModelGroups>
+        <DisplayModel index="0" value="HeroMalfurion@Base"/>
+    </CSkin>
+    <CSkin id="MalfurionStormrage">
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinStormRage"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionSkinStormrageDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinStormragePortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinStormragePortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortraitAddition" To="MalfurionSkinStormragePortraitAddition"/>
+    </CSkin>
+    <CSkin id="MalfurionUltimate">
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinUltimate"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionSkinUltimateDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinUltimatePortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinUltimatePortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortraitAddition" To="MalfurionSkinUltimatePortraitAddition"/>
+    </CSkin>
+    <CSkin id="MalfurionWinter">
+        <ReplacementArray Catalog="Model" From="HeroMalfurion" To="MalfurionSkinWinter"/>
+        <ReplacementArray Catalog="Model" From="HeroMalfurionDeathRagdoll" To="MalfurionSkinWinterDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="MalfurionPortrait" To="MalfurionSkinWinterPortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortrait" To="MalfurionSkinWinterPortrait"/>
+        <ReplacementArray Catalog="Model" From="MalfurionPortraitAddition" To="MalfurionSkinWinterPortraitAddition"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_BindingRootsModel" To="MalfurionWinter_EntanglingRoots_BindingRootsModel"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_Growth" To="MalfurionWinter_EntanglingRoots_Growth"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_EntanglingRoots_Treant" To="MalfurionWinter_EntanglingRoots_Treant"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelImpact" To="MalfurionWinter_Moonfire_ModelImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Moonfire_ModelMain" To="MalfurionWinter_Moonfire_ModelMain"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelCast" To="MalfurionWinter_Tranquility_ModelCast"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelImpact" To="MalfurionWinter_Tranquility_ModelImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Tranquility_ModelPersistent" To="MalfurionWinter_Tranquility_ModelPersistent"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Weapon_AttackImpact" To="MalfurionWinter_Weapon_AttackImpact"/>
+        <ReplacementArray Catalog="Model" From="Malfurion_Weapon_Missile" To="MalfurionWinter_Weapon_Missile"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_EntanglingRoots_SoundLaunch" To="MalfurionWinter_EntanglingRoots_SoundLaunch"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Moonfire_SoundCast" To="MalfurionWinter_Moonfire_SoundCast"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Regrowth_SoundHeal" To="MalfurionWinter_Regrowth_SoundHeal"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Weapon_AttackImpact" To="MalfurionWinter_Weapon_AttackImpact"/>
+        <ReplacementArray Catalog="Sound" From="Malfurion_Weapon_AttackLaunch" To="MalfurionWinter_Weapon_AttackLaunch"/>
+    </CSkin>
+</Catalog>

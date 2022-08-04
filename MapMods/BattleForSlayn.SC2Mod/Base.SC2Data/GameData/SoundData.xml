@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="Amb_2D_Slayn_EXT" parent="Ambience_Map" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Sounds\Uni\Ambience\Tilesets\Ambience_Shakuras.ogg"/>
+        <Flags index="Ignorable" value="1"/>
+        <MixerPriority value="1"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="1000" Volume="-96.000000"/>
+        <SpeakerMix index="Center" value="0.100000"/>
+        <SpeakerMix index="BackLeft" value="0.700000"/>
+        <SpeakerMix index="BackRight" value="0.700000"/>
+        <SpeakerMix index="SideLeft" value="0.700000"/>
+        <SpeakerMix index="SideRight" value="0.700000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <PlayDelay value="500,500"/>
+    </CSound>
+    <CSound id="MX_Slayn_HeroSelection" parent="MUSIC">
+        <AssetArray File="Assets\Music\MissionMusic\Music_ActionScaryRhythm.ogg" FacialGroup="">
+            <SyncPoints value="1718136"/>
+        </AssetArray>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="MapAnnouncer_VoidThrasherAttacks" parent="UI">
+        <AssetArray File="LocalizedData\Sounds\VO\acObj_ShakurasAlly_838.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\acObj_ShakurasAlly_973.ogg" FacialGroup=""/>
+        <Flags index="Wait" value="1"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MapAnnouncer_VoidThrasherDies" parent="UI">
+        <AssetArray File="localizeddata\Sounds\Announcer\MapM_BattleForSlayn\MapM_BattleForSlayn_VoidTrasherDies.ogg" FacialGroup=""/>
+        <Flags index="Wait" value="1"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MapAnnouncer_VoidThrasherSpawns" parent="UI">
+        <AssetArray File="LocalizedData\Sounds\VO\acObj_ShakurasAlly_837.ogg" FacialGroup=""/>
+        <Flags index="Wait" value="1"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@AttackImpact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_08.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@LaunchLayer2" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <AssetArray File="Assets\Sounds\WarMissile_Launch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\WarMissile_Launch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\WarMissile_Launch02.wav" FacialGroup=""/>
+        <DopplerLevel value="2.000000"/>
+        <Pitch value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@SoundLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_06.wav" FacialGroup=""/>
+        <DopplerLevel value="2.000000"/>
+        <Pitch value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@SoundMissileLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_4_Mn.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_1_Mn.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_2_Mn.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_3_Mn.wav" FacialGroup=""/>
+        <DopplerLevel value="3.000000"/>
+        <VolumeRolloffFadeBlend value="Logarithmic"/>
+    </CSound>
+    <CSound id="SlaynVoidRiftSpawn@SoundBirth" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <AssetArray File="Assets\Sounds\Zerg\Hybrid\HybridrMaar_PlasmaBlastImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Hybrid\HybridMaar_PlasmaBlastImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Hybrid\HybridMaar_PlasmaBlastImpact2.wav"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Thrasher_2D_Vx_Lunge2" parent="Scripted_2D_Stereo">
+        <AssetArray File="Assets\Sounds\2D_Thrasher_Vx_Lunge.wav" Weight="26" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\2D_Amon_Vx_Move.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\2D_Amon_Vx_Snarl.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\2D_Amon_Vx_Utter.wav" FacialGroup=""/>
+        <Flags index="AutoUnload" value="0"/>
+        <Flags index="Download" value="0"/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="Wait" value="0"/>
+        <Category value="Ambient"/>
+        <DupeDestroyCount value="3"/>
+        <DupeHistoryCount value="6"/>
+        <DupeMuteCount value="2"/>
+        <Mode value="3DWorld"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <PanLevel value="1.000000"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Spread value="30.000000"/>
+        <SustainFade index="1" Time="2000" Volume="-96.000000"/>
+        <Volume value="-1.000000,1.000000"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Thrasher_2D_Vx_Spit2" parent="Scripted_2D_Stereo">
+        <AssetArray File="Assets\Sounds\2D_Thrasher_Vx_Spit.wav" FacialGroup=""/>
+        <Flags index="AutoUnload" value="0"/>
+        <Flags index="Download" value="0"/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="Wait" value="0"/>
+        <Category value="Ambient"/>
+        <DupeDestroyCount value="3"/>
+        <DupeHistoryCount value="6"/>
+        <DupeMuteCount value="2"/>
+        <Mode value="3DWorld"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <PanLevel value="1.000000"/>
+        <Spread value="90.000000"/>
+        <SustainFade index="1" Time="2000" Volume="-96.000000"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidThrasher_Spawn_Mid" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\UI\UI_Game_Ping_LuxCrypt_SpiderCurse_Enemy01.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidRift_Captured_Ally" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\HVH\InfernalShrines\UI_Game_Ping_InfernalShrine_Captured_Ally01.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidRIft_Captured_Enemy" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\HVH\InfernalShrines\UI_Game_Ping_InfernalShrine_Captured_Enemy01.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidThrasher_Spawn_Bot" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\UI\UI_Game_Ping_Temple_Spawned01.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidThrasher_Spawn_Top" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\UI\UI_Game_Ping_LuxCrypt_SpiderCurse_Ally01.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Ally_End" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger05.ogg" Offset="60000,60000">
+            <SyncPoints value="352800"/>
+            <SyncPoints value="485100"/>
+        </AssetArray>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Ally_End_SlaveLayer" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger04.ogg"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Enemy_End" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger05.ogg" Offset="60000,60000">
+            <SyncPoints value="352800"/>
+            <SyncPoints value="485100"/>
+        </AssetArray>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Enemy_End_SlaveLayer" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger01.ogg"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidRift_Spawn_SlaveLayer" parent="MUSIC">
+        <AssetArray File="Assets\Music\MX_Heroes_Wortham_Stinger3.ogg"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidRift_Spawn" parent="MUSIC">
+        <AssetArray File="Assets\Music\MX_Heroes_DemonHunter_Stinger1.ogg" Pitch="-5.000000,-5.000000">
+            <SyncPoints value="396900"/>
+        </AssetArray>
+        <Volume value="-4.000000,-4.000000"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CSound>
+    <CSound id="MercenarySlaynElementalEssenceLeech@SoundCageStart" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch04.wav" FacialGroup=""/>
+        <Pitch value="-1.500000,2.500000"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="MercenarySlaynElemental@Spawn" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Gen_Explo_Fire_01.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,-1.000000"/>
+        <Volume value="-3.000000,-1.000000"/>
+    </CSound>
+    <CSound id="MercenarySlaynElementalEssenceLeech@SoundCageLoop" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_DeathGrip_Beam_01b.wav" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Pitch value="-6.500000,-6.500000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenarySlaynElementalEssenceLeech@SoundCageEnd" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_BeamEnd_01b.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_BeamStart_01b.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenarySlaynElementalWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackImpact01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackImpact02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackImpact03_1ch.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenarySlaynElementalWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackLaunch01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackLaunch02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackLaunch03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackLaunch04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SlaynElemental_AttackLaunch05_1ch.wav" FacialGroup=""/>
+        <Volume value="-8.500000,-8.500000"/>
+    </CSound>
+    <CSound id="MercDefender_ElementalCamp_Captured" parent="Spell">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Narud_Epilogue_Death_2229ms_2ch.wav" FacialGroup=""/>
+        <DupeDestroyCount value="3"/>
+        <DupeDestroyCountPerPlayer value="3"/>
+        <DupeMuteCount value="3"/>
+        <DupeMuteCountPerPlayer value="3"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <Mode value="2D"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="VoidRift_Launch_Mn2" parent="Spell">
+        <AssetArray File="Assets\Sounds\VoidRift_Mn_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\VoidRift_St_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\VoidRift_St_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\VoidRift_St_Launch_03.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Spread value="30.000000"/>
+        <Volume value="0.000000,2.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Birth_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\Thrasher_Birth_Vox_Mn_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Death_VxFx_01.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Spread value="30.000000"/>
+        <Volume value="4.000000,4.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_ChestGlow2" parent="Spell">
+        <AssetArray File="Assets\Sounds\Vanish_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanish_04.wav" FacialGroup=""/>
+        <LoopDelay value="0,500"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Select value="Random"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Death_LastGasp_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\2D_Thrasher_Vx_Snort.wav" Volume="-8.000000,-8.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\2D_Thrasher_Vx_Barf.wav" Volume="-4.000000,-4.000000" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Chance value="40"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Spread value="30.000000"/>
+        <SustainFade index="1" Time="1500"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Death_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\2D_Thrasher_Vx_Barf.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\2D_Thrasher_Vx_Attak.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Spread value="30.000000"/>
+        <SustainFade index="1" Time="1500"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Electric_Inhale_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\Thrasher_Electric_Inhale_Vox_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Electric_Inhale_Vox_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Electric_Inhale_Vox_03.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Electric_StrikeShort2" parent="Spell">
+        <AssetArray File="Assets\Sounds\HybridThrasher_ImpactElectric_Short_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_ImpactElectric_Short_02.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Spread value="30.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Injured_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\Thrasher_Injured_Vox_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Injured_Vox_02.wav" Volume="-1.000000,-1.000000" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Select value="Random"/>
+        <Spread value="30.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Launch_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\HybridThrasher_Hit_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Electric_Exhale_Vox_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Electric_Exhale_Vox_02.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <LoopDelay value="0,500"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Select value="Random"/>
+        <Spread value="30.000000"/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Movement_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\Thrasher_Movement_Vox_01.wav" Volume="-1.000000,-1.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_MedExert_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_MedExert_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_ShortExert_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_ShortExert_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Launch_Vox_02.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Select value="Random"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_SWS2" parent="Spell">
+        <AssetArray File="Assets\Sounds\HybridThrasher_SWS_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_SWS_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_SWS_03.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Select value="Random"/>
+        <Spread value="30.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_StandIdle_Vox2" parent="Spell">
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_MedExert_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_MedExert_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_Vx_ShortExert_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Launch_Vox_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Launch_Vox_03.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="-3.000000,1.000000"/>
+        <Select value="Random"/>
+        <Spread value="30.000000"/>
+        <Volume value="-1.000000,3.000000"/>
+    </CSound>
+    <CSound id="Void_Thrasher_Vanish2" parent="Spell">
+        <AssetArray File="Assets\Sounds\Vanish_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanish_06.wav" FacialGroup=""/>
+        <LoopDelay value="0,500"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Select value="Random"/>
+        <Volume value="-1.000000,1.000000"/>
+    </CSound>
+    <CSound id="Yagdra_Attack2" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Yagdra_AttackA.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_AttackB.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_AttackC.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_AttackD.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Yagdra_AttackE.wav" FacialGroup=""/>
+        <Volume value="0.000000,3.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="MX_Slayn_Intro" parent="MUSIC">
+        <AssetArray File="Assets\Music\MissionMusic\LibertyMusicCreepStinger_A.ogg" FacialGroup="">
+            <SyncPoints value="1718136"/>
+        </AssetArray>
+        <PlayDelay value="6000,6000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="MX_Slayn_LVL_1" parent="MUSIC">
+        <AssetArray File="Assets\Music\nDLC01_Music_Cue01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\nDLC01_Music_Cue02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\nDLC01_Music_Cue03.ogg" Offset="100000,100000" FacialGroup=""/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="MX_Slayn_LVL_10" parent="MUSIC">
+        <AssetArray File="Assets\Music\The_Rescue_FULL.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\Space_Battle_2_FULL.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\nDLC01_Music_Cue04.ogg" FacialGroup=""/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="MX_Slayn_LVL_20" parent="MUSIC">
+        <AssetArray File="Assets\Music\ZI_MUSIC_DrumsOnly.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\Cities_In_Ruin_FULL.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Music\nDLC01_Music_Cue06.ogg" FacialGroup=""/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+</Catalog>

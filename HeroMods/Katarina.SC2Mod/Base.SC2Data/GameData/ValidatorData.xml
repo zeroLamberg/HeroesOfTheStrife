@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorPlayerRequirement id="HeroKatarina@BaseGolden">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroKatarina@BaseGolden"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroKatarina@BaseGrey">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroKatarina@BaseGrey"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroKatarina@BasePurple">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroKatarina@BasePurple"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroKatarina@BaseRed">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroKatarina@BaseRed"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroKatarina@BaseGreen">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroKatarina@BaseGreen"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaEquipAutorifle@NotOnCooldown">
+        <Behavior value="HeroKatarinaEquipAutorifle@Cooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaEquipFlamethrower@NotOnCooldown">
+        <Behavior value="HeroKatarinaEquipFlamethrower@Cooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaEquipSnipe@NotOnCooldown">
+        <Behavior value="HeroKatarinaEquipSnipe@Cooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaEquipGrenadeLauncher@NotOnCooldown">
+        <Behavior value="HeroKatarinaEquipGrenadeLauncher@Cooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaFlameStream@TargetHasBuff">
+        <Value value="1"/>
+        <Behavior value="HeroKatarinaFlameStream"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaFlameStream@CasterHasBuff">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="HeroKatarinaFlameStream"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentArsenal" parent="PlayerTalent"/>
+    <CValidatorUnitCompareChargeUsed id="HeroKatarinaTalentArsenal@StacksNotFull" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroKatarinaTalentArsenal">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroKatarinaTalentArsenal@StacksFull" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroKatarinaTalentArsenal"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentBestEquipment" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentExclusionZoneExclusionPrison" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroKatarinaTalentExclusionZoneExclusionPrison@Combine">
+        <Type value="And"/>
+        <CombineArray value="HeroKatarinaTalentExclusionZoneExclusionPrison"/>
+        <CombineArray value="HeroKatarinaExclusionZone@HasHeroTimedBehaviorCasterReq"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentFlashGrenadeSilenceGrenade" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentSpecialOps" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroKatarinaTalentTargetAcquired@HasTalentAndAllAtacks">
+        <Type value="And"/>
+        <CombineArray value="HeroKatarinaTalentTargetAcquired"/>
+        <CombineArray value="HeroKatarinaTalentTargetAcquired@HaveAllStacks"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterAmmoRestoration@Target" parent="PlayerTalent">
+        <WhichPlayer Value="Target"/>
+        <Value value="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterRearmament" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterToTheLimit" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaTalentWeaponMasterToTheLimit@HasActiveBuff" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaTalentWeaponMasterToTheLimit@ActiveBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponAutorifle@RequiredEnergyNotEnough">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="4"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponFlamethrower@RequiredEnergyNotEnough">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="2"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponGrenadeLauncher@RequiredEnergyNotEnough">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="5"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponSnipe@RequiredEnergyNotEnough">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="10"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorPlayerTalent id="KatarinaTalentClusterChargeOvercharge" parent="PlayerTalent"/>
+    <CValidatorUnitCompareChargeUsed id="HeroKatarinaTalentTargetAcquired@HaveAllStacks" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroKatarinaTalentTargetAcquired"/>
+    <CValidatorUnitCompareChargeUsed id="HeroKatarinaTalentTargetAcquired@HasNotAllStacks" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroKatarinaTalentTargetAcquired">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentTargetAcquired" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentTargetPractice" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentClusterChargeClusterRecharge" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentClusterChargeAdvancedCharge" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="KatarinaTalentClusterChargeCripplingCharge" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterAmmoRestoration" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterUniversalAmmo@Target" parent="PlayerTalent">
+        <WhichPlayer Value="Target"/>
+        <Value value="HeroKatarinaTalentWeaponMasterUniversalAmmo"/>
+    </CValidatorPlayerTalent>
+    <CValidatorCombine id="HeroKatarinaTalentMasterSnipe@CombineEquipped">
+        <Type value="And"/>
+        <CombineArray value="TargetIsSlowed"/>
+        <CombineArray value="HeroKatarinaTalentMasterSnipe"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroKatarinaTalentMasterSnipe@CombineCarried">
+        <Type value="And"/>
+        <CombineArray value="TargetIsSlowed"/>
+        <CombineArray value="HeroKatarinaTalentMasterSnipe"/>
+        <CombineArray value="HeroKatarinaWeaponSnipe@CasterHasWeaponCarried"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterAmmoMaster" parent="PlayerTalent"/>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponAutorifle@RequiredEnergy">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponGrenadeLauncher@RequiredEnergy">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="5"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponSnipe@RequiredEnergy">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="10"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="HeroKatarinaWeaponFlamethrower@RequiredEnergy">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponAutorifle@TargetNotWeaponEquipped">
+        <Behavior value="HeroKatarinaWeaponAutorifle@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponFlamethrower@TargetNotWeaponEquipped">
+        <Behavior value="HeroKatarinaWeaponFlamethrower@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponGrenadeLauncher@TargetNotWeaponEquipped">
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponSnipe@TargetNotWeaponEquipped">
+        <Behavior value="HeroKatarinaWeaponSnipe@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroKatarinaExclusionZone" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaExclusionZone@CasterHasDurationBuff" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaExclusionZone@CasterDurationBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaExclusionZone@HasNoHeroTimedBehavior">
+        <Behavior value="HeroKatarinaExclusionZone@HeroTimedBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaExclusionZone@HasHeroInZoneController">
+        <Compare value="GT"/>
+        <Behavior value="HeroKatarinaExclusionZone@HeroInZoneController"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaExclusionZone@HasHeroTimedBehaviorCasterReq">
+        <Compare value="GT"/>
+        <Behavior value="HeroKatarinaExclusionZone@HeroTimedBehavior"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="HeroKatarina@BaseBlue">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroKatarina@BaseBlue"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentMasterGrenadeLauncher" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentMasterSnipe" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentMasterFlamethrower" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentMasterAutorifle" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroKatarinaTalentWeaponMasterUniversalAmmo" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponAutorifle@CasterHasWeaponCarried" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponAutorifle@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponFlamethrower@CasterHasWeaponCarried" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponFlamethrower@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponSnipe@CasterHasWeaponCarried" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponSnipe@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="IsKatarina">
+        <Value value="HeroKatarina"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponGrenadeLauncher@CasterHasWeaponCarried" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitOrderQueue id="HeroKatarinaEquipAutorifle@Queue">
+        <AbilLink value="HeroKatarinaEquipAutorifle"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponCarried" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponFlamethrower@TargetHasWeaponCarried" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponFlamethrower@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponSnipe@TargetHasWeaponCarried" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponSnipe@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroKatarina@QueueEquipCombine">
+        <CombineArray value="HeroKatarinaEquipAutorifle@Queue"/>
+        <CombineArray value="HeroKatarinaEquipGrenadeLauncher@Queue"/>
+        <CombineArray value="HeroKatarinaEquipFlamethrower@Queue"/>
+        <CombineArray value="HeroKatarinaEquipSnipe@Queue"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponAutorifle@TargetHasWeaponEquipped" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponAutorifle@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponAutorifle@TargetHasWeaponCarried" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponAutorifle@WeaponCarried"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponAutorifle@CasterHasWeaponEquipped" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponAutorifle@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponGrenadeLauncher@CasterHasWeaponEquipped" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponFlamethrower@CasterHasWeaponEquipped" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponFlamethrower@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponSnipe@TargetHasWeaponEquipped" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponSnipe@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponEquipped" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponFlamethrower@TargetHasWeaponEquipped" parent="TargetIsParent">
+        <Behavior value="HeroKatarinaWeaponFlamethrower@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroKatarinaWeaponSnipe@CasterHasWeaponEquipped" parent="CasterIsParent">
+        <Behavior value="HeroKatarinaWeaponSnipe@WeaponEquipped"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitOrderQueue id="HeroKatarinaEquipFlamethrower@Queue">
+        <AbilLink value="HeroKatarinaEquipFlamethrower"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="HeroKatarinaEquipSnipe@Queue">
+        <AbilLink value="HeroKatarinaEquipSnipe"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="HeroKatarinaEquipGrenadeLauncher@Queue">
+        <AbilLink value="HeroKatarinaEquipGrenadeLauncher"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorLocationCompareRange id="HeroKatarinaFlashGrenade@MissileTargetClose">
+        <Compare value="LT"/>
+        <Range value="5"/>
+        <Value Value="CasterPoint"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HeroKatarinaFlashGrenade@MissileTargetMedium">
+        <Compare value="LT"/>
+        <Range value="10"/>
+        <Value Value="CasterPoint"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="HeroKatarinaFlashGrenade@MissileTargetFar">
+        <Compare value="GE"/>
+        <Range value="10"/>
+        <Value Value="CasterPoint"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="CritAliasPhysicalPower">
+        <CombineArray value="HeroKatarinaTalentTargetAcquired@HasTalentAndAllAtacks"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="InvButtonSelectedSpecial">
+        <CombineArray value="HeroKatarinaWeaponAutorifle@TargetHasWeaponCarried"/>
+        <CombineArray value="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponCarried"/>
+        <CombineArray value="HeroKatarinaWeaponFlamethrower@TargetHasWeaponCarried"/>
+        <CombineArray value="HeroKatarinaWeaponSnipe@TargetHasWeaponCarried"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="InvButtonSelectedDefault">
+        <CombineArray value="HeroKatarinaWeaponAutorifle@TargetHasWeaponEquipped"/>
+        <CombineArray value="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponEquipped"/>
+        <CombineArray value="HeroKatarinaWeaponFlamethrower@TargetHasWeaponEquipped"/>
+        <CombineArray value="HeroKatarinaWeaponSnipe@TargetHasWeaponEquipped"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CritAliasPhysicalPowerTarget">
+        <CombineArray value="HeroKatarinaTalentExclusionZoneExclusionPrison@Combine"/>
+    </CValidatorCombine>
+    <CValidatorLocationEnumArea id="HeroKatarinaClusterCharge@FindHero">
+        <AreaArray>
+            <Compare value="GT"/>
+            <Count value="0"/>
+            <Radius value="1.5"/>
+            <Validator value="AbilityEffectTreeCheckCombine"/>
+        </AreaArray>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
+        <SearchFilters value="Heroic;Self,Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+</Catalog>

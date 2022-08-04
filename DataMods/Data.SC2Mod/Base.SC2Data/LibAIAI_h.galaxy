@@ -1,0 +1,216 @@
+include "LibCore_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: AI
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libAIAI_ge_MinionAIStates_Advancing = 0;
+const int libAIAI_ge_MinionAIStates_AttackingMinions = 1;
+const int libAIAI_ge_MinionAIStates_AttackingStructure = 2;
+const int libAIAI_ge_MinionAIStates_AttackingHero = 3;
+const int libAIAI_ge_MinionAIStates_FallbackState = 4;
+const int libAIAI_ge_MinionAIStates_FollowHero = 5;
+const int libAIAI_ge_MinionAIStates_Leashing = 6;
+const int libAIAI_ge_MinionAIStates_HoldPosition = 7;
+string libAIAI_ge_MinionAIStates_Ident (int lp_val);
+const int libAIAI_ge_DefenderAIState_Idle = 0;
+const int libAIAI_ge_DefenderAIState_Fighting = 1;
+const int libAIAI_ge_DefenderAIState_Leashing = 2;
+string libAIAI_ge_DefenderAIState_Ident (int lp_val);
+
+// Constants
+const int libAIAI_gv_aIWaveIndexMod = 4;
+const fixed libAIAI_gv_aIMinionWaypointAdvanceDistance = 4.0;
+const fixed libAIAI_gv_aIMinionAttackStructureBonusScanRange = 3.0;
+const fixed libAIAI_gv_aIMinionAttackHeroBufferDistance = 2.0;
+const fixed libAIAI_gv_aIMinionLeashingOnDistance = 8.5;
+const fixed libAIAI_gv_aIMinionLeashingOffDistance = 3.0;
+const int libAIAI_gv_aIDefenderIndexMod = 2;
+const fixed libAIAI_gv_aIDefenderCloseEnoughDistance = 0.5;
+const fixed libAIAI_gv_aIDefenderFarFromLeashPosition = 2.5;
+const int libAIAI_gv_aIDefenderMaxLeashCount = 3;
+const fixed libAIAI_gv_aIDefenderMinAgroTime = 1.0;
+const fixed libAIAI_gv_aIDefenderMinLeashTime = 1.0;
+const fixed libAIAI_gv_aIDefenderLeashReAnnounceTime = 4.0;
+const fixed libAIAI_gv_aIDefenderMinTimeBeforeCasting = 4.0;
+const int libAIAI_gv_aITowerIndexMod = 2;
+const fixed libAIAI_gv_aIGateNearbyRange = 5.0;
+const int libAIAI_gv_aIMaxPathDistance = 65536;
+const int libAIAI_gv_minionAIMaxActiveMinions = 511;
+const int libAIAI_gv_towerMaxTowerCount = 125;
+const int libAIAI_gv_defenderAIMaxNumberOfDefenderAI = 200;
+const int libAIAI_gv_defenderAIMaxNumberOfDefendersPerGroup = 20;
+
+// Structures
+struct libAIAI_gs_MinionAI {
+    bool lv_isAlive;
+    int lv_state;
+    int lv_nextWaypoint;
+    point lv_unitPosition;
+    unit lv_targetUnit;
+    bool lv_leashing;
+    bool lv_forceStateTransition;
+    bool lv_prefersStructureTargets;
+    point lv_battleCorePoint;
+    fixed lv_battleCoreLastUpdate;
+    int lv_ownerPlayer;
+    int lv_teamToAttack;
+    fixed lv_attackRange;
+    fixed lv_attackHeroRange;
+    int lv_lane;
+    int lv_waveNumber;
+    unit lv_minionUnit;
+    string lv_minionUnitType;
+    int lv_initialWaypoint;
+    int lv_debugLabel;
+    unit lv_debugUnit;
+};
+
+struct libAIAI_gs_Towers {
+    bool lv_hasTarget;
+    unit lv_towerUnit;
+    unit lv_targetUnit;
+    fixed lv_range;
+    bool lv_dead;
+    int lv_owner;
+};
+
+struct libAIAI_gs_DefenderAI {
+    bool lv_used;
+    int lv_defenderCount;
+    unitgroup lv_defendersGroup;
+    unit[libAIAI_gv_defenderAIMaxNumberOfDefendersPerGroup + 1] lv_defenderUnits;
+    point[libAIAI_gv_defenderAIMaxNumberOfDefendersPerGroup + 1] lv_leashPositions;
+    region lv_leashRegion;
+    region lv_aggroRegion;
+    bool lv_healOnLeash;
+    bool lv_canSeeCloaked;
+    bool lv_campDeathEventDispatched;
+    int lv_state;
+    int lv_leashCount;
+    unitgroup lv_validTargets;
+    bool[libCore_gv_bALMaxEnginePlayerCount + 1] lv_playerIsThreat;
+    fixed lv_timeStarted;
+    fixed lv_minAgroTime;
+    fixed lv_minLeashTime;
+    fixed lv_lastAnnouncedLeashing;
+    fixed lv_fightStartTime;
+    int lv_debugLabel;
+    unit lv_debugUnit;
+};
+
+// Variable Declarations
+fixed libAIAI_gv_aIRangedMinionWeaponRange;
+fixed libAIAI_gv_aIMinionEnemyMinionAttackRange;
+fixed libAIAI_gv_aIMinionAttackHeroDistance;
+fixed libAIAI_gv_aITowerRange;
+unitfilter libAIAI_gv_uF_MinionAI_EnemyMinions;
+unitfilter libAIAI_gv_uF_MinionAI_AnyEnemyMinions2;
+unitfilter libAIAI_gv_uF_MinionAI_EnemyStructure;
+unitfilter libAIAI_gv_uF_MinionAI_EnemyHero;
+libAIAI_gs_MinionAI[libAIAI_gv_minionAIMaxActiveMinions + 1] libAIAI_gv_minionAIActiveMinions;
+int libAIAI_gv_minionAIActiveMinionsUpperBound;
+bool libAIAI_gv_minionAIMinionsIgnoreLaneRequirements;
+unitfilter libAIAI_gv_uF_MinionAI_AnyEnemyMinions;
+unitfilter libAIAI_gv_uF_MinionAI_AnyEnemySummoned;
+unitfilter libAIAI_gv_uF_MinionAI_GetNearestEnemyStructure;
+unitfilter libAIAI_gv_uF_MinionAI_GetNearestAttackableEnemyStructure;
+unitfilter libAIAI_gv_uF_MinionAI_GetNearestEnemyHero;
+bool libAIAI_gv_minionAIDisplayAIStatus;
+int libAIAI_gv_towerTowerCount;
+libAIAI_gs_Towers[libAIAI_gv_towerMaxTowerCount + 1] libAIAI_gv_towerTowers;
+bool libAIAI_gv_towerSystemOn;
+unitfilter libAIAI_gv_uF_TowerAI_Scan_Group;
+unitfilter libAIAI_gv_uF_TowerAI_Scan_Group_Minion;
+unitfilter libAIAI_gv_uF_TowerAI_Scan_Group_Summoned;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Summoned;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Heroic;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Minion;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Ignored;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Invulnerable;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Stasis;
+unitfilter libAIAI_gv_uF_TowerAI_Required_Visible;
+libAIAI_gs_DefenderAI[libAIAI_gv_defenderAIMaxNumberOfDefenderAI + 1] libAIAI_gv_defenderAI;
+int libAIAI_gv_defenderAIDefenderAIUpperBound;
+string libAIAI_gv_defenderAILastCreatedDefenderAIIndex;
+bool libAIAI_gv_defenderAIDisplayAIStatus;
+abilcmd libAIAI_gv_aIMoveAbil;
+abilcmd libAIAI_gv_aITurnAbil;
+abilcmd libAIAI_gv_aIAttackAbil;
+abilcmd libAIAI_gv_aIAttackAllyAbil;
+abilcmd libAIAI_gv_aIStopAbil;
+
+// Function Declarations
+int libAIAI_gf_MinionAINewMinionIndex ();
+point libAIAI_gf_MinionAIGetPreviousWaypointForMinion (int lp_minionIndex);
+int libAIAI_gf_MinionAIGetWaypointCount (int lp_minionIndex);
+unit libAIAI_gf_MinionAIGetHeroToFollow (int lp_minionIndex);
+bool libAIAI_gf_MinionAIIsValidTarget (int lp_minionIndex, unit lp_targetUnit);
+unit libAIAI_gf_MinionAIGetNearestEnemyMinionSummonedInRangeOfMinion (int lp_minionIndex, fixed lp_range);
+unit libAIAI_gf_MinionAIGetNearestEnemyStructureInRangeOfMinion (int lp_minionIndex, fixed lp_range);
+unit libAIAI_gf_MinionAIGetNearestEnemyHeroInRangeOfMinion (int lp_minionIndex, fixed lp_range);
+bool libAIAI_gf_MinionAIWithinLeashingDistanceofLane (int lp_minionIndex);
+void libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion (int lp_minionIndex);
+bool libAIAI_gf_MinionAITestPastNextWaypoint (int lp_minionIndex);
+void libAIAI_gf_MinionAIAdvanceMinionToNextWaypoint (int lp_minionIndex);
+int libAIAI_gf_MinionAIDetermineState (int lp_minionIndex, int lp_oldState);
+int libAIAI_gf_MinionAIDetermineAttackStateAndTarget (int lp_minionIndex);
+bool libAIAI_gf_MinionAIShouldAttackMinions (int lp_minionIndex, unit lp_currentTarget);
+bool libAIAI_gf_MinionAIShouldAttackStructure (int lp_minionIndex, unit lp_currentTarget);
+int libAIAI_gf_MinionAIAttackHeroState (int lp_minionIndex, unit lp_currentTarget);
+void libAIAI_gf_MinionAITransitionMinionIntoState (int lp_minionIndex, int lp_state);
+void libAIAI_gf_MinionAIIssueFightOrder (int lp_minionIndex);
+int libAIAI_gf_MinionAIGetIndexForMinion (unit lp_minion);
+point libAIAI_gf_MinionAIGetWaypointForMinion (int lp_minionIndex, int lp_waypointIndex);
+point libAIAI_gf_MinionAIGetNextWaypointForMinion (int lp_minionIndex);
+void libAIAI_gf_MinionAIFreeMinionIndex (int lp_minionIndex);
+void libAIAI_gf_MinionAIUnhookUnitFromMinionAI (unit lp_unit);
+void libAIAI_gf_MinionAIStartMinionAI (int lp_waveNumberOverride, unit lp_unit, int lp_lane, int lp_nextWaypoint, bool lp_pathToInitialWaypoint, int lp_teamToAttack, bool lp_prefersStructureTargets);
+void libAIAI_gf_MinionAIStartMinionAISimple (unit lp_unit);
+void libAIAI_gf_MinionAITurnMinionAISystemOnOff (bool lp_onOff);
+void libAIAI_gf_MinionAIPauseUnpauseMinionAISystem (bool lp_pauseUnpause);
+void libAIAI_gf_MinionAIMinionsIgnoreLaneRequirements (bool lp_trueFalse);
+void libAIAI_gf_MinionAIUpdateAIStatus (int lp_minionIndex);
+void libAIAI_gf_MinionAIToggleAIStatus (bool lp_showHide);
+void libAIAI_gf_DestroyTowerTargetPersistent (int lp_towerIndex);
+void libAIAI_gf_TowerTurnTowerSystemOnOff (bool lp_onOff);
+int libAIAI_gf_DefenderAIDetermineState (int lp_defenderAIIndex, int lp_oldState);
+void libAIAI_gf_DefenderAIStateLogic (int lp_defenderAIIndex);
+void libAIAI_gf_DefenderAIUpdateValidTargetList (int lp_defenderAIIndex);
+void libAIAI_gf_DefenderAITransitionDefenderAIIntoState (int lp_defenderAIIndex, int lp_state);
+void libAIAI_gf_DefenderAIIssueFightingOrderToCreep (int lp_defenderAIIndex, int lp_creep);
+void libAIAI_gf_DefenderAICreepDies (int lp_defenderAIIndex, unit lp_unit, unit lp_killingUnit);
+int libAIAI_gf_DefenderAINewIndex ();
+void libAIAI_gf_StartDefenderAI (unitgroup lp_defenders, region lp_leashRegion, region lp_aggroRegion, bool lp_healOnLeash);
+void libAIAI_gf_AddUnitsToDefenderAI (int lp_defenderAIIndex, unitgroup lp_defenders);
+int libAIAI_gf_LastCreatedDefenderAI ();
+int libAIAI_gf_DefenderAIIndexOfUnit (unit lp_unit);
+unitgroup libAIAI_gf_DefenderGroup (int lp_defenderAIIndex);
+unit libAIAI_gf_DefenderUnit (int lp_defenderAIIndex, int lp_index);
+int libAIAI_gf_DefenderUnitCount (int lp_defenderAIIndex);
+bool libAIAI_gf_DefendersAreFighting (int lp_defenderAIIndex);
+bool libAIAI_gf_DefendersAnyOutsideLeashRegion (int lp_defenderAIIndex);
+point libAIAI_gf_DefenderMovePointIntoRegion (point lp_point, region lp_region);
+void libAIAI_gf_DefenderAIUpdateAIStatus (int lp_defenderIndex);
+void libAIAI_gf_DefenderAIToggleAIStatus (bool lp_show);
+void libAIAI_gf_SummonedAIInitialAttackLogic (bool lp_attackCreatorsTarget, unit lp_summonedUnit, unit lp_creatorUnit, bool lp_continuousScan);
+bool libAIAI_gf_AIIsPointBehindEnemyGateEstimate (point lp_selfPosition, int lp_selfPlayer, point lp_otherPoint);
+fixed libAIAI_gf_AIGetAnyWeaponRangeIncludesNonActive (unit lp_unit);
+fixed libAIAI_gf_AIGetClosestLanePosition (int lp_laneIndex, point lp_point);
+fixed libAIAI_gf_AIGetLaneOffsetOfPoint (int lp_laneIndex, point lp_testPoint);
+fixed libAIAI_gf_AIAdvanceLanePosition (int lp_faction, int lp_laneIndex, fixed lp_lanePosition, fixed lp_distance);
+fixed libAIAI_gf_AIRetreatLanePosition (int lp_faction, int lp_laneIndex, fixed lp_lanePosition, fixed lp_distance);
+fixed libAIAI_gf_AIMoveAlongLane (int lp_laneIndex, fixed lp_lanePosition, fixed lp_distance);
+
+// Trigger Declarations
+trigger libAIAI_gt_IncludeAI;
+trigger libAIAI_gt_MinionAIAIRoutine;
+trigger libAIAI_gt_TowerAIRoutine;
+trigger libAIAI_gt_TowerAttacksUnit;
+trigger libAIAI_gt_InitializeTowerAISystem;
+trigger libAIAI_gt_DefenderAICreepsAttacked;
+trigger libAIAI_gt_DefenderAIDefenderAILogic;
+
+// Library Initialization
+void libAIAI_InitVariables ();
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CItemAbil id="HeroAbathurTalentLocustBrood">
+        <Class value="Item"/>
+        <Requirements value="HeroGenericCanUseInventory"/>
+    </CItemAbil>
+    <CItemAbil id="HeroAbathurTalentLocustNest@Item">
+        <Face value="HeroAbathurTalentLocustNest"/>
+        <Class value="Item"/>
+        <Requirements value="HeroGenericCanUseInventory"/>
+        <Abil value="HeroAbathurTalentLocustNest"/>
+    </CItemAbil>
+</Catalog>

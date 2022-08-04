@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HeroTalandarPraetorArmorSuit@NotDeadAndIsPraetor">
+        <EditorCategories value="CoreHero:Talandar,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorDeadCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarDragoonArmorSuit@IsDragoonOrHasPurifierBeam">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="OrCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitAndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="OrCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitAndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarDragoonArmorSuit@IsDragoonAndHasNoPurifierBeam">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+        <NodeArray index="Show" Link="OrCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPraetorArmorSuit@IsPraetorOrHasPurifierBeam">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="OrCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitAndCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnitCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="OrCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitAndCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnitCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPraetorArmorSuit@IsPraetorOrHasNoPurifierBeam">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+        <NodeArray index="Show" Link="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPurificationBlast">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPurifierBeam@HasPurifierBeam">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPurifierBeam@IsPraetor">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPraetorArmorSuit@IsPraetor">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarDragoonArmorSuit@IsDragoon">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarDragoonArmorSuit@NotDeadAndIsDragoon">
+        <EditorCategories value="CoreHero:Talandar,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorDeadCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarSolarCannonChannel@HasNoChannelAndIsDragoon">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarSolarCannonChannel@Show">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarPurifierBeam@IsDragoon">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarSolariteFlareChannel@HasActiveBehaviorShow">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarSolariteFlareChannel@HasNoChannelAndIsDragoon">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndEqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit0"/>
+        <NodeArray index="Show" Link="AndEqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarArsenalOvercharge">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HeroTalandarTalentPhaseBomb@CanUseInventroyAndIsDragoon">
+        <EditorCategories value="CoreHero:Talandar,TechType:Ability"/>
+        <NodeArray index="Use" Link="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirement>
+</Catalog>

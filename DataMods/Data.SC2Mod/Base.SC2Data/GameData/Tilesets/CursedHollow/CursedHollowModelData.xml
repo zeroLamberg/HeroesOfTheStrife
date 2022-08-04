@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="Storm_Effect_DarkRaven_Base" parent="Doodad"/>
+    <CModel id="CurseofEluneUnits" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_Effect_RavenLord_Cursed_Icon\Storm_Effect_RavenLord_Cursed_Icon.m3"/>
+    </CModel>
+    <CModel id="RavenLordTribute" parent="Unit">
+        <Model value="Assets\Effects\Storm_Effect_RavenLordTribute\Storm_Effect_RavenLordTribute.m3"/>
+        <SelectionRadius value="0.750000"/>
+    </CModel>
+    <CModel id="RavenLordTributeSpawn" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_Effect_RavenLordTribute_Spawn\Storm_Effect_RavenLordTribute_Spawn.m3"/>
+        <Flags index="Wait" value="1"/>
+    </CModel>
+    <CModel id="RavenLordTributeWarning" parent="PersistentSpellFX">
+        <Model value="Assets\UI\Feedback\Storm_Effect_RavenLordTribute_Warning\Storm_Effect_RavenLordTribute_Warning.m3"/>
+    </CModel>
+    <CModel id="CaptureMacGuffinBeamRavenCourt" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Maps\Effects_RavenLord\Effect_RavenLord_TributeCollection_Beam\Effect_RavenLord_TributeCollection_Beam.m3"/>
+        <RadiusLoose value="0.750000"/>
+    </CModel>
+    <CModel id="CurseofEluneBuilding" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_Effect_RavenLord_Cursed_Icon\Storm_Effect_RavenLord_Cursed_Icon.m3"/>
+    </CModel>
+    <CModel id="TownWallRavenCourt" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Storm_Doodad_KingsCrest_RavenCourt_Fence_Stone\Storm_Doodad_KingsCrest_RavenCourt_Fence_Stone.m3"/>
+        <Radius value="1.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionOffset value="0.000000,0.000000,0.200000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+        <VariationCount value="18"/>
+    </CModel>
+    <!--   Raven Court                              -->
+    <CModel id="TownTownHallL1RavenCourt" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_Castle\Storm_Building_KingsCrest_RavenCourt_Castle.m3"/>
+        <Radius value="1.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+    </CModel>
+    <!--   Raven Court                              -->
+    <CModel id="TownTownHallL2RavenCourt" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+    </CModel>
+    <CModel id="TownTownHallL2RavenCourtDamage" parent="Building">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade_Damage\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade_Damage.m3"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Rock"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="TownTownHallL2RavenCourtExplosionDamage" parent="OneShotSpellFX">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade_Damage_Explosion\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade_Damage_Explosion.m3"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="TownTownHallL2RavenCourtDeath" parent="UnitDeath">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade_Damage_Death\Storm_Building_KingsCrest_RavenCourt_CastleUpgrade_Damage_Death.m3"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <Flags index="TeenSafe" value="1"/>
+    </CModel>
+    <!--   Docks                                -->
+    <!--CModel id="TownTownHallL3Docks" parent="Building">-->
+    <!--        <Model value="Assets\Buildings\Storm_Building_KingsCrest_Docks_CastleSuperior\Storm_Building_KingsCrest_Docks_CastleSuperior.m3"/>-->
+    <!--        <Radius value="1.000000"/>-->
+    <!--        <ScaleMax value="0.900000,0.900000,0.900000"/>-->
+    <!--        <ScaleMin value="0.900000,0.900000,0.900000"/>-->
+    <!--        <SelectionLayer value="2"/>-->
+    <!--        <SelectionRadius value="1.250000"/>-->
+    <!--        <ShadowRadius value="1.250000"/>-->
+    <!--        <SquibTypeDefault value="Rock"/>-->
+    <!--    </CModel>-->
+    <!--    <CModel id="TownTownHallL3DocksBirthModel" parent="Building">-->
+    <!--        <Model value="Assets\Buildings\Storm_Building_KingsCrest_Docks_CastleSuperior_Birth\Storm_Building_KingsCrest_Docks_CastleSuperior_Birth.m3"/>-->
+    <!--        <Events>-->
+    <!--            <Anim value="Stand,Morph,Start,00"/>-->
+    <!--            <Name value="Doodad_Castle_Bld_Pt1"/>-->
+    <!--            <Type value="Sound"/>-->
+    <!--            <Time value="0.011000"/>-->
+    <!--            <Payload value="Doodad_Castle_Bld_Pt1"/>-->
+    <!--        </Events>-->
+    <!--        <Events>-->
+    <!--            <Anim value="Stand,Morph,Start,00"/>-->
+    <!--            <Name value="Doodad_Castle_Bld_Pt2"/>-->
+    <!--            <Type value="Sound"/>-->
+    <!--            <Time value="3.580000"/>-->
+    <!--            <Payload value="Doodad_Castle_Bld_Pt2"/>-->
+    <!--        </Events>-->
+    <!--        <Events>-->
+    <!--            <Anim value="Stand,Morph,Start,00"/>-->
+    <!--            <Name value="Doodad_Castle_Bld_WindowGlow"/>-->
+    <!--            <Type value="Sound"/>-->
+    <!--            <Time value="3.833000"/>-->
+    <!--            <Payload value="Doodad_Castle_Bld_WindowGlow"/>-->
+    <!--        </Events>-->
+    <!--        <Events>-->
+    <!--            <Anim value="Stand,Morph,Start,00"/>-->
+    <!--            <Name value="Doodad_Castle_Bld_WindowGlow_Organ"/>-->
+    <!--            <Type value="Sound"/>-->
+    <!--            <Time value="3.833000"/>-->
+    <!--            <Payload value="Doodad_Castle_Bld_WindowGlow_Organ"/>-->
+    <!--        </Events>-->
+    <!--        <Events>-->
+    <!--            <Anim value="Stand,Morph,Start,00"/>-->
+    <!--            <Name value="Doodad_Castle_Bld_EndGlow"/>-->
+    <!--            <Type value="Sound"/>-->
+    <!--            <Time value="5.629000"/>-->
+    <!--            <Payload value="Doodad_Castle_Bld_EndGlow"/>-->
+    <!--        </Events>-->
+    <!--        <Radius value="1.000000"/>-->
+    <!--        <ScaleMax value="0.900000,0.900000,0.900000"/>-->
+    <!--        <ScaleMin value="0.900000,0.900000,0.900000"/>-->
+    <!--        <SelectionLayer value="2"/>-->
+    <!--        <SelectionRadius value="1.250000"/>-->
+    <!--        <ShadowRadius value="1.250000"/>-->
+    <!--        <SquibTypeDefault value="Rock"/>-->
+    <!--    </CModel>-->
+    <!--    <CModel id="TownTownHallL3DocksDamage" parent="Building">-->
+    <!--        <Model value="Assets\Buildings\Storm_Building_KingsCrest_Docks_CastleSuperior_Damage\Storm_Building_KingsCrest_Docks_CastleSuperior_Damage.m3"/>-->
+    <!--        <SelectionLayer value="2"/>-->
+    <!--        <SelectionRadius value="1.176200"/>-->
+    <!--        <ShadowRadius value="1.176200"/>-->
+    <!--        <SquibTypeDefault value="Rock"/>-->
+    <!--        <ScaleMax value="0.900000,0.900000,0.900000"/>-->
+    <!--        <ScaleMin value="0.900000,0.900000,0.900000"/>-->
+    <!--    </CModel>-->
+    <!--    <CModel id="TownTownHallL3DocksExplosionDamage" parent="OneShotSpellFX">-->
+    <!--        <Model value="Assets\Buildings\Storm_Building_KingsCrest_Docks_CastleSuperior_Damage_Explosion\Storm_Building_KingsCrest_Docks_CastleSuperior_Damage_Explosion.m3"/>-->
+    <!--        <ScaleMax value="0.900000,0.900000,0.900000"/>-->
+    <!--        <ScaleMin value="0.900000,0.900000,0.900000"/>-->
+    <!--    </CModel>-->
+    <!--    <CModel id="TownTownHallL3DocksDeath" parent="UnitDeath">-->
+    <!--        <Model value="Assets\Buildings\Storm_Building_KingsCrest_Docks_CastleSuperior_Damage_Death\Storm_Building_KingsCrest_Docks_CastleSuperior_Damage_Death.m3"/>-->
+    <!--        <ScaleMax value="0.900000,0.900000,0.900000"/>-->
+    <!--        <ScaleMin value="0.900000,0.900000,0.900000"/>-->
+    <!--        <Events>-->
+    <!--            <Anim value="Death,00"/>-->
+    <!--            <Name value="Doodad_Castle_Death"/>-->
+    <!--            <Type value="Sound"/>-->
+    <!--            <Time value="0.679000"/>-->
+    <!--            <Payload value="Doodad_Castle_Death"/>-->
+    <!--        </Events>-->
+    <!--    </CModel-->
+    <!--   Raven Court                          -->
+    <CModel id="TownTownHallL3RavenCourt" parent="Building">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleSuperior\Storm_Building_KingsCrest_RavenCourt_CastleSuperior.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+    </CModel>
+    <CModel id="TownTownHallL3RavenCourtBirthModel" parent="Building">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Birth\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Birth.m3"/>
+        <Events>
+            <Anim value="Stand,Morph,Start,00"/>
+            <Name value="Doodad_Castle_Bld_Pt1"/>
+            <Type value="Sound"/>
+            <Time value="0.011000"/>
+            <Payload value="Doodad_Castle_Bld_Pt1"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,Start,00"/>
+            <Name value="Doodad_Castle_Bld_Pt2"/>
+            <Type value="Sound"/>
+            <Time value="3.580000"/>
+            <Payload value="Doodad_Castle_Bld_Pt2"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,Start,00"/>
+            <Name value="Doodad_Castle_Bld_WindowGlow"/>
+            <Type value="Sound"/>
+            <Time value="3.833000"/>
+            <Payload value="Doodad_Castle_Bld_WindowGlow"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,Start,00"/>
+            <Name value="Doodad_Castle_Bld_WindowGlow_Organ"/>
+            <Type value="Sound"/>
+            <Time value="3.833000"/>
+            <Payload value="Doodad_Castle_Bld_WindowGlow_Organ"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,Start,00"/>
+            <Name value="Doodad_Castle_Bld_EndGlow"/>
+            <Type value="Sound"/>
+            <Time value="5.629000"/>
+            <Payload value="Doodad_Castle_Bld_EndGlow"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+    </CModel>
+    <CModel id="TownTownHallL3RavenCourtDamage" parent="Building">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Damage\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Damage.m3"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Rock"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="TownTownHallL3RavenCourtExplosionDamage" parent="OneShotSpellFX">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Damage_Explosion\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Damage_Explosion.m3"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="TownTownHallL3RavenCourtDeath" parent="UnitDeath">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Damage_Death\Storm_Building_KingsCrest_RavenCourt_CastleSuperior_Damage_Death.m3"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <Flags index="TeenSafe" value="1"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Haybale" parent="Doodad">
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_BigChunkyRock" parent="Doodad">
+        <VariationCount value="6"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_HayBundle" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_HayRoll" parent="Doodad">
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_House" parent="Doodad">
+        <VariationCount value="16"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_A" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_AA" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_B" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_BB" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_C" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_CC" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_D" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_DD" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_E" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_EE" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_F" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_G" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_H" parent="Doodad">
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_I" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_J" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_K" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_L" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_M" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_N" parent="Doodad">
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_O" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_P" parent="Doodad">
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_Q" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_R" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_S" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_T" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_U" parent="Doodad">
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_V" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_W" parent="Doodad">
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_X" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_Y" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Jungle_Z" parent="Doodad"/>
+    <CModel id="Storm_Doodad_Kingscrest_Ravencourt_CorePlatform" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_CoreRange" parent="Doodad">
+        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_WatchTowerPillarBase" parent="Doodad"/>
+    <CModel id="CoreKingsCrestRavenCourtDeath" parent="CoreKingsCrestDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Storm_Building_KingsCrest_Core_RavenLord_Death\Storm_Building_KingsCrest_Core_RavenLord_Death.m3"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Fence_Stone" parent="Doodad"/>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_WatchTowerPillar" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_WatchTowerPillar_Broken" parent="Doodad">
+        <Events>
+            <Anim value="Death"/>
+            <Name value="Doodad_RavenPillar_Break"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Doodad_RavenPillar_Break"/>
+        </Events>
+    </CModel>
+    <CModel id="MercDefenderSiegeGiantAttackImpactRavenCourt" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_Effect_SiegeGiant_Rock_Impact\Storm_Effect_SiegeGiant_Rock_Impact.m3"/>
+    </CModel>
+    <CModel id="Storm_KingsCrest_Emblem_RavenCourt" parent="Doodad">
+        <Model value="Assets\Doodads\Storm_Doodad_KingsCrest_RavenCourt_Emblem\Storm_Doodad_KingsCrest_RavenCourt_Emblem.m3"/>
+        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_Banners_Ravencourt" parent="Doodad">
+        <VariationCount value="7"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Curtain" parent="Doodad">
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="Storm_KingsCrest_Ramp_RavenCourt" parent="Doodad">
+        <Flags index="ShowCreepEngulfmentEvenOnLow" value="1"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Grass">
+        <Model value="Assets\Foliage\Storm_Doodad_KingsCrest_RavenCourt_Grass\Storm_Doodad_KingsCrest_RavenCourt_Grass.m3"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <Tipability value="0.750000"/>
+        <VariationCount value="6"/>
+    </CModel>
+    <CModel id="Storm_Doodad_KingsCrest_RavenCourt_Grass_Dark">
+        <Model value="Assets\Foliage\Storm_Doodad_KingsCrest_RavenCourt_Grass_Dark\Storm_Doodad_KingsCrest_RavenCourt_Grass_Dark.m3"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <Tipability value="0.750000"/>
+        <VariationCount value="6"/>
+    </CModel>
+    <CModel id="StormKingsCrestRavenCourtTree00Impact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_Effect_KingsCrest_RavenCourt_Tree00_Impact\Storm_Effect_KingsCrest_RavenCourt_Tree00_Impact.m3"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Impact_Tree_Leaves"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Impact_Tree_Leaves"/>
+        </Events>
+    </CModel>
+    <CModel id="StormKingsCrestRavenCourtTree01Impact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_Effect_KingsCrest_RavenCourt_Tree01_Impact\Storm_Effect_KingsCrest_RavenCourt_Tree01_Impact.m3"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Impact_Tree_Leaves"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Impact_Tree_Leaves"/>
+        </Events>
+    </CModel>
+    <CModel id="Storm_Effect_DarkRaven_Base_Fly" parent="Doodad"/>
+    <CModel id="RavenLordTributePreview" parent="Unit">
+        <Model value="Assets\Effects\Storm_Effect_RavenLordTribute\Storm_Effect_RavenLordTribute.m3"/>
+        <SelectionRadius value="0.750000"/>
+    </CModel>
+    <CSound id="Doodad_Core_RavenCourt_Death" parent="Combat">
+        <AssetArray File="Assets\Sounds\Doodads\Doodad_Core_Death01.ogg" FacialGroup=""/>
+        <Category value="Message"/>
+        <Mode value="2D"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CurseMid" parent="Interactive2D">
+        <AssetArray index="0">
+            <File value="Assets\Sounds\Event\Event_RavenCurse_Mid01.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <Flags index="AutoUnload" value="0"/>
+        <Flags index="Purgable" value="1"/>
+        <Flags index="Wait" value="0"/>
+        <Category value="Spell"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1295"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="3597" Volume="-96.000000"/>
+        <ReverbBalance Room="0"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="-14.000000,-14.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CollectTributeEnd" parent="_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\Event_RavenCurse_CollectTributeEnd01.ogg"/>
+        <DupeDestroyCountPerPlayer value="1"/>
+        <DupeMuteCount value="1"/>
+        <VolumeRolloffPoints Distance="30.472103"/>
+        <VolumeRolloffPoints Distance="90.000000" Volume="-96.000000"/>
+        <DupeWait value="5000,5000"/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CollectTributeStart" parent="_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\Event_RavenCurse_CollectTributeStart01.ogg"/>
+        <DupeDestroyCountPerPlayer value="1"/>
+        <DupeMuteCount value="1"/>
+        <OffsetFadeIn Time="6" Volume="-96.000000"/>
+        <OffsetFadeIn Time="251"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="251" Volume="-96.000000"/>
+        <Volume value="-18.000000,-18.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CurseStart" parent="Interactive2D">
+        <AssetArray index="0">
+            <File value="Assets\Sounds\Event\Event_RavenCurse_CurseStart01.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <Flags index="AutoUnload" value="0"/>
+        <Flags index="Purgable" value="1"/>
+        <Flags index="Wait" value="0"/>
+        <ReverbBalance Room="0"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="0.000000,0.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CurseEnd" parent="Interactive2D">
+        <AssetArray index="0">
+            <File value="Assets\Sounds\Event\Event_RavenCurse_CurseEnd01.ogg"/>
+            <FacialAnim value=""/>
+            <FacialGroup value=""/>
+            <PortraitModel value=""/>
+            <Speaker value=""/>
+            <Subtitle value=""/>
+        </AssetArray>
+        <Flags index="AutoUnload" value="0"/>
+        <Flags index="Purgable" value="1"/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="Wait" value="0"/>
+        <ReverbBalance Room="0"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <SustainFade index="1" Time="500" Volume="-96.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_TributeSpawn" parent="Spell">
+        <AssetArray File="Assets\Sounds\Event\Event_RavenCurse_Tribute_Spawn01.ogg" FacialGroup=""/>
+        <Volume value="-4.000000,-4.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="30.000000" Volume="-96.000000"/>
+        <Flags index="Stream" value="1"/>
+        <HerdNode value="HerdNode_Infantry_Small"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CollectTributeLoop" parent="_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\Event_RavenCurse_CollectTributeLoop01.ogg"/>
+        <DupeDestroyCountPerPlayer value="1"/>
+        <DupeMuteCount value="1"/>
+        <LoopCount value="-1"/>
+        <Volume value="-9.000000,-9.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="200"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_TributeIdle" parent="Spell">
+        <AssetArray File="Assets\Sounds\Event\Event_RavenCurse_Tribute_Idle_Loop01.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Volume value="-21.000000,-21.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Event_RavenCurse_CurseEnd_Timer" parent="_2D_FX_Map_Event" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Sounds\Event\Event_RavenCurse_CurseEnd_Timer01.ogg" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+</Catalog>

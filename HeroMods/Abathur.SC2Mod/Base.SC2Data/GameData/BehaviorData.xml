@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosityStacks@DamageStack">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <MaxStackCount value="40"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosityStacks@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="40"/>
+        </Cost>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <DisableValidatorArray value="HeroAbathurEvolveMonstrosity@HasActiveMonstrosity"/>
+        <RemoveValidatorArray value="HeroAbathurEvolveMonstrosity"/>
+        <RefreshEffect value="HeroAbathurEvolveMonstrosityStacks@TokenCounterController"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="40"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@SuppressVisibilityController">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="1.5"/>
+        <Modification>
+            <BehaviorLinkDisableArray value="HeroAbathurSymbiote@SuperStealthVisibilityController"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@SuperStealthVisibilityController">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <DisableValidatorArray value="CasterIsSuppressingVisibility"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurDeepTunnelCCInterruption">
+        <DisableValidatorArray value="CasterIsRooted"/>
+        <RemoveValidatorArray value="HeroAbathurDeepTunnel@IsCastingDeepTunnel"/>
+        <Duration value="2.5"/>
+        <Modification>
+            <AbilLinkDisableArray value="HeroAbathurDeepTunnel"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorUnitTracker id="HeroAbathurEvolveMonstrosity@TrackingBehavior">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CBehaviorUnitTracker>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@StasisController">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <DisableValidatorArray value="HeroAbathurEvolveMonstrosity@UnitIsInStasis"/>
+        <RemoveValidatorArray value="HeroAbathurEvolveMonstrosity@UnitNotDead"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@AbilityDisabler">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <DisableValidatorArray value="SourceNotStunned"/>
+        <Modification>
+            <AbilLinkDisableArray value="HeroAbathurStab"/>
+            <AbilLinkDisableArray value="HeroAbathurSpikeBurst"/>
+            <AbilLinkDisableArray value="HeroAbathurCarapace"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentToxicNestEnvenomedNest@ArmorDebuff">
+        <BehaviorCategories index="User1" value="1"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorAll" Points="-10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorUnitTracker id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@UnitTracker">
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CBehaviorUnitTracker>
+    <CBehaviorBuff id="HeroAbathurToxicNest@SelfReveal">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="2"/>
+        <Modification>
+            <StateFlags index="SuppressCloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentCarapaceNetworkedCarapace@Shield" parent="CoreShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="6"/>
+        <FinalEffect value="HeroAbathurCarapace@RegenerativeMicrobesRemoveBehavior"/>
+        <DamageResponse ModifyLimit="150"/>
+        <PeriodicEffect value="HeroAbathurCarapace@TalentBuffsApplySet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentSymbioteAdrenalOverload">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RemoveValidatorArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.25"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurEvolveMonstrosityDamageReduction50" parent="DamageReductionNonHeroic50Controller">
+        <Name value="Behavior/Name/AbathurEvolveMonstrosityDamageReduction50"/>
+        <Tooltip value="Behavior/Tooltip/AbathurEvolveMonstrosityDamageReduction50"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@InvalidTarget">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurDeepTunnel@TravelBehavior" parent="CoreUnstoppableParent">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="0.1875"/>
+        <BehaviorCategories index="TimedLife" value="1"/>
+        <Modification>
+            <AttributeChangeArray Attribute="CategoryImmuneToAllyDisplacement"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@CleanupTarget">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <RemoveValidatorArray value="CasterNotDead"/>
+        <FinalEffect value="HeroAbathurUltimateEvolution@CleanupKill"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentLocustStrainSurvivalInstinct">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Modification>
+            <VitalMaxAdditiveMultiplierArray index="Life" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentToxicNestEnvenomedNest" parent="CoreDoT">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="3"/>
+        <Period value="1"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffect value="HeroAbathurTalentToxicNestEnvenomedNest@Damage"/>
+        <PeriodicDisplayEffect value="HeroAbathurTalentToxicNestEnvenomedNest@Damage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurUltimateEvolutionEvolutionaryLinkTarget"/>
+    <CBehaviorBuff id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield" parent="CoreShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RemoveValidatorArray value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink"/>
+        <Duration value="6"/>
+        <DamageResponse>
+            <ModifyLimitVitalMaxFractionArray index="Life" value="0.35"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentVolatileMutation">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-banelingspooge.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <DisableValidatorArray value="TargetNotStasis"/>
+        <DisableValidatorArray value="NotCloaked"/>
+        <DisableValidatorArray value="TargetNotBenign"/>
+        <DisableValidatorArray value="HeroAbathurTalentVolatileMutation"/>
+        <Period value="3"/>
+        <PeriodicEffect value="HeroAbathurTalentVolatileMutation@ExplosionSearch"/>
+        <FinalEffect value="HeroAbathurTalentVolatileMutation@FinalExplosionSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentVolatileMutation@Delay">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-zerg-peristalsis.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="0.5"/>
+        <ExpireEffect value="AbathurVolatileMutationDelaySet"/>
+        <Modification>
+            <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@AbathurStack">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <DisableValidatorArray value="HeroAbathurEvolveMonstrosity@HasActiveMonstrosity"/>
+        <BuffFlags index="Extend" value="1"/>
+        <MaxStackCount value="40"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@Active">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RemoveValidatorArray value="HeroAbathurEvolveMonstrosity@HasActiveMonstrosity"/>
+        <Period value="0.125"/>
+        <PeriodicEffect value="HeroAbathurEvolveMonstrosity@SetCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosityStacks@HealthStack">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_EvolveMonstrosity.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <MaxStackCount value="40"/>
+        <Modification>
+            <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+            <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+            <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            <VitalMaxArray index="Life" value="27"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurDeepTunnelMonstrosity@Carry" parent="CarryBehaviorParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Abathur"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@Spawn">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="1"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@TimedLife">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-zerg-peristalsis.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <DisplayDuration index="Self" value="1"/>
+        <ExpireEffect value="TimedLifeFate"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@TargetCollisionSuppresser">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="0.125"/>
+        <Modification>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@SuppressAttack">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Modification>
+            <AbilLinkDisableArray value="attack"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@AlternateHero">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Modification>
+            <StateFlags index="Hallucination" value="1"/>
+            <AbilLinkDisableArray value="UseVehicle"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@HeroicAbilityDetector">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="20"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@VisibilityController">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <DisableValidatorArray value="CasterIsCloaked"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@VehicleCasterBehavior" parent="CoreStasisRemoved">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Modification SightMaximum="0">
+            <BehaviorLinkDisableArray value="HeroAbathurLocustStrain@LocustSpawnTimer"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentCarapaceAdrenalineBoost" parent="CoreSprint">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RemoveValidatorArray value="HeroAbathurCarapace@TargetHasBuffOrBuffHivemind"/>
+        <RemoveValidatorArray value="HeroAbathurTalentCarapaceAdrenalineBoost"/>
+        <Duration value="3.5"/>
+        <Modification UnifiedMoveSpeedFactor="0.4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroGenericPregameAbilityMinionSuppression">
+        <Modification>
+            <AbilLinkDisableArray value="HeroAbathurLocustStrain"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroGenericPregameAbilitySuppression">
+        <Modification>
+            <AbilLinkDisableArray value="HeroAbathurToxicNest"/>
+            <AbilLinkDisableArray value="HeroAbathurDeepTunnel"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NoLocust">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <Modification>
+            <AbilLinkDisableArray value="HeroAbathurLocustStrain"/>
+            <AbilLinkDisableArray value="AbathurSpawnLocustsAssaultStrain"/>
+            <AbilLinkDisableArray value="AbathurSpawnLocustsBombardStrain"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurDeepTunnel@DisablerBehavior">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <RemoveValidatorArray value="TargetNotPushPull"/>
+        <RemoveValidatorArray value="CasterHasOrders"/>
+        <Duration value="2.5625"/>
+        <FinalEffect value="HeroAbathurDeepTunnel@DestroyPersistent"/>
+        <Modification>
+            <AbilLinkEnableArray value="HeroAbathurDeepTunnel"/>
+            <AbilLinkDisableArray value="HeroAbathurToxicNest"/>
+            <AbilLinkDisableArray value="HeroAbathurUltimateEvolution"/>
+            <AbilLinkDisableArray value="HeroAbathurSymbiote"/>
+            <AbilLinkDisableArray value="Hearthstone"/>
+            <AbilLinkDisableArray value="CaptureMacGuffin"/>
+            <AbilLinkDisableArray value="CaptureMacGuffinTwo"/>
+            <AbilLinkDisableArray value="attack"/>
+            <AbilLinkDisableArray value="HeroAbathurLocustStrain"/>
+            <AbilLinkDisableArray value="AbathurSpawnLocustsAssaultStrain"/>
+            <AbilLinkDisableArray value="AbathurSpawnLocustsBombardStrain"/>
+            <AbilLinkDisableArray value="HeroAbathurEvolveMonstrosity"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurEvolveMonstrosity@DeepTunnelDisabler">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <RemoveValidatorArray value="TargetNotPushPull"/>
+        <RemoveValidatorArray value="TargetNotStunned"/>
+        <RemoveValidatorArray value="CasterHasOrders"/>
+        <Duration value="2.5625"/>
+        <FinalEffect value="HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSet"/>
+        <Modification>
+            <AbilLinkEnableArray value="HeroAbathurDeepTunnel"/>
+            <AbilLinkDisableArray value="HeroAbathurToxicNest"/>
+            <AbilLinkDisableArray value="HeroAbathurUltimateEvolution"/>
+            <AbilLinkDisableArray value="HeroAbathurSymbiote"/>
+            <AbilLinkDisableArray value="Hearthstone"/>
+            <AbilLinkDisableArray value="CaptureMacGuffin"/>
+            <AbilLinkDisableArray value="CaptureMacGuffinTwo"/>
+            <AbilLinkDisableArray value="attack"/>
+            <AbilLinkDisableArray value="HeroAbathurLocustStrain"/>
+            <AbilLinkDisableArray value="AbathurSpawnLocustsAssaultStrain"/>
+            <AbilLinkDisableArray value="AbathurSpawnLocustsBombardStrain"/>
+            <AbilLinkDisableArray value="HeroAbathurEvolveMonstrosity"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentSpikeBurstEnvenomedSpikes@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Abathur,Race:Neutral"/>
+        <Duration value="2"/>
+        <Modification UnifiedMoveSpeedFactor="-0.4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@CasterDummyBehavior">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurCarapace@RegenerativeMicrobes">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Carapace.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Period value="1"/>
+        <InitialEffect value="HeroAbathurCarapace@RegenerativeMicrobesCreateHealer"/>
+        <PeriodicEffect value="HeroAbathurCarapace@RegenerativeMicrobesCreateHealer"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurAssumingDirectControl@FinalStun">
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurToxicNest@Reveal" parent="CoreReveal">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurLocustStrain@LocustSpawnTimer">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="HeroAbathurLocustStrain@IssueSpawnOrder"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurAssumingDirectControl">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Icons\Common_Diablo\Hero_WitchDoctor\Icon_D3_Hero_WitchDoctor_Active_LocustSwarm.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <RemoveValidatorArray value="SourceNotDead"/>
+        <RemoveValidatorArray value="CasterNotStunned"/>
+        <RemoveValidatorArray value="CasterNotSilenced"/>
+        <FinalEffect value="HeroAbathurAssumingDirectControl@BehaviorFinalSet"/>
+        <Modification>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="SuppressFidgeting" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+            <AbilLinkDisableArray value="move"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AssumingDirectControlBehaviorPreControl">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\storm_btn_d3_witchdoctor_locustswarm.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <RemoveValidatorArray value="CasterNotDeadOrSilencedOrStunned"/>
+        <Duration value="1"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <StateFlags index="SuppressFidgeting" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectInstant" value="1"/>
+            <AbilClassDisableArray index="CAbilEffectTarget" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DeepTunnelCasterBehavior"/>
+    <CBehaviorBuff id="AbathurNeuralParasiteControl">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Textures\storm_ui_icon_abathur_symbiote.dds"/>
+        <RemoveValidatorArray value="SourceNotDead"/>
+        <FinalEffect value="AssumingDirectControlDeathDummy"/>
+        <Player Value="Caster"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@ControlBehavior">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <RemoveValidatorArray value="SourceNotDead"/>
+        <InitialEffect value="HeroAbathurUltimateEvolution@RemovePostDeathEffect"/>
+        <FinalEffect value="AssumingDirectControlDeathDummy"/>
+        <Player Value="Caster"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurNeuralParasiteBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\storm_ui_icon_abathur_symbiote.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurNeuralParasiteRelicBuff" parent="CoreSprint">
+        <InfoIcon value="Assets\Textures\storm_ui_icon_abathur_symbiote.dds"/>
+        <Modification>
+            <AdditiveMoveSpeedFactor value="0.1"/>
+            <AdditiveAttackSpeedFactor value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurCombatStyleUnstableMutation">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurCombatStyleAssaultStrain">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AbathurCombatStyleBombardStrain">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@Buff">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Modification UnifiedMoveSpeedFactor="0.1">
+            <StateFlags index="Hallucination" value="1"/>
+            <AbilLinkDisableArray value="MurkyRespawnEgg"/>
+            <BehaviorLinkDisableArray value="LeoricUndyingDontDie"/>
+            <AttributeChangeArray Attribute="UnitStatsPowerPhysical" Points="20"/>
+            <AttributeChangeArray Attribute="UnitStatsPowerSpell" Points="20"/>
+            <AttributeChangeArray Attribute="UnitStatsPowerHealingAndShielding" Points="20"/>
+        </Modification>
+        <BehaviorCategories index="User1" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@Build">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="1.5"/>
+        <FinalEffect value="HeroAbathurUltimateEvolution@ApplyTimedLife"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <!--        <RemoveValidatorArray value="RagnarosTargetDoesNotHaveMoltenCoreStasis"/>-->
+    <!--        <RemoveValidatorArray value="TargetNotInSpecialPreStasisRemovedStateCombine"/>-->
+    <CBehaviorBuff id="HeroAbathurSymbiote@HostBehavior">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <RemoveValidatorArray value="SourceNotDead"/>
+        <RemoveValidatorArray value="TargetNotSpecialDeathState"/>
+        <RemoveValidatorArray value="TargetNotImmuneToFriendlyAbilities"/>
+        <InitialEffect value="HeroAbathurSymbiote@ApplyHostThreatBehavior"/>
+        <FinalEffect value="HeroAbathurSymbiote@HostBehaviorRemovedSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@TimedLife" parent="CoreTimedLife">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <DisplayDuration index="Self" value="0"/>
+        <DisplayDuration index="Ally" value="0"/>
+        <DisplayDuration index="Enemy" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentSymbioteHivemind" parent="CoreCarryBehaviorParent">
+        <EditorCategories value="CoreHero:Abathur"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurLocust@TimedLife" parent="CoreTimedLife">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-rapidregeneration-color.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="16"/>
+        <FinalEffect value="AbathurLocustAssaultExplodeSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="UltimateEvolutionThreatIncrease">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Modification AttackTargetPriority="13"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurSymbiote@HostThreatBehavior">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Modification AttackTargetPriority="17"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurUltimateEvolution@TimedLife" parent="CoreTimedLife">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_UltimateEvolution.dds"/>
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="20"/>
+        <Period value="5"/>
+        <InitialEffect value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@EnumTrackedUnits"/>
+        <PeriodicEffect value="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@EnumTrackedUnits"/>
+        <FinalEffect value="HeroAbathurUltimateEvolution@TimedLifeFinalSet"/>
+        <Modification>
+            <StateFlags index="Summoned" value="0"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurToxicNest@ArmingBehavior">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="5"/>
+        <ExpireEffect value="HeroAbathurToxicNest@ApplySearchBehavior"/>
+        <DamageResponse Handled="HeroAbathurToxicNest@ApplySelfRevealer">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentToxicNestVileNest@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Abathur,Race:Neutral"/>
+        <Duration value="2.5"/>
+        <Modification UnifiedMoveSpeedFactor="-0.4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurToxicNest@TimedLife">
+        <InfoIcon value="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_ToxicNest.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="90"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="HeroAbathurToxicNest@VisionCreatePersistent"/>
+        <PeriodicEffect value="HeroAbathurToxicNest@SearchAreaTrigger"/>
+        <ExpireEffect value="HeroAbathurToxicNest@SuicideSet"/>
+        <Modification>
+            <StateFlags index="Bury" value="1"/>
+            <StateFlags index="Cloak" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+        </Modification>
+        <DamageResponse Handled="HeroAbathurToxicNest@ApplySelfRevealer">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurCarapace@Shield" parent="CoreShield">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Duration value="6"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="HeroAbathurCarapace@TalentBuffsApplySet"/>
+        <FinalEffect value="HeroAbathurCarapace@RegenerativeMicrobesRemoveBehavior"/>
+        <DamageResponse ModifyLimit="150"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurCarapace@ShieldHivemind" parent="HeroAbathurCarapace@Shield">
+        <DamageResponse ModifyLimit="75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurTalentCarapaceNetworkedCarapace@ShieldHivemind" parent="HeroAbathurTalentCarapaceNetworkedCarapace@Shield">
+        <DamageResponse ModifyLimit="75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurCarapace@ShieldTooltipDummy" parent="HeroAbathurCarapace@Shield">
+        <Name value="Behavior/Name/HeroAbathurTalentCarapaceReinforcedCarapace@Shield"/>
+        <TechAliasArray value="Ignored By Shielding Power"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurStab@MissileScan">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="StabInitialMissileScan1"/>
+        <PeriodicEffect value="HeroAbathurStab@MissileScan"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroAbathurStab@FacingControllerBehavior">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Abathur"/>
+        <Duration value="0.5"/>
+    </CBehaviorBuff>
+</Catalog>

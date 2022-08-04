@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="EarnsXP"/>
+<Behavior id="SuppressGenericDeath"/>
+<Behavior id="SuppressGenericDeathRagdoll"/>
+<Behavior id="CapturePointAllowed"/>
+<Behavior id="HeroAbathurEvolveMonstrosityStacks@DamageStack"/>
+<Behavior id="HeroAbathurEvolveMonstrosityStacks@TokenCounter"/>
+<Behavior id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@UnitTracker"/>
+<Behavior id="HeroAbathurTalentSymbioteAdrenalOverload"/>
+<Behavior id="HeroAbathurTalentVolatileMutation"/>
+<Behavior id="HeroAbathurEvolveMonstrosityStacks@HealthStack"/>
+<Behavior id="HeroAbathurDeepTunnelMonstrosity@Carry"/>
+<Behavior id="HeroAbathurUltimateEvolution@ControlBehavior"/>
+<Behavior id="HeroAbathurUltimateEvolution@Buff"/>
+<Behavior id="HeroAbathurUltimateEvolution@Build"/>
+<Behavior id="HeroAbathurSymbiote@HostBehavior"/>
+<Behavior id="HeroAbathurTalentSymbioteHivemind"/>
+<Effect id="Suicide"/>
+<Effect id="Summon@CreationSwitch"/>
+<Effect id="HeroAbathurEvolveMonstrosityStacks@HealthStackHealer"/>
+<Effect id="HeroAbathurDeepTunnel@DummyPing"/>
+<Effect id="HeroAbathurEvolveMonstrosityStacks@RefreshTokenCounter"/>
+<Effect id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@AddTrackedUnit"/>
+<Effect id="HeroAbathurSymbiote@ApplyStealthController"/>
+<Effect id="HeroAbathurSymbiote@ApplySuperStealthController"/>
+<Effect id="AbathurUltimateEvolutionInterruptModifyCooldown"/>
+<Effect id="HeroAbathurCarapace@RegenerativeMicrobesApplyBehavior"/>
+<Effect id="HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA"/>
+<Effect id="HeroAbathurSymbiote@ActorLink"/>
+<Effect id="HeroAbathurSymbiote@PropertyLink"/>
+<Model id="HeroAbathurDeepTunnel@ModelMiniMap"/>
+<Sound id="Abathur_UltimateEvolution_Screen_Loop"/>
+<Sound id="HeroAbathurSymbiote@Screen_End"/>
+<Sound id="HeroAbathurSymbiote@Screen_Loop"/>
+<Sound id="HeroAbathurSymbiote@Screen_Launch"/>
+<Sound id="AbathurHero_Symbiote"/>
+<Talent id="HeroAbathurTalentSymbioteAdrenalOverload"/>
+<Talent id="HeroAbathurTalentSymbioteHivemind"/>
+<Talent id="HeroAbathurEvolveMonstrosity"/>
+<Unit id="HeroAbathurSymbiote"/>
+</Preload>

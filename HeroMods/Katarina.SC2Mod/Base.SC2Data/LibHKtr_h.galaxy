@@ -1,0 +1,51 @@
+include "LibCore"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Katarina
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Equipped = 0;
+const int libHKtr_ge_HeroKatarinaWeaponEquippedCarried_Carried = 1;
+
+// Constants
+const fixed libHKtr_gv_heroKatarinaAimedShotLifesteal = 0.45;
+const fixed libHKtr_gv_heroKatarinaAutorifleEquippedPercentHealValue = 0.3;
+const fixed libHKtr_gv_heroKatarinaAutorifleCarriedPercentHealValue = 0.15;
+const fixed libHKtr_gv_heroKatarinaAutorifleMaximumShieldsValue = 0.35;
+const fixed libHKtr_gv_heroKatarinaTalentWeaponMasterToTheLimitModifier = 1.0;
+
+// Variable Declarations
+bool[libCore_gv_bALMaxEnginePlayerCount + 1] libHKtr_gv_heroKatarinaExclusionZoneCreated;
+unitgroup[libCore_gv_bALMaxEnginePlayerCount + 1] libHKtr_gv_heroKatarinaFlashGrenadeFlashedBackupVisionGroups;
+int libHKtr_gv_heroKatarinaFlashGrenadeActiveFlashedTargets;
+
+// Function Declarations
+string libHKtr_gf_HeroKatarinaCarriedWeaponBehavior (unit lp_unit);
+string libHKtr_gf_HeroKatarinaEquippedWeaponBehavior (unit lp_unit);
+string libHKtr_gf_HeroKatarinaChangeEquippedWeaponToCarried (unit lp_unit);
+void libHKtr_gf_HeroKatarinaSwapModelActorMessage (unit lp_katarina, string lp_newModel);
+string libHKtr_gf_HeroKatarinaGetNextCarriedWeapon (unit lp_katarina);
+void libHKtr_gf_HeroKatarinaAutorifleHealingSystem (unit lp_damagingUnit, unit lp_triggeringUnit, string lp_damagingEffect, fixed lp_damage, int lp_equippedCarried);
+
+// Trigger Declarations
+trigger libHKtr_gt_HeroKatarinaChangeCarryWeaponWeaponSwap;
+trigger libHKtr_gt_HeroKatarinaChangeEquippedWeapon;
+trigger libHKtr_gt_HeroKatarinaKatarinaIsRevived;
+trigger libHKtr_gt_HeroKatarinaSwapHeroModelsCarried;
+trigger libHKtr_gt_HeroKatarinaSwapHeroModelsEquipped;
+trigger libHKtr_gt_HeroKatarinaAimedShotDamaged;
+trigger libHKtr_gt_HeroKatarinaAimedShotAbsorbed;
+trigger libHKtr_gt_HeroKatarinaExclusionZone;
+trigger libHKtr_gt_HeroKatarinaExclusionZoneSearch;
+trigger libHKtr_gt_HeroKatarinaExclusionZoneEnd;
+trigger libHKtr_gt_HeroKatarinaFlashGrenadeMultiHeroIsolationController;
+trigger libHKtr_gt_HeroKatarinaFlashGrenadeApplyAllyVisionSupression;
+trigger libHKtr_gt_HeroKatarinaFlashGrenadeRemoveAllyVisionSupression;
+trigger libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsDamaged;
+trigger libHKtr_gt_HeroKatarinaWeaponMainandSecondaryEffectsAbsorbed;
+trigger libHKtr_gt_HeroKatarinaTalentAdvancedChargeDamaged;
+trigger libHKtr_gt_HeroKatarinaTalentAdvancedChargeAbsorbed;
+
+// Library Initialization
+void libHKtr_InitVariables ();
+

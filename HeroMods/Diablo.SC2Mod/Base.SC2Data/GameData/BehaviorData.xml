@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstoneEternalSoulstone">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone_a.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroGenericCasterLevelGE10"/>
+        <InitialEffect value="TalentQuestCompleteDummySet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@CasterPostChargeChannel">
+        <InfoFlags index="Hidden" value="0"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloDevilCharge@CasterHasPostChargeSpeedBuff"/>
+        <FinalEffect value="HeroDiabloDevilCharge@RemoveFullDurationBehavior"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="Daze" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@DamageOnly">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Duration value="0.0625"/>
+        <InitialEffect value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+        <RefreshEffect value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@SelfMovementSpeedBuff" parent="CoreSprint">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Duration value="2"/>
+        <Modification UnifiedMoveSpeedFactor="0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@StandardStun" parent="CoreStun">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloDevilCharge@TargetHasNoTerrainStun"/>
+        <Duration value="0.75"/>
+        <InitialEffect value="HeroDiabloDevilCharge@KnockbackRemoveSpeedBuffTarget"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloLightningBreath@Slow" parent="CoreSlow">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <MaxStackCount value="10"/>
+        <Duration value="2"/>
+        <Modification UnifiedMoveSpeedFactor="-0.04"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentCruelty@AttackSpeedBuff">
+        <Alignment value="Positive"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoFlags index="Hidden" value="0"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Speed.dds"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <MaxStackCount value="2"/>
+        <Duration value="7"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentDevilChargeDevastatingCharge@ArmorDebuff" parent="CoreUnitStats">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentDevilChargeDevastatingCharge"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorAll" Points="-20"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentDevilChargeSacrificialSoul@ArmorStandard" parent="CoreUnitStats">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentDevilChargeSacrificialSoul"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorAll" Points="20"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstone@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="100"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <RefreshEffect value="HeroDiabloBlackSoulstone@TokenCounterController"/>
+        <FinalEffect value="HeroDiabloBlackSoulstone@ResetTokensPersistent"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="100"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentDevilChargeDevastatingCharge@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="5"/>
+        </Cost>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <TechAliasArray value="QuestData ResetOnDeath"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="5"/>
+            </Cost>
+        </DamageResponse>
+        <RefreshEffect value="HeroDiabloTalentDevilChargeDevastatingCharge@TokenCounterController"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstone@CarryBehavior" parent="CoreCarryBehaviorParent">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <DisableValidatorArray value="HeroDiabloBlackSoulstone@QuestNotCompleted"/>
+        <PeriodicEffect value="HeroDiabloBlackSoulstone@Search"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloLightningBreath@VisualController">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <DisableValidatorArray value="SourceNotTimeStopped"/>
+        <RemoveValidatorArray value="HeroDiabloLightningBreath@CasterIsCastingLightningBreath"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentDevilChargeSacrificialSoul@ArmorAdvanced" parent="CoreUnitStats">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentDevilChargeSacrificialSoul"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorAll" Points="40"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentFireStompDebilitatingFlames@DamageReduction" parent="CoreDamageReduction">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentFireStompDebilitatingFlames"/>
+        <RemoveValidatorArray value="HeroDiabloTalentFireStompDebilitatingFlames@SlowedFor24"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-50"/>
+            <AttributeChangeArray index="1" Points="-50"/>
+            <AttributeChangeArray Attribute="CategoryDebuffSpellPower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentFireStompDebilitatingFlames@Slow" parent="CoreSlow">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentFireStompDebilitatingFlames"/>
+        <MaxStackCount value="10"/>
+        <Duration value="4"/>
+        <InitialEffect value="HeroDiabloTalentFireStompDebilitatingFlames@ApplyDamageReduction"/>
+        <PeriodicEffect value="HeroDiabloTalentFireStompDebilitatingFlames@ApplyDamageReduction"/>
+        <Modification UnifiedMoveSpeedFactor="-0.06"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentMalevolence@Stack">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentMalevolence"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="2"/>
+        <Duration value="6"/>
+        <InfoFlags index="Hidden" value="0"/>
+        <Alignment value="Positive"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentFireStompHellfire@SpellPowerStack" parent="CoreUnitStats">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="0"/>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <BehaviorCategories index="TimedLife" value="1"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="HeroDiabloTalentFireStompHellfire"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="10"/>
+        <Duration value="10"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsPowerSpell" Points="3"/>
+            <AttributeChangeArray Attribute="UnitStatsPowerHealingAndShielding" Points="3"/>
+            <AttributeChangeArray Attribute="CategoryBuffSpellPower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentFireStompSoulstotheFlame@TokenCounter" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="3"/>
+        </Cost>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <RemoveValidatorArray value="HeroDiabloTalentFireStompSoulstotheFlame"/>
+        <RefreshEffect value="HeroDiabloTalentFireStompSoulstotheFlame@TokenCounterController"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="3"/>
+            </Cost>
+        </DamageResponse>
+        <FinalEffect value="HeroDiabloTalentFireStompSoulstotheFlame@ResetToken"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstone@Revive">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <FinalEffect value="TalentQuestRefreshUIDummySet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentSoulShield@1SpellArmor" parent="CoreUnitStats">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="75"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray Attribute="UnitStatsArmorSpellAll" Points="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentFeastonFear@HealingBehavior">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Combo_1.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="CasterNotUsingVehicle"/>
+        <MaxStackCount value="5"/>
+        <Duration value="3"/>
+        <Period value="1"/>
+        <PeriodicEffect value="HeroDiabloTalentFeastonFear@Healing"/>
+        <PeriodicDisplayEffect value="HeroDiabloTalentFeastonFear@Healing"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloFireStomp@MissileSearch">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <PeriodicEffect value="HeroDiabloFireStomp@Search"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloFireStomp@ReturnMissileSearch">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <InitialEffect value="Diablo_FireStomp_RemoveReturnBehavior"/>
+        <PeriodicEffect value="HeroDiabloFireStomp@ReturnSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloFireStomp@ReturnMissilePause">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_FireStomp.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+        </Modification>
+        <InitialEffect value="HeroDiabloFireStomp@ReturnApplySearchBehavior"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstone@Stacks">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <MaxStackCount value="100"/>
+        <Modification>
+            <VitalMaxAdditiveMultiplierArray index="Life" value="0.003"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstone@CanReviveActiveCarry" parent="CoreCarryBehaviorParent">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <DisableValidatorArray value="CasterNotUsingVehicle"/>
+        <DisableValidatorArray value="HeroDiabloBlackSoulstone@QuestCompleted"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloApocalypse@Stun" parent="CoreStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="1.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloOverpower@Stun" parent="CoreStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="0.25"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloOverpower@TargetBehavior" parent="StormStun">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Overpower.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <TimeScaleSource Value="Caster"/>
+        <Duration value="0.5625"/>
+        <PeriodicEffect value="HeroDiabloOverpower@MakeTargetLookAtCaster"/>
+        <RevealUnit Effect="HeroDiabloOverpower@InitialChannelCreatePersistent" Value="Target"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@FullDurationBehavior">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="2"/>
+        <FinalEffect value="HeroDiabloDevilCharge@IssueCasterAttackOrder"/>
+        <ExpireEffect value="HeroDiabloDevilCharge@IssueCasterAttackOrder"/>
+        <Modification>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+        </Modification>
+        <RemoveValidatorArray value="CasterNotDazedOrDeadOrFearedOrPolymorphedOrRootedOrStasisOrStunnedExceptTimeStop"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@CasterPostChargeSpeedBuff">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="0.2"/>
+        <Modification MoveSpeedMaximum="54" MoveSpeedMinimum="54" AccelerationMultiplier="2">
+            <!--<ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>-->
+            <BehaviorCategoriesDisable index="Slow" value="1"/>
+            <BehaviorCategoriesDisable index="Fast" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@TerrainStun" parent="CoreStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="1"/>
+        <InitialEffect value="HeroDiabloDevilCharge@KnockbackTerrainImpactSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloLightningBreath">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_LightningBreath.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <BehaviorCategories index="User12" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <RemoveValidatorArray value="DoesNotHaveChanneledAbilityFullStopBehavior"/>
+        <RemoveValidatorArray value="CasterNotStasisExceptTimeStop"/>
+        <Duration value="4.0625"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressFidgeting" value="1"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="HeroDiabloLightningBreath"/>
+            <AbilLinkEnableArray value="HeroDiabloLightningBreath@Cancel"/>
+            <AttributeChangeArray Attribute="CategoryImmuneToAllyDisplacement"/>
+            <AttributeChangeArray Attribute="CategoryImmuneToEnemyDisplacement"/>
+        </Modification>
+        <Period value="0.25"/>
+        <PeriodicEffect value="HeroDiabloLightningBreath@SearchOffset"/>
+        <InitialEffect value="HeroDiabloLightningBreath@SearchOffset"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloDevilCharge@TargetImpactedMovespeed" parent="CorePushPullParent">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_ShadowCharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="0.2"/>
+        <InitialEffect value="HeroDiabloDevilCharge@KnockbackIssueTargetStopOrder"/>
+        <Modification MoveSpeedMaximum="27" MoveSpeedMinimum="27">
+            <BehaviorLinkDisableArray value="HeroGenericMount@Mounted"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloOverpower@CasterBehavior">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Overpower.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="0.65"/>
+        <Modification>
+            <StateFlags index="SuppressAttack" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloOverpower@PathableBehind">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_Overpower.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Duration value="0.5625"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloBlackSoulstone@TargetSoulBehavior">
+        <InfoIcon value="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone.dds"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RemoveValidatorArray value="TargetWithin10Range"/>
+        <MaxStackCount value="10"/>
+        <MaxStackCountPerCaster value="1"/>
+        <DamageResponse Fatal="1" Handled="HeroDiabloBlackSoulstone@HeroMinionSwitch">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroDiabloTalentFireStompHellfire@CarryBehavior" parent="CoreCarryBehaviorParent">
+        <EditorCategories value=",CoreHero:Diablo"/>
+        <DisableValidatorArray value="NotMounted"/>
+        <DisableValidatorArray value="CasterNotStasis"/>
+        <DisableValidatorArray value="SourceNotDead"/>
+        <DisableValidatorArray value="TargetNotSpecialDeathState"/>
+        <DisableValidatorArray value="NotCloaked"/>
+        <DisableValidatorArray value="HeroDiabloTalentFireStompHellfire@CasterHasMaxStacks"/>
+        <RemoveValidatorArray value="HeroDiabloTalentFireStompHellfire"/>
+        <Period value="1"/>
+        <PeriodicEffect value="HeroDiabloTalentFireStompHellfire@Search"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeStunLimiter">
+        <Duration value="0.0625"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeCasterPostChargeBehaviorChannel">
+        <RemoveValidatorArray value="DiabloShadowChargeCasterHasPostChargeBehavior"/>
+        <BuffFlags index="Channeled" value="1"/>
+        <FinalEffect value="DiabloShadowChargeFullDurationCasterBehaviorRemoveBehavior"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeCasterPostUnitImpactChargeBehavior">
+        <RemoveValidatorArray value="DiabloShadowChargeDiabloKnockbackValidator"/>
+        <BuffFlags index="UpdateDurationWhileDisabled" value="1"/>
+        <Duration value="0.1875"/>
+        <FinalEffect value="DiabloShadowChargeIssueAttackOrder"/>
+        <ExpireEffect value="DiabloShadowChargeIssueAttackOrder"/>
+        <Modification MoveSpeedMaximum="27" MoveSpeedMinimum="27">
+            <BehaviorCategoriesDisable index="Slow" value="1"/>
+            <BehaviorCategoriesDisable index="Fast" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeCasterPreUnitImpactBehavior">
+        <Alignment value="Positive"/>
+        <RemoveValidatorArray value="CasterNotDeadOrStunnedOrRootedOrPolymorphedOrStasisOrDazedOrFearedExceptTimeStop"/>
+        <BuffFlags index="Channeled" value="1"/>
+        <BuffFlags index="UpdateDurationWhileDisabled" value="1"/>
+        <Duration value="1"/>
+        <Modification>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeFullDurationCasterBehavior">
+        <RemoveValidatorArray value="CasterNotDeadOrStunnedOrRootedOrPolymorphedOrStasisOrDazedOrFearedExceptTimeStop"/>
+        <Duration value="2"/>
+        <Modification>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeSelfMovementSpeedBuff" parent="CoreSprint">
+        <EditorCategories value=""/>
+        <Duration value="2"/>
+        <Modification UnifiedMoveSpeedFactor="0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeTargetImpactedBehavior">
+        <Duration value="0.0625"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeTargetMoveSpeedBehavior" parent="PushPullParent">
+        <RemoveValidatorArray value="TargetNotRooted"/>
+        <Duration value="0.1875"/>
+        <FinalEffect value="DiabloDiabloShadowChargeApplyTargetRootedMoveSpeedApplyBehavior"/>
+        <Modification MoveSpeedMaximum="27" MoveSpeedMinimum="27">
+            <BehaviorLinkDisableArray value="Mounted"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeTerrainImpactStun" parent="CoreStun">
+        <EditorCategories value=""/>
+        <Duration value="1"/>
+        <InitialEffect value="DiabloShadowChargeTerrainImpactSet"/>
+        <RefreshEffect value="DiabloShadowChargeTerrainImpactSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DiabloShadowChargeUnitImpactStun" parent="PushPullParent">
+        <Duration value="0.25"/>
+        <InitialEffect value="DiabloShadowChargeUnitImpactedIssueStopOrder"/>
+        <Modification>
+            <BehaviorCategoriesDisable index="User6" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+</Catalog>

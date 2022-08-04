@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentApocalypseDyingBreath">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentApocalypseDyingBreath@TriggerDummyImpactSet"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroDiabloApocalypse@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentCruelty">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentCruelty@ApplyAttackSpeedBuff"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;Unstoppable"/>
+        <RequireEffectArray value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+        <RequireEffectArray value="HeroDiabloOverpower@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentDevilChargeDevastatingCharge">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentDevilChargeDevastatingCharge@ImpactSet"/>
+        <TargetFilters value="Heroic;Unstoppable"/>
+        <RequireEffectArray value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentDevilChargeSacrificialSoul">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentDevilChargeSacrificialSoul@ImpactSet"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentDiabolicalMomentum">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentDiabolicalMomentum@CDR"/>
+        <TargetFilters value="Heroic;Unstoppable"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroDiabloWeapon@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentFeastonFear">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentFeastonFear@ApplyHealingBehavior"/>
+        <TargetFilters value="Heroic;Unstoppable"/>
+        <RequireEffectArray value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+        <RequireEffectArray value="HeroDiabloOverpower@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentFireStompDebilitatingFlames">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentFireStompDebilitatingFlames@ApplySlow"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroDiabloFireStomp@StartDamage"/>
+        <RequireEffectArray value="HeroDiabloFireStomp@ReturnDamage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentFireStompEternalFlames">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentFireStompEternalFlames@ResetCooldown"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroDiabloDevilCharge@KnockbackTerrainDamage"/>
+        <RequireEffectArray value="HeroDiabloOverpower@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentFireStompHellfire">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentFireStompHellfire@ApplySpellPowerBehavior"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroDiabloFireStomp@StartDamage"/>
+        <RequireEffectArray value="HeroDiabloFireStomp@ReturnDamage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentFireStompSoulstotheFlame">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentFireStompSoulstotheFlame@RefreshTokenCounter"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroDiabloFireStomp@StartDamage"/>
+        <RequireEffectArray value="HeroDiabloFireStomp@ReturnDamage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentLifeLeech">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentLifeLeech@ImpactSet"/>
+        <TargetFilters value="Heroic;-"/>
+        <RequireEffectArray value="HeroDiabloWeapon@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentMalevolence">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentMalevolence@ImpactSet"/>
+        <ValidatorArray value="HeroDiabloTalentMalevolence@HasStacks"/>
+        <RequireEffectArray value="HeroDiabloWeapon@Damage"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Dead,Hidden"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentSoulShield@CDRControllerAbilities">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentSoulShield@CooldownReduction"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <ExcludeEffectArray value="HeroDiabloWeapon@Damage"/>
+        <ExcludeEffectArray value="HeroDiabloTalentMalevolence@Damage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroDiabloTalentSoulShield@CDRControllerWeapon">
+        <Location value="Attacker"/>
+        <Handled value="HeroDiabloTalentSoulShield@CooldownReduction"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;-"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroDiabloWeapon@Damage"/>
+        <RequireEffectArray value="HeroDiabloTalentMalevolence@Damage"/>
+    </CPlayerResponseUnitDamage>
+</Catalog>

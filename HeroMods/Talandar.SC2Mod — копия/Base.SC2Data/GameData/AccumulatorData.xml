@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorBehavior id="HeroTalandarSolarCannon@ChargesCountCasterMedium">
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeMedium"/>
+        <UnitSource Effect="HeroTalandarSolarCannon@StartSet"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolarCannon@ChargesCountMissileMedium">
+        <ApplicationRule value="Multiply"/>
+        <Behavior value="HeroTalandarSolarCannon@MissileChargeMedium"/>
+        <UnitSource Value="Source"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorArithmetic id="HeroTalandarSolarCannon@DamageMedium">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Parameters value="0.09">
+            <AccumulatorArray value="HeroTalandarSolarCannon@ChargesCountMissileMedium"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorBehavior id="HeroTalandarSolariteFlare@ChargesCountCasterMedium">
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeMedium"/>
+        <UnitSource Effect="HeroTalandarSolariteFlare@StartSet"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolariteFlare@ChargesCountMissileMedium">
+        <ApplicationRule value="Multiply"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeMedium"/>
+        <UnitSource Value="Source"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorArithmetic id="HeroTalandarSolariteFlare@DamageMedium">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Parameters value="0.09">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@ChargesCountMissileMedium"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageModifierBase" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.15"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageModifierAdvanced" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.45"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageSwtich">
+        <CaseArray Validator="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@HasTalentAndHasNotShield" Accumulator="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageModifierBase"/>
+        <CaseArray Validator="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@HasTalentAndHasShield" Accumulator="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageModifierAdvanced"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroTalandarTalentAkhundelar@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroTalandarTalentAkhundelar@Switch">
+        <CaseArray Validator="HeroTalandarTalentAkhundelar" Accumulator="HeroTalandarTalentAkhundelar@DamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroTalandarTalentPurification@EnergyModifier" parent="BaseAccumulator">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroTalandarTalentPurification@PermanentBonus" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroTalandarTalentPurification@SwitchPermanentBonus">
+        <CaseArray Validator="HeroTalandarTalentPurification" Accumulator="HeroTalandarTalentPurification@PermanentBonus"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroTalandarTalentPurification@TimedBonus" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.75"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroTalandarTalentPurification@SwitchTimedBonus">
+        <CaseArray Validator="HeroTalandarTalentPurification@HasTimedBuff" Accumulator="HeroTalandarTalentPurification@TimedBonus"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestUIDisplayer">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroTalandarTalentOperationalEfficiency@QuestUIDisplayer"/>
+    <CAccumulatorConstant id="HeroTalandar@LifeRegenerationRateBase">
+        <Amount value="3.078"/>
+    </CAccumulatorConstant>
+    <CAccumulatorBehavior id="HeroTalandarSolarCannon@ChargesCountCasterUpgraded">
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeUpgraded"/>
+        <UnitSource Effect="HeroTalandarSolarCannon@StartSet"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolarCannon@ChargesCountMissileUpgraded">
+        <Behavior value="HeroTalandarSolarCannon@MissileChargeUpgraded"/>
+        <UnitSource Value="Source"/>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorArithmetic id="HeroTalandarSolarCannon@DamageUpgraded">
+        <Parameters value="0.12">
+            <AccumulatorArray value="HeroTalandarSolarCannon@ChargesCountMissileUpgraded"/>
+        </Parameters>
+        <ApplicationRule value="AdditiveMultiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="HeroTalandarSolarCannon@DamageDefault">
+        <Parameters value="0.06">
+            <AccumulatorArray value="HeroTalandarSolarCannon@ChargesCountMissileDefault"/>
+        </Parameters>
+        <ApplicationRule value="AdditiveMultiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorBehavior id="HeroTalandarSolariteFlare@ChargesCountCasterDefault">
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeDefault"/>
+        <UnitSource Effect="HeroTalandarSolariteFlare@StartSet"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolariteFlare@ChargesCountMissileDefault">
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeDefault"/>
+        <UnitSource Value="Source"/>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolariteFlare@ChargesCountCasterUpgraded">
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeUpgrade"/>
+        <UnitSource Effect="HeroTalandarSolariteFlare@StartSet"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolariteFlare@ChargesCountMissileUpgraded">
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeUpgraded"/>
+        <UnitSource Value="Source"/>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorArithmetic id="HeroTalandarSolariteFlare@DamageDefault">
+        <Parameters value="0.06">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@ChargesCountMissileDefault"/>
+        </Parameters>
+        <ApplicationRule value="AdditiveMultiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="HeroTalandarSolariteFlare@DamageUpgraded">
+        <Parameters value="0.12">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@ChargesCountMissileUpgraded"/>
+        </Parameters>
+        <ApplicationRule value="AdditiveMultiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorBehavior id="HeroTalandarSolarCannon@ChargesCountCasterDefault">
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeDefault"/>
+        <UnitSource Effect="HeroTalandarSolarCannon@StartSet"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroTalandarSolarCannon@ChargesCountMissileDefault">
+        <Behavior value="HeroTalandarSolarCannon@MissileChargeDefault"/>
+        <UnitSource Value="Source"/>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorConstant id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments@PurificationBlastDamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments@PurificationBlastSwitch">
+        <CaseArray Validator="HeroTalandarTalentPurifierArmamentsAdvancedArmaments" Accumulator="HeroTalandarTalentPurifierArmamentsAdvancedArmaments@PurificationBlastDamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroTalandarTalentPurifierBeamEmpoweredBeam@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroTalandarTalentPurifierBeamEmpoweredBeam@Switch">
+        <CaseArray Validator="HeroTalandarTalentPurifierBeamEmpoweredBeam" Accumulator="HeroTalandarTalentPurifierBeamEmpoweredBeam@DamageModifier"/>
+    </CAccumulatorSwitch>
+</Catalog>

@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Fields Id="Flag_ShowInHeroSelection" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Flag_AffectedByCooldownReduction" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Flag_IsMountReplacement" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Flag_IsUsesCharges" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Type" Type="User" UserType="AbilityType"/>
+        <Fields Id="ButtonEntry" Type="GameLink" GameLinkType="Button"/>
+        <Fields Id="AbilityEntry" Type="GameLink" GameLinkType="Abil"/>
+        <Fields Id="Slot" Type="User" UserType="AbilitySlot"/>
+        <Fields Id="Paired" Type="User" UserType="AbilityPaired"/>
+        <Fields Id="Flag_IsInventory" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="InventoryUnitEntry" Type="GameLink" GameLinkType="Unit"/>
+        <Fields Id="Hero" Type="User" UserType="Hero"/>
+        <Fields Id="CDRSkipValidator" Type="GameLink" GameLinkType="Validator"/>
+        <Fields>
+            <Id value="PlayerResponseEntry"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="PlayerResponse"/>
+            <Count value="8"/>
+        </Fields>
+    </CUser>
+    <CUser id="AbilityPaired">
+        <Instances Id="[Default]"/>
+        <Instances Id="Paired1"/>
+        <Instances Id="Paired2"/>
+    </CUser>
+    <CUser id="AbilitySlot">
+        <Fields Id="HotkeyString" Type="String"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="Basic Ability (Q)">
+            <String String="UI/Hotkey/CommandButton00">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Basic Ability (W)">
+            <String String="UI/Hotkey/CommandButton01">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Basic Ability (E)">
+            <String String="UI/Hotkey/CommandButton02">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Heroic Ability (R)">
+            <String String="UI/Hotkey/CommandButton03">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Trait (D)">
+            <String String="UI/Hotkey/CommandButton04">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Mount (Z)">
+            <String String="UI/Hotkey/CommandButton08">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Hearthstone (B)">
+            <String String="UI/Hotkey/CommandButton09">
+                <Field Id="HotkeyString"/>
+            </String>
+        </Instances>
+        <Instances Id="Inventory (Active)"/>
+        <Instances Id="Passive"/>
+    </CUser>
+    <CUser id="AbilityType">
+        <Instances Id="[Default]"/>
+        <Instances Id="Basic"/>
+        <Instances Id="Trait"/>
+        <Instances Id="Heroic"/>
+        <Instances Id="Inventory"/>
+        <Instances Id="Passive"/>
+    </CUser>
+    <CUser id="Event">
+        <Instances Id="[Default]"/>
+        <Instances Id="EternalConflict"/>
+        <Instances Id="HallowsEnd"/>
+        <Instances Id="WinterVeil"/>
+        <Instances Id="LunarFestival"/>
+        <Instances Id="MachinesofWar"/>
+        <Instances Id="HallowsEnd2016"/>
+        <Instances Id="OverwatchCrossPromo"/>
+        <Instances Id="WoWCrossPromo"/>
+        <Instances Id="WinterVeil2016"/>
+        <Instances Id="ObeytheCall"/>
+        <Instances Id="PachimariMania"/>
+        <Instances Id="HallowsEnd2017"/>
+        <Instances Id="DragonsoftheNexus"/>
+        <Instances Id="WinterVeil2017"/>
+    </CUser>
+    <CUser id="SkinFeature">
+        <Instances Id="[Default]"/>
+        <Instances Id="Themed Abilities"/>
+        <Instances Id="Themed Mount"/>
+    </CUser>
+    <CUser id="PlayerSupporterType">
+        <Instances Id="[Default]"/>
+        <Instances Id="Bronze">
+            <Text Text="UserData/PlayerSupporterType/Bronze_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Instances Id="Silver">
+            <Text Text="UserData/PlayerSupporterType/Silver_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Instances Id="Gold">
+            <Text Text="UserData/PlayerSupporterType/Gold_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Instances Id="Platinum">
+            <Text Text="UserData/PlayerSupporterType/Platinum_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Instances Id="Diamond">
+            <Text Text="UserData/PlayerSupporterType/Diamond_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Instances Id="Master">
+            <Text Text="UserData/PlayerSupporterType/Master_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Instances Id="GrandMaster">
+            <Text Text="UserData/PlayerSupporterType/GrandMaster_AccessDeniedErrorText">
+                <Field Id="AccessDeniedErrorText"/>
+            </Text>
+        </Instances>
+        <Fields Id="AccessDeniedErrorText" Type="Text"/>
+    </CUser>
+    <CUser id="Mount">
+        <Fields>
+            <Id value="MountCategory"/>
+            <Type value="User"/>
+            <UserType value="MountMountCategory"/>
+            <EditorColumn value="6"/>
+        </Fields>
+        <Fields>
+            <Id value="VariationSupporterTypeRequired"/>
+            <Type value="User"/>
+            <UserType value="PlayerSupporterType"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields Id="VO Mounted" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="VO Dismounted" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="VO Looping" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="VO Stationary" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="VO Start Moving" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="VO Stop Moving" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="VO Turbo" Type="GameLink" GameLinkType="Sound"/>
+        <Fields>
+            <Id value="VariationCreationActorMessage"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Actor"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields Id="Show In Store" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="IsAttached" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Model" Type="GameLink" GameLinkType="Model"/>
+        <Fields Id="WalkAnimMoveSpeed" Type="Fixed" EditorColumn="3"/>
+        <Fields Id="ReleaseDate" Type="String" EditorColumn="1"/>
+        <Fields>
+            <Id value="CollectionCategory"/>
+            <Type value="User"/>
+            <UserType value="MountCollectionCategory"/>
+            <EditorColumn value="6"/>
+        </Fields>
+        <Fields>
+            <Id value="Event"/>
+            <Type value="User"/>
+            <UserType value="Event"/>
+            <EditorColumn value="5"/>
+        </Fields>
+        <Fields Id="Model Scale" Type="Fixed"/>
+        <Fields Id="VO Moving" Type="GameLink" GameLinkType="Sound"/>
+        <Fields Id="IsMorphUnit" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="FX Actor Mount Up" Type="GameLink" GameLinkType="Actor"/>
+        <Fields Id="FX Actor Dismount " Type="GameLink" GameLinkType="Actor"/>
+        <Fields>
+            <Id value="VariationIsUsed"/>
+            <Type value="User"/>
+            <UserType value="GenericTrueFalse"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields Id="VariationName" Type="Text" Count="10"/>
+        <Fields Id="VariationInfo" Type="Text" Count="10"/>
+        <Fields Id="VariationAdditionalSearchText" Type="Text" Count="10"/>
+        <Fields Id="IsEnabled" Type="User" UserType="GenericTrueFalse"/>
+        <Instances Id="[Default]">
+            <Fixed Fixed="4.5">
+                <Field Id="WalkAnimMoveSpeed"/>
+            </Fixed>
+            <Fixed Fixed="1">
+                <Field Id="Model Scale"/>
+            </Fixed>
+            <GameLink GameLink="MountSmokeScreen">
+                <Field Id="FX Actor Mount Up"/>
+            </GameLink>
+            <GameLink GameLink="DismountSmokeScreen">
+                <Field Id="FX Actor Dismount "/>
+            </GameLink>
+            <String String="2000:12:31:24:60:60">
+                <Field Id="ReleaseDate"/>
+            </String>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsAttached"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Show In Store"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="MountMountCategory" Instance="[Default]">
+                <Field Id="MountCategory"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Fields>
+            <Id value="VariationSkinLink"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Skin"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields>
+            <Id value="VariationUpgradeLink"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Upgrade"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields Id="DefaultMount" Type="User" UserType="Mount"/>
+        <Fields>
+            <Id value="VariationSupporterTypeRequired"/>
+            <Type value="User"/>
+            <UserType value="PlayerSupporterType"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields>
+            <Id value="FeatureArray"/>
+            <Type value="User"/>
+            <UserType value="SkinFeature"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="ReleaseDate" Type="String"/>
+        <Fields Id="VODefinition" Type="String"/>
+        <Fields Id="Event" Type="User" UserType="Event"/>
+        <Fields>
+            <Id value="AdditionalMountCategoryArray"/>
+            <Type value="User"/>
+            <UserType value="MountMountCategory"/>
+            <Count value="3"/>
+        </Fields>
+        <Fields>
+            <Id value="VariationIsUsed"/>
+            <Type value="User"/>
+            <UserType value="GenericTrueFalse"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields Id="VariationName" Type="Text" Count="10"/>
+        <Fields Id="VariationInfo" Type="Text" Count="10"/>
+        <Fields Id="VariationAdditionalSearchText" Type="Text" Count="10"/>
+        <Fields Id="IsEnabled" Type="User" UserType="GenericTrueFalse"/>
+        <Instances Id="[Default]">
+            <String String="2000:12:31:24:60:60">
+                <Field Id="ReleaseDate"/>
+            </String>
+        </Instances>
+    </CUser>
+    <CUser id="MountCollectionCategory">
+        <Fields Id="Name" Type="Text"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="SeasonalEvents">
+            <Text Text="UserData/MountCollectionCategory/SeasonalEvents_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Beast">
+            <Text Text="UserData/MountCollectionCategory/Beast_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Horse">
+            <Text Text="UserData/MountCollectionCategory/Horse_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Mechanical">
+            <Text Text="UserData/MountCollectionCategory/Mechanical_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Magical">
+            <Text Text="UserData/MountCollectionCategory/Magical_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Unique">
+            <Text Text="UserData/MountCollectionCategory/Unique_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+    </CUser>
+    <CUser id="MountMountCategory">
+        <Instances Id="[Default]"/>
+        <Instances Id="Ride"/>
+        <Instances Id="Ridebeast"/>
+        <Instances Id="Ridebike"/>
+        <Instances Id="Ridesurf"/>
+        <Instances Id="Ridenone"/>
+    </CUser>
+    <CUser id="TalentType">
+        <Instances Id="[Default]"/>
+        <Instances Id="Ability"/>
+        <Instances Id="Passive"/>
+        <Instances Id="Active"/>
+    </CUser>
+    <CUser id="Announcer">
+        <Fields Id="CoreAttack_Blue" Type="Sound"/>
+        <Fields Id="CoreAttack_Red" Type="Sound"/>
+        <Fields Id="CoreAttack_Ally" Type="Sound"/>
+        <Fields Id="Countdown01sec" Type="Sound"/>
+        <Fields Id="Countdown02sec" Type="Sound"/>
+        <Fields Id="Countdown03sec" Type="Sound"/>
+        <Fields Id="Countdown04sec" Type="Sound"/>
+        <Fields Id="Countdown05sec" Type="Sound"/>
+        <Fields Id="Countdown10sec" Type="Sound"/>
+        <Fields Id="Countdown30sec" Type="Sound"/>
+        <Fields Id="CountdownRemain" Type="Sound"/>
+        <Fields Id="Ending_Red" Type="Sound"/>
+        <Fields Id="Ending_Blue" Type="Sound"/>
+        <Fields Id="EndingLose" Type="Sound"/>
+        <Fields Id="EndingWin" Type="Sound"/>
+        <Fields Id="FortDestroy_Blue" Type="Sound"/>
+        <Fields Id="FortDestroy_Red" Type="Sound"/>
+        <Fields Id="FortDestroy" Type="Sound"/>
+        <Fields Id="FortLost" Type="Sound"/>
+        <Fields Id="GameStart" Type="Sound"/>
+        <Fields Id="Gravestomp" Type="Sound"/>
+        <Fields Id="Gravestomp_Observer" Type="Sound"/>
+        <Fields Id="HeroSelect" Type="Sound"/>
+        <Fields Id="HeroSelect_Observer" Type="Sound"/>
+        <Fields Id="Kill_HeroSlain" Type="Sound"/>
+        <Fields Id="Kill_HeroKill" Type="Sound"/>
+        <Fields Id="Kill_FirstBloodAlly" Type="Sound"/>
+        <Fields Id="Kill_FirstBlood_Blue" Type="Sound"/>
+        <Fields Id="Kill_FirstBlood_Red" Type="Sound"/>
+        <Fields Id="Kill_DoubleKill" Type="Sound"/>
+        <Fields Id="Kill_TripleKill" Type="Sound"/>
+        <Fields Id="Kill_FourKill" Type="Sound"/>
+        <Fields Id="Kill_TeamKill" Type="Sound"/>
+        <Fields Id="Kill_TeamKill_Blue" Type="Sound"/>
+        <Fields Id="Kill_TeamKill_Red" Type="Sound"/>
+        <Fields Id="Kill_SixKill" Type="Sound"/>
+        <Fields Id="Kill_SevenKill" Type="Sound"/>
+        <Fields Id="Kill_EightKill" Type="Sound"/>
+        <Fields Id="Kill_NineKill" Type="Sound"/>
+        <Fields Id="Kill_TenKill" Type="Sound"/>
+        <Fields Id="KeepDestroy_Blue" Type="Sound"/>
+        <Fields Id="KeepDestroy_Red" Type="Sound"/>
+        <Fields Id="KeepDestroy" Type="Sound"/>
+        <Fields Id="KeepLost" Type="Sound"/>
+        <Fields Id="Kill_HeroSlain_Observer" Type="Sound"/>
+        <Fields Id="Kill_MegaKill" Type="Sound"/>
+        <Fields Id="MercCapture_Blue" Type="Sound"/>
+        <Fields Id="MercCapture_Red" Type="Sound"/>
+        <Fields Id="ResultEpic" Type="Sound"/>
+        <Fields Id="ResultLegendary" Type="Sound"/>
+        <Fields Id="ResultMVP" Type="Sound"/>
+        <Fields Id="PlayerAbandon" Type="Sound"/>
+        <Fields Id="PlayerRejoin" Type="Sound"/>
+        <Fields Id="SpreeEnd_Ally" Type="Sound"/>
+        <Fields Id="SpreeEnd" Type="Sound"/>
+        <Fields Id="SpreeFirstUpgrade" Type="Sound"/>
+        <Fields Id="SpreeMax" Type="Sound"/>
+        <Fields Id="SpreeSecondUpgrade" Type="Sound"/>
+        <Fields Id="SpreeStart" Type="Sound"/>
+        <Fields Id="SpreeThirdUpgrade" Type="Sound"/>
+        <Fields Id="TalentUnlock" Type="Sound"/>
+        <Fields Id="UnitHealth" Type="Sound"/>
+        <Fields Id="UnitMana" Type="Sound"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="ProtossFemale">
+            <Sound Sound="ProtossFemale_CoreAttackAlly">
+                <Field Id="CoreAttack_Ally"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_CoreAttack_Blue">
+                <Field Id="CoreAttack_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_CoreAttack_Red">
+                <Field Id="CoreAttack_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown1sec">
+                <Field Id="Countdown01sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown2sec">
+                <Field Id="Countdown02sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown3sec">
+                <Field Id="Countdown03sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown4sec">
+                <Field Id="Countdown04sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown5sec">
+                <Field Id="Countdown05sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown10sec">
+                <Field Id="Countdown10sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Countdown30sec">
+                <Field Id="Countdown30sec"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_CountdownRemain">
+                <Field Id="CountdownRemain"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Ending_Blue">
+                <Field Id="Ending_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Ending_Red">
+                <Field Id="Ending_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_EndingLose">
+                <Field Id="EndingLose"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_EndingWin">
+                <Field Id="EndingWin"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_FortDestroy">
+                <Field Id="FortDestroy"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_FortDestroy_Blue">
+                <Field Id="FortDestroy_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_FortDestroy_Red">
+                <Field Id="FortDestroy_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_FortLost">
+                <Field Id="FortLost"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_GameStart">
+                <Field Id="GameStart"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Gravestomp">
+                <Field Id="Gravestomp"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Gravestomp_Observer">
+                <Field Id="Gravestomp_Observer"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_HeroSelect">
+                <Field Id="HeroSelect"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_HeroSelect_Observer">
+                <Field Id="HeroSelect_Observer"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_KeepDestroy">
+                <Field Id="KeepDestroy"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_KeepDestroy_Blue">
+                <Field Id="KeepDestroy_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_KeepDestroy_Red">
+                <Field Id="KeepDestroy_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_KeepLost">
+                <Field Id="KeepLost"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_DoubleKill">
+                <Field Id="Kill_DoubleKill"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_FirstBlood_Blue">
+                <Field Id="Kill_FirstBlood_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_FirstBlood_Red">
+                <Field Id="Kill_FirstBlood_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_FirstBloodAlly">
+                <Field Id="Kill_FirstBloodAlly"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_FourKill">
+                <Field Id="Kill_FourKill"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_HeroKill">
+                <Field Id="Kill_HeroKill"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_HeroSlain">
+                <Field Id="Kill_HeroSlain"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_HeroSlain_Observer">
+                <Field Id="Kill_HeroSlain_Observer"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_MegaKill">
+                <Field Id="Kill_MegaKill"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_TeamKill">
+                <Field Id="Kill_TeamKill"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_TeamKill_Blue">
+                <Field Id="Kill_TeamKill_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_TeamKill_Red">
+                <Field Id="Kill_TeamKill_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_Kill_TripleKill">
+                <Field Id="Kill_TripleKill"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_MercCapture_Blue">
+                <Field Id="MercCapture_Blue"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_MercCapture_Red">
+                <Field Id="MercCapture_Red"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_PlayerAbandon">
+                <Field Id="PlayerAbandon"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_PlayerRejoin">
+                <Field Id="PlayerRejoin"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_ResultEpic">
+                <Field Id="ResultEpic"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_ResultLegendary">
+                <Field Id="ResultLegendary"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_ResultMVP">
+                <Field Id="ResultMVP"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeEnd">
+                <Field Id="SpreeEnd"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeEnd_Ally">
+                <Field Id="SpreeEnd_Ally"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeFirstUpgrade">
+                <Field Id="SpreeFirstUpgrade"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeMax">
+                <Field Id="SpreeMax"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeSecondUpgrade">
+                <Field Id="SpreeSecondUpgrade"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeStart">
+                <Field Id="SpreeStart"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_SpreeThirdUpgrade">
+                <Field Id="SpreeThirdUpgrade"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_TalentUnlock">
+                <Field Id="TalentUnlock"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_UnitHealth">
+                <Field Id="UnitHealth"/>
+            </Sound>
+            <Sound Sound="ProtossFemale_UnitMana">
+                <Field Id="UnitMana"/>
+            </Sound>
+        </Instances>
+        <Instances/>
+    </CUser>
+    <CUser id="HeroRole">
+        <Fields>
+            <Id value="Name"/>
+            <Type value="Text"/>
+            <EditorColumn value="1"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="RoleImage" Type="Image" EditorColumn="2"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="AssassinMelee">
+            <Text Text="UserData/HeroRole/AssassinMelee_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="AssassinRanged">
+            <Text Text="UserData/HeroRole/AssassinRanged_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Bruiser">
+            <Text Text="UserData/HeroRole/Bruiser_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Tank">
+            <Text Text="UserData/HeroRole/Tank_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Healer">
+            <Text Text="UserData/HeroRole/Healer_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Support">
+            <Text Text="UserData/HeroRole/Support_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+        <Instances Id="Specialist">
+            <Text Text="UserData/HeroRole/Specialist_Name">
+                <Field Id="Name"/>
+            </Text>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Fields>
+            <Id value="Hero Link"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Hero"/>
+            <EditorColumn value="2"/>
+        </Fields>
+        <Fields>
+            <Id value="Hero Level Scaling Effect"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Effect"/>
+            <EditorColumn value="1"/>
+        </Fields>
+        <Fields>
+            <Id value="Skins"/>
+            <Type value="User"/>
+            <UserType value="Skin"/>
+            <Count value="6"/>
+        </Fields>
+        <Fields>
+            <Id value="Role"/>
+            <Type value="User"/>
+            <UserType value="HeroRole"/>
+            <EditorColumn value="5"/>
+        </Fields>
+        <Fields Id="PairedPortrait" Type="Image" Count="2"/>
+        <Fields Id="PairedName" Type="Text" Count="2"/>
+        <Fields Id="QuestDataTokenCounterBehavior" Type="GameLink" GameLinkType="Behavior"/>
+        <Fields Id="QuestDataButton" Type="GameLink" GameLinkType="Button"/>
+        <Fields>
+            <Id value="TalentTier1"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentTier2"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentTier3"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentTier4"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentTier5"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentTier6"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentTier7"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="TalentsHeroicTier" Type="Int"/>
+        <Fields>
+            <Id value="QuestDataIsQuest"/>
+            <Type value="User"/>
+            <UserType value="GenericTrueFalse"/>
+            <EditorColumn value="4"/>
+        </Fields>
+        <Fields>
+            <Id value="Player Response"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="PlayerResponse"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields Id="Mount Scaling Override" Type="Fixed"/>
+        <Fields Id="Default Mount" Type="User" UserType="Mount"/>
+        <Fields>
+            <Id value="Mount Category Array"/>
+            <Type value="User"/>
+            <UserType value="MountMountCategory"/>
+            <Count value="10"/>
+        </Fields>
+        <Fields>
+            <Id value="Talents - Reset Favorite Talents At Patch"/>
+            <Type value="User"/>
+            <UserType value="GameVersion"/>
+            <Count value="7"/>
+        </Fields>
+        <Fields Id="Hero Enabled" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Release Date" Type="String"/>
+        <Fields Id="PreloadBankTriggerName" Type="String"/>
+        <Fields>
+            <Id value="Abilities"/>
+            <Type value="User"/>
+            <UserType value="Ability"/>
+            <Count value="16"/>
+        </Fields>
+        <Fields Id="IsPaired" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Hero Requires Custom Respawn" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Hero 0 Energy On Respawn" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Hero Abnormal Death" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Hero Abnormal Respawn" Type="User" UserType="GenericTrueFalse"/>
+        <Fields Id="Hero Abnormal Experience Gain" Type="User" UserType="GenericTrueFalse"/>
+        <Fields>
+            <Id value="Level Effect"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Effect"/>
+            <Count value="30"/>
+        </Fields>
+        <Instances Id="[Default]">
+            <Fixed Fixed="-1">
+                <Field Id="Mount Scaling Override"/>
+            </Fixed>
+            <Int Int="4">
+                <Field Id="TalentsHeroicTier"/>
+            </Int>
+            <String String="2000:12:12:23:59:59">
+                <Field Id="Release Date"/>
+            </String>
+            <User Type="Skin" Instance="[Default]">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Mount" Instance="HearthstoneCard">
+                <Field Id="Default Mount"/>
+            </User>
+            <User Type="GameVersion" Instance="[Default]">
+                <Field Id="Talents - Reset Favorite Talents At Patch"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="GenericTrueFalse">
+        <Fields Id="True/Flase" Type="Int"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="True">
+            <Int Int="1">
+                <Field Id="True/Flase"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Fields Id="QuestDataTokenCounterBehavior" Type="GameLink" GameLinkType="Behavior"/>
+        <Fields>
+            <Id value="TalentLink"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Talent"/>
+            <EditorColumn value="1"/>
+        </Fields>
+        <Fields>
+            <Id value="QuestDataIsQuest"/>
+            <Type value="User"/>
+            <UserType value="GenericTrueFalse"/>
+            <EditorColumn value="1"/>
+        </Fields>
+        <Fields Id="PrerequisiteTalent" Type="User" UserType="Talent"/>
+        <Fields>
+            <Id value="TalentType"/>
+            <Type value="User"/>
+            <UserType value="TalentType"/>
+            <EditorColumn value="1"/>
+        </Fields>
+        <Fields Id="TalentButton" Type="GameLink" GameLinkType="Button"/>
+        <Fields>
+            <Id value="TalentBehavior"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Behavior"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="TalentItem" Type="GameLink" GameLinkType="Unit"/>
+        <Fields Id="TalentEffectModification" Type="GameLink" GameLinkType="Effect"/>
+        <Fields Id="TalentEffectOnCreation" Type="GameLink" GameLinkType="Effect"/>
+        <Fields Id="TalentEffectOnRemove" Type="GameLink" GameLinkType="Effect"/>
+        <Fields>
+            <Id value="TalentPlayerResponse"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="PlayerResponse"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields>
+            <Id value="TalentAdditionalTalent"/>
+            <Type value="User"/>
+            <UserType value="Talent"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="AbilityHotkey" Type="User" UserType="Ability"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="GenericTalentBoltOfTheStorms">
+            <GameLink GameLink="GenericTalentBoltOfTheStorms">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentBoltOfTheStorms">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentBoltOfTheStorms">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="GenericTalentResurgenceOfTheStorm">
+            <GameLink GameLink="GenericTalentResurgenceOfTheStorm">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentResurgenceOfTheStorm">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentResurgenceOfTheStorm">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentResurgenceOfTheStorm@ReadyBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="GenericCalldownMULE">
+            <GameLink GameLink="GenericTalentCalldownMULE">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentCalldownMULE">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="GenericTalentCalldownMULE">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="GameVersion">
+        <Instances Id="[Default]"/>
+        <Instances Id="0.0.0.1"/>
+        <Instances Id="0.0.0.2"/>
+        <Instances Id="0.0.0.3"/>
+        <Instances Id="0.0.0.4"/>
+        <Instances Id="0.0.1.0"/>
+        <Instances Id="0.0.1.1"/>
+        <Instances Id="0.0.1.2"/>
+        <Instances Id="0.0.1.3"/>
+        <Instances Id="0.0.1.4"/>
+        <Instances Id="0.0.1.5"/>
+        <Instances Id="0.0.1.6"/>
+        <Instances Id="0.0.1.7"/>
+    </CUser>
+</Catalog>

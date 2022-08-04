@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="PortraitPanel" name="PortraitPanelTemplate">
+        <Width val="195"/>
+        <Height val="195"/>
+        <AcceptsMouse val="False"/>
+        <AlphaMaskTexture val="Assets/Textures/hud_bg_portraitframe_alphamask.dds"/>
+
+        <Frame type="Portrait" name="Portrait">
+            <AcceptsMouse val="False"/>
+            <Width val="{$parent/@Width}"/>
+            <Height val="{$parent/@Height}"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="15"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-15"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="25"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-25"/>
+        </Frame>
+    </Frame>
+</Desc>

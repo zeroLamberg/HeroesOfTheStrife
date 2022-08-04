@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="ProtossFemale_ResultEpic" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_ResultEpic00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="User35"/>
+    </CSound>
+    <CSound id="ProtossFemale_FortDestroy" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy00"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy01"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy02"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy03"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy04"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy05"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="User35"/>
+        <Exclusivity value="AnnouncerCritical"/>
+    </CSound>
+    <CSound id="ProtossFemale_ResultLegendary" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_ResultLegendary00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="User35"/>
+    </CSound>
+    <CSound id="ProtossFemale_ResultMVP" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_ResultMVP00"/>
+        <AssetArray TemplateParam="ProtossFemale_ResultMVP01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="User35"/>
+    </CSound>
+    <CSound id="ProtossFemale_CoreAttackAlly" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_CoreAttackAlly00" FacialGroup=""/>
+        <AssetArray TemplateParam="ProtossFemale_CoreAttackAlly01" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="User35"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_CoreAttack_Blue" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_CoreAttack_Blue00"/>
+        <AssetArray TemplateParam="ProtossFemale_CoreAttack_Blue01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="User35"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_CoreAttack_Red" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_CoreAttack_Red00"/>
+        <AssetArray TemplateParam="ProtossFemale_CoreAttack_Red01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown10sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown10sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown1sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown1sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown2sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown2sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown30sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown1sec30"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown3sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown3sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown4sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown4sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Countdown5sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_Countdown5sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_CountdownRemain" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="ProtossFemale_CountdownRemain00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_DoubleKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_DoubleKill00"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_DoubleKill01"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_DoubleKill02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_EndingLose" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="ProtossFemale_EndingLose00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_EndingWin" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="ProtossFemale_EndingWin00"/>
+        <AssetArray TemplateParam="ProtossFemale_EndingWin01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Ending_Blue" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="ProtossFemale_Ending_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Ending_Red" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="ProtossFemale_Ending_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_FirstBloodAlly" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Kill_FirstBloodAlly00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_FirstBlood_Blue" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Kill_FirstBlood_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_FirstBlood_Red" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Kill_FirstBlood_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_FourKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_FourKill00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_GameStart" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_GameStart00"/>
+        <AssetArray TemplateParam="ProtossFemale_GameStart01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Gravestomp" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Gravestomp00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Gravestomp_Observer" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Gravestomp_Observer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_UnitHealth" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_UnitHealth00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_HeroKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill00"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill01"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill02"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill03"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill04"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill05"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill06"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill07"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill08"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroKill09"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_HeroSelect" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_HeroSelect00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_HeroSelect_Observer" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_HeroSelect_Observer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_HeroSlain" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain00"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain01"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain02"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain03"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain04"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain05"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_KeepDestroy" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_KeepDestroy00"/>
+        <AssetArray TemplateParam="ProtossFemale_KeepDestroy01"/>
+        <AssetArray TemplateParam="ProtossFemale_KeepDestroy02"/>
+        <AssetArray TemplateParam="ProtossFemale_KeepDestroy03"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_KeepDestroy_Blue" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_KeepDestroy_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_KeepDestroy_Red" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_KeepDestroy_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_KeepLost" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_KeepLost00"/>
+        <AssetArray TemplateParam="ProtossFemale_KeepLost01"/>
+        <AssetArray TemplateParam="ProtossFemale_KeepLost02"/>
+        <AssetArray TemplateParam="ProtossFemale_KeepLost03"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_HeroSlain_Observer" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain_Observer00"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain_Observer01"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain_Observer02"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain_Observer03"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_HeroSlain_Observer04"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_UnitMana" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_UnitMana00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="5000,10000"/>
+    </CSound>
+    <CSound id="ProtossFemale_MercCapture_Blue" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_MercCapture_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_MercCapture_Red" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_MercCapture_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_FortDestroy_Blue" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy_Blue00"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy_Blue01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerHigh"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_FortDestroy_Red" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy_Red00"/>
+        <AssetArray TemplateParam="ProtossFemale_FortDestroy_Red01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerHigh"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_FortLost" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="ProtossFemale_FortLost00"/>
+        <AssetArray TemplateParam="ProtossFemale_FortLost01"/>
+        <AssetArray TemplateParam="ProtossFemale_FortLost02"/>
+        <AssetArray TemplateParam="ProtossFemale_FortLost03"/>
+        <AssetArray TemplateParam="ProtossFemale_FortLost04"/>
+        <AssetArray TemplateParam="ProtossFemale_FortLost05"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerHigh"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_MegaKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_MegaKill00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_PlayerAbandon" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_PlayerAbandon00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="15000,15000"/>
+    </CSound>
+    <CSound id="ProtossFemale_PlayerRejoin" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_PlayerRejoin00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="15000,15000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeEnd" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeEnd00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeEnd_Ally" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeEnd_Ally00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeFirstUpgrade" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeFirstUpgrade00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeMax" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeMax00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeSecondUpgrade" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeSecondUpgrade00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeStart" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeStart00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_SpreeThirdUpgrade" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_SpreeThirdUpgrade00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ProtossFemale_TalentUnlock" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_TalentUnlock00"/>
+        <AssetArray TemplateParam="ProtossFemale_TalentUnlock01"/>
+        <AssetArray TemplateParam="ProtossFemale_TalentUnlock02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_TeamKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_TeamKill00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_TeamKill_Blue" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Kill_TeamKill_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_TeamKill_Red" parent="AnnouncerVO">
+        <AssetArray TemplateParam="ProtossFemale_Kill_TeamKill_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Kill_TripleKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="ProtossFemale_Kill_TripleKill00"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_TripleKill01"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_TripleKill02"/>
+        <AssetArray TemplateParam="ProtossFemale_Kill_TripleKill03"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="ProtossFemale_Preview" parent="AnnouncerVO_Preview" AnnouncerID="ProtossFemale" aid="ProtossFemale"/>
+</Catalog>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Blue" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Golden" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Green" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Green2" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Grey" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Purple" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Red" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Red2" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Diffuse_Red3" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Emissive_Blue" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Emissive_Golden" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Emissive_Green" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Emissive_Grey" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Emissive_Purple" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Body_Emissive_Red" parent="MainSlotTexture"/>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Blue" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Golden" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Green" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Green2" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Grey" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Purple" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Diffuse_Red" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Flamer_Diffuse_Golden" parent="MainSlotTexture">
+        <Slot value="generic02"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Flamer_Diffuse_Blue" parent="MainSlotTexture">
+        <Slot value="generic02"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Flamer_Diffuse_Grey" parent="MainSlotTexture">
+        <Slot value="generic02"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Flamer_Diffuse_Purple" parent="MainSlotTexture">
+        <Slot value="generic02"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Flamer_Diffuse_Red" parent="MainSlotTexture">
+        <Slot value="generic02"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Emissive_Blue" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Emissive_Golden" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Emissive_Purple" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Emissive_Grey" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Hero_Katarina_Weapon_Base_Emissive_Red" parent="MainSlotTexture">
+        <Slot value="generic01"/>
+    </CTexture>
+    <CTexture id="Scouter_Readout_Blue" parent="MainSlotTexture">
+        <Slot value="generic03"/>
+    </CTexture>
+    <CTexture id="Scouter_Readout_Purple" parent="MainSlotTexture">
+        <Slot value="generic03"/>
+    </CTexture>
+    <CTexture id="Scouter_Readout_Red" parent="MainSlotTexture">
+        <Slot value="generic03"/>
+    </CTexture>
+    <CTexture id="Scouter_Readout_Yellow" parent="MainSlotTexture">
+        <Slot value="generic03"/>
+    </CTexture>
+    <CTexture id="Scouter_Readout_Grey" parent="MainSlotTexture">
+        <Slot value="generic03"/>
+    </CTexture>
+    <CTexture id="Techcube2_Yellow" parent="MainSlotTexture">
+        <Slot value="generic04"/>
+    </CTexture>
+    <CTexture id="Techcube2_Grey" parent="MainSlotTexture">
+        <Slot value="generic04"/>
+    </CTexture>
+    <CTexture id="Techcube2_Red" parent="MainSlotTexture">
+        <Slot value="generic04"/>
+    </CTexture>
+    <CTexture id="Techcube2_Teal" parent="MainSlotTexture">
+        <Slot value="generic04"/>
+    </CTexture>
+    <CTexture id="Techcube2_Purple" parent="MainSlotTexture">
+        <Slot value="generic04"/>
+    </CTexture>
+</Catalog>

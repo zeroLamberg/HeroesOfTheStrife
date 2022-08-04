@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Instances Id="[Default]"/>
+        <Instances Id="ExecutorBlade">
+            <GameLink GameLink="HeroSelendisExecutorBlade">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisExecutorBlade">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="ExecutorCharge">
+            <GameLink GameLink="HeroSelendisExecutorCharge">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisExecutorCharge">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+        </Instances>
+        <Instances Id="VindicatorsBeam">
+            <GameLink GameLink="HeroSelendisVindicatorsBeam">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisVindicatorsBeam">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="PowerStrike">
+            <GameLink GameLink="HeroSelendisPowerStrike">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisPowerStrike">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="TemplarWillpower">
+            <GameLink GameLink="HeroSelendisTemplarWillpower">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTemplarWillpower">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Trait">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Trait (D)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="CalldownVindicator">
+            <GameLink GameLink="HeroSelendisCalldownVindicator">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisCalldownVindicator">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="ZealotOfAiur">
+            <GameLink GameLink="HeroSelendisZealotofAiur">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisZealotofAiur">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Selendis">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Instances Id="Selendis">
+            <GameLink GameLink="HeroSelendis">
+                <Field Id="Hero Link"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendis@LevelScalingModification">
+                <Field Id="Hero Level Scaling Effect"/>
+            </GameLink>
+            <User Type="HeroRole" Instance="AssassinMelee">
+                <Field Id="Role"/>
+            </User>
+            <User Type="HeroOptionSelectingStatus" Instance="PTR and Live">
+                <Field Id="Selecting Status"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (1) Executor Power">
+                <Field Id="TalentTier1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (1) Inspiration">
+                <Field Id="TalentTier1" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (1) Blades of a Zealot">
+                <Field Id="TalentTier1" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (2) Psionic Dash">
+                <Field Id="TalentTier2" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - Upstage">
+                <Field Id="TalentTier2"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (2) Force Of Will">
+                <Field Id="TalentTier2" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (3) Plasma Shields">
+                <Field Id="TalentTier3" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (3) Impaling Blade">
+                <Field Id="TalentTier3"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (3) Advanced Charge">
+                <Field Id="TalentTier3" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (3) Intuitive Attack">
+                <Field Id="TalentTier3" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (4) Calldown Vindicator">
+                <Field Id="TalentTier4"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (4) Zealot of Aiur">
+                <Field Id="TalentTier4" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (5) Thermal Fire">
+                <Field Id="TalentTier5"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (5) Templar&apos;s Zeal">
+                <Field Id="TalentTier5" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (5) Reconfiguration Shield">
+                <Field Id="TalentTier5" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (6) Induction">
+                <Field Id="TalentTier6"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (6) Final Cut">
+                <Field Id="TalentTier6" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (6) Deflection Shield">
+                <Field Id="TalentTier6" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (7) Mothership">
+                <Field Id="TalentTier7"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (7) True Templar">
+                <Field Id="TalentTier7" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (7) Phase Bulwark">
+                <Field Id="TalentTier7" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="GenericTalentResurgenceOfTheStorm">
+                <Field Id="TalentTier7" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (7) Templar Blades">
+                <Field Id="TalentTier7" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (6) In The Heat Of Battle">
+                <Field Id="TalentTier6" Index="3"/>
+            </User>
+            <User Type="Skin" Instance="SelendisBase">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="Mount Category Array"/>
+            </User>
+            <User Type="Ability" Instance="ExecutorBlade">
+                <Field Id="Abilities"/>
+            </User>
+            <User Type="Ability" Instance="ExecutorCharge">
+                <Field Id="Abilities" Index="1"/>
+            </User>
+            <User Type="Ability" Instance="VindicatorsBeam">
+                <Field Id="Abilities" Index="2"/>
+            </User>
+            <User Type="Ability" Instance="PowerStrike">
+                <Field Id="Abilities" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="CalldownVindicator">
+                <Field Id="Abilities" Index="5"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="Abilities" Index="4"/>
+            </User>
+            <User Type="Ability" Instance="ZealotOfAiur">
+                <Field Id="Abilities" Index="6"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier1" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier2" Index="3"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="1"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Instances Id="SelendisBase">
+            <Text Text="UserData/Skin/SelendisBase_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Instances Id="Selendis - (1) Inspiration">
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerInspiration">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerInspiration">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (1) Blades of a Zealot">
+            <GameLink GameLink="HeroSelendisTalentBladesofaZealot">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentBladesofaZealot">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentBladesofaZealot@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentBladesofaZealot">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (1) Executor Power">
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeExecutorPower">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeExecutorPower">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeExecutorPower">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="ExecutorBlade">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (2) Psionic Dash">
+            <GameLink GameLink="HeroSelendisTalentPowerStrikePsionicDash">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPowerStrikePsionicDash">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPowerStrikePsionicDash">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="PowerStrike">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (2) Force Of Will">
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerForceOfWill">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerForceOfWill">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerForceOfWill@TalentChoosenSet">
+                <Field Id="TalentEffectOnCreation"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (2) Phase Weapon">
+            <GameLink GameLink="HeroSelendisTalentPhaseWeapon">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPhaseWeapon">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPhaseWeapon">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="[Default]">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (3) Impaling Blade">
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeImpalingBlade">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeImpalingBlade">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeImpalingBlade">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeImpalingBlade@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ExecutorBlade">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (3) Advanced Charge">
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeAdvancedCharge@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeAdvancedCharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeAdvancedCharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeAdvancedCharge@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeAdvancedCharge">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ExecutorCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (3) Plasma Shields">
+            <GameLink GameLink="HeroSelendisTalentTemplarWillPowerPlasmaShield">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillPowerPlasmaShield">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (3) Intuitive Attack">
+            <GameLink GameLink="HeroSelendisTalentIntuitiveAttack">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentIntuitiveAttack">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentIntuitiveAttack@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentIntuitiveAttack@StacksGainingController">
+                <Field Id="TalentBehavior" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentIntuitiveAttack@StacksGatheringController">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentIntuitiveAttack@DamageController">
+                <Field Id="TalentPlayerResponse" Index="1"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (4) Calldown Vindicator">
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisCalldownVindicator">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisCalldownVindicator">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="CalldownVindicator">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (4) Zealot of Aiur">
+            <GameLink GameLink="HeroSelendisZealotofAiur">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisZealotofAiur">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ZealotOfAiur">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (5) Thermal Fire">
+            <GameLink GameLink="HeroSelendisTalentVindicatorsBeamThermalFire">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentVindicatorsBeamThermalFire">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="VindicatorsBeam">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (5) Templar&apos;s Zeal">
+            <GameLink GameLink="HeroSelendisTalentPowerStrikeTemplarsZeal">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPowerStrikeTemplarsZeal">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPowerStrikeTemplarsZeal">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="PowerStrike">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (5) Reconfiguration Shield">
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerReconfigurationShield">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerReconfigurationShield">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerReconfigurationShield@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (6) Final Cut">
+            <GameLink GameLink="HeroSelendisTalentPowerStrikeFinalCut">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPowerStrikeFinalCut">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentPowerStrikeFinalCut">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="PowerStrike">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (6) Induction">
+            <GameLink GameLink="HeroSelendisTalentVindicatorsBeamInduction">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentVindicatorsBeamInduction">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="VindicatorsBeam">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (6) Deflection Shield">
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerDeflectionShield">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerDeflectionShield">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (6) In The Heat Of Battle">
+            <GameLink GameLink="HeroSelendisTalentInTheHeatOfBattle">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentInTheHeatOfBattle">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentInTheHeatOfBattle">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentInTheHeatOfBattle">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentInTheHeatOfBattle@ResetAbility">
+                <Field Id="TalentEffectOnRemove"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (7) Mothership">
+            <GameLink GameLink="HeroSelendisTalentCalldownVindicatorMothership">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentCalldownVindicatorMothership">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (4) Calldown Vindicator">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="CalldownVindicator">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (7) True Templar">
+            <GameLink GameLink="HeroSelendisTalentZealotofAiurTrueTemplar">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentZealotofAiurTrueTemplar">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Selendis - (4) Zealot of Aiur">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="ZealotOfAiur">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (7) Templar Blades">
+            <GameLink GameLink="HeroSelendisTalentTemplarBlades">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarBlades">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarBlades@EnemyHeroSearchBuff">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - (7) Phase Bulwark">
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerPhaseBulwark">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentTemplarWillpowerPhaseBulwark">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TemplarWillpower">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Selendis - Upstage">
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeUpstage">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeUpstage">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroSelendisTalentExecutorBladeUpstage">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ExecutorBlade">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

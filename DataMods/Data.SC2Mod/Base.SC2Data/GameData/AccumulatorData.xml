@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulator default="1" id="BaseAccumulator">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="100"/>
+    </CAccumulator>
+    <CAccumulatorVitals default="1" id="BaseVitalAccumulator">
+        <MinAccumulation value="0"/>
+        <ApplicationRule value="Multiply"/>
+        <Ratio value="1"/>
+    </CAccumulatorVitals>
+    <CAccumulatorArithmetic default="1" id="UnitStatsArmorTargetCustomValueCalculating">
+        <MinAccumulation value="-0.75"/>
+        <MaxAccumulation value="0.75"/>
+        <ApplicationRule value="Multiply"/>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorUnitCustomValue default="1" id="UnitStatsPowerTargetCustomValue">
+        <MinAccumulation value="-99"/>
+        <MaxAccumulation value="200"/>
+        <ApplicationRule value="Multiply"/>
+        <Index value="-1"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue default="1" id="UnitStatsTargetCustomValueArmor">
+        <MinAccumulation value="-25"/>
+        <MaxAccumulation value="75"/>
+        <ApplicationRule value="Multiply"/>
+        <Index value="-1"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorVitals id="CasterLifeMaxAdd" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
+    <CAccumulatorVitals id="CasterLifeMaxMultiply" parent="BaseVitalAccumulator">
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
+    <CAccumulatorConstant id="Constant0Add"/>
+    <CAccumulatorConstant id="Constant0Multiply">
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant0dot1Multiply">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant0dot01Multiply">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.01"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant0dot4Multiply">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.4"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant0dot2Multiply">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.2"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant0dot25Multiply">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant0dot5Multiply">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply11">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="11"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply12">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="12"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply13">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="13"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply14">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="14"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply15">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="15"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply16">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="16"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply2">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="2"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply3">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="3"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply4">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="4"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply5">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply6">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="6"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply7">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="7"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply8">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="8"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply9">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="9"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply10">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="10"/>
+    </CAccumulatorConstant>
+    <CAccumulatorEffectAmount id="DamageInherited">
+        <MinAccumulation value="0"/>
+        <AmountType value="DamageInherited"/>
+    </CAccumulatorEffectAmount>
+    <CAccumulatorVitals id="HealthPercentCurrent1" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <Ratio value="0.01"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnit"/>
+    </CAccumulatorVitals>
+    <CAccumulatorVitals id="HealthPercentCurrent10" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <Ratio value="0.1"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnit"/>
+    </CAccumulatorVitals>
+    <CAccumulatorVitals id="HealthPercentCurrent100" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnit"/>
+    </CAccumulatorVitals>
+    <CAccumulatorVitals id="HealthPercentMax1" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <Ratio value="0.01"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
+    <CAccumulatorConstant id="HealthPercentDamageMaxFlatAmountConstant">
+        <Amount value="35"/>
+    </CAccumulatorConstant>
+    <CAccumulatorVitals id="HealthPercentMax10" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <Ratio value="0.1"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
+    <CAccumulatorVitals id="HealthPercentMax100" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <UnitSource Value="Target"/>
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
+    <CAccumulatorSwitch id="HeroGenericLifeRegeneration@HeroSwitch">
+        <CaseDefault value="HeroGenericLifeRegeneration@StandardAmount"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorVitals id="HeroGenericLifeRegeneration@StandardAmount">
+        <Ratio value="0.0021"/>
+        <ModificationType value="PerUnitMaxVital"/>
+    </CAccumulatorVitals>
+    <CAccumulatorPlayerScoreValue id="Scaling" parent="BaseAccumulator">
+        <Player Value="Caster"/>
+        <Value value="Scaling"/>
+    </CAccumulatorPlayerScoreValue>
+    <CAccumulatorPlayerScoreValue id="Level" parent="BaseAccumulator">
+        <Player Value="Caster"/>
+        <Value value="Level"/>
+    </CAccumulatorPlayerScoreValue>
+    <CAccumulatorArithmetic id="UnitStatsArmorTargetCustomValueCalculatingPhysical" parent="UnitStatsArmorTargetCustomValueCalculating">
+        <Parameters value="-0.01">
+            <AccumulatorArray value="UnitStatsArmorTargetCustomValuePhysicalSwitch"/>
+            <AccumulatorArray value="UnitStatsArmorTargetDamagePercentReductionPer1Armor"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="UnitStatsArmorTargetCustomValueCalculatingSpell" parent="UnitStatsArmorTargetCustomValueCalculating">
+        <Parameters value="-0.01">
+            <AccumulatorArray value="UnitStatsArmorTargetCustomValueSpellSwitch"/>
+            <AccumulatorArray value="UnitStatsArmorTargetDamagePercentReductionPer1Armor"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="UnitStatsArmorTargetPhysical">
+        <MinAccumulation value="0.25"/>
+        <MaxAccumulation value="1.75"/>
+        <Parameters value="1">
+            <AccumulatorArray value="UnitStatsArmorTargetCustomValueCalculatingPhysical"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="Constant1Add"/>
+        </Parameters>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="UnitStatsArmorTargetSpell">
+        <MinAccumulation value="0.25"/>
+        <MaxAccumulation value="1.75"/>
+        <Parameters value="1">
+            <AccumulatorArray value="UnitStatsArmorTargetCustomValueCalculatingSpell"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="UnitStatsArmorTargetDamagePercentReductionPer1Armor">
+        <Amount value="1"/>
+        <ApplicationRule value="Multiply"/>
+    </CAccumulatorConstant>
+    <CAccumulatorUnitCustomValue id="UnitStatsHealingCasterDealtCustomValueAdd" parent="UnitStatsPowerTargetCustomValue">
+        <ApplicationRule value="Add"/>
+        <Index value="13"/>
+        <UnitSource Value="Caster"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorArithmetic id="UnitStatsRelentlessTarget">
+        <MinAccumulation value="0.001"/>
+        <MaxAccumulation value="2"/>
+        <ApplicationRule value="Multiply"/>
+        <Parameters value="-0.01">
+            <AccumulatorArray value="UnitStatsRelentlessTargetCustomValue"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorVitals id="CasterLifeCurrentAdd" parent="BaseVitalAccumulator">
+        <ApplicationRule value="Add"/>
+        <ModificationType value="PerUnit"/>
+    </CAccumulatorVitals>
+    <CAccumulatorVitals id="CasterLifeCurrentMultiply" parent="BaseVitalAccumulator">
+        <ModificationType value="PerUnit"/>
+    </CAccumulatorVitals>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValuePhysicalHero" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="0"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValuePhysicalMerc" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="1"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValuePhysicalMonster" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="3"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValuePhysicalSummon" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="5"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValuePhysicalStructure" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="4"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValuePhysicalMinion" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="2"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValueSpellHero" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="6"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValueSpellMerc" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="7"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValueSpellMonster" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="9"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValueSpellMinion" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="8"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValueSpellSummon" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="11"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsArmorTargetCustomValueSpellStructure" parent="UnitStatsTargetCustomValueArmor">
+        <Index value="10"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorArithmetic id="UnitStatsHealingCasterDealtModifier">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="3"/>
+        <ApplicationRule value="Multiply"/>
+        <Parameters value="0.01">
+            <AccumulatorArray value="UnitStatsHealingCasterDealtCustomValue"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="UnitStatsHealingTargetReceivedModifier">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="3"/>
+        <ApplicationRule value="Multiply"/>
+        <Parameters value="0.01">
+            <AccumulatorArray value="UnitStatsHealingTargetReceivedCustomValue"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorSwitch id="UnitStatsArmorTargetCustomValueSpellSwitch">
+        <CaseArray Validator="CasterIsCreep" Accumulator="UnitStatsArmorTargetCustomValueSpellMonster"/>
+        <CaseArray Validator="CasterIsHero" Accumulator="UnitStatsArmorTargetCustomValueSpellHero"/>
+        <CaseArray Validator="CasterIsMercenary" Accumulator="UnitStatsArmorTargetCustomValueSpellMerc"/>
+        <CaseArray Validator="CasterIsMinionCombine" Accumulator="UnitStatsArmorTargetCustomValueSpellMinion"/>
+        <CaseArray Validator="CasterIsStructure" Accumulator="UnitStatsArmorTargetCustomValueSpellStructure"/>
+        <CaseArray Validator="CasterIsSummoned" Accumulator="UnitStatsArmorTargetCustomValueSpellSummon"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="UnitStatsArmorTargetCustomValuePhysicalSwitch">
+        <CaseArray Validator="CasterIsCreep" Accumulator="UnitStatsArmorTargetCustomValuePhysicalMonster"/>
+        <CaseArray Validator="CasterIsHero" Accumulator="UnitStatsArmorTargetCustomValuePhysicalHero"/>
+        <CaseArray Validator="CasterIsMercenary" Accumulator="UnitStatsArmorTargetCustomValuePhysicalMerc"/>
+        <CaseArray Validator="CasterIsMinionCombine" Accumulator="UnitStatsArmorTargetCustomValuePhysicalMinion"/>
+        <CaseArray Validator="CasterIsStructure" Accumulator="UnitStatsArmorTargetCustomValuePhysicalStructure"/>
+        <CaseArray Validator="CasterIsSummoned" Accumulator="UnitStatsArmorTargetCustomValuePhysicalSummon"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorArithmetic id="UnitStatsDamageCasterSpell">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="3"/>
+        <ApplicationRule value="Multiply"/>
+        <Parameters value="0.01">
+            <AccumulatorArray value="UnitStatsDamageCasterCustomValueSpell"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="UnitStatsDamageCasterPhysical">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="3"/>
+        <ApplicationRule value="Multiply"/>
+        <Parameters value="0.01">
+            <AccumulatorArray value="UnitStatsDamageCasterCustomValuePhysical"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="Constant1Add">
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="Constant100Add">
+        <Amount value="100"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="ConstantMultiply1">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorUnitCustomValue id="UnitStatsHealingCasterDealtCustomValue" parent="UnitStatsPowerTargetCustomValue">
+        <Index value="13"/>
+        <UnitSource Value="Caster"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsHealingTargetReceivedCustomValue" parent="UnitStatsPowerTargetCustomValue">
+        <Index value="12"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsDamageCasterCustomValueSpell" parent="UnitStatsPowerTargetCustomValue">
+        <Index value="15"/>
+        <UnitSource Value="Caster"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsDamageCasterCustomValuePhysical" parent="UnitStatsPowerTargetCustomValue">
+        <Index value="14"/>
+        <UnitSource Value="Caster"/>
+    </CAccumulatorUnitCustomValue>
+    <CAccumulatorUnitCustomValue id="UnitStatsRelentlessTargetCustomValue">
+        <MinAccumulation value="-100"/>
+        <MaxAccumulation value="100"/>
+        <ApplicationRule value="Multiply"/>
+        <Index value="16"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorUnitCustomValue>
+</Catalog>

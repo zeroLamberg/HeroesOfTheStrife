@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Includes>
+    <Catalog path="GameData/Mounts/MountBlackheartsDoubloonData/Mount_Ridesurf_BlackheartsDoubloonData.xml"/>
+    <Catalog path="GameData/Mounts/MountHearthstoneCardData/Mount_Ridesurf_HearthstoneCardData.xml"/>
+    <Catalog path="GameData/Mounts/MountHearthstoneCardCookieBiteData/Mount_Ridesurf_HearthstoneCardCookieBiteData.xml"/>
+    <Catalog path="GameData/Mounts/MountHearthstoneCardMedivhData/Mount_Ridesurf_MountHearthstoneCardMedivhData.xml"/>
+    <Catalog path="GameData/Mounts/MountHearthstoneCardSoapBarData/Mount_Ridesurf_HearthstoneCardSoapBarData.xml"/>
+</Includes>

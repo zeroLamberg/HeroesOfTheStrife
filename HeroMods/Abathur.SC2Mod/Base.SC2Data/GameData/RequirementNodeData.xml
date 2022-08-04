@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementAnd id="AndEqCountBehaviorHeroAbathurDeepTunnelMonstrosity@CarryCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorHeroAbathurDeepTunnelMonstrosity@CarryCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndGTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0EqCountBehaviorHeroAbathurEvolveMonstrosity@StasisControllerCompleteOnlyAtUnit0">
+        <OperandArray value="GTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0"/>
+        <OperandArray value="EqCountBehaviorHeroAbathurEvolveMonstrosity@StasisControllerCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNotOrCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnitNotCountBehaviorSuppressLockedHeroicButtonComple3084588392">
+        <OperandArray value="NotOrCountBehaviorUltimate2UnlockedCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnitCountBehaviorUltimate3UnlockedCompleteOnlyAtUnit"/>
+        <OperandArray value="NotCountBehaviorSuppressLockedHeroicButtonCompleteOnlyAtUnit"/>
+        <OperandArray value="NotCountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathurUltimateEvolution@ControlBehavior" State="CompleteOnly"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="HeroAbathurUltimateEvolution@ControlBehavior" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroAbathurDeepTunnelMonstrosity@CarryCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathurDeepTunnelMonstrosity@Carry" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroAbathurEvolveMonstrosity@StasisControllerCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathurEvolveMonstrosity@StasisController" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementAnd id="AndEqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit0EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit0EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit1EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit1"/>
+        <OperandArray value="EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AbathurCombatStyleAssaultStrain" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AbathurCombatStyleBombardStrain" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorAbathurNeuralParasiteControlCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AbathurNeuralParasiteControl" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSymbioteTimedLifeCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="HeroAbathurSymbiote@TimedLife" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorUltimateEvolutionBuffCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="HeroAbathurUltimateEvolution@Buff" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountUnit id="CountUnitHeroAbathurEvolveMonstrosityCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathurEvolveMonstrosity" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="CountUpgradeHeroAbathur@BaseAlbinoCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathur@BaseAlbino" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroAbathur@BaseCharCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathur@BaseChar" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroAbathur@BaseVar3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroAbathur@BaseVar3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroAbathur@SkinUltimateGreyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroAbathur@SkinUltimateGrey" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroAbathur@SkinUltimatePurpleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroAbathur@SkinUltimatePurple" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroAbathur@SkinUltimateRedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroAbathur@SkinUltimateRed" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurCombatStyleAssaultStrainCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit0">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurCombatStyleBombardStrainCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnly0">
+        <OperandArray index="0" value="CountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorAbathurNeuralParasiteControlCompleteOnlyAtUnit2">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurNeuralParasiteControlCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="2"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroAbathurDeepTunnelMonstrosity@CarryCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroAbathurDeepTunnelMonstrosity@CarryCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroAbathurEvolveMonstrosity@StasisControllerCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroAbathurEvolveMonstrosity@StasisControllerCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorSymbioteTimedLifeCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorSymbioteTimedLifeCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorUltimateEvolutionBuffCompleteOnlyAtUnit2">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorUltimateEvolutionBuffCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="2"/>
+    </CRequirementEq>
+    <CRequirementGT id="GTCountUnitHeroAbathurEvolveMonstrosityCompleteOnly0">
+        <OperandArray index="0" value="CountUnitHeroAbathurEvolveMonstrosityCompleteOnly"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementGT>
+    <CRequirementNot id="NotCountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnlyAtUnit">
+        <Tooltip value=""/>
+        <OperandArray index="0" value="CountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementOr id="OrEqCountBehaviorAbathurNeuralParasiteControlCompleteOnlyAtUnit2EqCountBehaviorUltimateEvolutionBuffCompleteOnlyAtUnit2EqCountBehaviorSymbioteTimedLifeCompleteOnlyAtUnit1">
+        <Tooltip value=""/>
+        <OperandArray value="EqCountBehaviorAbathurNeuralParasiteControlCompleteOnlyAtUnit2"/>
+        <OperandArray value="EqCountBehaviorUltimateEvolutionBuffCompleteOnlyAtUnit2"/>
+        <OperandArray value="EqCountBehaviorSymbioteTimedLifeCompleteOnlyAtUnit1"/>
+    </CRequirementOr>
+    <CRequirementAnd id="AndEqCountBehaviorUltimate1UnlockedCompleteOnly1EqCountBehaviorSiegeModeCompleteOnly1EqCountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnly0">
+        <OperandArray value="EqCountBehaviorUltimate1UnlockedCompleteOnly1"/>
+        <OperandArray value="EqCountBehaviorSiegeModeCompleteOnly1"/>
+        <OperandArray value="EqCountBehaviorAbathurUltimateEvolutionControlBehaviorCompleteOnly0"/>
+    </CRequirementAnd>
+</Catalog>

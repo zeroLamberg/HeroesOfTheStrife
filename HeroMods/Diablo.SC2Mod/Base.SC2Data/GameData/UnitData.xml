@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="HeroDiablo" parent="CoreHeroMounted">
+        <FlagArray index="AIForceTactical" value="0"/>
+        <FlagArray index="PreferLastAttackTarget" value="0"/>
+        <FlagArray index="ResumeLastMoveOrder" value="0"/>
+        <LifeStart value="2825"/>
+        <LifeMax value="2825"/>
+        <AbilArray Link="HeroDiabloDevilCharge"/>
+        <AbilArray Link="HeroDiabloFireStomp"/>
+        <AbilArray Link="HeroDiabloOverpower"/>
+        <AbilArray Link="HeroDiabloApocalypse"/>
+        <AbilArray Link="HeroDiabloLightningBreath"/>
+        <AbilArray Link="HeroDiabloLightningBreath@Cancel"/>
+        <AbilArray Link="HeroDiabloBlackSoulstone"/>
+        <BehaviorArray Link="HeroDiabloBlackSoulstone@CarryBehavior"/>
+        <BehaviorArray Link="HeroDiabloBlackSoulstone@TokenCounter"/>
+        <BehaviorArray Link="HeroDiabloBlackSoulstone@CanReviveActiveCarry"/>
+        <WeaponArray Link="HeroDiabloWeapon"/>
+        <EffectArray index="Death" value="HeroDiablo@DeathSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="HeroDiabloApocalypse" Type="AbilCmd" AbilCmd="HeroDiabloApocalypse,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroDiabloLightningBreath@Cancel" Type="AbilCmd" AbilCmd="HeroDiabloLightningBreath@Cancel,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroDiabloLightningBreath" Type="AbilCmd" AbilCmd="HeroDiabloLightningBreath,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroDiabloDevilCharge" Type="AbilCmd" AbilCmd="HeroDiabloDevilCharge,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroDiabloFireStomp" Type="AbilCmd" AbilCmd="HeroDiabloFireStomp,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroDiabloOverpower" Type="AbilCmd" AbilCmd="HeroDiabloOverpower,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroDiabloBlackSoulstone" Type="AbilCmd" AbilCmd="HeroDiabloBlackSoulstone,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <InnerRadius value="1"/>
+        <EditorCategories value="ObjectType:Hero,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloTalentHellgate" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloTalentSoulShield" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloTalentLordofTerror" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloFireStomp@Missile" parent="MISSILE_INVULNERABLE">
+        <Sight value="3"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloFireStomp@ReturnMissile" parent="MISSILE_INVULNERABLE">
+        <Mover value="HeroDiabloFireStomp@Missile"/>
+        <Sight value="3"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloBlackSoulstone@HeroMissile" parent="MISSILE_INVULNERABLE">
+        <Mover value="HeroDiabloBlackSoulstone@MissileMover"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Diablo"/>
+    </CUnit>
+    <CUnit id="HeroDiabloBlackSoulstone@NonHeroMissile" parent="MISSILE_INVULNERABLE">
+        <Mover value="HeroDiabloBlackSoulstone@MissileMover"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Diablo"/>
+    </CUnit>
+</Catalog>

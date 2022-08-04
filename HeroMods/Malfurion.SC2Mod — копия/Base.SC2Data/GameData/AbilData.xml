@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectTarget id="HeroMalfurionTalentNaturesCleanse">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Effect value="HeroMalfurionTalentNaturesCleanse@ApplyCleanse"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="90"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionTalentNaturesCleanse"/>
+        <TargetFilters value="Heroic;Player,Neutral,Enemy,ImmuneToFriendlyAbilities,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroMalfurionInnervate">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionInnervate">
+            <Flags index="AllowMinimap" value="0"/>
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroMalfurionTranquility">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Effect value="HeroMalfurionTranquility@InitialSet"/>
+        <Flags index="DeferCooldown" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="90"/>
+            <Charge Location="Unit"/>
+            <Cooldown Location="Unit" TimeUse="80"/>
+        </Cost>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionTranquility" Requirements="Ultimate1Unlocked"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroMalfurionTwilightDream">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Activity value="Abil/Activity/HeroMalfurionTwilightDream"/>
+        <Effect value="HeroMalfurionTwilightDream@AbilitySet"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+            <Cooldown Location="Unit" TimeUse="90"/>
+        </Cost>
+        <InterruptArray index="Cast" value="1"/>
+        <InterruptArray index="Channel" value="1"/>
+        <InterruptCost>
+            <Cooldown Location="Unit" Operation="Set" TimeUse="10"/>
+        </InterruptCost>
+        <CastIntroTime value="0.5"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionTwilightDream" Requirements="Ultimate2Unlocked"/>
+        <CmdButtonArray index="Cancel">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroMalfurionEntanglingRoots">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Effect value="HeroMalfurionEntanglingRoots@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="85"/>
+            <Cooldown Location="Unit" TimeUse="12"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="219.9902"/>
+        <CastIntroTime value="0.1"/>
+        <FinishTime value="0.1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroMalfurionEntanglingRoots@Search5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionEntanglingRoots"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroMalfurionMoonfire">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Effect value="HeroMalfurionMoonfire@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Charge Location="Unit"/>
+            <Cooldown Location="Unit" TimeUse="6"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="219.9902"/>
+        <CastIntroTime value="0.1"/>
+        <FinishTime value="0.1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroMalfurionMoonfire@Search"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionMoonfire"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroMalfurionRegrowth">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Malfurion"/>
+        <Effect value="HeroMalfurionRegrowth@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="80"/>
+            <Charge>
+                <CountMax value="5"/>
+                <CountStart value="5"/>
+                <CountUse value="1"/>
+                <Location value="Unit"/>
+                <TimeUse value="20"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="1"/>
+        </Cost>
+        <TargetFilters value="-;Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Missile,Item,Stasis,Dead,Hidden"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <FinishTime value="0.1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroMalfurionRegrowth"/>
+    </CAbilEffectTarget>
+</Catalog>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+<Frame type="SelectionUnitStatusPanel" name="SelendisFrame" template="StandardHeroUITemplates/CircularHeroUITemplate">
+  <SpecificUnit val="HeroSelendis"/>
+
+  <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+
+    <Frame type="Image" name="MechanicTexture">
+      <Texture val="Assets\Icons\Hero_Selendis\Icon_Hero_Selendis_TemplarWillpower_var2.dds"/>
+    </Frame>
+
+    <Frame type="Label" name="ShieldLabel">
+      <Anchor side="Left" relative="$parent/MechanicTexture" pos="1.2" offset="0" />
+      <Anchor side="Bottom" relative="$parent/MechanicTexture" pos="0.85" offset="0" />
+      <Text val="@UI/HeroSelendis/ShieldsRemainingAmount" />
+      <Style val="HeroSelendisTemplarWillpowerShieldLabel" />
+      <AcceptsMouse val="False" />
+    </Frame>
+
+    <Frame type="BehaviorIcon" name="KerriganAssimilationTooltip" template="StandardHeroUITemplates/SmallBehaviorTooltiptemplate">
+      <Behavior val="HeroSelendisTemplarWillpower"/>
+    </Frame>
+
+    <Frame type="UnitStatusBehaviorIcon" name="TemplarWillpower" template="StandardHeroUITemplates/CircularBehaviorCountdownBarTemplate">
+      <Behavior val="HeroSelendisTemplarWillpower"/>
+
+      <Animation name="ShieldActivateAnim" template="StandardHeroUITemplates/PulseInAnimTemplate">
+        <Event event="OnShown" action="Reset, Play"/>
+      </Animation>
+
+      <Animation name="ShieldDeactivate" template="StandardHeroUITemplates/PulseOutAnimTemplate">
+        <Event event="OnHidden" action="Reset, Play"/>
+      </Animation>
+    </Frame>
+
+  </Frame>
+</Frame>
+
+<Frame type="SelectionUnitStatusPanel" name="SelendisStacksFrameContainer">
+  <Anchor relative="$parent"/>
+
+  <Frame type="UnitStatusBuffDebuffElement" name="SelendisTemplarBladesFrame">
+      <Anchor relative="$parent"/>
+      <Frame type="Image" name="SelendisTemplarBlades">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="-5"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="-5"/>
+        <Visible val="False"/>
+        <Texture val="Assets\Textures\storm_ui_marker_yrel_aoe_active.dds"/>
+      </Frame>
+  </Frame>
+</Frame>
+
+</Desc>

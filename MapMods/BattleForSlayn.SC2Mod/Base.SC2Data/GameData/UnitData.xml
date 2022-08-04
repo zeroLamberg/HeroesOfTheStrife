@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="SlaynVoidRift@Static" parent="CoreBaseTownStructure">
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Attributes index="Tower" value="1"/>
+        <Attributes index="ImmuneToAOE" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <Attributes index="ImmuneToSkillshots" value="1"/>
+        <Attributes index="Structure" value="0"/>
+        <Attributes index="ImmuneToFriendlyAbilities" value="1"/>
+        <Attributes index="MapCreature" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <Footprint value="Footprint4x4Contour"/>
+        <PlacementFootprint value="Footprint4x4"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,StandardHero:MapEvents"/>
+    </CUnit>
+    <CUnit id="SlaynSupplicant" parent="CoreMonsterMinorDefenderParent">
+        <DeathRevealRadius value="3"/>
+        <PushPriority value="0"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <Speed value="3"/>
+        <Sight value="9"/>
+        <WeaponArray Link="SlaynSupplicantWeapon"/>
+        <InnerRadius value="0.1875"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,StandardHero:MapEvents"/>
+        <AlliedPushPriority value="0"/>
+        <AcquireMovementLimit value="6"/>
+        <AcquireLeashRadius value="6"/>
+        <AcquireLeashResetRadius value="3"/>
+        <Radius value="0.25"/>
+        <SeparationRadius value="0.25"/>
+    </CUnit>
+    <CUnit id="SlaynVoidThrasherShooting@Missile" parent="MISSILE">
+        <FogVisibility value="Visible"/>
+        <Mover value="SlaynVoidThrasherShooting@Mover"/>
+        <BehaviorArray Link="SlaynVoidThrasherShooting@Missile"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee,StandardHero:MapEvents"/>
+    </CUnit>
+    <CUnit id="SlaynVoidThrasher">
+        <DeathRevealRadius value="3"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Uncloakable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="VisionTestCenterOnly" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <FogVisibility value="Visible"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Attributes index="Minion" value="1"/>
+        <Attributes index="ImmuneToAOE" value="1"/>
+        <Attributes index="Merc" value="1"/>
+        <Attributes index="ImmuneToSkillshots" value="1"/>
+        <Attributes index="ImmuneToFriendlyAbilities" value="1"/>
+        <LifeStart value="5000"/>
+        <LifeMax value="5000"/>
+        <Acceleration value="1000"/>
+        <StationaryTurningRate value="399.9023"/>
+        <TurningRate value="399.9023"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackAlly"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="SlaynVoidThrasherShooting"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="2" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="SlaynVoidThrasherShooting,255" Row="2" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="2" Column="3"/>
+            <LayoutButtons Face="BunkerAttack" Type="AbilCmd" AbilCmd="SlaynVoidThrasherShooting,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="2"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,StandardHero:MapEvents"/>
+        <Speed value="3.5"/>
+    </CUnit>
+    <CUnit id="SlaynVoidRiftSpawn@Missile" parent="MISSILE_INVULNERABLE">
+        <Race value="NHbr"/>
+        <Mover value="SlaynVoidRiftSpawn@Mover"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee,StandardHero:MapEvents"/>
+    </CUnit>
+    <CUnit id="MercenarySlaynElemental@Defender" parent="CoreBossMercDefenderParent">
+        <LifeStart value="15000"/>
+        <LifeMax value="15000"/>
+        <Speed value="3.25"/>
+        <StationaryTurningRate value="399.9023"/>
+        <TurningRate value="399.9023"/>
+        <Height value="3.75"/>
+        <AbilArray Link="MercenarySlaynElementalEssenceLeech"/>
+        <BehaviorArray Link="ShrubProximityDetector"/>
+        <BehaviorArray Link="MercenarySlaynElemental@BirthInvulnerability"/>
+        <BehaviorArray Link="MercenarySlaynElemental@ScalingDefender"/>
+        <WeaponArray Link="MercenarySlaynElementalWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="5" Face="MercenarySlaynElementalEssenceLeech" Type="AbilCmd" AbilCmd="MercenarySlaynElementalEssenceLeech,255" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.5"/>
+        <InnerRadius value="0.6875"/>
+        <EditorCategories value="ObjectType:Unit,StandardHero:Mercenaries"/>
+    </CUnit>
+    <CUnit id="JungleObjectiveThrasherIcon">
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="KillCredit" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NeverThink" value="1"/>
+        <FogVisibility value="Visible"/>
+        <Response value="Nothing"/>
+        <Attributes index="ImmuneToAOE" value="1"/>
+        <Attributes index="NoMinionAggro" value="1"/>
+        <Attributes index="ImmuneToSkillshots" value="1"/>
+        <Attributes index="ImmuneToFriendlyAbilities" value="1"/>
+        <Radius value="0.125"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+        <OverlapIndex value="2"/>
+    </CUnit>
+</Catalog>

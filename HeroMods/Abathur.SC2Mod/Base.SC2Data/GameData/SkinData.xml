@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSkin id="HeroAbathur@Ultimate">
+        <ReplacementArray Catalog="Model" From="HeroAbathur@Base" To="HeroAbathur@SkinUltimate"/>
+        <ReplacementArray Catalog="Model" From="HeroAbathur@BasePortrait" To="HeroAbathur@SkinUltimatePortrait"/>
+        <ReplacementArray Catalog="Actor" From="HeroAbathur@BasePortrait" To="HeroAbathur@SkinUltimatePortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroAbathur@BaseDeathRagdoll" To="HeroAbathur@SkinUltimateDeathRagdoll"/>
+        <ReplacementArray Catalog="Model" From="HeroAbathur@BasePortraitAddition" To="HeroAbathur@SkinUltimatePortraitAddition"/>
+    </CSkin>
+</Catalog>

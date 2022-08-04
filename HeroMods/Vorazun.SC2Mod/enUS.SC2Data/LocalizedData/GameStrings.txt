@@ -1,0 +1,3 @@
+﻿DataCollection/Name/HeroVorazun=Vorazun - Hero
+DocInfo/Name=Hero Abathur Mod
+Hero/Name/HeroVorazun=Vorazun

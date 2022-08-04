@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HeroSelendisWeapon" parent="CoreHeroWeaponFast">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HeroSelendisWeapon@Damage"/>
+        <Range value="1.5"/>
+        <Effect value="HeroSelendisWeapon@ImpactSet"/>
+        <MinScanRange value="4"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+</Catalog>

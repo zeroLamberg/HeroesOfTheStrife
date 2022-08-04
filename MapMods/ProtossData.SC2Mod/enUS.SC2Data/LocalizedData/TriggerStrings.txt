@@ -1,0 +1,13 @@
+﻿Category/Name/lib_SCPT_630D04E3=Game Flow
+Category/Name/lib_SCPT_A592B033=Mercenaries
+Library/Name/SCPT=StarCraft Protoss
+Trigger/Name/lib_SCPT_2238A91C=Initialize Vanguard Merc Type
+Trigger/Name/lib_SCPT_30B15616=Run Animations (Protoss Map Special Case)
+Trigger/Name/lib_SCPT_601227B6=Initialize Hybrid Merc Type
+Trigger/Name/lib_SCPT_9AB628F4=#Include SCPT
+Trigger/Name/lib_SCPT_F176177C=Initialize Colossus Merc Type
+Variable/Name/lib_SCPT_3E9FF33B=itStructure
+Variable/Name/lib_SCPT_763EB61D=CampTypeIndex
+Variable/Name/lib_SCPT_912F736F=CampTypeIndex
+Variable/Name/lib_SCPT_CBC781D5=itTown
+Variable/Name/lib_SCPT_E2CFDAC7=CampTypeIndex

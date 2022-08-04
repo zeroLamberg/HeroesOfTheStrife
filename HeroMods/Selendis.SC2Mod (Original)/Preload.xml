@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior"/>
+<Talent id="HeroSelendisTalentTemplarWillPowerPlasmaShield"/>
+<Talent id="HeroSelendisTalentPhaseWeapon"/>
+<Talent id="HeroSelendisTalentTemplarWillpowerReconfigurationShield"/>
+<Talent id="HeroSelendisTalentTemplarWillpowerPhaseBulwark"/>
+</Preload>

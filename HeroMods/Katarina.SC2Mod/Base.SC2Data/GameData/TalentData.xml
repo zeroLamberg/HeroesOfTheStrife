@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent id="HeroKatarinaFlashGrenade"/>
+    <CTalent id="HeroKatarinaTalentArsenal"/>
+    <CTalent id="HeroKatarinaTalentBestEquipment"/>
+    <CTalent id="HeroKatarinaTalentExclusionZoneExclusionPrison"/>
+    <CTalent id="HeroKatarinaTalentFlashGrenadeSilenceGrenade"/>
+    <CTalent id="HeroKatarinaTalentWeaponMasterRearmament"/>
+    <CTalent id="HeroKatarinaTalentSpecialOps"/>
+    <CTalent id="HeroKatarinaTalentWeaponMasterToTheLimit"/>
+    <CTalent id="KatarinaTalentClusterChargeOvercharge"/>
+    <CTalent id="HeroKatarinaTalentTargetAcquired"/>
+    <CTalent id="HeroKatarinaTalentTargetPractice"/>
+    <CTalent id="HeroKatarinaTalentClusterChargeClusterRecharge"/>
+    <CTalent id="HeroKatarinaTalentClusterChargeAdvancedCharge"/>
+    <CTalent id="KatarinaTalentClusterChargeCripplingCharge"/>
+    <CTalent id="HeroKatarinaTalentWeaponMasterAmmoMaster"/>
+    <CTalent id="HeroKatarinaExclusionZone"/>
+    <CTalent id="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+    <CTalent id="HeroKatarinaTalentMasterGrenadeLauncher">
+        <Face value="HeroKatarinaTalentMasterGrenadeLauncher"/>
+        <RankArray Upgrade="KatarinaBucket_MasterAmmo_Chaingun">
+            <BehaviorArray value="KatarinaBucket_MasterChaingun"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="HeroKatarinaTalentMasterSnipe"/>
+    <CTalent id="HeroKatarinaTalentMasterFlamethrower"/>
+    <CTalent id="HeroKatarinaTalentMasterAutorifle"/>
+    <CTalent id="HeroKatarinaTalentWeaponMasterUniversalAmmo">
+        <Face value="HeroKatarinaTalentWeaponMasterUniversalAmmo"/>
+        <RankArray>
+            <BehaviorArray value="HeroKatarinaTalentWeaponMasterUniversalAmmo"/>
+        </RankArray>
+    </CTalent>
+</Catalog>

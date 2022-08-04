@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent default="1" id="CoreTalent">
+        <Face value="##id##"/>
+    </CTalent>
+    <CTalent default="1" id="TalentBucket">
+        <Face value="TalentBucket"/>
+    </CTalent>
+    <CTalent id="HeroArthasRimeBlock" parent="CoreTalent"/>
+    <CTalent id="TalentBurningRage" parent="CoreTalent">
+        <RankArray>
+            <BehaviorArray value="TalentBurningRage"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentTomOfDamage" parent="CoreTalent"/>
+    <CTalent id="TalentTomOfHealth" parent="CoreTalent">
+        <RankArray Face="TalentTomOfHealth@Rank1">
+            <BehaviorArray value="TalentTomOfHealth@Rank1"/>
+        </RankArray>
+        <RankArray Face="TalentTomOfHealth@Rank2">
+            <BehaviorArray value="TalentTomOfHealth@Rank2"/>
+        </RankArray>
+        <RankArray Face="TalentTomOfHealth@Rank3">
+            <BehaviorArray value="TalentTomOfHealth@Rank3"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentTomOfMastery" parent="CoreTalent"/>
+    <CTalent id="TemplateTalent"/>
+    <CTalent id="TalentRegenerationMaster" parent="CoreTalent">
+        <RankArray>
+            <BehaviorArray value="TalentRegenerationMaster"/>
+        </RankArray>
+        <Trait value="1"/>
+    </CTalent>
+    <CTalent id="TalentConjurersPursuit" parent="CoreTalent">
+        <RankArray>
+            <BehaviorArray value="TalentConjurersPursuit"/>
+        </RankArray>
+        <Trait value="1"/>
+    </CTalent>
+    <CTalent id="TalentPhysicalBlock" parent="CoreTalent">
+        <RankArray>
+            <BehaviorArray value="TalentPhysicalBlock"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentSpellBlock" parent="CoreTalent">
+        <RankArray>
+            <BehaviorArray value="TalentSpellBlock"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TemplateTalentCarryBehavior"/>
+    <CTalent id="TemplateTalentQuest"/>
+</Catalog>

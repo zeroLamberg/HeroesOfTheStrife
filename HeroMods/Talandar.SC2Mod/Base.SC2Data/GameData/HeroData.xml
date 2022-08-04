@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CHero id="HeroTalandar" HeroID="Talandar">
+        <StoreName value="Hero/Store/HeroTalandar@Praetor"/>
+        <AttributeId value="HTal"/>
+        <UserReference value="Champions;Zeratul"/>
+        <Role value="Damage"/>
+        <Melee value="1"/>
+        <IntroCutsceneSize value="Medium"/>
+        <Difficulty value="Hard"/>
+        <UniverseIcon value="Assets\Textures\UI_Glues_Store_GameIcon_SC2.dds"/>
+    </CHero>
+</Catalog>

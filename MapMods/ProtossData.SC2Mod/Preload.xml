@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="MercenaryColossus@ScalingDefender"/>
+<Behavior id="MercenaryColossus@ScalingLaner"/>
+<Behavior id="MercenaryHybridReaver@ScalingLaner"/>
+<Behavior id="MercenaryHybridReaver@ScalingDefender"/>
+<Behavior id="MercenaryVanguard@ScalingDefender"/>
+<Behavior id="MercenaryVanguard@ScalingLaner"/>
+<Sound id="UI_Game_Ping_Attack"/>
+<Unit id="MinionProtossCatapultWeapon@AttackMissile"/>
+<Unit id="MinionProtossWizardWeapon@AttackMissile"/>
+<Unit id="MinionProtossRangedWeapon@AttackMissile"/>
+<Unit id="MercenaryVanguardWeapon@Missile"/>
+<Unit id="MinionProtossCatapult"/>
+<Unit id="MinionProtossMelee"/>
+<Unit id="MinionProtossRanged"/>
+<Unit id="MinionProtossWizard"/>
+<Unit id="MercenaryColossus@Defender"/>
+<Unit id="MercenaryColossus@Laner"/>
+<Unit id="MercenaryHybridReaver@Defender"/>
+<Unit id="MercenaryHybridReaver@Laner"/>
+<Unit id="MercenaryHybridNemesis@Defender"/>
+<Unit id="MercenaryHybridNemesis@Laner"/>
+<Unit id="MercenaryHybridDominator@Defender"/>
+<Unit id="MercenaryHybridDominator@Laner"/>
+<Unit id="MercenaryVanguard@Defender"/>
+<Unit id="MercenaryVanguard@Laner"/>
+</Preload>

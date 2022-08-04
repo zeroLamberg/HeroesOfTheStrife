@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTexture id="Storm_Abathur_Albino_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Abathur_Albino_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Effect_AbathurDrool_Purple_Emis" parent="Generic01SlotTexture"/>
+    <CTexture id="Storm_Abathur_Char_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Abathur_Char_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Effect_AbathurDrool_Red_Emis" parent="Generic01SlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Base_Var3_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Base_Var3_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Effect_AbathurDrool_Turquoise_Emis" parent="Generic01SlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Ultimate_Grey_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Ultimate_Grey_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Ultimate_Red_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Ultimate_Red_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Ultimate_Purple_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Hero_Abathur_Ultimate_Purple_Emis" parent="MainSlotTexture"/>
+</Catalog>

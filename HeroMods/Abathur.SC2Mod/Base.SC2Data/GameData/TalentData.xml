@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent id="HeroAbathurTalentCarapaceReinforcedCarapace"/>
+    <CTalent id="HeroAbathurTalentLocustStrainSurvivalInstinct"/>
+    <CTalent id="HeroAbathurTalentLocustBrood"/>
+    <CTalent id="HeroAbathurUltimateEvolution"/>
+    <CTalent id="HeroAbathurTalentLocustStrainBombardStrain"/>
+    <CTalent id="AbathurCombatStyleAssaultStrain">
+        <Face value="AbathurLocustStrainAssaultStrainTalent"/>
+        <RankArray>
+            <BehaviorArray value="AbathurCombatStyleAssaultStrain"/>
+        </RankArray>
+        <Trait value="1"/>
+    </CTalent>
+    <CTalent id="HeroAbathurTalentCarapaceAdrenalineBoost"/>
+    <CTalent id="HeroAbathurTalentToxicNestEnvenomedNest"/>
+    <CTalent id="HeroAbathurTalentSpikeBurstEnvenomedSpikes"/>
+    <CTalent id="AbathurMasteryEvolutionMasterUltimateEvolution">
+        <Face value="AbathurUltimateEvolutionEvolutionMasterUltimateEvolutionTalent"/>
+        <RankArray Face="AbathurUltimateEvolutionEvolutionMasterTalentSimple"/>
+        <AbilityModificationArray ModifyAbil="HeroAbathurUltimateEvolution" TooltipAddendum="Talent/Abathur/UltimateEvolution/EvolutionMaster">
+            <Modifications>
+                <Type value="FlatModification"/>
+                <Entry value="AbathurUltimateEvolution"/>
+                <Field value="Cost[0].Cooldown.TimeUse"/>
+                <Value value="-30.000000"/>
+            </Modifications>
+            <Modifications>
+                <Type value="FlatModification"/>
+                <Catalog value="Behavior"/>
+                <Entry value="UltimateEvolutionTimedLife"/>
+                <Field value="Duration"/>
+                <Value value="15.000000"/>
+            </Modifications>
+        </AbilityModificationArray>
+        <Abil value="HeroAbathurUltimateEvolution"/>
+    </CTalent>
+    <CTalent id="HeroAbathurTalentStabSpatialEfficiency"/>
+    <CTalent id="HeroAbathurTalentSpikeBurstPressurizedGlands"/>
+    <CTalent id="HeroAbathurTalentLocustNest"/>
+    <CTalent id="HeroAbathurTalentStabNeedlespine"/>
+    <CTalent id="AbathurMasteryBallistospores">
+        <Face value="AbathurToxicNestBallistosporesTalent"/>
+        <AbilityModificationArray ModifyAbil="HeroAbathurToxicNest">
+            <Modifications>
+                <Type value="FlatModification"/>
+                <Entry value="AbathurToxicNest"/>
+                <Field value="Range[0]"/>
+                <Value value="430.000000"/>
+            </Modifications>
+            <Modifications>
+                <Type value="FlatModification"/>
+                <Catalog value="Behavior"/>
+                <Entry value="ToxicNestSearchBehaviorTimedLife"/>
+                <Field value="Duration"/>
+                <Value value="22.500000"/>
+            </Modifications>
+        </AbilityModificationArray>
+        <Abil value="HeroAbathurToxicNest"/>
+    </CTalent>
+    <CTalent id="HeroAbathurTalentToxicNestProlificDispersal"/>
+    <CTalent id="HeroAbathurTalentToxicNestVileNest"/>
+    <CTalent id="HeroAbathurTalentSymbioteAdrenalOverload"/>
+    <CTalent id="HeroAbathurTalentCarapaceNetworkedCarapace"/>
+    <CTalent id="HeroAbathurTalentSpikeBurstSomaTransference"/>
+    <CTalent id="HeroAbathurTalentSymbioteHivemind"/>
+    <CTalent id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink"/>
+    <CTalent id="HeroAbathurTalentEvolveMonstrosityEvolutionComplete"/>
+    <CTalent id="HeroAbathurTalentVolatileMutation"/>
+    <CTalent id="HeroAbathurEvolveMonstrosity"/>
+</Catalog>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CShapeQuad id="DiabloLightningBreathQuad">
+        <Quad value="-1.5,-8.5,1.5,2"/>
+    </CShapeQuad>
+</Catalog>

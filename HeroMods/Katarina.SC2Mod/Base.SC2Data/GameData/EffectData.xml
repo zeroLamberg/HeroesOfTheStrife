@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectSwitch id="HeroGenericHearthstone@SpecialCaseSwitch">
+        <CaseArray Validator="IsKatarina" Effect="HeroKatarina@HearthstoneSetEnergyFull"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroKatarina@ApplyEquipMovespeed">
+        <ValidatorArray value="NotMounted"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarina@EquipMovespeed"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroKatarina@HearthstoneSetEnergyFull">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroKatarina@LevelScalingModification">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaAimedShot@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaLaserShot@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaMegaShot@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaWeaponAutorifle@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaWeaponGrenadeLauncher@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaWeaponFlamethrower@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaWeaponSnipe@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroKatarina,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroKatarina,LifeRegenRate" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroKatarina,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroKatarinaClusterCharge@TimedLifeDamage,Amount" Value="1.04"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="HeroKatarinaClusterCharge@InitialInstaExplosionSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaClusterCharge@SpreadPersistent"/>
+        <EffectArray value="HeroKatarinaClusterCharge@TimedLifeSet"/>
+        <SetSource value="1"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroKatarinaClusterCharge@InitialInstaExplosionSwitch">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <CaseArray Validator="HeroKatarinaClusterCharge@FindHero" Effect="HeroKatarinaClusterCharge@InitialInstaExplosionSet"/>
+        <CaseDefault value="HeroKatarinaClusterCharge@CreationSet"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroKatarinaFlameStream@ApplyBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaFlameStream"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaFlameStream@InitialSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetPractice@Set"/>
+        <EffectArray value="HeroKatarinaFlameStream@ApplyBehavior"/>
+        <EffectArray value="HeroKatarinaWeaponFlamethrower@OutOfAmmo"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroKatarinaTalentArsenal@CDR">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroKatarinaAimedShot,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+        <Cost Abil="HeroKatarinaFlameStream,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+        <Cost Abil="HeroKatarinaLaserShot,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+        <Cost Abil="HeroKatarinaMegaShot,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+        <Cost Abil="HeroKatarinaClusterCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+        <Cost Abil="HeroKatarinaExclusionZone,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+        <Cost Abil="HeroKatarinaFlashGrenade,Execute" CooldownOperation="Add" CooldownTimeUse="-1.1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroKatarinaTalentArsenal@IncreaseToken">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroKatarinaTalentArsenal" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroKatarinaTalentArsenal@DecreaseToken">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroKatarinaTalentArsenal" ChargeCountUse="1"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroKatarinaTalentArsenal@RefreshTokenCounter">
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroKatarinaTalentArsenal"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaTalentArsenal"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroKatarinaTalentArsenal@ResetToken">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichLocation Value="CasterUnit"/>
+        <InitialDelay value="0.125"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="HeroKatarinaTalentArsenal@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroKatarinaTalentArsenal@TokenCounterController">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CaseArray Validator="HeroKatarinaTalentArsenal@StacksNotFull" Effect="HeroKatarinaTalentArsenal@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroKatarinaTalentArsenal@StacksFull" Effect="HeroKatarinaTalentArsenal@CDR" FallThrough="1"/>
+        <CaseArray Validator="HeroKatarinaTalentArsenal@StacksFull" Effect="HeroKatarinaTalentArsenal@ResetToken" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroKatarinaTalentBestEquipment@Modification">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaAimedShot,Cost[0].Vital[Energy]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaFlameStream,Cost[0].Vital[Energy]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaLaserShot,Cost[0].Vital[Energy]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaMegaShot,Cost[0].Vital[Energy]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaAimedShot,Cost[0].Cooldown.TimeUse" Value="5.000000"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaFlameStream,Cost[0].Cooldown.TimeUse" Value="5.000000"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaLaserShot,Cost[0].Cooldown.TimeUse" Value="5.000000"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaMegaShot,Cost[0].Cooldown.TimeUse" Value="5.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroKatarinaTalentFlashGrenadeSilenceGrenade@Modification">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroKatarinaFlashGrenade@Silence,Duration" Value="4.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroKatarinaTalentSpecialOps@CDR">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroKatarinaExclusionZone,Execute" CooldownOperation="Add" CooldownTimeUse="-10"/>
+        <Cost Abil="HeroKatarinaFlashGrenade,Execute" CooldownOperation="Add" CooldownTimeUse="-10"/>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroKatarinaTalentTargetPractice@Modification">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaAimedShot,Cost[0].Vital[Energy]" Value="15"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaFlameStream,Cost[0].Vital[Energy]" Value="15"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaLaserShot,Cost[0].Vital[Energy]" Value="15"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroKatarinaMegaShot,Cost[0].Vital[Energy]" Value="15"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroKatarinaTalentWeaponMasterToTheLimit@ApplyBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaTalentWeaponMasterToTheLimit@ActiveBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaWeaponAutorifle@OutOfAmmo">
+        <ValidatorArray value="HeroKatarinaWeaponAutorifle@RequiredEnergyNotEnough"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaWeaponFlamethrower@OutOfAmmo">
+        <ValidatorArray value="HeroKatarinaWeaponFlamethrower@RequiredEnergyNotEnough"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaWeaponGrenadeLauncher@OutOfAmmo">
+        <ValidatorArray value="HeroKatarinaWeaponGrenadeLauncher@RequiredEnergyNotEnough"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroKatarinaWeaponFlamethrower@TargetSearchFlameStream">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <DebugTrace value="1"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="1.5" RectangleHeight="9" Effect="HeroKatarinaWeaponFlamethrower@ImpactSet"/>
+        <AreaRelativeOffset value="0,-4.5"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroKatarinaWeaponSnipe@OutOfAmmo">
+        <ValidatorArray value="HeroKatarinaWeaponSnipe@RequiredEnergyNotEnough"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="KatarinaTalentClusterChargeOvercharge@SecondSpread">
+        <ValidatorArray value="KatarinaTalentClusterChargeOvercharge"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Effect="HeroKatarinaClusterCharge@LaunchMissile"/>
+        <OffsetFacingFallback Effect="HeroKatarinaClusterCharge@LaunchMissile" Value="TargetPoint"/>
+        <PeriodCount value="16"/>
+        <PeriodicEffectArray value="HeroKatarinaClusterCharge@SplreadLaunchBomb"/>
+        <PeriodicOffsetArray value="-1,2.75,0"/>
+        <PeriodicOffsetArray value="-1,-2.75,0"/>
+        <PeriodicOffsetArray value="1,2.75,0"/>
+        <PeriodicOffsetArray value="1,-2.75,0"/>
+        <PeriodicOffsetArray value="2.75,-1,0"/>
+        <PeriodicOffsetArray value="-2.75,-1,0"/>
+        <PeriodicOffsetArray value="2.75,1,0"/>
+        <PeriodicOffsetArray value="-2.75,1,0"/>
+        <PeriodicOffsetArray value="2.15,2.15,0"/>
+        <PeriodicOffsetArray value="2.15,-2.15,0"/>
+        <PeriodicOffsetArray value="-2.15,2.15,0"/>
+        <PeriodicOffsetArray value="-2.15,-2.15,0"/>
+        <PeriodicOffsetArray value="-3,0,0"/>
+        <PeriodicOffsetArray value="3,0,0"/>
+        <PeriodicOffsetArray value="0,3,0"/>
+        <PeriodicOffsetArray value="0,-3,0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroKatarinaAimedShot@InitialSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaAimedShot@InitialPersistent"/>
+        <EffectArray value="HeroKatarinaTalentTargetPractice@Set"/>
+        <EffectArray value="HeroKatarinaWeaponAutorifle@OutOfAmmo"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaLaserShot@InitialSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetPractice@Set"/>
+        <EffectArray value="HeroKatarinaLaserShot@InitialPersistent"/>
+        <EffectArray value="HeroKatarinaWeaponSnipe@OutOfAmmo"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaMegaShot@InitialSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetPractice@Set"/>
+        <EffectArray value="HeroKatarinaMegaShot@LaunchPersistent"/>
+        <EffectArray value="HeroKatarinaWeaponGrenadeLauncher@OutOfAmmo"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroKatarinaTalentTargetAcquired@DecreaseToken">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Cost Behavior="HeroKatarinaTalentTargetAcquired" ChargeCountUse="1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroKatarinaTalentTargetAcquired@IncreaseToken">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroKatarinaTalentTargetAcquired" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroKatarinaTalentTargetAcquired@RefreshTokenCounter">
+        <ValidatorArray value="HeroKatarinaTalentTargetAcquired"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaTalentTargetAcquired"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroKatarinaTalentTargetAcquired@ResetToken">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="CasterUnit"/>
+        <InitialDelay value="0.125"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="HeroKatarinaTalentTargetAcquired@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroKatarinaTalentTargetAcquired@TokenCounterController">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CaseArray Validator="HeroKatarinaTalentTargetAcquired@HasNotAllStacks" Effect="HeroKatarinaTalentTargetAcquired@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroKatarinaTalentTargetAcquired@HaveAllStacks" Effect="HeroKatarinaTalentTargetAcquired@ResetToken" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroKatarinaTalentTargetPractice@ApplyAttackSpeedBuff">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaTalentTargetPractice@AttackSpeed"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaTalentTargetPractice@ApplyMovespeedBuff">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaTalentTargetPractice@Movespeed"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaTalentTargetPractice@Set">
+        <ValidatorArray value="HeroKatarinaTalentTargetPractice"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetPractice@ApplyAttackSpeedBuff"/>
+        <EffectArray value="HeroKatarinaTalentTargetPractice@ApplyMovespeedBuff"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroKatarinaTalentClusterChargeClusterRecharge@CooldownModifier">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroKatarinaClusterCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-0.75"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="KatarinaTalentClusterChargeCripplingCharge@ApplyStatsDebuff">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="KatarinaTalentClusterChargeCripplingCharge@StatsDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarina@RegenGlobePickupImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentWeaponMasterUniversalAmmo@AddEnergy"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroKatarinaTalentMasterFlamethrower@Modification">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried,Duration" Value="8.000000"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped,Duration" Value="8.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroKatarinaTalentMasterGrenadeLauncher@Modification">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped,Duration" Value="8.000000"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried,Duration" Value="8.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroKatarina@WeaponCooldown">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Weapon Weapon="HeroKatarinaWeaponAutorifle" CooldownAmount="0.5"/>
+        <Weapon Weapon="HeroKatarinaWeaponFlamethrower" CooldownAmount="0.5"/>
+        <Weapon Weapon="HeroKatarinaWeaponGrenadeLauncher" CooldownAmount="0.5"/>
+        <Weapon Weapon="HeroKatarinaWeaponSnipe" CooldownAmount="0.5"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroKatarinaEquipAutorifle@ApplyCooldown">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaEquipAutorifle@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaEquipFlamethrower@ApplyCooldown">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaEquipFlamethrower@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroKatarinaWeaponFlamethrower@RemoveAmmo">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <Change value="-2"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroKatarinaWeaponGrenadeLauncher@RemoveAmmo">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <Change value="-5"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroKatarinaEquipGrenadeLauncher@ApplyCooldown">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaEquipGrenadeLauncher@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaEquipSnipe@ApplyCooldown">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaEquipSnipe@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarina@ReviveSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroKatarinaWeaponSnipe@RemoveAmmo">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <Change value="-10"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroKatarinaWeaponFlamethrower@ApplyArmorBuffEquipped">
+        <ValidatorArray value="CasterNotBlinded"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped"/>
+        <Count value="1">
+            <AccumulatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit@Switch"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaWeaponFlamethrower@ApplyArmorBuffCarried">
+        <ValidatorArray value="HeroKatarinaWeaponFlamethrower@CasterHasWeaponCarried"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried"/>
+        <Count value="1">
+            <AccumulatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit@Switch"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaWeaponFlamethrower@PersistentSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetAcquired@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaTalentArsenal@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaWeaponFlamethrower@TargetSearchSwitch"/>
+        <EffectArray value="HeroKatarinaWeaponFlamethrower@RemoveAmmo"/>
+        <EffectArray value="HeroKatarinaWeaponFlamethrower@ApplyArmorBuffEquipped"/>
+        <EffectArray value="HeroKatarinaWeaponFlamethrower@OutOfAmmo"/>
+        <ValidatorArray value="HeroKatarinaWeaponFlamethrower@CasterHasWeaponEquipped"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroKatarinaWeaponAutorifle@RemoveAmmo">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <Change value="-4"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroKatarinaWeaponSnipe@ApplySpellPowerCarried">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerCarried"/>
+        <Count value="1">
+            <AccumulatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit@Switch"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaWeaponSnipe@ApplySpellPowerEquipped">
+        <ValidatorArray value="CasterNotBlindedAndTargetNotEvading"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerEquipped"/>
+        <Count value="1">
+            <AccumulatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit@Switch"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaWeaponSnipe@InitialSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaWeaponSnipe@LaunchMissile"/>
+        <EffectArray value="HeroKatarinaWeaponSnipe@RemoveAmmo"/>
+        <EffectArray value="HeroKatarinaWeaponSnipe@OutOfAmmo"/>
+        <ValidatorArray value="HeroKatarinaWeaponSnipe@RequiredEnergy"/>
+        <ValidatorArray value="HeroKatarinaWeaponSnipe@CasterHasWeaponEquipped"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroKatarinaWeaponAutorifle@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="44">
+            <AccumulatorArray value="HeroKatarinaTalentMasterSnipe@SwitchCarried"/>
+            <AccumulatorArray value="HeroKatarinaTalentTargetAcquired@Switch"/>
+            <AccumulatorArray value="HeroKatarinaTalentExclusionZoneExclusionPrison@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaWeaponAutorifle@ImpactSet">
+        <ValidatorArray value="TargetNotInStasisorDeadorInvulnerableorSpecialDeathStateorHidden"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetAcquired@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaTalentArsenal@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaWeaponAutorifle@Damage"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroKatarinaFlashGrenade@ApplyVisionReduction">
+        <ValidatorArray value="TargetIsHero"/>
+        <ValidatorArray value="TargetIsNotUnstoppable"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaFlashGrenade@VisionReduction"/>
+        <Count value="64"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroKatarinaFlashGrenade@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="212"/>
+    </CEffectDamage>
+    <CEffectRemoveBehavior id="HeroKatarinaFlashGrenade@RemoveStack">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <BehaviorLink value="HeroKatarinaFlashGrenade@VisionReduction"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreatePersistent id="HeroKatarinaFlashGrenade@RemoveStacksCreatePersistent">
+        <ValidatorArray value="TargetIsHero"/>
+        <ValidatorArray value="TargetIsNotUnstoppable"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="64"/>
+        <PeriodicEffectArray value="HeroKatarinaFlashGrenade@RemoveStack"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroKatarinaFlashGrenade@ApplyBlind" parent="CoreApplyBlind">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaFlashGrenade@Blind"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaFlashGrenade@ApplySilence" parent="CoreApplySilence">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaFlashGrenade@Silence"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaFlashGrenade@ImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaFlashGrenade@Damage"/>
+        <EffectArray value="HeroKatarinaFlashGrenade@ApplyBlind"/>
+        <EffectArray value="HeroKatarinaFlashGrenade@ApplySilence"/>
+        <EffectArray value="HeroKatarinaFlashGrenade@ApplyVisionReduction"/>
+        <EffectArray value="HeroKatarinaFlashGrenade@RemoveStacksCreatePersistent"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroKatarinaFlashGrenade@TargetSearch">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2.25" Effect="HeroKatarinaFlashGrenade@ImpactSet"/>
+        <RevealerParams Duration="0.75" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroKatarinaFlashGrenade@InitialSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaFlashGrenade@LaunchMissileSwitch"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroKatarinaFlashGrenade@LaunchMissileSwitch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CaseArray Validator="HeroKatarinaFlashGrenade@MissileTargetClose" Effect="HeroKatarinaFlashGrenade@LaunchMissileClose"/>
+        <CaseArray Validator="HeroKatarinaFlashGrenade@MissileTargetMedium" Effect="HeroKatarinaFlashGrenade@LaunchMissileMedium"/>
+        <CaseArray Validator="HeroKatarinaFlashGrenade@MissileTargetFar" Effect="HeroKatarinaFlashGrenade@LaunchMissileFar"/>
+    </CEffectSwitch>
+    <CEffectLaunchMissile id="HeroKatarinaFlashGrenade@LaunchMissileClose">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaFlashGrenade@TargetSearch"/>
+        <AmmoUnit value="HeroKatarinaFlashGrenade@Missile"/>
+        <Movers Link="HeroKatarinaFlashGrenade@MissileClose"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="HeroKatarinaFlashGrenade@LaunchMissileMedium">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaFlashGrenade@TargetSearch"/>
+        <AmmoUnit value="HeroKatarinaFlashGrenade@Missile"/>
+        <ImpactRange value="0.4"/>
+        <Movers Link="HeroKatarinaFlashGrenade@MissileMedium"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="HeroKatarinaFlashGrenade@LaunchMissileFar">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaFlashGrenade@TargetSearch"/>
+        <AmmoUnit value="HeroKatarinaFlashGrenade@Missile"/>
+        <ImpactRange value="0.4"/>
+        <Movers Link="HeroKatarinaFlashGrenade@MissileFar"/>
+    </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@ApplySlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaExclusionZone@Slow"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@ApplyCasterDurationBuff">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroKatarinaExclusionZone@CasterDurationBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyPlayer id="HeroKatarinaExclusionZone@RefreshAdditionalDuration">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichPlayer Value="Caster"/>
+        <EffectArray Operation="Set" Reference="Accumulator,HeroKatarinaExclusionZone@AdditionalDuration,Amount" Value="0"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroKatarinaExclusionZone@IncreaseAdditionalDuration">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichPlayer Value="Caster"/>
+        <EffectArray Reference="Accumulator,HeroKatarinaExclusionZone@AdditionalDuration,Amount" Value="0.03125"/>
+    </CEffectModifyPlayer>
+    <CEffectLaunchMissile id="HeroKatarinaExclusionZone@LaunchMissileFromExplosion1">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchLocation Effect="HeroKatarinaExclusionZone@SpawnTowersPersistent" Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaExclusionZone@CreateTower1"/>
+        <AmmoUnit value="HeroKatarinaExclusionZone@Missile"/>
+        <Movers Link="HeroKatarinaExclusionZone@TowerMissileMover"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="HeroKatarinaExclusionZone@LaunchMissileFromExplosion2">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchLocation Effect="HeroKatarinaExclusionZone@SpawnTowersPersistent" Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaExclusionZone@CreateTower2"/>
+        <AmmoUnit value="HeroKatarinaExclusionZone@Missile"/>
+        <Movers Link="HeroKatarinaExclusionZone@TowerMissileMover"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="HeroKatarinaExclusionZone@LaunchMissileFromExplosion3">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchLocation Effect="HeroKatarinaExclusionZone@SpawnTowersPersistent" Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaExclusionZone@CreateTower3"/>
+        <AmmoUnit value="HeroKatarinaExclusionZone@Missile"/>
+        <Movers Link="HeroKatarinaExclusionZone@TowerMissileMover"/>
+    </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@FinalApplyRoots" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaExclusionZone@FinalRoots"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@FinalApplySilence" parent="CoreApplySilence">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaExclusionZone@FinalSilence"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroKatarinaExclusionZone@FinalDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="200"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaExclusionZone@FinalHeroImpactSet">
+        <ValidatorArray value="HeroKatarinaExclusionZone@HasHeroTimedBehaviorCasterReq"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaExclusionZone@FinalDamage"/>
+        <EffectArray value="HeroKatarinaExclusionZone@FinalApplySilence"/>
+        <EffectArray value="HeroKatarinaExclusionZone@FinalApplyRoots"/>
+        <EffectArray value="HeroKatarinaExclusionZone@RemoveHeroTimedBehavior"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroKatarinaExclusionZone@FinalSearchAffectedHeroes">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="500" Effect="HeroKatarinaExclusionZone@FinalHeroImpactSet"/>
+        <ValidatorArray value="HeroKatarinaExclusionZone"/>
+    </CEffectEnumArea>
+    <CEffectRemoveBehavior id="HeroKatarinaExclusionZone@RemoveCasterTimedBehavior">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <BehaviorLink value="HeroKatarinaExclusionZone@TimedBehaviorCaster"/>
+    </CEffectRemoveBehavior>
+    <CEffectModifyUnit id="HeroKatarinaTalentWeaponMasterAmmoRestoration@AddAmmo">
+        <ValidatorArray value="EnergyNotFullCaster"/>
+        <ValidatorArray value="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <VitalArray index="Energy">
+            <Change value="5"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroKatarinaExclusionZone@LaserBeamImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaExclusionZone@LaserBeamDamage"/>
+        <EffectArray value="HeroKatarinaExclusionZone@ApplySlow"/>
+        <EffectArray value="HeroKatarinaExclusionZone@ApplyHeroInZoneController"/>
+        <EffectArray value="HeroKatarinaExclusionZone@ApplyHeroTimedBehavior"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroKatarinaWeaponFlamethrower@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="25">
+            <AccumulatorArray value="HeroKatarinaTalentMasterSnipe@SwitchCarried"/>
+            <AccumulatorArray value="HeroKatarinaTalentTargetAcquired@Switch"/>
+            <AccumulatorArray value="HeroKatarinaTalentExclusionZoneExclusionPrison@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@ApplyHeroInZoneController">
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaExclusionZone@HeroInZoneController"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaExclusionZone@ZoneImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+        <EffectArray value="HeroKatarinaExclusionZone@ApplyHeroInZoneController"/>
+        <EffectArray value="HeroKatarinaExclusionZone@ApplyHeroTimedBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@ApplyHeroTimedBehavior">
+        <ValidatorArray value="TargetIsHero"/>
+        <ValidatorArray value="HeroKatarinaExclusionZone@HasHeroInZoneController"/>
+        <ValidatorArray value="HeroKatarinaExclusionZone@HasNoHeroTimedBehavior"/>
+        <ValidatorArray value="HeroKatarinaExclusionZone@CasterHasDurationBuff"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaExclusionZone@HeroTimedBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroKatarinaExclusionZone@LaserBeamDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaExclusionZone@LasetBeamTriggerSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroKatarinaExclusionZone@RemoveHeroTimedBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroKatarinaExclusionZone@HeroTimedBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroKatarinaExclusionZone@ZoneTriggerSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroKatarinaExclusionZone@LaserBeamSearchPersistent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="HeroKatarinaExclusionZone@LaserBeamSearch"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="HeroKatarinaExclusionZone@LaserBeamSearch"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroKatarinaExclusionZone@ApplyTimedLife">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaExclusionZone@TowerTimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroKatarinaExclusionZone@PeriodicSearcher">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <PeriodicEffectArray value="HeroKatarinaExclusionZone@ZoneSearch"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <WhichLocation Effect="HeroKatarinaExclusionZone@LaunchMissileFromCaster"/>
+        <InitialDelay value="1.25"/>
+        <PeriodicValidator value="HeroKatarinaExclusionZone@CasterHasDurationBuff"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroKatarinaExclusionZone@ZoneSearch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchLocation Effect="HeroKatarinaExclusionZone@LaunchMissileFromCaster" Value="OriginPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AreaArray>
+            <Arc value="59.9963"/>
+            <Radius value="7.875"/>
+            <FacingAdjustment value="180"/>
+            <Effect value="HeroKatarinaExclusionZone@ZoneTriggerSet"/>
+        </AreaArray>
+        <AreaRelativeOffset value="0,-5"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <DebugTrace value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreateUnit id="HeroKatarinaExclusionZone@CreateTower1">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <SpawnUnit value="HeroKatarinaExclusionZone@Tower1"/>
+    </CEffectCreateUnit>
+    <CEffectEnumArea id="HeroKatarinaExclusionZone@LaserBeamSearch">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AreaArray RectangleWidth="1" RectangleHeight="8" Effect="HeroKatarinaExclusionZone@LasetBeamTriggerSet"/>
+        <AreaRelativeOffset value="0,4"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroKatarinaWeaponGrenadeLauncher@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="50">
+            <AccumulatorArray value="HeroKatarinaTalentMasterSnipe@SwitchCarried"/>
+            <AccumulatorArray value="HeroKatarinaTalentTargetAcquired@Switch"/>
+            <AccumulatorArray value="HeroKatarinaTalentExclusionZoneExclusionPrison@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectCreateUnit id="HeroKatarinaExclusionZone@CreateTower2">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <SpawnUnit value="HeroKatarinaExclusionZone@Tower2"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="HeroKatarinaExclusionZone@CreateTower3">
+        <EditorCategories value="Race:Neutral,CoreHero:Katarina"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <SpawnUnit value="HeroKatarinaExclusionZone@Tower3"/>
+    </CEffectCreateUnit>
+    <CEffectLaunchMissile id="HeroKatarinaExclusionZone@LaunchMissileFromCaster">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaExclusionZone@SpawnTowersPersistent"/>
+        <AmmoUnit value="HeroKatarinaExclusionZone@Missile"/>
+        <Movers Link="HeroKatarinaExclusionZone@MissileMover"/>
+        <LaunchEffect value="HeroKatarinaExclusionZone@ApplyCasterDurationBuff"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="HeroKatarinaExclusionZone@SpawnTowersPersistent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <OffsetVectorStartLocation Effect="HeroKatarinaExclusionZone@LaunchMissileFromCaster" Value="OriginPoint"/>
+        <OffsetFacingFallback Effect="HeroKatarinaExclusionZone@LaunchMissileFromCaster" Value="OriginPoint"/>
+        <InitialEffect value="HeroKatarinaExclusionZone@PeriodicSearcher"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="HeroKatarinaExclusionZone@LaunchMissileFromExplosion1"/>
+        <PeriodicEffectArray value="HeroKatarinaExclusionZone@LaunchMissileFromExplosion2"/>
+        <PeriodicEffectArray value="HeroKatarinaExclusionZone@LaunchMissileFromExplosion3"/>
+        <PeriodicOffsetArray value="-4,2.425,0"/>
+        <PeriodicOffsetArray value="0,-4.5,0"/>
+        <PeriodicOffsetArray value="4,2.425,0"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="HeroKatarinaWeaponSnipe@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="165">
+            <AccumulatorArray value="HeroKatarinaTalentMasterSnipe@SwitchEquipped"/>
+            <AccumulatorArray value="HeroKatarinaTalentTargetAcquired@Switch"/>
+            <AccumulatorArray value="HeroKatarinaTalentExclusionZoneExclusionPrison@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffEquipped">
+        <ValidatorArray value="TargetNotStructure"/>
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped"/>
+        <Count value="1">
+            <AccumulatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit@Switch"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaTalentWeaponMasterAmmoRestoration@ApplyPeriodic">
+        <ValidatorArray value="EnergyNotFullCaster"/>
+        <ValidatorArray value="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaTalentWeaponMasterAmmoRestoration@Periodic"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffCarried">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried"/>
+        <Count value="1">
+            <AccumulatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit@Switch"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarina@RegenGlobePickUpImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentWeaponMasterUniversalAmmo@AddEnergy"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroKatarinaMegaShot@ImpactSearch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="HeroKatarinaMegaShot@ImpactSet"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroKatarinaClusterCharge@TimedLifeSearch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="HeroKatarinaClusterCharge@TimedLifeSearchImpactSet"/>
+        <RevealerParams Duration="1" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroKatarinaClusterCharge@TimedLifeDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="90"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <Fraction value="1">
+            <AccumulatorArray value="HeroKatarinaClusterCharge@StructureCaseSwitch"/>
+        </Fraction>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaClusterCharge@CreationSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaClusterCharge@SpreadApplyBehavior"/>
+        <EffectArray value="HeroKatarinaClusterCharge@TimedLifeApplyBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaClusterCharge@TimedLifeSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaClusterCharge@TimedLifeSearch"/>
+        <EffectArray value="Suicide"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroKatarinaClusterCharge@TimedLifeApplyBehavior">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaClusterCharge@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaClusterCharge@SpreadBombCreationSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaClusterCharge@TimedLifeApplyBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaClusterCharge@TimedLifeSearchImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaClusterCharge@TimedLifeDamage"/>
+        <EffectArray value="HeroKatarinaClusterCharge@TimedLifeApplySlow"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroKatarinaClusterCharge@TimedLifeApplySlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaClusterCharge@Slow"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroKatarinaWeaponSwap">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroKatarinaClusterCharge@SpreadApplyBehavior">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaClusterCharge@SpreadBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectLaunchMissile id="HeroKatarinaClusterCharge@SplreadLaunchBomb">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaClusterCharge@SpreadCreateNewBomb"/>
+        <AmmoUnit value="HeroKatarinaClusterCharge@Missile"/>
+        <Movers Link="Katarina_TossGrenade_Mover_Close"/>
+    </CEffectLaunchMissile>
+    <CEffectCreateUnit id="HeroKatarinaClusterCharge@SpreadCreateNewBomb">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnEffect value="HeroKatarinaClusterCharge@SpreadBombCreationSet"/>
+        <SpawnUnit value="HeroKatarinaClusterCharge@ClusterBomb"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="HeroKatarinaClusterCharge@CreateClusterBomb">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnEffect value="HeroKatarinaClusterCharge@InitialInstaExplosionSwitch"/>
+        <SpawnUnit value="HeroKatarinaClusterCharge@ClusterBomb"/>
+    </CEffectCreateUnit>
+    <CEffectLaunchMissile id="HeroKatarinaClusterCharge@LaunchMissile">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HeroKatarinaClusterCharge@CreateClusterBomb"/>
+        <AmmoUnit value="HeroKatarinaClusterCharge@Missile"/>
+        <Movers Link="Katarina_TossGrenade_Mover_Close" IfRangeLTE="2"/>
+        <Movers Link="Katarina_TossGrenade_Mover_BigDistance" IfRangeLTE="500"/>
+        <Flags index="ValidateWeapon" value="0"/>
+    </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="HeroKatarinaLaserShot@ApplySilence" parent="CoreApplySilence">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Behavior value="HeroKatarinaLaserShot@Silence"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroKatarinaMegaShot@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="289"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaMegaShot@ImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaMegaShot@Damage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroKatarinaMegaShot@PeriodicSearch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchLocation Value="TargetPoint"/>
+        <ImpactLocation Value="SourcePoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,ImmuneToSkillshots,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray>
+            <MaxCount value="1"/>
+            <RectangleWidth value="1"/>
+            <RectangleHeight value="1.25"/>
+            <Effect value="HeroKatarinaMegaShot@ImpactSearch"/>
+        </AreaArray>
+        <RevealerParams Duration="0.75" ShapeExpansion="1.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="HeroKatarinaLaserShot@InitialPersistent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="CasterPoint"/>
+        <InitialEffect value="HeroKatarinaLaserShot@Search"/>
+        <InitialOffset value="0,-16,0"/>
+        <FinalEffect value="HeroKatarinaWeaponMaster@SetWeaponsCDs"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="HeroKatarinaLaserShot@PointForVisual"/>
+        <PeriodicOffsetArray value="0,-16,0"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroKatarinaLaserShot@Search">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Invulnerable"/>
+        <AreaArray RectangleWidth="1" RectangleHeight="16" Effect="HeroKatarinaLaserShot@ImpactSet"/>
+        <AreaRelativeOffset value="0,-8"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+        <DebugTrace value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroKatarinaEquipFlamethrower">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ValidatorArray value="HeroKatarinaWeaponFlamethrower@TargetNotWeaponEquipped"/>
+        <ValidatorArray value="HeroKatarinaEquipFlamethrower@NotOnCooldown"/>
+        <EffectArray value="HeroKatarina@WeaponCooldown"/>
+        <EffectArray value="HeroKatarinaEquipFlamethrower@ApplyCooldown"/>
+        <EffectArray value="HeroKatarina@ApplyEquipMovespeed"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="HeroKatarinaWeaponAutorifle@LaunchMissile">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactEffect value="HeroKatarinaWeaponAutorifle@ImpactSet"/>
+        <Flags index="TravelValidation" value="1"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <AmmoUnit value="HeroKatarinaWeaponAutorifle@Missile"/>
+        <Movers Link="HeroKatarinaWeaponAutorifle@Mover"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="HeroKatarinaWeaponAutorifle@InitialPersitent">
+        <ValidatorArray value="HeroKatarinaWeaponAutorifle@RequiredEnergy"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="3"/>
+        <PeriodicValidator value="HeroKatarinaWeaponAutorifle@RequiredEnergy"/>
+        <PeriodicEffectArray value="HeroKatarinaWeaponAutorifle@PersistentSet"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.1"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroKatarinaEquipGrenadeLauncher">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ValidatorArray value="HeroKatarinaWeaponGrenadeLauncher@TargetNotWeaponEquipped"/>
+        <ValidatorArray value="HeroKatarinaEquipGrenadeLauncher@NotOnCooldown"/>
+        <EffectArray value="HeroKatarina@WeaponCooldown"/>
+        <EffectArray value="HeroKatarinaEquipGrenadeLauncher@ApplyCooldown"/>
+        <EffectArray value="HeroKatarina@ApplyEquipMovespeed"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroKatarinaAimedShot@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="148"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaEquipAutorifle">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ValidatorArray value="HeroKatarinaWeaponAutorifle@TargetNotWeaponEquipped"/>
+        <ValidatorArray value="HeroKatarinaEquipAutorifle@NotOnCooldown"/>
+        <EffectArray value="HeroKatarina@WeaponCooldown"/>
+        <EffectArray value="HeroKatarinaEquipAutorifle@ApplyCooldown"/>
+        <EffectArray value="HeroKatarina@ApplyEquipMovespeed"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaEquipSnipe">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ValidatorArray value="HeroKatarinaWeaponSnipe@TargetNotWeaponEquipped"/>
+        <ValidatorArray value="HeroKatarinaEquipSnipe@NotOnCooldown"/>
+        <EffectArray value="HeroKatarina@WeaponCooldown"/>
+        <EffectArray value="HeroKatarinaEquipSnipe@ApplyCooldown"/>
+        <EffectArray value="HeroKatarina@ApplyEquipMovespeed"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroKatarinaAimedShot@InitialPersistent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterPoint"/>
+        <InitialEffect value="HeroKatarinaAimedShot@LM"/>
+        <InitialOffset value="0,-14,0"/>
+        <FinalEffect value="HeroKatarinaWeaponMaster@SetWeaponsCDs"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="HeroKatarinaWeaponGrenadeLauncher@InitialPersistent">
+        <ValidatorArray value="HeroKatarinaWeaponGrenadeLauncher@RequiredEnergy"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="3"/>
+        <PeriodicValidator value="HeroKatarinaWeaponGrenadeLauncher@RequiredEnergy"/>
+        <PeriodicEffectArray value="HeroKatarinaWeaponGrenadeLauncher@PersistentSet"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroKatarinaAimedShot@ImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+        <EffectArray value="HeroKatarinaAimedShot@Damage"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="HeroKatarinaAimedShot@LM">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchEffect value="HeroKatarinaAimedShot@MissileSearch"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <AmmoUnit value="Katarina_AimedShot_Missile"/>
+        <Movers Link="HeroKatarinaAimedShot@Mover"/>
+    </CEffectLaunchMissile>
+    <CEffectEnumArea id="HeroKatarinaAimedShot@MissileSearch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <DebugTrace value="1"/>
+        <LaunchLocation Value="OriginPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToSkillshots,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="0.6" RectangleHeight="1.25" Effect="HeroKatarinaAimedShot@ImpactSet"/>
+        <RevealerParams Duration="0.75" ShapeExpansion="1.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroKatarinaWeaponSnipe@ImpactSet">
+        <ValidatorArray value="TargetNotInStasisorDeadorInvulnerableorSpecialDeathStateorHidden"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetAcquired@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaTalentArsenal@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaWeaponSnipe@Damage"/>
+        <EffectArray value="HeroKatarinaWeaponSnipe@ApplySpellPowerEquipped"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="HeroKatarinaWeaponSnipe@LaunchMissile">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactEffect value="HeroKatarinaWeaponSnipe@ImpactSet"/>
+        <Flags index="TravelValidation" value="1"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <AmmoUnit value="HeroKatarinaWeaponSnipe@Missile"/>
+        <Movers Link="HeroKatarinaWeaponSnipe@Mover"/>
+    </CEffectLaunchMissile>
+    <CEffectModifyUnit id="HeroKatarinaWeaponMaster@RestoreAmmunition">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroKatarinaWeaponMaster@SetWeaponsCDs">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactUnit Value="Caster"/>
+        <Weapon Weapon="HeroKatarinaWeaponAutorifle" CooldownOperation="Set" CooldownFraction="1"/>
+        <Weapon Weapon="HeroKatarinaWeaponGrenadeLauncher" CooldownOperation="Set" CooldownFraction="1"/>
+        <Weapon Weapon="HeroKatarinaWeaponFlamethrower" CooldownOperation="Set" CooldownFraction="1"/>
+        <Weapon Weapon="HeroKatarinaWeaponSnipe" CooldownOperation="Set" CooldownFraction="1"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroKatarinaLaserShot@PointForVisual">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroKatarinaWeaponFlamethrower@InitialCreatePersistent">
+        <ValidatorArray value="HeroKatarinaWeaponFlamethrower@RequiredEnergy"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <PeriodicValidator value="HeroKatarinaWeaponFlamethrower@RequiredEnergy"/>
+        <PeriodicEffectArray value="HeroKatarinaWeaponFlamethrower@PersistentSet"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroKatarinaWeaponFlamethrower@TargetSearchDefault">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <DebugTrace value="1"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="1" RectangleHeight="6" Effect="HeroKatarinaWeaponFlamethrower@ImpactSet"/>
+        <AreaRelativeOffset value="0,-3"/>
+    </CEffectEnumArea>
+    <CEffectLaunchMissile id="HeroKatarinaWeaponGrenadeLauncher@LaunchMissile">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactEffect value="HeroKatarinaWeaponGrenadeLauncher@ImpactSet"/>
+        <AmmoUnit value="HeroKatarinaWeaponGrenadeLauncher@Missile"/>
+        <Flags index="TravelValidation" value="1"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <Movers Link="HeroKatarinaWeaponGrenadeLauncher@Mover"/>
+    </CEffectLaunchMissile>
+    <CEffectSwitch id="HeroKatarinaWeaponFlamethrower@TargetSearchSwitch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CaseDefault value="HeroKatarinaWeaponFlamethrower@TargetSearchDefault"/>
+        <CaseArray Validator="HeroKatarinaFlameStream@CasterHasBuff" Effect="HeroKatarinaWeaponFlamethrower@TargetSearchFlameStream"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroKatarinaWeaponGrenadeLauncher@ImpactSet">
+        <ValidatorArray value="TargetNotInStasisorDeadorInvulnerableorSpecialDeathStateorHidden"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaTalentTargetAcquired@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaTalentArsenal@RefreshTokenCounter"/>
+        <EffectArray value="HeroKatarinaWeaponGrenadeLauncher@Damage"/>
+        <EffectArray value="HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffEquipped"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaLaserShot@ImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaLaserShot@Damage"/>
+        <EffectArray value="HeroKatarinaLaserShot@ApplySilence"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroKatarinaMegaShot@LaunchPersistent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <WhichLocation Value="CasterPoint"/>
+        <InitialEffect value="HeroKatarinaMegaShot@LaunchMissile"/>
+        <InitialOffset value="0,-14,0"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="HeroKatarinaMegaShot@LaunchMissile">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchEffect value="HeroKatarinaMegaShot@PeriodicSearch"/>
+        <SearchMaxCount value="1"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <SearchFlags index="ArriveOnSearchHit" value="1"/>
+        <AmmoUnit value="Katarina_TripleShot_AttackMissile"/>
+        <Movers Link="Katarina_Mover_MegaShot"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="HeroKatarinaLaserShot@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Amount value="168"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroKatarinaWeaponAutorifle@PersistentSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaWeaponAutorifle@RemoveAmmo"/>
+        <EffectArray value="HeroKatarinaWeaponAutorifle@LaunchMissile"/>
+        <EffectArray value="HeroKatarinaWeaponAutorifle@OutOfAmmo"/>
+        <ValidatorArray value="HeroKatarinaWeaponAutorifle@CasterHasWeaponEquipped"/>
+    </CEffectSet>
+    <CEffectSet id="HeroKatarinaWeaponGrenadeLauncher@PersistentSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaWeaponGrenadeLauncher@RemoveAmmo"/>
+        <EffectArray value="HeroKatarinaWeaponGrenadeLauncher@LaunchMissile"/>
+        <EffectArray value="HeroKatarinaWeaponGrenadeLauncher@OutOfAmmo"/>
+        <ValidatorArray value="HeroKatarinaWeaponGrenadeLauncher@CasterHasWeaponEquipped"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroKatarinaTalentWeaponMasterUniversalAmmo@AddEnergy">
+        <ValidatorArray value="HeroKatarinaTalentWeaponMasterUniversalAmmo@Target"/>
+        <ValidatorArray value="EnergyNotFull"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <LaunchUnit Value="Target"/>
+        <VitalArray index="Energy">
+            <Change value="50"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroKatarinaWeaponFlamethrower@ImpactSet">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <EffectArray value="HeroKatarinaWeaponFlamethrower@DamageSwitch"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroKatarinaWeaponFlamethrower@DamageSwitch">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CaseDefault value="HeroKatarinaWeaponFlamethrower@Damage"/>
+    </CEffectSwitch>
+    <CEffectCreatePersistent id="HeroKatarinaClusterCharge@SpreadPersistent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <OffsetFacingFallback Value="TargetPoint"/>
+        <PeriodCount value="12"/>
+        <PeriodicEffectArray value="HeroKatarinaClusterCharge@SplreadLaunchBomb"/>
+        <PeriodicOffsetArray value="-0.5,2.1,0"/>
+        <PeriodicOffsetArray value="-0.5,-2.1,0"/>
+        <PeriodicOffsetArray value="0.5,2.1,0"/>
+        <PeriodicOffsetArray value="0.5,-2.1,0"/>
+        <PeriodicOffsetArray value="2.1,-0.5,0"/>
+        <PeriodicOffsetArray value="-2.1,-0.5,0"/>
+        <PeriodicOffsetArray value="2.1,0.5,0"/>
+        <PeriodicOffsetArray value="-2.1,0.5,0"/>
+        <PeriodicOffsetArray value="1.6,1.6,0"/>
+        <PeriodicOffsetArray value="1.6,-1.6,0"/>
+        <PeriodicOffsetArray value="-1.6,1.6,0"/>
+        <PeriodicOffsetArray value="-1.6,-1.6,0"/>
+        <PeriodicPeriodArray value="0"/>
+        <ExpireDelay value="1.4"/>
+        <FinalEffect value="KatarinaTalentClusterChargeOvercharge@SecondSpread"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="RegenGlobe@PickupHeroImpactSwitch">
+        <CaseArray Validator="IsKatarina" Effect="HeroKatarina@RegenGlobePickUpImpactSet"/>
+    </CEffectSwitch>
+</Catalog>

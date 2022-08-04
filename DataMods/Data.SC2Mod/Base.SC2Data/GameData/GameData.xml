@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CGame id="Dflt">
+        <AcquireMovementLimit value="10"/>
+        <AcquireLeashRadius value="2.625"/>
+        <DifficultyLevels index="4" Enabled="0"/>
+        <CreepDecaySound value="Storm_CreepDecay"/>
+        <CreepGrowSound value="Storm_CreepGrow"/>
+        <DifficultyDefault value="7"/>
+        <CalculateFullVision value="1"/>
+        <AIBuilds index="23">
+            <AttributeId value="AB23"/>
+            <Name value="UI/AIBuild23"/>
+            <MenuTooltip value="UI/AIBuild23Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="23"/>
+        </AIBuilds>
+        <AIBuilds index="24">
+            <AttributeId value="AB24"/>
+            <Name value="UI/AIBuild24"/>
+            <MenuTooltip value="UI/AIBuild24Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="24"/>
+        </AIBuilds>
+        <AIBuilds index="25">
+            <AttributeId value="AB25"/>
+            <Name value="UI/AIBuild25"/>
+            <MenuTooltip value="UI/AIBuild25Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="25"/>
+        </AIBuilds>
+        <AIBuilds index="27">
+            <AttributeId value="AB27"/>
+            <Name value="UI/AIBuild27"/>
+            <MenuTooltip value="UI/AIBuild27Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="27"/>
+        </AIBuilds>
+        <AIBuilds index="28">
+            <AttributeId value="AB28"/>
+            <Name value="UI/AIBuild28"/>
+            <MenuTooltip value="UI/AIBuild28Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="28"/>
+        </AIBuilds>
+        <AIBuilds index="29">
+            <AttributeId value="AB29"/>
+            <Name value="UI/AIBuild29"/>
+            <MenuTooltip value="UI/AIBuild29Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="29"/>
+        </AIBuilds>
+        <AIBuilds index="30" AttributeId="AB30"/>
+        <AIBuilds index="31" AttributeId="AB31"/>
+        <AIBuilds index="34">
+            <AttributeId value="AB34"/>
+            <Name value="UI/AIBuild34"/>
+            <MenuTooltip value="UI/AIBuild34Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="34"/>
+        </AIBuilds>
+        <AIBuilds index="35">
+            <AttributeId value="AB35"/>
+            <Name value="UI/AIBuild35"/>
+            <MenuTooltip value="UI/AIBuild35Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="35"/>
+        </AIBuilds>
+        <AIBuilds index="36">
+            <AttributeId value="AB36"/>
+            <Name value="UI/AIBuild36"/>
+            <MenuTooltip value="UI/AIBuild36Tip"/>
+            <Race value="Zerg"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="36"/>
+        </AIBuilds>
+        <AIBuilds index="43" AttributeId="AB43" Race="Terr"/>
+        <AIBuilds index="44" AttributeId="AB44" Race="Terr"/>
+        <AIBuilds index="45" AttributeId="AB45" Race="Terr"/>
+        <AIBuilds index="46" AttributeId="AB46" Race="Terr"/>
+        <AIBuilds index="48">
+            <AttributeId value="AB48"/>
+            <Name value="UI/AIBuild48"/>
+            <MenuTooltip value="UI/AIBuild48Tip"/>
+            <Race value="Terr"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="48"/>
+        </AIBuilds>
+        <AIBuilds index="49">
+            <AttributeId value="AB49"/>
+            <Name value="UI/AIBuild49"/>
+            <MenuTooltip value="UI/AIBuild49Tip"/>
+            <Race value="Terr"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="49"/>
+        </AIBuilds>
+        <AIBuilds index="50" AttributeId="AB50" Race="Terr"/>
+        <AIBuilds index="51" AttributeId="AB51" Race="Terr"/>
+        <AIBuilds index="52" AttributeId="AB52" Race="Terr"/>
+        <AIBuilds index="54">
+            <AttributeId value="AB54"/>
+            <Name value="UI/AIBuild54"/>
+            <MenuTooltip value="UI/AIBuild54Tip"/>
+            <Race value="Terr"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="54"/>
+        </AIBuilds>
+        <AIBuilds index="55">
+            <AttributeId value="AB55"/>
+            <Name value="UI/AIBuild55"/>
+            <MenuTooltip value="UI/AIBuild55Tip"/>
+            <Race value="Terr"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="55"/>
+        </AIBuilds>
+        <AIBuilds index="56">
+            <AttributeId value="AB56"/>
+            <Name value="UI/AIBuild56"/>
+            <MenuTooltip value="UI/AIBuild56Tip"/>
+            <Race value="Terr"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="56"/>
+        </AIBuilds>
+        <AIBuilds index="64">
+            <AttributeId value="AB64"/>
+            <Name value="UI/AIBuild64"/>
+            <MenuTooltip value="UI/AIBuild64Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="64"/>
+        </AIBuilds>
+        <AIBuilds index="65">
+            <AttributeId value="AB65"/>
+            <Name value="UI/AIBuild65"/>
+            <MenuTooltip value="UI/AIBuild65Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="65"/>
+        </AIBuilds>
+        <AIBuilds index="66">
+            <AttributeId value="AB66"/>
+            <Name value="UI/AIBuild66"/>
+            <MenuTooltip value="UI/AIBuild66Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="66"/>
+        </AIBuilds>
+        <AIBuilds index="67">
+            <AttributeId value="AB67"/>
+            <Name value="UI/AIBuild67"/>
+            <MenuTooltip value="UI/AIBuild67Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="67"/>
+        </AIBuilds>
+        <AIBuilds index="69">
+            <AttributeId value="AB69"/>
+            <Name value="UI/AIBuild69"/>
+            <MenuTooltip value="UI/AIBuild69Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="69"/>
+        </AIBuilds>
+        <AIBuilds index="70" AttributeId="AB70" Race="Prot"/>
+        <AIBuilds index="71" AttributeId="AB71" Race="Prot"/>
+        <AIBuilds index="72" AttributeId="AB72" Race="Prot"/>
+        <AIBuilds index="73" AttributeId="AB73" Race="Prot"/>
+        <AIBuilds index="75">
+            <AttributeId value="AB75"/>
+            <Name value="UI/AIBuild75"/>
+            <MenuTooltip value="UI/AIBuild75Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="75"/>
+        </AIBuilds>
+        <AIBuilds index="76">
+            <AttributeId value="AB76"/>
+            <Name value="UI/AIBuild76"/>
+            <MenuTooltip value="UI/AIBuild76Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="76"/>
+        </AIBuilds>
+        <AIBuilds index="77">
+            <AttributeId value="AB77"/>
+            <Name value="UI/AIBuild77"/>
+            <MenuTooltip value="UI/AIBuild77Tip"/>
+            <Race value="Prot"/>
+            <MinDiff value="6"/>
+            <MaxDiff value="10"/>
+            <BuildScriptNum value="77"/>
+        </AIBuilds>
+        <DamageMinimum value="0"/>
+        <TriggerLibs index="0" Id="Game" IncludePath=""/>
+        <TriggerLibs index="1" Id="MapM" IncludePath=""/>
+        <TriggerLibs index="2" Id="Core" IncludePath=""/>
+        <TriggerLibs Id="AIAI"/>
+        <TriggerLibs Id="GDHL"/>
+        <TriggerLibs Id="0802665C"/>
+        <TriggerLibs Id="Sprt"/>
+        <TriggerLibs Id="Sond"/>
+        <SmartCommandContinuous value="1"/>
+        <PathingConfig index="InvulnerableBuildingAsBlocker" value="1"/>
+        <AttackRevealTime value="0"/>
+    </CGame>
+</Catalog>

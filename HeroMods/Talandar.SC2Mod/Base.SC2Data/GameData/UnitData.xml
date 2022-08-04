@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="HeroTalandar" parent="CoreHeroMounted">
+        <LifeStart value="2160"/>
+        <LifeMax value="2160"/>
+        <LifeRegenRate value="4.3203"/>
+        <EnergyStart value="0"/>
+        <EnergyMax value="400"/>
+        <EnergyRegenRate value="0"/>
+        <AbilArray Link="HeroTalandarAccelerationProtocol"/>
+        <AbilArray Link="HeroTalandarWarbringerProtocol"/>
+        <AbilArray Link="HeroTalandarThunderousCharge"/>
+        <AbilArray Link="HeroTalandarWhirlwind"/>
+        <AbilArray Link="HeroTalandarAccumulatedShield"/>
+        <AbilArray Link="HeroTalandarPraetorArmorSuit"/>
+        <AbilArray Link="HeroTalandarDragoonArmorSuit"/>
+        <AbilArray Link="HeroTalandarSolarCannon"/>
+        <AbilArray Link="HeroTalandarSolarCannonChannel"/>
+        <AbilArray Link="HeroTalandarSolariteFlare"/>
+        <AbilArray Link="HeroTalandarSolariteFlareChannel"/>
+        <AbilArray Link="HeroTalandarPurifierBeam"/>
+        <AbilArray Link="HeroTalandarPurifierBeam@PraetorArmorSuit"/>
+        <AbilArray Link="HeroTalandarPurifierBeam@DragoonArmorSuit"/>
+        <AbilArray Link="HeroTalandarArsenalOvercharge"/>
+        <AbilArray Link="HeroTalandarPurificationBlast"/>
+        <BehaviorArray Link="NotManaUserDummy"/>
+        <BehaviorArray Link="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior"/>
+        <BehaviorArray Link="HeroTalandarAccumulatedShield@CarryBehavior"/>
+        <WeaponArray Link="HeroTalandarWeaponPraetor"/>
+        <WeaponArray Link="HeroTalandarWeaponDragoon"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="HeroGenericHearthstone@NoMana" Type="AbilCmd" AbilCmd="HeroGenericHearthstone,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="HeroTalandarPurificationBlast" Type="AbilCmd" AbilCmd="HeroTalandarPurificationBlast,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroTalandarArsenalOvercharge" Type="AbilCmd" AbilCmd="HeroTalandarArsenalOvercharge,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroTalandarDragoonArmorSuit" Type="AbilCmd" AbilCmd="HeroTalandarPurifierBeam@DragoonArmorSuit,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroTalandarPurifierBeam" Type="AbilCmd" AbilCmd="HeroTalandarPurifierBeam,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroTalandarThunderousCharge" Type="AbilCmd" AbilCmd="HeroTalandarThunderousCharge,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroTalandarSolarCannon" Type="AbilCmd" AbilCmd="HeroTalandarSolarCannonChannel,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroTalandarSolarCannon" Type="AbilCmd" AbilCmd="HeroTalandarSolarCannon,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroTalandarWhirlwind" Type="AbilCmd" AbilCmd="HeroTalandarWhirlwind,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroTalandarSolariteFlare" Type="AbilCmd" AbilCmd="HeroTalandarSolariteFlareChannel,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroTalandarSolariteFlare" Type="AbilCmd" AbilCmd="HeroTalandarSolariteFlare,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroTalandarPraetorArmorSuit" Type="AbilCmd" AbilCmd="HeroTalandarPurifierBeam@PraetorArmorSuit,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroTalandarPraetorArmorSuit" Type="AbilCmd" AbilCmd="HeroTalandarPraetorArmorSuit,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroTalandarDragoonArmorSuit" Type="AbilCmd" AbilCmd="HeroTalandarDragoonArmorSuit,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroTalandarAccumulatedShield" Type="AbilCmd" AbilCmd="HeroTalandarAccumulatedShield,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <InnerRadius value="1"/>
+        <EditorCategories value="CoreHero:Talandar,ObjectType:Hero"/>
+    </CUnit>
+    <CUnit id="HeroTalandarArsenalOvercharge" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Talandar"/>
+    </CUnit>
+    <CUnit id="HeroTalandarTalentAccumulatedShieldImmortal" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Talandar"/>
+    </CUnit>
+    <CUnit id="HeroTalandarTalentPhaseBomb" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Talandar"/>
+    </CUnit>
+    <CUnit id="HeroTalandarPurificationBlast" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Talandar"/>
+    </CUnit>
+    <CUnit id="HeroTalandarPurificationBlast@WarpOutUnit" parent="CoreSummonInvulnerable">
+        <BehaviorArray Link="HeroTalandarPurificationBlast@TimedLife"/>
+        <EditorCategories value="CoreHero:Talandar,ObjectType:Unit"/>
+    </CUnit>
+    <CUnit id="HeroTalandarSolariteFlare@AirBomb" parent="CoreSummonInvulnerable">
+        <EditorCategories value="ObjectType:Unit,CoreHero:Talandar"/>
+        <BehaviorArray Link="HeroTalandarSolariteFlare@AirBombTimedLifeFull"/>
+        <BehaviorArray Link="HallOfStormsKnockbackImmunity"/>
+        <Mover value=""/>
+        <Radius value="0"/>
+        <SeparationRadius value="0"/>
+    </CUnit>
+    <CUnit id="HeroTalandarWeaponDragoon@Missile" parent="MISSILE">
+        <Mover value="HeroTalandarWeaponDragoon@Mover"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:FactionPurifier,CoreHero:Talandar"/>
+    </CUnit>
+    <CUnit id="HeroTalandarSolarCannon@DefaultMissile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Talandar"/>
+    </CUnit>
+    <CUnit id="HeroTalandarSolarCannon@ChargedMissile" parent="MISSILE_INVULNERABLE">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:FactionPurifier,CoreHero:Talandar"/>
+    </CUnit>
+</Catalog>

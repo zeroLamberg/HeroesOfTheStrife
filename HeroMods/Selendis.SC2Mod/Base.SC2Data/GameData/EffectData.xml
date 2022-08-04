@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectModifyPlayer id="HeroSelendis@LevelScalingModification">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroSelendis,LifeMax" Value="1.04"/>
+        <EffectArray Reference="Unit,HeroSelendis,EnergyMax" Value="10"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroSelendis,LifeStart" Value="1.04"/>
+        <EffectArray Reference="Unit,HeroSelendis,EnergyStart" Value="10"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroSelendis,LifeRegenRate" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroSelendis,EnergyRegenRate" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisTalentIntuitiveAttack@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisExecutorBlade@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisPowerStrike@ExpireDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisExecutorChargeApproach@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisCalldownVindicator@WeaponDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisVindicatorsBeam@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisTalentVindicatorsBeamThermalFire@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisWeapon@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisWeapon@DamageCritical,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroSelendisPowerStrike@Damage,Amount" Value="1.04"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroSelendisDecisiveStrike@ApplySlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisDecisiveStrike@Slow"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroSelendisDecisiveStrike@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="169"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroSelendisDecisiveStrike@InitialSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisDecisiveStrike@ApplySlow"/>
+        <EffectArray value="HeroSelendisDecisiveStrike@Damage"/>
+        <EffectArray value="HeroSelendisDecisiveStrike@ResetWeapon"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroSelendisDecisiveStrike@ResetWeapon">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Weapon Weapon="HeroSelendisWeapon" CooldownOperation="Set" CooldownAmount="0.125"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroSelendisExecutorsGuard@ApplyArmorBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisExecutorsGuard@ArmorBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisExecutorsGuard@ApplyWeaponBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisExecutorsGuard@WeaponBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisExecutorsGuard@ArmorResponseSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisExecutorsGuard@RemoveWeaponBuff"/>
+        <EffectArray value="HeroSelendisExecutorsGuard@ApplyArmorBuff"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroSelendisExecutorsGuard@RemoveWeaponBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisExecutorsGuard@WeaponBuff"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="HeroSelendisExecutorsGuard@RemoveArmorBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisExecutorsGuard@ArmorBuff"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroSelendisSolarLance@InitialSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisSolarLance@CreatePersistents"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroSelendisSolarLance@CreatePersistents">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="HeroSelendisSolarLance@OffsetCP"/>
+        <PeriodicEffectArray value="HeroSelendisSolarLance@OffsetCP"/>
+        <PeriodicOffsetArray value="-4,4,0"/>
+        <PeriodicOffsetArray value="4,4,0"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="HeroSelendisSolarLance@OffsetCP">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <OffsetVectorStartLocation Effect="HeroSelendisSolarLance@OffsetCP" Value="TargetPoint"/>
+        <OffsetVectorEndLocation Effect="HeroSelendisSolarLance@InitialSet"/>
+        <InitialEffect value="HeroSelendisSolarLance@LaunchMissile"/>
+        <InitialOffset value="0,-11,0"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="HeroSelendisSolarLance@LaunchMissile">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchLocation Effect="HeroSelendisSolarLance@OffsetCP" Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchEffect value="HeroSelendisSolarLance@Search"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <AmmoUnit value="HeroSelendisSolarLance@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="HeroSelendisSolarLance@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="180"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroSelendisSolarLance@ImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisSolarLance@Damage"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroSelendisSolarLance@Search">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <DebugTrace value="1"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="1.5" RectangleHeight="2" Effect="HeroSelendisSolarLance@ImpactSet"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectAddTrackedUnit id="HeroSelendisZealousRush@AddTrackedUnit">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <BehaviorLink value="HeroSelendisZealousRush@UnitTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
+    <CEffectApplyBehavior id="HeroSelendisZealousRush@ApplyMoveDummy">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisZealousRush@MoveDummy"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisZealousRush@ApplyShield">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisZealousRush@Shield"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisZealousRush@ApplyMark">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisZealousRush@Mark"/>
+    </CEffectApplyBehavior>
+    <CEffectCancelOrder id="HeroSelendisZealousRush@ClearOrder">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <AbilCmd value="HeroSelendisZealousRushApproach,Execute"/>
+        <Flags index="Queued" value="1"/>
+        <Flags index="Uninterruptible" value="1"/>
+    </CEffectCancelOrder>
+    <CEffectDamage id="HeroSelendisZealousRush@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Amount value="128"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroSelendisZealousRush@DashImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroSelendisZealousRush@DistanceSwitch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <CaseDefault value="HeroSelendisZealousRush@LaunchUnit"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroSelendisZealousRush@FinishSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroGenericMissileInterruptLaunchMissile"/>
+        <EffectArray value="HeroSelendisZealousRush@RemoveMoveDummy"/>
+    </CEffectSet>
+    <CEffectEnumTrackedUnits id="HeroSelendisZealousRush@GetTrackedUnit">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <BehaviorLink value="HeroSelendisZealousRush@UnitTracker"/>
+        <Effect value="HeroSelendisZealousRush@ImpactSet"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectSet id="HeroSelendisZealousRush@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisZealousRush@Damage"/>
+        <EffectArray value="HeroSelendisZealousRush@ApplyShield"/>
+        <EffectArray value="HeroSelendisZealousRush@RemoveMark"/>
+        <EffectArray value="HeroSelendisZealousRush@SetWeaponCooldown"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroSelendisZealousRush@InitialPersistent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="HeroSelendisZealousRush@LaunchUnit"/>
+        <InitialOffset value="0,-1.5,0"/>
+    </CEffectCreatePersistent>
+    <CEffectIssueOrder id="HeroSelendisZealousRush@IssueApproachOrder">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="HeroSelendisZealousRushApproach"/>
+        <CmdFlags index="Preempt" value="1"/>
+        <Target Value="TargetUnit"/>
+    </CEffectIssueOrder>
+    <CEffectModifyPlayer id="HeroSelendisTalentExecutorBladeImpalingBlade@Modification">
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroSelendisExecutorBlade,Cost[0].Vital[Energy]" Value="0"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroSelendisTalentExecutorBladeUpstage@ApplyAvoidance">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentExecutorBladeUpstage@Avoidance"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisTalentExecutorBladeUpstage@HandledSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisTalentExecutorBladeUpstage@RemoveAvoidance"/>
+        <EffectArray value="AvoidedDummyCaster"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroSelendisTalentExecutorBladeUpstage@RemoveAvoidance">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisTalentExecutorBladeUpstage@Avoidance"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroSelendisTalentInTheHeatOfBattle@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisTalentInTheHeatOfBattle@Add1CountUse"/>
+        <EffectArray value="HeroSelendisTalentInTheHeatOfBattle@AddCharge"/>
+    </CEffectSet>
+    <CEffectSet id="HeroSelendisTalentInTheHeatOfBattle@AbilUseSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisTalentInTheHeatOfBattle@ApplyBehavior"/>
+        <EffectArray value="HeroSelendisTalentInTheHeatOfBattle@SetCountUseTo1"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroSelendisTalentInTheHeatOfBattle@AddCharge">
+        <ValidatorArray value="HeroSelendisTalentInTheHeatOfBattle@ChargesNotFull"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichPlayer Value="Caster"/>
+        <Cost Abil="HeroSelendisTalentInTheHeatOfBattle">
+            <Charge>
+                <CountMax value="65535"/>
+                <CountUse value="-1"/>
+                <Link value="Abil/HeroSelendisTalentInTheHeatOfBattle"/>
+                <Location value="Unit"/>
+            </Charge>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectCreatePersistent id="HeroSelendisTalentInTheHeatOfBattle@ResetAbility">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Value="CasterUnit"/>
+        <InitialEffect value="HeroSelendisTalentInTheHeatOfBattle@ResetAbilityCharges"/>
+        <PeriodCount value="25"/>
+        <PeriodicEffectArray value="HeroSelendisTalentInTheHeatOfBattle@AddCharge"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyPlayer id="HeroSelendisTalentInTheHeatOfBattle@SetCountUseTo1">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroSelendisTalentInTheHeatOfBattle,Cost[0].Charge.CountUse" Value="1"/>
+        <EffectArray Operation="Set" Reference="Effect,HeroSelendisTalentInTheHeatOfBattle@ApplyBehavior,Count" Value="1"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroSelendisTalentInTheHeatOfBattle@Add1CountUse">
+        <ValidatorArray value="HeroSelendisTalentInTheHeatOfBattle@ChargesNot0"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichPlayer Value="Caster"/>
+        <EffectArray Reference="Abil,HeroSelendisTalentInTheHeatOfBattle,Cost[0].Charge.CountUse" Value="1"/>
+        <EffectArray Reference="Effect,HeroSelendisTalentInTheHeatOfBattle@ApplyBehavior,Count" Value="1"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroSelendisTalentTemplarBlades@ApplyTargetMarkBuff">
+        <ValidatorArray value="HeroSelendisTalentTemplarBlades@TargetHasNoMarkBuffCasterReq"/>
+        <ValidatorArray value="TargetLifeLT50Percent"/>
+        <ValidatorArray value="TargetNotStasisExceptTimeStop"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentTemplarBlades@TargetMarkBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HeroSelendisTalentTemplarBlades@SearchTargets">
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="500" Effect="HeroSelendisTalentTemplarBlades@ApplyTargetMarkBuff"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroSelendisTalentTemplarWillpowerForceOfWill@TalentChoosenSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisTalentTemplarWillpowerForceOfWill@ApplyArmorBuff">
+        <ValidatorArray value="HeroSelendisTalentTemplarWillpowerForceOfWill"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisTalentBladesofaZealot@ApplyStackBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentBladesofaZealot@StackBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroSelendisTalentBladesofaZealot@IncreaseToken">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroSelendisTalentBladesofaZealot@TokenCounter" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroSelendisTalentInTheHeatOfBattle@ResetAbilityCharges">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroSelendisTalentInTheHeatOfBattle,Cost[0].Charge.CountUse" Value="25"/>
+        <EffectArray Operation="Set" Reference="Effect,HeroSelendisTalentInTheHeatOfBattle@ApplyBehavior,Count" Value="25"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroSelendisTalentBladesofaZealot@DecreaseToken">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroSelendisTalentBladesofaZealot@TokenCounter" ChargeCountUse="1"/>
+    </CEffectModifyUnit>
+    <CEffectCreatePersistent id="HeroSelendisTalentBladesofaZealot@ResetToken">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Value="CasterUnit"/>
+        <PeriodCount value="1000"/>
+        <PeriodicEffectArray value="HeroSelendisTalentBladesofaZealot@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroSelendisTalentBladesofaZealot@TokenCounterController">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <CaseArray Validator="HeroSelendisTalentBladesofaZealot@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroSelendisTalentBladesofaZealot@QuestNotCompleted" Effect="HeroSelendisTalentBladesofaZealot@ApplyStackBuff" FallThrough="1"/>
+        <CaseArray Validator="HeroSelendisTalentBladesofaZealot@QuestNotCompleted" Effect="HeroSelendisTalentBladesofaZealot@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroSelendisTalentBladesofaZealot@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroSelendisTalentExecutorBladeExecutorPower@AddStackBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentExecutorBladeExecutorPower@StackBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroSelendisTalentExecutorBladeExecutorPower@IncreaseToken">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroSelendisTalentExecutorBladeExecutorPower@DecreaseToken">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Behavior="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter" ChargeCountUse="1"/>
+    </CEffectModifyUnit>
+    <CEffectCreatePersistent id="HeroSelendisTalentExecutorBladeExecutorPower@ResetTokenCounter">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Value="CasterUnit"/>
+        <PeriodCount value="100"/>
+        <PeriodicEffectArray value="HeroSelendisTalentExecutorBladeExecutorPower@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounterController">
+        <ValidatorArray value="HeroSelendisTalentExecutorBladeExecutorPower@QuestNotCompleted"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <CaseArray Validator="HeroSelendisTalentExecutorBladeExecutorPower@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroSelendisTalentExecutorBladeExecutorPower@QuestNotCompleted" Effect="HeroSelendisTalentExecutorBladeExecutorPower@AddStackBuff" FallThrough="1"/>
+        <CaseArray Validator="HeroSelendisTalentExecutorBladeExecutorPower@QuestNotCompleted" Effect="HeroSelendisTalentExecutorBladeExecutorPower@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroSelendisTalentExecutorBladeExecutorPower@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroSelendisTalentTemplarWillpowerReconfigurationShield@Modification">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroSelendisTemplarWillpower,Duration" Value="6"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior,Duration" Value="6"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroSelendisTalentCalldownVindicatorMothership@Modification">
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroSelendisTalentExecutorBladeAdvancedCharge@Modification">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroSelendisExecutorChargeApproach@Slow,Modification.UnifiedMoveSpeedFactor" Value="-0.250000"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroSelendisExecutorChargeApproach@Slow,Duration" Value="3"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroSelendisTalentBladesofaZealot@RefreshTokenCounter">
+        <ValidatorArray value="HeroSelendisTalentBladesofaZealot@QuestNotCompleted"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentBladesofaZealot@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisPowerStrike@ApplyAdditionalMovespeed">
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisPowerStrike@AdditionalMovespeed"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisTalentCalldownVindicatorMothership@DummyTriggerSet">
+        <ValidatorArray value="HeroSelendisTalentCalldownVindicatorMothership"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisTalentZealotofAiurTrueTemplar@ApplyRelentless">
+        <ValidatorArray value="HeroSelendisTalentZealotofAiurTrueTemplar"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentZealotofAiurTrueTemplar@Relentless"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisTalentVindicatorsBeamInduction@ImpactSet">
+        <ValidatorArray value="HeroSelendisTalentVindicatorsBeamInduction"/>
+        <ValidatorArray value="HeroSelendisTalentVindicatorsBeamInduction@SourceHasBeamPercentDamageController"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisTalentVindicatorsBeamInduction@RemovePercentDamageController"/>
+        <EffectArray value="HeroSelendisTalentVindicatorsBeamInduction@PercentDamage"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroSelendisTalentVindicatorsBeamInduction@PercentDamage" parent="CorePercentDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <VitalFractionMax index="Life" value="0.075"/>
+    </CEffectDamage>
+    <CEffectRemoveBehavior id="HeroSelendisTalentVindicatorsBeamInduction@RemovePercentDamageController">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="HeroSelendisTalentVindicatorsBeamInduction@BeamPercentDamageController"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroSelendisZealotofAiur@ApplyProtection">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisZealotofAiur@Protection"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisZealotofAiur@Set">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisZealotofAiur@ApplyProtection"/>
+    </CEffectSet>
+    <CEffectSet id="HeroSelendisCalldownVindicator@WeaponImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisCalldownVindicator@WeaponDamage"/>
+        <EffectArray value="HeroSelendisCalldownVindicator@ApplySilence"/>
+        <EffectArray value="HeroSelendisTalentCalldownVindicatorMothership@DummyTriggerSet"/>
+        <ValidatorArray value="TargetNotInvulnerable"/>
+        <ValidatorArray value="TargetNotSpecialDeathState"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisTalentExecutorBladeExecutorPower@RefreshTokenCounter">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroSelendisWeapon@CriticalSwitch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <CaseArray Validator="CritAliasPhysicalPower" Effect="HeroSelendisWeapon@DamageCritical"/>
+        <CaseDefault value="HeroSelendisWeapon@Damage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="HeroSelendisExecutorBlade@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="116"/>
+    </CEffectDamage>
+    <CEffectDamage id="HeroSelendisWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="144"/>
+    </CEffectDamage>
+    <CEffectDamage id="HeroSelendisPowerStrike@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="139"/>
+    </CEffectDamage>
+    <CEffectDamage id="HeroSelendisExecutorChargeApproach@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="134"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroSelendisPowerStrike@ApplySpeed">
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroSelendisPowerStrike@Speed"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyForce id="HeroSelendisPowerStrike@CasterApplyForce">
+        <WhichLocation Effect="HeroSelendisPowerStrike@PeriodicSet" Value="TargetPoint"/>
+        <Amount value="-10"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectApplyForce>
+    <CEffectCreatePersistent id="HeroSelendisPowerStrike@InitialPersistent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="OriginPoint"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="HeroSelendisPowerStrike@ApplySpeed"/>
+        <ExpireEffect value="HeroSelendisPowerStrike@ExpireSearch"/>
+        <FinalEffect value="HeroSelendisPowerStrike@RemoveSpeed"/>
+        <PeriodCount value="7"/>
+        <PeriodicValidator value="HeroSelendisPowerStrike@CasterHasSpeedBuff"/>
+        <PeriodicEffectArray value="HeroSelendisPowerStrike@PeriodicSet"/>
+        <PeriodicOffsetArray value="0,-8,0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="HeroSelendisPowerStrike@MovePersistent">
+        <WhichLocation Value="SourceUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <InitialEffect value="HeroSelendisPowerStrike@CasterApplyForce"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroSelendisPowerStrike@PeriodicSet">
+        <EffectArray value="HeroSelendisPowerStrike@TargetSearch"/>
+        <EffectArray value="HeroSelendisPowerStrike@MovePersistent"/>
+        <TargetLocationType value="Point"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroSelendisPowerStrike@RemoveSpeed">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="HeroSelendisPowerStrike@Speed"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroSelendisPowerStrike@TargetImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EffectArray value="HeroSelendisPowerStrike@Damage"/>
+        <EffectArray value="HeroSelendisPowerStrike@Slow"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroSelendisPowerStrike@TargetSearch">
+        <DebugTrace value="1"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="4" RectangleHeight="1.5" Effect="HeroSelendisPowerStrike@TargetImpactSet"/>
+        <AreaRelativeOffset value="0,-1"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+    </CEffectEnumArea>
+    <CEffectLaunchMissile id="HeroSelendisVindicatorsBeam@LaunchMissile">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchLocation Effect="HeroSelendisVindicatorsBeam@SecondPersistent" Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchEffect value="HeroSelendisVindicatorsBeam@MissileSet"/>
+        <Flags index="2D" value="1"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <AmmoUnit value="HeroSelendisSolarLance@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="HeroSelendisVindicatorsBeam@MissileSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisVindicatorsBeam@Search"/>
+        <EffectArray value="HeroSelendisTalentVindicatorsBeamThermalFire@Persistent"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisTalentExecutorBladeAdvancedCharge@ApplyAttackSpeed">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentExecutorBladeAdvancedCharge"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroSelendisExecutorCharge@RemoveCasterBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@CasterBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroSelendisExecutorChargeApproach@ApplySlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisExecutorChargeApproach@Slow"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroSelendisExecutorChargeApproach@RemoveTargetBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@TargetBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectDamage id="HeroSelendisCalldownVindicator@WeaponDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="158"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroSelendisExecutorCharge@HeroImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisExecutorCharge@ApplyCasterUnitTrackerBehavior"/>
+        <EffectArray value="HeroSelendisExecutorCharge@AddTrackedUnit"/>
+        <EffectArray value="HeroSelendisExecutorCharge@ApplyTargetBehavior"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectSet>
+    <CEffectAddTrackedUnit id="HeroSelendisExecutorCharge@AddTrackedUnit">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@UnitTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
+    <CEffectApplyBehavior id="HeroSelendisExecutorCharge@ApplyCasterUnitTrackerBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisExecutorCharge@UnitTracker"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroSelendisExecutorCharge@RemoveCasterUnitTrackerBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@UnitTracker"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumTrackedUnits id="HeroSelendisExecutorCharge@EnumTrackedUnits">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@UnitTracker"/>
+        <Effect value="HeroSelendisExecutorCharge@CastingSet"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectSet id="HeroSelendisExecutorCharge@CastingSet">
+        <ValidatorArray value="CasterNotRooted"/>
+        <ValidatorArray value="HeroSelendisExecutorCharge@TargetCombine"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisExecutorCharge@IssueApproachOrder"/>
+        <EffectArray value="HeroSelendisExecutorCharge@ApplyCharging"/>
+        <EffectArray value="HeroSelendisExecutorCharge@RemoveCasterBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisExecutorCharge@ApplyCasterBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Effect="HeroSelendisExecutorBlade" Value="Caster"/>
+        <Behavior value="HeroSelendisExecutorCharge@CasterBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisExecutorCharge@ApplyTargetBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisExecutorCharge@TargetBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HeroSelendisExecutorCharge@SearchHero">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,ImmuneToAOE,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1" RequestPercentage="1">
+            <SortArray value="TSDistance"/>
+        </TargetSorts>
+        <AreaArray RectangleWidth="1" RectangleHeight="6" Effect="HeroSelendisExecutorCharge@HeroImpactSet"/>
+        <AreaRelativeOffset value="0,-3"/>
+        <MaxCount value="1"/>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroSelendisTalentPowerStrikeFinalCut@ApplyArmorDebuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentPowerStrikeFinalCut"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisTalentPowerStrikePsionicDash@ApplyShieldBuff">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentPowerStrikePsionicDash@Shield"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisTalentInTheHeatOfBattle@ApplyBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentInTheHeatOfBattle"/>
+        <Count value="25"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroSelendisPowerStrike@ExpireDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="139"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroSelendisTalentPhaseWeapon@ApplyBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentPhaseWeapon@ActiveBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisTalentVindicatorsBeamThermalFire@ApplyMarkerBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentVindicatorsBeamThermalFire@MarkerBehavior"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisTalentIntuitiveAttack@ApplyBehaviorStack">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisTalentIntuitiveAttack"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HeroSelendisTalentTemplarWillpowerDeflectionShield@Search">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage"/>
+        <ValidatorArray value="HeroSelendisTalentTemplarWillpowerDeflectionShield"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroSelendisVindicatorsBeam@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="152"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="HeroSelendisCalldownVindicator@WeaponLaunchMissile">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactEffect value="HeroSelendisCalldownVindicator@WeaponImpactSet"/>
+        <AmmoUnit value="HeroSelendisCalldownVindicator@WeaponMissile"/>
+        <Movers Link="HeroSelendisCalldownVindicator@WeaponMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="HeroSelendisTalentVindicatorsBeamThermalFire@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="29"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroSelendisVindicatorsBeam@ApplySlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisVindicatorsBeam@Slow"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisPowerStrike@Slow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="139"/>
+    </CEffectDamage>
+    <CEffectDamage id="HeroSelendisWeapon@DamageCritical" parent="HeroSelendisWeapon@Damage">
+        <Name value="Effect/Name/HeroSelendisWeapon@DamageCritical"/>
+        <Marker Link="Effect/HeroSelendisWeapon@DamageCritical"/>
+        <TechAliasArray value="Critical"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroSelendisWeapon@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisWeapon@Damage"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroSelendisVindicatorsBeam@SecondPersistent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Effect="HeroSelendisVindicatorsBeam@InitialSet"/>
+        <OffsetVectorEndLocation Effect="HeroSelendisVindicatorsBeam@InitialSet"/>
+        <InitialEffect value="HeroSelendisVindicatorsBeam@LaunchMissile"/>
+        <InitialOffset value="0,-4.5,0"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroSelendisPowerStrike@ExpireSearch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <DebugTrace value="1"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Arc="180" Radius="2" Effect="HeroSelendisPowerStrike@ExpireImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="HeroSelendisVindicatorsBeam@InitialPersistent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Effect="HeroSelendisVindicatorsBeam@InitialSet"/>
+        <OffsetVectorEndLocation Effect="HeroSelendisVindicatorsBeam@InitialSet"/>
+        <InitialEffect value="HeroSelendisVindicatorsBeam@SecondPersistent"/>
+        <InitialOffset value="0,4.5,0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroSelendisVindicatorsBeam@InitialSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <EffectArray value="HeroSelendisVindicatorsBeam@InitialPersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroSelendisVindicatorsBeam@Search">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="2" RectangleHeight="2" Effect="HeroSelendisVindicatorsBeam@ImpactSet"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroSelendisExecutorBlade@Search">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="1" RectangleHeight="6" Effect="HeroSelendisExecutorBlade@ImpactSet"/>
+        <AreaRelativeOffset value="0,-3"/>
+        <RevealerParams Duration="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroSelendisExecutorBlade@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisExecutorBlade@Damage"/>
+        <EffectArray value="HeroSelendisExecutorBlade@ApplySlowBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="HeroSelendisVindicatorsBeam@ImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisVindicatorsBeam@Damage"/>
+        <EffectArray value="HeroSelendisVindicatorsBeam@ApplySlow"/>
+        <EffectArray value="HeroSelendisTalentVindicatorsBeamInduction@ImpactSet"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="HeroSelendisCalldownVindicator@CreateUnit">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnUnit value="HeroSelendisCalldownVindicator@Vindicator"/>
+        <SpawnEffect value="Summon@CreationSwitch"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="HeroSelendisCalldownVindicator@ApplyTimedLifeBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisCalldownVindicator@TimedLifeBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroSelendisExecutorBlade@ApplySlowBehavior" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisExecutorBlade@Slow"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroSelendisCalldownVindicator@SpawnDelay">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <InitialDelay value="0.25"/>
+        <InitialEffect value="HeroSelendisCalldownVindicator@ApplyTimedLifeBehavior"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroSelendisCalldownVindicator@Search">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+        <AreaArray Radius="5.75"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="0">
+            <AccumulatorArray value="HeroSelendisTalentTemplarWillpowerDeflectionShield@AbsorbedAmount"/>
+            <AccumulatorArray value="HeroSelendisTalentTemplarWillpowerDeflectionShield@Modifier"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroSelendisCalldownVindicator@WeaponSearch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,NoMinionAggro,Missile,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AreaArray Radius="5.5" Effect="HeroSelendisCalldownVindicator@WeaponLaunchMissile"/>
+        <RevealerParams Duration="1.25" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroSelendisTalentIntuitiveAttack@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="89"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroSelendisCalldownVindicator@ApplySilence" parent="CoreApplyBlind">
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisCalldownVindicator@Silence"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroSelendisTalentVindicatorsBeamThermalFire@Persistent">
+        <ValidatorArray value="HeroSelendisTalentVindicatorsBeamThermalFire"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <PeriodCount value="16"/>
+        <PeriodicEffectArray value="HeroSelendisTalentVindicatorsBeamThermalFire@Search"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroSelendisTalentVindicatorsBeamThermalFire@Search">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="2" RectangleHeight="2" Effect="HeroSelendisTalentVindicatorsBeamThermalFire@ImpactSet"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroSelendisTalentVindicatorsBeamThermalFire@ImpactSet">
+        <ValidatorArray value="HeroSelendisTalentVindicatorsBeamThermalFire@HasNoMarker"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisTalentVindicatorsBeamThermalFire@ApplyMarkerBehavior"/>
+        <EffectArray value="HeroSelendisTalentVindicatorsBeamThermalFire@Damage"/>
+    </CEffectSet>
+    <CEffectSet id="HeroSelendisExecutorBlade">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisExecutorCharge@SearchHero"/>
+        <EffectArray value="HeroSelendisExecutorBlade@Search"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroSelendisTalentExecutorBladeImpalingBlade@ModifyCooldowns">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroSelendisPowerStrike,Execute" CooldownOperation="Add" CooldownTimeUse="-0.125">
+            <Player Value="Caster"/>
+        </Cost>
+        <Cost Abil="HeroSelendisVindicatorsBeam,Execute" CooldownOperation="Add" CooldownTimeUse="-0.125">
+            <Player Value="Caster"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroSelendisTalentExecutorBladeImpalingBlade@ApplyCooldownBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentExecutorBladeImpalingBlade@CooldownBehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisPowerStrike@ExpireImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisPowerStrike@ExpireDamage"/>
+        <EffectArray value="HeroSelendisPowerStrike@Slow"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisTalentPowerStrikeTemplarsZeal@ApplyTimedDamageBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Behavior value="HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamageBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisTalentIntuitiveAttack@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisTalentIntuitiveAttack@RemoveStackBehavior"/>
+        <EffectArray value="HeroSelendisTalentIntuitiveAttack@Damage"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroSelendisTalentIntuitiveAttack@RemoveStackBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisTalentIntuitiveAttack"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectIssueOrder id="HeroSelendisExecutorCharge@IssueApproachOrder">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="HeroSelendisExecutorChargeApproach"/>
+        <CmdFlags index="Preempt" value="1"/>
+        <Target Effect="HeroSelendisExecutorCharge@CastingSet" Value="TargetUnit"/>
+    </CEffectIssueOrder>
+    <CEffectApplyBehavior id="HeroSelendisExecutorCharge@ApplyCharging">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisExecutorCharge@Charging"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroSelendisExecutorChargeApproach@RemoveChargingBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@Charging"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectCancelOrder id="HeroSelendisExecutorCharge@ClearOrder">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <AbilCmd value="HeroSelendisExecutorChargeApproach,Execute"/>
+        <Flags index="Queued" value="1"/>
+        <Flags index="Uninterruptible" value="1"/>
+    </CEffectCancelOrder>
+    <CEffectSet id="HeroSelendisExecutorChargeApproach@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisExecutorChargeApproach@Damage"/>
+        <EffectArray value="HeroSelendisExecutorChargeApproach@ApplySlow"/>
+        <EffectArray value="HeroSelendisExecutorChargeApproach@RemoveChargingBehavior"/>
+        <EffectArray value="HeroSelendisExecutorChargeApproach@RemoveTargetBehavior"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroSelendisZealousRush@ApplyCharging">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroSelendisZealousRush@Charging"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroSelendisZealousRush@InitialSet">
+        <ValidatorArray value="HeroSelendisZealousRush@TargetHasMark"/>
+        <ValidatorArray value="CasterNotRooted"/>
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisZealousRush@AddTrackedUnit"/>
+        <EffectArray value="HeroSelendisZealousRush@ApplyMoveDummy"/>
+        <EffectArray value="HeroSelendisZealousRush@LaunchUnit"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroSelendisZealousRush@RemoveMoveDummy">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisZealousRush@MoveDummy"/>
+    </CEffectRemoveBehavior>
+    <CEffectModifyUnit id="HeroSelendisZealousRush@SetWeaponCooldown">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactUnit Value="Caster"/>
+        <Weapon Weapon="HeroSelendisWeapon" CooldownOperation="Set" CooldownAmount="0.125"/>
+    </CEffectModifyUnit>
+    <CEffectDamage id="HeroSelendisZealousRushApproach@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Amount value="128"/>
+    </CEffectDamage>
+    <CEffectSet id="HeroSelendisZealousRushApproach@ImpactSet">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <EffectArray value="HeroSelendisZealousRushApproach@Damage"/>
+        <EffectArray value="HeroSelendisZealousRushApproach@ApplySlow"/>
+        <EffectArray value="HeroSelendisZealousRushApproach@RemoveChargingBehavior"/>
+        <EffectArray value="HeroSelendisZealousRush@RemoveMark"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroSelendisZealousRushApproach@RemoveChargingBehavior">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroSelendisExecutorCharge@Charging"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="HeroSelendisZealousRush@RemoveMark">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <WhichUnit Effect="HeroSelendisZealousRush@InitialSet"/>
+        <BehaviorLink value="HeroSelendisZealousRush@Mark"/>
+    </CEffectRemoveBehavior>
+    <CEffectLaunchMissile id="HeroSelendisZealousRush@LaunchUnit" parent="CoreLaunchUnitTargetUnitValidated">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactOffset value="0,-2,0"/>
+        <LaunchEffect value="HeroSelendisZealousRush@MissileScanPersistent"/>
+        <ImpactEffect value="HeroSelendisZealousRush@GetTrackedUnit"/>
+        <FinishEffect value="HeroSelendisZealousRush@FinishSet"/>
+        <Flags index="ValidateAbil" value="0"/>
+        <Movers Link="HeroSelendisZealousRush"/>
+        <SearchEffect value="HeroSelendisZealousRush@DashSeach"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <ImpactLocation Value="TargetPoint"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="HeroSelendisZealousRush@MissileScanPersistent">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="SourceUnit"/>
+        <InitialEffect value="ChenFlyingKickApplyCasterBehavior"/>
+        <PeriodCount value="8"/>
+        <PeriodicEffectArray value="HeroSelendisZealousRush@DashSeach"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <Chance value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="HeroSelendisZealousRush@DashSeach">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,ImmuneToSkillshots,Missile,Item,Stasis,Dead,Hidden"/>
+        <AreaArray>
+            <MaxCount value="1"/>
+            <RectangleWidth value="1"/>
+            <RectangleHeight value="1"/>
+            <Effect value="HeroSelendisZealousRush@DashImpactSet"/>
+        </AreaArray>
+    </CEffectEnumArea>
+</Catalog>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <DescFlags val="Locked"/>
+
+    <Constant name="StandardProgressBorder" val="35,125,255"/>
+    <Constant name="StandardProgressFill" val="110,170,255"/>
+    <Constant name="StandardBorder" val="35a1fc"/>
+    <Constant name="StandardEditBoxHighlightColor" val="007FFF"/>
+    <Constant name="StandardEditBoxHighlightAlpha" val="64"/>
+
+    <Constant name="ColorStormHeroXP" val="a630f2"/>
+    <Constant name="ColorStormBorderDark" val="999999"/>
+
+    <Constant name="CommandButtonColorNormal" val="110,170,255"/>
+    <Constant name="CommandButtonColorExecuting" val="cfabff"/>
+    <Constant name="CommandButtonColorNormalBorder" val="255,255,255"/>
+    <Constant name="CommandButtonColorExecutingBorder" val="255,255,255"/>
+    <Constant name="CommandButtonColorDisabled" val="77,77,77"/>
+    <Constant name="CommandButtonColorEnergy" val="65,55,94"/>
+    <Constant name="ColorUnitWireframeShields" val="0, 128, 255"/>
+    <Constant name="ColorGroupSelectionBorderNormal" val="35,125,255"/>
+    <Constant name="ColorGroupSelectionBorderSubgroup" val="110,170,255"/>
+    <Constant name="DesaturationColor" val="a0a0a0"/>
+    <Constant name="ColorButtonIconDisabled" val="383458"/>
+    <Constant name="EditBoxInputTimeout" val="300"/>
+
+    <!--========Default Colors========-->
+
+    <!--========Health Colors========-->
+
+    <Constant name="PlayerColor" val="25b325"/>
+    <Constant name="PlayerColorRegeneration" val="8c25b325"/> 
+
+    <Constant name="AllyColor" val="1b67e2"/>
+    <!--<Constant name="AllyColor" val="1858be"/>-->
+    <!--<Constant name="AllyColor" val="1b67e2"/>-->
+    <Constant name="AllyColorRegeneration" val="8c1b67e2"/>
+
+    <Constant name="EnemyColor" val="b11616"/>
+    <Constant name="EnemyColorRegeneration" val="c5d83e3e"/>
+
+    <Constant name="Poison" val="8cffea2c"/>
+    <Constant name="Shields" val="255,255,255"/>
+
+    <!--========Energy Colors========-->
+
+    <Constant name="EnergyMana" val="25c5ff"/>
+    <Constant name="EnergyManaRegeneration" val="8c25c5ff"/>
+    <Constant name="EnergyOrange" val="ffa125"/>
+ 
+
+    <!--========Kill Log COLORS========-->
+    <Constant name="ColorKillLogAllyLight" val="102,154,240"/>
+    <Constant name="ColorKillLogAllyLightColorblind" val="102,222,240"/>
+
+    <Constant name="ColorKillLogEnemyLight" val="240,95,102"/>
+    <Constant name="ColorKillLogEnemyLightColorblind" val="240,167,96"/>
+
+    <Constant name="ColorKillLogNeutral" val="183,100,226"/>
+    <Constant name="ColorKillLogNeutralLight" val="205,141,246"/>
+
+    <Constant name="ColorKillLogAlly" val="59,124,223"/>
+    <Constant name="ColorKillLogAllyColorblind" val="59,202,223"/>
+
+    <Constant name="ColorKillLogEnemy" val="223,55,63"/>
+    <Constant name="ColorKillLogEnemyColorblind" val="225,138,53"/>
+
+    <Constant name="ColorKillLogNeutralDark" val="250,156,36,212"/>
+
+    <Constant name="ColorKillLogAllyDark" val="0,58,205"/>
+    <Constant name="ColorKillLogAllyDarkColorblind" val="0,179,206"/>
+
+    <Constant name="ColorKillLogEnemyDark" val="168,4,12"/>
+    <Constant name="ColorKillLogEnemyDarkColorblind" val="166,85,6"/>
+
+
+    <!--========Unit Status COLORS========-->
+    <Constant name="StasisColor" val="E5BE07" />
+    <Constant name="TimeStopColor" val="CC0000" />
+    <Constant name="InvulnerableColor" val="C67B06" />
+    <Constant name="AbsorbingColor" val="EB00B7" />
+    <Constant name="UnstoppableColor" val="B163ED" />
+    <Constant name="UnkillableColor" val="C67B06" />
+    <Constant name="ProtectedColor" val="C67B06" />
+    <Constant name="StunnedColor" val="E00709" />
+    <Constant name="RootedColor" val="008000" />
+    <Constant name="PolymorphedColor" val="FFFFFF" />
+    <Constant name="MindControlledColor" val="5D06AE" />
+    <Constant name="SleepingColor" val="1344BF" />
+    <Constant name="FearedColor" val="5D06AE" />
+    <Constant name="TauntedColor" val="D28400" />
+    <Constant name="SilencedColor" val="3176E7" />
+    <Constant name="BlindedColor" val="7F7F7F" />
+
+    <Constant name="KineticDamage" val="ffc400" />
+    <Constant name="EnergeticDamage" val="c300ff" />
+    <!--
+    <Constant name="EnergeticDamage" val="7c02c2" />
+    <Constant name="StormDamage" val="b5c202" />-->
+    <Constant name="StormDamage" val="fbff00" />
+</Desc>

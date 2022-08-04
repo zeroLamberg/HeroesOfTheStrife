@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HeroAbathurWeaponLocustBombard@CloseRange">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="HeroAbathurWeaponLocustBombard@CloseRangeDamage"/>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="-;NoMinionAggro,Passive"/>
+        <MinScanRange value="8"/>
+        <Range value="3"/>
+        <Period value="1"/>
+        <DamagePoint value="0.125"/>
+        <Backswing value="0"/>
+        <Effect value="HeroAbathurWeaponLocustBombard@CloseRangeLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroAbathurWeaponEvolveMonstrosity" parent="CoreHeroWeaponSlow">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HeroAbathurWeaponEvolveMonstrosity@Damage"/>
+        <AcquireFilters value="-;NoMinionAggro"/>
+        <MinScanRange value="20"/>
+        <Range value="2"/>
+        <MinimumRange value="0.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.5"/>
+        <Effect value="HeroAbathurWeaponEvolveMonstrosity@Damage"/>
+        <RandomDelayMin value="11.25"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroAbathurWeaponEvolveMonstrosity@Melee" parent="CoreHeroWeaponSlow">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HeroAbathurWeaponEvolveMonstrosity@Damage"/>
+        <AcquireFilters value="-;NoMinionAggro"/>
+        <MinScanRange value="20"/>
+        <Range value="0.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.15"/>
+        <Backswing value="0.5"/>
+        <Effect value="HeroAbathurWeaponEvolveMonstrosity@Damage"/>
+        <RandomDelayMin value="11.25"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroAbathurWeaponLocustNormal">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="HeroAbathurWeaponLocustNormal@Damage"/>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="-;NoMinionAggro,Passive"/>
+        <MinScanRange value="8"/>
+        <Range value="1.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.125"/>
+        <Backswing value="0"/>
+        <Effect value="HeroAbathurWeaponLocustNormal@LaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroAbathurWeaponLocustAssault">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="HeroAbathurWeaponLocustAssault@Damage"/>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="-;NoMinionAggro,Passive"/>
+        <MinScanRange value="8"/>
+        <Range value="0.5"/>
+        <Period value="1"/>
+        <DamagePoint value="0.125"/>
+        <Backswing value="0"/>
+        <Effect value="HeroAbathurWeaponLocustAssault@AttackSwitch"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroAbathurWeaponLocustBombard">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="HeroAbathurWeaponLocustBombard@Damage"/>
+        <TargetFilters value="Visible;Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="-;NoMinionAggro,Structure,Heroic"/>
+        <MinScanRange value="14"/>
+        <Range value="7"/>
+        <MinimumRange value="3"/>
+        <Period value="1"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="HeroAbathurWeaponLocustBombard@LaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroAbathurWeapon" parent="CoreHeroWeaponSlow">
+        <EditorCategories value="Race:Neutral,CoreHero:Abathur"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <DisplayEffect value="HeroAbathurWeapon@Damage"/>
+        <MinScanRange value="4"/>
+        <Range value="1"/>
+        <Period value="0.7"/>
+        <PreswingBeforeAttack value="0.75"/>
+        <PreswingBetweenAttacks value="0.25"/>
+        <Effect value="HeroAbathurWeapon@DamageSet"/>
+    </CWeaponLegacy>
+</Catalog>

@@ -1,0 +1,934 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+include "LibMeta"
+
+include "LibMDHL_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Meta Data Helper
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libMDHL_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libMeta_InitVariables();
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #IncludeMetaDataHelper
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_IncludeMetaDataHelper_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_IncludeMetaDataHelper_Init () {
+    libMDHL_gt_IncludeMetaDataHelper = TriggerCreate("libMDHL_gt_IncludeMetaDataHelper_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Initialize Data Base
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBaseInitializeDataBase_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseInitialize, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBaseInitializeEventDataBase, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase, true, true);
+    libMeta_gv_metaDataInitialized = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBaseInitializeDataBase_Init () {
+    libMDHL_gt_MetaDataBaseInitializeDataBase = TriggerCreate("libMDHL_gt_MetaDataBaseInitializeDataBase_Func");
+    libGame_gf_MetaDataDataBaseInitialization(libMDHL_gt_MetaDataBaseInitializeDataBase);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - Initialize
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseInitialize_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itTrigger;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize, true, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseInitialize_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseInitialize = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseInitialize_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - Initialize
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202, true, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - NA - Initialize
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509, true, true);
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183, true, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - KR - Initialize
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - Unknown - Initialize
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - Offline Test
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((GameIsOnline() == false))) {
+            return false;
+        }
+
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "OfflineTester";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "OfflineTester";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_OfflineTest;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = libGame_gv_gameData.lv_gameReleaseDate;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - Zero#21933
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "Zero#21933";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "zeroLamberg#4101";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649462400);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - SkyreDub#2719
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "SkyreDub#2719";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "Skyre#6314";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - BroHugLFEX#2596
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "BroHugLFEX#2596";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "BROHUGLFEX#0348";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - EnzoScott#2525
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "EnzoScott#2525";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "EnzoScott#1841";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - Artem#27752
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "Artem#27752";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = libCore_gf_ConvertTextToString(StringExternal("Param/Value/lib_MDHL_3F691B06"));
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - Fallen#23105
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "Fallen#23105";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "Fallen#0532";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = "Silver";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate(IntToDateTime(1656633601), IntToDateTime(1659312000), "Bronze", libMeta_gv_metaDataBasePlayerCurrentPlayerCount);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - GoodAndBad#2133
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "GoodAndBad#2133";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "GoodAndBad#2254";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - KotJ#2729
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "KotJ#2729";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "KotJ#2484";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - Wilson11216#2469
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "Wilson11216#2469";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "Алексий Ульянов#9646";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = "Silver";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - DaveFux#2507
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "DaveFux#2507";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "DaveFux#6195";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649721600);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate(IntToDateTime(1649721601), IntToDateTime(1651363200), "Bronze", libMeta_gv_metaDataBasePlayerCurrentPlayerCount);
+    libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate(IntToDateTime(1651363201), IntToDateTime(1654041600), "Bronze", libMeta_gv_metaDataBasePlayerCurrentPlayerCount);
+    libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate(IntToDateTime(1654041601), IntToDateTime(1656633600), "Bronze", libMeta_gv_metaDataBasePlayerCurrentPlayerCount);
+    libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate(IntToDateTime(1656633601), IntToDateTime(1659312000), "Bronze", libMeta_gv_metaDataBasePlayerCurrentPlayerCount);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - Paulomat#21548
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "Paulomat#21548";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "Paulomat#9140";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1651363200);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - EU - DrLogan#21202
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "DrLogan#21202";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "DrLogan#7370";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_EU;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1652140800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - NA - Dasij#11698
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "Dasij#11698";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "Dasonga#9038";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_NA;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - NA - PREDATOR#12509
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "PREDATOR#12509";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "PREDATOR#4859";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_NA;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1649548800);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - NA - DeathWalker#11183
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "DeathWalker#11183";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "NerazimRaider#2946";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_region = libGame_ge_GameDataRegion_NA;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1652227200);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Player Data Base - Unknown - r275delta#1181
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid() == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gv_metaDataBasePlayerCurrentPlayerCount += 1;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_bNet = "r275delta#1181";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_discord = "r275delta#0891";
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_registrationDate = IntToDateTime(1657756801);
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_supporterTypeCurrent = null;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_offlineTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_developer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_moderator = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_vIP = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularTester = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_alphaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_betaTester = true;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_regularPlayer = false;
+    libMeta_gv_metaDataBase.lv_players[libMeta_gv_metaDataBasePlayerCurrentPlayerCount].lv_staffData.lv_player = true;
+    libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate(IntToDateTime(1656633601), IntToDateTime(1659312000), "Platinum", libMeta_gv_metaDataBasePlayerCurrentPlayerCount);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181_Init () {
+    libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181 = TriggerCreate("libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Initialize Event Data Base
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBaseInitializeEventDataBase_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBaseInitializeEventDataBase_Init () {
+    libMDHL_gt_MetaDataBaseInitializeEventDataBase = TriggerCreate("libMDHL_gt_MetaDataBaseInitializeEventDataBase_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Initialize WinterVeil Event
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBaseInitializeWinterVeilEvent_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBaseInitializeWinterVeilEvent_Init () {
+    libMDHL_gt_MetaDataBaseInitializeWinterVeilEvent = TriggerCreate("libMDHL_gt_MetaDataBaseInitializeWinterVeilEvent_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Meta Data Base - Initialize Free To Play Data Base
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase_Init () {
+    libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase = TriggerCreate("libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase_Func");
+}
+
+void libMDHL_InitTriggers () {
+    libMDHL_gt_IncludeMetaDataHelper_Init();
+    libMDHL_gt_MetaDataBaseInitializeDataBase_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseInitialize_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUInitialize_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseNAInitialize_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseKRInitialize_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseUnknownInitialize_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseOfflineTest_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUZero21933_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUSkyreDub2719_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUBroHugLFEX2596_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUEnzoScott2525_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUArtem27752_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUFallen23105_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUGoodAndBad2133_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUKotJ2729_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUWilson112162469_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUDaveFux2507_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUPaulomat21548_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseEUDrLogan21202_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseNADasij11698_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseNAPREDATOR12509_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseNADeathWalker11183_Init();
+    libMDHL_gt_MetaDataBasePlayerDataBaseUnknownr275delta1181_Init();
+    libMDHL_gt_MetaDataBaseInitializeEventDataBase_Init();
+    libMDHL_gt_MetaDataBaseInitializeWinterVeilEvent_Init();
+    libMDHL_gt_MetaDataBaseInitializeFreeToPlayDataBase_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libMDHL_InitLib_completed = false;
+
+void libMDHL_InitLib () {
+    if (libMDHL_InitLib_completed) {
+        return;
+    }
+
+    libMDHL_InitLib_completed = true;
+
+    libMDHL_InitLibraries();
+    libMDHL_InitTriggers();
+}
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDamage id="HeroKatarinaTalentSpecialOps">
+        <Location value="Attacker"/>
+        <Handled value="HeroKatarinaTalentSpecialOps@CDR"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroKatarinaAimedShot@Damage"/>
+        <RequireEffectArray value="HeroKatarinaLaserShot@Damage"/>
+        <RequireEffectArray value="HeroKatarinaMegaShot@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroKatarinaTalentClusterChargeClusterRecharge">
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="Heroic;Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroKatarinaClusterCharge@TimedLifeDamage"/>
+        <Location value="Attacker"/>
+        <Handled value="HeroKatarinaTalentClusterChargeClusterRecharge@CooldownModifier"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="KatarinaTalentClusterChargeCripplingCharge">
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <TargetFilters value="Heroic;Missile,Dead,Hidden"/>
+        <RequireEffectArray value="HeroKatarinaClusterCharge@TimedLifeDamage"/>
+        <Location value="Attacker"/>
+        <Handled value="KatarinaTalentClusterChargeCripplingCharge@ApplyStatsDebuff"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+</Catalog>

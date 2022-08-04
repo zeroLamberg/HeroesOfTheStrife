@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeTargetNotInBonusStun">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet"/>
+        <Behavior value="DiabloShadowChargeTerrainImpactStun"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloBlackSoulstone@TargetHasNotTargetBehaviorCasterReq">
+        <Behavior value="HeroDiabloBlackSoulstone@TargetSoulBehavior"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroDiabloTalentCruelty" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentFeastonFear" parent="PlayerTalent"/>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloTalentFireStompSoulstotheFlame@HaveNotAllStacks" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloTalentFireStompSoulstotheFlame@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloTalentDevilChargeDevastatingCharge@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloTalentDevilChargeDevastatingCharge@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloTalentFireStompSoulstotheFlame@HaveAllStacks" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloTalentFireStompSoulstotheFlame@TokenCounter"/>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloTalentDevilChargeDevastatingCharge@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloTalentDevilChargeDevastatingCharge@TokenCounter"/>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloBlackSoulstone@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloBlackSoulstone@TokenCounter">
+        <Compare value="GT"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloBlackSoulstone@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloBlackSoulstone@TokenCounter"/>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloBlackSoulstone@DiabloHasSouls50" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloBlackSoulstone@TokenCounter">
+        <Compare value="LT"/>
+        <Value value="50"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorPlayerTalent id="HeroDiabloTalentLordofTerror" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroDiabloTalentLightningBreathHellstorm@HasNoTalent">
+        <CombineArray value="HeroDiabloTalentLightningBreathHellstorm"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroDiabloTalentLightningBreathHellstorm" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentApocalypseDyingBreath" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentOverpowerOverpoweringNightmare" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentDevilChargeDomination" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloTalentFireStompDebilitatingFlames@SlowedFor24">
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="HeroDiabloTalentFireStompDebilitatingFlames@Slow"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroDiabloTalentMalevolence" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloTalentMalevolence@HasStacks" parent="CasterIsParent">
+        <Behavior value="HeroDiabloTalentMalevolence@Stack"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroDiabloTalentFireStompDebilitatingFlames" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloTalentFireStompHellfire@CasterHasMaxStacks">
+        <Value value="10"/>
+        <Behavior value="HeroDiabloTalentFireStompHellfire@SpellPowerStack"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroDiabloTalentFireStompHellfire" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentDevilChargeDevastatingCharge" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentDiabolicalMomentum" parent="PlayerTalent"/>
+    <CValidatorUnitCompareChargeUsed id="HeroDiabloBlackSoulstone@DiabloHasSouls100" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroDiabloBlackSoulstone@TokenCounter">
+        <Compare value="LT"/>
+        <Value value="100"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorPlayerTalent id="HeroDiabloTalentFireStompEternalFlames" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentLifeLeech" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentDevilChargeSacrificialSoul" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentFireStompSoulstotheFlame" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentBlackSoulstoneDevilsDue@Target" parent="PlayerTalent">
+        <WhichPlayer Value="Target"/>
+        <Value value="HeroDiabloTalentBlackSoulstoneDevilsDue"/>
+    </CValidatorPlayerTalent>
+    <CValidatorCombine id="HeroDiabloTalentBlackSoulstoneDevilsDue@IsDiabloAndHaveTalent">
+        <Type value="And"/>
+        <CombineArray value="HeroDiablo@IsDiablo"/>
+        <CombineArray value="HeroDiabloTalentBlackSoulstoneDevilsDue@Target"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroDiabloTalentBlackSoulstoneDevilsDue" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroDiabloTalentSoulShield" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloBlackSoulstone@DiabloGE50Stacks">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="50"/>
+        <Behavior value="HeroDiabloBlackSoulstone@Stacks"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetIsDead">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetIsHidden">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="Hidden;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetIsStasis">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="Stasis;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetIsInvulnerable">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="Invulnerable;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="HeroDiabloDevilCharge@TargetIsDeadOrUnstoppableOrInvulnerableOrHiddenOrStasis">
+        <CombineArray value="HeroDiabloDevilCharge@TargetIsDead"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetIsHidden"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetIsInvulnerable"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetIsStasis"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetIsUnstoppable"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetNotDeadOrInvulnerableOrStasisOrUnstoppableOrHidden">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="-;Player,Ally,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloBlackSoulstone@CasterHas100Stacks" parent="CasterIsParent">
+        <Compare value="GE"/>
+        <Value value="100"/>
+        <Behavior value="HeroDiabloBlackSoulstone@Stacks"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloBlackSoulstone@CasterHasNo100Stacks" parent="CasterNotParent">
+        <Compare value="LT"/>
+        <Value value="100"/>
+        <Behavior value="HeroDiabloBlackSoulstone@Stacks"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetIsUnstoppable">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="Unstoppable;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorPlayerRequirement id="HeroDiablo@SkinUltimateBlue">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroDiablo@SkinUltimateBlue"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroDiablo@SkinUltimateWhite">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroDiablo@SkinUltimateWhite"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinArchangelGreen">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinArchangelGreen"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinArchangelPurple">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinArchangelPurple"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinArchangelVar3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinArchangelVar3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinArchangelVar4">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinArchangelVar4"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinPrimeVar1">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinPrimeVar1"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinSummer18Var1">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinSummer18Var1"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinPrimeVar2">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinPrimeVar2"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinPrimeVar3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinPrimeVar3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinPrimeVar4">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinPrimeVar4"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinSummer18Var2">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinSummer18Var2"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinSummer18Var3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinSummer18Var3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinSummer18Var4">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinSummer18Var4"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroDiablo@BaseGreen">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroDiablo@BaseGreen"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroDiablo@BaseBlack">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroDiablo@BaseBlack"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroDiablo@BasePink">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroDiablo@BasePink"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinKaijoePurple">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinKaijoePurple"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinKaijoeRed">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinKaijoeRed"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinLurkabloPale">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinLurkabloPale"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveDiabloSkinLurkabloArgent">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HaveDiabloSkinLurkabloArgent"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorLocationCompareRange id="Diablo_BlackSoulStone_DistanceBetweenCasterAndTargetLE10">
+        <WhichLocation Effect="HeroDiabloBlackSoulstone@ApplyTargetSoulCarryBehavior" Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="10"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloDevilCharge@TargetIsFat" parent="TargetIsFat">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloDevilCharge@TargetHasTerrainStun" parent="TargetIsParent">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Behavior value="HeroDiabloDevilCharge@TerrainStun"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Diablo_LightningBreath_CasterIsNotCastingLightningBreath" parent="CasterNotParent">
+        <Behavior value="HeroDiabloLightningBreath"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationPathable id="HeroDiabloOverpower@TargetPathable">
+        <ResultFailed value="Error,Error/CantPathToLocation"/>
+        <WhichLocation Effect="HeroDiabloOverpower@PathableBehindApplyBehavior"/>
+        <Types index="Building" value="0"/>
+    </CValidatorLocationPathable>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloOverpower@TargetHasDiabloOverpowerPathableBehind" parent="CasterIsParent">
+        <Behavior value="HeroDiabloOverpower@PathableBehind"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloDevilCharge@TargetIsNotFat" parent="TargetIsNotFat">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroDiabloDevilCharge@TargetIsStructureAnd2point5RangeOfCaster">
+        <Type value="And"/>
+        <CombineArray value="TargetIsStructureOrPseudoStructure"/>
+        <CombineArray value="TargetWithin2point5RangeofCaster"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="HeroDiabloDevilCharge@CasterKnockback_DistanceBetweenCasterAndTargetPointG2point5">
+        <WhichLocation Effect="HeroDiabloDevilCharge@KnockbackOffsetSet"/>
+        <Compare value="GT"/>
+        <Range value="2.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloDevilCharge@TargetHasNoTerrainStun">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Behavior value="HeroDiabloDevilCharge@TerrainStun"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationArc id="HeroDiabloDevilCharge@TargetWithin30Degrees">
+        <WhichLocation Value="CasterUnit"/>
+        <Arc value="29.9926"/>
+        <Value Effect="HeroDiabloDevilCharge@InitialSet" Value="TargetUnit"/>
+    </CValidatorLocationArc>
+    <CValidatorCombine id="HeroDiabloDevilCharge@TargetNotWithin30Degrees">
+        <CombineArray value="HeroDiabloDevilCharge@TargetWithin30Degrees"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="HeroDiabloDevilCharge@CasterWithin2unitsofOrigin">
+        <WhichLocation Value="OriginPoint"/>
+        <Compare value="LT"/>
+        <Range value="2"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloDevilCharge@CasterHasPostChargeSpeedBuff" parent="CasterIsParent">
+        <Behavior value="HeroDiabloDevilCharge@CasterPostChargeSpeedBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="HeroDiabloDevilCharge@DistanceBetweenTargetAndPointG0point5">
+        <WhichLocation Effect="HeroDiabloDevilCharge@KnockbackOffsetSet"/>
+        <Compare value="GT"/>
+        <Range value="0.5"/>
+        <Value Effect="HeroDiabloDevilCharge@InitialSet" Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="HeroDiabloDevilCharge@TargetKnockbackValdiator">
+        <Type value="And"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetNotDead"/>
+        <CombineArray value="HeroDiabloDevilCharge@DistanceBetweenTargetAndPointG0point5"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetHasKnockbackBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroDiabloOverpower@CasterAndTargetCombine">
+        <Type value="And"/>
+        <CombineArray value="TargetNotDead"/>
+        <CombineArray value="TargetNotStasisExceptTimeStop"/>
+        <CombineArray value="TargetAndCasterIsTimeStoppedOrTargetAndCasterNotTimeStopped"/>
+        <CombineArray value="CasterNotDeadOrPolymorphedOrRootedOrStasisOrStunned"/>
+        <CombineArray value="CasterNotDeadOrPushPullOrSilencedOrStasisOrStunnedExceptTimeStop"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroDiabloDevilCharge@CasterKnockbackCombine">
+        <Type value="And"/>
+        <CombineArray value="HeroDiabloDevilCharge@CasterKnockback_TargetHasNoTerrainStun"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetNotDead"/>
+        <CombineArray value="CasterNotDazedOrDeadOrFearedOrPolymorphedOrRootedOrStasisOrStunnedExceptTimeStop"/>
+        <CombineArray value="HeroDiabloDevilCharge@CasterHasPostChargeSpeedBuff"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetHasKnockbackBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroDiabloDevilCharge@CasterKnockback_TargetHasNoTerrainStun">
+        <Type value="And"/>
+        <CombineArray value="HeroDiabloDevilCharge@TargetHasNoTerrainStun"/>
+        <CombineArray value="HeroDiabloDevilCharge@CasterKnockback_DistanceBetweenCasterAndTargetPointG2point5"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloLightningBreath@CasterIsCastingLightningBreath" parent="CasterIsParent">
+        <Behavior value="HeroDiabloLightningBreath"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Diablo_LightningBreath_DiabloHasManaBehavior" parent="CasterIsParent">
+        <Behavior value="Diablo_LightningBreath_ManaRestoration_HowManyStacks"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Diablo_EngulfingShadow_HasTimeLifeBehavior" parent="SourceIsParent">
+        <Behavior value="Diablo_EngulfingShadow_ShadowTimedLife"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroDiabloDevilCharge@TargetHasKnockbackBehavior" parent="TargetIsParent">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Behavior value="HeroDiabloDevilCharge@TargetImpactedMovespeed"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetNotDead">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="HeroDiabloDevilCharge@TargetNotUnstoppable">
+        <WhichUnit Effect="HeroDiabloDevilCharge@InitialSet"/>
+        <Filters value="-;Unstoppable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitType id="HeroDiablo@IsDiablo">
+        <Value value="HeroDiablo"/>
+    </CValidatorUnitType>
+    <CValidatorLocationEnumArea id="HeroDiabloTalentLordofTerror@EnemyProximityValidator">
+        <WhichLocation Value="CasterUnit"/>
+        <AreaArray Compare="GT" Radius="6"/>
+        <SearchFilters value="Heroic,Visible;Self,Player,Ally,Neutral,Worker,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitFilters id="DiabloShadowChargeTargetIsStructure">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet"/>
+        <Filters value="Structure;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeHasImpactedTargetUnitBehavior">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet" Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="DiabloShadowChargeTargetImpactedBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeCasterHasPostChargeBehavior">
+        <Value value="1"/>
+        <Behavior value="DiabloShadowChargeCasterPostUnitImpactChargeBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="DiabloShadowChargeDiabloKnockbackValidator">
+        <Type value="And"/>
+        <CombineArray value="DiabloShadowChargeTargetNotInBonusStun"/>
+        <CombineArray value="DiabloShadowChargeTargetNotDeadOrUnstoppable"/>
+        <CombineArray value="CasterNotDazedOrDeadOrFearedOrPolymorphedOrRootedOrStasisOrStunnedExceptTimeStop"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="DiabloShadowChargeTargetNotDeadOrUnstoppable">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet"/>
+        <Filters value="-;Dead,Unstoppable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeTargetDoesNotHaveStunLimiter">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet"/>
+        <Behavior value="DiabloShadowChargeStunLimiter"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeNoImpactedTargetUnitBehavior">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet" Value="Caster"/>
+        <Behavior value="DiabloShadowChargeTargetImpactedBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="DiabloShadowChargeTargetNotWithin30Degrees">
+        <CombineArray value="DiabloShadowChargeTargetWithin30Degrees"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorLocationArc id="DiabloShadowChargeTargetWithin30Degrees">
+        <WhichLocation Value="CasterUnit"/>
+        <Arc value="29.9926"/>
+        <Value Effect="DiabloShadowChargeCasterLaunchMissile" Value="TargetUnit"/>
+    </CValidatorLocationArc>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeTargetIsNotFat">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet"/>
+        <Behavior value="HeroGenericIsFat"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="DiabloShadowChargeTargetIsFat">
+        <WhichUnit Effect="DiabloShadowChargeInitialSet"/>
+        <Value value="1"/>
+        <Behavior value="HeroGenericIsFat"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <!--DiabloShadowChargeTargetHasHitPathingBlocker-->
+    <CValidatorCombine id="DiabloShadowChargeLocationIsNotWalkableOrTargetHasHitPathingBlocker">
+        <CombineArray value="NotWalkable"/>
+    </CValidatorCombine>
+</Catalog>

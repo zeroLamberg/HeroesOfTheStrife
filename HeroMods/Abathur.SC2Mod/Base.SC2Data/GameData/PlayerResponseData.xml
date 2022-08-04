@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPlayerResponseUnitDamage id="HeroAbathurTalentSpikeBurstEnvenomedSpikes">
+        <Location value="Attacker"/>
+        <Handled value="HeroAbathurTalentSpikeBurstEnvenomedSpikes@ApplySlowBehavior"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <TargetFilters value="-;-"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <RequireEffectArray value="HeroAbathurSpikeBurst@BurstDamage"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroAbathurTalentToxicNestEnvenomedNest">
+        <Location value="Attacker"/>
+        <Handled value="HeroAbathurTalentToxicNestEnvenomedNest@Set"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy"/>
+        <RequireEffectArray value="HeroAbathurToxicNest@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+    <CPlayerResponseUnitDamage id="HeroAbathurTalentToxicNestVileNest">
+        <Location value="Attacker"/>
+        <Handled value="HeroAbathurTalentToxicNestVileNest@ApplySlowBehavior"/>
+        <CasterFilters value="-;Ally,Neutral,Enemy,Missile,Destructible,Hidden"/>
+        <RequireEffectArray value="HeroAbathurToxicNest@Damage"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CPlayerResponseUnitDamage>
+</Catalog>

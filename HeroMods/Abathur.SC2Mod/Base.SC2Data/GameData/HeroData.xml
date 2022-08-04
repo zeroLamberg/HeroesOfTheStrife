@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CHero id="HeroAbathur" HeroID="Abathur" HeroVO="">
+        <AttributeId value="HAba"/>
+        <Flags index="UsesMount" value="0"/>
+        <Flags index="ExcludeFromMapIntro" value="1"/>
+        <Role value="Specialist"/>
+        <Melee value="1"/>
+        <VOArray index="AIAttack" value="AbathurHero_AI_Attack"/>
+        <VOArray index="AICaution" value="AbathurHero_AI_Caution"/>
+        <VOArray index="AIGoodJob" value="AbathurHero_AI_GoodJob"/>
+        <VOArray index="AIHeal" value="AbathurHero_AI_Heal"/>
+        <VOArray index="AIMercCapture" value="AbathurHero_AI_MercCapture"/>
+        <VOArray index="AIOnMyWay" value="AbathurHero_AI_OnMyWay"/>
+        <VOArray index="AIRetreat" value="AbathurHero_AI_Retreat"/>
+        <VOArray index="AIUhOh" value="AbathurHero_AI_Uhoh"/>
+        <VOArray index="Celebrate" value="AbathurHero_Celebrate"/>
+        <VOArray index="Cheer" value="AbathurHero_VOX_Cheer"/>
+        <VOArray index="Comeback" value="AbathurHero_Comeback"/>
+        <VOArray index="EndEnemyKillSpree" value="AbathurHero_KillSpreeEnd"/>
+        <VOArray index="GetHit" value="AbathurHero_VOX_GetHitSmall"/>
+        <VOArray index="GetHitLarge" value="AbathurHero_VOX_GetHitLarge"/>
+        <VOArray index="GetHitSmall" value="AbathurHero_VOX_GetHitSmall"/>
+        <VOArray index="GlueExamineLocked" value="AbathurHero_UI_ExLocked"/>
+        <VOArray index="GlueExaminePurchased" value="AbathurHero_UI_ExPurchased"/>
+        <VOArray index="GlueGift" value="AbathurHero_UI_Gift"/>
+        <VOArray index="GluePurchase" value="AbathurHero_UI_Purchase"/>
+        <VOArray index="GlueTrial" value="AbathurHero_UI_Trial"/>
+        <VOArray index="GlueWaitLocked" value="AbathurHero_UI_WaitLocked"/>
+        <VOArray index="GlueWaitPurchased" value="AbathurHero_UI_WaitPurchased"/>
+        <VOArray index="Goodbye" value="AbathurHero_Social_Goodbye"/>
+        <VOArray index="Healed" value="AbathurHero_Healed"/>
+        <VOArray index="Hello" value="AbathurHero_Social_Hello"/>
+        <VOArray index="IntroAgree" value="AbathurHero_IntroAgree"/>
+        <VOArray index="IntroBoast" value="AbathurHero_IntroBoast"/>
+        <VOArray index="IntroQuestion" value="AbathurHero_IntroQuestion"/>
+        <VOArray index="IntroResponse" value="AbathurHero_IntroRespond"/>
+        <VOArray index="KillGeneric" value="AbathurHero_Kill"/>
+        <VOArray index="Laugh" value="AbathurHero_Laugh"/>
+        <VOArray index="No" value="AbathurHero_No"/>
+        <VOArray index="PingAssistHero" value="AbathurHero_Ping_AssistHero"/>
+        <VOArray index="PingAssistMe" value="AbathurHero_Ping_AssistMe"/>
+        <VOArray index="PingAttackCore" value="AbathurHero_Ping_AttackCastle"/>
+        <VOArray index="PingAttackHere" value="AbathurHero_Ping_Attack"/>
+        <VOArray index="PingAttackHero" value="AbathurHero_Ping_KillHero"/>
+        <VOArray index="PingAttackMercCamp" value="AbathurHero_Ping_AttackMerc"/>
+        <VOArray index="PingAttackTown" value="AbathurHero_Ping_AttackOutpost"/>
+        <VOArray index="PingAttackWatchTower" value="AbathurHero_Ping_AttackTower"/>
+        <VOArray index="PingDefendCore" value="AbathurHero_Ping_DefendCastle"/>
+        <VOArray index="PingDefendHere" value="AbathurHero_Ping_Defend"/>
+        <VOArray index="PingDefendTown" value="AbathurHero_Ping_DefendOutpost"/>
+        <VOArray index="PingDefendWatchTower" value="AbathurHero_Ping_DefendTower"/>
+        <VOArray index="Pissed" value="AbathurHero_Pissed"/>
+        <VOArray index="Resurrected" value="AbathurHero_Resurrected"/>
+        <VOArray index="Revive" value="AbathurHero_Revive"/>
+        <VOArray index="Sorry" value="AbathurHero_Social_Sorry"/>
+        <VOArray index="SpecChosen" value="AbathurHero_Spec"/>
+        <VOArray index="TeamKilled" value="AbathurHero_TeamKilled"/>
+        <VOArray index="Thanks" value="AbathurHero_Social_Thanks"/>
+        <VOArray index="WellPlayed" value="AbathurHero_Social_WellPlayed"/>
+        <VOArray index="WorthIt" value="AbathurHero_WorthIt"/>
+        <Difficulty value="VeryHard"/>
+        <UniverseIcon value="Assets\Textures\UI_Glues_Store_GameIcon_SC2.dds"/>
+        <ReleaseDate Month="3" Day="13"/>
+        <Ratings Damage="3" Utility="7" Complexity="9"/>
+    </CHero>
+</Catalog>

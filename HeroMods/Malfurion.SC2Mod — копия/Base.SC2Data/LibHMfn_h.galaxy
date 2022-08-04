@@ -1,0 +1,20 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Malfurion
+//--------------------------------------------------------------------------------------------------
+// Constants
+const fixed libHMfn_gv_heroMalfurionInnervateCooldownModifier = 1.5;
+
+// Trigger Declarations
+trigger libHMfn_gt_HeroMalfurionTalentDangerousRootsTreantSpawned;
+trigger libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentDamaged;
+trigger libHMfn_gt_HeroMalfurionMoonfireCelestialAlignmentAbsorbed;
+trigger libHMfn_gt_HeroMalfurionRegrowthNaturesProtection;
+trigger libHMfn_gt_HeroMalfurionInnervateCooldownModifier;
+trigger libHMfn_gt_HeroMalfurionRegrowthLifeSeed;
+trigger libHMfn_gt_HeroMalfurionTranquilitySerenity;
+
+// Library Initialization
+void libHMfn_InitVariables ();
+

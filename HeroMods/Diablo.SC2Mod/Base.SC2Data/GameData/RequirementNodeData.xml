@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementCountUpgrade id="CountUpgradeHeroDiablo@BaseBlackCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroDiablo@BaseBlack" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroDiablo@BaseGreenCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroDiablo@BaseGreen" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroDiablo@BasePinkCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroDiablo@BasePink" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroDiablo@SkinUltimateBlueCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroDiablo@SkinUltimateBlue" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroDiablo@SkinUltimateWhiteCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroDiablo@SkinUltimateWhite" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountBehavior id="CountBehaviorHeroDiabloLightningBreathCompleteOnlyAtUnitTechTreeCheat">
+        <Count Link="HeroDiabloLightningBreath" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementAnd id="AndEqCountBehaviorHeroDiabloBlackSoulstone@StacksCompleteOnlyAtUnit75EqCountBehaviorDeadCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorHeroDiabloBlackSoulstone@StacksCompleteOnlyAtUnit75"/>
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorHeroDiabloBlackSoulstone@StacksCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroDiabloBlackSoulstone@Stacks" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementEq id="EqCountBehaviorHeroDiabloBlackSoulstone@StacksCompleteOnlyAtUnit75">
+        <OperandArray index="0" value="CountBehaviorHeroDiabloBlackSoulstone@StacksCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="75"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinArchangelGreenCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinArchangelGreen" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinArchangelPurpleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinArchangelPurple" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinArchangelVar3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinArchangelVar3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinArchangelVar4CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinArchangelVar4" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinPrimeVar1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinPrimeVar1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinPrimeVar2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinPrimeVar2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinPrimeVar3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinPrimeVar3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinPrimeVar4CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinPrimeVar4" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinSummer18Var1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinSummer18Var1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinSummer18Var2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinSummer18Var2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinSummer18Var3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinSummer18Var3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinSummer18Var4CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinSummer18Var4" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinLurkabloArgentCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinLurkabloArgent" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinLurkabloPaleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinLurkabloPale" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinKaijoePurpleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinKaijoePurple" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDiabloSkinKaijoeRedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DiabloSkinKaijoeRed" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+</Catalog>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTexture id="Malfurion_Winter_Var1_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var1_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var2_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var2_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var1_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var1_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var3_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var3_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var2_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var2_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var1_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var1_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Ultimate_Red_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Ultimate_Red_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Ultimate_White_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Ultimate_White_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Ultimate_Red_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Ultimate_Red_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Purple_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Purple_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_White_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_White_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Purple_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Purple_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Var3_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Var3_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_White_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_White_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Purple_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Purple_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var1_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var1_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var2_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var2_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var1_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var1_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var3_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var3_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var2_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var2_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var1_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var1_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Betrayer_Brown_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Betrayer_Brown_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Betrayer_Red_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Betrayer_Red_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Betrayer_Brown_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Betrayer_Brown_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Betrayer_Red_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Betrayer_Red_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var3_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var3_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var2_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var2_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Flame_Var3_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Flame_Var3_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Var3_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Var3_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_White_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_White_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Var3_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Var3_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Stormrage_Var3_Normal" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Stormrage_Var3_Norm.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Ultimate_White_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Ultimate_White_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var4_Diffuse" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var4_Diff.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var3_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var3_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var2_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var2_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var4_Emissive" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var4_Emis.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var3_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var3_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var4_Specular" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var4_Spec.dds"/>
+    </CTexture>
+    <CTexture id="Malfurion_Winter_Var4_Normal" parent="MainSlotTexture">
+        <File value="Assets\textures\Storm_Hero_Malfurion_Winter_Var4_Norm.dds"/>
+    </CTexture>
+    <CTexture id="Storm_Malfurion_Purple_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Malfurion_Purple_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Malfurion_Purple_Spec" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Malfurion_White_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Malfurion_White_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Malfurion_White_Spec" parent="MainSlotTexture"/>
+</Catalog>

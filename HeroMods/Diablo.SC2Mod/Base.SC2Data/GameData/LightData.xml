@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CLight id="Storm_Diablo_ArgentLurkablo_Portrait" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Storm_Diablo_Azure_Portrait" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Storm_Diablo_Azure_Portrait"/>
+            <AmbientColor value="0.305882,0.400000,0.196078"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.300000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.713726,0.882353,1.000000"/>
+                <ColorMultiplier value="1.161000"/>
+                <SpecColorMultiplier value="0.000000"/>
+                <Direction value="0.223220,0.413009,-0.882948"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.011765,0.278431,0.815686" ColorMultiplier="0.525000" Direction="0.785022,0.245259,-0.568849"/>
+            <DirectionalLight index="Back" Color="0.964706,0.803922,0.537255" ColorMultiplier="0.537000" Direction="0.335044,0.167558,0.927184"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Storm_Portrait_Diablo_Base" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Storm_Portrait_Diablo_Base"/>
+            <AmbientColor value="0.466667,0.415686,0.337255"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.300000"/>
+            <DirectionalLight index="Key">
+                <Color value="1.000000,0.839216,0.686275"/>
+                <ColorMultiplier value="0.871000"/>
+                <SpecularColor value="1.000000,0.929412,0.882353"/>
+                <SpecColorMultiplier value="0.603000"/>
+                <Direction value="-0.274624,0.833311,-0.479764"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.501961,0.729412,1.000000" ColorMultiplier="1.429000" Direction="0.569980,-0.627940,0.529919"/>
+            <DirectionalLight index="Back" Color="1.000000,0.874510,0.713726" ColorMultiplier="0.646000" Direction="0.552673,-0.406721,-0.727414"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Storm_Diablo_Kaijo_Portrait" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+        <ToDInfoArray index="0">
+            <Id value="Storm_Diablo_Kaijo_Portrait"/>
+            <AmbientColor value="0.686275,0.666667,0.643137"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="HDREmisMultiplier" value="0.420000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.300000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.764706,0.882353,1.000000"/>
+                <ColorMultiplier value="0.918000"/>
+                <SpecColorMultiplier value="0.232000"/>
+                <Direction value="0.601990,0.630607,-0.489839"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="1.000000,0.713726,0.549020" ColorMultiplier="0.098000" Direction="-0.213125,-0.596877,-0.773509"/>
+            <DirectionalLight index="Back" Color="1.000000,0.686275,0.447059" ColorMultiplier="0.184000" Direction="0.544845,0.744710,-0.385423"/>
+        </ToDInfoArray>
+    </CLight>
+    <CLight id="Storm_Diablo_Lurkablo_Portrait" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Storm_Diablo_LurkabloPale_Portrait" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Storm_Diablo_Toxic_Portrait" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Storm_Diablo_Toxic_Portrait"/>
+            <AmbientColor value="0.305882,0.400000,0.196078"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.300000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.713726,0.882353,1.000000"/>
+                <ColorMultiplier value="1.161000"/>
+                <SpecColorMultiplier value="0.000000"/>
+                <Direction value="0.223220,0.413009,-0.882948"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.011765,0.278431,0.815686" ColorMultiplier="0.525000" Direction="0.785022,0.245259,-0.568849"/>
+            <DirectionalLight index="Back" Color="0.964706,0.803922,0.537255" ColorMultiplier="0.537000" Direction="0.335044,0.167558,0.927184"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Storm_ShopModelLight_Diablo" parent="default">
+        <ToDInfoArray index="0" Id="Storm_ShopModelLight_Diablo" AmbientColor="0.305882,0.231373,0.133333" OperatorHDR="4">
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="HDRBloomThreshold" value="0.600000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.647059,0.909804,1.000000"/>
+                <ColorMultiplier value="1.084000"/>
+                <SpecColorMultiplier value="1.000000"/>
+                <Direction value="-0.627507,0.439385,-0.642788"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.231373,0.756863,1.000000" ColorMultiplier="0.400000" Direction="0.484045,0.763322,-0.427831"/>
+            <DirectionalLight index="Back" Color="1.000000,0.529412,0.000000" ColorMultiplier="1.365000" Direction="0.864463,-0.440656,-0.241922"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+    <CLight id="Storm_ShopModelLight_DiabloSkin1" parent="default">
+        <ToDInfoArray index="0" Id="Storm_ShopModelLight_DiabloSkin1" AmbientColor="0.231373,0.129412,0.231373" OperatorHDR="4">
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="HDRBloomThreshold" value="0.600000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.647059,0.909804,1.000000"/>
+                <ColorMultiplier value="1.084000"/>
+                <SpecColorMultiplier value="1.000000"/>
+                <Direction value="-0.627507,0.439385,-0.642788"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="1.000000,0.035294,0.329412" ColorMultiplier="0.275000" Direction="0.484045,0.763322,-0.427831"/>
+            <DirectionalLight index="Back" Color="1.000000,0.701961,0.192157" ColorMultiplier="1.995000" Direction="0.864463,-0.440656,-0.241922"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+    <CLight id="Storm_ShopModelLight_DiabloSkin2" parent="default">
+        <ToDInfoArray index="0" Id="Storm_ShopModelLight_DiabloSkin2" AmbientColor="0.231373,0.231373,0.290196" OperatorHDR="4">
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="HDRBloomThreshold" value="0.600000"/>
+            <DirectionalLight index="Key">
+                <Color value="1.000000,0.937255,0.862745"/>
+                <ColorMultiplier value="1.084000"/>
+                <SpecColorMultiplier value="1.000000"/>
+                <Direction value="-0.627507,0.439385,-0.642788"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="1.000000,0.356863,0.000000" ColorMultiplier="0.305000" Direction="0.484045,0.763322,-0.427831"/>
+            <DirectionalLight index="Back" Color="1.000000,0.701961,0.000000" ColorMultiplier="1.059000" Direction="0.864463,-0.440656,-0.241922"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Base" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Base"/>
+            <AmbientColor value="0.345098,0.180392,0.160784"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.900000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.854902,0.800000"/>
+                <ColorMultiplier value="1.202000"/>
+                <SpecularColor value="0.929412,0.000000,0.882353"/>
+                <SpecColorMultiplier value="1.148000"/>
+                <Direction value="-0.010539,0.686118,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.686275,0.447059,0.360784" ColorMultiplier="1.972000" Direction="0.330222,0.022802,0.943628"/>
+            <DirectionalLight index="Back" Color="0.105882,0.227451,0.819608" ColorMultiplier="7.586000" Direction="-0.844177,-0.535938,0.011693"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Archangel" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Base"/>
+            <AmbientColor value="0.015686,0.019608,0.109804"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDRSpecMultiplier" value="2.000000"/>
+            <Param index="HDREmisMultiplier" value="2.000000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.921569,0.874510,0.611765"/>
+                <ColorMultiplier value="1.000000"/>
+                <SpecularColor value="0.937255,0.956863,0.658824"/>
+                <SpecColorMultiplier value="2.000000"/>
+                <Direction value="-0.586880,-0.032606,-0.809017"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.376471,0.419608,0.800000" ColorMultiplier="1.000000" Direction="0.488726,0.797840,0.352985"/>
+            <DirectionalLight index="Back" Color="0.929412,0.364706,0.176471" ColorMultiplier="0.500000" Direction="-0.655503,0.462235,0.597205"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Kaijo" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Kaijo"/>
+            <AmbientColor value="0.211765,0.223529,0.321569"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDRBloomThreshold" value="0.900000"/>
+            <Param index="HDRWhitePoint" value="1.850000"/>
+            <Param index="HDREmisMultiplier" value="1.410000"/>
+            <Param index="TerrainSpecularExp" value="73.000000"/>
+            <Param index="CreepSpecularExp" value="30.000000"/>
+            <Param index="CreepHDRSpecMultiplier" value="3.000000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.474510,0.576471,0.419608"/>
+                <ColorMultiplier value="1.758000"/>
+                <SpecularColor value="0.909804,0.000000,0.941177"/>
+                <SpecColorMultiplier value="1.365000"/>
+                <Direction value="0.957815,0.017388,-0.286859"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.729412,0.674510,0.403922" ColorMultiplier="0.269000" Direction="-0.747465,0.516798,-0.417391"/>
+            <DirectionalLight index="Back" Color="0.301961,0.000000,1.000000" ColorMultiplier="4.519000" Direction="-0.929783,-0.367376,0.023211"/>
+        </ToDInfoArray>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Lurkablo" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Lurkablo"/>
+            <AmbientColor value="0.207843,0.000000,0.188235"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <Param index="AOOcclusionRadius" value="1.000000"/>
+            <Param index="AONoOcclusion" value="0.900000"/>
+            <Param index="AODetailOcclusionRadius" value="0.010000"/>
+            <Param index="AODetailNoOcclusion" value="0.060000"/>
+            <Param index="AODetailOcclusionPower" value="4.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.854902,0.800000"/>
+                <ColorMultiplier value="0.804000"/>
+                <SpecularColor value="0.000000,0.929412,0.882353"/>
+                <SpecColorMultiplier value="1.718000"/>
+                <Direction value="0.520754,0.551453,-0.651702"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.686275,0.447059,0.356863" ColorMultiplier="0.462000" Direction="0.123126,0.813173,-0.568849"/>
+            <DirectionalLight index="Back" Color="0.109804,0.376471,1.000000" ColorMultiplier="3.758000" Direction="-0.627344,-0.764013,-0.150743"/>
+        </ToDInfoArray>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Prime" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Prime"/>
+            <AmbientColor value="0.494118,0.454902,0.419608"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.500000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.854902,0.800000"/>
+                <SpecularColor value="1.000000,0.929412,0.882353"/>
+                <SpecColorMultiplier value="1.800000"/>
+                <Direction value="-0.010539,0.686118,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.313726,0.352941,0.529412" ColorMultiplier="5.000000" Direction="0.640856,-0.640856,0.422618"/>
+            <DirectionalLight index="Back" Color="0.882353,0.705882,0.156863" ColorMultiplier="5.000000" Direction="-0.865201,-0.499524,0.043619"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Prime_Var1" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Prime_Var1"/>
+            <AmbientColor value="0.490196,0.450980,0.411765"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.500000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.862745,0.803922"/>
+                <SpecularColor value="0.882353,1.000000,1.000000"/>
+                <SpecColorMultiplier value="1.500000"/>
+                <Direction value="-0.000000,0.686199,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.803922,0.313726,0.117647" ColorMultiplier="2.250000" Direction="0.640856,-0.640856,0.422618"/>
+            <DirectionalLight index="Back" Color="0.705882,0.960784,1.000000" ColorMultiplier="5.000000" Direction="-0.865201,-0.499524,0.043619"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Prime_Var2" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Prime_Var2"/>
+            <AmbientColor value="0.490196,0.450980,0.411765"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.500000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.823529,0.803922"/>
+                <SpecularColor value="0.882353,1.000000,1.000000"/>
+                <SpecColorMultiplier value="1.500000"/>
+                <Direction value="-0.000000,0.686199,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.803922,0.313726,0.113725" ColorMultiplier="1.750000" Direction="0.640856,-0.640856,0.422618"/>
+            <DirectionalLight index="Back" Color="0.941177,1.000000,0.705882" ColorMultiplier="5.000000" Direction="-0.865201,-0.499524,0.043619"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Prime_Var3" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Prime_Var3"/>
+            <AmbientColor value="0.490196,0.450980,0.411765"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.500000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.862745,0.803922"/>
+                <SpecularColor value="0.882353,1.000000,1.000000"/>
+                <SpecColorMultiplier value="1.500000"/>
+                <Direction value="-0.000000,0.686199,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.803922,0.313726,0.117647" ColorMultiplier="2.250000" Direction="0.640856,-0.640856,0.422618"/>
+            <DirectionalLight index="Back" Color="0.705882,0.960784,1.000000" ColorMultiplier="5.000000" Direction="-0.865201,-0.499524,0.043619"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Prime_Var4" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Prime_Var4"/>
+            <AmbientColor value="0.490196,0.450980,0.411765"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.500000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.823529,0.803922"/>
+                <SpecularColor value="0.882353,1.000000,1.000000"/>
+                <SpecColorMultiplier value="1.500000"/>
+                <Direction value="-0.000000,0.686199,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.803922,0.313726,0.113725" ColorMultiplier="1.750000" Direction="0.640856,-0.640856,0.422618"/>
+            <DirectionalLight index="Back" Color="0.941177,1.000000,0.705882" ColorMultiplier="5.000000" Direction="-0.865201,-0.499524,0.043619"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Summer18" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Summer18"/>
+            <AmbientColor value="0.270588,0.227451,0.227451"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.900000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.854902,0.800000"/>
+                <ColorMultiplier value="0.989000"/>
+                <SpecularColor value="0.000000,0.929412,0.882353"/>
+                <SpecColorMultiplier value="1.334000"/>
+                <Direction value="0.335610,0.608207,-0.719340"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.623529,0.439216,0.647059" ColorMultiplier="1.660000" Direction="0.934143,-0.101975,-0.342020"/>
+            <DirectionalLight index="Back" Color="0.101961,0.227451,0.819608" ColorMultiplier="17.179001" Direction="-0.703517,-0.696918,0.139173"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Summer18_Var1" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Summer18_Var1"/>
+            <AmbientColor value="0.066667,0.043137,0.050980"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.900000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.839216,0.945098,0.537255"/>
+                <ColorMultiplier value="0.841000"/>
+                <SpecularColor value="0.305882,0.580392,0.000000"/>
+                <SpecColorMultiplier value="3.631000"/>
+                <Direction value="-0.515775,-0.065889,-0.854187"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.627451,0.392157,0.376471" ColorMultiplier="1.698000" Direction="0.495443,0.783713,-0.374607"/>
+            <DirectionalLight index="Back" Color="0.188235,0.286275,1.000000" ColorMultiplier="11.350000" Direction="-0.752477,-0.624940,-0.207912"/>
+        </ToDInfoArray>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Summer18_Var2" parent="default">
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Summer18_Var2"/>
+            <AmbientColor value="0.341176,0.176471,0.156863"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.900000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.898039,0.854902,0.898039"/>
+                <ColorMultiplier value="1.012000"/>
+                <SpecularColor value="0.000000,0.929412,0.882353"/>
+                <SpecColorMultiplier value="1.274000"/>
+                <Direction value="0.094328,0.671179,-0.735269"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.686275,0.376471,0.372549" ColorMultiplier="3.126000" Direction="0.387542,0.155006,0.908727"/>
+            <DirectionalLight index="Back" Color="0.101961,0.301961,0.819608" ColorMultiplier="15.311000" Direction="-0.481893,-0.746320,-0.459114"/>
+        </ToDInfoArray>
+    </CLight>
+    <CLight id="Hero_Diablo_Portrait_Ultimate" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Hero_Diablo_Portrait_Ultimate"/>
+            <AmbientColor value="0.286275,0.184314,0.180392"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.650000"/>
+            <Param index="HDREmisMultiplier" value="1.900000"/>
+            <Param index="ColorizationInputHigh" value="0.975000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.882353,0.854902,0.800000"/>
+                <ColorMultiplier value="0.822000"/>
+                <SpecularColor value="0.000000,0.929412,0.882353"/>
+                <SpecColorMultiplier value="1.820000"/>
+                <Direction value="-0.010539,0.686118,-0.727414"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.686275,0.447059,0.360784" ColorMultiplier="1.972000" Direction="0.330222,0.022802,0.943628"/>
+            <DirectionalLight index="Back" Color="0.101961,0.227451,0.819608" ColorMultiplier="4.266000" Direction="-0.844177,-0.535938,0.011693"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:PortraitsUnitsOther"/>
+    </CLight>
+</Catalog>

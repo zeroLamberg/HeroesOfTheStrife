@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSkin id="DiabloKaijoe">
+        <ReplacementArray Catalog="Model" From="HeroDiablo" To="DiabloSkinKaijoe"/>
+        <ReplacementArray Catalog="Model" From="HeroDiabloDeathRagdoll" To="DiabloSkinKaijoeDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="DiabloPortrait" To="DiabloSkinKaijoePortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortrait" To="DiabloSkinKaijoePortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortraitAddition" To="DiabloSkinKaijoePortraitAddition"/>
+    </CSkin>
+    <CSkin id="DiabloSummer18">
+        <ReplacementArray Catalog="Model" From="HeroDiablo" To="DiabloSkinSummer18"/>
+        <ReplacementArray Catalog="Model" From="HeroDiabloDeathRagdoll" To="DiabloSkinSummer18DeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="DiabloPortrait" To="DiabloSkinSummer18Portrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortrait" To="DiabloSkinSummer18Portrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortraitAddition" To="DiabloSkinSummer18PortraitAddition"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Footstep" To="DiabloSummer18_Footstep"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_LightningBreath_Launch" To="DiabloSummer18_LightningBreath_Launch"/>
+        <ReplacementArray Catalog="Model" From="Diablo_Apocalypse_ModelWarning" To="DiabloSummer18_Apocalypse_ModelWarning"/>
+    </CSkin>
+    <CSkin id="DiabloArchangel">
+        <ReplacementArray Catalog="Model" From="HeroDiablo" To="DiabloSkinArchangel"/>
+        <ReplacementArray Catalog="Model" From="HeroDiabloDeathRagdoll" To="DiabloSkinArchangelDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="DiabloPortrait" To="DiabloSkinArchangelPortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortrait" To="DiabloSkinArchangelPortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortraitAddition" To="DiabloSkinArchangelPortraitAddition"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Footstep" To="DiabloArchangel_Footstep"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Attack" To="DiabloArchangel_Attack"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Death" To="DiabloArchangel_Death"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_LowMana" To="DiabloArchangel_LowMana"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Pissed" To="DiabloArchangel_Pissed"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Revive" To="DiabloArchangel_Revive"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Ultimate1Used" To="DiabloArchangel_Ultimate1Used"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Ultimate2Used" To="DiabloArchangel_Ultimate2Used"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Yes" To="DiabloArchangel_Yes"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_DevilCharge_Cast" To="DiabloArchangel_DevilCharge_Cast"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_FireStomp_SoundLaunch" To="DiabloArchangel_FireStomp_SoundLaunch"/>
+        <ReplacementArray Catalog="Model" From="DiabloBucket_LordOfTerror_AttackBeam" To="DiabloArchangelBucket_LordOfTerror_AttackBeam"/>
+        <ReplacementArray Catalog="Model" From="DiabloBucket_LordOfTerror_ModelCast" To="DiabloArchangelBucket_LordOfTerror_ModelCast"/>
+        <ReplacementArray Catalog="Model" From="Diablo_Apocalypse_ModelCast" To="DiabloArchangel_Apocalypse_ModelCast"/>
+        <ReplacementArray Catalog="Model" From="Diablo_Apocalypse_ModelWarning" To="DiabloArchangel_Apocalypse_ModelWarning"/>
+        <ReplacementArray Catalog="Model" From="Diablo_BlackSoulStone_SoulStoneMark" To="DiabloArchangel_BlackSoulStone_SoulStoneMark"/>
+        <ReplacementArray Catalog="Model" From="Diablo_DevilCharge_Impact" To="DiabloArchangel_DevilCharge_Impact"/>
+        <ReplacementArray Catalog="Model" From="Diablo_DevilCharge_Trail" To="DiabloArchangel_DevilCharge_Trail"/>
+        <ReplacementArray Catalog="Model" From="Diablo_FireStomp_ModelCast" To="DiabloArchangel_FireStomp_ModelCast"/>
+        <ReplacementArray Catalog="Model" From="Diablo_FireStomp_ModelImpact" To="DiabloArchangel_FireStomp_ModelImpact"/>
+        <ReplacementArray Catalog="Model" From="Diablo_FireStomp_Missile" To="DiabloArchangel_FireStomp_Missile"/>
+        <ReplacementArray Catalog="Model" From="Diablo_FireStomp_ReturnMissile" To="DiabloArchangel_FireStomp_ReturnMissile"/>
+        <ReplacementArray Catalog="Model" From="Diablo_LightningBreath_ModelCastGround" To="DiabloArchangel_LightningBreath_ModelCastGround"/>
+        <ReplacementArray Catalog="Model" From="Diablo_LightningBreath_ChargeModel" To="DiabloArchangel_LightningBreath_ChargeModel"/>
+        <ReplacementArray Catalog="Model" From="Diablo_LightningBreath_Impact" To="DiabloArchangel_LightningBreath_Impact"/>
+        <ReplacementArray Catalog="Model" From="Diablo_Overpower_Cast" To="DiabloArchangel_Overpower_Cast"/>
+        <ReplacementArray Catalog="Model" From="Diablo_Overpower_Impact" To="DiabloArchangel_Overpower_Impact"/>
+        <ReplacementArray Catalog="Model" From="Diablo_Overpower_Missile" To="DiabloArchangel_Overpower_Missile"/>
+    </CSkin>
+    <CSkin id="DiabloLurkablo">
+        <ReplacementArray Catalog="Model" From="HeroDiablo" To="DiabloSkinLurkablo"/>
+        <ReplacementArray Catalog="Model" From="HeroDiabloDeathRagdoll" To="DiabloSkinLurkabloDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="DiabloPortrait" To="DiabloSkinLurkabloPortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortrait" To="DiabloSkinLurkabloPortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortraitAddition" To="DiabloSkinLurkabloPortraitAddition"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Attack" To="DiabloLurkablo_Attack"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Death" To="DiabloLurkablo_Death"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_LowMana" To="DiabloLurkablo_LowMana"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Pissed" To="DiabloLurkablo_Pissed"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Revive" To="DiabloLurkablo_Revive"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Ultimate1Used" To="DiabloLurkablo_Ultimate1Used"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Ultimate2Used" To="DiabloLurkablo_Ultimate2Used"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Yes" To="DiabloLurkablo_Yes"/>
+    </CSkin>
+    <CSkin id="DiabloPrime">
+        <ReplacementArray Catalog="Model" From="HeroDiablo" To="DiabloSkinPrime"/>
+        <ReplacementArray Catalog="Model" From="HeroDiabloDeathRagdoll" To="DiabloSkinPrimeDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="DiabloPortrait" To="DiabloSkinPrimePortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortrait" To="DiabloSkinPrimePortrait"/>
+        <ReplacementArray Catalog="Model" From="DiabloPortraitAddition" To="DiabloSkinPrimePortraitAddition"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Attack" To="DiabloPrime_Attack"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Death" To="DiabloPrime_Death"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_LowMana" To="DiabloPrime_LowMana"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Pissed" To="DiabloPrime_Pissed"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Revive" To="DiabloPrime_Revive"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Ultimate1Used" To="DiabloPrime_Ultimate1Used"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Ultimate2Used" To="DiabloPrime_Ultimate2Used"/>
+        <ReplacementArray Catalog="Sound" From="Diablo_Yes" To="DiabloPrime_Yes"/>
+    </CSkin>
+    <CSkin id="DiabloPrimeVar3" parent="DiabloPrime">
+        <Name value="Skin/Name/DiabloPrimeVar3"/>
+        <ReplacementArray index="3" Catalog="Model" From="DiabloPortrait" To="DiabloSkinPrimePortraitVar3"/>
+    </CSkin>
+    <CSkin id="DiabloPrimeVar1" parent="DiabloPrime">
+        <Name value="Skin/Name/DiabloPrimeVar1"/>
+        <ReplacementArray index="3" Catalog="Model" From="DiabloPortrait" To="DiabloSkinPrimePortraitVar1"/>
+    </CSkin>
+    <CSkin id="DiabloPrimeVar2" parent="DiabloPrime">
+        <Name value="Skin/Name/DiabloPrimeVar2"/>
+        <ReplacementArray index="3" Catalog="Model" From="DiabloPortrait" To="DiabloSkinPrimePortraitVar2"/>
+    </CSkin>
+    <CSkin id="DiabloPrimeVar4" parent="DiabloPrime">
+        <Name value="Skin/Name/DiabloPrimeVar4"/>
+        <ReplacementArray index="3" Catalog="Model" From="DiabloPortrait" To="DiabloSkinPrimePortraitVar4"/>
+    </CSkin>
+    <CSkin id="DiabloSummer18Var1" parent="DiabloSummer18">
+        <Name value="Skin/Name/DiabloSummer18Var1"/>
+        <ReplacementArray index="3" Catalog="Model" From="DiabloPortrait" To="DiabloSkinSummer18PortraitVar1"/>
+    </CSkin>
+    <CSkin id="DiabloSummer18Var2" parent="DiabloSummer18">
+        <Name value="Skin/Name/DiabloSummer18Var2"/>
+        <ReplacementArray index="3" Catalog="Model" From="DiabloPortrait" To="DiabloSkinSummer18PortraitVar2"/>
+    </CSkin>
+    <CSkin id="HeroDiablo@Ultimate">
+        <ReplacementArray Catalog="Model" From="HeroDiablo@Base" To="HeroDiablo@SkinUltimate"/>
+        <ReplacementArray Catalog="Model" From="HeroDiablo@BaseDeathRagdoll" To="HeroDiablo@SkinUltimateDeathRagdoll"/>
+        <ReplacementArray Catalog="Actor" From="HeroDiablo@BasePortrait" To="HeroDiablo@SkinUltimatePortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroDiablo@BasePortrait" To="HeroDiablo@SkinUltimatePortrait"/>
+        <ReplacementArray Catalog="Model" From="HeroDiablo@BasePortraitAddition" To="HeroDiablo@SkinUltimatePortraitAddition"/>
+    </CSkin>
+</Catalog>

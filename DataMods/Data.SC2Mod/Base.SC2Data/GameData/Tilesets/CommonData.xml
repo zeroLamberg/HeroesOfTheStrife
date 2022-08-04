@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="BuildingProtoss_Warp_Placement" parent="Building">
+        <Model value="Assets\Buildings\Protoss\GatewayPlacement\GatewayPlacement.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Warp_Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\GatewayWarpIn\GatewayWarpIn.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Fort" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2\DarkProtossTurretEx2.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_Ascend"/>
+            <Type value="Sound"/>
+            <Payload value="KhaydarinMonolith_Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_PowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="KhaydarinMonolith_PowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_Descend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="KhaydarinMonolith_Descend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_PowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="KhaydarinMonolith_PowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Fort_Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_WarpIn\DarkProtossTurretEx2_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Fort_Death_Unpowered" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Unpowered_Death\DarkProtossTurretEx2_Unpowered_Death.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Fort_Placement" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Fort_Death" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Death\DarkProtossTurretEx2_Death.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Core_Placement" parent="Building">
+        <Model value="Assets\Buildings\Protoss\NexusPlacement\NexusPlacement.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Moonwell_Placement" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Placement\ProtossShield_Battery_Placement.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Warp" parent="Building">
+        <Model value="Assets\Buildings\Protoss\Gateway\Gateway.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Core" parent="Building">
+        <Model value="Assets\Buildings\Protoss\NexusEx1\NexusEx1.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+        <TextureDeclares Prefix="nexus_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="BuildingProtoss_Core_Death" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\NexusDeathEx1\NexusDeathEx1.m3"/>
+        <AnimSpeed value="0.750000"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.300000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.733000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="1.133000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossExplosionLarge"/>
+            <Type value="Sound"/>
+            <Time value="1.433000"/>
+        </Events>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Core_Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\NexusWarpIn\NexusWarpIn.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+        </Events>
+        <Radius value="1.400000"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+        <TextureDeclares Prefix="nexus_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="campaign"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="campaign"/>
+            <Adaptions TriggerOnSubstring="_Emissive" Slot="campaign"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="BuildingProtoss_Keep_Placement" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Moonwell" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery\ProtossShield_Battery.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Moonwell_Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_WarpIn\ProtossShield_Battery_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+        </Events>
+        <Lighting value="ShieldBattery"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionCatapult_DeathRagdoll" parent="UnitDeathRagdoll" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Reaver_Ragdoll_Death\Reaver_Ragdoll_Death.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Events>
+            <Variation value="0"/>
+            <Anim value="Death,00"/>
+            <Name value="Reaver_DeathExplosion"/>
+            <Type value="Sound"/>
+            <Time value="1.370000"/>
+            <Payload value="Reaver_DeathExplosion"/>
+        </Events>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionCatapult_Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Reaver_Death\Reaver_Death_01.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,01"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,02"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.600000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionCatapult_WarpIn" parent="Unit">
+        <Model value="Assets\Units\Protoss\Reaver_WarpIn\Reaver_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Priority value="16"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.750000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Keep" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2\DarkProtossTurretEx2.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_Ascend"/>
+            <Type value="Sound"/>
+            <Payload value="KhaydarinMonolith_Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_PowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="KhaydarinMonolith_PowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_Descend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="KhaydarinMonolith_Descend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_PowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="KhaydarinMonolith_PowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionCatapult" parent="Unit">
+        <Model value="Assets\Units\Protoss\Reaver\Reaver.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraLow07"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.750000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraLow07"/>
+        <UnitGlossaryCamera value="Star2CameraLow07"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Keep_Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_WarpIn\DarkProtossTurretEx2_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Keep_Death" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Death\DarkProtossTurretEx2_Death.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Moonwell_Death" parent="BuildingDeath" Prefix="Units\" low="">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Death\ProtossShield_Battery_Death.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionRanged_WarpIn" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Adept_Golden_WarpIn\Adept_Golden_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="BuildingProtoss_Keep_Death_Unpowered" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Unpowered_Death\DarkProtossTurretEx2_Unpowered_Death.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionPsionic_WarpIn" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden_WarpIn\HighTemplar_Golden_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.526100"/>
+        <ShadowRadius value="0.526100"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionMelee_WarpIn" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_WarpIn\Zealot_Golden_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.555400"/>
+        <ShadowRadius value="0.555400"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionMelee_Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_Death\Zealot_Golden_Death.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionMelee_DeathRagdoll" parent="UnitDeathRagdoll">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_DeathRagdoll\Zealot_Golden_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionRanged_Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Adept_Golden_Death\Adept_Golden_Death.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionRanged_DeathRagdoll" parent="UnitDeathRagdoll">
+        <Model value="Assets\Units\Protoss\Adept_Golden_DeathRagdoll\Adept_Golden_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionPsionic_Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden_Death\HighTemplar_Golden_Death.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionMelee" parent="Unit">
+        <Model value="Assets\Units\Protoss\Zealot_Golden\Zealot_Golden.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionRanged" parent="Unit">
+        <Model value="Assets\Units\Protoss\Adept_Golden\Adept_Golden.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="MinionProtoss_MinionPsionic" parent="Unit">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden\HighTemplar_Golden.m3"/>
+        <EditorCategories value="CoreHero:Minions"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+</Catalog>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorEventMacroRunnable id="MountDoubloonVar02TextureSwap">
+        <Do Send="TextureSelectById Storm_Mount_Doubloon_Base_Diablo_Diff"/>
+        <Do Send="TextureSelectById Storm_Mount_Doubloon_Base_Diablo_Norm"/>
+        <Do Send="TextureSelectById Storm_Mount_Doubloon_Base_Diablo_Spec"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="MountDoubloonVar03TextureSwap">
+        <Do Send="TextureSelectById Storm_Mount_Doubloon_Base_Zerg_Diff"/>
+        <Do Send="TextureSelectById Storm_Mount_Doubloon_Base_Zerg_Norm"/>
+        <Do Send="TextureSelectById Storm_Mount_Doubloon_Base_Zerg_Spec"/>
+    </CActorEventMacroRunnable>
+    <CModel id="MountBlackheartsDoubloonStore" parent="BaseMountStore">
+        <Model value="Assets\Store\Store_Mount_BlackheartsDoubloon\Store_Mount_BlackheartsDoubloon.m3"/>
+        <RequiredAnims value="Assets\Units\Mounts\Storm_Mount_HearthstoneCard_RequiredAnims\Storm_Mount_HearthstoneCard_RequiredAnims.m3a"/>
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="MountBlackheartsDoubloon" parent="BaseMount">
+        <Model value="assets\Units\Mounts\Storm_Mount_Doubloon_Base\Storm_Mount_Doubloon_Base.m3"/>
+        <RequiredAnims value="Assets\Units\Mounts\Storm_Mount_HearthstoneCard_RequiredAnims\Storm_Mount_HearthstoneCard_RequiredAnims.m3a"/>
+        <Events>
+            <Anim value="Walk,A,Start,00"/>
+            <Name value="Mount_Doubloon_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.156000"/>
+            <Payload value="Mount_Doubloon_Start"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Start,00"/>
+            <Name value="Mount_Doubloon_Stop"/>
+            <Type value="Sound"/>
+            <Time value="0.148000"/>
+            <Payload value="Mount_Doubloon_Stop"/>
+        </Events>
+        <TextureDeclares Prefix="Storm_Mount_Doubloon_Base_" Slot="main"/>
+    </CModel>
+    <CTexture id="Storm_Mount_Doubloon_Base_Diablo_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_Doubloon_Base_Diablo_Norm" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_Doubloon_Base_Diablo_Spec" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_Doubloon_Base_Zerg_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_Doubloon_Base_Zerg_Norm" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_Doubloon_Base_Zerg_Spec" parent="MainSlotTexture"/>
+    <CSound id="Mount_Doubloon_Summon" parent="_FX_Hero_Movement">
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Summon01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Summon02.ogg" FacialGroup=""/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Mount_Doubloon_Dismiss" parent="_FX_Hero_Movement">
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Dismiss01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Dismiss02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Dismiss03.ogg" FacialGroup=""/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Mount_Doubloon_Start" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.wav" FacialGroup=""/>
+        <Chance value="20"/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-14.000000,-14.000000"/>
+    </CSound>
+    <CSound id="Mount_Doubloon_Move_Loop" parent="_FX_Hero_Movement">
+        <AssetArray File="assets\Sounds\Mounts\Mount_HearthstoneCard\Mount_HearthstoneCard_Loop_Movement.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <MixerPriority value="75"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1539"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="2178" Volume="-96.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-22.000000,-20.000000"/>
+    </CSound>
+    <CSound id="Mount_Doubloon_Stop" parent="_FX_Hero_Movement">
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start04.ogg" FacialGroup=""/>
+        <Chance value="50"/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-13.000000,-13.000000"/>
+    </CSound>
+    <CSound id="StoreMount_Doubloon_Birth" parent="_FX_StoreMount">
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Dismiss01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Dismiss02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Dismiss03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Summon01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Summon02.ogg" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="0.000000,0.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="StoreMount_Doubloon_Idle" parent="_FX_StoreMount">
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Start04.ogg" FacialGroup=""/>
+        <Chance value="50"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-8.000000,-7.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="StoreMount_Doubloon_Purchase" parent="_FX_StoreMount">
+        <AssetArray File="assets\Sounds\Mounts\Mount_Doubloon\Mount_Doubloon_Purchase01.ogg" FacialGroup=""/>
+        <ResourcePriority value="16"/>
+        <Volume value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+</Catalog>

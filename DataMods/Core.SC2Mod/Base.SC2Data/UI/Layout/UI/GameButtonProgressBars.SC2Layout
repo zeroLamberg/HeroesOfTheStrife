@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+	<Frame type="SelectionUnitStatusPanel" name="GameButtonProgressBarCountdownTemplate">
+		<Anchor relative="$parent" />
+		<SpecificUnit val="_HERO_NAME_" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Anchor relative="$parent" />
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Anchor relative="$parent" />
+				<Behavior val="_BEHAVIOR_NAME_" />
+				<AcceptsMouse val="False" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Anchor relative="$parent" />
+					<AcceptsMouse val="False" />
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+						<Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+						<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+						<Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+						<Height val="120" />
+						<Width val="120" />
+						<AcceptsMouse val="False" />
+						<MinValue val="0" />
+						<MaxValue val="2" />
+						<Value val="0" />
+						<Circular val="True" />
+						<CircularStart val="0" />
+						<CircularEndOffset val="360" />
+						<FillInset val="0.0" />
+						<Frame type="Frame" name="FillImageContainer">
+							<Anchor relative="$parent" />
+							<Frame type="Image" name="FillImage">
+								<Anchor relative="$parent" />
+								<SubpixelRendering val="True" />
+								<ColorAdjustMode val="Colorize" />
+								<AdjustmentColor val="00FFDD" />
+								<RenderPriority val="510" />
+								<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add" />
+								<BlendMode val="Normal" />
+								<TextureType val="Circular" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+	</Frame>
+
+<Frame type="Frame" name="GameButtonProgressBarQ">
+  <Anchor relative="$parent" />
+  <!--                         -->
+	<!--        Talandar         -->
+	<!--                         -->
+  <Frame type="SelectionUnitStatusPanel" name="TalandarAbilityQCountdown" template="GameButtonProgressBars/GameButtonProgressBarCountdownTemplate">
+		<SpecificUnit val="HeroTalandar" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Behavior val="HeroTalandar@SecondSuitUIControllerQ" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Frame type="Frame" name="FillImageContainer">
+							<Frame type="Image" name="FillImage">
+								<AdjustmentColor val="c64aff" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+  </Frame>
+</Frame>
+
+<Frame type="Frame" name="GameButtonProgressBarW">
+  <Anchor relative="$parent" />
+  <!--                         -->
+	<!--        Talandar         -->
+	<!--                         -->
+  <Frame type="SelectionUnitStatusPanel" name="TalandarAbilityWCountdown" template="GameButtonProgressBars/GameButtonProgressBarCountdownTemplate">
+		<SpecificUnit val="HeroTalandar" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Behavior val="HeroTalandar@SecondSuitUIControllerW" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Frame type="Frame" name="FillImageContainer">
+							<Frame type="Image" name="FillImage">
+								<AdjustmentColor val="c64aff" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+  </Frame>
+</Frame>
+
+<Frame type="Frame" name="GameButtonProgressBarE">
+  <Anchor relative="$parent" />
+</Frame>
+
+<Frame type="Frame" name="GameButtonProgressBarR">
+  <Anchor relative="$parent" />
+
+  <!--<Frame type="SelectionUnitStatusPanel" name="TracerPulseBombChargeButtonOverrideFrame">
+    <Anchor relative="$parent" />
+    <SpecificUnit val="HeroTalandar" />
+    <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+      <Anchor relative="$parent" />
+      <AcceptsMouse val="False" />
+      <Frame type="UnitStatusAbilCharge" name="UnitStatusAbilCharge">
+        <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+        <Height val="76" />
+        <Width val="68" />
+        <AcceptsMouse val="False" />
+        <AbilityLink val="HeroTalandarWhirlwind" />
+        <ChargeLink val="Abil/HeroTalandarWhirlwind" />
+        <SendChargesEmptyAnimEvent val="True" />
+        <SendChargesFullAnimEvent val="True" />
+        <SendCurrentChangedAnimEvent val="True" />
+        <Frame type="Image" name="TracerPulseBombBackgroundImage">
+          <Anchor relative="$parent" />
+          <Texture val="Assets/Textures/Storm_UI_HUD_Tracer_Pulse_Bomb_Background.dds" />
+        </Frame>
+        <Frame type="ProgressBar" name="ChargeFillProgress">
+          <Anchor relative="$parent" />
+          <AcceptsMouse val="False" />
+          <RenderPriority val="512" />
+          <FillInset val="0.0" />
+          <Circular val="True" />
+          <CircularStart val="0" />
+          <CircularEndOffset val="360" />
+          <MinValue val="0" />
+          <MaxValue val="1" />
+          <Frame type="Frame" name="FillImageContainer">
+            <Anchor relative="$parent" />
+            <Frame type="Image" name="FillImage">
+              <Anchor relative="$parent" />
+              <Texture val="Assets/Textures/Storm_UI_HUD_Tracer_Pulse_Bomb_Fill_Image.dds" />
+              <TextureType layer="0" val="Circular" />
+            </Frame>
+          </Frame>
+        </Frame>
+			</Frame>
+		</Frame>
+	</Frame>-->
+
+  <Frame type="SelectionUnitStatusPanel" name="HeroTalandarSecondHeroic" template="GameButtonProgressBars/GameButtonProgressBarCountdownTemplate">
+		<SpecificUnit val="HeroTalandar" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Behavior val="HeroTalandar@SecondHeroicUIController" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Frame type="Frame" name="FillImageContainer">
+							<Frame type="Image" name="FillImage">
+								<AdjustmentColor val="c64aff" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+	</Frame>
+
+</Frame>
+
+<Frame type="Frame" name="GameButtonProgressBarD">
+	<Anchor relative="$parent" />
+	<!--                         -->
+	<!--        Katarina         -->
+	<!--                         -->
+	<Frame type="SelectionUnitStatusPanel" name="HeroKatarinaTalentWeaponMasterToTheLimit" template="GameButtonProgressBars/GameButtonProgressBarCountdownTemplate">
+		<SpecificUnit val="HeroKatarina" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Behavior val="HeroKatarinaTalentWeaponMasterToTheLimit@ActiveBuff" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Frame type="Frame" name="FillImageContainer">
+							<Frame type="Image" name="FillImage">
+								<AdjustmentColor val="ff002b" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+	</Frame>
+	<!--                         -->
+	<!--        Malfurion        -->
+	<!--                         -->
+	<Frame type="SelectionUnitStatusPanel" name="HeroMalfurionInnervateCooldown" template="GameButtonProgressBars/GameButtonProgressBarCountdownTemplate">
+		<SpecificUnit val="HeroMalfurion" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Behavior val="HeroMalfurionInnervate@Cooldown" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Frame type="Frame" name="FillImageContainer">
+							<Frame type="Image" name="FillImage">
+								<AdjustmentColor val="0099ff" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+	</Frame>
+	<!--                         -->
+	<!--        Talandar         -->
+	<!--                         -->
+	<!--<Frame type="SelectionUnitStatusPanel" name="TalandarAccumulatedShieldCountdown" template="GameButtonProgressBars/GameButtonProgressBarCountdownTemplate">
+		<SpecificUnit val="HeroTalandar" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Frame type="UnitStatusBehaviorIcon" name="UnitStatusBehaviorIcon">
+				<Behavior val="HeroTalandarAccumulatedShield@TalandarInCombat" />
+				<Frame type="BehaviorIcon" name="BehaviorIcon">
+					<Frame type="ProgressBar" name="CooldownBar">
+						<Frame type="Frame" name="FillImageContainer">
+							<Frame type="Image" name="FillImage">
+								<AdjustmentColor val="ffae00" />
+							</Frame>
+						</Frame>
+					</Frame>
+				</Frame>
+			</Frame>
+		</Frame>
+	</Frame>-->
+</Frame>
+
+<Frame type="Frame" name="GameButtonProgressBarInventoryButton">
+	<Anchor relative="$parent" />
+	<!--                         -->
+	<!--         Diablo          -->
+	<!--                         -->
+	<Frame type="SelectionUnitStatusPanel" name="DiabloResurrectionController">
+		<SpecificUnit val="HeroDiablo" />
+		<StateGroup name="Visibility">
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Diablo\Icon_Hero_Diablo_BlackSoulstone_a.dds" index="0"/>
+				<Action type="SetProperty" frame="$parent/$parent/AttentionEffect" Visible="True"/>
+			</State>
+		</StateGroup>
+	</Frame>
+	<!--                         -->
+	<!--        Katarina         -->
+	<!--                         -->
+	<Frame type="SelectionUnitStatusPanel" name="KatarinaWeaponController">
+		<Anchor relative="$parent"/>
+		<SpecificUnit val="HeroKatarina" />
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Anchor relative="$parent" />
+			<Frame type="UnitStatusValidatorAnimElement" name="CarriedWeaponVisibilityController">
+				<Anchor relative="$parent"/>
+				<Validator val="HeroKatarinaWeaponAutorifle@TargetHasWeaponCarried"/>
+				<Validator val="HeroKatarinaWeaponFlamethrower@TargetHasWeaponCarried"/>
+				<Validator val="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponCarried"/>
+				<Validator val="HeroKatarinaWeaponSnipe@TargetHasWeaponCarried"/>
+				<StateGroup name="Visibility">
+					<DefaultState val="NoState"/>
+					<State name="CarriedAutorifle">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponAutorifle@TargetHasWeaponCarried" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Autorifle_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffect" Visible="True"/>
+					</State>
+					<State name="CarriedFlamethrower">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponFlamethrower@TargetHasWeaponCarried" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Flamethrower_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffect" Visible="True"/>
+					</State>
+					<State name="CarriedGrenadeLauncher">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponCarried" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_GrenadeLauncher_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffect" Visible="True"/>
+					</State>
+					<State name="CarriedSnipe">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponSnipe@TargetHasWeaponCarried" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Snipe_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffect" Visible="True"/>
+					</State>
+				</StateGroup>
+			</Frame>
+			<Frame type="UnitStatusValidatorAnimElement" name="EquippedWeaponVisibilityController">
+				<Validator val="HeroKatarinaWeaponAutorifle@TargetHasWeaponEquipped"/>
+				<Validator val="HeroKatarinaWeaponFlamethrower@TargetHasWeaponEquipped"/>
+				<Validator val="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponEquipped"/>
+				<Validator val="HeroKatarinaWeaponSnipe@TargetHasWeaponEquipped"/>
+				<StateGroup name="Visibility">
+					<DefaultState val="NoState"/>
+					<State name="EquippedAutorifle">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponAutorifle@TargetHasWeaponEquipped" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Autorifle_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffectSpecial" Visible="True"/>
+					</State>
+					<State name="EquippedFlamethrower">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponFlamethrower@TargetHasWeaponEquipped" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Flamethrower_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffectSpecial" Visible="True"/>
+					</State>
+					<State name="EquippedGrenadeLauncher">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponGrenadeLauncher@TargetHasWeaponEquipped" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_GrenadeLauncher_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffectSpecial" Visible="True"/>
+					</State>
+					<State name="EquippedSnipe">
+						<When type="AnimationState" UnitStatusValidatorState="HeroKatarinaWeaponSnipe@TargetHasWeaponEquipped" />
+						<When type="Property" frame="$parent/$parent/$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Snipe_Carried.dds" index="0"/>
+						<Action type="SetProperty" frame="$parent/$parent/$parent/$parent/SelectedEffectSpecial" Visible="True"/>
+					</State>
+				</StateGroup>
+			</Frame>
+		</Frame>
+	</Frame>
+  <Frame type="SelectionUnitStatusPanel" name="HeroKatarinaWeaponAutorifleCooldown">
+    <Anchor relative="$parent"/>
+		<SpecificUnit val="HeroKatarina" />
+
+		<StateGroup name="Visibility">
+      <DefaultState val="Default"/>
+      <State name="Default"/>
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Autorifle_Carried.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+      <Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroKatarinaWeaponAutorifleCooldownIcon">
+          <Anchor relative="$parent"/>
+					<Behavior val="HeroKatarinaEquipAutorifle@Cooldown"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+              <Anchor relative="$parent"/>
+							<Behavior val="HeroKatarinaEquipAutorifle@Cooldown"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+                  <Anchor relative="$parent"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="8"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+                      <Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="ff0800"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+  <Frame type="SelectionUnitStatusPanel" name="HeroKatarinaWeaponFlamethrowerCooldown">
+    <Anchor relative="$parent"/>
+		<SpecificUnit val="HeroKatarina" />
+
+		<StateGroup name="Visibility">
+      <DefaultState val="Default"/>
+      <State name="Default"/>
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Flamethrower_Carried.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+      <Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroKatarinaWeaponFlamethrowerCooldownIcon">
+          <Anchor relative="$parent"/>
+					<Behavior val="HeroKatarinaEquipFlamethrower@Cooldown"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+              <Anchor relative="$parent"/>
+							<Behavior val="HeroKatarinaEquipFlamethrower@Cooldown"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+                  <Anchor relative="$parent"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="8"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+                      <Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="ff0800"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+  <Frame type="SelectionUnitStatusPanel" name="HeroKatarinaWeaponGrenadeLauncherCooldown">
+    <Anchor relative="$parent"/>
+		<SpecificUnit val="HeroKatarina" />
+
+		<StateGroup name="Visibility">
+      <DefaultState val="Default"/>
+      <State name="Default"/>
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_GrenadeLauncher_Carried.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+      <Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroKatarinaWeaponGrenadeLauncherCooldownIcon">
+          <Anchor relative="$parent"/>
+					<Behavior val="HeroKatarinaEquipGrenadeLauncher@Cooldown"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+              <Anchor relative="$parent"/>
+							<Behavior val="HeroKatarinaEquipGrenadeLauncher@Cooldown"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+                  <Anchor relative="$parent"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="8"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+                      <Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="ff0800"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+  <Frame type="SelectionUnitStatusPanel" name="HeroKatarinaWeaponSnipeCooldown">
+    <Anchor relative="$parent"/>
+		<SpecificUnit val="HeroKatarina" />
+
+		<StateGroup name="Visibility">
+      <DefaultState val="Default"/>
+      <State name="Default"/>
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Icons\Hero_Katarina\Katarina_Weapon_Snipe_Carried.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+      <Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroKatarinaWeaponSnipeCooldownIcon">
+          <Anchor relative="$parent"/>
+					<Behavior val="HeroKatarinaEquipSnipe@Cooldown"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+              <Anchor relative="$parent"/>
+							<Behavior val="HeroKatarinaEquipSnipe@Cooldown"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+                  <Anchor relative="$parent"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="8"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+                      <Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="ff0800"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+	<!--                         -->
+	<!--        Selendis         -->
+	<!--                         -->
+	<Frame type="SelectionUnitStatusPanel" name="HeroSelendisTalentPhaseWeapon">
+		<Anchor relative="$parent"/>
+		<SpecificUnit val="HeroSelendis" />
+		<StateGroup name="Visibility">
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroSelendisTalentPhaseWeaponIcon">
+					<Anchor relative="$parent"/>
+					<Behavior val="HeroSelendisTalentPhaseWeapon@ActiveBuff"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+							<Anchor relative="$parent"/>
+							<Behavior val="HeroSelendisTalentPhaseWeapon@ActiveBuff"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+									<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+									<Height val="102"/>
+									<Width val="102"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="3"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+											<Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="31c924"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+	<Frame type="SelectionUnitStatusPanel" name="HeroSelendisTalentInTheHeatOfBattle">
+		<Anchor relative="$parent"/>
+		<SpecificUnit val="HeroSelendis" />
+		<StateGroup name="Visibility">
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroSelendisTalentInTheHeatOfBattleIcon">
+					<Anchor relative="$parent"/>
+					<Behavior val="HeroSelendisTalentInTheHeatOfBattle"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+							<Anchor relative="$parent"/>
+							<Behavior val="HeroSelendisTalentInTheHeatOfBattle"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+									<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+									<Height val="102"/>
+									<Width val="102"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="3"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+											<Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="249ac9"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+	<!--                         -->
+	<!--        Talandar         -->
+	<!--                         -->
+	<Frame type="SelectionUnitStatusPanel" name="HeroTalandarPhaseBomb">
+		<Anchor relative="$parent"/>
+		<SpecificUnit val="HeroTalandar" />
+		<StateGroup name="Visibility">
+			<State name="Visible">
+				<When type="Property" frame="$parent/$parent/NormalImage" Texture="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-weapon.dds" index="0" operator="NotEqual"/>
+				<Action type="SetProperty" Alpha="0"/>
+			</State>
+		</StateGroup>
+
+		<Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+			<Anchor relative="$parent"/>
+			<AcceptsMouse val="False"/>
+
+			<Frame type="UnitStatusBehaviorIcon" name="HeroTalandarPhaseBombIcon">
+					<Anchor relative="$parent"/>
+					<Behavior val="HeroTalandarTalentPhaseBomb"/>
+					<AcceptsMouse val="False"/>
+
+					<Frame type="BehaviorIcon" name="BehaviorIcon">
+							<Anchor relative="$parent"/>
+							<Behavior val="HeroTalandarTalentPhaseBomb"/>
+							<AcceptsMouse val="False"/>
+
+							<Frame type="ProgressBar" name="CooldownBar">
+									<Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+									<Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+									<Height val="102"/>
+									<Width val="102"/>
+									<AcceptsMouse val="False"/>
+
+									<MinValue val="0"/>
+									<MaxValue val="3"/>
+									<Value val="0"/>
+									<Circular val="True"/>
+									<CircularStart val="0"/>
+									<CircularEndOffset val="360"/>
+									<FillInset val="0.0"/>
+
+									<Frame type="Frame" name="FillImageContainer">
+											<Anchor relative="$parent"/>
+
+											<Frame type="Image" name="FillImage">
+													<Anchor relative="$parent"/>
+													<SubpixelRendering val="True"/>
+													<ColorAdjustMode val="Colorize"/>
+													<AdjustmentColor val="3399FF"/>
+													<RenderPriority val="510"/>
+													<Unclipped val="true"/>
+
+													<Texture val="@UI/Storm_UI_InGame_AbilityButton_Active_Add"/>
+													<BlendMode val="Normal"/>
+													<TextureType val="Circular"/>
+											</Frame>
+									</Frame>
+							</Frame>
+					</Frame>
+			</Frame>
+			
+		</Frame>
+	</Frame>
+	<!--                         -->
+	<!--          End            -->
+	<!--                         -->
+</Frame>
+
+</Desc>

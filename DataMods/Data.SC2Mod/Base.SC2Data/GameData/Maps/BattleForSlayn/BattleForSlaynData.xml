@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectSet id="SlaynVoidRiftSpawn@DummyVisualSet"/>
+    <CEffectSet id="SlaynVoidRiftSpawn@ImpactSet">
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectDamage id="SlaynVoidThrasherShooting@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Amount value="2815"/>
+        <Fraction value="1">
+            <AccumulatorArray index="2" removed="1"/>
+        </Fraction>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="SlaynVoidThrasherShooting@LM">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <ImpactEffect value="SlaynVoidThrasherShooting@Damage"/>
+        <AmmoUnit value="SlaynVoidThrasherShooting@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="SlaynSupplicantWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Amount value="12"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="SlaynVoidRiftSpawn@LM">
+        <EditorCategories value="Race:NHbr"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="SlaynVoidRiftSpawn@ImpactSet"/>
+        <AmmoUnit value="SlaynVoidRiftSpawn@Missile"/>
+        <Movers Link="SlaynVoidRiftSpawn@Mover"/>
+    </CEffectLaunchMissile>
+    <CAbilEffectTarget id="SlaynVoidThrasherShooting">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Mercenaries"/>
+        <Effect index="0" value="SlaynVoidThrasherShooting@LM"/>
+        <Flags index="AbortOnAllianceChange" value="0"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Flags index="ReApproachable" value="0"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <TargetFilters value="-;Player,Ally,Neutral,Missile,Dead,Hidden"/>
+        <Range value="500"/>
+        <Arc value="59.9963"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BunkerAttack"/>
+    </CAbilEffectTarget>
+    <CActorUnit id="SlaynVoidRift" parent="CoreTownBaseStructure" unitName="SlaynVoidRift@Static">
+        <EditorCategories value="DoodadType:NotDoodad"/>
+        <On index="12" Terms="UnitBirth.*.Normal" Send="AnimPlay Birth Build 0 0.000000"/>
+        <On Terms="ActorCreation" Send="SetShowStatusBar"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <BarOffset value="45"/>
+        <HighlightTooltip value="Unit/Name/SlaynVoidRift"/>
+        <StatusBarOn index="Progress" value="0"/>
+    </CActorUnit>
+    <CActorDoodad id="SlaynVoidNebulaStorm">
+        <EditorCategories value="DoodadType:Environment"/>
+        <On index="0" Terms="ActorCreation" Send="Create SoundEmitter Doodad_Void_Nebula_Storm"/>
+        <On Terms="ActorCreation" Send="Create VoidNebulaStorm_Lightning_LoopSound"/>
+        <On Terms="ActorCreation" Send="Create VoidNebulaStorm_LoopSound"/>
+        <Footprint value="FootprintDoodad4x4"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
+    </CActorDoodad>
+    <CActorUnit id="SlaynSupplicant" parent="CoreMinionCore" unitName="SlaynSupplicant">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On Terms="ActorCreation" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="SetOpacity 1.000000 0.750000"/>
+        <On Terms="ActorCreation" Send="SetMinimapVisibility"/>
+        <Model value="SlaynSupplicant@Model"/>
+        <BuildModel value="SlaynSupplicant@Model"/>
+        <DeathArray index="Normal" ModelLink="SlaynSupplicant@Death" SoundLink="" VoiceLink="Ascendant_Death_Fx"/>
+        <PlacementModel value="SlaynSupplicant@Model"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+    </CActorUnit>
+    <CActorDoodad id="SlaynVoidThrasher@GroundSkirt">
+        <Aliases index="0" value="_Snapshot"/>
+        <Aliases index="1" removed="1"/>
+        <Flags index="SuppressSaveLoad" value="0"/>
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="CreepEngulfment" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="ModelMaterials" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpForwardNorth"/>
+        <Model value="VoidThrasherGroundSkirt"/>
+        <ModelFlags index="AutomatedGlobalLoopsIgnoreOrphan" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="0"/>
+        <ModelFlags index="IgnoreWalkables" value="0"/>
+        <ModelFlags index="UseSyncSeed" value="1"/>
+    </CActorDoodad>
+    <CActorAction id="SlaynVoidThrasherShooting@Attack" parent="CoreGenericAttack" effectImpact="SlaynVoidThrasherShooting@Damage" effectLaunch="SlaynVoidThrasherShooting@LM">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon00"/>
+        <ImpactMap index="None" Model="SlaynVoidThrasherShooting@Impact"/>
+        <ImpactSound value="GenericAttackImpactSound"/>
+    </CActorAction>
+    <CActorMissile id="SlaynVoidThrasherShooting@AttackMissile" parent="CoreMissileWithDeath" unitName="SlaynVoidThrasherShooting@Missile">
+        <AcceptedTransfers index="AnimProps" value="0"/>
+        <AcceptedTransfers index="Textures" value="0"/>
+        <AcceptedTransfers index="Status" value="0"/>
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+    </CActorMissile>
+    <CActorSound id="SlaynVoidThrasherShooting@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On Terms="UnitCreation.SlaynVoidThrasherShooting@Missile" Send="Create"/>
+        <Layers>
+            <Sound value="SlaynVoidThrasherShooting@LaunchLayer2"/>
+            <PitchSource value="Actor"/>
+            <PlayDelaySource value="Actor"/>
+            <VolumeSource value="Actor"/>
+            <Chance value="100"/>
+            <Pitch value="-3.000000,1.000000"/>
+            <PlayDelay value="0,10"/>
+            <Volume value="-17.000000,-15.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="SlaynVoidThrasherShooting@SoundMissileLaunch" parent="CoreSoundContinuous">
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On Terms="UnitCreation.SlaynVoidThrasherShooting@Missile" Send="Create"/>
+    </CActorSound>
+    <!--        <On Terms="Abil.SlaynVoidThrasherShooting.SourceCastStart" Send="AnimPlay Spell Attack 0 -1.000000 -1.000000 3.500000 AsDuration"/>-->
+    <CActorUnit id="SlaynVoidThrasher" parent="CoreCreepCore" unitName="SlaynVoidThrasher">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On index="26" Terms="UnitDeathCustomize; CanApplyActionPhysics RagdollBasic" Send="DeathCustomize RagdollBasic"/>
+        <On index="27" Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On index="28" Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <On index="29" Terms="UnitDeathCustomize" Target="VoidThrasherGroundSkirt" Send="AnimBracketStop BSD"/>
+        <On index="30" Terms="Behavior.SlaynVoidThrasherShooting@Active.On" Send="AnimBracketStart StandWork Stand,Work,Start Stand,Work Stand,Work,End OpeningPlayForever"/>
+        <On Terms="Behavior.SlaynVoidThrasherShooting@Active.Off" Send="AnimBracketStop StandWork"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="SetMinimapVisibility"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="$Birth"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="AnimSetTimeScale Birth 3.000000"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="TimerSet 1.000000 BirthT"/>
+        <On Terms="TimerExpired; TimerName BirthT" Send="AnimSetTimeScale Birth 1.000000"/>
+        <On Terms="UnitBirth.SlaynVoidThrasher" Send="Create SlaynVoidThrasher@GroundSkirt"/>
+        <CustomUnitStatusFrame value=""/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <StatusBarFlags index="Custom" value="0"/>
+    </CActorUnit>
+    <CActorSound id="SlaynVoidRiftSpawn@SoundBirth" parent="CoreSoundOneShot">
+        <On Terms="Effect.SlaynVoidRiftSpawn@DummyVisualSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorMissile id="SlaynVoidRiftSpawn@ActionMissile" parent="GenericAttackMissile" unitName="SlaynVoidRiftSpawn@Missile">
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,255 2.000000}"/>
+    </CActorMissile>
+    <CActorAction id="SlaynVoidRiftSpawn@Action" parent="GenericAttack" effectImpact="NHbrVoidRiftTrain@PrecursorRB" effectLaunch="SlaynVoidRiftSpawn@LM">
+        <LaunchSiteOps Ops="SOpAttachOrigin SOpMoveDownBy1"/>
+        <LaunchAssets Model="" Sound="NHbr_PlasmaBlastLaunch"/>
+        <ImpactSiteOps Ops="SOpAttachCenter"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorModel id="SlaynVoidRiftSpawn@ModelBirth" parent="CoreModelAnimationStyleOneShot">
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="1"/>
+        <AcceptedHostedPropTransfers index="CastShadows" value="1"/>
+        <AcceptedHostedPropTransfers index="CloakEffect" value="1"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="1"/>
+        <AcceptedHostedPropTransfers index="Decal" value="1"/>
+        <AcceptedHostedPropTransfers index="LocalTintColor" value="1"/>
+        <AcceptedHostedPropTransfers index="Opacity" value="1"/>
+        <AcceptedHostedPropTransfers index="Scale" value="1"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <AcceptedHostedPropTransfers index="TimeScale" value="1"/>
+        <AcceptedHostedPropTransfers index="TintColor" value="1"/>
+        <AcceptedHostedPropTransfers index="Visibility" value="1"/>
+        <AcceptedHostedPropTransfers index="WarpGroup" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,255,255 2.000000}"/>
+        <On Terms="ActorCreation" Target="_Selectable" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Target="_Selectable" Send="SetOpacity 1.000000 0.500000"/>
+        <On Terms="Effect.SlaynVoidRiftSpawn@DummyVisualSet.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CFootprint id="SlaynVoidRift@Footprint">
+        <Layers index="Check" Area="-1,-1,2,2">
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Layers index="Place" Area="-1,-1,2,2">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Shape>
+            <Radius value="1.5812"/>
+            <Offsets value="-0.5,-1.5;0.5,-1.5;-0.5,1.5;0.5,1.5;-1.5,-0.5;-1.5,0.5;1.5,-0.5;1.5,0.5"/>
+            <Borders value="0,4,2;1,0,2;2,3,2;3,7,2;4,5,2;5,2,2;6,1,2;7,6,2"/>
+        </Shape>
+    </CFootprint>
+    <CModel id="SlaynVoidRift" parent="Building" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Void_Rift\Void_Rift.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Anim value="Build,00"/>
+            <Name value="VoidRift_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.159000"/>
+            <Payload value="VoidRift_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Build,00"/>
+            <Name value="VoidRift_Launch_St"/>
+            <Type value="Sound"/>
+            <Time value="0.023000"/>
+            <Payload value="VoidRift_Launch_St"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_RockDebris"/>
+            <Type value="Sound"/>
+            <Time value="1.590000"/>
+            <Payload value="VoidRift_Death_RockDebris"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidShard_Death_PreImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.006000"/>
+            <Payload value="VoidShard_Death_PreImpact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_RockExplosion_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.533000"/>
+            <Payload value="VoidRift_RockExplosion_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Explosion"/>
+            <Type value="Sound"/>
+            <Time value="1.500000"/>
+            <Payload value="VoidRift_Death_Explosion"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Electric"/>
+            <Type value="Sound"/>
+            <Time value="0.105000"/>
+            <Payload value="VoidRift_Death_Electric"/>
+        </Events>
+        <RadiusLoose value="1.500000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+    </CModel>
+    <CModel id="SlaynVoidRift@Static" parent="Building" Race="Protoss">
+        <Model value="Assets\Doodads\Void_Rift_Static\Void_Rift_Static.m3"/>
+        <Events>
+            <Anim value="Build,00"/>
+            <Name value="VoidRift_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.159000"/>
+            <Payload value="VoidRift_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Build,00"/>
+            <Name value="VoidRift_Launch_St"/>
+            <Type value="Sound"/>
+            <Time value="0.023000"/>
+            <Payload value="VoidRift_Launch_St"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_RockDebris"/>
+            <Type value="Sound"/>
+            <Time value="1.590000"/>
+            <Payload value="VoidRift_Death_RockDebris"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidShard_Death_PreImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.006000"/>
+            <Payload value="VoidShard_Death_PreImpact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_RockExplosion_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.533000"/>
+            <Payload value="VoidRift_RockExplosion_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Explosion"/>
+            <Type value="Sound"/>
+            <Time value="1.500000"/>
+            <Payload value="VoidRift_Death_Explosion"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Electric"/>
+            <Type value="Sound"/>
+            <Time value="0.105000"/>
+            <Payload value="VoidRift_Death_Electric"/>
+        </Events>
+        <RadiusLoose value="1.500000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value=""/>
+    </CModel>
+    <CModel id="SlaynVoidRift@StaticDeath" parent="Building" Race="Protoss">
+        <Model value="Assets\Doodads\Void_Rift_Static\Void_Rift_Static.m3"/>
+        <Events>
+            <Anim value="Build,00"/>
+            <Name value="VoidRift_Birth"/>
+            <Type value="Sound"/>
+            <Time value="0.159000"/>
+            <Payload value="VoidRift_Birth"/>
+        </Events>
+        <Events>
+            <Anim value="Build,00"/>
+            <Name value="VoidRift_Launch_St"/>
+            <Type value="Sound"/>
+            <Time value="0.023000"/>
+            <Payload value="VoidRift_Launch_St"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_RockDebris"/>
+            <Type value="Sound"/>
+            <Time value="1.590000"/>
+            <Payload value="VoidRift_Death_RockDebris"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidShard_Death_PreImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.006000"/>
+            <Payload value="VoidShard_Death_PreImpact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_RockExplosion_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.533000"/>
+            <Payload value="VoidRift_RockExplosion_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Explosion"/>
+            <Type value="Sound"/>
+            <Time value="1.500000"/>
+            <Payload value="VoidRift_Death_Explosion"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Electric"/>
+            <Type value="Sound"/>
+            <Time value="0.105000"/>
+            <Payload value="VoidRift_Death_Electric"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_RockDebris"/>
+            <Type value="Sound"/>
+            <Time value="1.590000"/>
+            <Payload value="VoidRift_Death_RockDebris"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidShard_Death_PreImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.006000"/>
+            <Payload value="VoidShard_Death_PreImpact"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_RockExplosion_Large"/>
+            <Type value="Sound"/>
+            <Time value="1.533000"/>
+            <Payload value="VoidRift_RockExplosion_Large"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Explosion"/>
+            <Type value="Sound"/>
+            <Time value="1.500000"/>
+            <Payload value="VoidRift_Death_Explosion"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="VoidRift_Death_Electric"/>
+            <Type value="Sound"/>
+            <Time value="0.105000"/>
+            <Payload value="VoidRift_Death_Electric"/>
+        </Events>
+        <Lighting value="VoidRiftUnselectable"/>
+        <RadiusLoose value="1.500000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value=""/>
+    </CModel>
+    <CModel id="SlaynVoidNebulaStorm" parent="Doodad">
+        <Model value="Assets\Doodads\Void_Nebula_Storm\Void_Nebula_Storm.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="0.533000"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="4.555000"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="6.526000"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="8.528001"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="9.553000"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="11.708000"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="16.935001"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="20.907001"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="26.329000"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="28.332001"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="LightningStart"/>
+            <Type value="Sound"/>
+            <Time value="21.859001"/>
+            <Payload value="VoidNebulaStorm_Lightning_neg12height"/>
+        </Events>
+    </CModel>
+    <CModel id="SlaynSupplicant@Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Supplicant_Death\Supplicant_Death.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+    </CModel>
+    <CModel id="SlaynSupplicant@Model" parent="Unit">
+        <Model value="Assets\Units\Protoss\Supplicant\Supplicant.m3"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="SlaynVoidThrasher" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\Void_Thrasher\Void_Thrasher.m3"/>
+        <AttachProps Id="Ref_Center" RadiusShield="4.000000"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Void_Thrasher_StandIdle_Vox"/>
+            <Type value="Sound"/>
+            <Time value="0.132000"/>
+            <Payload value="Void_Thrasher_StandIdle_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Void_Thrasher_StandIdle_Vox"/>
+            <Type value="Sound"/>
+            <Time value="2.756000"/>
+            <Payload value="Void_Thrasher_StandIdle_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Void_Thrasher_StandIdle_Vox"/>
+            <Type value="Sound"/>
+            <Time value="6.223001"/>
+            <Payload value="Void_Thrasher_StandIdle_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Void_Thrasher_StandIdle_Vox"/>
+            <Type value="Sound"/>
+            <Time value="8.114000"/>
+            <Payload value="Void_Thrasher_StandIdle_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,A,End,00"/>
+            <Name value="Void_Thrasher_Movement_Vox"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Void_Thrasher_Movement_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="VoidRift_Launch_Mn"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="VoidRift_Launch_Mn"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="Void_Thrasher_Birth_Vox"/>
+            <Type value="Sound"/>
+            <Time value="2.020000"/>
+            <Payload value="Void_Thrasher_Birth_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Void_Thrasher_SWS"/>
+            <Type value="Sound"/>
+            <Time value="0.007000"/>
+            <Payload value="Void_Thrasher_SWS"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,00"/>
+            <Name value="Void_Thrasher_Launch_Vox"/>
+            <Type value="Sound"/>
+            <Time value="0.025000"/>
+            <Payload value="Void_Thrasher_Launch_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Thrasher_2D_Vx_Lunge"/>
+            <Type value="Sound"/>
+            <Time value="0.030000"/>
+            <Payload value="Thrasher_2D_Vx_Lunge"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Thrasher_2D_Vx_Spit"/>
+            <Type value="Sound"/>
+            <Time value="1.574000"/>
+            <Payload value="Thrasher_2D_Vx_Spit"/>
+        </Events>
+        <Events>
+            <Anim value="Stun,00"/>
+            <Name value="Void_Thrasher_Injured_Vox"/>
+            <Type value="Sound"/>
+            <Time value="0.042000"/>
+            <Payload value="Void_Thrasher_Injured_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Stun,00"/>
+            <Name value="Void_Thrasher_Movement_Vox"/>
+            <Type value="Sound"/>
+            <Time value="2.000000"/>
+            <Payload value="Void_Thrasher_Movement_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Void_Thrasher_Death_LastGasp_Vox"/>
+            <Type value="Sound"/>
+            <Time value="2.000000"/>
+            <Payload value="Void_Thrasher_Death_LastGasp_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Void_Thrasher_Death_Vox"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Void_Thrasher_Death_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Void_Thrasher_Vanish"/>
+            <Type value="Sound"/>
+            <Time value="3.039000"/>
+            <Payload value="Void_Thrasher_Vanish"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,A,End,00"/>
+            <Name value="Void_Thrasher_Electric_Exhale_Vox"/>
+            <Type value="Sound"/>
+            <Time value="0.012000"/>
+            <Payload value="Void_Thrasher_Electric_Exhale_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Void_Thrasher_ChestGlow"/>
+            <Type value="Sound"/>
+            <Time value="2.978000"/>
+            <Payload value="Void_Thrasher_ChestGlow"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Void_Thrasher_Electric_StrikeShort"/>
+            <Type value="Sound"/>
+            <Time value="2.586000"/>
+            <Payload value="Void_Thrasher_Electric_StrikeShort"/>
+        </Events>
+        <Events>
+            <Anim value="Burrow"/>
+            <Name value="Burrow"/>
+            <Type value="Sound"/>
+            <Time value="0.990000"/>
+            <Payload value="Yagdra_Burrow"/>
+        </Events>
+        <Events>
+            <Anim value="Unburrow"/>
+            <Name value="Unburrow"/>
+            <Type value="Sound"/>
+            <Payload value="Yagdra_UnBurrow"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,Cover"/>
+            <Name value="AttackCover"/>
+            <Type value="Sound"/>
+            <Time value="0.340000"/>
+            <Payload value="Yagdra_Swipe"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="AttackInhale"/>
+            <Type value="Sound"/>
+            <Payload value="Void_Thrasher_Electric_Inhale_Vox"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="AttackAttack"/>
+            <Type value="Sound"/>
+            <Time value="0.530000"/>
+            <Payload value="Yagdra_Attack"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="AttackVox"/>
+            <Type value="Sound"/>
+            <Time value="0.530000"/>
+            <Payload value="Void_Thrasher_Launch_Vox"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraLow15"/>
+        <Radius value="1.200000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.900000"/>
+        <ShadowRadius value="2.000000"/>
+        <SquibTypeDefault value="Flesh"/>
+        <TechPurchaseCamera value="Star2CameraLow15"/>
+        <UnitGlossaryCamera value="Star2CameraLow15"/>
+    </CModel>
+    <CModel id="SlaynVoidRiftSpawn@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Other\Void_UnitSpawn_Missile\Void_UnitSpawn_Missile.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="SlaynVoidRiftSpawn@ModelBirth" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Other\Void_UnitSpawn_Impact\Void_UnitSpawn_Impact.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CWeaponLegacy id="SlaynSupplicantWeapon">
+        <Name value="Weapon/Name/Ascendant"/>
+        <EditorCategories value="CoreHero:Tileset"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="SlaynSupplicantWeapon@Damage"/>
+        <TargetFilters value="Ground,Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="Visible;Neutral,Creep,NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <MinScanRange value="6"/>
+        <Range value="0.5"/>
+        <Period value="1"/>
+        <Effect value="SlaynSupplicantWeapon@Damage"/>
+    </CWeaponLegacy>
+    <CMoverMissile id="SlaynVoidThrasherShooting@Mover" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Ballistic"/>
+            <Acceleration value="-1"/>
+            <Speed value="26"/>
+            <MaxSpeed value="18.75"/>
+            <Gravity value="10"/>
+            <ClearanceLookahead value="3"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="SlaynVoidRiftSpawn@Mover">
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="1"/>
+            <Speed value="12"/>
+            <MaxSpeed value="12"/>
+            <Outro value="2,4"/>
+            <ThrowVector value="0,0,1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="1"/>
+            <Speed value="6"/>
+            <MaxSpeed value="12"/>
+            <ActorTracking value="Actual"/>
+            <YawPitchRoll value="119.8828"/>
+            <YawPitchRollAccel value="180"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CSound id="MapAnnouncer_VoidThrasherAttacks" parent="UI">
+        <AssetArray File="LocalizedData\Sounds\VO\acObj_ShakurasAlly_838.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\acObj_ShakurasAlly_973.ogg" FacialGroup=""/>
+        <Flags index="Wait" value="1"/>
+    </CSound>
+    <CSound id="MapAnnouncer_VoidThrasherDies" parent="UI">
+        <AssetArray File="localizeddata\Sounds\Announcer\MapM_BattleForSlayn\MapM_BattleForSlayn_VoidTrasherDies.ogg" FacialGroup=""/>
+        <Flags index="Wait" value="1"/>
+    </CSound>
+    <CSound id="MapAnnouncer_VoidThrasherSpawns" parent="UI">
+        <AssetArray File="LocalizedData\Sounds\VO\acObj_ShakurasAlly_837.ogg" FacialGroup=""/>
+        <Flags index="Wait" value="1"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@AttackImpact" parent="_FX_NPC_Combat">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_06.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_07.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Missile_Impact_08.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@LaunchLayer2" parent="_FX_NPC_Combat">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <AssetArray File="Assets\Sounds\WarMissile_Launch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\WarMissile_Launch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\WarMissile_Launch02.wav" FacialGroup=""/>
+        <DopplerLevel value="2.000000"/>
+        <Pitch value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@SoundLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_05.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Thrasher_Attack_Launch_06.wav" FacialGroup=""/>
+        <DopplerLevel value="2.000000"/>
+        <Pitch value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="SlaynVoidThrasherShooting@SoundMissileLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="CoreHero:Tileset"/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_4_Mn.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_1_Mn.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_2_Mn.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Korhal_BileFlyBy_3_Mn.wav" FacialGroup=""/>
+        <DopplerLevel value="3.000000"/>
+        <VolumeRolloffFadeBlend value="Logarithmic"/>
+    </CSound>
+    <CSound id="SlaynVoidRiftSpawn@SoundBirth" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Zerg\Hybrid\HybridrMaar_PlasmaBlastImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Hybrid\HybridMaar_PlasmaBlastImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Hybrid\HybridMaar_PlasmaBlastImpact2.wav"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidThrasher_Spawn_Mid" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\UI\UI_Game_Ping_LuxCrypt_SpiderCurse_Enemy01.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidRift_Captured_Ally" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\HVH\InfernalShrines\UI_Game_Ping_InfernalShrine_Captured_Ally01.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidRIft_Captured_Enemy" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\Event\HVH\InfernalShrines\UI_Game_Ping_InfernalShrine_Captured_Enemy01.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidThrasher_Spawn_Bot" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\UI\UI_Game_Ping_Temple_Spawned01.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="UI_Game_Ping_VoidThrasher_Spawn_Top" parent="_2D_FX_Map_Event">
+        <AssetArray File="Assets\Sounds\UI\UI_Game_Ping_LuxCrypt_SpiderCurse_Ally01.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Ally_End" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger05.ogg" Offset="60000,60000">
+            <SyncPoints value="352800"/>
+            <SyncPoints value="485100"/>
+        </AssetArray>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Ally_End_SlaveLayer" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger04.ogg"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Enemy_End" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger05.ogg" Offset="60000,60000">
+            <SyncPoints value="352800"/>
+            <SyncPoints value="485100"/>
+        </AssetArray>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidThrasher_Enemy_End_SlaveLayer" parent="MUSIC" Portrait="" Subtitle="" Speaker="" Line="" Race="Terran">
+        <AssetArray File="Assets\Music\MX_Heroes_ROS_Intro_Stinger01.ogg"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.300000"/>
+        <SpeakerMix index="BackRight" value="0.300000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <VariationMinimum value="4"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidRift_Spawn_SlaveLayer" parent="MUSIC">
+        <AssetArray File="Assets\Music\MX_Heroes_Wortham_Stinger3.ogg"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="MX_Event_Slayn_VoidRift_Spawn" parent="MUSIC">
+        <AssetArray File="Assets\Music\MX_Heroes_DemonHunter_Stinger1.ogg" Pitch="-5.000000,-5.000000">
+            <SyncPoints value="396900"/>
+        </AssetArray>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CDataCollectionAbil id="SlaynVoidThrasherShooting">
+        <DataRecord Entry="Abil,SlaynVoidThrasherShooting"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@Attack"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@AttackMissile"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@SoundLaunch"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@SoundMissileLaunch"/>
+        <DataRecord Entry="Behavior,SlaynVoidThrasherShooting@Missile"/>
+        <DataRecord Entry="Behavior,SlaynVoidThrasherShooting@Active"/>
+        <DataRecord Entry="Behavior,SlaynVoidThrasherShooting@Target"/>
+        <DataRecord Entry="Effect,SlaynVoidThrasherShooting@Damage"/>
+        <DataRecord Entry="Effect,SlaynVoidThrasherShooting@LM"/>
+        <DataRecord Entry="Model,SlaynVoidThrasherShooting@Missile"/>
+        <DataRecord Entry="Model,SlaynVoidThrasherShooting@Impact"/>
+        <DataRecord Entry="Mover,SlaynVoidThrasherShooting@Mover"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@SoundLaunch"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@SoundMissileLaunch"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@AttackImpact"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@LaunchLayer2"/>
+        <DataRecord Entry="Unit,SlaynVoidThrasherShooting@Missile"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="SlaynVoidRiftSpawn">
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@Action"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@ActionMissile"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@ModelBirth"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@SoundBirth"/>
+        <DataRecord Entry="Effect,SlaynVoidRiftSpawn@LM"/>
+        <DataRecord Entry="Model,SlaynVoidRiftSpawn@ModelBirth"/>
+        <DataRecord Entry="Model,SlaynVoidRiftSpawn@Missile"/>
+        <DataRecord Entry="Mover,SlaynVoidRiftSpawn@Mover"/>
+        <DataRecord Entry="Sound,SlaynVoidRiftSpawn@SoundBirth"/>
+        <DataRecord Entry="Unit,SlaynVoidRiftSpawn@Missile"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="SlaynVoidThrasher">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreDataGroup:Unit"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasher"/>
+        <DataRecord Entry="Model,SlaynVoidThrasher"/>
+        <DataRecord Entry="Unit,SlaynVoidThrasher"/>
+    </CDataCollectionUnit>
+    <CDataCollection id="SlaynVoidNebulaStorm">
+        <DataRecord Entry="Actor,SlaynVoidNebulaStorm"/>
+        <DataRecord Entry="Model,SlaynVoidNebulaStorm"/>
+    </CDataCollection>
+    <CDataCollectionAbil id="SlaynSupplicantWeapon">
+        <EditorCategories value="CoreDataGroup:Weapon"/>
+        <DataRecord Entry="Effect,SlaynSupplicantWeapon@Damage"/>
+        <DataRecord Entry="Weapon,SlaynSupplicantWeapon"/>
+    </CDataCollectionAbil>
+    <CDataCollectionUnit id="SlaynSupplicant">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreDataGroup:Unit"/>
+        <DataRecord Entry="Unit,SlaynSupplicant"/>
+        <DataRecord Entry="Actor,SlaynSupplicant"/>
+        <DataRecord Entry="Model,SlaynSupplicant@Model"/>
+        <DataRecord Entry="Model,SlaynSupplicant@Death"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="SlaynVoidRift">
+        <EditorCategories value="Race:NHbr,DataGroup:Structure"/>
+        <EditorIconSource value="Actor"/>
+        <DataRecord Entry="Actor,NHbrVoidRift@Build"/>
+        <DataRecord Entry="Actor,NHbrVoidRift"/>
+        <DataRecord Entry="Model,NHbrVoidRift@Build"/>
+        <DataRecord Entry="Model,SlaynVoidRift@Model"/>
+        <DataRecord Entry="Model,SlaynVoidRift@Death"/>
+        <DataRecord Entry="Model,SlaynVoidRift@DeathUnderConstruction"/>
+        <DataRecord Entry="Sound,SlaynVoidRift@Death"/>
+        <DataRecord Entry="Sound,SlaynVoidRift@Ready"/>
+        <DataRecord Entry="Sound,SlaynVoidRift@What"/>
+        <DataRecord Entry="Sound,SlaynVoidRift@Birth"/>
+        <DataRecord Entry="Unit,SlaynVoidRift"/>
+        <DataRecord Entry="Actor,SlaynVoidRift"/>
+        <DataRecord Entry="Footprint,SlaynVoidRift@Footprint"/>
+        <DataRecord Entry="Model,SlaynVoidRift@Static"/>
+        <DataRecord Entry="Model,SlaynVoidRift@StaticDeath"/>
+        <DataRecord Entry="Unit,SlaynVoidRift@Static"/>
+        <DataRecord Entry="Unit,SlaynVoidRift"/>
+    </CDataCollectionUnit>
+    <CSoundtrack id="MX_Event_Slayn_VoidRift_Spawn" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Event_Slayn_VoidRift_Spawn"/>
+            <SlaveLayers>
+                <Sections Sound="MX_Event_Slayn_VoidRift_Spawn_SlaveLayer" Start="270000"/>
+            </SlaveLayers>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Event_Slayn_VoidThrasher_Ally_End" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Event_Slayn_VoidThrasher_Ally_End"/>
+            <SlaveLayers>
+                <Sections Sound="MX_Event_Slayn_VoidThrasher_Ally_End_SlaveLayer" Start="44100"/>
+            </SlaveLayers>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Event_Slayn_VoidThrasher_Enemy_End" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Event_Slayn_VoidThrasher_Enemy_End"/>
+            <SlaveLayers>
+                <Sections Sound="MX_Event_Slayn_VoidThrasher_Enemy_End_SlaveLayer" Start="50000"/>
+            </SlaveLayers>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CUnit id="SlaynVoidRift@Static" parent="CoreBaseTownStructure">
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Attributes index="Tower" value="1"/>
+        <Attributes index="ImmuneToAOE" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <Attributes index="ImmuneToSkillshots" value="1"/>
+        <Attributes index="Structure" value="0"/>
+        <Attributes index="ImmuneToFriendlyAbilities" value="1"/>
+        <Attributes index="MapCreature" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <Footprint value="Footprint4x4Contour"/>
+        <PlacementFootprint value="Footprint4x4"/>
+        <MinimapRadius value="0"/>
+    </CUnit>
+    <CUnit id="SlaynSupplicant" parent="CoreMonsterMinorDefenderParent">
+        <DeathRevealRadius value="3"/>
+        <PushPriority value="0"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <Speed value="3"/>
+        <Sight value="9"/>
+        <WeaponArray Link="SlaynSupplicantWeapon"/>
+        <InnerRadius value="0.1875"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Tileset"/>
+        <AlliedPushPriority value="0"/>
+        <AcquireMovementLimit value="6"/>
+        <AcquireLeashRadius value="6"/>
+        <AcquireLeashResetRadius value="3"/>
+        <Radius value="0.25"/>
+        <SeparationRadius value="0.25"/>
+    </CUnit>
+    <CUnit id="SlaynVoidThrasherShooting@Missile" parent="MISSILE">
+        <FogVisibility value="Visible"/>
+        <Mover value="SlaynVoidThrasherShooting@Mover"/>
+        <BehaviorArray Link="SlaynVoidThrasherShooting@Missile"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee,CoreHero:Tileset"/>
+    </CUnit>
+    <CUnit id="SlaynVoidThrasher">
+        <DeathRevealRadius value="3"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Uncloakable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="VisionTestCenterOnly" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <FogVisibility value="Visible"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Attributes index="Minion" value="1"/>
+        <Attributes index="ImmuneToAOE" value="1"/>
+        <Attributes index="Merc" value="1"/>
+        <Attributes index="ImmuneToSkillshots" value="1"/>
+        <Attributes index="ImmuneToFriendlyAbilities" value="1"/>
+        <LifeStart value="5000"/>
+        <LifeMax value="5000"/>
+        <Acceleration value="1000"/>
+        <StationaryTurningRate value="399.9023"/>
+        <TurningRate value="399.9023"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackAlly"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="SlaynVoidThrasherShooting"/>
+        <BehaviorArray Link="MapM_BattleForSlayn_VoidThrasherInvulnerability"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="2" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="SlaynVoidThrasherShooting,255" Row="2" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="2" Column="3"/>
+            <LayoutButtons Face="BunkerAttack" Type="AbilCmd" AbilCmd="SlaynVoidThrasherShooting,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="2"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Tileset"/>
+        <Speed value="3.5"/>
+    </CUnit>
+    <CUnit id="SlaynVoidRiftSpawn@Missile" parent="MISSILE_INVULNERABLE">
+        <Race value="NHbr"/>
+        <Mover value="SlaynVoidRiftSpawn@Mover"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CBehaviorBuff id="SlaynVoidThrasherShooting@Active"/>
+    <CBehaviorBuff id="SlaynVoidThrasherShooting@Target">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+</Catalog>

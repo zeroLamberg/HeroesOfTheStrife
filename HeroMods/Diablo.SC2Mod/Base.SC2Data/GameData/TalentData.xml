@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent id="HeroDiabloTalentCruelty"/>
+    <CTalent id="HeroDiabloTalentFeastonFear"/>
+    <CTalent id="HeroDiabloTalentHellgate"/>
+    <CTalent id="HeroDiabloTalentLightningBreathHellstorm"/>
+    <CTalent id="HeroDiabloTalentApocalypseDyingBreath"/>
+    <CTalent id="HeroDiabloTalentOverpowerOverpoweringNightmare"/>
+    <CTalent id="HeroDiabloTalentDevilChargeDomination"/>
+    <CTalent id="HeroDiabloTalentMalevolence"/>
+    <CTalent id="HeroDiabloTalentFireStompDebilitatingFlames"/>
+    <CTalent id="HeroDiabloTalentFireStompHellfire"/>
+    <CTalent id="HeroDiabloTalentDevilChargeDevastatingCharge"/>
+    <CTalent id="HeroDiabloApocalypse"/>
+    <CTalent id="HeroDiabloLightningBreath"/>
+    <CTalent id="HeroDiabloTalentDiabolicalMomentum"/>
+    <CTalent id="HeroDiabloTalentFireStompEternalFlames"/>
+    <CTalent id="HeroDiabloTalentLifeLeech"/>
+    <CTalent id="HeroDiabloTalentDevilChargeSacrificialSoul"/>
+    <CTalent id="HeroDiabloTalentFireStompSoulstotheFlame"/>
+    <CTalent id="HeroDiabloTalentSoulShield"/>
+    <CTalent id="HeroDiabloTalentBlackSoulstoneDevilsDue"/>
+    <CTalent id="HeroDiabloTalentLordofTerror"/>
+</Catalog>

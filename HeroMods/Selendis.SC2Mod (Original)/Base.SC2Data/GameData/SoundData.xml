@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="HeroSelendisTalentVindicatorsBeamThermalFire@SoundLoop" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Protoss_FireSmall_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireSmall_01a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireSmall_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireSmall_02a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireSmall_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireSmall_03a.wav" FacialGroup=""/>
+        <DupeHistoryCount value="8"/>
+        <LoopCount value="-1"/>
+    </CSound>
+    <CSound id="HeroSelendisVindicatorsBeam@SoundPreLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_PowerUp02_1ch.wav" FacialGroup=""/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisVindicatorsBeam@SoundLoop" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_Purifier_Beam_Loop01.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisExecutorCharge@SoundDash" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_PowerStrike_Whoosh1_01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_PowerStrike_Whoosh1_02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_PowerStrike_Whoosh1_03.ogg" FacialGroup=""/>
+        <Pitch value="-2.000000,4.000000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisExecutorChargeApproach@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_Attack_Impact_Trait01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_Attack_Impact_Trait02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_Attack_Impact_Trait03.ogg" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-3.000000,4.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HeroSelendis_Attack" parent="Hero_Medium">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Attack00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Attack01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Attack03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Attack04.ogg"/>
+    </CSound>
+    <CSound id="HeroSelendis_Pissed" parent="Hero_Pissed">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Pissed00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Pissed01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Pissed02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Pissed03.ogg"/>
+    </CSound>
+    <CSound id="HeroSelendis_Ready" parent="Hero_High">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Ready00.ogg"/>
+    </CSound>
+    <CSound id="HeroSelendisPowerStrike@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact03.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,4.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisZealotofAiur@SoundStart" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Protoss\Nexus\Nexus_ChronoBoostImpact0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Nexus\Nexus_ChronoBoostImpact1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Nexus\Nexus_ChronoBoostImpact2.wav" FacialGroup=""/>
+        <Pitch value="2.000000,6.000000"/>
+        <Volume value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisVindicatorsBeam@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_06.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_06a.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_07.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Tassadar_Base\Tassadar_Shockblast_Bolt_Impact_08.ogg" FacialGroup=""/>
+        <Pitch value="-2.000000,4.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisTalentTemplarWillpowerDeflectionShield@SoundImpact" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Spell_CorrosiveBlast_Impact_00.wav"/>
+        <AssetArray File="Assets\Sounds\Spell_CorrosiveBlast_Impact_01.wav"/>
+        <AssetArray File="Assets\Sounds\Spell_CorrosiveBlast_Impact_02.wav"/>
+        <AssetArray File="Assets\Sounds\Spell_CorrosiveBlast_Impact_03.wav"/>
+        <AssetArray File="Assets\Sounds\Spell_CorrosiveBlast_Impact_04.wav"/>
+        <AssetArray File="Assets\Sounds\Spell_CorrosiveBlast_Impact_05.wav"/>
+        <Pitch value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisCalldownVindicator@SoundWarpLoop" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Probius_Base\Probius_VoidGate_GateKeeper_Loop01.ogg"/>
+        <LoopCount value="-1"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisCalldownVindicator@SoundWarpIn" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Probius_Base\Probius_VoidGate_GateKeeper_Launch01.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisCalldownVindicator@SoundWarpOut" parent="_FX_Hero_Spell_End">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Probius_Base\Probius_VoidGate_GateKeeper_End01.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisCalldownVindicator@WeaponAttackImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact2.wav"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisCalldownVindicator@WeaponAttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch4.wav"/>
+        <Pitch value="-1.000000,2.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisExecutorBlade@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact04.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="HeroSelendisPowerStrike@SoundDash" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Kerrigan_PsionicShift00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Kerrigan_PsionicShift01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Kerrigan_PsionicShift02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Kerrigan_PsionicShift03.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,4.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisVindicatorsBeam@SoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="assets\Sounds\Heroes\Artanis_Base\Artanis_Purifier_Beam_Launch01.ogg" FacialGroup=""/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisExecutorBlade@SoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\UI_Glue_PsiBladeOn.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroSelendisWeapon@AttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch4.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch5.wav" FacialGroup=""/>
+        <Exclusivity value="MeleeHeroAttackLaunch"/>
+        <Volume value="-8.000000,-8.000000"/>
+        <CategoryDuckingLocal value=""/>
+    </CSound>
+    <CSound id="HeroSelendisWeapon@AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact04.ogg" FacialGroup=""/>
+        <CategoryDuckingLocal value=""/>
+    </CSound>
+    <CSound id="HeroSelendis_Yes" parent="Hero_Low">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Yes00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Yes01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Yes02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Yes03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossVO\CampaignUnits\Selendis\Selendis_Yes04.ogg"/>
+    </CSound>
+    <CSound id="Selendis_Footstep_Mv" parent="_FX_Hero_Movement">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med10.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med11.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med12.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Movement\FS_Mech_Med13.ogg" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-14.000000,-14.000000"/>
+    </CSound>
+</Catalog>

@@ -1,0 +1,1665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@ApplyScanOverride">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@SearchPersistent"/>
+        <Behavior value="GenericTalentCalldownMULE@ScanOverride"/>
+    </CEffectApplyBehavior>
+    <CEffectIssueOrder id="GenericTalentCalldownMULE@Tier1IssueOrder">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@SearchPersistent"/>
+        <Abil value="GenericTalentCalldownMULE@Repair"/>
+        <Target Value="TargetUnit"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="GenericTalentCalldownMULE@Tier3IssueOrder">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@SearchPersistent"/>
+        <Abil value="GenericTalentCalldownMULE@Repair"/>
+        <Target Value="TargetUnit"/>
+    </CEffectIssueOrder>
+    <CEffectEnumArea id="GenericTalentCalldownMULE@Tier2Search">
+        <ValidatorArray value="GenericTalentCalldownMULE@DoesNotHaveScanOverride"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <LaunchLocation Effect="GenericTalentCalldownMULE@SearchPersistent" Value="TargetUnit"/>
+        <SearchFilters value="Structure;Neutral,Enemy,ImmuneToFriendlyAbilities,Dead,Hidden"/>
+        <AreaArray Radius="15" Effect="GenericTalentCalldownMULE@Tier2SearchSet"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectIssueOrder id="GenericTalentCalldownMULE@Tier4IssueOrder">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@SearchPersistent"/>
+        <Abil value="GenericTalentCalldownMULE@Repair"/>
+        <Target Value="TargetUnit"/>
+    </CEffectIssueOrder>
+    <CEffectSet id="GenericTalentCalldownMULE@Tier3SearchSet">
+        <ValidatorArray value="GenericTalentCalldownMULE@IsTier3TargetCombine"/>
+        <ValidatorArray value="LifeNotFullOrEnergyNotFull"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveEnergyBehavior"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveHealingBehavior"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@Tier3IssueOrder"/>
+        <EffectArray value="GenericTalentCalldownMULE@ApplyScanOverride"/>
+    </CEffectSet>
+    <CEffectEnumArea id="GenericTalentCalldownMULE@Tier3Search">
+        <ValidatorArray value="GenericTalentCalldownMULE@DoesNotHaveScanOverride"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <LaunchLocation Effect="GenericTalentCalldownMULE@SearchPersistent" Value="TargetUnit"/>
+        <SearchFilters value="Structure;Neutral,Enemy,ImmuneToFriendlyAbilities,Dead,Hidden"/>
+        <AreaArray Radius="15" Effect="GenericTalentCalldownMULE@Tier3SearchSet"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="GenericTalentCalldownMULE@Tier2SearchSet">
+        <ValidatorArray value="GenericTalentCalldownMULE@IsTier2TargetCombine"/>
+        <ValidatorArray value="LifeNotFullOrEnergyNotFull"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveEnergyBehavior"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveHealingBehavior"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@Tier2IssueOrder"/>
+        <EffectArray value="GenericTalentCalldownMULE@ApplyScanOverride"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="GenericTalentCalldownMULE@Tier2IssueOrder">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@SearchPersistent"/>
+        <Abil value="GenericTalentCalldownMULE@Repair"/>
+        <Target Value="TargetUnit"/>
+    </CEffectIssueOrder>
+    <CEffectSet id="GenericTalentCalldownMULE@Tier4SearchSet">
+        <ValidatorArray value="GenericTalentCalldownMULE@IsTier4TargetCombine"/>
+        <ValidatorArray value="LifeNotFullOrEnergyNotFull"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveEnergyBehavior"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveHealingBehavior"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@Tier4IssueOrder"/>
+        <EffectArray value="GenericTalentCalldownMULE@ApplyScanOverride"/>
+    </CEffectSet>
+    <CEffectEnumArea id="GenericTalentCalldownMULE@Tier4Search">
+        <ValidatorArray value="GenericTalentCalldownMULE@DoesNotHaveScanOverride"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <LaunchLocation Effect="GenericTalentCalldownMULE@SearchPersistent" Value="TargetUnit"/>
+        <SearchFilters value="Structure;Neutral,Enemy,ImmuneToFriendlyAbilities,Dead,Hidden"/>
+        <AreaArray Radius="15" Effect="GenericTalentCalldownMULE@Tier4SearchSet"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@ApplyStopChanneling">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="GenericTalentCalldownMULE@StopChanneling"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="GenericTalentCalldownMULE@RepairHealthPersistent">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <FinalEffect value="GenericTalentCalldownMULE@ApplyStopChanneling"/>
+        <PeriodicValidator value="TargetLifeNotFullOrEnergyNotFullAndTargetNotImmuneToFriendlyAbilities"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@RepairApplyTargetBehaviorHealth"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@RepairApplyTargetBehaviorAmmo"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@RepairApplyTargetBehaviorHealth">
+        <ValidatorArray value="TargetLifeNotFull"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <Behavior value="GenericTalentCalldownMULE@RepairTargetHealth"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@RepairApplyTargetBehaviorAmmo">
+        <ValidatorArray value="EnergyNotFull"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <Behavior value="GenericTalentCalldownMULE@RepairTargetAmmo"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="GenericTalentCalldownMULE@RepairEnergyPersistent">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <FinalEffect value="GenericTalentCalldownMULE@ApplyStopChanneling"/>
+        <PeriodicValidator value="EnergyNotFull"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@RepairApplyTargetBehaviorAmmo"/>
+        <PeriodicPeriodArray value="0.5"/>
+        <Chance value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@AliveApplyBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@CreateUnit"/>
+        <Behavior value="GenericTalentCalldownMULE@Alive"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="GenericTalentCalldownMULE@AliveRemoveBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Effect="GenericTalentCalldownMULE@CreateUnit"/>
+        <BehaviorLink value="GenericTalentCalldownMULE@Alive"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@ApplyTimedLifeBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Behavior value="GenericTalentCalldownMULE@TimeLife"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="GenericTalentCalldownMULE@ApplyScanController">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Behavior value="GenericTalentCalldownMULE@ScanController"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="GenericTalentCalldownMULE@CreatePersistent">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <ExpireDelay value="4"/>
+        <FinalEffect value="GenericTalentCalldownMULE@FinalSet"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="GenericTalentCalldownMULE@AlivePersistent">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="GenericTalentCalldownMULE@AliveApplyBehavior"/>
+        <FinalEffect value="GenericTalentCalldownMULE@AliveRemoveBehavior"/>
+        <PeriodicValidator value="SourceNotDead"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyUnit id="GenericTalentCalldownMULE@RepairHealth">
+        <EditorCategories value="CoreHero:Talents"/>
+        <ImpactUnit Value="Source"/>
+        <VitalArray index="Life">
+            <Change value="90"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="GenericTalentCalldownMULE@RepairInitialSet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <ValidatorArray value="LifeNotFullOrEnergyNotFull"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairHealthPersistent"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairApplyTargetBehaviorHealth"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairApplyTargetBehaviorAmmo"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="GenericTalentCalldownMULE@RepairAmmoDisablerRemoveBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="StructureAmmoDisabler"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="GenericTalentCalldownMULE@RepairAmmoDisablerWarningRemoveBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="StructureAmmoDisablerWarning"/>
+    </CEffectRemoveBehavior>
+    <CEffectModifyUnit id="GenericTalentCalldownMULE@RepairEnergy">
+        <EditorCategories value="CoreHero:Talents"/>
+        <ImpactUnit Value="Source"/>
+        <VitalArray index="Energy">
+            <Change value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="GenericTalentCalldownMULE@RepairAmmoRestartSet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairAmmoDisablerRemoveBehavior"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairAmmoDisablerWarningRemoveBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="GenericTalentCalldownMULE@RepairSet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairSuicide"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairHealth"/>
+    </CEffectSet>
+    <CEffectDamage id="GenericTalentCalldownMULE@RepairSuicide" parent="CoreSuicideParent">
+        <ValidatorArray value="GenericTalentCalldownMULE@RepairTargetIsDeadOrUnitIsDeadTower"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <ImpactLocation Value="CasterUnit"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="GenericTalentCalldownMULE@SearchPersistent">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="4"/>
+        <PeriodicValidator value="GenericTalentCalldownMULE@DoesNotHaveScanOverride"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@Tier1Search"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@Tier2Search"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@Tier3Search"/>
+        <PeriodicEffectArray value="GenericTalentCalldownMULE@Tier4Search"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="GenericTalentCalldownMULE@InitialSet">
+        <ValidatorArray value="HasVisionOfTarget"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@CreateUnit"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="GenericTalentCalldownMULE@CreateSet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="MakePrecursor"/>
+        <EffectArray value="GenericTalentCalldownMULE@CreatePersistent"/>
+        <EffectArray value="GenericTalentCalldownMULE@AlivePersistent"/>
+        <EffectArray value="GenericTalentCalldownMULE@ApplyTimedLifeBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="GenericTalentCalldownMULE@Tier1SearchSet">
+        <ValidatorArray value="GenericTalentCalldownMULE@IsTier1TargetCombine"/>
+        <ValidatorArray value="LifeNotFullOrEnergyNotFull"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveEnergyBehavior"/>
+        <ValidatorArray value="GenericTalentCalldownMULE@TargetDoesNotHaveHealingBehavior"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@Tier1IssueOrder"/>
+        <EffectArray value="GenericTalentCalldownMULE@ApplyScanOverride"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="GenericTalentCalldownMULE@CreateUnit">
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <SpawnEffect value="GenericTalentCalldownMULE@CreateSet"/>
+        <SpawnUnit value="GenericTalentCalldownMULE@MULE"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="GenericTalentCalldownMULE@FinalSet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="RemovePrecursor"/>
+        <EffectArray value="GenericTalentCalldownMULE@ApplyScanController"/>
+    </CEffectSet>
+    <CEffectEnumArea id="GenericTalentCalldownMULE@RetargetSearch">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Chance value="0"/>
+        <ImpactLocation Effect="GenericTalentCalldownMULE@CreateSet" Value="TargetUnit"/>
+        <SearchFilters value="Structure;Neutral,Enemy,ImmuneToFriendlyAbilities,Dead"/>
+        <TargetSorts RequestCount="1" RequestPercentage="1">
+            <SortArray value="TSNotNoMinionAggro"/>
+        </TargetSorts>
+        <AreaArray Radius="12"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="GenericTalentCalldownMULE@Tier1Search">
+        <ValidatorArray value="GenericTalentCalldownMULE@DoesNotHaveScanOverride"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <LaunchLocation Effect="GenericTalentCalldownMULE@SearchPersistent" Value="TargetUnit"/>
+        <SearchFilters value="Structure;Neutral,Enemy,ImmuneToFriendlyAbilities,Dead,Hidden"/>
+        <AreaArray Radius="15" Effect="GenericTalentCalldownMULE@Tier1SearchSet"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="GenericTalentCalldownMULE@RepairEnergySet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairEnergy"/>
+        <EffectArray value="GenericTalentCalldownMULE@RepairAmmoRestartSet"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="GenericTalentBoltOfTheStorms@Modification">
+        <EditorCategories value="Race:Neutral,CoreHero:Talents"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="GenericTalentResurgenceOfTheStorm@Modification">
+        <EditorCategories value="Race:Neutral,CoreHero:Talents"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="GenericTalentResurgenceOfTheStorm@ApplyCooldownBehavior">
+        <ValidatorArray value="CasterIsDead"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <Behavior value="GenericTalentResurgenceOfTheStorm@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectTeleport id="GenericTalentBoltOfTheStorms@Teleport">
+        <EditorCategories value="CoreHero:Common"/>
+        <WhichUnit Value="Caster"/>
+        <ClearQueuedOrders value="0"/>
+        <MinDistance value="0"/>
+        <PlacementAround Value="CasterUnit"/>
+        <PlacementRange value="12"/>
+        <Range value="11"/>
+        <TargetLocation Value="TargetPoint"/>
+        <TeleportFlags index="TestFog" value="0"/>
+    </CEffectTeleport>
+    <CEffectDamage id="TalentBucket_FuryOfTheStorm_Damage1" parent="CorePhysicalDamage">
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray Validator="CoreTargetIsMercenaryDefender" Value="CoreDamageDealtSiegeMercenaryDefender"/>
+        <AmountScoreArray Validator="CoreTargetIsMercenaryLaner" Value="CoreDamageDealtSiegeMercenaryLaner"/>
+        <AmountScoreArray Validator="CoreTargetIsSummoned" Value="CoreDamageDealtSiegeSummon"/>
+        <AmountScoreArray Validator="CoreTargetIsMonster" Value="CoreDamageDealtSiegeMonster"/>
+    </CEffectDamage>
+    <CEffectDamage id="TalentBucket_FuryOfTheStorm_Damage2" parent="CorePhysicalDamage">
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray Validator="CoreTargetIsMercenaryDefender" Value="CoreDamageDealtSiegeMercenaryDefender"/>
+        <AmountScoreArray Validator="CoreTargetIsMercenaryLaner" Value="CoreDamageDealtSiegeMercenaryLaner"/>
+        <AmountScoreArray Validator="CoreTargetIsSummoned" Value="CoreDamageDealtSiegeSummon"/>
+        <AmountScoreArray Validator="CoreTargetIsMonster" Value="CoreDamageDealtSiegeMonster"/>
+    </CEffectDamage>
+    <CEffectDamage id="TalentBucket_FuryOfTheStorm_Damage3" parent="CorePhysicalDamage">
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray/>
+        <AmountScoreArray Validator="CoreTargetIsMercenaryDefender" Value="CoreDamageDealtSiegeMercenaryDefender"/>
+        <AmountScoreArray Validator="CoreTargetIsMercenaryLaner" Value="CoreDamageDealtSiegeMercenaryLaner"/>
+        <AmountScoreArray Validator="CoreTargetIsSummoned" Value="CoreDamageDealtSiegeSummon"/>
+        <AmountScoreArray Validator="CoreTargetIsMonster" Value="CoreDamageDealtSiegeMonster"/>
+    </CEffectDamage>
+    <CEffectSet id="TalentBucket_Rewind_TriggerDummySet">
+        <EditorCategories value="CoreHero:Talents"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="TalentBucket_FuryoftheStorm_Delay3">
+        <EditorCategories value="Race:Zerg"/>
+        <Chance value="0"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="TalentBucket_FuryoftheStorm_Search3"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="TalentBucket_FuryoftheStorm_Delay2">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="TalentBucket_FuryoftheStorm_Search2"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="TalentBucket_FuryoftheStorm_Delay1">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.125"/>
+        <FinalEffect value="TalentBucket_FuryoftheStorm_Search1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="TalentBucket_FuryoftheStorm_ImpactSet3">
+        <ValidatorArray value="IsNotConjoinedGate"/>
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TalentBucket_FuryOfTheStorm_Damage3"/>
+    </CEffectSet>
+    <CEffectEnumArea id="TalentBucket_FuryoftheStorm_Search3">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Effect="TalentBucket_FuryoftheStorm_Delay3" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSEngaged"/>
+            <SortArray value="TSNoBounce"/>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="TalentBucket_FuryoftheStorm_ImpactSet3"/>
+        <Chance value="0"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="TalentBucket_FuryoftheStorm_Search1">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Effect="TalentBucket_FuryoftheStorm_Delay1" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Passive"/>
+        <TargetSorts>
+            <SortArray value="TSEngaged"/>
+            <SortArray value="TSNoBounce"/>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="TalentBucket_FuryOfTheStorm_ImpactSet1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="TalentBucket_FuryoftheStorm_ImpactSet2">
+        <ValidatorArray value="IsNotConjoinedGate"/>
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TalentBucket_FuryOfTheStorm_Damage2"/>
+        <EffectArray value="TalentBucket_FuryoftheStorm_Search3"/>
+    </CEffectSet>
+    <CEffectSet id="TalentBucket_FuryOfTheStorm_ImpactSet1">
+        <ValidatorArray value="IsNotConjoinedGate"/>
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="TalentBucket_FuryOfTheStorm_Damage1"/>
+        <EffectArray value="TalentBucket_FuryoftheStorm_Delay2"/>
+    </CEffectSet>
+    <CEffectEnumArea id="TalentBucket_FuryoftheStorm_Search2">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Effect="TalentBucket_FuryoftheStorm_Delay2" Value="TargetPoint"/>
+        <ExcludeArray Value="Target"/>
+        <ExcludeArray Effect="TalentBucket_FuryoftheStorm_Delay1" Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Passive"/>
+        <TargetSorts>
+            <SortArray value="TSEngaged"/>
+            <SortArray value="TSNoBounce"/>
+            <SortArray value="TSDistanceToTarget"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="5" Effect="TalentBucket_FuryoftheStorm_ImpactSet2"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="TalentBucket_MercenaryLord_ApplyCasterStack">
+        <ValidatorArray value="TalentBucket_MercenaryLord_CasterHasCarryBehavior"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="TalentBucket_MercenaryLord_Stacks"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="TalentBucket_MercenaryLord_ApplyMinionBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Behavior value="TalentBucket_MercenaryLord_MinionBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="TalentRewindAllySearch">
+        <ValidatorArray value="IsSupportHero"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <ExcludeArray Value="Source"/>
+        <SearchFilters value="-;Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Worker,Missile,Item,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="4" Effect="TalentRewindAllyDummy"/>
+    </CEffectEnumArea>
+    <CEffectSet id="TalentBucket_Rewind_InitialSet">
+        <EditorCategories value="CoreHero:Talents"/>
+        <EffectArray value="TalentBucketRewindRestoreMana"/>
+        <EffectArray value="TalentBucket_Rewind_TriggerDummySet"/>
+    </CEffectSet>
+    <CEffectSet id="TalentRewindAllyDummy"/>
+    <CEffectModifyPlayer id="BucketRewind">
+        <EditorCategories value="Race:TalentBucket"/>
+    </CEffectModifyPlayer>
+    <CEffectCreateHealer id="TalentBucketRewindRestoreMana" parent="CoreCreateHealer">
+        <EditorCategories value="CoreHero:Talents"/>
+        <ImpactUnit Value="Caster"/>
+        <RechargeVital value="Energy"/>
+        <RechargeVitalRate value="100"/>
+    </CEffectCreateHealer>
+    <CAbilEffectTarget id="GenericTalentCalldownMULE@Repair">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Effect value="GenericTalentCalldownMULE@RepairInitialSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <TargetFilters value="-;Neutral,Enemy"/>
+        <Range value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GenericTalentCalldownMULE@Repair"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="GenericTalentCalldownMULE@RepairEnergy">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Effect value="GenericTalentCalldownMULE@RepairEnergyPersistent"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <TargetFilters value="-;Neutral,Enemy"/>
+        <Range value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GenericTalentCalldownMULE@Repair"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="GenericTalentCalldownMULE">
+        <EditorCategories value="CoreHero:Talents"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="GenericTalentCalldownMULE@InitialSet"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="60"/>
+        </Cost>
+        <Range value="500"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GenericTalentCalldownMULE">
+            <Flags index="AllowMinimap" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="GenericTalentResurgenceOfTheStorm">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <Effect value="GenericTalentResurgenceOfTheStorm@ApplyCooldownBehavior"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="200"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GenericTalentResurgenceOfTheStorm"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="GenericTalentBoltOfTheStorms" parent="HeroGenericSelfTeleportAbility">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <Effect value="GenericTalentBoltOfTheStorms@Teleport"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="70"/>
+        </Cost>
+        <Range value="9"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GenericTalentBoltOfTheStorms">
+            <Flags index="AllowSelfCast" value="0"/>
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="TalentBucket_Rewind">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <Effect value="TalentBucket_Rewind_InitialSet"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="60"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TalentBucket_Rewind" Requirements="HeroHasNoDeadBehavior">
+            <Flags index="AllowSelfCast" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CValidatorUnitCompareBehaviorCount id="GenericTalentCalldownMULE@DoesNotHaveScanOverride">
+        <WhichUnit Effect="GenericTalentCalldownMULE@SearchPersistent"/>
+        <Behavior value="GenericTalentCalldownMULE@ScanOverride"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="GenericTalentCalldownMULE@IsTier1TargetCombine">
+        <CombineArray value="TownStructureCore"/>
+        <CombineArray value="TownStructureTownHall"/>
+        <CombineArray value="TownStructureCannonTower"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="GenericTalentCalldownMULE@IsTier2TargetCombine">
+        <CombineArray value="TownStructureGate"/>
+        <CombineArray value="TownStructureMoonwell"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="GenericTalentCalldownMULE@IsTier3TargetCombine">
+        <CombineArray value="TownStructureTownHall"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="GenericTalentCalldownMULE@IsTier4TargetCombine">
+        <CombineArray value="GenericTalentCalldownMULE@IsTier1TargetCombine"/>
+        <CombineArray value="EnergyNotFull"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="GenericTalentCalldownMULE@RepairTargetIsDead">
+        <WhichUnit Effect="GenericTalentCalldownMULE@RepairInitialSet"/>
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="GenericTalentCalldownMULE@RepairTargetIsDeadOrUnitIsDeadTower">
+        <CombineArray value="GenericTalentCalldownMULE@RepairTargetIsDead"/>
+        <CombineArray value="TownDeadController@TargetHasDeadBehavior"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="GenericTalentCalldownMULE@TargetDoesNotHaveEnergyBehavior">
+        <Behavior value="GenericTalentCalldownMULE@RepairTargetAmmo"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="GenericTalentCalldownMULE@TargetDoesNotHaveHealingBehavior">
+        <Behavior value="GenericTalentCalldownMULE@RepairTargetHealth"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="TalentBucket_LifeForce_CasterHasNotTalentOrCasterNotDeadAndHasTalent">
+        <CombineArray value="TalentBucket_LifeForce_HasNoTalent"/>
+        <CombineArray value="TalentBucket_LifeForce_CasterNotDeadAndHasTalent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TalentBucket_LifeForce_HasNoTalent">
+        <CombineArray value="TalentBucket_LifeForce_HasTalent"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TalentBucket_LifeForce_CasterNotDeadAndHasTalent">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="TalentBucket_LifeForce_HasTalent"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="TalentBucket_LifeForce_HasTalent">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="TalentBucket_LifeForce"/>
+    </CValidatorPlayerTalent>
+    <CValidatorUnitCompareBehaviorCount id="TalentBucket_MercenaryLord_CasterHasCarryBehavior">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="TalentBucket_MercenaryLord_CarryBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CButton id="GenericTalentResurgenceOfTheStorm" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Common_General\Icon_General_ResurgenceOfTheStorm.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="GenericTalentBoltOfTheStorms" parent="CoreButtonParent">
+        <Icon value="assets\Icons\Common_General\Icon_General_BoltOfTheStorm.dds"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CButton>
+    <CButton id="TalentBucketBattleMomentum" parent="StormButtonParent">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Cooldown.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="TalentBucket_Executioner_60">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_Executioner_Simple"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="TalentBucket_Executioner_30">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_Executioner_Simple"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="TalentBucketFarflightAmmo">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Range"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucketFarflightAmmo_Simple"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="TalentFuryoftheStorm" parent="StormButtonParent">
+        <TooltipFlags index="ShowName" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <Icon value="Assets\Textures\storm_temp_war3_btnpurge.dds"/>
+    </CButton>
+    <CButton id="GenericTalentCalldownMULE" parent="CoreButtonParent">
+        <Icon value="Assets\Icons\Common_General\Icon_General_Mule.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="GenericTalentCalldownMULE@Repair" parent="CoreButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-terran-repair.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-repair.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CButton>
+    <CButton id="TalentBucket_FuryOfTheStorm">
+        <Icon value="Assets\Textures\storm_temp_war3_btnpurge.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_FuryOfTheStormSimple"/>
+    </CButton>
+    <CButton id="TalentBucket_GatheringPower">
+        <Icon value="Assets\Icons\Common_General\Icon_General_GatheringPower.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_GatheringPower_Simple"/>
+    </CButton>
+    <CButton id="TalentBucket_HardenedFocus">
+        <Icon value="Assets\Icons\Common_General\Icon_General_HardenedFocus.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_HardenedFocus/Simple"/>
+    </CButton>
+    <CButton id="TalentBucket_LifeForce">
+        <Icon value="Assets\Icons\Common_General\Icon_General_Gidbin_2.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_LifeForce_Simple"/>
+    </CButton>
+    <CButton id="TalentBuckeet_MercenaryLord">
+        <Icon value="Assets\Icons\Common_General\Icon_General_MercenaryLord.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBuckeet_MercenaryLordSimple"/>
+    </CButton>
+    <CButton id="TalentBucket_QuickFingers">
+        <Icon value="Assets\Icons\Common_General\Icon_General_AutoAttack_Speed.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_QuickFingers_Simple"/>
+    </CButton>
+    <CButton id="TalentBucket_Rewind">
+        <TooltipCooldownOverrideText value="Button/Tooltip/TalentBucket_Rewind/Info"/>
+        <Icon value="Assets\Icons\Common_General\Icon_General_Rewind.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_Rewind/Simple"/>
+    </CButton>
+    <CButton id="TalentBucket_ThirstForLife">
+        <Icon value="Assets\Icons\Common_General\Icon_General_Gidbin_1.dds"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <SimpleDisplayText value="Button/Tooltip/TalentBucket_ThirstForLife_Simple"/>
+    </CButton>
+    <CTalent id="GenericTalentCalldownMULE"/>
+    <CTalent id="GenericTalentBoltOfTheStorms"/>
+    <CTalent id="GenericTalentResurgenceOfTheStorm"/>
+    <CTalent id="TalentBucketBattleMomentum" parent="TalentBucket">
+        <Face value="TalentBucketBattleMomentum"/>
+    </CTalent>
+    <CTalent id="TalentBucket_Executioner_30" parent="TalentBucket">
+        <Face value="TalentBucket_Executioner_30"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_Executioner_30"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_Executioner_60" parent="TalentBucket">
+        <Face value="TalentBucket_Executioner_60"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_Executioner_60"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucketFarflightAmmo" parent="TalentBucket">
+        <Face value="TalentBucketFarflightAmmo"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucketFarflightAmmo"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_GatheringPower" parent="TalentBucket">
+        <Face value="TalentBucket_GatheringPower"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_GatheringPower_Stacks"/>
+        </RankArray>
+        <Trait value="1"/>
+    </CTalent>
+    <CTalent id="TalentBucket_FuryOfTheStorm" parent="TalentBucket">
+        <Face value="TalentBucket_FuryOfTheStorm"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_FuryoftheStorm_CarryBehavior"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_FuryOfTheStorm_Tychus" parent="TalentBucket">
+        <Face value="TalentBucketFuryOfTheStormTychus"/>
+        <RankArray Face="TalentBucketFuryOfTheStormSimpleTychus">
+            <BehaviorArray value="TalentBucket_FuryoftheStorm_CarryBehavior_Tychus"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_HardenedFocus" parent="TalentBucket">
+        <Face value="TalentBucket_HardenedFocus"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_HardenedFocus_CarryBehavior"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_LifeForce" parent="TalentBucket">
+        <Face value="TalentBucket_LifeForce"/>
+    </CTalent>
+    <CTalent id="TalentBucket_MercenaryLord_Stacks" parent="TalentBucket">
+        <Face value="TalentBuckeet_MercenaryLord"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_MercenaryLord_CarryBehavior"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_QuickFingers" parent="TalentBucket">
+        <Face value="TalentBucket_QuickFingers"/>
+        <RankArray>
+            <BehaviorArray value="TalentBucket_QuickFingers_CarryBehavior"/>
+        </RankArray>
+    </CTalent>
+    <CTalent id="TalentBucket_Rewind" parent="TalentBucket">
+        <Face value="TalentBucket_Rewind"/>
+        <RankArray Item="TalentBucket_Rewind"/>
+        <Active value="1"/>
+    </CTalent>
+    <CTalent id="TalentBucket_ThirstForLife" parent="TalentBucket">
+        <Face value="TalentBucket_ThirstForLife"/>
+    </CTalent>
+    <CActorUnit id="GenericTalentCalldownMULE@MULE" parent="CoreMinionStandard" unitName="GenericTalentCalldownMULE@MULE">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@Repair.SourceChannelStart" Send="AnimBracketStart Work Work,Start Work Work,End"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@Repair.SourceChannelStop" Send="AnimBracketStop Work"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@Repair.SourceChannelStart" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@Repair.SourceChannelStop" Send="TimerKill Repair"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@Repair.SourceChannelStop" Send="AnimClear Repair"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@RepairEnergy.SourceChannelStart" Send="AnimBracketStart Work Work,Start Work Work,End"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@RepairEnergy.SourceChannelStop" Send="AnimBracketStop Work"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@RepairEnergy.SourceChannelStart" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@RepairEnergy.SourceChannelStop" Send="TimerKill Repair"/>
+        <On Terms="Abil.GenericTalentCalldownMULE@RepairEnergy.SourceChannelStop" Send="AnimClear Repair"/>
+        <On Terms="AnimDone.*.Complete; AnimName Repair" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="AnimPlay Repair Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="Create GenericTalentCalldownMULE@RepairSound"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Unburrow" Send="AnimClear Unburrow"/>
+        <DeathArray index="Normal" ModelLink="GenericTalentCalldownMULE@Death"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Storm_UI_InGame_TargetInfoPanel_Unit_Generic_Mule.dds"/>
+        </GroupIcon>
+    </CActorUnit>
+    <CActorUnit id="GenericTalentCalldownMULE" parent="CoreItemBase" unitName="GenericTalentCalldownMULE">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+    </CActorUnit>
+    <CActorUnit id="GenericTalentBoltOfTheStorms" parent="CoreItemBase" unitName="GenericTalentBoltOfTheStorms">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+    </CActorUnit>
+    <CActorModel id="GenericTalentResurgenceOfTheStorm@Buff" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Behavior.GenericTalentResurgenceOfTheStorm@ReadyBehavior.On" Send="Create"/>
+        <On Terms="Behavior.GenericTalentResurgenceOfTheStorm@ReadyBehavior.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSound id="GenericTalentBoltOfTheStorms@Sound" parent="SoundOneShot">
+        <EditorCategories value="CoreHero:Talents"/>
+        <On Terms="Abil.GenericTalentBoltOfTheStorms.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorSplat id="GenericTalentBoltOfTheStorms@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <Scale value="9.500000"/>
+    </CActorSplat>
+    <CActorRange id="GenericTalentBoltOfTheStorms@Range" parent="CoreRangeAbilPlusSplat" abil="GenericTalentBoltOfTheStorms">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+    </CActorRange>
+    <CActorSplat id="GenericTalentBoltOfTheStorms@CursorSplat" parent="CoreGuideVisualCircleFantasy" abil="GenericTalentBoltOfTheStorms">
+        <EditorCategories value="CoreHero:Talents"/>
+    </CActorSplat>
+    <CActorModel id="GenericTalentBoltOfTheStorms@FXIn" parent="CoreModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <On Terms="Effect.GenericTalentBoltOfTheStorms@Teleport.Stop; At Source" Send="Create"/>
+        <Host Scope="Caster"/>
+        <HostSiteOps Ops="SOpAttachCenterStationary SOpForwardOriginPoint"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorModel id="GenericTalentBoltOfTheStorms@FXOut" parent="CoreModelAnimationStyleOneShot">
+        <InheritType value="OneShot"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <On Terms="ActorCreation" Send="Create FlashoftheStormSound"/>
+        <On Terms="Effect.GenericTalentBoltOfTheStorms@Teleport.Start; At Source" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenterStationary SOpForwardCasterPoint"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+    </CActorModel>
+    <CActorUnit id="GenericTalentResurgenceOfTheStorm" parent="CoreItemBase" unitName="GenericTalentResurgenceOfTheStorm">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+    </CActorUnit>
+    <CActorModel id="TalentBucket_FuryoftheStorm_HostingActor" parent="CoreModelAnimationStyleOneShot">
+        <Host Subject="::Creator"/>
+        <Model value="TalentBucket_FuryOfTheStorm_Impact"/>
+    </CActorModel>
+    <CActorBeamSimple id="TalentBucket_FuryoftheStorm_1Beam">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="TalentBucket_ForyoftheStorm_Beam"/>
+        <HostLaunch Subject="::scope.Chain1Launch"/>
+        <HostImpact Subject="::Creator"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="TalentBucket_FuryoftheStorm_2Beam">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="TalentBucket_ForyoftheStorm_Beam"/>
+        <HostLaunch Subject="::scope.Chain2Launch"/>
+        <HostImpact Subject="::Creator"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="TalentBucket_FuryoftheStorm_3Beam">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="TalentBucket_ForyoftheStorm_Beam"/>
+        <HostLaunch Subject="::scope.Chain3Launch"/>
+        <HostImpact Subject="::Creator"/>
+    </CActorBeamSimple>
+    <CActorSite id="TalentBucket_FuryoftheStorm_1ImpactSite" parent="SiteCenter">
+        <On Terms="Effect.TalentBucket_FuryOfTheStorm_ImpactSet1.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefSetFromRequest ::scope.Chain1Launch TalentBucket_FuryoftheStorm_1LaunchSite Implicit Find"/>
+        <On Terms="ActorCreation" Send="Create TalentBucket_FuryoftheStorm_1Beam"/>
+    </CActorSite>
+    <CActorSite id="TalentBucket_FuryoftheStorm_1LaunchSite" parent="SiteCenter">
+        <On Terms="Effect.TalentBucket_FuryoftheStorm_Delay1.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create TalentBucket_FuryoftheStorm_HostingActor"/>
+    </CActorSite>
+    <CActorSite id="TalentBucket_FuryoftheStorm_2ImpactSite" parent="SiteCenter">
+        <On Terms="Effect.TalentBucket_FuryoftheStorm_ImpactSet2.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefSetFromRequest ::scope.Chain2Launch TalentBucket_FuryoftheStorm_2LaunchSite Implicit Find"/>
+        <On Terms="ActorCreation" Send="Create TalentBucket_FuryoftheStorm_2Beam"/>
+    </CActorSite>
+    <CActorSite id="TalentBucket_FuryoftheStorm_2LaunchSite" parent="SiteCenter">
+        <On Terms="Effect.TalentBucket_FuryoftheStorm_ImpactSet2.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create TalentBucket_FuryoftheStorm_HostingActor"/>
+    </CActorSite>
+    <CActorSite id="TalentBucket_FuryoftheStorm_3ImpactSite" parent="SiteCenter">
+        <On Terms="Effect.TalentBucket_FuryoftheStorm_ImpactSet3.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefSetFromRequest ::scope.Chain3Launch TalentBucket_FuryoftheStorm_3LaunchSite Implicit Find"/>
+        <On Terms="ActorCreation" Send="Create TalentBucket_FuryoftheStorm_3Beam"/>
+    </CActorSite>
+    <CActorSite id="TalentBucket_FuryoftheStorm_3LaunchSite" parent="SiteCenter">
+        <On Terms="Effect.FuryoftheStormHop2Damage.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create FuryoftheStormHostingActor"/>
+    </CActorSite>
+    <CActorSound id="TalentBucket_FuryoftheStorm_SoundImpact" parent="SoundOneShot">
+        <On Terms="Effect.TalentBucket_FuryOfTheStorm_ImpactSet1.Start; At Target" Send="Create"/>
+        <On Terms="Effect.TalentBucket_FuryoftheStorm_ImpactSet2.Start; At Target" Send="Create"/>
+        <On Terms="Effect.TalentBucket_FuryoftheStorm_ImpactSet3.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="TalentBucket_FuryOfTheStorm_ModelBuff" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad"/>
+        <On Terms="Behavior.TalentBucket_FuryoftheStorm_CarryBehavior.On" Send="Create"/>
+        <On Terms="Behavior.TalentBucket_FuryoftheStorm_CarryBehavior.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.TalentBucket_FuryoftheStorm_CarryBehavior_Tychus.On" Send="Create"/>
+        <On Terms="Behavior.TalentBucket_FuryoftheStorm_CarryBehavior_Tychus.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
+    </CActorModel>
+    <CActorUnit id="TalentBucket_Rewind" parent="CoreItemBase" unitName="TalentBucket_Rewind"/>
+    <!-- Block                                                                              -->
+    <CActorModel id="TalentBucket_Rewind_ModelCast" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Effect.TalentBucket_Rewind_InitialSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.KatarinaBucket_Rewind_InitialSet.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CActorSound id="TalentBucket_Rewind_SoundCast" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Effect.TalentBucket_Rewind_InitialSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.KatarinaBucket_Rewind_InitialSet.Start; At Caster" Send="Create"/>
+        <Sound value="TalentBucket_Rewind_Cast"/>
+    </CActorSound>
+    <CActorSound id="GenericTalentCalldownMULE@RepairSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <Sound value="GenericTalentCalldownMULE@Repair"/>
+    </CActorSound>
+    <CActorEventMacro id="GenericTalentCalldownMULE@RepairCastleMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="StatusSet Repairing 1"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="TimerKill Repairing"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="TimerSet 1.200000 Repairing"/>
+        <On Terms="StatusOn.*.Repairing" Send="Create GenericTalentCalldownMULE@RepairCastle"/>
+        <On Terms="TimerExpired; TimerName Repairing" Send="StatusSet Repairing 0"/>
+        <On Terms="TimerExpired; TimerName Repairing" Target="GenericTalentCalldownMULE@RepairCastle" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="StatusSet Repairing 0"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Target="GenericTalentCalldownMULE@RepairTower" Send="AnimBracketStop BSD"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="GenericTalentCalldownMULE@RepairGateMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="StatusSet Repairing 1"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="TimerKill Repairing"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="TimerSet 1.200000 Repairing"/>
+        <On Terms="StatusOn.*.Repairing" Send="Create GenericTalentCalldownMULE@RepairGate"/>
+        <On Terms="TimerExpired; TimerName Repairing" Send="StatusSet Repairing 0"/>
+        <On Terms="TimerExpired; TimerName Repairing" Target="GenericTalentCalldownMULE@RepairGate" Send="AnimBracketStop BSD"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="GenericTalentCalldownMULE@TowerMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="StatusSet Repairing 1"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="TimerKill Repairing"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@RepairHealth.Start; ValidateEffect LifeNotFullOrEnergyNotFull" Send="TimerSet 1.200000 Repairing"/>
+        <On Terms="StatusOn.*.Repairing" Send="Create GenericTalentCalldownMULE@RepairTower"/>
+        <On Terms="TimerExpired; TimerName Repairing" Send="StatusSet Repairing 0"/>
+        <On Terms="TimerExpired; TimerName Repairing" Target="GenericTalentCalldownMULE@RepairTower" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="StatusSet Repairing 0"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Target="GenericTalentCalldownMULE@RepairTower" Send="AnimBracketStop BSD"/>
+    </CActorEventMacro>
+    <CActorModel id="GenericTalentCalldownMULE@RepairCastle" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="UnitDeath" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CActorModel id="GenericTalentCalldownMULE@RepairGate" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="UnitDeath" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CActorSound id="GenericTalentCalldownMULE@Impact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+    </CActorSound>
+    <CActorSiteOpShadow id="GenericTalentCalldownMULE@DropSOpShadow">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <HeightSourceType value="AsyncPrecise"/>
+        <HeightTests value="-0.200000,-0.200000"/>
+        <HeightTests value="0.200000,0.200000"/>
+        <HeightTestType value="Highest"/>
+    </CActorSiteOpShadow>
+    <CActorModel id="GenericTalentCalldownMULE@DropModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@CreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.GenericTalentCalldownMULE@CreatePersistent.Stop" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="GenericTalentCalldownMULE@DropSOpShadow"/>
+        <Model value="GenericTalentCalldownMULE@DropPod"/>
+    </CActorModel>
+    <CActorSound id="GenericTalentCalldownMULE@Drop" parent="CoreSoundContinuous">
+        <Macros index="0" removed="1"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <InheritType value="OneShot"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <Supporter Subject=""/>
+        <On index="1" Terms="Effect.GenericTalentCalldownMULE@CreatePersistent.Start; At Target" Send="Create"/>
+        <On index="2" Terms="ActorCreation" Send="TimerSet 2.100000 DelayDropPod"/>
+        <On Terms="TimerExpired; TimerName DelayDropPod" Send="Create GenericTalentCalldownMULE@Impact"/>
+        <On Terms="TimerExpired; TimerName DelayDropPod" Send="Destroy"/>
+    </CActorSound>
+    <CActorModel id="GenericTalentCalldownMULE@RepairTower" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talents"/>
+        <On Terms="UnitDeath" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CModel id="GenericTalentCalldownMULE@DropPod" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Placeholder_OrbitalDrop\Storm_FX_Placeholder_OrbitalDrop.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="OrbitalCommandDropPodDeathA"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="OrbitalCommandDropPodDeathA"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="OrbitalCommandDropPodDeathB"/>
+            <Type value="Sound"/>
+            <Time value="1.500000"/>
+            <Payload value="OrbitalCommandDropPodDeathB"/>
+        </Events>
+        <Radius value="0.250000"/>
+        <RadiusLoose value="0.250000"/>
+    </CModel>
+    <CModel id="GenericTalentCalldownMULE@Death" parent="CoreUnitDeath">
+        <Model value="Assets\Effects\Storm_FX_Talent_RepairBot_Death\Storm_FX_Talent_RepairBot_Death.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Talent_CalldownMULE_End"/>
+            <Type value="Sound"/>
+            <Payload value="GenericTalentCalldownMULE@End"/>
+        </Events>
+    </CModel>
+    <CModel id="GenericTalentCalldownMULE@RepairCastle" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Talent_Mule_Castle\Storm_FX_Talent_Mule_Castle.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CModel>
+    <CModel id="GenericTalentCalldownMULE@RepairGate" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Talent_Mule_Castle\Storm_FX_Talent_Mule_Castle.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CModel>
+    <CModel id="GenericTalentCalldownMULE@RepairTower" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Talent_Mule_Tower\Storm_FX_Talent_Mule_Tower.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CModel>
+    <CModel id="GenericTalentCalldownMULE@MULE" parent="Unit">
+        <Model value="Assets\Effects\Storm_FX_Talent_RepairBot\Storm_FX_Talent_RepairBot.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <SelectionRadius value="0.588100"/>
+        <ShadowRadius value="0.588100"/>
+    </CModel>
+    <CModel id="GenericTalentResurgenceOfTheStorm@Buff" parent="BuffFX">
+        <Model value="assets\Effects\Storm_FX_Talent_EyeoftheStorm_Buff\Storm_FX_Talent_EyeoftheStorm_Buff.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CModel>
+    <CModel id="GenericTalentBoltOfTheStorms@FXOut" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_Old_BoltOfTheStorm_Out\Talent_Old_BoltOfTheStorm_Out.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <Priority value="16"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="GenericTalentBoltOfTheStorms@FXIn" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Talents\Talent_Old_BoltOfTheStorm_In\Talent_Old_BoltOfTheStorm_In.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <Priority value="16"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="TalentBucket_FuryOfTheStorm_ModelBuff" parent="BuffFX">
+        <Model value="Assets\Effects\Storm_Effect_Talent_FuryoftheStorm_Buff\Storm_Effect_Talent_FuryoftheStorm_Buff.m3"/>
+    </CModel>
+    <CModel id="TalentBucket_FuryOfTheStorm_Impact" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_Effect_Talent_FuryoftheStorm_Impact\Storm_Effect_Talent_FuryoftheStorm_Impact.m3"/>
+        <RadiusLoose value="0.750000"/>
+    </CModel>
+    <CModel id="TalentBucket_ForyoftheStorm_Beam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_Effect_Kerrigan_Base_ChainLightning\Storm_Effect_Kerrigan_Base_ChainLightning.m3"/>
+        <RadiusLoose value="0.750000"/>
+    </CModel>
+    <CModel id="TalentBucket_Rewind_ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Talents\Talent_Old_Rewind_Impact\Talent_Old_Rewind_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talents"/>
+    </CModel>
+    <CSound id="GenericTalentBoltOfTheStorms@Sound" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_Bolt_of_the_Storm1.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="TalentBucket_FuryoftheStorm_SoundImpact" parent="Spell">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch05.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch06.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Generic\Gen_Spell_Lightning_Launch07.ogg" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Pitch value="0.000000,4.000000"/>
+        <Select value="Sequential"/>
+        <Volume value="-11.000000,-11.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="TalentBucket_Rewind_Cast" parent="Spell">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_Rewind_Launch01.ogg" FacialGroup=""/>
+        <Flags index="Purgable" value="0"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="GenericTalentCalldownMULE@End" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Explode0.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Explode1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Explode2.wav" FacialGroup=""/>
+        <DupeDestroyCount value="3"/>
+        <DupeMuteCount value="3"/>
+        <Pitch value="2.000000,2.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="GenericTalentCalldownMULE@Drop" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_DropPod_Drop0.ogg"/>
+        <DupeDestroyCount value="3"/>
+        <DupeMuteCount value="3"/>
+        <Volume value="-2.430000,-2.430000"/>
+    </CSound>
+    <CSound id="GenericTalentCalldownMULE@Impact" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_DropPod_Impact0.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_DropPod_Impact1.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_DropPod_Impact2.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GenericTalentCalldownMULE@Repair" parent="Gather">
+        <EditorCategories value="CoreHero:Talents"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Repair0.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Repair1.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Repair2.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Repair3.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Repair4.ogg"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_Mule_Repair5.ogg"/>
+        <Category value="Flames"/>
+        <DupeDestroyCount value="3"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-13.000000,-13.000000"/>
+    </CSound>
+    <CDataCollectionAbil id="GenericTalentCalldownMULE">
+        <EditorCategories value="CoreHero:Talents,CoreDataGroup:Talent"/>
+        <DataRecord Entry="Abil,GenericTalentCalldownMULE@Repair"/>
+        <DataRecord Entry="Abil,GenericTalentCalldownMULE@RepairEnergy"/>
+        <DataRecord Entry="Abil,GenericTalentCalldownMULE"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@MULE"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@RepairSound"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@RepairCastleMacro"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@RepairGateMacro"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@TowerMacro"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@RepairCastle"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@RepairGate"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@Impact"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@DropSOpShadow"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@DropModel"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@Drop"/>
+        <DataRecord Entry="Actor,GenericTalentCalldownMULE@RepairTower"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@ScanOverride"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@StopChanneling"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@RepairTargetHealth"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@RepairTargetAmmo"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@Alive"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@TimeLife"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@ScanController"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@Scaling"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@PassiveBehavior"/>
+        <DataRecord Entry="Behavior,GenericTalentCalldownMULE@EnergyRepairEnabled"/>
+        <DataRecord Entry="Button,GenericTalentCalldownMULE@Repair"/>
+        <DataRecord Entry="Button,GenericTalentCalldownMULE"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@ApplyScanOverride"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@SearchPersistent"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier1IssueOrder"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier3IssueOrder"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier2Search"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier2SearchSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier4IssueOrder"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier3SearchSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier3Search"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier2IssueOrder"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier4SearchSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier4Search"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@ApplyStopChanneling"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairHealthPersistent"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairApplyTargetBehaviorHealth"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairApplyTargetBehaviorAmmo"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairEnergyPersistent"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@AliveApplyBehavior"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@CreateUnit"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@AliveRemoveBehavior"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@ApplyTimedLifeBehavior"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@ApplyScanController"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@CreatePersistent"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@FinalSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@AlivePersistent"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairHealth"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairInitialSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairAmmoDisablerRemoveBehavior"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairAmmoDisablerWarningRemoveBehavior"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairEnergy"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairAmmoRestartSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairSuicide"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier1Search"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@InitialSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@CreateSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@Tier1SearchSet"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RetargetSearch"/>
+        <DataRecord Entry="Effect,GenericTalentCalldownMULE@RepairEnergySet"/>
+        <DataRecord Entry="Item,GenericTalentCalldownMULE"/>
+        <DataRecord Entry="Model,GenericTalentCalldownMULE@DropPod"/>
+        <DataRecord Entry="Model,GenericTalentCalldownMULE@Death"/>
+        <DataRecord Entry="Model,GenericTalentCalldownMULE@MULE"/>
+        <DataRecord Entry="Model,GenericTalentCalldownMULE@RepairCastle"/>
+        <DataRecord Entry="Model,GenericTalentCalldownMULE@RepairGate"/>
+        <DataRecord Entry="Model,GenericTalentCalldownMULE@RepairTower"/>
+        <DataRecord Entry="Sound,GenericTalentCalldownMULE@Repair"/>
+        <DataRecord Entry="Sound,GenericTalentCalldownMULE@Impact"/>
+        <DataRecord Entry="Sound,GenericTalentCalldownMULE@Drop"/>
+        <DataRecord Entry="Sound,GenericTalentCalldownMULE@End"/>
+        <DataRecord Entry="Talent,GenericTalentCalldownMULE"/>
+        <DataRecord Entry="Unit,GenericTalentCalldownMULE@MULE"/>
+        <DataRecord Entry="Unit,GenericTalentCalldownMULE"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@DoesNotHaveScanOverride"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@IsTier3TargetCombine"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@TargetDoesNotHaveEnergyBehavior"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@TargetDoesNotHaveHealingBehavior"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@IsTier2TargetCombine"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@IsTier4TargetCombine"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@TargetLifeNotFull"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@TowerEnergyGreaterorEqualtoTwo"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@RepairTargetIsDeadOrUnitIsDeadTower"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@IsTier1TargetCombine"/>
+        <DataRecord Entry="Validator,GenericTalentCalldownMULE@RepairTargetIsDead"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="GenericTalentResurgenceOfTheStorm">
+        <EditorCategories value="CoreHero:Talents,CoreDataGroup:Talent"/>
+        <DataRecord Entry="Abil,GenericTalentResurgenceOfTheStorm"/>
+        <DataRecord Entry="Actor,GenericTalentResurgenceOfTheStorm@Buff"/>
+        <DataRecord Entry="Actor,GenericTalentResurgenceOfTheStorm"/>
+        <DataRecord Entry="Behavior,GenericTalentResurgenceOfTheStorm@Cooldown"/>
+        <DataRecord Entry="Behavior,GenericTalentResurgenceOfTheStorm@ReadyBehavior"/>
+        <DataRecord Entry="Button,GenericTalentResurgenceOfTheStorm"/>
+        <DataRecord Entry="Effect,GenericTalentResurgenceOfTheStorm@Modification"/>
+        <DataRecord Entry="Effect,GenericTalentResurgenceOfTheStorm@ApplyCooldownBehavior"/>
+        <DataRecord Entry="Item,GenericTalentResurgenceOfTheStorm"/>
+        <DataRecord Entry="Model,GenericTalentResurgenceOfTheStorm@Buff"/>
+        <DataRecord Entry="Talent,GenericTalentResurgenceOfTheStorm"/>
+        <DataRecord Entry="Unit,GenericTalentResurgenceOfTheStorm"/>
+    </CDataCollection>
+    <CDataCollection id="GenericTalentBoltOfTheStorms">
+        <EditorCategories value="CoreHero:Talents,CoreDataGroup:Talent"/>
+        <DataRecord Entry="Abil,GenericTalentBoltOfTheStorms"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms@Sound"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms@RangeSplat"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms@Range"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms@CursorSplat"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms@FXIn"/>
+        <DataRecord Entry="Actor,GenericTalentBoltOfTheStorms@FXOut"/>
+        <DataRecord Entry="Button,GenericTalentBoltOfTheStorms"/>
+        <DataRecord Entry="Effect,GenericTalentBoltOfTheStorms@Modification"/>
+        <DataRecord Entry="Effect,GenericTalentBoltOfTheStorms@Teleport"/>
+        <DataRecord Entry="Item,GenericTalentBoltOfTheStorms"/>
+        <DataRecord Entry="Model,GenericTalentBoltOfTheStorms@FXIn"/>
+        <DataRecord Entry="Model,GenericTalentBoltOfTheStorms@FXOut"/>
+        <DataRecord Entry="Sound,GenericTalentBoltOfTheStorms@Sound"/>
+        <DataRecord Entry="Talent,GenericTalentBoltOfTheStorms"/>
+        <DataRecord Entry="Unit,GenericTalentBoltOfTheStorms"/>
+    </CDataCollection>
+    <CItemAbil id="GenericTalentCalldownMULE">
+        <Class value="Item"/>
+        <Requirements value="HeroGenericCanUseInventory"/>
+    </CItemAbil>
+    <CItemAbil id="GenericTalentBoltOfTheStorms">
+        <Class value="Item"/>
+    </CItemAbil>
+    <CItemAbil id="GenericTalentResurgenceOfTheStorm">
+        <Class value="Item"/>
+        <Requirements value="HeroHasDeadBehavior"/>
+    </CItemAbil>
+    <CItemAbil id="TalentBucket_Rewind">
+        <Class value="Item"/>
+        <CarryBehaviorArray value="TalentBucket_Rewind_CarryBehavior"/>
+        <Requirements value="HeroHasNoDeadBehavior"/>
+    </CItemAbil>
+    <CUnit id="GenericTalentCalldownMULE" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Talents"/>
+    </CUnit>
+    <CUnit id="GenericTalentCalldownMULE@MULE" parent="CoreSummonActive">
+        <LifeStart value="140"/>
+        <LifeMax value="140"/>
+        <LifeRegenRate value="1"/>
+        <Speed value="2.5"/>
+        <Sight value="9"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="GenericTalentCalldownMULE@Repair"/>
+        <BehaviorArray Link="GenericTalentCalldownMULE@Scaling"/>
+        <BehaviorArray Link="GenericTalentCalldownMULE@PassiveBehavior"/>
+        <BehaviorArray Link="GenericTalentCalldownMULE@EnergyRepairEnabled"/>
+        <CardLayouts>
+            <LayoutButtons Face="GenericTalentCalldownMULE@Repair" Type="AbilCmd" AbilCmd="GenericTalentCalldownMULE@Repair,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="2" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <InnerRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Talents"/>
+    </CUnit>
+    <CUnit id="GenericTalentBoltOfTheStorms" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Talents"/>
+    </CUnit>
+    <CUnit id="GenericTalentResurgenceOfTheStorm" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Talents"/>
+    </CUnit>
+    <CUnit id="TalentBucket_Rewind" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CBehaviorVeterancy id="GenericTalentCalldownMULE@Scaling">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Talents"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray/>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1">
+            <Modification>
+                <VitalMaxArray index="Life" value="43"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray>
+            <Modification>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@PassiveBehavior">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Duration value="4"/>
+        <Modification>
+            <StateFlags index="UnitAttrOnStructure" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@EnergyRepairEnabled">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Duration value="4"/>
+        <Modification>
+            <AbilLinkDisableArray value="GenericTalentCalldownMULE@RepairEnergy"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@Alive">
+        <EditorCategories value="CoreHero:Talents"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@StopChanneling">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Duration value="0.125"/>
+        <Modification>
+            <AbilLinkDisableArray value="GenericTalentCalldownMULE@Repair"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@RepairTargetHealth">
+        <EditorCategories value="CoreHero:Talents"/>
+        <RemoveValidatorArray value="TargetLifeNotFull"/>
+        <RemoveValidatorArray value="TargetNotImmuneToFriendlyAbilities"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="1.0625"/>
+        <Period value="1"/>
+        <PeriodicEffect value="GenericTalentCalldownMULE@RepairSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@RepairTargetAmmo">
+        <EditorCategories value="CoreHero:Talents"/>
+        <RemoveValidatorArray value="EnergyNotFull"/>
+        <RemoveValidatorArray value="TargetNotImmuneToFriendlyAbilities"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <Duration value="3.0625"/>
+        <Period value="3"/>
+        <PeriodicEffect value="GenericTalentCalldownMULE@RepairEnergySet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@ScanOverride">
+        <EditorCategories value="CoreHero:Talents"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@ScanController">
+        <EditorCategories value="CoreHero:Talents"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="GenericTalentCalldownMULE@SearchPersistent"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentCalldownMULE@TimeLife">
+        <EditorCategories value="CoreHero:Talents"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <BuffFlags index="UpdateDurationWhileDisabled" value="1"/>
+        <Duration value="40"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="GenericTalentCalldownMULE@RetargetSearch"/>
+        <FinalEffect value="CoreSuicide"/>
+        <Modification>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentResurgenceOfTheStorm@ReadyBehavior" parent="CoreTalentBehaviorParent">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_ResurgenceOfTheStorm.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericTalentResurgenceOfTheStorm@Cooldown" parent="CoreTalentBehaviorParent">
+        <Alignment value="Negative"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_ResurgenceOfTheStorm.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <Duration value="200"/>
+        <Modification>
+            <BehaviorLinkDisableArray value="GenericTalentResurgenceOfTheStorm@ReadyBehavior"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucketFarflightAmmo">
+        <Modification RangedWeaponRange="2.2" WeaponScanBonus="2.2"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_BattleMomentum_CarryBehavior">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_Executioner_30">
+        <DamageResponse ModifyFraction="1.3" TargetFilters="-;Player,Ally,Neutral,Structure,Stasis,Dead,Invulnerable" DamageValue="Original">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Melee" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <ValidatorArray value="TargetStunnedorRootedorSlowed"/>
+        </DamageResponse>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_Executioner_60">
+        <DamageResponse ModifyFraction="1.6" TargetFilters="-;Player,Ally,Neutral,Structure,Stasis,Dead,Invulnerable" DamageValue="Original">
+            <Kind index="Spell" value="0"/>
+            <Kind index="Melee" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <ValidatorArray value="TargetStunnedorRootedorSlowed"/>
+        </DamageResponse>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_FuryoftheStorm_CarryBehavior">
+        <DisableValidatorArray value="SourceNotDead"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_FuryoftheStorm_CarryBehavior_Tychus">
+        <DisableValidatorArray value="SourceNotDead"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_HardenedFocus_CarryBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_MercenaryLord_CarryBehavior">
+        <DamageResponse Handled="TalentBucket_MercenaryLord_ApplyMinionBehavior"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_QuickFingers_CarryBehavior">
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.25"/>
+        </Modification>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_Rewind_CarryBehavior">
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_Rewind.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_ThirstForLife_HasCarryBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_MercenaryLord_Stacks">
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_MercenaryLord.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <RemoveValidatorArray value="TalentBucket_MercenaryLord_CasterHasCarryBehavior"/>
+        <MaxStackCount value="50"/>
+        <MaxStackCountPerCaster value="50"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Biological" value="0.04"/>
+        </Modification>
+        <DamageResponse ModifyFraction="0.99" DamageValue="Original">
+            <ValidatorArray value="TargetIsMinion"/>
+        </DamageResponse>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <BehaviorCategories index="Passive" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_GatheringPower_Stacks" parent="CoreUnitStatsAndQuest">
+        <Face value="TalentBucket_GatheringPower"/>
+        <InfoIcon value="Assets\Icons\Common_General\Icon_General_GatheringPower.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <MaxStackCount value="15"/>
+        <MaxStackCountPerCaster value="15"/>
+        <Modification>
+            <AttributeChangeArray index="3" Points="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_FuryoftheStorm_Cooldown">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_FuryoftheStorm_Cooldown_Tychus">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.1875"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentBucket_MercenaryLord_MinionBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talents"/>
+        <MaxStackCount value="10"/>
+        <MaxStackCountPerCaster value="1"/>
+        <Duration value="2.5"/>
+        <DamageResponse Fatal="1" Handled="TalentBucket_MercenaryLord_ApplyCasterStack">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentMercenaryLordKnightBuff">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Textures\storm_ui_temp_icon_teleport.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <VitalMaxAdditiveMultiplierArray index="Life" value="0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="TalentMercenaryLordGiantBuff">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Textures\storm_ui_temp_icon_teleport.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <DamageTotalMultiplier index="Ranged" value="0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+</Catalog>

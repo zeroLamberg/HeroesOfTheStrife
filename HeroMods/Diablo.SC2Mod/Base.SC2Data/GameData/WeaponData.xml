@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HeroDiabloWeapon" parent="CoreHeroWeaponMedium">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Options index="Melee" value="1"/>
+        <DisplayEffect value="HeroDiabloWeapon@Damage"/>
+        <MinScanRange value="4"/>
+        <Range value="1.25"/>
+        <Period value="1"/>
+        <PreswingBeforeAttack value="0.1875"/>
+        <PreswingBetweenAttacks value="0.1875"/>
+        <Effect value="HeroDiabloWeapon@Damage"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+</Catalog>

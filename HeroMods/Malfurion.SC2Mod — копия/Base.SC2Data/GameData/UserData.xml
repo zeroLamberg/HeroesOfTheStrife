@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Instances Id="[Default]"/>
+        <Instances Id="Regrowth">
+            <GameLink GameLink="HeroMalfurionRegrowth">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionRegrowth">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Malfurion">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="Moonfire">
+            <GameLink GameLink="HeroMalfurionMoonfire">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionMoonfire">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Malfurion">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="EntanglingRoots">
+            <GameLink GameLink="HeroMalfurionEntanglingRoots">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionEntanglingRoots">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Malfurion">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="Innervate">
+            <GameLink GameLink="HeroMalfurionInnervate">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionInnervate">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Trait">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Trait (D)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Malfurion">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="Tranquility">
+            <GameLink GameLink="HeroMalfurionTranquility">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTranquility">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Malfurion">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="TwilightDream">
+            <GameLink GameLink="HeroMalfurionTwilightDream">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTwilightDream">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Malfurion">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Instances Id="MalfurionBase">
+            <GameLink GameLink="HeroMalfurion@BaseWhite">
+                <Field Id="VariationUpgradeLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurion@BasePurple">
+                <Field Id="VariationUpgradeLink" Index="1"/>
+            </GameLink>
+            <Text Text="UserData/Skin/MalfurionBase_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Skin/MalfurionBase_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/MalfurionBase_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/MalfurionBase_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/MalfurionBase_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/MalfurionBase_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Instances Id="Malfurion - Hindering Moonfire">
+            <GameLink GameLink="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireHinderingMoonfire">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireHinderingMoonfire">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireHinderingMoonfire">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireHinderingMoonfire@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Moonfire">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Elune&apos;s Chosen">
+            <GameLink GameLink="HeroMalfurionTalentElunesChosen">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentElunesChosen">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentElunesChosen@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentElunesChosen">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Moonlit Harmony">
+            <GameLink GameLink="HeroMalfurionTalentInnervateMoonlitHarmony">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentInnervateMoonlitHarmony">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentInnervateMoonlitHarmony@TalentCarry">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Innervate">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Celestial Alignment">
+            <GameLink GameLink="HeroMalfurionTalentMoonfireCelestialAlignment">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireCelestialAlignment">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireCelestialAlignment">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireCelestialAlignment@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Moonfire">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Moonlight">
+            <GameLink GameLink="HeroMalfurionTalentMoonfireMoonlight">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireMoonlight">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireMoonlight@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Moonfire">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Nature&apos;s Cleanse">
+            <GameLink GameLink="HeroMalfurionTalentNaturesCleanse">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentNaturesCleanse">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentNaturesCleanse">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentNaturesCleanse@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Dangerous Roots">
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsDangerousRoots">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsDangerousRoots">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsDangerousRoots@FlatDamageBonus">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+            <User Type="Ability" Instance="EntanglingRoots">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Overgrown Path">
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsOvergrownPath">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsOvergrownPath">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsOvergrownPath@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="EntanglingRoots">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Tenacious Roots">
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsTenaciousRoots">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentEntanglingRootsTenaciousRoots">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="EntanglingRoots">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Lifebloom">
+            <GameLink GameLink="HeroMalfurionRegrowthLifebloom">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionRegrowthLifebloom">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Regrowth">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Twilight Dream">
+            <GameLink GameLink="HeroMalfurionTwilightDream">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTwilightDream">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="TwilightDream">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Tranquility">
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTranquility">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTranquility">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Tranquility">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Course of Life">
+            <GameLink GameLink="HeroMalfurionTalentCourseofLife">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentCourseofLife">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentCourseofLife@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Lifeseed">
+            <GameLink GameLink="HeroMalfurionTalentRegrowthLifeseed">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentRegrowthLifeseed">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff">
+                <Field Id="TalentBehavior" Index="1"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Regrowth">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Nature&apos;s Protection">
+            <GameLink GameLink="HeroMalfurionRegrowthNaturesProtection">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionRegrowthNaturesProtection">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Regrowth">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Full Moonfire">
+            <GameLink GameLink="HeroMalfurionTalentMoonfireFullMoonfire">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireFullMoonfire">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireFullMoonfire">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentMoonfireFullMoonfire@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Moonfire">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Ysera&apos;s Gift">
+            <GameLink GameLink="HeroMalfurionRegrowthYserasGift">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionRegrowthYserasGift">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Regrowth">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Revitalize">
+            <GameLink GameLink="HeroMalfurionTalentInnervateRevitalize">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentInnervateRevitalize">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentInnervateRevitalize@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Innervate">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Astral Communion">
+            <GameLink GameLink="HeroMalfurionTalentTwilightDreamAstralCommunion">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentTwilightDreamAstralCommunion">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentTwilightDreamAstralCommunion@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentTwilightDreamAstralCommunion@ArmorDebuffController">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentTwilightDreamAstralCommunion@CooldownController">
+                <Field Id="TalentPlayerResponse" Index="1"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Twilight Dream">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="TwilightDream">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Malfurion - Serenity">
+            <GameLink GameLink="HeroMalfurionTalentTranquilitySerenity">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentTranquilitySerenity">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurionTalentTranquilitySerenity@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Tranquility">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="Tranquility">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Instances Id="Malfurion">
+            <GameLink GameLink="HeroMalfurion">
+                <Field Id="Hero Link"/>
+            </GameLink>
+            <GameLink GameLink="HeroMalfurion@LevelScalingModification">
+                <Field Id="Hero Level Scaling Effect"/>
+            </GameLink>
+            <User Type="HeroRole" Instance="Support">
+                <Field Id="Role"/>
+            </User>
+            <User Type="HeroOptionSelectingStatus" Instance="PTR and Live">
+                <Field Id="Selecting Status"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Hindering Moonfire">
+                <Field Id="TalentTier1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Elune&apos;s Chosen">
+                <Field Id="TalentTier1" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Moonlit Harmony">
+                <Field Id="TalentTier1" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Tenacious Roots">
+                <Field Id="TalentTier2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Overgrown Path">
+                <Field Id="TalentTier2" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Dangerous Roots">
+                <Field Id="TalentTier2" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Nature&apos;s Cleanse">
+                <Field Id="TalentTier3" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Lifeseed">
+                <Field Id="TalentTier3"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Moonlight">
+                <Field Id="TalentTier3" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Lifebloom">
+                <Field Id="TalentTier7" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Tranquility">
+                <Field Id="TalentTier4"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Twilight Dream">
+                <Field Id="TalentTier4" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Course of Life">
+                <Field Id="TalentTier5" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Nature&apos;s Protection">
+                <Field Id="TalentTier5"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Celestial Alignment">
+                <Field Id="TalentTier5" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Ysera&apos;s Gift">
+                <Field Id="TalentTier6"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Full Moonfire">
+                <Field Id="TalentTier6" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Revitalize">
+                <Field Id="TalentTier6" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Serenity">
+                <Field Id="TalentTier7"/>
+            </User>
+            <User Type="Talent" Instance="Malfurion - Astral Communion">
+                <Field Id="TalentTier7" Index="1"/>
+            </User>
+            <User Type="Skin" Instance="MalfurionBase">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ride">
+                <Field Id="Mount Category Array"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridebeast">
+                <Field Id="Mount Category Array" Index="1"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridebike">
+                <Field Id="Mount Category Array" Index="2"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="Mount Category Array" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="Regrowth">
+                <Field Id="Abilities"/>
+            </User>
+            <User Type="Ability" Instance="Moonfire">
+                <Field Id="Abilities" Index="1"/>
+            </User>
+            <User Type="Ability" Instance="EntanglingRoots">
+                <Field Id="Abilities" Index="2"/>
+            </User>
+            <User Type="Ability" Instance="Innervate">
+                <Field Id="Abilities" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="Tranquility">
+                <Field Id="Abilities" Index="4"/>
+            </User>
+            <User Type="Ability" Instance="TwilightDream">
+                <Field Id="Abilities" Index="5"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

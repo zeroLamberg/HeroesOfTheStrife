@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="HeroTalandarAccumulatedShield" parent="StandardButtonParentHideInfo">
+        <TooltipAppender Validator="HeroTalandarTalentAccumulatedShieldShieldCapacitor" Face="HeroTalandarTalentAccumulatedShieldShieldCapacitor"/>
+        <TooltipAppender Validator="HeroTalandarTalentAccumulatedShieldRapidRecharge" Face="HeroTalandarTalentAccumulatedShieldRapidRecharge"/>
+        <TooltipAppender Validator="HeroTalandarTalentAccumulatedShieldSystemReconfiguration" Face="HeroTalandarTalentAccumulatedShieldSystemReconfiguration"/>
+        <TooltipAppender Validator="HeroTalandarTalentAccumulatedShieldAdaptiveShield" Face="HeroTalandarTalentAccumulatedShieldAdaptiveShield"/>
+        <TooltipAppender Validator="HeroTalandarTalentAccumulatedShieldBraveHearth" Face="HeroTalandarTalentAccumulatedShieldBraveHearth"/>
+        <TooltipAppender Validator="HeroTalandarTalentAccumulatedShieldImmortal" Face="HeroTalandarTalentAccumulatedShieldImmortal"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarPurifierBeam@Whirlwind" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-whirlwindfenix.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentTacticalDataWeb" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_AutoAttack_Speed.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldRapidRecharge" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldShieldCapacitor" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarAccelerationProtocol" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Mount_Dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAkhundelar" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Praetor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAssaultProtocol" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarDragoonArmorSuit" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-hero-fenix-dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentOperationalEfficiency" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentPhaseBomb" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-weapon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarPraetorArmorSuit" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-hero-fenix.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentPurifierBeamEmpoweredBeam" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarPurifierShield" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-ability-stetmann-banelingmanashield.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarPurificationBlast" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-purificationblast.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentPurifierArmamentsAdvancedArmaments" Face="HeroTalandarTalentPurifierArmamentsAdvancedArmaments"/>
+    </CButton>
+    <CButton id="HeroTalandarPurifierBeam" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentPurifierBeamEmpoweredBeam" Face="HeroTalandarTalentPurifierBeamEmpoweredBeam"/>
+    </CButton>
+    <CButton id="HeroTalandarSolariteFlare" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentOperationalEfficiency" Face="HeroTalandarTalentOperationalEfficiency"/>
+        <TooltipAppender Validator="HeroTalandarPurifierArmaments" Face="HeroTalandarTalentSolariteFlareMagneticField"/>
+        <TooltipAppender Validator="HeroTalandarPurifierBeam" Face="HeroTalandarTalentSolariteFlareSolariteBurn"/>
+        <TooltipAppender Validator="HeroTalandarTalentAssaultProtocol" Face="HeroTalandarTalentAssaultProtocol"/>
+        <TooltipAppender Validator="HeroTalandarTalentTitanDestroyer" Face="HeroTalandarTalentTitanDestroyer"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentSolariteFlareMagneticField" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentSolariteFlareSolariteBurn" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentTacticalOverload" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Common_General\Icon_General_AbilityTalent_Damage.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentThunderousChargeProtectionProtocol" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarWarbringerProtocol" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Mount_Praetor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAvengingProtocol" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Praetor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarWhirlwind" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-ability-protoss-whirlwindfenix.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentAkhundelar" Face="HeroTalandarTalentAkhundelar"/>
+        <TooltipAppender Validator="HeroTalandarPurifierArmaments" Face="HeroTalandarTalentWhirlwindDisruptor"/>
+        <TooltipAppender Validator="HeroTalandarPurifierBeam" Face="HeroTalandarPurifierBeam@Whirlwind"/>
+        <TooltipAppender Validator="HeroTalandarTalentChampionUpgrade" Face="HeroTalandarTalentChampionUpgrade"/>
+    </CButton>
+    <CButton id="HeroTalandarArsenalOvercharge" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentPurifierArmamentsAdvancedArmaments" Face="HeroTalandarTalentPurifierArmamentsAdvancedArmaments"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentWhirlwindDisruptor" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-whirlwindfenix.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarThunderousCharge" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentAkhundelar" Face="HeroTalandarTalentAkhundelar"/>
+        <TooltipAppender Validator="HeroTalandarTalentThunderousChargeProtectionProtocol" Face="HeroTalandarTalentThunderousChargeProtectionProtocol"/>
+        <TooltipAppender Validator="HeroTalandarTalentChampionUpgrade" Face="HeroTalandarTalentChampionUpgrade"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentThunderousChargeTrooperChampion" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldImmortal" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentPurification" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotsuit-weapon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarSolarCannon" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TooltipAppender Validator="HeroTalandarTalentOperationalEfficiency" Face="HeroTalandarTalentOperationalEfficiency"/>
+        <TooltipAppender Validator="HeroTalandarTalentAssaultProtocol" Face="HeroTalandarTalentAssaultProtocol"/>
+        <TooltipAppender Validator="HeroTalandarTalentTitanDestroyer" Face="HeroTalandarTalentTitanDestroyer"/>
+    </CButton>
+    <CButton id="HeroTalandarPurifierArmaments" parent="StandardButtonParent">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-fenixweapondamage.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentChampionUpgrade" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Praetor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldAdaptiveShield" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldBraveHearth" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentTitanDestroyer" parent="StandardButtonParentHideInfo">
+        <Icon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-fenixweapondamage.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CButton>
+    <CButton id="HeroTalandarTalentAccumulatedShieldDisruptor" parent="StandardButtonParentHideInfo">
+        <Icon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+    </CButton>
+</Catalog>

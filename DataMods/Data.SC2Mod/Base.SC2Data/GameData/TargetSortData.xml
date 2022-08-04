@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTargetSortValidator id="TSAbilityEffectTreeCheck">
+        <WhichUnit Value="Target"/>
+        <Descending value="1"/>
+        <Validator value="AbilityEffectTreeCheckCombine"/>
+    </CTargetSortValidator>
+    <CTargetSortField id="TSBuilding">
+        <Field value="Attributes[7]"/>
+        <Value value="1"/>
+    </CTargetSortField>
+    <CTargetSortDistance id="TSClosestDistance">
+        <Descending value="1"/>
+        <WhichLocation Value="SourceUnit"/>
+    </CTargetSortDistance>
+    <CTargetSortBehaviorCount id="TSEngaged">
+        <Behavior value="JungleCreepPassive"/>
+        <WhichUnit Value="Target"/>
+    </CTargetSortBehaviorCount>
+    <CTargetSortField id="TSHeroic">
+        <Field value="Attributes[9]"/>
+        <Value value="1"/>
+    </CTargetSortField>
+    <CTargetSortBehaviorCount id="TSHighPriority">
+        <WhichUnit Value="Target"/>
+        <Behavior value="HighCombatPriority"/>
+        <Value value="1"/>
+    </CTargetSortBehaviorCount>
+    <CTargetSortBehaviorCount id="TSNoAvoidance">
+        <WhichUnit Value="Target"/>
+        <Behavior value="CategoryAvoidance"/>
+    </CTargetSortBehaviorCount>
+    <CTargetSortField id="TSNotHeroic">
+        <Field value="Attributes[9]"/>
+        <Value value="0"/>
+    </CTargetSortField>
+    <CTargetSortVital id="TSLifeSmallestFirst"/>
+    <CTargetSortBehaviorCount id="TSNoBounce">
+        <Behavior value="GenericNoBounceEffects"/>
+        <WhichUnit Value="Target"/>
+    </CTargetSortBehaviorCount>
+    <CTargetSortField id="TSNotInvulnerable">
+        <Field value="Flags[27]"/>
+        <Value value="0"/>
+    </CTargetSortField>
+    <CTargetSortDistance id="TSDistanceFromCaster"/>
+</Catalog>

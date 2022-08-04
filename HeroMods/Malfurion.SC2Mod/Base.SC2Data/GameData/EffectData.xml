@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectDamage id="HeroMalfurionEntanglingRoots@DummyDamage">
+        <ValidatorArray value="TargetNotInvulnerable"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <Visibility value="Visible"/>
+        <Amount value="0.001"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroMalfurionInnervate@ApplyCooldown">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionInnervate@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionRegrowth@PeriodicSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionRegrowth@Heal"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroMalfurionTalentTranquilitySerenity@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Abil,HeroMalfurionTranquility,Cost[0].Cooldown.TimeUse" Value="-30.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroMalfurionTalentTwilightDreamAstralCommunion@CooldownReduction">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroMalfurionTwilightDream,Execute" CooldownOperation="Add" CooldownTimeUse="-1.5"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroMalfurionTranquility@CooldownReduction">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <Cost Abil="HeroMalfurionRegrowth,Execute" ChargeTimeUse="-0.0217" CooldownOperation="Add"/>
+        <Cost Abil="HeroMalfurionMoonfire,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0217"/>
+        <Cost Abil="HeroMalfurionEntanglingRoots,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0217"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroMalfurion@LevelScalingModification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurion,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurion,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurion,LifeRegenRate" Value="1.04"/>
+        <EffectArray Reference="Unit,HeroMalfurion,EnergyMax" Value="10"/>
+        <EffectArray Reference="Unit,HeroMalfurion,EnergyStart" Value="10"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurion,EnergyRegenRate" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionWeapon@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionEntanglingRoots@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionInnervate@RestoreMana,VitalArray[Energy].Change" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionMoonfire@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionRegrowth@Heal,VitalArray[Life].Change" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionTranquility@Heal,VitalArray[Life].Change" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroMalfurionTreant@WeaponDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurionTreant,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurionTreant,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroMalfurionTreant,LifeStart" Value="1.04"/>
+    </CEffectModifyPlayer>
+    <CEffectAddTrackedUnit id="HeroMalfurionRegrowth@AddTrackedUnit">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <BehaviorLink value="HeroMalfurionRegrowth@TrackedUnitCounter"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
+    <CEffectRemoveTrackedUnit id="HeroMalfurionRegrowth@RemoveTrackedUnit">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <BehaviorLink value="HeroMalfurionRegrowth@TrackedUnitCounter"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectRemoveTrackedUnit>
+    <CEffectModifyPlayer id="HeroMalfurionTalentNaturesCleanse@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroMalfurionRegrowth,DamageResponse.Chance" Value="1"/>
+    </CEffectModifyPlayer>
+    <CEffectCreatePersistent id="HeroMalfurionTalentElunesChosen@ResetTokenCounter">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichLocation Value="CasterUnit"/>
+        <PeriodCount value="75"/>
+        <PeriodicEffectArray value="HeroMalfurionTalentElunesChosen@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="HeroMalfurionTalentEntanglingRootsDangerousRoots@ResetTokenCounter">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <WhichLocation Value="CasterUnit"/>
+        <PeriodCount value="50"/>
+        <PeriodicEffectArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounterController">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestNotCompleted" Effect="HeroMalfurionTalentEntanglingRootsDangerousRoots@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroMalfurionTalentEntanglingRootsDangerousRoots@IncreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Accumulator,HeroMalfurionTalentEntanglingRootsDangerousRoots@DamageConstant,Amount" Value="1"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentEntanglingRootsDangerousRoots@DecreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter">
+        <ValidatorArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Accumulator,HeroMalfurionTalentEntanglingRootsDangerousRoots@DamageConstant,Amount" Value="-1"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentElunesChosen@IncreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroMalfurionTalentElunesChosen@TokenCounter">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Accumulator,HeroMalfurionTalentElunesChosen@QuestUIDisplayer,Amount" Value="1"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentElunesChosen@DecreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroMalfurionTalentElunesChosen@TokenCounter">
+        <ValidatorArray value="HeroMalfurionTalentElunesChosen@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Accumulator,HeroMalfurionTalentElunesChosen@QuestUIDisplayer,Amount" Value="-1"/>
+        <Cost>
+            <Charge CountUse="1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentElunesChosen@QuestCompleteReward">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Abil,HeroMalfurionRegrowth,Cost[0].Charge.TimeUse" Value="-6.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectSwitch id="HeroMalfurionTalentElunesChosen@TokenCounterController">
+        <ValidatorArray value="HeroMalfurionTalentElunesChosen@QuestNotCompleted"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentElunesChosen@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentElunesChosen@QuestNotCompleted" Effect="HeroMalfurionTalentElunesChosen@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentElunesChosen@QuestCompleted" Effect="HeroMalfurionTalentElunesChosen@QuestCompleteReward" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentElunesChosen@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="HeroMalfurion@DeathSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentMoonfireHinderingMoonfire@HaveTalentAndQuestNotCompleted" Effect="HeroMalfurionTalentMoonfireHinderingMoonfire@ResetTokenCounter" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireHinderingMoonfire@IncreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter">
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Accumulator,HeroMalfurionTalentMoonfireHinderingMoonfire@QuestUIDisplayer,Amount" Value="1"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireHinderingMoonfire@DecreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter">
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Accumulator,HeroMalfurionTalentMoonfireHinderingMoonfire@QuestUIDisplayer,Amount" Value="-1"/>
+        <Cost>
+            <Charge CountUse="1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectCreatePersistent id="HeroMalfurionTalentMoonfireHinderingMoonfire@ResetTokenCounter">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichLocation Value="CasterUnit"/>
+        <PeriodCount value="30"/>
+        <PeriodicEffectArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@DecreaseToken"/>
+        <FinalEffect value="TalentQuestResetDummySet"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleteReward">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Operation="Set" Reference="Effect,HeroMalfurionTalentMoonfireHinderingMoonfire@ReduceRegrowthCD,Cost[0].ChargeTimeUse" Value="-5.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroMalfurionTalentMoonfireHinderingMoonfire@RefreshTokenCounter">
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroMalfurionTalentMoonfireHinderingMoonfire@TokenCounterController">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted" Effect="HeroMalfurionTalentMoonfireHinderingMoonfire@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleted" Effect="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleteReward" FallThrough="1"/>
+        <CaseArray Validator="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroMalfurionTalentEntanglingRootsOvergrownPath@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Effect,HeroMalfurionEntanglingRoots@CreatePersistent,PeriodCount" Value="8"/>
+        <EffectArray Reference="Behavior,HeroMalfurionEntanglingRoots@TimedLife,Duration" Value="2.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentInnervateRevitalize@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Behavior,HeroMalfurionInnervate@Cooldown,Duration" Value="-2"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireCelestialAlignment@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroMalfurionMoonfire@Reveal,Duration" Value="5.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireFullMoonfire@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Effect,HeroMalfurionMoonfire@Search,AreaArray[0].Radius" Value="1"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireHinderingMoonfire@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentMoonfireMoonlight@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Abil,HeroMalfurionMoonfire,Cost[0].Cooldown.TimeUse" Value="-2.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroMalfurionTalentTwilightDreamAstralCommunion@Modification">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray Reference="Behavior,HeroMalfurionTwilightDream@Silence,Duration" Value="1.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroMalfurionTalentMoonfireFullMoonfire@ApplyArmorReduction">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentMoonfireFullMoonfire@DamageDealtDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionTranquility@PeriodicSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTranquility@CooldownReduction"/>
+        <EffectArray value="HeroMalfurionTalentTranquilitySerenity@FindHeroesToGrantsArmor"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroMalfurionTwilightDream@Modification">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+    </CEffectModifyPlayer>
+    <CEffectDamage id="HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage" parent="CorePercentDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <VitalFractionMax index="Life" value="0.015"/>
+    </CEffectDamage>
+    <CEffectDamage id="HeroMalfurionTalentMoonfireHinderingMoonfire@PercentDamage" parent="CorePercentDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="NoFractionTakenBonus" value="1"/>
+        <VitalFractionMax index="Life" value="0.015"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsDangerousRoots@RefreshTokenCounter">
+        <ValidatorArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots"/>
+        <ValidatorArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots@QuestNotCompleted"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <ValidatorArray value="TargetNotUnstoppable"/>
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroMalfurionTalentEntanglingRootsDangerousRoots@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentInnervateRevitalize@ApplySpellPowerBuff">
+        <ValidatorArray value="HeroMalfurionTalentInnervateRevitalize"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentInnervateRevitalize@SpellPower"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentTwilightDreamAstralCommunion@ApplyArmorDebuff">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentTwilightDreamAstralCommunion@ArmorDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroMalfurionTwilightDream@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Amount value="310"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="HeroMalfurionTalentMoonfireCelestialAlignment@Heal" parent="CoreHealingParent">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <VitalArray index="Life">
+            <Change value="0">
+                <AccumulatorArray value="HeroMalfurionTalentMoonfireCelestialAlignment@HealModifier"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectEnumArea id="HeroMalfurionTalentMoonfireCelestialAlignment@Search">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <SearchFilters value="Heroic;Neutral,Enemy,ImmuneToFriendlyAbilities,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="6" Effect="HeroMalfurionTalentMoonfireCelestialAlignment@Heal"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroMalfurionTalentMoonfireHinderingMoonfire@AddStackBuff">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestStacks"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyPlayer id="HeroMalfurionTalentNaturesCleanse@ModifyCooldown">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichPlayer Value="Caster"/>
+        <Cost Abil="HeroMalfurionTalentNaturesCleanse">
+            <Cooldown>
+                <Link value="Abil/HeroMalfurionTalentNaturesCleanse"/>
+                <Location value="Unit"/>
+                <Operation value="Add"/>
+                <TimeUse value="-3"/>
+            </Cooldown>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroMalfurionTalentNaturesCleanse@ApplyCleanse">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentNaturesCleanse"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionInnervate@InnervateSet">
+        <ValidatorArray value="HeroMalfurionInnervate@ValidateTargetsNear"/>
+        <ValidatorArray value="HeroMalfurionInnervate@NotOnCooldown"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionInnervate@ApplyCooldown"/>
+        <EffectArray value="HeroMalfurionInnervate@SearchHeroUsers"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTalentMoonfireHinderingMoonfire@ImpactSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@ReduceRegrowthCD"/>
+        <EffectArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@RefreshTokenCounter"/>
+        <EffectArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@PercentDamage"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroMalfurionTalentInnervateMoonlitHarmony@CooldownModifier">
+        <ValidatorArray value="HeroMalfurionTalentInnervateMoonlitHarmony@AllyHeroNearby"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroMalfurionRegrowth,Execute" ChargeTimeUse="-0.125" CooldownOperation="Add"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroMalfurionTalentElunesChosen@RefreshTokenCounter">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroMalfurionTalentElunesChosen@TokenCounter"/>
+        <ValidatorArray value="HeroMalfurionTalentElunesChosen@QuestNotCompleted"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroMalfurionTalentElunesChosen@RestoreMana">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroMalfurionRegrowth,Execute" ChargeTimeUse="-2" CooldownOperation="Add"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="0.02"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroMalfurionTalentElunesChosen@ImpactSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTalentElunesChosen@RefreshTokenCounter"/>
+        <EffectArray value="HeroMalfurionTalentElunesChosen@RestoreMana"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTalentMoonfireHinderingMoonfire@RemoveStacksSet">
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire"/>
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@Found0Targets"/>
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestNotCompleted"/>
+        <ValidatorArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@ResetTokenCounter"/>
+        <EffectArray value="TalentQuestResetDummySet"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroMalfurionTalentMoonfireHinderingMoonfire@ReduceRegrowthCD">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroMalfurionRegrowth,Execute" ChargeTimeUse="-2" CooldownOperation="Add"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroMalfurionRegrowthNaturesProtection@ApplyController">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionRegrowthNaturesProtection@Controller"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroMalfurionRegrowthNaturesProtection@Switch">
+        <ValidatorArray value="HeroMalfurionRegrowthNaturesProtection"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="TargetLifeLT33Percent" Effect="HeroMalfurionRegrowthNaturesProtection@ApplyArmorLT33"/>
+        <CaseDefault value="HeroMalfurionRegrowthNaturesProtection@ApplyArmorGE33"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingInfinity">
+        <ValidatorArray value="HeroMalfurionTalentRegrowthLifeseed"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionRegrowth"/>
+        <Flags index="UseDuration" value="1"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentRegrowthLifeseed@ApplyRegrowthPeriodicHealingTimed">
+        <ValidatorArray value="HeroMalfurionTalentRegrowthLifeseed"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionRegrowth"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionRegrowthNaturesProtection@ApplyArmorLT33">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionRegrowthNaturesProtection@LifeLT33"/>
+        <ValidatorArray value="HeroMalfurionRegrowthNaturesProtection@TargetHasNotArmorLT33"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroMalfurionWeapon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Amount value="52"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroMalfurionTalentTranquilitySerenity@FindHeroesToGrantsArmor">
+        <ValidatorArray value="HeroMalfurionTalentTranquilitySerenity"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <SearchFilters value="Heroic;Neutral,Enemy,ImmuneToFriendlyAbilities,Missile,Stasis,Dead"/>
+        <AreaArray Radius="6" Effect="HeroMalfurionTalentTranquilitySerenity@Set"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="CasterUnit"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroMalfurionTalentTranquilitySerenity@ApplyArmor">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentTranquilitySerenity@Armor"/>
+        <ValidatorArray value="HeroMalfurionTalentTranquilitySerenity@TargetHasNoSerenityArmor"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsOvergrownPath@ApplyArmorDebuff">
+        <ValidatorArray value="HeroMalfurionTalentEntanglingRootsOvergrownPath"/>
+        <ValidatorArray value="HeroMalfurionEntanglingRoots@TargetIsRootedCasterRequired"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentEntanglingRootsOvergrownPath@ArmorDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroMalfurionRegrowth@Heal" parent="CoreHealingParent">
+        <EditorCategories value="CoreHero:Malfurion,StandardTypeCategory:HeroAbility"/>
+        <LaunchUnit Value="Caster"/>
+        <VitalArray index="Life">
+            <Change value="19"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroMalfurionRegrowthNaturesProtection@ApplyArmorGE33">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionRegrowthNaturesProtection@LifeGE33"/>
+        <ValidatorArray value="HeroMalfurionRegrowthNaturesProtection@TargetHasNotArmorGE33"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentRegrowthLifeseed@ApplyLifeSeed">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentRegrowthLifeseed"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior2" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.5"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior3" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.25"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior4" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior5" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="1.75"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroMalfurionTalentRegrowthLifeseed@RemoveBehavior">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="HeroMalfurionTalentRegrowthLifeseed"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreateUnit id="HeroMalfurionTalentEntanglingRootsDangerousRoots@CreateTreant">
+        <ValidatorArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichLocation Value="TargetPoint"/>
+        <Origin Effect="HeroMalfurionEntanglingRoots@InitialSet"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnUnit value="HeroMalfurionTreant"/>
+        <SpawnEffect value="Summon@CreationSwitch"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior2">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@DamageBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.6"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior3">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@DamageBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.3"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior4">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@DamageBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.1"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior5">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@DamageBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="1.76"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroMalfurionEntanglingRoots@Switch2">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsTenaciousRoots" Effect="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set2"/>
+        <CaseDefault value="HeroMalfurionEntanglingRoots@ApplyRootedSet"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="HeroMalfurionEntanglingRoots@Switch3">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsTenaciousRoots" Effect="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set3"/>
+        <CaseDefault value="HeroMalfurionEntanglingRoots@ApplyRootedSet"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="HeroMalfurionEntanglingRoots@Switch4">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsTenaciousRoots" Effect="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set4"/>
+        <CaseDefault value="HeroMalfurionEntanglingRoots@ApplyRootedSet"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="HeroMalfurionEntanglingRoots@Switch5">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsTenaciousRoots" Effect="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set5"/>
+        <CaseDefault value="HeroMalfurionEntanglingRoots@ApplyRootedSet"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set2">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@DummyDamage"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior2"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior2"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set3">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@DummyDamage"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior3"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior3"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set4">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@DummyDamage"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior4"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior4"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set5">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@DummyDamage"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior5"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior5"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroMalfurionEntanglingRoots@ApplyRootBehavior" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="1.5"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroMalfurionEntanglingRoots@Damage" parent="CoreDoTAsSpellDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Amount value="25"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroMalfurionEntanglingRoots@ApplyDamageBehavior">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@DamageBehavior"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionEntanglingRoots@ApplyRootedSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@DummyDamage"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@ApplyRootBehavior"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@ApplyDamageBehavior"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots@RefreshTokenCounter"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroMalfurionInnervate@RestoreMana">
+        <ValidatorArray value="NotVehicle"/>
+        <ValidatorArray value="TargetIsManaUser"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <TechAliasArray value="Mana Restore Base"/>
+        <LaunchUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <Change value="25">
+                <AccumulatorArray value="HeroMalfurionTalentInnervateMoonlitHarmony@Swtich"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroMalfurionTranquility@ModifyWeaponCooldown">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactUnit Value="Caster"/>
+        <Weapon Weapon="HeroMalfurionWeapon" CooldownAmount="3"/>
+    </CEffectModifyUnit>
+    <CEffectDamage id="HeroMalfurionTreant@WeaponDamage" parent="CorePhysicalDamageAsSpellDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Amount value="37"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroMalfurionEntanglingRoots@Search2">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1" Effect="HeroMalfurionEntanglingRoots@Switch2"/>
+        <RevealerParams Duration="1" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroMalfurionEntanglingRoots@Search3">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="HeroMalfurionEntanglingRoots@Switch3"/>
+        <RevealerParams Duration="1" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroMalfurionEntanglingRoots@Search4">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2.25" Effect="HeroMalfurionEntanglingRoots@Switch4"/>
+        <RevealerParams Duration="1" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroMalfurionEntanglingRoots@Search5">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="HeroMalfurionEntanglingRoots@Switch5"/>
+        <RevealerParams Duration="1" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroMalfurionEntanglingRoots@PersistentInitialSetRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@Search1"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsDangerousRoots@CreateTreant"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroMalfurionEntanglingRoots@Search1">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.5" Effect="HeroMalfurionEntanglingRoots@Switch1"/>
+        <RevealerParams Duration="1" ShapeExpansion="0.5">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroMalfurionEntanglingRoots@ApplyTimedLife">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroMalfurionEntanglingRoots@CreatePersistent">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <InitialDelay value="0.5"/>
+        <InitialEffect value="HeroMalfurionEntanglingRoots@PersistentInitialSetRoots"/>
+        <ExpireDelay value="0.2"/>
+        <PeriodCount value="12"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search1"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search2"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search2"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search3"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search3"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search4"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search4"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicEffectArray value="HeroMalfurionEntanglingRoots@Search5"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <RevealRadius value="4"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroMalfurionRegrowth@InitialSet">
+        <EditorCategories value="CoreHero:Malfurion,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroMalfurionRegrowth@ApplyBehavior"/>
+        <EffectArray value="HeroMalfurionRegrowth@ModifyWeaponCooldown"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="HeroMalfurionEntanglingRoots@CreateUnit">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <SpawnEffect value="HeroMalfurionEntanglingRoots@ApplyTimedLife"/>
+        <SpawnUnit value="HeroMalfurionEntanglingRoots"/>
+        <SpawnRange value="0.0625"/>
+    </CEffectCreateUnit>
+    <CEffectCreatePersistent id="HeroMalfurionMoonfire@AreaRevealPersistent">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ExpireDelay value="2"/>
+        <RevealRadius value="2.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroMalfurionMoonfire@RevealBehavior">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionMoonfire@Reveal"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroMalfurionMoonfire@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Amount value="41">
+            <AccumulatorArray value="HeroMalfurionTalentMoonfireMoonlight@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSet id="HeroMalfurionMoonfire@ImpactSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionMoonfire@Damage"/>
+        <EffectArray value="HeroMalfurionMoonfire@RevealBehavior"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTreant@WeaponInitialSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTreant@WeaponDamage"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroMalfurionTranquility@ApplyTranquility">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroMalfurionTranquility"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionMoonfire@InitialSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Marker>
+            <MatchFlags index="CasterUnit" value="1"/>
+        </Marker>
+        <EffectArray value="HeroMalfurionMoonfire@AreaRevealPersistent"/>
+        <EffectArray value="HeroMalfurionMoonfire@Search"/>
+        <EffectArray value="HeroMalfurionMoonfire@ReduceCDDelay"/>
+        <EffectArray value="HeroMalfurionTalentMoonfireHinderingMoonfire@RemoveStacksSet"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroMalfurionMoonfire@Search">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="HeroMalfurionMoonfire@ImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroMalfurionTranquility@FinalSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="RemoveSuppressFidget"/>
+        <EffectArray value="HeroMalfurionTranquility@RemoveBehavior"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroMalfurionTranquility@CreatePersistent">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <InitialEffect value="ApplySuppressFidget"/>
+        <FinalEffect value="HeroMalfurionTranquility@FinalSet"/>
+        <PeriodCount value="40"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="HeroMalfurionTranquility@Search"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyUnit id="HeroMalfurionTranquility@Heal" parent="CoreHealingParent">
+        <ValidatorArray index="0" value="TargetNotDeadOrStasis"/>
+        <ValidatorArray value="NotHidden"/>
+        <ValidatorArray value="NotVehicle"/>
+        <ValidatorArray value="TargetLifeNotFull"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <VitalArray index="Life">
+            <Change value="30"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectRemoveBehavior id="HeroMalfurionTranquility@RemoveBehavior">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroMalfurionTranquility"/>
+    </CEffectRemoveBehavior>
+    <CEffectSwitch id="HeroMalfurionRegrowth@BehaviorSwitch">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentRegrowthLifeseed@Combine" Effect="HeroMalfurionTalentRegrowthLifeseed@ApplyLifeSeed"/>
+        <CaseDefault value="HeroMalfurionRegrowth@ApplyBehavior"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroMalfurionRegrowth@ApplyBehavior">
+        <EditorCategories value="CoreHero:Malfurion,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroMalfurionRegrowth"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionTranquility@InitialSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTranquility@CreatePersistent"/>
+        <EffectArray value="HeroMalfurionTranquility@ApplyTranquility"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroMalfurionTranquility@Search">
+        <ValidatorArray value="CasterNotStasis"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="Heroic;Neutral,Enemy,Structure,ImmuneToFriendlyAbilities,Missile,Item,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="6" Effect="HeroMalfurionTranquility@Heal"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroMalfurionEntanglingRoots@DamageImpactSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@Damage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="HeroMalfurionWeapon@LaunchMissile">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactEffect value="HeroMalfurionWeapon@ImpactSet"/>
+        <AmmoUnit value="HeroMalfurionWeapon@Missile"/>
+        <ImpactRange value="0.5"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="HeroMalfurionWeapon@ImpactSet">
+        <ValidatorArray value="TargetNotStasisOrInvulnerableOrDead"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionWeapon@Damage"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior1">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@DamageBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.8"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior1" parent="CoreApplyRoots">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionEntanglingRoots@RootBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="2.75"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroMalfurionMoonfire@ReduceCDDelay">
+        <ValidatorArray value="HeroMalfurionMoonfire@FindHero"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <InitialDelay value="0.0312"/>
+        <InitialEffect value="HeroMalfurionMoonfire@ReduceCD"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyUnit id="HeroMalfurionMoonfire@ReduceCD">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroMalfurionMoonfire,Execute" CooldownOperation="Set" CooldownTimeUse="2"/>
+        <VitalArray index="Energy">
+            <Change value="60"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set1">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionEntanglingRoots@DummyDamage"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyRootBehavior1"/>
+        <EffectArray value="HeroMalfurionTalentEntanglingRootsTenaciousRoots@ApplyDamageBehavior1"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroMalfurionEntanglingRoots@Switch1">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <CaseArray Validator="HeroMalfurionTalentEntanglingRootsTenaciousRoots" Effect="HeroMalfurionTalentEntanglingRootsTenaciousRoots@Set1"/>
+        <CaseDefault value="HeroMalfurionEntanglingRoots@ApplyRootedSet"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroMalfurionInnervate@PeriodicSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionInnervate@InnervateSet"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionEntanglingRoots@InitialSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <EffectArray value="HeroMalfurionEntanglingRoots@CreateUnit"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroMalfurionInnervate@SearchHeroUsers">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <SearchFilters value="Heroic,Visible;Self,Player,Neutral,Enemy,ImmuneToFriendlyAbilities,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="6" Effect="HeroMalfurionInnervate@SearchImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectModifyUnit id="HeroMalfurionInnervate@SetCooldown">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroMalfurionInnervate,Execute">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroMalfurionInnervate@SearchImpactSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionInnervate@RestoreMana"/>
+        <EffectArray value="HeroMalfurionTalentInnervateRevitalize@ApplySpellPowerBuff"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTwilightDream@ImpactSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTwilightDream@ApplySilenceBehavior"/>
+        <EffectArray value="HeroMalfurionTwilightDream@Damage"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionTwilightDream@AbilitySet">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTwilightDream@CreatePersistent"/>
+        <EffectArray value="HeroMalfurionTwilightDream@Search"/>
+        <EffectArray value="MalfurionAstralCommunionModifyPlayerCooldown"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroMalfurionTwilightDream@CreatePersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <ExpireDelay value="1"/>
+        <RevealRadius value="7"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroMalfurionTwilightDream@ApplySilenceBehavior" parent="CoreApplySilence">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTwilightDream@Silence"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HeroMalfurionTwilightDream@Search">
+        <EditorCategories value="Race:Neutral,CoreHero:Malfurion"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="6" Effect="HeroMalfurionTwilightDream@ImpactSet"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectModifyUnit id="HeroMalfurionRegrowth@ModifyWeaponCooldown">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <ImpactUnit Value="Caster"/>
+        <Weapon Weapon="HeroMalfurionWeapon" CooldownOperation="Max" CooldownAmount="0.5"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroMalfurionTalentTranquilitySerenity@ApplyMarker">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Behavior value="HeroMalfurionTalentTranquilitySerenity@Marker"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroMalfurionTalentTranquilitySerenity@Set">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="HeroMalfurionTalentTranquilitySerenity@ApplyMarker"/>
+        <EffectArray value="HeroMalfurionTalentTranquilitySerenity@ApplyArmor"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionRegrowth@OnApplicationSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="MalfurionNaturesSwiftnessRemoveTokenCount"/>
+        <EffectArray value="MalfurionRejuvenationRemoveTokenCount"/>
+        <EffectArray value="HeroMalfurionRegrowth@AddTrackedUnit"/>
+    </CEffectSet>
+    <CEffectSet id="HeroMalfurionRegrowth@RefreshEffectSet">
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <EffectArray value="MalfurionNaturesSwiftnessRemoveTokenCount"/>
+        <EffectArray value="MalfurionRejuvenationRemoveTokenCount"/>
+        <EffectArray value="HeroMalfurionRegrowth@AddTrackedUnit"/>
+    </CEffectSet>
+</Catalog>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+<Frame type="SelectionUnitStatusPanel" name="KatarinaFrame" template="StandardHeroUITemplates/CircularHeroUITemplate">
+  <SpecificUnit val="HeroKatarina"/>
+
+  <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+
+    <Frame type="UnitStatusValidatorAnimElement" name="VisibilityValidator">
+      <Anchor relative="$parent" />
+      <Validator val="HeroKatarinaTalentWeaponMasterAmmoRestoration@Target" />
+      <Animation name="Visibility">
+        <Event event="NoState" action="Stop" />
+        <Event event="HeroKatarinaTalentWeaponMasterAmmoRestoration@Target" action="Restart,Play" />
+        <Controller type="Visibility" end="Pause" frame="$parent/MechanicTexture">
+          <Key type="Bool" time="0" value="True" />
+        </Controller>
+      </Animation>
+    </Frame>
+
+    <Frame type="Image" name="MechanicTexture">
+      <Visible val="False"/>
+      <Texture val="Assets\Icons\Hero_Katarina\Icon_Katarina_WeaponMaster_a.dds"/>
+    </Frame>
+
+    <Frame type="BehaviorIcon" name="HeroKatarinaTalentWeaponMasterAmmoRestorationTooltip" template="StandardHeroUITemplates/SmallBehaviorTooltiptemplate">
+      <Behavior val="HeroKatarinaTalentWeaponMasterAmmoRestoration@Periodic"/>
+    </Frame>
+
+    <Frame type="UnitStatusBehaviorIcon" name="AmmoRestoration" template="StandardHeroUITemplates/CircularBehaviorCountdownBarTemplate">
+      <Behavior val="HeroKatarinaTalentWeaponMasterAmmoRestoration@Periodic"/>
+    </Frame>
+
+  </Frame>
+</Frame>
+
+<Frame type="SelectionUnitStatusPanel" name="KatarinaStacksFrameContainer">
+  <Anchor relative="$parent" />
+  <SpecificUnit val="HeroKatarina" />
+  <Frame type="UnitStatusBuffDebuffElement" name="ExclusionZoneStatusFrame">
+    <Anchor relative="$ancestor[@name=HeroUnitStatusParentFrame]/PlayerUnitNameLabel" />
+    <Frame type="Image" name="ExclusionZoneStatusBase">
+      <Anchor side="Bottom" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Texture val="@UI/Katarina/ExclusionZoneStatusBase" />
+      <Visible val="{ExclusionZoneStatusCountdownFrame/@Visible}"/>
+      <Frame type="UnitStatusBehaviorIcon" name="ExclusionZoneStatusCountdownFrame">
+        <Behavior val="HeroKatarinaExclusionZone@HeroTimedBehavior" />
+        <Anchor relative="$parent" />
+        <VisibleToAlly val="False"/>
+        <VisibleToOwner val="False"/>
+        <Frame type="BehaviorIcon" name="BehaviorIcon">
+          <Anchor relative="$parent" />
+          <AcceptsMouse val="False" />
+          <Frame type="ProgressBar" name="CooldownBar">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+            <Height val="48" />
+            <Width val="48" />
+            <Color val="5DFF2F" />
+            <StateGroup name="ExclusionZoneDurationState">
+              <State name="Red">
+                <When type="Property" operator="LessThan" Value="3" />
+                <Action type="SetProperty" Color="FF4D47" />
+                <!--<Action type="SetProperty" Frame="ExclusionZoneStatusCenterIcon" LightAdjustColor="FFFFFF" />
+                <Action type="SetProperty" Frame="ExclusionZoneStatusCenterIcon" DarkAdjustColor="FF4D47" />-->
+              </State>
+              <State name="Yellow">
+                <When type="Property" operator="LessThan" Value="6" />
+                <Action type="SetProperty" Color="FFBB20" />
+                <!--<Action type="SetProperty" Frame="ExclusionZoneStatusCenterIcon" LightAdjustColor="FFFFFF" />
+                <Action type="SetProperty" Frame="ExclusionZoneStatusCenterIcon" DarkAdjustColor="FFBB20" />-->
+              </State>
+            </StateGroup>
+            <Circular val="True" />
+            <CircularStart val="0" />
+            <CircularEndOffset val="360" />
+            <Frame type="Frame" name="FillImageContainer">
+              <Anchor relative="$parent" />
+              <Frame type="Image" name="FillImage">
+                <Anchor relative="$parent" />
+                <Texture val="@UI/Katarina/ExclusionZoneStatusBar" />
+                <TextureType val="Circular" />
+              </Frame>
+            </Frame>
+            <Frame type="Image" name="ExclusionZoneStatusCenterIcon">
+              <Anchor relative="$parent" offset="-8" />
+              <Texture val="@UI/Stacks/Katarina/ExclusionZone" />
+              <Visible val="true" />
+              <IgnoreParentColor val="true" />
+              <!--<ColorAdjustMode val="Colorize" />
+              <LightAdjustColor val="FFFFFF" />
+              <DarkAdjustColor val="5DFF2F" />-->
+            </Frame>
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+</Frame>
+
+</Desc>

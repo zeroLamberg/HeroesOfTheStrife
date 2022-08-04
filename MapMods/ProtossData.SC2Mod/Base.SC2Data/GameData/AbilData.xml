@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectTarget id="MercenaryColossusFireBeam">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <PrepEffect index="0" value="MercenaryColossusFireBeam@SetFacing"/>
+        <Effect index="0" value="MercenaryColossusFireBeam@InitialSet"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="15"/>
+        </Cost>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CastIntroTime value="1.5"/>
+        <FinishTime value="5"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercenaryColossusFireBeam"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MercenaryColossusChargedBlast">
+        <EditorCategories value="AbilityorEffectType:Units,StandardHero:Mercenaries"/>
+        <PrepEffect index="0" value="MercenaryColossusChargedBlast@PrepareEffect"/>
+        <Effect index="0" value="MercenaryColossusChargedBlast@LM"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="11"/>
+        </Cost>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <CastIntroTime value="1.5"/>
+        <FinishTime value="1"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MercenaryColossusChargedBlast"/>
+    </CAbilEffectTarget>
+</Catalog>

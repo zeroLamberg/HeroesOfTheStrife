@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="HeroKatarinaFlashGrenade@Missile" parent="MISSILE_INVULNERABLE">
+        <Sight value="2.5"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaExclusionZone@Missile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaExclusionZone@Tower1" parent="CoreSummonInvulnerable">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <BehaviorArray Link="HeroKatarinaExclusionZone@TowerActivation"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Sight value="0.5"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaExclusionZone@Tower2" parent="CoreSummonInvulnerable">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <BehaviorArray Link="HeroKatarinaExclusionZone@TowerActivation"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Sight value="0.5"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaExclusionZone@Tower3" parent="CoreSummonInvulnerable">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <BehaviorArray Link="HeroKatarinaExclusionZone@TowerActivation"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Sight value="0.5"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaClusterCharge@ClusterBomb">
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoDeathEvent" value="1"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaClusterCharge@Missile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarina" parent="CoreHeroMounted">
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeRegenRate value="3.0195"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="100"/>
+        <EnergyRegenRate value="0"/>
+        <AbilArray Link="HeroKatarinaAimedShot"/>
+        <AbilArray Link="HeroKatarinaMegaShot"/>
+        <AbilArray Link="HeroKatarinaFlameStream"/>
+        <AbilArray Link="HeroKatarinaLaserShot"/>
+        <AbilArray Link="HeroKatarinaClusterCharge"/>
+        <AbilArray Link="HeroKatarinaWeaponSwap"/>
+        <AbilArray Link="HeroKatarinaWeaponMaster"/>
+        <AbilArray Link="HeroKatarinaExclusionZone"/>
+        <AbilArray Link="HeroKatarinaExclusionZone@Activate"/>
+        <AbilArray Link="HeroKatarinaFlashGrenade"/>
+        <AbilArray Link="HeroKatarinaTalentWeaponMasterToTheLimit"/>
+        <BehaviorArray Link="NotManaUserDummy"/>
+        <BehaviorArray Link="HeroKatarinaWeaponAutorifle@WeaponEquipped"/>
+        <BehaviorArray Link="HeroKatarinaWeaponSnipe@WeaponCarried"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="HeroGenericHearthstone@NoMana" Type="AbilCmd" AbilCmd="HeroGenericHearthstone,Execute" Row="1" Column="4"/>
+            <LayoutButtons Face="HeroKatarinaFlashGrenade" Type="AbilCmd" AbilCmd="HeroKatarinaFlashGrenade,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroKatarinaExclusionZone@Activate" Type="AbilCmd" AbilCmd="HeroKatarinaExclusionZone@Activate,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroKatarinaExclusionZone" Type="AbilCmd" AbilCmd="HeroKatarinaExclusionZone,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroKatarinaAimedShot" Type="AbilCmd" AbilCmd="HeroKatarinaAimedShot,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroKatarinaMegaShot" Type="AbilCmd" AbilCmd="HeroKatarinaMegaShot,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroKatarinaFlameStream" Type="AbilCmd" AbilCmd="HeroKatarinaFlameStream,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroKatarinaLaserShot" Type="AbilCmd" AbilCmd="HeroKatarinaLaserShot,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroKatarinaWeaponSwap" Type="AbilCmd" AbilCmd="HeroKatarinaWeaponSwap,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroKatarinaTalentWeaponMasterToTheLimit" Type="AbilCmd" AbilCmd="HeroKatarinaTalentWeaponMasterToTheLimit,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="HeroKatarinaWeaponMaster" Type="AbilCmd" AbilCmd="HeroKatarinaWeaponMaster,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="HeroKatarinaClusterCharge" Type="AbilCmd" AbilCmd="HeroKatarinaClusterCharge,Execute" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <InnerRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Hero,CoreHero:Katarina"/>
+        <EffectArray index="Revive" value="HeroKatarina@ReviveSet"/>
+        <WeaponArray Link="HeroKatarinaWeaponAutorifle"/>
+        <WeaponArray Link="HeroKatarinaWeaponFlamethrower"/>
+        <WeaponArray Link="HeroKatarinaWeaponGrenadeLauncher"/>
+        <WeaponArray Link="HeroKatarinaWeaponSnipe"/>
+    </CUnit>
+    <CUnit id="Katarina_TripleShot_AttackMissile" parent="MISSILE_INVULNERABLE">
+        <Sight value="2"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaEquipGrenadeLauncher" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaEquipSnipe" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaEquipFlamethrower" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaWeaponAutorifle@Missile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaEquipAutorifle" parent="ITEM">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Pawnable" value="1"/>
+        <EditorCategories value="ObjectType:Item,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="Katarina_AimedShot_Missile" parent="MISSILE_INVULNERABLE">
+        <Sight value="2"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaWeaponGrenadeLauncher@Missile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+    <CUnit id="HeroKatarinaWeaponSnipe@Missile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Katarina"/>
+    </CUnit>
+</Catalog>

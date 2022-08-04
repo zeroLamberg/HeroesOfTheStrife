@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CKineticRotate id="MercenaryColossusFireBeam@RotateKinetic">
+        <Duration value="1.5"/>
+        <Yaw value="360"/>
+    </CKineticRotate>
+    <CKineticFollow id="MercenaryColossusFireBeam@FollowCasterKinetic">
+        <Cycles value="1"/>
+        <Duration value="1.5"/>
+        <Follow value="Position"/>
+    </CKineticFollow>
+</Catalog>

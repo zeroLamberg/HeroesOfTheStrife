@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorArithmetic id="HeroAbathurEvolveMonstrosityStacks@CurrentDamageBonusAdd">
+        <Parameters value="0">
+            <AccumulatorArray value="HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="HeroAbathurEvolveMonstrosityStacks@DamageBonusContant"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="HeroAbathurEvolveMonstrosityStacks@CurrentDamageBonusAdditiveMultiply">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Parameters value="0">
+            <AccumulatorArray value="HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="HeroAbathurEvolveMonstrosityStacks@DamageBonusContant"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="HeroAbathurEvolveMonstrosityStacks@DamageBonusContant" parent="BaseAccumulator">
+        <Amount value="0.02"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount" parent="BaseAccumulator">
+        <MaxAccumulation value="40"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroAbathurTalentEvolveMonstrosityEvolutionComplete@DamageIncreaser" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroAbathurTalentEvolveMonstrosityEvolutionComplete@Switch">
+        <CaseArray Validator="HeroAbathurTalentEvolveMonstrosityEvolutionComplete" Accumulator="HeroAbathurTalentEvolveMonstrosityEvolutionComplete@DamageIncreaser"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroAbathurTalentLocustStrainSurvivalInstinct@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.6"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroAbathurTalentLocustStrainSurvivalInstinct@Switch">
+        <CaseArray Validator="HeroAbathurTalentLocustStrainSurvivalInstinct" Accumulator="HeroAbathurTalentLocustStrainSurvivalInstinct@DamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroAbathurTalentStabNeedlespine@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.2"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroAbathurTalentStabNeedlespine@Switch">
+        <CaseArray Validator="HeroAbathurTalentStabNeedlespine" Accumulator="HeroAbathurTalentStabNeedlespine@DamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroAbathurTalentSymbioteHivemind@DamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroAbathurTalentSymbioteHivemind@DamageSwitch">
+        <CaseArray Validator="HeroAbathurTalentSymbioteHivemind@HivemindSource" Accumulator="HeroAbathurTalentSymbioteHivemind@DamageModifier"/>
+    </CAccumulatorSwitch>
+</Catalog>

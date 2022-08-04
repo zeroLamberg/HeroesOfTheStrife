@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit default="1" id="HeroAbathurLocust@Parent" parent="CoreSummonActive">
+        <Name value="Unit/Name/HeroAbathurLocust@Parent"/>
+        <ReviveType value="HeroAbathurLocust@Parent"/>
+        <LifeStart value="316"/>
+        <LifeMax value="316"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="AttackAlly"/>
+        <AbilArray Link="move"/>
+        <BehaviorArray Link="HeroAbathurLocust@TimedLife"/>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Abathur"/>
+        <TacticalAI value="HeroAbathurLocustStrain@LocustParent"/>
+        <LeaderAlias value="HeroAbathurLocust@Parent"/>
+        <HotkeyAlias value="HeroAbathurLocust@Parent"/>
+        <SelectAlias value="HeroAbathurLocust@Parent"/>
+        <SubgroupAlias value="HeroAbathurLocust@Parent"/>
+        <AIEvaluateAlias value="HeroAbathurLocust@Parent"/>
+    </CUnit>
+    <CUnit id="HeroAbathurTalentLocustBrood" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Abathur"/>
+    </CUnit>
+    <CUnit id="HeroAbathurTalentLocustNest@Item" parent="ITEM">
+        <EditorCategories value="ObjectType:Item,CoreHero:Abathur"/>
+    </CUnit>
+    <CUnit id="HeroAbathurWeaponLocustBombard@Missile" parent="MISSILE_INVULNERABLE">
+        <Mover value="HeroAbathurWeaponLocustBombard@Mover"/>
+        <StationaryTurningRate value="1007.9296"/>
+        <TurningRate value="1007.9296"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Abathur"/>
+    </CUnit>
+    <CUnit id="HeroAbathurLocust@Assault" parent="HeroAbathurLocust@Parent">
+        <Name value="Unit/Name/AbathurLocust"/>
+        <WeaponArray Link="HeroAbathurWeaponLocustAssault"/>
+        <TacticalAI value="AbathurLocust"/>
+    </CUnit>
+    <CUnit id="HeroAbathurLocust@Bombard" parent="HeroAbathurLocust@Parent">
+        <Name value="Unit/Name/AbathurLocust"/>
+        <WeaponArray Link="HeroAbathurWeaponLocustBombard"/>
+        <WeaponArray Link="HeroAbathurWeaponLocustBombard@CloseRange"/>
+        <TacticalAI value="AbathurLocust"/>
+        <ReviveInfoBase>
+            <Charge Link="HeroAbathurLocustStrain@LocustParent/Revive"/>
+            <Cooldown Link="HeroAbathurLocustStrain@LocustParent/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
+    <CUnit id="HeroAbathurLocust@Normal" parent="HeroAbathurLocust@Parent">
+        <Name value="Unit/Name/AbathurLocust"/>
+        <WeaponArray Link="HeroAbathurWeaponLocustNormal"/>
+        <TacticalAI value="AbathurLocust"/>
+    </CUnit>
+    <CUnit id="HeroAbathurToxicNest" parent="CoreSummonPassive">
+        <Facing value="315"/>
+        <LifeStart value="80"/>
+        <LifeMax value="80"/>
+        <Radius value="0.5"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Abathur"/>
+    </CUnit>
+    <CUnit id="HeroAbathur" parent="CoreHeroMountedCustom">
+        <Gender value="Neutral"/>
+        <LifeStart value="685"/>
+        <LifeMax value="685"/>
+        <EnergyStart value="0"/>
+        <EnergyMax value="0"/>
+        <EnergyRegenRate value="0"/>
+        <AbilArray Link="HeroAbathurDeepTunnel"/>
+        <AbilArray Link="HeroAbathurSymbiote"/>
+        <AbilArray Link="HeroAbathurToxicNest"/>
+        <AbilArray Link="HeroAbathurUltimateEvolution"/>
+        <AbilArray Link="HeroAbathurLocustStrain"/>
+        <AbilArray Link="HeroAbathurEvolveMonstrosity"/>
+        <AbilArray Link="HeroAbathurEvolveMonstrosityActivate"/>
+        <BehaviorArray Link="HeroAbathurLocustStrain@LocustSpawnTimer"/>
+        <BehaviorArray Link="NotManaUserDummy"/>
+        <WeaponArray Link="HeroAbathurWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0">
+                <Face value="HeroAbathurEvolveMonstrosityActivate"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="HeroAbathurEvolveMonstrosityActivate,Execute"/>
+                <Requirements value=""/>
+                <Row value="0"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons Face="HeroAbathurEvolveMonstrosity" Type="AbilCmd" AbilCmd="HeroAbathurEvolveMonstrosity,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroAbathurUltimateEvolution" Type="AbilCmd" AbilCmd="HeroAbathurUltimateEvolution,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="LockedUltimateAbility" Type="Passive" Requirements="UltimateNotUnlocked" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroAbathurDeepTunnel" Type="AbilCmd" AbilCmd="HeroAbathurDeepTunnel,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="HeroAbathurToxicNest" Type="AbilCmd" AbilCmd="HeroAbathurToxicNest,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroAbathurLocustStrain" Type="AbilCmd" AbilCmd="HeroAbathurLocustStrain,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="HeroAbathurSymbiote" Type="AbilCmd" AbilCmd="HeroAbathurSymbiote,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <InnerRadius value="0.75"/>
+        <SubgroupPriority value="1"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Abathur"/>
+        <AIEvalFactor value="1.1"/>
+    </CUnit>
+    <CUnit id="HeroAbathurTalentLocustNest" parent="CoreSummonPassive">
+        <Facing value="315"/>
+        <LifeStart value="319"/>
+        <LifeMax value="319"/>
+        <AbilArray Link="HeroAbathurLocustStrain"/>
+        <BehaviorArray Link="HeroAbathurLocustStrain@LocustSpawnTimer"/>
+        <CardLayouts>
+            <LayoutButtons Face="HeroAbathurLocustStrain" Type="AbilCmd" AbilCmd="HeroAbathurLocustStrain,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.5"/>
+        <EditorCategories value="CoreHero:Abathur,ObjectType:Unit"/>
+    </CUnit>
+    <CUnit id="HeroAbathurSymbiote" parent="CoreSummonFigment">
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="AIForceTactical" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Mover value="Fly"/>
+        <Speed value="0.0117"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="799.9804"/>
+        <TurningRate value="399.9023"/>
+        <Sight value="4"/>
+        <Height value="1"/>
+        <AbilArray Link="HeroAbathurAssumingDirectControl@Cancel"/>
+        <AbilArray Link="HeroAbathurStab"/>
+        <AbilArray Link="HeroAbathurSpikeBurst"/>
+        <AbilArray Link="HeroAbathurCarapace"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="HeroAbathurDeepTunnelMonstrosity"/>
+        <AbilArray Link="move"/>
+        <BehaviorArray Link="HeroAbathurSymbiote@TimedLife"/>
+        <BehaviorArray Link="EarnsXP"/>
+        <BehaviorArray Link="HeroAbathurSymbiote@SuppressAttack"/>
+        <BehaviorArray Link="HeroGenericMapMechanicPickupDisallowed"/>
+        <BehaviorArray Link="DisableAIGoalAssignment"/>
+        <CardLayouts>
+            <LayoutButtons Face="HeroAbathurStab" Type="AbilCmd" AbilCmd="HeroAbathurStab,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroAbathurAssumingDirectControl@CancelSymbiote" Type="AbilCmd" AbilCmd="HeroAbathurAssumingDirectControl@Cancel,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="HeroAbathurSpikeBurst" Type="AbilCmd" AbilCmd="HeroAbathurSpikeBurst,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="HeroAbathurCarapace" Type="AbilCmd" AbilCmd="HeroAbathurCarapace,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="HeroAbathurDeepTunnelMonstrosity" Type="AbilCmd" AbilCmd="HeroAbathurDeepTunnelMonstrosity,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+        </CardLayouts>
+        <Radius value="0"/>
+        <SubgroupPriority value="9"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Abathur"/>
+        <LeaderAlias value="HeroAbathur"/>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <AcquireLeashRadius value="4"/>
+    </CUnit>
+    <CUnit id="HeroAbathurStab@Missile" parent="MISSILE_INVULNERABLE">
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Abathur"/>
+    </CUnit>
+    <CUnit id="HeroAbathurTalentLocustNest@PlaceholderDummy" parent="HeroAbathurTalentLocustNest">
+        <Mover value="Fly"/>
+    </CUnit>
+    <CUnit id="HeroAbathurToxicNest@PlaceholderDummy" parent="HeroAbathurToxicNest">
+        <Mover value="Fly"/>
+    </CUnit>
+    <CUnit id="HeroAbathurWeaponLocustNormal@Missile" parent="MISSILE_INVULNERABLE">
+        <Mover value="HeroAbathurWeaponLocustNormal@Missle"/>
+        <EditorCategories value="ObjectType:Projectile,CoreHero:Abathur"/>
+    </CUnit>
+    <CUnit id="HeroAbathurEvolveMonstrosity" parent="CoreSummonActive">
+        <PushPriority value="40"/>
+        <LifeStart value="1350"/>
+        <LifeMax value="1350"/>
+        <Speed value="4"/>
+        <StationaryTurningRate value="1759.9218"/>
+        <TurningRate value="1759.9218"/>
+        <Sight value="9"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="HeroAbathurDeepTunnelMonstrosity"/>
+        <AbilArray Link="HeroGenericSummonedUnitSpecialCaseInteraction"/>
+        <BehaviorArray Link="HeroicSummon"/>
+        <BehaviorArray Link="SpecialCaseNPCTakedownParticipant"/>
+        <BehaviorArray Link="HeroAbathurEvolveMonstrosity@Spawn"/>
+        <BehaviorArray Link="HeroGenericIsFat"/>
+        <BehaviorArray Link="HeroGenericHasNoStatusBar"/>
+        <BehaviorArray Link="HeroGenericMapMechanicPickupDisallowed"/>
+        <BehaviorArray Link="HeroAbathurEvolveMonstrosityStacks@TokenCounter"/>
+        <WeaponArray Link="HeroAbathurWeaponEvolveMonstrosity"/>
+        <WeaponArray Link="HeroAbathurWeaponEvolveMonstrosity@Melee"/>
+        <CardLayouts>
+            <LayoutButtons Face="SummonedUnitSpecialCaseInteraction" Type="AbilCmd" AbilCmd="HeroGenericSummonedUnitSpecialCaseInteraction,255" Row="0" Column="0"/>
+            <LayoutButtons Face="HeroAbathurDeepTunnelMonstrosity" Type="AbilCmd" AbilCmd="HeroAbathurDeepTunnelMonstrosity,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="2" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="2" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="2" Column="2"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <InnerRadius value="0.375"/>
+        <SubgroupPriority value="9"/>
+        <MinimapRadius value="1"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Abathur"/>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <AlliedPushPriority value="60"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="1"/>
+        <EffectArray index="Death" value="HeroAbathurEvolveMonstrosityStacks@ResetTokenCounter"/>
+    </CUnit>
+</Catalog>

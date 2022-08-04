@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMount default="1">
+        <VOArray index="Mounted" value="MountedSound"/>
+        <VOArray index="Dismounted" value="GenericDismountedSound"/>
+        <VOArray index="Looping" value="MountLoopingSound"/>
+        <VOArray index="Moving" value="MountMovingSound"/>
+        <VOArray index="Stationary" value="MountStationarySound"/>
+    </CMount>
+    <CMount default="1" id="AbstractBear"/>
+    <CMount default="1" id="AbstractBeast"/>
+    <CMount default="1" id="AbstractBike"/>
+    <CMount default="1" id="AbstractBoar"/>
+    <CMount default="1" id="AbstractCloud"/>
+    <CMount default="1" id="AbstractCloudSerpent"/>
+    <CMount default="1" id="AbstractFelstalker"/>
+    <CMount default="1" id="AbstractGoblin"/>
+    <CMount default="1" id="AbstractHorse"/>
+    <CMount default="1" id="AbstractLunarDragon"/>
+    <CMount default="1" id="AbstractPig"/>
+    <CMount default="1" id="AbstractRam"/>
+    <CMount default="1" id="AbstractRocket"/>
+    <CMount default="1" id="AbstractRooster"/>
+    <CMount default="1" id="AbstractSpider"/>
+    <CMount default="1" id="AbstractSurf"/>
+    <CMount default="1" id="AbstractWolf"/>
+    <CMount default="1" id="AbstractHoverBike"/>
+    <CMount id="Random">
+        <AttributeId value="Rand"/>
+    </CMount>
+</Catalog>

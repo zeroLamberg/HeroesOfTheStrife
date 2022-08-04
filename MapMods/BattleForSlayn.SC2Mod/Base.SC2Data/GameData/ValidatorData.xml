@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorCombine id="TargetIsNotABossUnitCombine">
+        <CombineArray value="IsnotaSlaynElementalDefender"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="IsaSlaynElementalDefender">
+        <Value value="MercenarySlaynElemental@Defender"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsnotaSlaynElementalDefender">
+        <Value value="MercenarySlaynElemental@Defender"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+</Catalog>

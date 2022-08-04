@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorEventMacroRunnable id="MountHearthstoneCardVar02TextureSwap">
+        <Do Send="TextureSelectById Storm_Mount_HearthstoneCard_Brown_Diff"/>
+        <Do Send="TextureSelectById Storm_Mount_HearthstoneCard_Brown_Emis"/>
+        <Do Send="TextureSelectById Storm_Mount_HearthstoneCard_Brown_Spec"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="MountHearthstoneCardVar03TextureSwap">
+        <Do Send="TextureSelectById Storm_Mount_HearthstoneCard_Red_Diff"/>
+        <Do Send="TextureSelectById Storm_Mount_HearthstoneCard_Red_Emis"/>
+        <Do Send="TextureSelectById Storm_Mount_HearthstoneCard_Red_Spec"/>
+    </CActorEventMacroRunnable>
+    <CModel id="MountHearthstoneCardStore" parent="BaseMountStore">
+        <Model value="Assets\Store\Store_Mount_HearthstoneCard\Store_Mount_HearthstoneCard.m3"/>
+        <RequiredAnims value="Assets\Units\Mounts\Storm_Mount_HearthstoneCard_RequiredAnims\Storm_Mount_HearthstoneCard_RequiredAnims.m3a"/>
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="MountHearthstoneCard" Prefix="Units\" Race="Neutral">
+        <Model value="Assets\Units\Mounts\Storm_Mount_HearthstoneCard_Base\Storm_Mount_HearthstoneCard_Base.m3"/>
+        <RequiredAnims value="Assets\Units\Mounts\Storm_Mount_HearthstoneCard_RequiredAnims\Storm_Mount_HearthstoneCard_RequiredAnims.m3a"/>
+        <EditorCategories value="Race:Neutral"/>
+        <Events>
+            <Anim value="Walk,A,Start,00"/>
+            <Name value="Mount_HearthstoneCard_Start"/>
+            <Type value="Sound"/>
+            <Time value="0.156000"/>
+            <Payload value="Mount_HearthstoneCard_Start"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Start,00"/>
+            <Name value="Mount_HearthstoneCard_Stop"/>
+            <Type value="Sound"/>
+            <Time value="0.148000"/>
+            <Payload value="Mount_HearthstoneCard_Stop"/>
+        </Events>
+        <Flags index="CloakedUndetectedIsHidden" value="1"/>
+        <Lighting value="Storm_ShopModelLight_RainbowPony"/>
+        <RadiusLoose value="0.700000"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="1.200000"/>
+        <TipabilityWidth value="0.800000"/>
+        <TipabilityBlendRate value="90.000000"/>
+        <TipabilityPitchMax value="40.000000"/>
+        <TipabilityRollMax value="0.000000"/>
+        <TextureDeclares Prefix="Storm_Mount_HearthstoneCard_" Slot="main"/>
+    </CModel>
+    <CTexture id="Storm_Mount_HearthstoneCard_Brown_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_HearthstoneCard_Brown_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_HearthstoneCard_Brown_Spec" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_HearthstoneCard_Red_Diff" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_HearthstoneCard_Red_Emis" parent="MainSlotTexture"/>
+    <CTexture id="Storm_Mount_HearthstoneCard_Red_Spec" parent="MainSlotTexture"/>
+    <CSound id="Mount_HearthstoneCard_Summon" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon04.ogg" FacialGroup=""/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Mount_HearthstoneCard_Dismiss" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Dismiss01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Dismiss02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Dismiss03.ogg" FacialGroup=""/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="Mount_HearthstoneCard_Move_Loop" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Loop_Movement.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <MixerPriority value="75"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1539"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="2178" Volume="-96.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-34.000000,-34.000000"/>
+    </CSound>
+    <CSound id="Mount_HearthstoneCard_Start" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.ogg" FacialGroup=""/>
+        <Chance value="20"/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-14.000000,-14.000000"/>
+    </CSound>
+    <CSound id="Mount_HearthstoneCard_Stop" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle05.ogg" FacialGroup=""/>
+        <MixerPriority value="75"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-15.000000,-15.000000"/>
+    </CSound>
+    <CSound id="StoreMount_HearthstoneCard_Birth" parent="_FX_StoreMount">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthstoneCard_Summon04.ogg" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="0.000000,0.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="StoreMount_HearthstoneCard_Idle" parent="_FX_StoreMount">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Idle05.ogg" FacialGroup=""/>
+        <ResourcePriority value="16"/>
+        <Volume value="-8.000000,-8.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <Chance value="50"/>
+    </CSound>
+    <CSound id="StoreMount_HearthstoneCard_Purchase" parent="_FX_StoreMount">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_HearthStoneCard_Purchase01.ogg" FacialGroup=""/>
+        <ResourcePriority value="16"/>
+        <Volume value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+</Catalog>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Constant name="ContainerButtonGap" val="0"/>
+    <Constant name="ContainerPanelGap" val="-2"/>
+    <Constant name="InventoryButtonGap" val="-10"/>
+
+		<Frame type="CommandButton" name="InventoryButtonTemplate" template="CommandButtonCommanders/CommandButtonTemplate">
+			<CollapseLayout val="true"/>
+			<Width val="100"/>
+			<Height val="100"/>
+			<TooltipFrame val="CommandersInventoryTooltip"/>
+			<CollapseLayout val="false"/>
+
+			<Frame type="Label" name="CooldownLabel">
+				<Style val="PartyFrame_HeroicTalentCooldown" />
+			</Frame>
+
+			<Frame type="CommandHotkeyFrame" name="HotkeyFrame" template="MyStandardTemplates/HotkeyFrameTemplate">
+				<Frame type="Label" name="HotkeyLabel">
+					<Anchor side="Left" relative="$parent/$parent" pos="Min" offset="0" />
+					<Anchor side="Bottom" relative="$parent/$parent" pos="0.9" offset="0" />
+				</Frame>
+			</Frame>
+
+			<Frame type="Frame" name="GameButtonProgressBar" template="GameButtonProgressBars/GameButtonProgressBarInventoryButton"/>
+			<Frame type="Frame" name="AttentionEffect">
+				<Anchor relative="$parent" offset="-5"/>
+				<Visible val="False"/>
+				<Animation name="EffectState">
+					<Event event="NoState" action="DirectionReverse,Play" frame="$AttentionAnimValidatorFrame" />
+				</Animation>
+				<Animation name="HealType">
+					<Event event="InvButtonAttentionHealing" action="DirectionForward,Play" frame="$AttentionAnimValidatorFrame" />
+				</Animation>
+				<Animation name="DamageType">
+					<Event event="InvButtonAttentionDamage" action="DirectionForward,Play" frame="$AttentionAnimValidatorFrame" />
+				</Animation>
+				<Animation name="ManaType">
+					<Event event="InvButtonAttentionMana" action="DirectionForward,Play" frame="$AttentionAnimValidatorFrame" />
+				</Animation>
+			</Frame>
+			<Frame type="Frame" name="ActiveEffect">
+				<Anchor relative="$parent" offset="-5"/>
+				<Visible val="False"/>
+				<Animation name="EffectState">
+					<Event event="NoState" action="DirectionReverse,Play" frame="$ActiveAnimValidatorFrame" />
+				</Animation>
+				<Animation name="HealType">
+					<Event event="InvButtonActiveHealing" action="DirectionForward,Play" frame="$ActiveAnimValidatorFrame" />
+				</Animation>
+				<Animation name="DamageType">
+					<Event event="InvButtonActiveDamage" action="DirectionForward,Play" frame="$ActiveAnimValidatorFrame" />
+				</Animation>
+				<Animation name="ManaType">
+					<Event event="InvButtonActiveMana" action="DirectionForward,Play" frame="$ActiveAnimValidatorFrame" />
+				</Animation>
+			</Frame>
+			<Frame type="Frame" name="SelectedEffect">
+				<Anchor relative="$parent" />
+				<RenderPriority val="510"/>
+				<Visible val="False"/>
+				<Frame type="Image" name="SelectedEffectImage">
+					<Anchor side="Top" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Anchor side="Bottom" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Anchor side="Left" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Anchor side="Right" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Unclipped val="true" />
+					<SubpixelRendering val="True"/>
+					<Texture val="@UI/Storm_UI_HUD_HeroMechanic_Samuro_Hex_Health" />
+				</Frame>
+			</Frame>
+			<Frame type="Frame" name="SelectedEffectSpecial">
+				<Anchor relative="$parent" />
+				<RenderPriority val="510"/>
+				<Visible val="False"/>
+				<Frame type="Image" name="SelectedEffectImage">
+					<Anchor side="Top" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Anchor side="Bottom" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Anchor side="Left" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Anchor side="Right" relative="$parent/$parent/NormalImage" pos="Mid" offset="0" />
+					<Unclipped val="true" />
+					<SubpixelRendering val="True"/>
+					<Texture val="@UI/Storm_UI_HUD_HeroMechanic_Samuro_Hex_Hover" />
+				</Frame>
+			</Frame>
+		</Frame>
+
+    <Frame type="InventoryPanel" name="InventoryPanelTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <HideUnusedInventoryButtons val="false"/>
+        <ShowAgentInventory val="True"/>
+        <ShowForAllPlayers val="True"/>
+        <Frame type="CommandTooltip" name="CommandersInventoryTooltip" template="StandardTooltipCommanders/CommandersCommandTooltipTemplate">
+            <!--<FadeTime val="99999999999999999"/>-->
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-200"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+        </Frame>
+
+        <Frame type="SelectionUnitStatusPanel" name="InventoryUnitSelectionPanel">
+          <Anchor relative="$parent/AnchorFrame" />
+          <Frame type="UnitStatusFrame" name="UnitStatusFrame0">
+            <Anchor relative="$parent" />
+            <Frame type="UnitStatusValidatorAnimElement" name="AttentionValidatorElement">
+              <Handle val="AttentionAnimValidatorFrame" />
+              <Anchor relative="$parent" />
+              <Validator val="InvButtonAttentionDamage" />
+              <Validator val="InvButtonAttentionHealing" />
+              <Validator val="InvButtonAttentionMana" />
+            </Frame>
+            <Frame type="UnitStatusValidatorAnimElement" name="ActiveValidatorElement">
+              <Handle val="ActiveAnimValidatorFrame" />
+              <Anchor relative="$parent" />
+              <Validator val="InvButtonActiveDamage" />
+              <Validator val="InvButtonActiveHealing" />
+              <Validator val="InvButtonActiveMana" />
+            </Frame>
+            <Frame type="UnitStatusValidatorAnimElement" name="SelectedValidatorElement">
+              <Handle val="SelectedAnimValidatorFrame" />
+              <Anchor relative="$parent" />
+              <Validator val="InvButtonSelectedDefault" />
+            </Frame>
+            <Frame type="UnitStatusValidatorAnimElement" name="SelectedValidatorElementSpecial">
+              <Handle val="SelectedAnimValidatorFrameSpecial" />
+              <Anchor relative="$parent" />
+              <Validator val="InvButtonSelectedSpecial" />
+            </Frame>
+          </Frame>
+        </Frame>
+<!--
+        <Frame type="InventoryContainer" name="ContainerPanel00" template="MyInventoryPanel/InventoryPanelTemplate/ContainerPanelTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-55"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        </Frame>-->
+
+
+        <Frame type="InventoryContainer" name="InventoryButtons">
+            <AcceptsMouse val="true"/>
+            <Height val="104"/>
+            <Width val="313"/>
+            <Anchor side="Top" relative="$parent/$parent/CommandPanel" pos="-0.1" offset="0"/>
+            <Anchor side="Left" relative="$parent/$parent/CommandPanel" pos="Mid" offset="-5"/>
+            <Anchor side="Right" relative="$parent/$parent/CommandPanel" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+
+            <StateGroup name="VisibilityStategroup">
+              <State name="Hidden">
+                <When type="Property" frame="Button00/NormalImage" Texture="" index="0" operator="Equal"/>
+                <When type="Property" frame="Button01/NormalImage" Texture="" index="0" operator="Equal"/>
+                <When type="Property" frame="Button02/NormalImage" Texture="" index="0" operator="Equal"/>
+                <When type="Property" frame="Button03/NormalImage" Texture="" index="0" operator="Equal"/>
+                <When type="Property" frame="Button04/NormalImage" Texture="" index="0" operator="Equal"/>
+                <When type="Property" frame="Button05/NormalImage" Texture="" index="0" operator="Equal"/>
+                <Action type="SetProperty" frame="$parent" HideUnusedInventoryButtons="True"/>
+              </State>
+            </StateGroup>
+
+            <Frame type="CommandButton" name="Button05" template="MyInventoryPanel/InventoryButtonTemplate">
+                <Anchor side="Top" relative="$parent/Button04" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/Button04" pos="Max" offset="#InventoryButtonGap"/>
+                <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            </Frame>
+            <Frame type="CommandButton" name="Button04" template="MyInventoryPanel/InventoryButtonTemplate">
+                <Anchor side="Top" relative="$parent/Button03" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/Button03" pos="Max" offset="#InventoryButtonGap"/>
+                <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            </Frame>
+            <Frame type="CommandButton" name="Button03" template="MyInventoryPanel/InventoryButtonTemplate">
+                <Anchor side="Top" relative="$parent/Button02" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/Button02" pos="Max" offset="#InventoryButtonGap"/>
+                <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            </Frame>
+            <Frame type="CommandButton" name="Button02" template="MyInventoryPanel/InventoryButtonTemplate">
+                <Anchor side="Top" relative="$parent/Button01" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/Button01" pos="Max" offset="#InventoryButtonGap"/>
+                <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            </Frame>
+            <Frame type="CommandButton" name="Button01" template="MyInventoryPanel/InventoryButtonTemplate">
+                <Anchor side="Top" relative="$parent/Button00" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent/Button00" pos="Max" offset="#InventoryButtonGap"/>
+                <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            </Frame>
+            <Frame type="CommandButton" name="Button00" template="MyInventoryPanel/InventoryButtonTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            </Frame>
+            <Frame type="Frame" name="ContainerSizeFrame">
+                <Anchor side="Top" relative="$parent/Button00" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent/Button00" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/Button00" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/Button05" pos="Max" offset="0"/>
+            </Frame>
+        </Frame>
+
+        <!-- This should be last so it always renders on top of all other inventory frames. 
+        <Frame type="Image" name="Cursor">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Width val="32"/>
+            <Height val="32"/>
+            <RenderPriority val="1024"/>
+            <LayerCount val="2"/>
+            <TextureType val="Normal" layer="0"/>
+            <Texture val="@@UI/ButtonBorderNormal" layer="0"/>
+            <TextureType val="Normal" layer="1"/>
+        </Frame>-->
+
+    <Frame type="CommandButton" name="CommandButtonTemplate" template="CommandButtonCommanders/CommandButtonTemplate">
+        <CollapseLayout val="true"/>
+        <Width val="48"/>
+        <Height val="48"/>
+        <TooltipFrame val="InventoryTooltip"/>
+    </Frame>
+
+    <!--<Frame type="CommandButton" name="ContainerButtonTemplate" template="CommandButtonCommanders/CommandButtonTemplate">
+        <Width val="48"/>
+        <Height val="48"/>
+    </Frame>
+
+    <Frame type="InventoryContainer" name="ContainerPanelTemplate">
+        <AcceptsMouse val="true"/>
+        <CollapseLayout val="true"/>
+        <Width val="400"/>
+        <Height val="440"/>
+
+        <Frame type="Image" name="BackgroundImage">
+            <Texture val="@@UI/InGameFrameSubFrame2" layer="0"/>
+            <TextureType val="Border" layer="0"/>
+            <Tiled val="true" layer="0"/>
+            <Anchor relative="$parent"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="Button" template="MyInventoryPanel/InventoryPanelTemplate/CommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="6"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="6"/>
+            <Width val="32"/>
+            <Height val="32"/>
+        </Frame>
+
+        <Frame type="Button" name="Close" template="MyStandardTemplates/StandardGlueButton">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="6"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-6"/>
+            <Frame type="Label" name="VariableTabLabel">
+                <Text val="X"/>
+                <DescFlags val="Internal"/>
+            </Frame>
+            <Width val="32"/>
+            <Height val="32"/>
+        </Frame>
+
+        <Frame type="Label" name="Name">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="6"/>
+            <Anchor side="Left" relative="$parent/Button" pos="Max" offset="4"/>
+            <Anchor side="Right" relative="$parent/Close" pos="Min" offset="-4"/>
+            <Height val="32"/>
+        </Frame>
+
+        <Frame type="Model" name="UnitModel">
+            <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Width val="200"/>
+            <Height val="200"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="Slot00" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Name" pos="Max" offset="4"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="8"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot01" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot00" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot02" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot01" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot03" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot02" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot04" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot03" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot05" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot04" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot06" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot05" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+        <Frame type="CommandButton" name="Slot07" template="MyInventoryPanel/InventoryPanelTemplate/ContainerButtonTemplate">
+            <Anchor side="Top" relative="$parent/Slot00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Slot06" pos="Max" offset="#ContainerButtonGap"/>
+        </Frame>
+    </Frame>-->
+</Frame>
+</Desc>

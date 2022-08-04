@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HeroMalfurion@BasePurple">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroMalfurion@BasePurpleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinBetrayerRed">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinBetrayerRedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinWinterVar1">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinWinterVar1CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinFlameVar2">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinFlameVar2CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinFlameVar3">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinFlameVar3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinStormragePurple">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinSotrmragePurpleCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinStormrageWhite">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinSotrmrageWhiteCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinStormrageVar3">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinSotrmrageVar3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinUltimateRed">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinUltimateRedCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HeroMalfurion@BaseWhite">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeHeroMalfurion@BaseWhiteCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinBetrayerBrown">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinBetrayerBrownCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinFlameVar1">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinFlameVar1CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinUltimateWhite">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinUltimateWhiteCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinWinterVar2">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinWinterVar2CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinWinterVar3">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinWinterVar3CompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveMalfurionSkinWinterVar4">
+        <EditorCategories value="TechType:Skins,CoreHero:Malfurion"/>
+        <NodeArray index="Use" Link="CountUpgradeMalfurionSkinWinterVar4CompleteOnly"/>
+    </CRequirement>
+</Catalog>

@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorEventMacro id="HeroCommonAnimationsMacro">
+        <On Terms="Behavior.HeroDiabloDevilCharge@TargetImpactedMovespeed.On" Send="AnimBaselineStop"/>
+        <On Terms="Behavior.HeroDiabloDevilCharge@TargetImpactedMovespeed.Off" Send="AnimBaselineStart"/>
+    </CActorEventMacro>
+    <CActorEventMacroRunnable id="HeroDiablo@SkinUltimateWhiteMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Ultimate_v01_White_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Ultimate_v01_White_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroDiablo@SkinUltimateBlueMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Ultimate_v01_Blue_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Ultimate_v01_Blue_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroDiablo@BaseBlackMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Base_v01_Black_Diff"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroDiablo@BasePinkMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Base_v01_Pink_Diff"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Base_v01_Pink_Emis"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroDiablo@BaseGreenMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Do Send="TextureSelectById Storm_Hero_Diablo_Base_Var3_Diff"/>
+    </CActorEventMacroRunnable>
+    <CActorSimple id="HeroDiabloApocalypse@StunAnimation" parent="CoreStun" behavior="HeroDiabloApocalypse@Stun">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSimple>
+    <CActorSimple id="HeroDiabloDevilCharge@StunAnimation" parent="CoreStun" behavior="HeroDiabloDevilCharge@TerrainStun">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSimple>
+    <CActorSimple id="HeroDiabloOverpower@StunAnimation" parent="CoreStun" behavior="HeroDiabloOverpower@Stun">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSimple>
+    <CActorRange id="HeroDiabloTalentLordofTerror@Range" parent="CoreRangeAbilPlusSplat" abil="HeroDiabloTalentLordofTerror">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorRange>
+    <CActorSplat id="HeroDiabloTalentLordofTerror@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Scale value="6.000000"/>
+    </CActorSplat>
+    <CActorSplat id="HeroDiabloTalentHellgate@SearchCursorSplat" parent="CoreGuideVisualCircleFantasy" abil="HeroDiabloTalentHellgate">
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CActorSplat>
+    <CActorUnit id="HeroDiabloTalentHellgate" parent="CoreItemBase" unitName="HeroDiabloTalentHellgate">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorUnit>
+    <CActorSound id="HeroDiabloLightningBreath@SoundCharge" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourceCastStart" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.Off" Send="Destroy"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.Off" Send="SoundSetPaused 1"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.On" Send="SoundSetPaused"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourcePause" Send="Destroy"/>
+        <Sound value="HeroDiabloLightningBreath@Charge"/>
+    </CActorSound>
+    <CActorUnit id="HeroDiabloTalentSoulShield" parent="CoreItemBase" unitName="HeroDiabloTalentSoulShield">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorUnit>
+    <CActorEventMacro id="HeroDiablo@SkinEventMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroDiablo@BaseBlack" Send="EventMacroRun HeroDiablo@BaseBlackMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroDiablo@BasePink" Send="EventMacroRun HeroDiablo@BasePinkMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroDiablo@BaseGreen" Send="EventMacroRun HeroDiablo@BaseGreenMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroDiablo@SkinUltimateWhite" Send="EventMacroRun HeroDiablo@SkinUltimateWhiteMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroDiablo@SkinUltimateBlue" Send="EventMacroRun HeroDiablo@SkinUltimateBlueMacro"/>
+    </CActorEventMacro>
+    <CActorModel id="HeroDiablo@DeathRagdoll" parent="CoreHeroDeathRagdoll">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorPortrait id="HeroDiablo@SkinUltimatePortrait" parent="CoreCompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorModel id="DiabloSkinSummer18PortraitAddition" parent="CompositePortraitAddition">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloApocalypse@ModelImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloApocalypse@ImpactSet.Start; At Target" Send="Create"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorPortrait id="DiabloSkinSummer18Portrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorModel id="HeroDiablo@SkinUltimatePortraitAddition" parent="CoreCompositePortraitAddition">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloApocalypse@ModelWarning">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="0"/>
+        <AcceptedHostedPropTransfers index="CastShadows" value="0"/>
+        <AcceptedHostedPropTransfers index="CloakEffect" value="0"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
+        <AcceptedHostedPropTransfers index="Decal" value="0"/>
+        <AcceptedHostedPropTransfers index="LocalTintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="Opacity" value="0"/>
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="0"/>
+        <AcceptedHostedPropTransfers index="TimeScale" value="0"/>
+        <AcceptedHostedPropTransfers index="TintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="Visibility" value="0"/>
+        <AcceptedHostedPropTransfers index="WarpGroup" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorCreation" Send="AnimPlay Build Build 0 -1.000000 -1.000000 1.000000 AsAutomatic -1.000000"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.HeroDiabloApocalypse@CreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroDiabloApocalypse@CreatePersistent.Stop" Send="AnimClear Build"/>
+        <On Terms="Effect.HeroDiabloApocalypse@CreatePersistent.Stop" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="Effect.HeroDiabloTalentHellgate@ApocalypseCreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroDiabloTalentHellgate@ApocalypseCreatePersistent.Stop" Send="AnimClear Build"/>
+        <On Terms="Effect.HeroDiabloTalentHellgate@ApocalypseCreatePersistent.Stop" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <Macros value="HeroVorazunVoid@Macro"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloLightningBreath@ModelChargeBreatheIn" parent="CoreModelNoAnimsUnit">
+        <Aliases value="_TimeStopAffectedActor"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <VisibilityShape Shape="DiabloLightningBreathQuad"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourceCastStart" Send="Create"/>
+        <On Terms="ActorCreation" Send="$Birth"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourceCancel" Send="AnimClear Birth"/>
+        <On Terms="StatusOn.*.TimeStopPaused" Send="AnimClear Birth"/>
+        <On Terms="Behavior.Dead.On" Send="Destroy Immediate"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourcePause" Send="Destroy Immediate"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.Off" Send="Destroy"/>
+        <On Terms="AnimDone; AnimPlaying Birth Birth" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="HeroDiabloLightningBreath@ChargeModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloLightningBreath@ModelChargeBreatheOut" parent="CoreModelNoAnimsUnit">
+        <Aliases value="_TimeStopAffectedActor"/>
+        <Flags index="VisionTestCenterOnly" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <VisibilityShape Shape="DiabloLightningBreathQuad"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD {} Stand Death 0 1.000000 AsTimeScale"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.On" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimPlaying BSD" Send="Destroy"/>
+        <On Terms="StatusOn.*.TimeStopPaused" Send="Destroy Immediate"/>
+        <On Terms="Behavior.Dead.On" Send="Destroy Immediate"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="HeroDiabloLightningBreath@ChargeModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="FireDevilDamage" parent="StormModelOneShotUnit">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <On Terms="Effect.FireDevilDamage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="BurningRageDamage"/>
+        <AutoScaleFactor value="1.000000"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorUnit id="HeroDiabloTalentLordofTerror" parent="CoreItemBase" unitName="HeroDiabloTalentLordofTerror">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorUnit>
+    <CActorSiteOpRotationExplicit id="HeroDiabloFireStomp@GuideRightOffset">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Forward value="-0.546000,-1.500000,0.000000"/>
+        <IsLocal value="1"/>
+    </CActorSiteOpRotationExplicit>
+    <CActorQuad id="HeroDiabloFireStomp@GuideFarLeft" parent="CoreGuideVisualQuadDownFantasy" abil="HeroDiabloFireStomp">
+        <Aliases value="_GuideVisualFarLeft"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="ActorCreation" Send="Create StormGuideRegionQuadDown"/>
+        <On Terms="ActorCreation; IsActorLocalPlayer" Send="Create HeroDiabloFireStomp@GuideRegionFarLeft"/>
+        <Host Subject="_GuideRegionFarLeft"/>
+        <LaunchActor value="StandardGuideVisualQuadLaunchFadeFantasy"/>
+        <Height value="11.250000"/>
+        <Width value="1.320000"/>
+    </CActorQuad>
+    <CActorSiteOpRotationExplicit id="HeroDiabloFireStomp@GuideLeftOffset">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Forward value="0.546000,-1.500000,0.000000"/>
+        <IsLocal value="1"/>
+    </CActorSiteOpRotationExplicit>
+    <CActorSiteOpRotationExplicit id="HeroDiabloFireStomp@GuideFarRightOffset">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Forward value="-1.259000,-1.500000,0.000000"/>
+        <IsLocal value="1"/>
+    </CActorSiteOpRotationExplicit>
+    <CActorQuad id="HeroDiabloFireStomp@GuideMiddle" parent="CoreGuideVisualQuadDownFantasy" abil="HeroDiabloFireStomp">
+        <Aliases value="_GuideVisualMiddle"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="ActorCreation" Send="Create StormGuideRegionQuadDown"/>
+        <On Terms="ActorCreation; IsActorLocalPlayer" Send="Create HeroDiabloFireStomp@GuideRegionMiddle"/>
+        <Host Subject="_GuideRegionMiddle"/>
+        <LaunchActor value="StandardGuideVisualQuadLaunchFadeFantasy"/>
+        <Height value="11.250000"/>
+        <Width value="1.320000"/>
+    </CActorQuad>
+    <CActorRegionQuad id="HeroDiabloFireStomp@GuideRegionMiddle" parent="GuideRegionClosest">
+        <Aliases value="_GuideRegionMiddle"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="ClearTintColor 0.100000 BaseTint"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="SetTintColor 0,255,0 0.100000 OneShot Active"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="ClearTintColor 0.100000 Active"/>
+        <RegionFlags index="UseEffectRange" value="1"/>
+        <Height value="11.000000"/>
+    </CActorRegionQuad>
+    <CActorModel id="HeroDiabloFireStomp@ModelCast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloFireStomp.SourceCastStop" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor 255,0,0"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorRegionQuad id="HeroDiabloFireStomp@GuideRegionFarLeft" parent="GuideRegionClosest">
+        <Aliases value="_GuideRegionFarLeft"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="ClearTintColor 0.100000 BaseTint"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="SetTintColor 0,255,0 0.100000 OneShot Active"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="ClearTintColor 0.100000 Active"/>
+        <HostSiteOps Ops="HeroDiabloFireStomp@GuideFarLeftOffset"/>
+        <RegionFlags index="UseEffectRange" value="1"/>
+    </CActorRegionQuad>
+    <CActorSiteOpRotationExplicit id="HeroDiabloFireStomp@GuideFarLeftOffset">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Forward value="1.259000,-1.500000,0.000000"/>
+        <IsLocal value="1"/>
+    </CActorSiteOpRotationExplicit>
+    <CActorMissile id="HeroDiabloFireStomp@Missile" parent="CoreHeroMissileWithDeath" unitName="HeroDiabloFireStomp@Missile">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="UnitBirth" Send="AnimBracketStart Lifetime Birth Stand"/>
+    </CActorMissile>
+    <CActorModel id="HeroDiabloTalentLordofTerror@ModelCast" parent="CoreModelOneShotUnit">
+        <Inherits index="Scale" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloTalentLordofTerror.SourceCastStart" Send="Create"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorMissile id="HeroDiabloFireStomp@ReturnMissile" parent="CoreMissileWithDeath" unitName="HeroDiabloFireStomp@ReturnMissile">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorCreation" Send="Create HeroDiabloFireStomp@Return"/>
+        <On Terms="ActorCreation" Send="AnimPlay StandWorkStart Stand,Work,Start"/>
+        <On Terms="AnimDone; AnimName StandWorkStart" Send="AnimPlay StandWorkStart Stand,Work"/>
+        <Model value="HeroDiabloFireStomp@Missile"/>
+        <DeathArray index="Normal" ModelLink="HeroDiabloFireStomp@Missile"/>
+    </CActorMissile>
+    <CActorRegionQuad id="HeroDiabloFireStomp@GuideRegionLeft" parent="GuideRegionClosest">
+        <Aliases value="_GuideRegionLeft"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="ClearTintColor 0.100000 BaseTint"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="SetTintColor 0,255,0 0.100000 OneShot Active"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="ClearTintColor 0.100000 Active"/>
+        <HostSiteOps Ops="HeroDiabloFireStomp@GuideLeftOffset"/>
+        <RegionFlags index="UseEffectRange" value="1"/>
+    </CActorRegionQuad>
+    <CActorRegionQuad id="HeroDiabloFireStomp@GuideRegionRight" parent="GuideRegionClosest">
+        <Aliases value="_GuideRegionRight"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="ClearTintColor 0.100000 BaseTint"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="SetTintColor 0,255,0 0.100000 OneShot Active"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="ClearTintColor 0.100000 Active"/>
+        <HostSiteOps Ops="HeroDiabloFireStomp@GuideRightOffset"/>
+        <RegionFlags index="UseEffectRange" value="1"/>
+    </CActorRegionQuad>
+    <CActorForceSphere id="HeroDiabloApocalypse@OutForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Host Subject="SOpSplashDamagePositionVariance"/>
+        <Duration value="0.150000"/>
+        <Magnitude value="75.000000"/>
+        <Radius value="2.500000"/>
+    </CActorForceSphere>
+    <CActorModel id="HeroDiabloApocalypse@ModelCast" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloApocalypse.SourceCastStart" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloOverpower@ModelImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloOverpower@ApplyTargetStun.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroDiabloOverpower@Impact"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloOverpower@ModelCast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloOverpower@InitialChannelCreatePersistent.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroDiabloOverpower@Cast"/>
+    </CActorModel>
+    <CActorForceCylinder id="HeroDiabloApocalypse@UpForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloApocalypse@SearchForImpact.Stop" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create Diablo_Apocalypse_OutForce"/>
+        <Duration value="0.012500"/>
+        <Magnitude value="75.000000"/>
+        <HostEndSiteOps Ops="SOpHigherBy3"/>
+        <Radius value="2.500000"/>
+    </CActorForceCylinder>
+    <CActorModel id="HeroDiabloFireStomp@ModelImpact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloFireStomp@StartDamage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroDiabloFireStomp@ReturnDamage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroDiabloFireStomp@SoundLaunch" parent="CoreSoundOneShot">
+        <Terms value="Cap 1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloFireStomp@InitialSet.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorQuad id="HeroDiabloFireStomp@GuideFarRight" parent="CoreGuideVisualQuadDownFantasy" abil="HeroDiabloFireStomp">
+        <Aliases value="_GuideVisualFarRight"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="ActorCreation" Send="Create StormGuideRegionQuadDown"/>
+        <On Terms="ActorCreation; IsActorLocalPlayer" Send="Create HeroDiabloFireStomp@GuideRegionFarRight"/>
+        <Host Subject="_GuideRegionFarRight"/>
+        <LaunchActor value="StandardGuideVisualQuadLaunchFadeFantasy"/>
+        <Height value="11.250000"/>
+        <Width value="1.320000"/>
+    </CActorQuad>
+    <CActorQuad id="HeroDiabloLightningBreath@CursorGuide" parent="CoreGuideVisualQuadDownFantasy" abil="HeroDiabloLightningBreath">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Height value="10.500000"/>
+        <Width value="4.000000"/>
+    </CActorQuad>
+    <CActorRegionQuad id="HeroDiabloFireStomp@GuideRegionFarRight" parent="GuideRegionClosest">
+        <Aliases value="_GuideRegionFarRight"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="ClearTintColor 0.100000 BaseTint"/>
+        <Remove Terms="RegionSubject.*.AddedFirst" Target="_GuideVisual" Send="SetTintColor 0,255,0 0.100000 OneShot Active"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <Remove Terms="RegionSubject.*.RemovedLast" Target="_GuideVisual" Send="ClearTintColor 0.100000 Active"/>
+        <HostSiteOps Ops="HeroDiabloFireStomp@GuideFarRightOffset"/>
+        <RegionFlags index="UseEffectRange" value="1"/>
+    </CActorRegionQuad>
+    <CActorQuad id="HeroDiabloFireStomp@GuideLeft" parent="CoreGuideVisualQuadDownFantasy" abil="HeroDiabloFireStomp">
+        <Aliases value="_GuideVisualLeft"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="ActorCreation" Send="Create StormGuideRegionQuadDown"/>
+        <On Terms="ActorCreation; IsActorLocalPlayer" Send="Create HeroDiabloFireStomp@GuideRegionLeft"/>
+        <Host Subject="_GuideRegionLeft"/>
+        <LaunchActor value="StandardGuideVisualQuadLaunchFadeFantasy"/>
+        <Height value="11.250000"/>
+        <Width value="1.320000"/>
+    </CActorQuad>
+    <CActorQuad id="HeroDiabloFireStomp@GuideRight" parent="CoreGuideVisualQuadDownFantasy" abil="HeroDiabloFireStomp">
+        <Aliases value="_GuideVisualRight"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="ActorCreation" Send="Create StormGuideRegionQuadDown"/>
+        <On Terms="ActorCreation; IsActorLocalPlayer" Send="Create HeroDiabloFireStomp@GuideRegionRight"/>
+        <Host Subject="_GuideRegionRight"/>
+        <LaunchActor value="StandardGuideVisualQuadLaunchFadeFantasy"/>
+        <Height value="11.250000"/>
+        <Width value="1.320000"/>
+    </CActorQuad>
+    <CActorBeamSimple id="HeroDiabloTalentLordofTerror@AttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorBeamSimple>
+    <CActorAction id="HeroDiabloTalentLordofTerror@Attack" parent="GenericAttack" effectAttack="HeroDiabloTalentLordofTerror@ImpactSet">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <LaunchSiteOps Ops="SOpTargetUnit"/>
+        <ImpactSiteOps Ops="SOpCasterUnit"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorSound id="HeroDiabloLightningBreath@SoundEnd" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.Off" Send="Create"/>
+        <Sound value="HeroDiabloLightningBreath@End"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloLightningBreath@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourceCastStart; !ValidatePlayer HeroDiabloTalentLightningBreathHellstorm" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.Off" Send="SoundSetPaused 1"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.On" Send="SoundSetPaused"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourcePause" Send="Destroy"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.Off" Send="Destroy"/>
+        <Sound value="HeroDiabloLightningBreath@Launch"/>
+        <Layers Sound="HeroDiabloTalentLightningBreathHellstorm@VOX"/>
+    </CActorSound>
+    <CActorAction id="HeroDiabloWeapon@Attack" parent="CoreGenericAttackHeroMelee" effectAttack="HeroDiabloWeapon@Damage">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <ImpactMap index="None" Sound="HeroDiabloWeapon@AttackImpactUnit"/>
+        <ImpactMap index="Rock" Sound="HeroDiabloWeapon@AttackImpactBuilding"/>
+        <ImpactMap index="Shield" Sound="Gen_Hero_Melee_AttackImpact_Shield"/>
+    </CActorAction>
+    <CActorSound id="HeroDiabloLightningBreath@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloLightningBreath@ImpactSet.Start; At Target" Send="Create"/>
+        <Sound value="HeroDiabloLightningBreath@Impact"/>
+    </CActorSound>
+    <!--    <CActorEventMacro id="DiabloPoundAnimationMacro">   -->
+    <!--        <On Terms="Signal.*.PoundGrabSiteCreated" Send="RefClear ::Host"/>-->
+    <!--        <On Terms="Signal.*.PoundGrabSiteCreated" Send="RefSetFromMsg ::Host ::Sender"/>-->
+    <!--        <On Terms="Signal.*.PoundGrabSiteCreated" Send="HostSiteOpsSet ::Host {PoundUnitOffset PoundUnitRotation}"/>-->
+    <!--        <On Terms="Signal.*.PoundGrabSiteCreated" Send="AnimPlay Grabbed Flail PlayForever"/>-->
+    <!--        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="RefClear ::Host"/>-->
+    <!--        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="RefSet ::Host Implicit"/>-->
+    <!--        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="HostSiteOpsSet ::Host SOpBasicScopeFollow"/>-->
+    <!--        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="AnimClear Grabbed"/>-->
+    <!--    </CActorEventMacro>-->
+    <CActorEventMacro id="DiabloOverpowerAnimationMacro">
+        <On Terms="Signal.*.PoundGrabSiteCreated; IsStatus Billboarded 0" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.PoundGrabSiteCreated; IsStatus Billboarded 0" Send="RefSetFromMsg ::Host ::Sender"/>
+        <On Terms="Signal.*.PoundGrabSiteCreated; IsStatus Billboarded 0" Send="HostSiteOpsSet ::Host {PoundUnitOffset PoundUnitRotation}"/>
+        <On Terms="Signal.*.PoundGrabSiteCreated" Send="AnimPlay Grabbed Flail PlayForever"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="Signal ResetHost"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="AnimClear Grabbed"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorEventMacro>
+    <CActorModel id="HeroDiabloLightningBreath@ModelImpact" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloLightningBreath@ImpactSet.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="HeroDiabloLightningBreath@Impact"/>
+    </CActorModel>
+    <CActorPortrait id="HeroDiablo@BasePortrait" parent="CoreCompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorRange id="HeroDiabloOverpower@Range" parent="CoreRangeAbilPlusSplat" abil="HeroDiabloOverpower">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorRange>
+    <CActorSplat id="HeroDiabloOverpower@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Scale value="2.200000"/>
+    </CActorSplat>
+    <CActorPortrait id="DiabloSkinArchangelPortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorModel id="HeroDiablo@BasePortraitAddition" parent="CoreCompositePortraitAddition">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorPortrait id="DiabloSkinPrimePortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorModel id="DiabloSkinArchangelPortraitAddition" parent="CompositePortraitAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+    </CActorModel>
+    <CActorSimple id="HeroDiabloOverpower@Flail" parent="CoreFlail" behavior="HeroDiabloOverpower@TargetBehavior">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSimple>
+    <CActorPortrait id="DiabloSkinKaijoePortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorModel id="HeroDiabloOverpower@Missile" parent="CoreModelAddition">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="AnimBracketStop BSD 0 1.000000 AsTimeScale"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="DiabloSkinPrimePortraitAddition" parent="CompositePortraitAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+    </CActorModel>
+    <CActorPortrait id="DiabloSkinLurkabloPortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorPortrait>
+    <CActorSplat id="HeroDiabloDevilCharge@SearchCursorSplat">
+        <Aliases value="_Scalable"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloDevilCharge.Cursor" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create HeroDiabloDevilCharge@CursorRegion"/>
+        <On Terms="ActorDestruction" Target="HeroDiabloDevilCharge@CursorRegion" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Signal.*.LinkDiablo" Send="RefSetFromMsg ::actor.Diablo ::Sender"/>
+        <On Terms="Signal.*.LinkDiablo" Target="HeroDiabloDevilCharge@CursorRegion" Send="RefSet ::actor.Diablo ::actor.Diablo"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="AOELayer"/>
+        <Model value="UI_RangeSplat"/>
+        <Height value="MinimumTerrain"/>
+    </CActorSplat>
+    <CActorModel id="DiabloSkinKaijoePortraitAddition" parent="CompositePortraitAddition">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorRegionCircle id="HeroDiabloDevilCharge@CursorRegion">
+        <Aliases value="_Scalable"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorCreation" Send="QueryPersistent HeroDiabloDevilCharge@AddCursor HeroDiabloDevilCharge@RemoveCursor AgainstRadiusGame"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Signal.*.DiabloDevilChargeArrowOn" Send="RefSetFromMsg ::actor.DiabloDevilChargeTarget ::Sender"/>
+        <On Terms="Signal.*.DiabloDevilChargeArrowOn" Target="::actor.DiabloDevilChargeTarget" Send="RefSet ::actor.Diablo ::actor.Diablo"/>
+        <On Terms="Signal.*.DiabloDevilChargeArrowOn" Target="::actor.DiabloDevilChargeTarget" Send="Signal DiabloDevilChargeTargetSet"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow"/>
+        <NotifyRadiusKey value="_Scalable"/>
+        <NotifyArcKey value="_Scalable"/>
+        <Radius value="1.000000"/>
+    </CActorRegionCircle>
+    <CActorModel id="DiabloSkinLurkabloPortraitAddition" parent="CompositePortraitAddition">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorQueryResponse id="HeroDiabloDevilCharge@AddCursor">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Subject Filters="Snapshot,Unit,Missile" Terms="ValidateUnit TargetIsVisible IncludeDerivedSnapshot System_Snapshot_Dummy"/>
+        <OnResponse Send="StatusSet PreTargetingModel 1"/>
+        <OnResponse Send="StatusSet PreTargetingTint 1"/>
+        <OnResponse Send="RefSet ::actor.PreTargetingSource ::QueryDirector"/>
+        <OnResponse Send="StatusSet DiabloDevilCharge 1"/>
+    </CActorQueryResponse>
+    <!--                                                                                         -->
+    <!-- Diablo                                                                                  -->
+    <!--                                                                                         -->
+    <!--        <AbilSoundArray AbilCmd="DiabloLightningBreath,Execute"/>-->
+    <!--        <AbilSoundArray AbilCmd="DiabloLightningBreathCancel,Execute"/>-->
+    <!--        <AbilSoundArray AbilCmd="DiabloApocalypse,Execute" Sound="Diablo_Ultimate1Used"/>-->
+    <!--        <AbilSoundArray AbilCmd="DiabloHellMaw,Execute" Sound="Diablo_Ultimate2Used"/>-->
+    <CActorUnit id="HeroDiablo" parent="CoreHeroBasePredictive" unitName="HeroDiablo">
+        <Macros value="HeroDiablo@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <!-- Fire Stomp -->
+        <On Terms="Abil.HeroDiabloFireStomp.SourceCastStart" Send="$Spell,A 0 0.100000 0.300000 1.000000 AsTimeScale"/>
+        <!-- Lightning Breath -->
+        <On Terms="Abil.HeroDiabloLightningBreath.SourceCastStart" Send="$Spell,D,Start 0 -1.000000 -1.000000 0.500000 AsDuration"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.On" Send="$Spell,D PlayForever -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.Destroy" Send="AnimClear Spell"/>
+        <!-- Apocalyplse -->
+        <On Terms="Abil.HeroDiabloApocalypse.SourceCastStart" Send="$Spell,C 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <!-- Setup for the Devil Charge knockback arrow -->
+        <On Terms="Abil.HeroDiabloDevilCharge.TargetOn" Send="StatusSet CursorFind 1"/>
+        <On Terms="Abil.HeroDiabloDevilCharge.TargetOn" Send="TimerSet 0.031250 CursorFind"/>
+        <On Terms="Signal.*.CreateDiabloDevilChargeCursorGuide" Send="RefSetFromMsg ::scope.targetted ::Sender"/>
+        <On Terms="Signal.*.CreateDiabloDevilChargeCursorGuide" Send="Create HeroDiabloDevilCharge@CursorGuide"/>
+        <On Terms="TimerExpired; TimerName CursorFind; IsStatus CursorFind 1" Target="::Cursor" Send="Signal LinkDiablo"/>
+        <On Terms="Abil.HeroDiabloDevilCharge.TargetOff" Send="StatusSet CursorFind 0"/>
+        <On Terms="Signal.*.DestroyDiabloDevilChargeCursorGuide" Target="HeroDiabloDevilCharge@CursorGuide" Send="Destroy"/>
+        <On Terms="UnitDeath" Target="HeroDiabloDevilCharge@CursorGuide" Send="Destroy"/>
+        <!-- Devil Charge -->
+        <On Terms="Behavior.HeroDiabloDevilCharge@FullDurationBehavior.On" Send="AnimPlay Charge Spell,B PlayForever -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Behavior.HeroDiabloDevilCharge@FullDurationBehavior.Off" Send="AnimClear Charge"/>
+        <On Terms="Behavior.HeroDiabloDevilCharge@FullDurationBehavior.Off" Send="$Spell,B,End 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <!-- Overpower -->
+        <On Terms="Effect.HeroDiabloOverpower@InitialSet.Start" Send="$Spell,F 0 -1.000000 0.000000 1.000000 AsTimeScale"/>
+        <On Terms="Effect.HeroDiabloOverpower@MakeCasterLookAtTarget.Start" Send="$Spell,F,End 0 0.000000 -1.000000 1.000000 AsTimeScale"/>
+        <!-- Lord of Terror -->
+        <On Terms="Abil.HeroDiabloTalentLordofTerror.SourcePrepStart" Send="$Spell,C 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <AnimBlendTime value="0.200000"/>
+        <EventDataSound Name="DiabloAttackLaunch" Actor="UnitSound" Sound="SpineCrawler_AttackLaunch"/>
+        <EventDataSound Name="DiabloAttackImpact" Actor="UnitSound" Sound="SpineCrawler_AttackImpact"/>
+        <EventDataSound Name="DiabloAttackLaunchSlice" Actor="UnitSound" Sound="SC2_Shared_Zerg_AttackLaunchLargeSwing"/>
+        <EventDataSound Name="DiabloAttackImpactSlice" Actor="UnitSound" Sound="SC2_Shared_Zerg_AttackImpactLargeSlice"/>
+        <DeathArray index="Normal" ModelLink="" SoundLink="HeroDiabloDX@Death"/>
+        <DeathActorModelLow value="UnitDeathModel"/>
+        <PortraitActor value="HeroDiablo@BasePortrait"/>
+        <PortraitModel value="HeroDiablo@BasePortrait"/>
+        <AbilSoundArray AbilCmd="HeroDiabloLightningBreath,Execute" Sound="HeroDiabloDX@Ultimate1Used"/>
+        <AbilSoundArray AbilCmd="HeroDiabloApocalypse,Execute" Sound="HeroDiabloDX@Ultimate2Used"/>
+        <ErrorArray Error="NotEnoughEnergy" Sound="HeroDiabloDX@LowMana"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_hero_diablo.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Textures\storm_ui_ingame_heroselect_btn_diablo.dds"/>
+        <LifeArmorIcon value="Assets\Textures\storm_temp_btn-research-terran-vanadiumplating.dds"/>
+        <MinimapIcon value="assets\Textures\UI_MinimapIcon_Hero_Diablo.dds"/>
+        <NameOffset value="40"/>
+        <SoundArray index="Ready" value="HeroDiabloDX@Revive"/>
+        <SoundArray index="Yes" value="HeroDiabloDX@Yes"/>
+        <SoundArray index="Attack" value="HeroDiabloDX@Attack"/>
+        <SoundArray index="Pissed" value="HeroDiabloDX@Pissed"/>
+        <UnitIcon value="assets\Textures\storm_ui_ingame_heroselect_btn_diablo.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_hero_diablo.dds"/>
+        </Wireframe>
+        <WalkAnimMoveSpeed value="4"/>
+        <Model value="HeroDiablo@Base"/>
+        <BuildModel value="HeroDiablo@Base"/>
+        <DeathCustoms index="1">
+            <ActorModel value="HeroDiablo@DeathRagdoll"/>
+            <ModelLink value="HeroDiablo@BaseDeathRagdoll"/>
+            <Name value="RagdollMidair"/>
+            <InheritsFrom value="RagdollBasic"/>
+        </DeathCustoms>
+        <DeathCustoms index="2" ActorModel="HeroDiablo@DeathRagdoll" ModelLink="HeroDiablo@BaseDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms index="3" ActorModel="HeroDiablo@DeathRagdoll" ModelLink="HeroDiablo@BaseDeathRagdoll" Name="RagdollFire"/>
+        <DeathCustoms index="4" ActorModel="HeroDiablo@DeathRagdoll" ModelLink="HeroDiablo@BaseDeathRagdoll" Name="RagdollAcid"/>
+        <PlacementModel value="HeroDiablo@Base"/>
+    </CActorUnit>
+    <CActorSplat id="HeroDiabloDevilCharge@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Scale value="8.187500"/>
+        <!--<On Terms="ActorCreation; ValidateUnit HeroDiabloTalentDevilChargeSacrificialSoul@CasterHasRangeController" Send="SetScale 8.000000"/>-->
+    </CActorSplat>
+    <CActorEventMacro id="HeroDiabloDevilCharge@PretargetMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="StatusOn.*.DiabloDevilCharge" Target="::actor.PreTargetingSource" Send="Signal DiabloDevilChargeArrowOn"/>
+        <On Terms="StatusOn.*.DiabloDevilCharge" Send="StatusSet DiabloDevilChargeStatusOn 1"/>
+        <On Terms="StatusOn.*.DiabloDevilCharge" Send="TimerSet 0.062500 DiabloDevilChargeLinkReady"/>
+        <On Terms="TimerExpired; TimerName DiabloDevilChargeLinkReady; IsStatus DiabloDevilChargeStatusOn 1" Target="::actor.PreTargetingSource" Send="Signal DiabloDevilChargeArrowOn"/>
+        <On Terms="Signal.*.DiabloDevilChargeTargetSet" Target="::actor.Diablo" Send="Signal CreateDiabloDevilChargeCursorGuide"/>
+        <On Terms="StatusOff.*.DiabloDevilCharge" Target="::actor.Diablo" Send="Signal DestroyDiabloDevilChargeCursorGuide"/>
+        <On Terms="StatusOff.*.DiabloDevilCharge" Send="StatusSet DiabloDevilChargeStatusOn 0"/>
+    </CActorEventMacro>
+    <CActorQueryResponse id="HeroDiabloDevilCharge@RemoveCursor">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Subject Filters="Snapshot,Unit,Missile"/>
+        <OnResponse Send="StatusSet PreTargetingModel 0"/>
+        <OnResponse Send="StatusSet PreTargetingTint 0"/>
+        <OnResponse Send="RefClear ::actor.PreTargetingSource"/>
+        <OnResponse Send="StatusSet DiabloDevilCharge 0"/>
+    </CActorQueryResponse>
+    <CActorModel id="HeroDiabloDevilCharge@ModelTrail" parent="CoreModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand Death GLstand"/>
+        <On Terms="Behavior.HeroDiabloDevilCharge@FullDurationBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloDevilCharge@FullDurationBehavior.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="HeroDiabloDevilCharge@Trail"/>
+    </CActorModel>
+    <CActorRange id="HeroDiabloDevilCharge@Range" parent="CoreRangeAbilPlusSplat" abil="HeroDiabloDevilCharge">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorRange>
+    <CActorModel id="HeroDiabloDevilCharge@ModelImpact" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloDevilCharge@MoveableUnitImpactSet.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroDiabloDevilCharge@StructureImpactSet.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="HeroDiabloDevilCharge@Impact"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="PoundUnitOffset">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSiteOpRotationExplicit id="PoundUnitRotation">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <!--Forward value="-0.400000,-0.050000,-1.000000"/-->
+        <Forward value="0.000000,1.000000,0.000000"/>
+        <IsLocal value="1"/>
+    </CActorSiteOpRotationExplicit>
+    <CActorModel id="LightingBreathUnstoppable" parent="StormUnstoppable">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <!--<On Terms="Behavior.LightningBreathTargetedActive.On" Send="Create"/>
+        <On Terms="Behavior.LightningBreathTargetedActive.Off" Send="Destroy"/>-->
+    </CActorModel>
+    <CActorSound id="HeroDiabloTalentLordofTerror@LaunchSound" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloTalentLordofTerror.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <!-- Attack                                                                                    -->
+    <!-- Lord of Terror                                                                           -->
+    <CActorSound id="HeroDiabloTalentLordofTerror@ImpactSound" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloTalentLordofTerror@PercentDamage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorEventMacro id="DiabloPoundAnimationMacro">
+        <!--On Terms="Effect.DiabloPoundAttachImpactDummy.Start; At Target" Send="Create PoundGrabSite"/-->
+        <On Terms="Signal.*.PoundGrabSiteCreated" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.PoundGrabSiteCreated" Send="RefSetFromMsg ::Host ::Sender"/>
+        <On Terms="Signal.*.PoundGrabSiteCreated" Send="HostSiteOpsSet ::Host {PoundUnitOffset PoundUnitRotation}"/>
+        <On Terms="Signal.*.PoundGrabSiteCreated" Send="AnimPlay Grabbed Flail PlayForever"/>
+        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="RefClear ::Host"/>
+        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="RefSet ::Host Implicit"/>
+        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="HostSiteOpsSet ::Host SOpBasicScopeFollow"/>
+        <On Terms="Behavior.DiabloPoundTargetBehavior.Off" Send="AnimClear Grabbed"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="RefClear ::Host"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="RefSet ::Host Implicit"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="HostSiteOpsSet ::Host SOpBasicScopeFollow"/>
+        <On Terms="Behavior.HeroDiabloOverpower@TargetBehavior.Off" Send="AnimClear Grabbed"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorEventMacro>
+    <CActorEventMacro id="DiabloShadowChargePretargetMacro">
+        <!-- Shadow charge setup added to target units.  -->
+        <!-- First line is an instant arrow creation, this works if the cursor is already active and you mouse over a unit -->
+        <!-- The next lines are a creation delay, this is in case you are already mousing over the target unit when you go into targeting mode -->
+        <!-- This causes the guide to still get created in these cases.  This also means you get two guides, this is a lesser problem than not getting instant feedback under most conditions -->
+        <On Terms="StatusOn.*.DiabloShadowCharge" Target="::actor.PreTargetingSource" Send="Signal DiabloShadowChargeArrowOn"/>
+        <On Terms="StatusOn.*.DiabloShadowCharge" Send="StatusSet DiabloShadowChargeStatusOn 1"/>
+        <On Terms="StatusOn.*.DiabloShadowCharge" Send="TimerSet 0.062500 DiabloShadowChargeLinkReady"/>
+        <On Terms="TimerExpired; TimerName DiabloShadowChargeLinkReady; IsStatus DiabloShadowChargeStatusOn 1" Target="::actor.PreTargetingSource" Send="Signal DiabloShadowChargeArrowOn"/>
+        <On Terms="Signal.*.DiabloShadowChargeTargetSet" Target="::actor.Diablo" Send="Signal CreateDiabloShadowChargeCursorGuide"/>
+        <On Terms="StatusOff.*.DiabloShadowCharge" Target="::actor.Diablo" Send="Signal DestroyDiabloShadowChargeCursorGuide"/>
+        <On Terms="StatusOff.*.DiabloShadowCharge" Send="StatusSet DiabloShadowChargeStatusOn 0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorEventMacro>
+    <CActorSiteOpAttach id="SOpAttachOriginDiabloTarget">
+        <AttachQuery Methods="Origin"/>
+        <Supporter Subject="::scope.targetted" Actor="Find"/>
+        <ForceSoftAttach value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSiteOpAttach>
+    <CActorSiteOpForward id="SOpForwardQueryDiablo">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <HostForward Subject="_Unit" Actor="Find"/>
+        <Invert value="1"/>
+    </CActorSiteOpForward>
+    <!--CActorModel id="DiabloLightningBreathCore" parent="StormModelAnimationStyleContinuous">-->
+    <!--        <On Terms="Effect.LightningBreathTargetedCreatePersistent.Start" Send="Create"/>-->
+    <!--        <On Terms="Effect.LightningBreathTargetedCreatePersistent.Stop" Send="AnimBracketStop BSD"/>-->
+    <!--        <Host Subject="_Unit"/>-->
+    <!--        <HostSiteOps Ops="SOpAttachWeapon"/>-->
+    <!--        <Model value="LightningBreathCore"/>-->
+    <!--    </CActorModel-->
+    <CActorModel id="HeroDiabloLightningBreath@ModelCastGround" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.On" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+    </CActorModel>
+    <CActorForceConeRoundedEnd id="DiabloLightningBreathForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.LightningBreathSearch.Start; At Caster" Send="Create"/>
+        <Host Subject="LightningBreathAttackMissile"/>
+        <HostSiteOps Ops="SOpShadow" HoldPosition="1" HoldRotation="1"/>
+        <Duration value="0.125500"/>
+        <Magnitude value="50.000000"/>
+        <ForceFlags index="FallOff" value="0"/>
+        <HostEndSiteOps Ops="SOpMoveBy5Dot5"/>
+        <Angle value="28.000000"/>
+        <Length value="1.500000"/>
+    </CActorForceConeRoundedEnd>
+    <CActorSiteOpLocalOffset id="DiabloLightningBreathAttackOffset">
+        <LocalOffset value="0.000000,0.000000,1.000000"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSiteOpLocalOffset>
+    <!-- Diablo Footsteps                                                                              -->
+    <CActorSiteOpLocalOffset id="DiabloStepLeftOffset">
+        <LocalOffset value="-0.500000,0.000000,0.000000"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSiteOpLocalOffset id="DiabloStepRightOffset">
+        <LocalOffset value="0.500000,0.000000,0.000000"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorSiteOpLocalOffset>
+    <CActorModel id="DiabloStepLeftModel" parent="ModelAnimationStyleOneShot">
+        <HostSiteOps Ops="SOpShadow DiabloStepLeftOffset"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorSound id="HeroDiabloBlackSoulstone@DeathSFXEnemy" parent="CoreSoundOneShot">
+        <Filter index="Ally" value="1"/>
+        <Inherits index="Visibility" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloBlackSoulstone@ResurrectDummyPersistent.Start" Send="Create"/>
+        <Sound value="HeroDiabloBlackSoulstone@Death"/>
+        <SoundFlags index="UpdateVisibility" value="0"/>
+    </CActorSound>
+    <CActorModel id="DiabloStepRightModel" parent="ModelAnimationStyleOneShot">
+        <HostSiteOps Ops="SOpShadow DiabloStepRightOffset"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorModel>
+    <CActorSound id="HeroDiabloBlackSoulstone@DeathSFXAlly" parent="CoreSoundOneShot">
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="Visibility" value="0"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloBlackSoulstone@ResurrectDummyPersistent.Start" Send="Create"/>
+        <Sound value="HeroDiabloBlackSoulstone@Death"/>
+        <SoundFlags index="UpdateVisibility" value="0"/>
+    </CActorSound>
+    <CActorQuad id="HeroDiabloDevilCharge@CursorGuide" parent="CoreGuideVisualQuadDownFantasy">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On index="0" Terms="Abil.Guide"/>
+        <Host Subject="::scope.targetted" Actor="Find"/>
+        <HostSiteOps Ops="SOpAttachOriginDiabloTarget SOpForwardQueryDiablo SOp2DRotation"/>
+        <Height value="5.000000"/>
+        <Width value="0.700000"/>
+    </CActorQuad>
+    <CActorModel id="HeroDiabloBlackSoulstone@CanReviveFX" parent="CoreModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloBlackSoulstone@CanReviveActiveCarry.On" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloBlackSoulstone@CanReviveActiveCarry.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow SOpShadow SOpMoveUpByDot5 SOpPointSouthWorld"/>
+        <Inherits index="Visibility" value="1"/>
+    </CActorModel>
+    <CActorMissile id="HeroDiabloBlackSoulstone@HeroMissile" parent="GenericAttackMissile" unitName="HeroDiabloBlackSoulstone@HeroMissile">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorDestruction" Send="DestroyParticles"/>
+    </CActorMissile>
+    <CActorMissile id="HeroDiabloBlackSoulstone@NonHeroMissile" parent="GenericAttackMissile" unitName="HeroDiabloBlackSoulstone@NonHeroMissile">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorDestruction" Send="DestroyParticles"/>
+    </CActorMissile>
+    <CActorSound id="HeroDiabloFireStomp@Impact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloFireStomp@StartDamage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloFireStomp@Impact_Return" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloFireStomp@ReturnDamage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloFireStomp@Return_End" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloFireStomp@ReturnDummyFinishSet.Start; At Missile" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloFireStomp@Return_Start" parent="CoreSoundOneShot">
+        <Terms value="Cap 1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloFireStomp@ReturnMissilePause.On" Send="Create"/>
+        <Layers Sound="HeroDiabloFireStomp@Return" PlayDelaySource="Actor">
+            <Chance value="0"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="HeroDiabloOverpower@LaunchSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloOverpower@ApplyTargetBehavior.Start; At Target" Send="Create"/>
+        <Sound value="HeroDiabloOverpower@Launch"/>
+        <Layers Sound="HeroDiabloOverpower@VOX"/>
+        <Layers Sound="HeroDiabloOverpower@Whoosh"/>
+    </CActorSound>
+    <CActorModel id="HeroDiabloBlackSoulstone@ResurrectModelAllyModel" parent="CoreModelAddition">
+        <Aliases index="0" value="_Snapshot"/>
+        <Aliases index="1" removed="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On index="1" Terms="ActorOrphan" Send="Destroy"/>
+        <On index="2" Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <On index="3" Terms="Effect.HeroDiabloBlackSoulstone@ResurrectDummyPersistent.Start" Send="Create"/>
+        <On index="4" Terms="ActorCreation" Send="TimerSet 5.000000 SoulStoneTimer"/>
+        <On Terms="TimerExpired; TimerName SoulStoneTimer" Send="AnimBracketStop BSD"/>
+        <Model value="HeroDiabloBlackSoulstone@Model"/>
+    </CActorModel>
+    <CActorSound id="HeroDiabloOverpower@ImpactSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloOverpower@ApplyTargetStun.Start; At Target" Send="Create"/>
+        <Sound value="HeroDiabloOverpower@Impact"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloBlackSoulstone@ResurrectLaugh" parent="SoundOneShot">
+        <Filter index="Self" value="1"/>
+        <Inherits index="Visibility" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloBlackSoulstone@ResurrectDummyPersistent.Start" Send="Create"/>
+        <Sound value="HeroDiabloBlackSoulstone@Resurrect_Laugh"/>
+        <SoundFlags index="UpdateVisibility" value="0"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloFireStomp@Return" parent="CoreSoundOneShot">
+        <Terms value="Cap 1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Sound value="HeroDiabloFireStomp@Return_Start"/>
+        <Layers Sound="HeroDiabloFireStomp@Return" PlayDelaySource="Actor">
+            <PlayDelay value="200,200"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="HeroDiabloBlackSoulstone@ResurrectLaughPlayer" parent="SoundOneShot">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="Visibility" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloBlackSoulstone@ResurrectDummyPersistent.Start" Send="Create"/>
+        <Sound value="HeroDiabloBlackSoulstone@Resurrect_Laugh_Player"/>
+        <SoundFlags index="UpdateVisibility" value="0"/>
+    </CActorSound>
+    <CActorAction id="HeroDiabloBlackSoulstone@NonHeroLaunchMissileActionActor" parent="CoreGenericAttackPoint" effectImpact="HeroDiabloBlackSoulstone@DummyImpactEffect" effectLaunch="HeroDiabloBlackSoulstone@NonHeroTargetLaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <LaunchSiteOps Ops="SOpMoveUpBy2 SOpSourceUnit"/>
+        <Missile value="HeroDiabloBlackSoulstone@NonHeroMissile"/>
+        <ImpactSiteOps Ops="SOpAttachCenter"/>
+        <ImpactAttachQuery Methods="AMFilterCenter"/>
+        <ImpactMap index="None" Sound="Diablo_BlackSoulstone_Missile_Impact_NonHero"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorAction id="HeroDiabloBlackSoulstone@HeroLaunchMissileActionActor" parent="CoreGenericAttackPoint" effectImpact="HeroDiabloBlackSoulstone@DummyImpactEffect" effectLaunch="HeroDiabloBlackSoulstone@HeroTargetLaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <LaunchSiteOps Ops="SOpMoveUpBy2 SOpSourceUnit"/>
+        <Missile value="HeroDiabloBlackSoulstone@HeroMissile"/>
+        <ImpactSiteOps Ops="SOpAttachCenter"/>
+        <ImpactAttachQuery Methods="AMFilterCenter"/>
+        <ShieldFlashType value="None"/>
+        <ImpactMap index="None" Model="HeroDiabloBlackSoulstone@NonHeroLaunchMissileActionActorImpact" Sound="Diablo_BlackSoulstone_Missile_Impact_NonHero" ModelReaction="HeroDiabloBlackSoulstone@NonHeroLaunchMissileActionActorImpactReaction"/>
+        <ImpactMap index="Shield" Sound="HeroDiabloBlackSoulstone@NonHeroLaunchMissileActionActorImpactShield" ModelReaction="HeroDiabloBlackSoulstone@NonHeroLaunchMissileActionActorImpactReactionShield"/>
+    </CActorAction>
+    <CActorSound id="HeroDiabloDevilCharge@ImpactSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloDevilCharge@LaunchStructureSwitch.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Sound value="HeroDiabloDevilCharge@Impact"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloDevilCharge@LaunchSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloDevilCharge.SourceCastStart" Send="Create"/>
+        <Sound value="HeroDiabloDevilCharge@Cast"/>
+        <Layers Sound="HeroDiabloDevilCharge@Whoosh"/>
+        <Layers Sound="HeroDiablo@VOX_CastingA"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloApocalypse@SoundCast" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloApocalypse@CreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroDiabloTalentHellgate@ApocalypseCreatePersistent.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloApocalypse@SoundRoar" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloApocalypse.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloApocalypse@SoundExplosion" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloApocalypse@SearchForImpact.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloTalentFireStompHellfire@SoundActive" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloTalentFireStompHellfire@CarryBehavior.On" Send="Create"/>
+        <Sound value="HeroDiabloTalentFireStompHellfire@Active"/>
+    </CActorSound>
+    <CActorModel id="HeroDiabloTalentFireStompHellfire@DamageModel" parent="CoreModelAnimationStyleOneShotUnit">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorCreation" Send="Create TalentBurningRageImpactSound"/>
+        <On Terms="Effect.HeroDiabloTalentFireStompHellfire@Damage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="HeroDiabloTalentFireStompHellfire@Damage"/>
+        <AutoScaleFactor value="1.300000"/>
+    </CActorModel>
+    <CActorSound id="HeroDiabloApocalypse@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloApocalypse@ImpactSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroDiabloTalentLightningBreathHellstorm@LaunchSound" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourceCastStart; ValidatePlayer HeroDiabloTalentLightningBreathHellstorm" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.Off" Send="SoundSetPaused 1"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath@VisualController.On" Send="SoundSetPaused"/>
+        <On Terms="Abil.HeroDiabloLightningBreath.SourcePause" Send="Destroy"/>
+        <On Terms="Behavior.HeroDiabloLightningBreath.Destroy" Send="Destroy"/>
+        <Sound value="HeroDiabloTalentLightningBreathHellstorm@Launch"/>
+        <Layers Sound="HeroDiabloTalentLightningBreathHellstorm@VOX"/>
+    </CActorSound>
+    <CActorModel id="HeroDiabloTalentFireStompHellfire" parent="CoreModelAddition">
+        <Macros value="RemovePolymorphMacroEffects"/>
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <Inherits index="Visibility" value="1"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <On Terms="Behavior.HeroDiabloTalentFireStompHellfire@CarryBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroDiabloTalentFireStompHellfire@CarryBehavior.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft" HoldRotation="1"/>
+        <Model value="HeroDiabloTalentFireStompHellfire@Buff"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSplat id="HeroDiabloTalentHellgate@RangeSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <Scale value="7.200000"/>
+    </CActorSplat>
+    <CActorModel id="HeroDiabloTalentHellgate@TeleportInModel" parent="CoreModelAnimationStyleOneShot">
+        <Flags index="VisionTestCenterOnly" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="Effect.HeroDiabloTalentHellgate@Teleport.Stop; At Source" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create FlashoftheStormSound"/>
+        <Host Scope="Caster"/>
+        <HostSiteOps Ops="SOpAttachCenterStationary SOpForwardOriginPoint"/>
+    </CActorModel>
+    <CActorModel id="HeroDiabloTalentHellgate@TeleportOutModel" parent="CoreModelAnimationStyleOneShot">
+        <Flags index="VisionTestCenterOnly" value="1"/>
+        <InheritType value="OneShot"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+        <On Terms="ActorCreation" Send="Create FlashoftheStormSound"/>
+        <On Terms="Effect.HeroDiabloTalentHellgate@Teleport.Start; At Source" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenterStationary SOpForwardCasterPoint"/>
+    </CActorModel>
+    <CActorRange id="HeroDiabloTalentHellgate@Range" parent="CoreRangeAbilPlusSplat" abil="HeroDiabloTalentHellgate">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Diablo"/>
+    </CActorRange>
+</Catalog>

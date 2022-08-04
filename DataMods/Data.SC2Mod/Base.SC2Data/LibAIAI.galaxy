@@ -1,0 +1,2762 @@
+include "TriggerLibs/NativeLib"
+include "LibCore_h"
+include "LibGame_h"
+include "LibMapM_h"
+include "LibUIUI_h"
+
+include "LibAIAI_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: AI
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libAIAI_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libMapM_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libAIAI_InitVariables_completed = false;
+
+void libAIAI_InitVariables () {
+    int init_i;
+
+    if (libAIAI_InitVariables_completed) {
+        return;
+    }
+
+    libAIAI_InitVariables_completed = true;
+
+    libAIAI_gv_aIRangedMinionWeaponRange = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogWeapon, ("RangedMinion"), "Range", c_playerAny);
+    libAIAI_gv_aIMinionEnemyMinionAttackRange = (libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogWeapon, ("RangedMinion"), "Range", c_playerAny) + 1.0);
+    libAIAI_gv_aIMinionAttackHeroDistance = (libAIAI_gv_aIRangedMinionWeaponRange + 0.5);
+    libAIAI_gv_aITowerRange = (StringToFixed(CatalogFieldValueGet(c_gameCatalogWeapon, ("KingsCore"), "Range", c_playerAny)) - 0.25);
+    libAIAI_gv_uF_MinionAI_EnemyMinions = UnitFilter((1 << c_targetFilterBiological) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterUser1) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterBenign - 32)) | (1 << (c_targetFilterSummoned - 32)));
+    libAIAI_gv_uF_MinionAI_AnyEnemyMinions2 = UnitFilter((1 << c_targetFilterVisible), (1 << (c_targetFilterSummoned - 32)), (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterUser1) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterBenign - 32)));
+    libAIAI_gv_uF_MinionAI_EnemyStructure = UnitFilter((1 << c_targetFilterStructure) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterBiological) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterHeroic) | (1 << c_targetFilterUser1) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterBenign - 32)) | (1 << (c_targetFilterSummoned - 32)));
+    libAIAI_gv_uF_MinionAI_EnemyHero = UnitFilter((1 << c_targetFilterHeroic) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterBiological) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterUser1) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterBenign - 32)));
+    for (init_i = 0; init_i <= libAIAI_gv_minionAIMaxActiveMinions; init_i += 1) {
+        libAIAI_gv_minionAIActiveMinions[init_i].lv_state = libAIAI_ge_MinionAIStates_Advancing;
+        libAIAI_gv_minionAIActiveMinions[init_i].lv_debugLabel = c_invalidDialogControlId;
+    }
+    libAIAI_gv_uF_MinionAI_AnyEnemyMinions = UnitFilter((1 << c_targetFilterBiological) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterHeroic) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    libAIAI_gv_uF_MinionAI_AnyEnemySummoned = UnitFilter((1 << c_targetFilterVisible), (1 << (c_targetFilterSummoned - 32)), (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterHeroic) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    libAIAI_gv_uF_MinionAI_GetNearestEnemyStructure = UnitFilter((1 << c_targetFilterStructure) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterBiological) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterHeroic) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterSummoned - 32)));
+    libAIAI_gv_uF_MinionAI_GetNearestAttackableEnemyStructure = UnitFilter((1 << c_targetFilterStructure) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterBiological) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterHeroic) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterSummoned - 32)));
+    libAIAI_gv_uF_MinionAI_GetNearestEnemyHero = UnitFilter((1 << c_targetFilterHeroic) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterBiological) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    libAIAI_gv_uF_TowerAI_Scan_Group = UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterArmored) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    libAIAI_gv_uF_TowerAI_Scan_Group_Minion = UnitFilter((1 << c_targetFilterBiological) | (1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterArmored) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    libAIAI_gv_uF_TowerAI_Scan_Group_Summoned = UnitFilter((1 << c_targetFilterVisible), (1 << (c_targetFilterSummoned - 32)), (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterLight) | (1 << c_targetFilterArmored) | (1 << c_targetFilterMechanical) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32)));
+    libAIAI_gv_uF_TowerAI_Required_Summoned = UnitFilter(0, (1 << (c_targetFilterSummoned - 32)), 0, 0);
+    libAIAI_gv_uF_TowerAI_Required_Heroic = UnitFilter((1 << c_targetFilterHeroic), 0, 0, 0);
+    libAIAI_gv_uF_TowerAI_Required_Minion = UnitFilter((1 << c_targetFilterBiological), 0, 0, 0);
+    libAIAI_gv_uF_TowerAI_Required_Ignored = UnitFilter((1 << c_targetFilterArmored), 0, 0, 0);
+    libAIAI_gv_uF_TowerAI_Required_Invulnerable = UnitFilter(0, (1 << (c_targetFilterInvulnerable - 32)), 0, 0);
+    libAIAI_gv_uF_TowerAI_Required_Stasis = UnitFilter(0, (1 << (c_targetFilterStasis - 32)), 0, 0);
+    libAIAI_gv_uF_TowerAI_Required_Visible = UnitFilter((1 << c_targetFilterVisible), 0, 0, 0);
+    for (init_i = 0; init_i <= libAIAI_gv_defenderAIMaxNumberOfDefenderAI; init_i += 1) {
+        libAIAI_gv_defenderAI[init_i].lv_defendersGroup = UnitGroupEmpty();
+        libAIAI_gv_defenderAI[init_i].lv_state = libAIAI_ge_DefenderAIState_Idle;
+        libAIAI_gv_defenderAI[init_i].lv_validTargets = UnitGroupEmpty();
+        libAIAI_gv_defenderAI[init_i].lv_debugLabel = c_invalidDialogControlId;
+    }
+    libAIAI_gv_defenderAILastCreatedDefenderAIIndex = "DefenderAILastCreatedDefenderAI";
+    libAIAI_gv_aIMoveAbil = AbilityCommand("move", 0);
+    libAIAI_gv_aITurnAbil = AbilityCommand("move", 4);
+    libAIAI_gv_aIAttackAbil = AbilityCommand("attack", 0);
+    libAIAI_gv_aIAttackAllyAbil = AbilityCommand("AttackAlly", 0);
+    libAIAI_gv_aIStopAbil = AbilityCommand("stop", 0);
+}
+
+// Presets
+string libAIAI_ge_MinionAIStates_Ident (int lp_val) {
+         if (lp_val == libAIAI_ge_MinionAIStates_Advancing) { return "Advancing"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_AttackingMinions) { return "AttackingMinions"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_AttackingStructure) { return "AttackingStructure"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_AttackingHero) { return "AttackingHero"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_FallbackState) { return "FallbackState"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_FollowHero) { return "FollowHero"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_Leashing) { return "Leashing"; }
+    else if (lp_val == libAIAI_ge_MinionAIStates_HoldPosition) { return "HoldPosition"; }
+    return null;
+}
+
+string libAIAI_ge_DefenderAIState_Ident (int lp_val) {
+         if (lp_val == libAIAI_ge_DefenderAIState_Idle) { return "Idle"; }
+    else if (lp_val == libAIAI_ge_DefenderAIState_Fighting) { return "Fighting"; }
+    else if (lp_val == libAIAI_ge_DefenderAIState_Leashing) { return "Leashing"; }
+    return null;
+}
+
+// Functions
+int libAIAI_gf_MinionAINewMinionIndex () {
+    // Variable Declarations
+    int lv_minionIndex;
+
+    // Automatic Variable Declarations
+    const int auto0B4A2F57_ae = libAIAI_gv_minionAIMaxActiveMinions;
+    const int auto0B4A2F57_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_minionIndex = 1;
+    for ( ; ( (auto0B4A2F57_ai >= 0 && lv_minionIndex <= auto0B4A2F57_ae) || (auto0B4A2F57_ai < 0 && lv_minionIndex >= auto0B4A2F57_ae) ) ; lv_minionIndex += auto0B4A2F57_ai ) {
+        if ((libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_isAlive == false)) {
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_isAlive = true;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state = libAIAI_ge_MinionAIStates_Advancing;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_nextWaypoint = 0;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_unitPosition = null;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_targetUnit = null;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition = false;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_battleCorePoint = null;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_battleCoreLastUpdate = 0.0;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_ownerPlayer = 0;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_teamToAttack = 0;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_lane = 0;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit = null;
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnitType = null;
+            libAIAI_gv_minionAIActiveMinionsUpperBound = MaxI(lv_minionIndex, libAIAI_gv_minionAIActiveMinionsUpperBound);
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_prefersStructureTargets = false;
+            return lv_minionIndex;
+        }
+
+    }
+    return (libAIAI_gv_minionAIMaxActiveMinions + 1);
+}
+
+point libAIAI_gf_MinionAIGetPreviousWaypointForMinion (int lp_minionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_teamToAttack == libGame_gv_teamChaosIndex_C)) {
+        return libAIAI_gf_MinionAIGetWaypointForMinion(lp_minionIndex, (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint - 1));
+    }
+    else {
+        return libAIAI_gf_MinionAIGetWaypointForMinion(lp_minionIndex, (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint + 1));
+    }
+}
+
+int libAIAI_gf_MinionAIGetWaypointCount (int lp_minionIndex) {
+    // Variable Declarations
+    int lv_itWp;
+    point lv_wp;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane > 0)) {
+        return libGame_gv_laneData[libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane].lv_waypointCount;
+    }
+
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == libGame_gv_laneCustomLane)) {
+        lv_itWp = 0;
+        while (true) {
+            lv_itWp += 1;
+            lv_wp = libAIAI_gf_MinionAIGetWaypointForMinion(lp_minionIndex, lv_itWp);
+            if ((lv_wp == null)) {
+                return (lv_itWp - 1);
+            }
+
+        }
+    }
+
+    return 0;
+}
+
+unit libAIAI_gf_MinionAIGetHeroToFollow (int lp_minionIndex) {
+    // Variable Declarations
+    int lv_owningPlayer;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, UnitGetOwner(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit)) == true)) {
+        lv_owningPlayer = UnitGetOwner(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit);
+        if ((UnitIsValid(libGame_gv_players[lv_owningPlayer].lv_heroUnit) == true)) {
+            return libGame_gv_players[lv_owningPlayer].lv_heroUnit;
+        }
+
+    }
+
+    return null;
+}
+
+bool libAIAI_gf_MinionAIIsValidTarget (int lp_minionIndex, unit lp_targetUnit) {
+    // Variable Declarations
+    order lv_order;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_order = OrderTargetingUnit(libAIAI_gv_aIAttackAllyAbil, lp_targetUnit);
+    if ((UnitOrderIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, lv_order) == true)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+unit libAIAI_gf_MinionAIGetNearestEnemyMinionSummonedInRangeOfMinion (int lp_minionIndex, fixed lp_range) {
+    // Variable Declarations
+    unitgroup lv_enemyMinions;
+    unitgroup lv_enemySummoned;
+    unit lv_enemyMinion;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_enemyMinions = UnitGroupEmpty();
+    lv_enemySummoned = UnitGroupEmpty();
+
+    // Implementation
+    lv_enemyMinions = UnitGroupSearch(null, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, lp_range, libAIAI_gv_uF_MinionAI_AnyEnemyMinions, 0);
+    lv_enemySummoned = UnitGroupSearch(null, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, lp_range, libAIAI_gv_uF_MinionAI_AnyEnemySummoned, 0);
+    UnitGroupAddUnitGroup(lv_enemyMinions, lv_enemySummoned);
+    lv_enemyMinion = UnitGroupClosestToPoint(lv_enemyMinions, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition);
+    if ((UnitIsAlive(lv_enemyMinion) == true) && (libAIAI_gf_MinionAIIsValidTarget(lp_minionIndex, lv_enemyMinion) == true) && (libAIAI_gf_AIIsPointBehindEnemyGateEstimate(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, UnitGetPosition(lv_enemyMinion)) == false)) {
+        return lv_enemyMinion;
+    }
+
+    return null;
+}
+
+unit libAIAI_gf_MinionAIGetNearestEnemyStructureInRangeOfMinion (int lp_minionIndex, fixed lp_range) {
+    // Variable Declarations
+    point lv_minionPosition;
+    unit lv_u;
+    unitgroup lv_nearbyAttackableStructues;
+    unitgroup lv_nearbyInvalidStructures;
+    int lv_townIndex;
+
+    // Automatic Variable Declarations
+    unitgroup autoBEB7DB65_g;
+    int autoBEB7DB65_u;
+
+    // Variable Initialization
+    lv_nearbyAttackableStructues = UnitGroupEmpty();
+    lv_nearbyInvalidStructures = UnitGroupEmpty();
+
+    // Implementation
+    lv_minionPosition = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition;
+    lv_nearbyAttackableStructues = UnitGroupSearch(null, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, lv_minionPosition, lp_range, libAIAI_gv_uF_MinionAI_GetNearestEnemyStructure, 0);
+    autoBEB7DB65_g = lv_nearbyAttackableStructues;
+    autoBEB7DB65_u = UnitGroupCount(autoBEB7DB65_g, c_unitCountAll);
+    for (;; autoBEB7DB65_u -= 1) {
+        lv_u = UnitGroupUnitFromEnd(autoBEB7DB65_g, autoBEB7DB65_u);
+        if (lv_u == null) { break; }
+        lv_townIndex = libGame_gf_TownGetTownForUnit(lv_u);
+        if ((lv_townIndex > 0) && (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane > 0) && (libGame_gv_townTownData[lv_townIndex].lv_lane != libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) && (libAIAI_gv_minionAIMinionsIgnoreLaneRequirements == false)) {
+            UnitGroupRemove(lv_nearbyAttackableStructues, lv_u);
+        }
+        else {
+            if ((lv_townIndex <= 0) && (lv_u != libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core) && (lv_u != libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core) && (UnitHasBehavior2(lv_u, "MinionAIAttackableStructure") == false)) {
+                UnitGroupRemove(lv_nearbyAttackableStructues, lv_u);
+            }
+            else {
+                if (((UnitFilterMatch(lv_u, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, libAIAI_gv_uF_MinionAI_GetNearestAttackableEnemyStructure) == false) || (libAIAI_gf_MinionAIIsValidTarget(lp_minionIndex, lv_u) == false))) {
+                    UnitGroupRemove(lv_nearbyAttackableStructues, lv_u);
+                    UnitGroupAdd(lv_nearbyInvalidStructures, lv_u);
+                }
+
+            }
+        }
+    }
+    lv_u = UnitGroupClosestToPoint(lv_nearbyAttackableStructues, lv_minionPosition);
+    if ((lv_u == null)) {
+        lv_u = UnitGroupClosestToPoint(lv_nearbyInvalidStructures, lv_minionPosition);
+    }
+
+    return lv_u;
+}
+
+unit libAIAI_gf_MinionAIGetNearestEnemyHeroInRangeOfMinion (int lp_minionIndex, fixed lp_range) {
+    // Variable Declarations
+    point lv_minionPosition;
+    unit lv_hero;
+    unitgroup lv_scanGroup;
+    fixed lv_minionDistanceToLane;
+    unit lv_enemySummoned;
+    fixed lv_enemyHeroDistancetoLane;
+
+    // Automatic Variable Declarations
+    unitgroup autoAA9E5A4D_g;
+    int autoAA9E5A4D_u;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_minionPosition = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition;
+    lv_scanGroup = UnitGroupSearch(null, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, lv_minionPosition, lp_range, libAIAI_gv_uF_MinionAI_GetNearestEnemyHero, 0);
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == true)) {
+        libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion(lp_minionIndex);
+        lv_minionDistanceToLane = DistanceBetweenPoints(lv_minionPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint);
+    }
+
+    autoAA9E5A4D_g = lv_scanGroup;
+    autoAA9E5A4D_u = UnitGroupCount(autoAA9E5A4D_g, c_unitCountAll);
+    for (;; autoAA9E5A4D_u -= 1) {
+        lv_hero = UnitGroupUnitFromEnd(autoAA9E5A4D_g, autoAA9E5A4D_u);
+        if (lv_hero == null) { break; }
+        if ((libAIAI_gf_MinionAIIsValidTarget(lp_minionIndex, lv_hero) == false)) {
+            UnitGroupRemove(lv_scanGroup, lv_hero);
+        }
+        else {
+            if ((UnitFilterMatch(lv_hero, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, UnitFilter(0, (1 << (c_targetFilterPassive - 32)), 0, 0)) == true) && (UnitHasBehavior2(lv_hero, "HeroGenericMount@Mounted") == false)) {
+                UnitGroupRemove(lv_scanGroup, lv_hero);
+            }
+            else {
+                if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == true) && (UnitInRangeAndAbleToAttackTarget(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, lv_hero) == false)) {
+                    lv_enemyHeroDistancetoLane = DistanceBetweenPoints(UnitGetPosition(lv_hero), libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint);
+                    if ((lv_enemyHeroDistancetoLane >= lv_minionDistanceToLane)) {
+                        UnitGroupRemove(lv_scanGroup, lv_hero);
+                    }
+
+                }
+
+            }
+        }
+    }
+    return UnitGroupClosestToPoint(lv_scanGroup, lv_minionPosition);
+}
+
+bool libAIAI_gf_MinionAIWithinLeashingDistanceofLane (int lp_minionIndex) {
+    // Variable Declarations
+    fixed lv_distanceToBattleCore;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion(lp_minionIndex);
+    lv_distanceToBattleCore = DistanceBetweenPoints(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint);
+    if ((lv_distanceToBattleCore <= libAIAI_gv_aIMinionLeashingOffDistance)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+void libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion (int lp_minionIndex) {
+    // Variable Declarations
+    fixed lv_missionTime;
+    point lv_minionPosition;
+    point lv_nextWaypoint;
+    point lv_previousWaypoint;
+    fixed lv_distanceBetweenWaypoints;
+    fixed lv_angleBetweenPreviousPointandMinionPosition;
+    fixed lv_battleCoreDistance;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) == false)) {
+        return ;
+    }
+
+    lv_missionTime = GameGetMissionTime();
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCoreLastUpdate >= lv_missionTime)) {
+        return ;
+    }
+
+    lv_minionPosition = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition;
+    lv_nextWaypoint = libAIAI_gf_MinionAIGetNextWaypointForMinion(lp_minionIndex);
+    lv_previousWaypoint = libAIAI_gf_MinionAIGetPreviousWaypointForMinion(lp_minionIndex);
+    lv_distanceBetweenWaypoints = DistanceBetweenPoints(lv_previousWaypoint, lv_nextWaypoint);
+    lv_angleBetweenPreviousPointandMinionPosition = (AngleBetweenPoints(lv_previousWaypoint, lv_minionPosition) - AngleBetweenPoints(lv_previousWaypoint, lv_nextWaypoint));
+    lv_battleCoreDistance = (Cos(lv_angleBetweenPreviousPointandMinionPosition) * DistanceBetweenPoints(lv_previousWaypoint, lv_minionPosition));
+    if ((lv_battleCoreDistance < 0.0)) {
+        lv_battleCoreDistance = 0.0;
+    }
+
+    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint = libNtve_gf_PointOffsetTowardsPoint(lv_previousWaypoint, lv_battleCoreDistance, lv_nextWaypoint);
+    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCoreLastUpdate = lv_missionTime;
+}
+
+bool libAIAI_gf_MinionAITestPastNextWaypoint (int lp_minionIndex) {
+    // Variable Declarations
+    point lv_minionPosition;
+    point lv_nextWaypoint;
+    point lv_previousWaypoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_minionPosition = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition;
+    lv_nextWaypoint = libAIAI_gf_MinionAIGetNextWaypointForMinion(lp_minionIndex);
+    lv_previousWaypoint = libAIAI_gf_MinionAIGetPreviousWaypointForMinion(lp_minionIndex);
+    return (DistanceSquaredBetweenPoints(lv_minionPosition, lv_previousWaypoint) >= (DistanceSquaredBetweenPoints(lv_minionPosition, lv_nextWaypoint) + DistanceSquaredBetweenPoints(lv_previousWaypoint, lv_nextWaypoint)));
+}
+
+void libAIAI_gf_MinionAIAdvanceMinionToNextWaypoint (int lp_minionIndex) {
+    // Variable Declarations
+    int lv_ownerPlayer;
+    int lv_camp;
+    int lv_nextWaypoint;
+    int lv_waypointCount;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_ownerPlayer = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer;
+    lv_nextWaypoint = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint;
+    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint = libAIAI_gf_MinionAIGetNextWaypointForMinion(lp_minionIndex);
+    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCoreLastUpdate = GameGetMissionTime();
+    lv_waypointCount = libAIAI_gf_MinionAIGetWaypointCount(lp_minionIndex);
+    if ((libCore_gv_mAPUsesCirclingAI == false)) {
+        if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_teamToAttack == libGame_gv_teamChaosIndex_C)) {
+            if ((lv_nextWaypoint < (lv_waypointCount - 1))) {
+                lv_nextWaypoint += 1;
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = lv_nextWaypoint;
+            }
+
+        }
+        else {
+            if ((lv_nextWaypoint == 0)) {
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = lv_nextWaypoint;
+            }
+            else {
+                if ((lv_nextWaypoint > 2)) {
+                    lv_nextWaypoint -= 1;
+                    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = lv_nextWaypoint;
+                }
+
+            }
+        }
+    }
+    else {
+        if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_teamToAttack == libGame_gv_teamChaosIndex_C)) {
+            if ((lv_nextWaypoint < (lv_waypointCount - libCore_gv_mAPPathNodesBeforeLooping))) {
+                lv_nextWaypoint += 1;
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = lv_nextWaypoint;
+            }
+            else {
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_teamToAttack = libGame_gv_teamOrderIndex_C;
+                if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == 3)) {
+                    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 1;
+                }
+                else if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == 1)) {
+                    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 3;
+                }
+                else if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == 2)) {
+                    if ((ModI(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_waveNumber, 2) == 0)) {
+                        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 3;
+                    }
+                    else {
+                        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 1;
+                    }
+                }
+                lv_waypointCount = libAIAI_gf_MinionAIGetWaypointCount(lp_minionIndex);
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = (lv_waypointCount - 1);
+                libAIAI_gf_MinionAIAdvanceMinionToNextWaypoint(lp_minionIndex);
+            }
+        }
+        else {
+            if ((lv_nextWaypoint == 0)) {
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = lv_waypointCount;
+            }
+            else {
+                if ((lv_nextWaypoint > (libCore_gv_mAPPathNodesBeforeLooping + 1))) {
+                    lv_nextWaypoint -= 1;
+                    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint = lv_nextWaypoint;
+                }
+                else {
+                    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_teamToAttack = libGame_gv_teamChaosIndex_C;
+                    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == 3)) {
+                        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 1;
+                    }
+                    else if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == 1)) {
+                        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 3;
+                    }
+                    else if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == 2)) {
+                        if ((ModI(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_waveNumber, 2) == 0)) {
+                            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 3;
+                        }
+                        else {
+                            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane = 1;
+                        }
+                    }
+                    libAIAI_gf_MinionAIAdvanceMinionToNextWaypoint(lp_minionIndex);
+                }
+            }
+        }
+    }
+    lv_camp = FixedToInt(UnitGetCustomValue(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleLanerCreepCampIndex)));
+    if ((lv_camp != 0)) {
+        libMapM_gf_JungleCreateMercPath(libMapM_gv_jungleMiniMapLeader[lv_camp], false);
+    }
+
+}
+
+int libAIAI_gf_MinionAIDetermineState (int lp_minionIndex, int lp_oldState) {
+    // Variable Declarations
+    fixed lv_distanceToBattleCore;
+    unit lv_heroToFollow;
+    int lv_attackState;
+
+    // Automatic Variable Declarations
+    int autoBB8221A1_val;
+
+    // Variable Initialization
+
+    // Implementation
+    autoBB8221A1_val = lp_oldState;
+    if (autoBB8221A1_val == libAIAI_ge_MinionAIStates_Advancing) {
+        lv_attackState = libAIAI_gf_MinionAIDetermineAttackStateAndTarget(lp_minionIndex);
+        return lv_attackState;
+    }
+    else if (autoBB8221A1_val == libAIAI_ge_MinionAIStates_AttackingMinions) {
+        lv_attackState = libAIAI_gf_MinionAIDetermineAttackStateAndTarget(lp_minionIndex);
+        return lv_attackState;
+    }
+    else if (autoBB8221A1_val == libAIAI_ge_MinionAIStates_AttackingStructure) {
+        lv_attackState = libAIAI_gf_MinionAIDetermineAttackStateAndTarget(lp_minionIndex);
+        return lv_attackState;
+    }
+    else if (autoBB8221A1_val == libAIAI_ge_MinionAIStates_AttackingHero) {
+        lv_attackState = libAIAI_gf_MinionAIDetermineAttackStateAndTarget(lp_minionIndex);
+        return lv_attackState;
+    }
+    else if (autoBB8221A1_val == libAIAI_ge_MinionAIStates_FollowHero) {
+        if ((libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) == true) && (PointPathingIsConnected(UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit), libAIAI_gf_MinionAIGetNextWaypointForMinion(lp_minionIndex)) == true)) {
+            return libAIAI_ge_MinionAIStates_Advancing;
+        }
+
+        lv_heroToFollow = libAIAI_gf_MinionAIGetHeroToFollow(lp_minionIndex);
+        if (((UnitIsValid(lv_heroToFollow) == false) || (PointPathingIsConnected(UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit), UnitGetPosition(lv_heroToFollow)) == false))) {
+            return libAIAI_ge_MinionAIStates_HoldPosition;
+        }
+
+    }
+    else if (autoBB8221A1_val == libAIAI_ge_MinionAIStates_HoldPosition) {
+        if ((libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) == true) && (PointPathingIsConnected(UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit), libAIAI_gf_MinionAIGetNextWaypointForMinion(lp_minionIndex)) == true)) {
+            return libAIAI_ge_MinionAIStates_Advancing;
+        }
+
+        lv_heroToFollow = libAIAI_gf_MinionAIGetHeroToFollow(lp_minionIndex);
+        if ((UnitIsValid(lv_heroToFollow) == true) && (PointPathingIsConnected(UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit), UnitGetPosition(lv_heroToFollow)) == true)) {
+            return libAIAI_ge_MinionAIStates_FollowHero;
+        }
+
+    }
+    else {
+    }
+    return lp_oldState;
+}
+
+int libAIAI_gf_MinionAIDetermineAttackStateAndTarget (int lp_minionIndex) {
+    // Variable Declarations
+    order lv_minionOrder;
+    unit lv_currentTarget;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_minionOrder = UnitOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, 0);
+    if ((lv_minionOrder != null) && ((OrderGetAbilityCommand(lv_minionOrder) == libAIAI_gv_aIAttackAbil) || (OrderGetAbilityCommand(lv_minionOrder) == libAIAI_gv_aIAttackAllyAbil)) && (OrderGetTargetType(lv_minionOrder) == c_orderTargetUnit)) {
+        lv_currentTarget = OrderGetTargetUnit(lv_minionOrder);
+    }
+
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_prefersStructureTargets == true)) {
+        if ((libAIAI_gf_MinionAIShouldAttackStructure(lp_minionIndex, lv_currentTarget) == true)) {
+            return libAIAI_ge_MinionAIStates_AttackingStructure;
+        }
+        else {
+            if ((libAIAI_gf_MinionAIShouldAttackMinions(lp_minionIndex, lv_currentTarget) == true)) {
+                return libAIAI_ge_MinionAIStates_AttackingMinions;
+            }
+            else {
+                return libAIAI_gf_MinionAIAttackHeroState(lp_minionIndex, lv_currentTarget);
+            }
+        }
+    }
+    else {
+        if ((libAIAI_gf_MinionAIShouldAttackMinions(lp_minionIndex, lv_currentTarget) == true)) {
+            return libAIAI_ge_MinionAIStates_AttackingMinions;
+        }
+        else {
+            if ((libAIAI_gf_MinionAIShouldAttackStructure(lp_minionIndex, lv_currentTarget) == true)) {
+                return libAIAI_ge_MinionAIStates_AttackingStructure;
+            }
+            else {
+                return libAIAI_gf_MinionAIAttackHeroState(lp_minionIndex, lv_currentTarget);
+            }
+        }
+    }
+}
+
+bool libAIAI_gf_MinionAIShouldAttackMinions (int lp_minionIndex, unit lp_currentTarget) {
+    // Variable Declarations
+    unit lv_targetMinion;
+    fixed lv_pathingCostToBattleCore;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((UnitIsValid(lp_currentTarget) == true) && (libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) == true) && (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == false)) {
+        libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion(lp_minionIndex);
+        lv_pathingCostToBattleCore = IntToFixed(PointPathingCost(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint));
+        if ((lv_pathingCostToBattleCore >= libAIAI_gv_aIMaxPathDistance)) {
+            lv_pathingCostToBattleCore = DistanceBetweenPoints(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint);
+        }
+
+        if ((lv_pathingCostToBattleCore >= libAIAI_gv_aIMinionLeashingOnDistance)) {
+            lv_targetMinion = null;
+            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing = true;
+            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_forceStateTransition = true;
+            return false;
+        }
+
+    }
+
+    if ((UnitIsValid(lp_currentTarget) == true) && ((UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeBiological) == true) || (UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeSummoned) == true) || (UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeLight) == true)) && (UnitInRangeAndAbleToAttackTarget(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, lp_currentTarget) == true)) {
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit = lp_currentTarget;
+        return true;
+    }
+
+    lv_targetMinion = libAIAI_gf_MinionAIGetNearestEnemyMinionSummonedInRangeOfMinion(lp_minionIndex, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_attackRange);
+    if ((UnitIsAlive(lv_targetMinion) == true)) {
+        if ((lp_currentTarget != lv_targetMinion)) {
+            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_forceStateTransition = true;
+        }
+
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit = lv_targetMinion;
+        return true;
+    }
+
+    if ((UnitIsValid(lp_currentTarget) == true) && ((UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeBiological) == true) || (UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeSummoned) == true) || (UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeLight) == true)) && (DistanceBetweenPoints(UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit), UnitGetPosition(lp_currentTarget)) <= libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_attackRange) && (libAIAI_gf_AIIsPointBehindEnemyGateEstimate(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, UnitGetPosition(lp_currentTarget)) == true)) {
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit = lp_currentTarget;
+        return true;
+    }
+
+    return false;
+}
+
+bool libAIAI_gf_MinionAIShouldAttackStructure (int lp_minionIndex, unit lp_currentTarget) {
+    // Variable Declarations
+    unit lv_targetStructure;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((UnitIsValid(lp_currentTarget) == true) && (UnitFilterMatch(lp_currentTarget, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, libAIAI_gv_uF_MinionAI_GetNearestAttackableEnemyStructure) == true)) {
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit = lp_currentTarget;
+        return true;
+    }
+
+    lv_targetStructure = libAIAI_gf_MinionAIGetNearestEnemyStructureInRangeOfMinion(lp_minionIndex, MaxF(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_attackRange, (libAIAI_gv_aIMinionEnemyMinionAttackRange + libAIAI_gv_aIMinionAttackStructureBonusScanRange)));
+    if ((UnitIsAlive(lv_targetStructure) == true) && (UnitHasBehavior2(lv_targetStructure, "TownDeadController@DeadBehavior") == false)) {
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_forceStateTransition = true;
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit = lv_targetStructure;
+        return true;
+    }
+
+    return false;
+}
+
+int libAIAI_gf_MinionAIAttackHeroState (int lp_minionIndex, unit lp_currentTarget) {
+    // Variable Declarations
+    point lv_minionPosition;
+    fixed lv_pathingCostToBattleCore;
+    unit lv_targetHero;
+    unit lv_heroToFollow;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_minionPosition = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_unitPosition;
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == false) && (UnitIsValid(lp_currentTarget) == true) && (UnitFilterMatch(lp_currentTarget, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, libAIAI_gv_uF_MinionAI_GetNearestEnemyHero) == true) && (DistanceBetweenPoints(lv_minionPosition, UnitGetPosition(lp_currentTarget)) < (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_attackHeroRange + libAIAI_gv_aIMinionAttackHeroBufferDistance))) {
+        lv_targetHero = lp_currentTarget;
+    }
+    else {
+        lv_targetHero = libAIAI_gf_MinionAIGetNearestEnemyHeroInRangeOfMinion(lp_minionIndex, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_attackHeroRange);
+    }
+    if ((UnitIsValid(lv_targetHero) == true) && (libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) == true) && (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == false)) {
+        libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion(lp_minionIndex);
+        lv_pathingCostToBattleCore = IntToFixed(PointPathingCost(lv_minionPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint));
+        if ((lv_pathingCostToBattleCore >= libAIAI_gv_aIMinionLeashingOnDistance)) {
+            lv_pathingCostToBattleCore = DistanceBetweenPoints(lv_minionPosition, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint);
+        }
+
+        if ((lv_pathingCostToBattleCore >= libAIAI_gv_aIMinionLeashingOnDistance)) {
+            lv_targetHero = null;
+            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing = true;
+            libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_forceStateTransition = true;
+        }
+
+    }
+
+    if ((UnitIsValid(lv_targetHero) == false)) {
+        if ((libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane) == true)) {
+            if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == false) && (UnitIsValid(lp_currentTarget) == true) && (UnitTypeTestAttribute(UnitGetType(lp_currentTarget), c_unitAttributeHeroic) == true) && (libAIAI_gf_MinionAIWithinLeashingDistanceofLane(lp_minionIndex) == false)) {
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing = true;
+                libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_forceStateTransition = true;
+            }
+
+            return libAIAI_ge_MinionAIStates_Advancing;
+        }
+        else {
+            lv_heroToFollow = libAIAI_gf_MinionAIGetHeroToFollow(lp_minionIndex);
+            if ((UnitIsValid(lv_heroToFollow) == true) && (PointPathingIsConnected(lv_minionPosition, UnitGetPosition(lv_heroToFollow)) == true)) {
+                return libAIAI_ge_MinionAIStates_FollowHero;
+            }
+
+        }
+        return libAIAI_ge_MinionAIStates_HoldPosition;
+    }
+
+    if ((lv_targetHero != lp_currentTarget)) {
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_forceStateTransition = true;
+    }
+
+    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit = lv_targetHero;
+    return libAIAI_ge_MinionAIStates_AttackingHero;
+}
+
+void libAIAI_gf_MinionAITransitionMinionIntoState (int lp_minionIndex, int lp_state) {
+    // Variable Declarations
+    int lv_newState;
+    point lv_previousWaypoint;
+    point lv_nextWaypoint;
+    point lv_heroPosition;
+    point lv_offsetHeroPosition;
+
+    // Automatic Variable Declarations
+    int auto1E1BDF2A_val;
+
+    // Variable Initialization
+
+    // Implementation
+    auto1E1BDF2A_val = lp_state;
+    if (auto1E1BDF2A_val == libAIAI_ge_MinionAIStates_Advancing) {
+        if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == true)) {
+            UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, OrderTargetingPoint(libAIAI_gv_aIMoveAbil, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_battleCorePoint), c_orderQueueReplace);
+        }
+        else {
+            UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, OrderTargetingPoint(libAIAI_gv_aIAttackAllyAbil, libAIAI_gf_MinionAIGetNextWaypointForMinion(lp_minionIndex)), c_orderQueueReplace);
+        }
+    }
+    else if (auto1E1BDF2A_val == libAIAI_ge_MinionAIStates_AttackingMinions) {
+        UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, OrderTargetingUnit(libAIAI_gv_aIAttackAllyAbil, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit), c_orderQueueReplace);
+    }
+    else if (auto1E1BDF2A_val == libAIAI_ge_MinionAIStates_AttackingStructure) {
+        if ((UnitFilterMatch(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_ownerPlayer, libAIAI_gv_uF_MinionAI_GetNearestAttackableEnemyStructure) == true) && (libAIAI_gf_MinionAIIsValidTarget(lp_minionIndex, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit) == true)) {
+            UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, OrderTargetingUnit(libAIAI_gv_aIAttackAllyAbil, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit), c_orderQueueReplace);
+        }
+        else {
+            if ((OrderGetAbilityCommand(UnitOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, 0)) == AbilityCommand("move", 2))) {
+                UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, Order(AbilityCommand("move", 2)), c_orderQueueReplace);
+            }
+
+        }
+    }
+    else if (auto1E1BDF2A_val == libAIAI_ge_MinionAIStates_AttackingHero) {
+        UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, OrderTargetingUnit(libAIAI_gv_aIAttackAllyAbil, libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_targetUnit), c_orderQueueReplace);
+    }
+    else if (auto1E1BDF2A_val == libAIAI_ge_MinionAIStates_FollowHero) {
+        lv_heroPosition = UnitGetPosition(libAIAI_gf_MinionAIGetHeroToFollow(lp_minionIndex));
+        if ((DistanceBetweenPoints(UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit), lv_heroPosition) > 2.5)) {
+            lv_offsetHeroPosition = libNtve_gf_PointOffsetTowardsPoint(lv_heroPosition, 2.0, UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit));
+            UnitIssueOrder(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, OrderTargetingPoint(libAIAI_gv_aIAttackAbil, lv_offsetHeroPosition), c_orderQueueReplace);
+        }
+
+    }
+    else if (auto1E1BDF2A_val == libAIAI_ge_MinionAIStates_HoldPosition) {
+    }
+    else {
+    }
+    if ((lp_state != libAIAI_ge_MinionAIStates_Advancing)) {
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_initialWaypoint = 0;
+    }
+
+}
+
+void libAIAI_gf_MinionAIIssueFightOrder (int lp_minionIndex) {
+    // Variable Declarations
+    unit lv_itUnit;
+    unitgroup lv_enemyGroup;
+    unit lv_minionUnit;
+    bool lv_creepNeedsNewOrders;
+
+    // Automatic Variable Declarations
+    string auto8F3E5725_val;
+    unitgroup auto4C1913DB_g;
+    int auto4C1913DB_u;
+
+    // Variable Initialization
+    lv_enemyGroup = UnitGroupEmpty();
+
+    // Implementation
+    lv_minionUnit = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit;
+    lv_creepNeedsNewOrders = true;
+    if ((UnitWeaponPeriodRemaining(lv_minionUnit, 1) > 2.0)) {
+        lv_creepNeedsNewOrders = false;
+    }
+
+    auto8F3E5725_val = UnitGetType(lv_minionUnit);
+    if (auto8F3E5725_val == "MercenarySlaynElemental@Defender") {
+        if ((UnitGetCooldown(lv_minionUnit, CatalogFieldValueGet(c_gameCatalogAbil, ("MercenarySlaynElementalEssenceLeech"), "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+            lv_enemyGroup = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", UnitGetOwner(lv_minionUnit), c_unitAllianceEnemy, RegionCircle(UnitGetPosition(lv_minionUnit), 10.0), UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+            if ((UnitGroupCount(lv_enemyGroup, c_unitCountAlive) >= 1)) {
+                UnitIssueOrder(lv_minionUnit, Order(AbilityCommand("MercenarySlaynElementalEssenceLeech", 0)), c_orderQueueReplace);
+                lv_creepNeedsNewOrders = false;
+            }
+        }
+    }
+    else if (auto8F3E5725_val == "MercenaryColossus@Laner") {
+        if ((UnitGetCooldown(lv_minionUnit, CatalogFieldValueGet(c_gameCatalogAbil, ("MercenaryColossusFireBeam"), "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+            lv_enemyGroup = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", UnitGetOwner(lv_minionUnit), c_unitAllianceEnemy, RegionCircle(UnitGetPosition(lv_minionUnit), 5.25), UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+            auto4C1913DB_g = lv_enemyGroup;
+            auto4C1913DB_u = UnitGroupCount(auto4C1913DB_g, c_unitCountAll);
+            for (;; auto4C1913DB_u -= 1) {
+                lv_itUnit = UnitGroupUnitFromEnd(auto4C1913DB_g, auto4C1913DB_u);
+                if (lv_itUnit == null) { break; }
+                if ((DistanceBetweenPoints(UnitGetPosition(lv_itUnit), UnitGetPosition(lv_minionUnit)) <= 2.25)) {
+                    UnitGroupRemove(lv_enemyGroup, lv_itUnit);
+                }
+
+            }
+            if ((UnitGroupCount(lv_enemyGroup, c_unitCountAlive) >= 2)) {
+                UnitBehaviorRemove(lv_minionUnit, "MercenaryColossusWeapon@TurretDisabler", 1);
+                UnitIssueOrder(lv_minionUnit, OrderTargetingPoint(AbilityCommand("MercenaryColossusFireBeam", 0), UnitGetPosition(UnitGroupUnit(lv_enemyGroup, 1))), c_orderQueueReplace);
+                lv_creepNeedsNewOrders = false;
+            }
+
+        }
+
+        if ((lv_creepNeedsNewOrders == true) && (UnitGetCooldown(lv_minionUnit, CatalogFieldValueGet(c_gameCatalogAbil, ("MercenaryColossusChargedBlast"), "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+            lv_enemyGroup = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", UnitGetOwner(lv_minionUnit), c_unitAllianceEnemy, RegionCircle(UnitGetPosition(lv_minionUnit), 8.0), UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+            if ((UnitGroupCount(lv_enemyGroup, c_unitCountAlive) >= 1)) {
+                UnitIssueOrder(lv_minionUnit, OrderTargetingPoint(AbilityCommand("MercenaryColossusChargedBlast", 0), UnitGetPosition(UnitGroupUnit(lv_enemyGroup, 1))), c_orderQueueReplace);
+                lv_creepNeedsNewOrders = false;
+            }
+
+        }
+
+    }
+    else {
+    }
+}
+
+int libAIAI_gf_MinionAIGetIndexForMinion (unit lp_minion) {
+    // Automatic Variable Declarations
+    // Implementation
+    return libGame_gf_CustomValueGetAsInteger(libGame_ge_CustomValueIndexes_MinionIndex, lp_minion);
+}
+
+point libAIAI_gf_MinionAIGetWaypointForMinion (int lp_minionIndex, int lp_waypointIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane > 0)) {
+        return libGame_gv_laneData[libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane].lv_waypoints[lp_waypointIndex];
+    }
+
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane == libGame_gv_laneCustomLane)) {
+        return libCore_gf_PointStoredForUnit(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit, lp_waypointIndex);
+    }
+
+    return null;
+}
+
+point libAIAI_gf_MinionAIGetNextWaypointForMinion (int lp_minionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    return libGame_gv_laneData[libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_lane].lv_waypoints[libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_nextWaypoint];
+}
+
+void libAIAI_gf_MinionAIFreeMinionIndex (int lp_minionIndex) {
+    // Variable Declarations
+    int lv_i;
+
+    // Automatic Variable Declarations
+    const int auto724A94E5_ae = 1;
+    const int auto724A94E5_ai = -1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_minionIndex <= 0)) {
+        return ;
+    }
+
+    libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_isAlive = false;
+    if ((lp_minionIndex == libAIAI_gv_minionAIActiveMinionsUpperBound)) {
+        lv_i = (libAIAI_gv_minionAIActiveMinionsUpperBound - 1);
+        for ( ; ( (auto724A94E5_ai >= 0 && lv_i <= auto724A94E5_ae) || (auto724A94E5_ai < 0 && lv_i >= auto724A94E5_ae) ) ; lv_i += auto724A94E5_ai ) {
+            if ((libAIAI_gv_minionAIActiveMinions[lv_i].lv_isAlive == true)) {
+                libAIAI_gv_minionAIActiveMinionsUpperBound = lv_i;
+                break;
+            }
+
+        }
+    }
+
+}
+
+void libAIAI_gf_MinionAIUnhookUnitFromMinionAI (unit lp_unit) {
+    // Variable Declarations
+    int lv_minionIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_minionIndex = libAIAI_gf_MinionAIGetIndexForMinion(lp_unit);
+    if ((lv_minionIndex <= 0)) {
+        return ;
+    }
+
+    libAIAI_gf_MinionAIFreeMinionIndex(lv_minionIndex);
+    UnitSetCustomValue(lp_unit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_MinionIndex), 0.0);
+    UnitIssueOrder(lp_unit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+}
+
+void libAIAI_gf_MinionAIStartMinionAI (int lp_waveNumberOverride, unit lp_unit, int lp_lane, int lp_nextWaypoint, bool lp_pathToInitialWaypoint, int lp_teamToAttack, bool lp_prefersStructureTargets) {
+    // Variable Declarations
+    int lv_minionIndex;
+    unit lv_heroToFollow;
+    fixed lv_weaponRange;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_unit == null)) {
+        return ;
+    }
+
+    libAIAI_gf_MinionAIUnhookUnitFromMinionAI(lp_unit);
+    lv_minionIndex = libAIAI_gf_MinionAINewMinionIndex();
+    if ((lv_minionIndex > libAIAI_gv_minionAIMaxActiveMinions)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_AIAI_278100D3"), true);
+        return ;
+    }
+
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit = lp_unit;
+    UnitSetCustomValue(lp_unit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_MinionIndex), IntToFixed(lv_minionIndex));
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnitType = UnitGetType(lp_unit);
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_ownerPlayer = UnitGetOwner(lp_unit);
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_lane = lp_lane;
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_nextWaypoint = lp_nextWaypoint;
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_unitPosition = UnitGetPosition(lp_unit);
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_prefersStructureTargets = lp_prefersStructureTargets;
+    lv_weaponRange = libAIAI_gf_AIGetAnyWeaponRangeIncludesNonActive(lp_unit);
+    if ((lp_waveNumberOverride == -1)) {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_waveNumber = libGame_gv_minionWaveSpawnCounter;
+    }
+    else {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_waveNumber = lp_waveNumberOverride;
+    }
+    if ((lp_pathToInitialWaypoint == true)) {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_initialWaypoint = lp_nextWaypoint;
+    }
+    else {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_initialWaypoint = 0;
+    }
+    if ((lv_weaponRange < libAIAI_gv_aIMinionEnemyMinionAttackRange)) {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_attackRange = libAIAI_gv_aIMinionEnemyMinionAttackRange;
+    }
+    else {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_attackRange = lv_weaponRange;
+    }
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_attackHeroRange = libAIAI_gv_aIMinionAttackHeroDistance;
+    if (((lp_teamToAttack <= 0) || (lp_teamToAttack > libCore_gv_bALMaxTeams))) {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_teamToAttack = libGame_gf_EnemyTeamNumberOfPlayer(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_ownerPlayer);
+        if ((libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_teamToAttack == 0)) {
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_teamToAttack = 1;
+        }
+
+    }
+    else {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_teamToAttack = lp_teamToAttack;
+    }
+    libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion(lv_minionIndex);
+    if ((lp_lane > 0) && (PointPathingIsConnected(UnitGetPosition(lp_unit), libAIAI_gf_MinionAIGetNextWaypointForMinion(lv_minionIndex)) == true)) {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state = libAIAI_ge_MinionAIStates_Advancing;
+        libAIAI_gf_MinionAITransitionMinionIntoState(lv_minionIndex, libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state);
+        return ;
+    }
+
+    lv_heroToFollow = libAIAI_gf_MinionAIGetHeroToFollow(lv_minionIndex);
+    if ((UnitIsValid(lv_heroToFollow) == true) && (PointPathingIsConnected(UnitGetPosition(lp_unit), UnitGetPosition(lv_heroToFollow)) == true)) {
+        libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state = libAIAI_ge_MinionAIStates_FollowHero;
+        libAIAI_gf_MinionAITransitionMinionIntoState(lv_minionIndex, libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state);
+        return ;
+    }
+
+    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state = libAIAI_ge_MinionAIStates_HoldPosition;
+    libAIAI_gf_MinionAITransitionMinionIntoState(lv_minionIndex, libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state);
+}
+
+void libAIAI_gf_MinionAIStartMinionAISimple (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    libGame_gf_CalculateSpawnedMinionGoalPoints(UnitGetOwner(lp_unit), UnitGetPosition(lp_unit));
+    libAIAI_gf_MinionAIStartMinionAI(-1, lp_unit, libGame_gv_spawnedMinionLane, libGame_gv_spawnedMinionFirstWaypointIndex, false, 0, false);
+}
+
+void libAIAI_gf_MinionAITurnMinionAISystemOnOff (bool lp_onOff) {
+    // Variable Declarations
+    int lv_i;
+
+    // Automatic Variable Declarations
+    const int auto23ADD845_ae = libAIAI_gv_minionAIMaxActiveMinions;
+    const int auto23ADD845_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_onOff == true)) {
+        TriggerEnable(libAIAI_gt_MinionAIAIRoutine, true);
+        TriggerEnable(libGame_gt_MinionDies, true);
+    }
+    else {
+        TriggerEnable(libAIAI_gt_MinionAIAIRoutine, false);
+        TriggerEnable(libGame_gt_MinionDies, false);
+        lv_i = 1;
+        for ( ; ( (auto23ADD845_ai >= 0 && lv_i <= auto23ADD845_ae) || (auto23ADD845_ai < 0 && lv_i >= auto23ADD845_ae) ) ; lv_i += auto23ADD845_ai ) {
+            if ((libAIAI_gv_minionAIActiveMinions[lv_i].lv_isAlive == true)) {
+                UnitRemove(libAIAI_gv_minionAIActiveMinions[lv_i].lv_minionUnit);
+                libAIAI_gv_minionAIActiveMinions[lv_i].lv_isAlive = false;
+            }
+
+        }
+        libAIAI_gv_minionAIActiveMinionsUpperBound = 0;
+    }
+}
+
+void libAIAI_gf_MinionAIPauseUnpauseMinionAISystem (bool lp_pauseUnpause) {
+    // Variable Declarations
+    int lv_index;
+
+    // Automatic Variable Declarations
+    const int autoA6F16C9F_ae = libAIAI_gv_minionAIMaxActiveMinions;
+    const int autoA6F16C9F_ai = 1;
+    const int autoCBA278CA_ae = libAIAI_gv_minionAIMaxActiveMinions;
+    const int autoCBA278CA_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_pauseUnpause == true)) {
+        TriggerEnable(libAIAI_gt_MinionAIAIRoutine, false);
+        lv_index = 1;
+        for ( ; ( (autoCBA278CA_ai >= 0 && lv_index <= autoCBA278CA_ae) || (autoCBA278CA_ai < 0 && lv_index >= autoCBA278CA_ae) ) ; lv_index += autoCBA278CA_ai ) {
+            if ((libAIAI_gv_minionAIActiveMinions[lv_index].lv_isAlive == true)) {
+                libNtve_gf_PauseUnit(libAIAI_gv_minionAIActiveMinions[lv_index].lv_minionUnit, true);
+            }
+
+        }
+    }
+    else {
+        lv_index = 1;
+        for ( ; ( (autoA6F16C9F_ai >= 0 && lv_index <= autoA6F16C9F_ae) || (autoA6F16C9F_ai < 0 && lv_index >= autoA6F16C9F_ae) ) ; lv_index += autoA6F16C9F_ai ) {
+            if ((libAIAI_gv_minionAIActiveMinions[lv_index].lv_isAlive == true)) {
+                libNtve_gf_PauseUnit(libAIAI_gv_minionAIActiveMinions[lv_index].lv_minionUnit, false);
+            }
+
+        }
+        TriggerEnable(libAIAI_gt_MinionAIAIRoutine, true);
+    }
+}
+
+void libAIAI_gf_MinionAIMinionsIgnoreLaneRequirements (bool lp_trueFalse) {
+    // Automatic Variable Declarations
+    // Implementation
+    libAIAI_gv_minionAIMinionsIgnoreLaneRequirements = lp_trueFalse;
+}
+
+void libAIAI_gf_MinionAIUpdateAIStatus (int lp_minionIndex) {
+    // Variable Declarations
+    int lv_loopIndex;
+    text lv_botStatus;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugUnit != libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit) && (libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugLabel != c_invalidDialogControlId)) {
+        DialogControlDestroy(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugLabel);
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugLabel = c_invalidDialogControlId;
+    }
+
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugLabel == c_invalidDialogControlId)) {
+        DialogControlHookupUnitStatus(c_triggerControlTypeLabel, "BotStatusLabel", libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit);
+        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), true);
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugLabel = DialogControlLastCreated();
+        libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugUnit = libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_minionUnit;
+    }
+
+    lv_botStatus = (lv_botStatus + StringToText(libAIAI_ge_MinionAIStates_Ident(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_state)));
+    if ((libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_leashing == true)) {
+        lv_botStatus = (lv_botStatus + StringToText(" Leashing"));
+    }
+
+    libNtve_gf_SetDialogItemText(libAIAI_gv_minionAIActiveMinions[lp_minionIndex].lv_debugLabel, lv_botStatus, PlayerGroupAll());
+}
+
+void libAIAI_gf_MinionAIToggleAIStatus (bool lp_showHide) {
+    // Variable Declarations
+    int lv_minionAIIndex;
+
+    // Automatic Variable Declarations
+    int autoB79B3C3C_ae;
+    const int autoB79B3C3C_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    autoB79B3C3C_ae = libAIAI_gv_minionAIActiveMinionsUpperBound;
+    lv_minionAIIndex = 1;
+    for ( ; ( (autoB79B3C3C_ai >= 0 && lv_minionAIIndex <= autoB79B3C3C_ae) || (autoB79B3C3C_ai < 0 && lv_minionAIIndex >= autoB79B3C3C_ae) ) ; lv_minionAIIndex += autoB79B3C3C_ai ) {
+        if ((libAIAI_gv_minionAIActiveMinions[lv_minionAIIndex].lv_debugLabel != c_invalidDialogControlId)) {
+            DialogControlSetVisible(libAIAI_gv_minionAIActiveMinions[lv_minionAIIndex].lv_debugLabel, PlayerGroupAll(), lp_showHide);
+        }
+
+    }
+}
+
+void libAIAI_gf_DestroyTowerTargetPersistent (int lp_towerIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_towerTowers[lp_towerIndex].lv_hasTarget == true)) {
+        libAIAI_gv_towerTowers[lp_towerIndex].lv_hasTarget = false;
+        UnitCreateEffectUnit(libAIAI_gv_towerTowers[lp_towerIndex].lv_towerUnit, "TowerTargetingLaserRemoveTrackedUnit", libAIAI_gv_towerTowers[lp_towerIndex].lv_targetUnit);
+    }
+
+}
+
+void libAIAI_gf_TowerTurnTowerSystemOnOff (bool lp_onOff) {
+    // Variable Declarations
+    int lv_itTower;
+
+    // Automatic Variable Declarations
+    int auto87F108A9_ae;
+    const int auto87F108A9_ai = 1;
+    int autoC4F89404_ae;
+    const int autoC4F89404_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_onOff == true)) {
+        libAIAI_gv_towerSystemOn = true;
+        TriggerExecute(libAIAI_gt_InitializeTowerAISystem, true, true);
+        TriggerEnable(libAIAI_gt_TowerAIRoutine, true);
+    }
+    else {
+        libAIAI_gv_towerSystemOn = false;
+        TriggerEnable(libAIAI_gt_TowerAIRoutine, false);
+        TriggerStop(libAIAI_gt_TowerAIRoutine);
+        auto87F108A9_ae = libAIAI_gv_towerTowerCount;
+        lv_itTower = 1;
+        for ( ; ( (auto87F108A9_ai >= 0 && lv_itTower <= auto87F108A9_ae) || (auto87F108A9_ai < 0 && lv_itTower >= auto87F108A9_ae) ) ; lv_itTower += auto87F108A9_ai ) {
+            if ((libAIAI_gv_towerTowers[lv_itTower].lv_towerUnit != null)) {
+                libNtve_gf_MakeUnitInvulnerable(libAIAI_gv_towerTowers[lv_itTower].lv_towerUnit, false);
+                libAIAI_gf_DestroyTowerTargetPersistent(lv_itTower);
+            }
+
+        }
+        autoC4F89404_ae = libAIAI_gv_towerTowerCount;
+        lv_itTower = 1;
+        for ( ; ( (autoC4F89404_ai >= 0 && lv_itTower <= autoC4F89404_ae) || (autoC4F89404_ai < 0 && lv_itTower >= autoC4F89404_ae) ) ; lv_itTower += autoC4F89404_ai ) {
+            libAIAI_gv_towerTowers[lv_itTower].lv_towerUnit = null;
+            libAIAI_gv_towerTowers[lv_itTower].lv_targetUnit = null;
+        }
+    }
+}
+
+int libAIAI_gf_DefenderAIDetermineState (int lp_defenderAIIndex, int lp_oldState) {
+    // Variable Declarations
+    int lv_unitIndex;
+    unit lv_defenderUnit;
+    int lv_camp;
+    bool lv_defendersFinishedLeashing;
+    int lv_playerIndex;
+
+    // Automatic Variable Declarations
+    int autoE0395F17_val;
+    int auto2C5AAE0A_ae;
+    const int auto2C5AAE0A_ai = 1;
+    int auto61478051_ae;
+    const int auto61478051_ai = 1;
+
+    // Variable Initialization
+    lv_defendersFinishedLeashing = true;
+
+    // Implementation
+    autoE0395F17_val = lp_oldState;
+    if (autoE0395F17_val == libAIAI_ge_DefenderAIState_Idle) {
+        if ((UnitGroupCount(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_validTargets, c_unitCountAlive) > 0)) {
+            return libAIAI_ge_DefenderAIState_Fighting;
+        }
+
+        lv_camp = libMapM_gf_JungleGetCampIndexFromDefenderIndex(lp_defenderAIIndex);
+        if (((lv_camp <= 0) || ((libMapM_gv_jungleCreepCamps[lv_camp].lv_aIState != libMapM_ge_JungleCampStates_Hibernating) && (libMapM_gv_jungleCreepCamps[lv_camp].lv_aIState != libMapM_ge_JungleCampStates_HibernetingReadyToSpawn)))) {
+            auto2C5AAE0A_ae = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+            lv_unitIndex = 1;
+            for ( ; ( (auto2C5AAE0A_ai >= 0 && lv_unitIndex <= auto2C5AAE0A_ae) || (auto2C5AAE0A_ai < 0 && lv_unitIndex >= auto2C5AAE0A_ae) ) ; lv_unitIndex += auto2C5AAE0A_ai ) {
+                lv_defenderUnit = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_unitIndex];
+                if ((UnitIsAlive(lv_defenderUnit) == true) && (DistanceBetweenPoints(UnitGetPosition(lv_defenderUnit), libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex]) > libAIAI_gv_aIDefenderFarFromLeashPosition)) {
+                    return libAIAI_ge_DefenderAIState_Leashing;
+                }
+
+            }
+        }
+
+    }
+    else if (autoE0395F17_val == libAIAI_ge_DefenderAIState_Fighting) {
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_minAgroTime > TimerGetElapsed(libGame_gv_gameTimer)) && (libAIAI_gf_DefendersAnyOutsideLeashRegion(lp_defenderAIIndex) == false)) {
+            return libAIAI_ge_DefenderAIState_Fighting;
+        }
+
+        if ((UnitGroupCount(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_validTargets, c_unitCountAlive) == 0)) {
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_minLeashTime = (TimerGetElapsed(libGame_gv_gameTimer) + libAIAI_gv_aIDefenderMinLeashTime);
+            return libAIAI_ge_DefenderAIState_Leashing;
+        }
+
+    }
+    else if (autoE0395F17_val == libAIAI_ge_DefenderAIState_Leashing) {
+        lv_defendersFinishedLeashing = true;
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_minLeashTime > TimerGetElapsed(libGame_gv_gameTimer))) {
+            lv_defendersFinishedLeashing = false;
+        }
+        else {
+            auto61478051_ae = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+            lv_unitIndex = 1;
+            for ( ; ( (auto61478051_ai >= 0 && lv_unitIndex <= auto61478051_ae) || (auto61478051_ai < 0 && lv_unitIndex >= auto61478051_ae) ) ; lv_unitIndex += auto61478051_ai ) {
+                lv_defenderUnit = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_unitIndex];
+                if ((UnitIsAlive(lv_defenderUnit) == true) && ((UnitTestState(lv_defenderUnit, c_unitStateIdle) == false) || (DistanceBetweenPoints(UnitGetPosition(lv_defenderUnit), libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex]) > libAIAI_gv_aIDefenderCloseEnoughDistance) || ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_healOnLeash == true) && (UnitGetPropertyFixed(lv_defenderUnit, c_unitPropLifePercent, c_unitPropCurrent) < 100.0)))) {
+                    lv_defendersFinishedLeashing = false;
+                    break;
+                }
+
+            }
+        }
+        if ((lv_defendersFinishedLeashing == true)) {
+            return libAIAI_ge_DefenderAIState_Idle;
+        }
+        else {
+            if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_lastAnnouncedLeashing < (TimerGetElapsed(libGame_gv_gameTimer) - libAIAI_gv_aIDefenderLeashReAnnounceTime))) {
+                libUIUI_gf_UICombatFloatingElementsLeashing(lv_defenderUnit);
+                libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_lastAnnouncedLeashing = TimerGetElapsed(libGame_gv_gameTimer);
+            }
+
+        }
+    }
+    else {
+    }
+    return lp_oldState;
+}
+
+void libAIAI_gf_DefenderAIStateLogic (int lp_defenderAIIndex) {
+    // Variable Declarations
+    int lv_unitIndex;
+    unit lv_defenderUnit;
+    order lv_currentOrder;
+    abilcmd lv_currentAbilityCommand;
+
+    // Automatic Variable Declarations
+    int autoEB574A67_val;
+    int auto3E9F2555_ae;
+    const int auto3E9F2555_ai = 1;
+    int auto0953264A_ae;
+    const int auto0953264A_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    autoEB574A67_val = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_state;
+    if (autoEB574A67_val == libAIAI_ge_DefenderAIState_Idle) {
+    }
+    else if (autoEB574A67_val == libAIAI_ge_DefenderAIState_Fighting) {
+        auto3E9F2555_ae = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+        lv_unitIndex = 1;
+        for ( ; ( (auto3E9F2555_ai >= 0 && lv_unitIndex <= auto3E9F2555_ae) || (auto3E9F2555_ai < 0 && lv_unitIndex >= auto3E9F2555_ae) ) ; lv_unitIndex += auto3E9F2555_ai ) {
+            if ((UnitIsAlive(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_unitIndex]) == true)) {
+                libAIAI_gf_DefenderAIIssueFightingOrderToCreep(lp_defenderAIIndex, lv_unitIndex);
+            }
+
+        }
+    }
+    else if (autoEB574A67_val == libAIAI_ge_DefenderAIState_Leashing) {
+        auto0953264A_ae = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+        lv_unitIndex = 1;
+        for ( ; ( (auto0953264A_ai >= 0 && lv_unitIndex <= auto0953264A_ae) || (auto0953264A_ai < 0 && lv_unitIndex >= auto0953264A_ae) ) ; lv_unitIndex += auto0953264A_ai ) {
+            lv_defenderUnit = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_unitIndex];
+            if ((UnitIsAlive(lv_defenderUnit) == true) && (DistanceBetweenPoints(UnitGetPosition(lv_defenderUnit), libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex]) > libAIAI_gv_aIDefenderCloseEnoughDistance)) {
+                lv_currentOrder = UnitOrder(lv_defenderUnit, 0);
+                lv_currentAbilityCommand = OrderGetAbilityCommand(lv_currentOrder);
+                if (((lv_currentOrder == null) || (lv_currentAbilityCommand != libAIAI_gv_aIMoveAbil) || (OrderGetTargetType(lv_currentOrder) != c_orderTargetPoint) || (OrderGetTargetPoint(lv_currentOrder) != libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex]))) {
+                    UnitIssueOrder(lv_defenderUnit, OrderTargetingPoint(libAIAI_gv_aIMoveAbil, libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex]), c_orderQueueReplace);
+                    UnitIssueOrder(lv_defenderUnit, OrderTargetingPoint(libAIAI_gv_aITurnAbil, PointWithOffsetPolar(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex], 1.0, PointGetFacing(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex]))), c_orderQueueAddToEnd);
+                }
+
+            }
+
+        }
+    }
+    else {
+    }
+}
+
+void libAIAI_gf_DefenderAIUpdateValidTargetList (int lp_defenderAIIndex) {
+    // Variable Declarations
+    unit lv_u;
+    int lv_defenderOwner;
+    int lv_unitOwner;
+    region lv_attackRegion;
+
+    // Automatic Variable Declarations
+    unitgroup autoAB6F3F72_g;
+    int autoAB6F3F72_u;
+
+    // Variable Initialization
+
+    // Implementation
+    libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_validTargets = UnitGroupEmpty();
+    if ((UnitGroupCount(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup, c_unitCountAlive) == 0)) {
+        return ;
+    }
+
+    lv_defenderOwner = UnitGetOwner(UnitGroupRandomUnit(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup, c_unitCountAlive));
+    autoAB6F3F72_g = UnitGroup(null, c_playerAny, libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashRegion, UnitFilter(0, 0, (1 << c_targetFilterPsionic) | (1 << c_targetFilterMissile) | (1 << c_targetFilterItem) | (1 << c_targetFilterBuried), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterBenign - 32))), 0);
+    autoAB6F3F72_u = UnitGroupCount(autoAB6F3F72_g, c_unitCountAll);
+    for (;; autoAB6F3F72_u -= 1) {
+        lv_u = UnitGroupUnitFromEnd(autoAB6F3F72_g, autoAB6F3F72_u);
+        if (lv_u == null) { break; }
+        lv_unitOwner = UnitGetOwner(lv_u);
+        if (((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, lv_unitOwner) == false) || (libNtve_gf_PlayerIsEnemy(lv_defenderOwner, lv_unitOwner, libNtve_ge_PlayerRelation_Enemy) == false) || (UnitTypeTestFlag(UnitGetType(lv_u), c_unitFlagUntargetable) == true))) {
+            continue;
+        }
+
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_canSeeCloaked == false) && (UnitTestState(lv_u, c_unitStateCloaked) == true)) {
+            continue;
+        }
+
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_playerIsThreat[lv_unitOwner] == false) && (libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion != null) && (libNtve_gf_UnitInRegion(lv_u, libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion) == true)) {
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_playerIsThreat[lv_unitOwner] = true;
+        }
+
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_playerIsThreat[lv_unitOwner] == true)) {
+            UnitGroupAdd(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_validTargets, lv_u);
+        }
+
+    }
+}
+
+void libAIAI_gf_DefenderAITransitionDefenderAIIntoState (int lp_defenderAIIndex, int lp_state) {
+    // Variable Declarations
+    int lv_itPlayer;
+    int lv_itDefender;
+    unit lv_itUnit;
+    int lv_oldState;
+
+    // Automatic Variable Declarations
+    int auto9CD00D6F_val;
+    unitgroup auto121AEE85_g;
+    int auto121AEE85_u;
+    unitgroup autoFEC9DE21_g;
+    int autoFEC9DE21_u;
+    playergroup auto0531A549_g;
+    int autoACA88278_ae;
+    const int autoACA88278_ai = 1;
+    unitgroup auto4BBECBE7_g;
+    int auto4BBECBE7_u;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_oldState = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_state;
+    libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_state = lp_state;
+    auto9CD00D6F_val = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_state;
+    if (auto9CD00D6F_val == libAIAI_ge_DefenderAIState_Idle) {
+        auto121AEE85_g = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup;
+        auto121AEE85_u = UnitGroupCount(auto121AEE85_g, c_unitCountAll);
+        for (;; auto121AEE85_u -= 1) {
+            lv_itUnit = UnitGroupUnitFromEnd(auto121AEE85_g, auto121AEE85_u);
+            if (lv_itUnit == null) { break; }
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepHardLeashing", 1);
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepSoftLeashing", 1);
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepSoftLeashingNoHeal", 1);
+            UnitIssueOrder(lv_itUnit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+        }
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashCount = 0;
+    }
+    else if (auto9CD00D6F_val == libAIAI_ge_DefenderAIState_Fighting) {
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_fightStartTime = TimerGetElapsed(libGame_gv_gameTimer);
+        autoFEC9DE21_g = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup;
+        autoFEC9DE21_u = UnitGroupCount(autoFEC9DE21_g, c_unitCountAll);
+        for (;; autoFEC9DE21_u -= 1) {
+            lv_itUnit = UnitGroupUnitFromEnd(autoFEC9DE21_g, autoFEC9DE21_u);
+            if (lv_itUnit == null) { break; }
+            if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion == null)) {
+                UnitBehaviorRemove(lv_itUnit, "JungleCreepBenign", 1);
+            }
+
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepPassive", 1);
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepHardLeashing", 1);
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepSoftLeashing", 1);
+            UnitBehaviorRemove(lv_itUnit, "JungleCreepSoftLeashingNoHeal", 1);
+        }
+    }
+    else if (auto9CD00D6F_val == libAIAI_ge_DefenderAIState_Leashing) {
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashCount < libAIAI_gv_aIDefenderMaxLeashCount)) {
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashCount += 1;
+        }
+
+        auto0531A549_g = libCore_gv_heroPlayersIncludeAIHeroPlayers;
+        lv_itPlayer = -1;
+        while (true) {
+            lv_itPlayer = PlayerGroupNextPlayer(auto0531A549_g, lv_itPlayer);
+            if (lv_itPlayer < 0) { break; }
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_playerIsThreat[lv_itPlayer] = false;
+        }
+        autoACA88278_ae = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+        lv_itDefender = 1;
+        for ( ; ( (autoACA88278_ai >= 0 && lv_itDefender <= autoACA88278_ae) || (autoACA88278_ai < 0 && lv_itDefender >= autoACA88278_ae) ) ; lv_itDefender += autoACA88278_ai ) {
+            lv_itUnit = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_itDefender];
+            if ((UnitIsAlive(lv_itUnit) == true)) {
+                if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_healOnLeash == true)) {
+                    UnitBehaviorAddPlayer(lv_itUnit, "JungleCreepSoftLeashing", libCore_gv_cOMPUTER_Hostile, 1);
+                    if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashCount >= libAIAI_gv_aIDefenderMaxLeashCount)) {
+                        UnitSetPropertyFixed(lv_itUnit, c_unitPropLifePercent, 100.0);
+                    }
+
+                }
+                else {
+                    UnitBehaviorAddPlayer(lv_itUnit, "JungleCreepSoftLeashingNoHeal", libCore_gv_cOMPUTER_Hostile, 1);
+                }
+                if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashCount >= libAIAI_gv_aIDefenderMaxLeashCount)) {
+                    UnitBehaviorAddPlayer(lv_itUnit, "JungleCreepHardLeashing", libCore_gv_cOMPUTER_Hostile, 1);
+                }
+
+                if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion == null)) {
+                    UnitBehaviorAddPlayer(lv_itUnit, "JungleCreepBenign", libCore_gv_cOMPUTER_Hostile, 1);
+                }
+
+                UnitBehaviorAddPlayer(lv_itUnit, "JungleCreepPassive", libCore_gv_cOMPUTER_Hostile, 1);
+                UnitIssueOrder(lv_itUnit, OrderTargetingPoint(libAIAI_gv_aIMoveAbil, libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_itDefender]), c_orderQueueReplace);
+                UnitIssueOrder(lv_itUnit, OrderTargetingPoint(libAIAI_gv_aITurnAbil, PointWithOffsetPolar(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_itDefender], 1.0, PointGetFacing(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_itDefender]))), c_orderQueueAddToEnd);
+            }
+
+        }
+    }
+    else {
+    }
+    if ((lv_oldState == libAIAI_ge_DefenderAIState_Idle) && (lp_state == libAIAI_ge_DefenderAIState_Fighting)) {
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_minAgroTime = (TimerGetElapsed(libGame_gv_gameTimer) + libAIAI_gv_aIDefenderMinAgroTime);
+        libGame_gf_SendEventJungleDefenderAIDefendersBeginFighting(lp_defenderAIIndex);
+    }
+
+    if ((lv_oldState == libAIAI_ge_DefenderAIState_Leashing) && (lp_state == libAIAI_ge_DefenderAIState_Idle)) {
+        libGame_gf_SendEventJungleDefenderAIDefendersEndFighting(lp_defenderAIIndex);
+    }
+
+    if ((lv_oldState == libAIAI_ge_DefenderAIState_Fighting) && (lp_state == libAIAI_ge_DefenderAIState_Leashing)) {
+        auto4BBECBE7_g = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup;
+        auto4BBECBE7_u = UnitGroupCount(auto4BBECBE7_g, c_unitCountAll);
+        for (;; auto4BBECBE7_u -= 1) {
+            lv_itUnit = UnitGroupUnitFromEnd(auto4BBECBE7_g, auto4BBECBE7_u);
+            if (lv_itUnit == null) { break; }
+            libUIUI_gf_UICombatFloatingElementsLeashing(lv_itUnit);
+        }
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_lastAnnouncedLeashing = TimerGetElapsed(libGame_gv_gameTimer);
+    }
+
+}
+
+void libAIAI_gf_DefenderAIIssueFightingOrderToCreep (int lp_defenderAIIndex, int lp_creep) {
+    // Variable Declarations
+    unit lv_itUnit;
+    unitgroup lv_enemyGroup;
+    unit lv_creepUnit;
+    order lv_currentOrder;
+    bool lv_creepNeedsNewOrders;
+    unit lv_currentOrderTarget;
+    unit lv_newOrderTarget;
+    fixed lv_newOrderTargetHealth;
+    int lv_graveGolemBindingRootsValidTargets;
+
+    // Automatic Variable Declarations
+    string autoCA899BA8_val;
+    unitgroup auto6D7D9EE6_g;
+    int auto6D7D9EE6_u;
+
+    // Variable Initialization
+    lv_enemyGroup = UnitGroupEmpty();
+    lv_newOrderTargetHealth = 3000.0;
+
+    // Implementation
+    lv_creepUnit = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lp_creep];
+    lv_currentOrderTarget = OrderGetTargetUnit(UnitOrder(lv_creepUnit, 0));
+    lv_creepNeedsNewOrders = true;
+    if ((UnitWeaponPeriodRemaining(lv_creepUnit, 1) > 2.0)) {
+        lv_creepNeedsNewOrders = false;
+    }
+
+    if ((libAIAI_gf_DefendersAreFighting(lp_defenderAIIndex) == true) && ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_fightStartTime + libAIAI_gv_aIDefenderMinTimeBeforeCasting) < TimerGetElapsed(libGame_gv_gameTimer))) {
+        autoCA899BA8_val = UnitGetType(lv_creepUnit);
+        if (autoCA899BA8_val == "MercenarySlaynElemental@Defender") {
+            if ((UnitGetCooldown(lv_creepUnit, CatalogFieldValueGet(c_gameCatalogAbil, ("MercenarySlaynElementalEssenceLeech"), "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+                lv_enemyGroup = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", UnitGetOwner(lv_creepUnit), c_unitAllianceEnemy, RegionCircle(UnitGetPosition(lv_creepUnit), 10.0), UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+                if ((UnitGroupCount(lv_enemyGroup, c_unitCountAlive) >= 1)) {
+                    UnitIssueOrder(lv_creepUnit, Order(AbilityCommand("MercenarySlaynElementalEssenceLeech", 0)), c_orderQueueReplace);
+                    lv_creepNeedsNewOrders = false;
+                }
+            }
+        }
+        else if (autoCA899BA8_val == "MercenaryColossus@Defender") {
+            if ((UnitGetCooldown(lv_creepUnit, CatalogFieldValueGet(c_gameCatalogAbil, ("MercenaryColossusFireBeam"), "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+                lv_enemyGroup = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", UnitGetOwner(lv_creepUnit), c_unitAllianceEnemy, RegionCircle(UnitGetPosition(lv_creepUnit), 5.25), UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+                auto6D7D9EE6_g = lv_enemyGroup;
+                auto6D7D9EE6_u = UnitGroupCount(auto6D7D9EE6_g, c_unitCountAll);
+                for (;; auto6D7D9EE6_u -= 1) {
+                    lv_itUnit = UnitGroupUnitFromEnd(auto6D7D9EE6_g, auto6D7D9EE6_u);
+                    if (lv_itUnit == null) { break; }
+                    if ((DistanceBetweenPoints(UnitGetPosition(lv_itUnit), UnitGetPosition(lv_creepUnit)) <= 2.25)) {
+                        UnitGroupRemove(lv_enemyGroup, lv_itUnit);
+                    }
+
+                }
+                if ((UnitGroupCount(lv_enemyGroup, c_unitCountAlive) >= 2)) {
+                    UnitBehaviorRemove(lv_creepUnit, "MercenaryColossusWeapon@TurretDisabler", 1);
+                    UnitIssueOrder(lv_creepUnit, OrderTargetingPoint(AbilityCommand("MercenaryColossusFireBeam", 0), UnitGetPosition(UnitGroupUnit(lv_enemyGroup, 1))), c_orderQueueReplace);
+                    lv_creepNeedsNewOrders = false;
+                }
+
+            }
+
+            if ((lv_creepNeedsNewOrders == true) && (UnitGetCooldown(lv_creepUnit, CatalogFieldValueGet(c_gameCatalogAbil, ("MercenaryColossusChargedBlast"), "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny)) <= 0.0)) {
+                lv_enemyGroup = libNtve_gf_UnitsInRegionWithAllianceToPlayerMatchingCondition(null, "", "", UnitGetOwner(lv_creepUnit), c_unitAllianceEnemy, RegionCircle(UnitGetPosition(lv_creepUnit), 8.0), UnitFilter((1 << c_targetFilterVisible), 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterPsionic) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0);
+                if ((UnitGroupCount(lv_enemyGroup, c_unitCountAlive) >= 1)) {
+                    UnitIssueOrder(lv_creepUnit, OrderTargetingPoint(AbilityCommand("MercenaryColossusChargedBlast", 0), UnitGetPosition(UnitGroupUnit(lv_enemyGroup, 1))), c_orderQueueReplace);
+                    lv_creepNeedsNewOrders = false;
+                }
+
+            }
+
+        }
+        else {
+        }
+    }
+
+    if ((lv_creepNeedsNewOrders == true)) {
+        lv_currentOrder = UnitOrder(lv_creepUnit, 0);
+        if (((lv_currentOrder == null) || (OrderGetAbilityCommand(lv_currentOrder) == libAIAI_gv_aIMoveAbil) || (OrderGetAbilityCommand(lv_currentOrder) == libAIAI_gv_aITurnAbil) || (OrderGetAbilityCommand(lv_currentOrder) == libAIAI_gv_aIAttackAbil) || (OrderGetAbilityCommand(lv_currentOrder) == libAIAI_gv_aIAttackAllyAbil))) {
+            lv_newOrderTarget = UnitGroupClosestToPoint(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_validTargets, UnitGetPosition(lv_creepUnit));
+            if ((lv_newOrderTarget == null)) {
+                UnitIssueOrder(lv_creepUnit, OrderTargetingPoint(libAIAI_gv_aIAttackAbil, libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lp_creep]), c_orderQueueReplace);
+                UnitIssueOrder(lv_creepUnit, OrderTargetingPoint(libAIAI_gv_aITurnAbil, PointWithOffsetPolar(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lp_creep], 1.0, PointGetFacing(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lp_creep]))), c_orderQueueAddToEnd);
+            }
+            else {
+                if (((lv_newOrderTarget != lv_currentOrderTarget) || ((OrderGetAbilityCommand(lv_currentOrder) != libAIAI_gv_aIAttackAbil) && (OrderGetAbilityCommand(lv_currentOrder) != libAIAI_gv_aIAttackAllyAbil)))) {
+                    UnitIssueOrder(lv_creepUnit, OrderTargetingUnit(libAIAI_gv_aIAttackAbil, lv_newOrderTarget), c_orderQueueReplace);
+                }
+
+            }
+        }
+
+    }
+
+}
+
+void libAIAI_gf_DefenderAICreepDies (int lp_defenderAIIndex, unit lp_unit, unit lp_killingUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    libGame_gf_SendEventJungleDefenderAIDefenderKilled(lp_defenderAIIndex, lp_unit, lp_killingUnit);
+    if ((UnitGroupCount(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup, c_unitCountAlive) == 0) && (libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_campDeathEventDispatched == false)) {
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_campDeathEventDispatched = true;
+        libGame_gf_SendEventJungleDefenderAIAllDefendersKilled(lp_defenderAIIndex, lp_killingUnit);
+    }
+
+}
+
+int libAIAI_gf_DefenderAINewIndex () {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+    int lv_bestIndex;
+    fixed lv_bestIndexTime;
+
+    // Automatic Variable Declarations
+    const int autoD3E3EA4D_ae = libAIAI_gv_defenderAIMaxNumberOfDefenderAI;
+    const int autoD3E3EA4D_ai = 1;
+    const int autoD37A67CC_ae = libAIAI_gv_defenderAIMaxNumberOfDefenderAI;
+    const int autoD37A67CC_ai = 1;
+
+    // Variable Initialization
+    lv_bestIndexTime = 524287.0;
+
+    // Implementation
+    lv_defenderAIIndex = 1;
+    for ( ; ( (autoD3E3EA4D_ai >= 0 && lv_defenderAIIndex <= autoD3E3EA4D_ae) || (autoD3E3EA4D_ai < 0 && lv_defenderAIIndex >= autoD3E3EA4D_ae) ) ; lv_defenderAIIndex += autoD3E3EA4D_ai ) {
+        if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_used == false)) {
+            libAIAI_gv_defenderAIDefenderAIUpperBound = lv_defenderAIIndex;
+            return lv_defenderAIIndex;
+        }
+
+    }
+    lv_defenderAIIndex = 1;
+    for ( ; ( (autoD37A67CC_ai >= 0 && lv_defenderAIIndex <= autoD37A67CC_ae) || (autoD37A67CC_ai < 0 && lv_defenderAIIndex >= autoD37A67CC_ae) ) ; lv_defenderAIIndex += autoD37A67CC_ai ) {
+        if ((UnitGroupCount(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defendersGroup, c_unitCountAlive) == 0) && (libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_timeStarted < lv_bestIndexTime)) {
+            lv_bestIndex = lv_defenderAIIndex;
+            lv_bestIndexTime = libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_timeStarted;
+        }
+
+    }
+    TextExpressionSetToken("Param/Expression/lib_AIAI_20CD3A9B", "A", IntToText(lv_bestIndex));
+    TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_AIAI_20CD3A9B"), true);
+    return lv_bestIndex;
+}
+
+void libAIAI_gf_StartDefenderAI (unitgroup lp_defenders, region lp_leashRegion, region lp_aggroRegion, bool lp_healOnLeash) {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+    int lv_testIndex;
+    unit lv_itUnit;
+    int lv_unitIndex;
+
+    // Automatic Variable Declarations
+    unitgroup autoC7C9D694_g;
+    int autoC7C9D694_u;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_defenderAIIndex = libAIAI_gf_DefenderAINewIndex();
+    if ((lv_defenderAIIndex <= 0)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_AIAI_520DB5F5"), true);
+        return ;
+    }
+
+    if ((UnitGroupCount(lp_defenders, c_unitCountAlive) > libAIAI_gv_defenderAIMaxNumberOfDefendersPerGroup)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_AIAI_D35AA13C"), true);
+        return ;
+    }
+
+    if ((TriggerIsEnabled(libAIAI_gt_DefenderAIDefenderAILogic) == false)) {
+        TriggerEnable(libAIAI_gt_DefenderAIDefenderAILogic, true);
+        TriggerEnable(libAIAI_gt_DefenderAICreepsAttacked, true);
+    }
+
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_used = true;
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_timeStarted = TimerGetElapsed(libGame_gv_gameTimer);
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_leashRegion = lp_leashRegion;
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_aggroRegion = lp_aggroRegion;
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_healOnLeash = lp_healOnLeash;
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defendersGroup = UnitGroupEmpty();
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defenderCount = 0;
+    libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_canSeeCloaked = false;
+    autoC7C9D694_g = lp_defenders;
+    autoC7C9D694_u = UnitGroupCount(autoC7C9D694_g, c_unitCountAll);
+    for (;; autoC7C9D694_u -= 1) {
+        lv_itUnit = UnitGroupUnitFromEnd(autoC7C9D694_g, autoC7C9D694_u);
+        if (lv_itUnit == null) { break; }
+        UnitGroupAdd(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defendersGroup, lv_itUnit);
+        if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_aggroRegion == null)) {
+            UnitBehaviorAdd(lv_itUnit, "JungleCreepBenign", lv_itUnit, 1);
+        }
+
+        UnitBehaviorAdd(lv_itUnit, "JungleCreepPassive", lv_itUnit, 1);
+        UnitStatusBarOverride(lv_itUnit, c_unitStatusGroupAll);
+        UnitSetCustomValue(lv_itUnit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleDefenderAIIndex), IntToFixed(lv_defenderAIIndex));
+        libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defenderCount += 1;
+        lv_unitIndex = libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defenderCount;
+        libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defenderUnits[lv_unitIndex] = lv_itUnit;
+        if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_aggroRegion != null) && (RegionContainsPoint(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_aggroRegion, UnitGetPosition(lv_itUnit)) == false)) {
+            libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_leashPositions[lv_unitIndex] = libAIAI_gf_DefenderMovePointIntoRegion(UnitGetPosition(lv_itUnit), libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_aggroRegion);
+        }
+        else {
+            libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_leashPositions[lv_unitIndex] = UnitGetPosition(lv_itUnit);
+        }
+        if ((UnitHasBehavior2(lv_itUnit, "Truesight") == true)) {
+            libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_canSeeCloaked = true;
+        }
+
+    }
+    libAIAI_gf_DefenderAITransitionDefenderAIIntoState(lv_defenderAIIndex, libAIAI_ge_DefenderAIState_Idle);
+    DataTableSetInt(false, libAIAI_gv_defenderAILastCreatedDefenderAIIndex, lv_defenderAIIndex);
+}
+
+void libAIAI_gf_AddUnitsToDefenderAI (int lp_defenderAIIndex, unitgroup lp_defenders) {
+    // Variable Declarations
+    unit lv_itUnit;
+    int lv_unitIndex;
+
+    // Automatic Variable Declarations
+    unitgroup auto7C7F12E9_g;
+    int auto7C7F12E9_u;
+
+    // Variable Initialization
+
+    // Implementation
+    if (((lp_defenderAIIndex <= 0) || (lp_defenderAIIndex > libAIAI_gv_defenderAIDefenderAIUpperBound))) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_AIAI_400D7EF0"), true);
+        return ;
+    }
+
+    if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_used == false)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_AIAI_31106EE1"), true);
+        return ;
+    }
+
+    if (((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount + UnitGroupCount(lp_defenders, c_unitCountAll)) > libAIAI_gv_defenderAIMaxNumberOfDefendersPerGroup)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_AIAI_42439C81"), true);
+        return ;
+    }
+
+    auto7C7F12E9_g = lp_defenders;
+    auto7C7F12E9_u = UnitGroupCount(auto7C7F12E9_g, c_unitCountAll);
+    for (;; auto7C7F12E9_u -= 1) {
+        lv_itUnit = UnitGroupUnitFromEnd(auto7C7F12E9_g, auto7C7F12E9_u);
+        if (lv_itUnit == null) { break; }
+        UnitGroupAdd(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup, lv_itUnit);
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_state != libAIAI_ge_DefenderAIState_Fighting)) {
+            if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion == null)) {
+                UnitBehaviorAdd(lv_itUnit, "JungleCreepBenign", lv_itUnit, 1);
+            }
+
+            UnitBehaviorAdd(lv_itUnit, "JungleCreepPassive", lv_itUnit, 1);
+        }
+
+        UnitStatusBarOverride(lv_itUnit, c_unitStatusGroupAll);
+        UnitSetCustomValue(lv_itUnit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleDefenderAIIndex), IntToFixed(lp_defenderAIIndex));
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount += 1;
+        lv_unitIndex = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+        libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_unitIndex] = lv_itUnit;
+        if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion != null) && (RegionContainsPoint(libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion, UnitGetPosition(lv_itUnit)) == false)) {
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex] = libAIAI_gf_DefenderMovePointIntoRegion(UnitGetPosition(lv_itUnit), libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_aggroRegion);
+        }
+        else {
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashPositions[lv_unitIndex] = UnitGetPosition(lv_itUnit);
+        }
+        if ((UnitHasBehavior2(lv_itUnit, "Truesight") == true)) {
+            libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_canSeeCloaked = true;
+        }
+
+    }
+}
+
+int libAIAI_gf_LastCreatedDefenderAI () {
+    // Automatic Variable Declarations
+    // Implementation
+    return DataTableGetInt(false, libAIAI_gv_defenderAILastCreatedDefenderAIIndex);
+}
+
+int libAIAI_gf_DefenderAIIndexOfUnit (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    return FixedToInt(UnitGetCustomValue(lp_unit, libGame_gf_CustomValueIndex(libGame_ge_CustomValueIndexes_JungleDefenderAIIndex)));
+}
+
+unitgroup libAIAI_gf_DefenderGroup (int lp_defenderAIIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_used == false)) {
+        return UnitGroupEmpty();
+    }
+    else {
+        return libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defendersGroup;
+    }
+}
+
+unit libAIAI_gf_DefenderUnit (int lp_defenderAIIndex, int lp_index) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_used == false)) {
+        return null;
+    }
+    else {
+        return libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lp_index];
+    }
+}
+
+int libAIAI_gf_DefenderUnitCount (int lp_defenderAIIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_used == false)) {
+        return 0;
+    }
+    else {
+        return libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+    }
+}
+
+bool libAIAI_gf_DefendersAreFighting (int lp_defenderAIIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_used == true) && (libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_state == libAIAI_ge_DefenderAIState_Fighting)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool libAIAI_gf_DefendersAnyOutsideLeashRegion (int lp_defenderAIIndex) {
+    // Variable Declarations
+    int lv_unitIndex;
+    unit lv_defenderUnit;
+
+    // Automatic Variable Declarations
+    int autoD33E12AE_ae;
+    const int autoD33E12AE_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    autoD33E12AE_ae = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderCount;
+    lv_unitIndex = 1;
+    for ( ; ( (autoD33E12AE_ai >= 0 && lv_unitIndex <= autoD33E12AE_ae) || (autoD33E12AE_ai < 0 && lv_unitIndex >= autoD33E12AE_ae) ) ; lv_unitIndex += autoD33E12AE_ai ) {
+        lv_defenderUnit = libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_defenderUnits[lv_unitIndex];
+        if ((UnitIsAlive(lv_defenderUnit) == true) && (libNtve_gf_UnitInRegion(lv_defenderUnit, libAIAI_gv_defenderAI[lp_defenderAIIndex].lv_leashRegion) == false)) {
+            return true;
+        }
+
+    }
+    return false;
+}
+
+point libAIAI_gf_DefenderMovePointIntoRegion (point lp_point, region lp_region) {
+    // Variable Declarations
+    point lv_center;
+    point lv_dir;
+    point lv_newPoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_center = RegionGetCenter(lp_region);
+    lv_dir = AIGetDirection(lv_center, lp_point);
+    lv_newPoint = Point((PointGetX(lv_center) + (PointGetX(lv_dir) * 3.0)), (PointGetY(lv_center) + (PointGetY(lv_dir) * 3.0)));
+    if ((RegionContainsPoint(lp_region, lp_point) == true)) {
+        return lv_newPoint;
+    }
+
+    return lv_center;
+}
+
+void libAIAI_gf_DefenderAIUpdateAIStatus (int lp_defenderIndex) {
+    // Variable Declarations
+    int lv_loopIndex;
+    unit lv_leader;
+    text lv_botStatus;
+
+    // Automatic Variable Declarations
+    int auto2F6F0AD8_ae;
+    const int auto2F6F0AD8_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    auto2F6F0AD8_ae = libAIAI_gv_defenderAI[lp_defenderIndex].lv_defenderCount;
+    lv_loopIndex = 1;
+    for ( ; ( (auto2F6F0AD8_ai >= 0 && lv_loopIndex <= auto2F6F0AD8_ae) || (auto2F6F0AD8_ai < 0 && lv_loopIndex >= auto2F6F0AD8_ae) ) ; lv_loopIndex += auto2F6F0AD8_ai ) {
+        lv_leader = libAIAI_gf_DefenderUnit(lp_defenderIndex, lv_loopIndex);
+        if ((UnitIsAlive(lv_leader) == true)) {
+            break;
+        }
+
+    }
+    if ((UnitIsAlive(lv_leader) == false)) {
+        return ;
+    }
+    else {
+        if ((libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugUnit != lv_leader) && (libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugLabel != c_invalidDialogControlId)) {
+            DialogControlDestroy(libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugLabel);
+            libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugLabel = c_invalidDialogControlId;
+        }
+
+    }
+    if ((libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugLabel == c_invalidDialogControlId)) {
+        DialogControlHookupUnitStatus(c_triggerControlTypeLabel, "BotStatusLabel", lv_leader);
+        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupAll(), true);
+        libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugLabel = DialogControlLastCreated();
+        libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugUnit = lv_leader;
+    }
+
+    lv_botStatus = (lv_botStatus + StringToText(libAIAI_ge_DefenderAIState_Ident(libAIAI_gv_defenderAI[lp_defenderIndex].lv_state)));
+    lv_botStatus = (lv_botStatus + StringExternal("Param/Value/lib_AIAI_A896A071"));
+    lv_botStatus = (lv_botStatus + IntToText(libAIAI_gv_defenderAI[lp_defenderIndex].lv_leashCount));
+    lv_botStatus = (lv_botStatus + StringExternal("Param/Value/lib_AIAI_81B70A72"));
+    lv_botStatus = (lv_botStatus + IntToText(UnitGroupCount(libAIAI_gv_defenderAI[lp_defenderIndex].lv_defendersGroup, c_unitCountAlive)));
+    lv_botStatus = (lv_botStatus + StringExternal("Param/Value/lib_AIAI_CD8F4D0E"));
+    lv_botStatus = (lv_botStatus + IntToText(libAIAI_gv_defenderAI[lp_defenderIndex].lv_defenderCount));
+    lv_botStatus = (lv_botStatus + StringExternal("Param/Value/lib_AIAI_E560737A"));
+    lv_botStatus = (lv_botStatus + IntToText(UnitGroupCount(libAIAI_gv_defenderAI[lp_defenderIndex].lv_validTargets, c_unitCountAlive)));
+    lv_botStatus = (lv_botStatus + StringExternal("Param/Value/lib_AIAI_E72AABDE"));
+    lv_botStatus = (lv_botStatus + IntToText(lp_defenderIndex));
+    libNtve_gf_SetDialogItemText(libAIAI_gv_defenderAI[lp_defenderIndex].lv_debugLabel, lv_botStatus, PlayerGroupAll());
+}
+
+void libAIAI_gf_DefenderAIToggleAIStatus (bool lp_show) {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+
+    // Automatic Variable Declarations
+    int auto62750211_ae;
+    const int auto62750211_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    auto62750211_ae = libAIAI_gv_defenderAIDefenderAIUpperBound;
+    lv_defenderAIIndex = 1;
+    for ( ; ( (auto62750211_ai >= 0 && lv_defenderAIIndex <= auto62750211_ae) || (auto62750211_ai < 0 && lv_defenderAIIndex >= auto62750211_ae) ) ; lv_defenderAIIndex += auto62750211_ai ) {
+        if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_debugLabel != c_invalidDialogControlId)) {
+            if ((lp_show == true)) {
+                DialogControlSetVisible(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_debugLabel, PlayerGroupAll(), true);
+            }
+            else {
+                DialogControlSetVisible(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_debugLabel, PlayerGroupAll(), false);
+            }
+        }
+
+    }
+}
+
+void libAIAI_gf_SummonedAIInitialAttackLogic (bool lp_attackCreatorsTarget, unit lp_summonedUnit, unit lp_creatorUnit, bool lp_continuousScan) {
+    // Variable Declarations
+    unit lv_targetUnit;
+    abilcmd lv_attackAbility;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((UnitAbilityExists(lp_summonedUnit, "AttackAlly") == true)) {
+        lv_attackAbility = AbilityCommand("AttackAlly", 0);
+    }
+    else {
+        lv_attackAbility = AbilityCommand("attack", 0);
+    }
+    if ((OrderGetAbilityCommand(UnitOrder(lp_creatorUnit, 0)) == AbilityCommand("attack", 0)) && (lp_attackCreatorsTarget == true)) {
+        if ((OrderGetTargetPoint(UnitOrder(lp_creatorUnit, 0)) == null)) {
+            lv_targetUnit = OrderGetTargetUnit(UnitOrder(lp_creatorUnit, 0));
+            UnitIssueOrder(lp_summonedUnit, OrderTargetingUnit(lv_attackAbility, lv_targetUnit), c_orderQueueReplace);
+        }
+        else {
+            UnitIssueOrder(lp_summonedUnit, OrderTargetingPoint(lv_attackAbility, OrderGetTargetPoint(UnitOrder(lp_creatorUnit, 0))), c_orderQueueReplace);
+        }
+    }
+    else {
+        Wait(0.0625, c_timeGame);
+        if ((UnitIsAlive(lp_summonedUnit) == true)) {
+            UnitIssueOrder(lp_summonedUnit, OrderTargetingPoint(lv_attackAbility, UnitGetPosition(lp_summonedUnit)), c_orderQueueReplace);
+        }
+
+    }
+    while ((UnitIsAlive(lp_summonedUnit) == true) && (OrderGetAbilityCommand(UnitOrder(lp_summonedUnit, 0)) == lv_attackAbility) && (UnitIsSelected(lp_summonedUnit, UnitGetOwner(lp_summonedUnit)) == false)) {
+        Wait(0.125, c_timeGame);
+        if ((lp_continuousScan == true) && (UnitIsAlive(lp_summonedUnit) == true) && ((lv_targetUnit == null) || (UnitIsAlive(lv_targetUnit) == false))) {
+            UnitIssueOrder(lp_summonedUnit, OrderTargetingPoint(lv_attackAbility, UnitGetPosition(lp_summonedUnit)), c_orderQueueReplace);
+        }
+
+    }
+    Wait(0.0625, c_timeGame);
+    if ((UnitIsAlive(lp_summonedUnit) == true) && (UnitIsSelected(lp_summonedUnit, UnitGetOwner(lp_summonedUnit)) == false)) {
+        libGame_gf_CalculateSpawnedMinionGoalPoints(UnitGetOwner(lp_summonedUnit), UnitGetPosition(lp_summonedUnit));
+        libAIAI_gf_MinionAIStartMinionAI(-1, lp_summonedUnit, libGame_gv_spawnedMinionLane, libGame_gv_spawnedMinionFirstWaypointIndex, false, 0, false);
+    }
+
+}
+
+bool libAIAI_gf_AIIsPointBehindEnemyGateEstimate (point lp_selfPosition, int lp_selfPlayer, point lp_otherPoint) {
+    // Variable Declarations
+    const fixed lv_maxSearchRadius = 8.0;
+    const fixed lv_offsetFromEdge = 1.0;
+    fixed lv_originalDistance;
+    point lv_centerPoint;
+    fixed lv_searchRadius;
+    unitgroup lv_enemyStructures;
+    unit lv_testUnit;
+    unit lv_enemyGate;
+    fixed lv_selfDistToGate;
+    fixed lv_selfDistToEnemy;
+    fixed lv_enemyDistToGate;
+    point lv_enemyGatePos;
+    point lv_inFrontOfGate;
+    point lv_selfProjectedOntoGateLine;
+    point lv_enemyProjectedOntoGateLine;
+
+    // Automatic Variable Declarations
+    unitgroup autoBCD82E72_g;
+    int autoBCD82E72_u;
+
+    // Variable Initialization
+    lv_enemyStructures = UnitGroupEmpty();
+
+    // Implementation
+    lv_originalDistance = DistanceBetweenPoints(lp_selfPosition, lp_otherPoint);
+    lv_searchRadius = MinF(MaxF(libAIAI_gv_aIGateNearbyRange, (lv_offsetFromEdge + (0.5 * lv_originalDistance))), lv_maxSearchRadius);
+    if ((lv_originalDistance < ((lv_searchRadius - lv_offsetFromEdge) * 2.0))) {
+        lv_centerPoint = MidPoint(lp_selfPosition, lp_otherPoint);
+    }
+    else {
+        lv_centerPoint = libNtve_gf_PointOffsetTowardsPoint(lp_selfPosition, (lv_searchRadius - lv_offsetFromEdge), lp_otherPoint);
+    }
+    lv_enemyStructures = UnitGroupSearch(null, lp_selfPlayer, lv_centerPoint, lv_searchRadius, libAIAI_gv_uF_MinionAI_GetNearestEnemyStructure, 0);
+    autoBCD82E72_g = lv_enemyStructures;
+    autoBCD82E72_u = UnitGroupCount(autoBCD82E72_g, c_unitCountAll);
+    for (;; autoBCD82E72_u -= 1) {
+        lv_testUnit = UnitGroupUnitFromEnd(autoBCD82E72_g, autoBCD82E72_u);
+        if (lv_testUnit == null) { break; }
+        if ((UnitTypeTestFlag(UnitGetType(lv_testUnit), c_unitFlagTownStructureGate) == true) && (UnitIsAlive(lv_testUnit) == true)) {
+            lv_enemyGate = lv_testUnit;
+            break;
+        }
+
+    }
+    if ((lv_enemyGate == null)) {
+        return false;
+    }
+
+    lv_enemyGatePos = UnitGetPosition(lv_enemyGate);
+    lv_inFrontOfGate = PointWithOffsetPolar(lv_enemyGatePos, libAIAI_gv_aIGateNearbyRange, UnitGetFacing(lv_enemyGate));
+    lv_selfProjectedOntoGateLine = libCore_gf_ProjectPointOntoLine(lv_enemyGatePos, lv_inFrontOfGate, lp_selfPosition);
+    lv_enemyProjectedOntoGateLine = libCore_gf_ProjectPointOntoLine(lv_enemyGatePos, lv_inFrontOfGate, lp_otherPoint);
+    lv_selfDistToGate = DistanceBetweenPoints(lv_selfProjectedOntoGateLine, lv_enemyGatePos);
+    lv_selfDistToEnemy = DistanceBetweenPoints(lv_selfProjectedOntoGateLine, lv_enemyProjectedOntoGateLine);
+    if ((lv_selfDistToGate < lv_selfDistToGate)) {
+        return false;
+    }
+
+    lv_enemyDistToGate = DistanceBetweenPoints(lv_enemyProjectedOntoGateLine, lv_enemyGatePos);
+    if ((lv_enemyDistToGate > lv_selfDistToEnemy)) {
+        return false;
+    }
+
+    return true;
+}
+
+fixed libAIAI_gf_AIGetAnyWeaponRangeIncludesNonActive (unit lp_unit) {
+    // Variable Declarations
+    fixed lv_bestRange;
+    int lv_weaponIndex;
+
+    // Automatic Variable Declarations
+    int autoBA3F6242_ae;
+    const int autoBA3F6242_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    autoBA3F6242_ae = UnitWeaponCount(lp_unit);
+    lv_weaponIndex = 1;
+    for ( ; ( (autoBA3F6242_ai >= 0 && lv_weaponIndex <= autoBA3F6242_ae) || (autoBA3F6242_ai < 0 && lv_weaponIndex >= autoBA3F6242_ae) ) ; lv_weaponIndex += autoBA3F6242_ai ) {
+        if ((UnitWeaponRange(lp_unit, lv_weaponIndex) > lv_bestRange)) {
+            lv_bestRange = UnitWeaponRange(lp_unit, lv_weaponIndex);
+        }
+
+    }
+    return lv_bestRange;
+}
+
+fixed libAIAI_gf_AIGetClosestLanePosition (int lp_laneIndex, point lp_point) {
+    // Variable Declarations
+    int lv_secondaryIndex;
+    int lv_closestIndex;
+    point lv_closestPoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    libGame_gf_CalculateClosestLaneDataForLane(lp_point, lp_laneIndex);
+    lv_closestIndex = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestIndex;
+    lv_secondaryIndex = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_secondaryIndex;
+    lv_closestPoint = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestPoint;
+    return AILaneWaypointConvertPointToWaydist(lp_laneIndex, lv_closestIndex, lv_secondaryIndex, lv_closestPoint);
+}
+
+fixed libAIAI_gf_AIGetLaneOffsetOfPoint (int lp_laneIndex, point lp_testPoint) {
+    // Variable Declarations
+    int lv_nextIndex;
+    int lv_previousIndex;
+    point lv_nextPoint;
+    point lv_previousPoint;
+    point lv_dir;
+    point lv_normal;
+    point lv_relativePoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    libGame_gf_CalculateClosestLaneDataForLane(lp_testPoint, lp_laneIndex);
+    if ((libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestIndex < libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_secondaryIndex)) {
+        lv_previousIndex = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestIndex;
+        lv_nextIndex = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_secondaryIndex;
+    }
+    else {
+        lv_previousIndex = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_secondaryIndex;
+        lv_nextIndex = libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestIndex;
+    }
+    lv_nextPoint = libGame_gv_laneData[lp_laneIndex].lv_waypoints[lv_nextIndex];
+    lv_previousPoint = libGame_gv_laneData[lp_laneIndex].lv_waypoints[lv_previousIndex];
+    lv_dir = AIGetDirection(lv_previousPoint, lv_nextPoint);
+    lv_normal = Point(PointGetY(lv_dir), (PointGetX(lv_dir) * -1.0));
+    lv_relativePoint = AIGetDirection(lv_previousPoint, lp_testPoint);
+    if ((((PointGetX(lv_relativePoint) * PointGetX(lv_normal)) + (PointGetY(lv_relativePoint) * PointGetY(lv_normal))) > 0.0)) {
+        return libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestDist;
+    }
+    else {
+        return (-1.0 * libGame_gv_closestLaneData.lv_laneData[lp_laneIndex].lv_closestDist);
+    }
+}
+
+fixed libAIAI_gf_AIAdvanceLanePosition (int lp_faction, int lp_laneIndex, fixed lp_lanePosition, fixed lp_distance) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_faction == libGame_ge_Faction_Order)) {
+        return libAIAI_gf_AIMoveAlongLane(lp_laneIndex, lp_lanePosition, lp_distance);
+    }
+    else {
+        return libAIAI_gf_AIMoveAlongLane(lp_laneIndex, lp_lanePosition, (lp_distance * -1.0));
+    }
+}
+
+fixed libAIAI_gf_AIRetreatLanePosition (int lp_faction, int lp_laneIndex, fixed lp_lanePosition, fixed lp_distance) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_faction == libGame_ge_Faction_Order)) {
+        return libAIAI_gf_AIMoveAlongLane(lp_laneIndex, lp_lanePosition, (lp_distance * -1.0));
+    }
+    else {
+        return libAIAI_gf_AIMoveAlongLane(lp_laneIndex, lp_lanePosition, lp_distance);
+    }
+}
+
+fixed libAIAI_gf_AIMoveAlongLane (int lp_laneIndex, fixed lp_lanePosition, fixed lp_distance) {
+    // Variable Declarations
+    fixed lv_distanceLeftToMove;
+    point lv_currentPosition;
+    int lv_nextWaypoint;
+    int lv_waypointAdvance;
+    point lv_nextWaypointPosition;
+    fixed lv_distanceToNextWaypoint;
+    point lv_direction;
+    int lv_finalLanePosition;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_distanceLeftToMove = AbsF(lp_distance);
+    lv_currentPosition = AILaneWaypointConvertWaydistOffsetToPoint(lp_laneIndex, lp_lanePosition, 0.0);
+    if ((lp_distance > 0.0)) {
+        lv_nextWaypoint = CeilingI(lp_lanePosition);
+        lv_waypointAdvance = 1;
+    }
+    else {
+        lv_nextWaypoint = FloorI(lp_lanePosition);
+        lv_waypointAdvance = -1;
+    }
+    while ((lv_distanceLeftToMove > 0.0)) {
+        lv_nextWaypointPosition = libGame_gv_laneData[lp_laneIndex].lv_waypoints[lv_nextWaypoint];
+        lv_distanceToNextWaypoint = DistanceBetweenPoints(lv_currentPosition, lv_nextWaypointPosition);
+        if ((lv_distanceLeftToMove > lv_distanceToNextWaypoint)) {
+            lv_currentPosition = lv_nextWaypointPosition;
+            lv_distanceLeftToMove -= lv_distanceToNextWaypoint;
+            lv_nextWaypoint += lv_waypointAdvance;
+            if (((lv_nextWaypoint < 1) || (lv_nextWaypoint > libGame_gv_laneData[lp_laneIndex].lv_waypointCount))) {
+                break;
+            }
+
+        }
+        else {
+            lv_direction = AIGetDirection(lv_currentPosition, lv_nextWaypointPosition);
+            lv_currentPosition = libCore_gf_AdvancePointinDirection(lv_currentPosition, lv_direction, lv_distanceLeftToMove);
+            lv_distanceLeftToMove = 0.0;
+        }
+    }
+    return libAIAI_gf_AIGetClosestLanePosition(lp_laneIndex, lv_currentPosition);
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #Include AI
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_IncludeAI_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_IncludeAI_Init () {
+    libAIAI_gt_IncludeAI = TriggerCreate("libAIAI_gt_IncludeAI_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MinionAI - AI Routine
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_MinionAIAIRoutine_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_firstMinionIndex;
+    int lv_minionIndex;
+    int lv_oldState;
+    int lv_newState;
+    order lv_minionOrder;
+    abilcmd lv_minionAbilityCommand;
+    fixed lv_distanceToBattleCore;
+
+    // Automatic Variable Declarations
+    int auto4CA69FE4_ae;
+    const int auto4CA69FE4_ai = libAIAI_gv_aIWaveIndexMod;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_firstMinionIndex = ModI(FixedToInt((GameGetMissionTime() * 16.0)), libAIAI_gv_aIWaveIndexMod);
+    auto4CA69FE4_ae = libAIAI_gv_minionAIActiveMinionsUpperBound;
+    lv_minionIndex = lv_firstMinionIndex;
+    for ( ; ( (auto4CA69FE4_ai >= 0 && lv_minionIndex <= auto4CA69FE4_ae) || (auto4CA69FE4_ai < 0 && lv_minionIndex >= auto4CA69FE4_ae) ) ; lv_minionIndex += auto4CA69FE4_ai ) {
+        if ((libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_isAlive == true) && (UnitIsValid(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit) == true) && (UnitTestState(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit, c_unitStateMoveSuppressed) == false)) {
+            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_unitPosition = UnitGetPosition(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit);
+            if ((InShrub(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_unitPosition) == true)) {
+                libGame_gf_ShrubNearbyEnemyHeroRevealCheck(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_ownerPlayer, libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit, libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_unitPosition);
+            }
+
+            lv_minionOrder = UnitOrder(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_minionUnit, 0);
+            lv_minionAbilityCommand = OrderGetAbilityCommand(lv_minionOrder);
+            if ((lv_minionOrder != null) && (lv_minionAbilityCommand != libAIAI_gv_aIMoveAbil) && (lv_minionAbilityCommand != libAIAI_gv_aIAttackAbil) && (lv_minionAbilityCommand != libAIAI_gv_aIAttackAllyAbil) && (lv_minionAbilityCommand != AbilityCommand("move", 2))) {
+                continue;
+            }
+
+            libAIAI_gf_MinionAIIssueFightOrder(lv_minionIndex);
+            if ((libGame_gf_LaneIndexIsValid(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_lane) == true) && ((DistanceBetweenPoints(libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_unitPosition, libAIAI_gf_MinionAIGetNextWaypointForMinion(lv_minionIndex)) <= libAIAI_gv_aIMinionWaypointAdvanceDistance) || ((libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_nextWaypoint != libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_initialWaypoint) && (libAIAI_gf_MinionAITestPastNextWaypoint(lv_minionIndex) == true)))) {
+                libAIAI_gf_MinionAIAdvanceMinionToNextWaypoint(lv_minionIndex);
+            }
+
+            if ((libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_leashing == true) && (libAIAI_gf_MinionAIWithinLeashingDistanceofLane(lv_minionIndex) == true)) {
+                libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_leashing = false;
+            }
+
+            lv_oldState = libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state;
+            lv_newState = libAIAI_gf_MinionAIDetermineState(lv_minionIndex, lv_oldState);
+            if (((lv_minionOrder == null) || (lv_minionAbilityCommand == AbilityCommand("move", 2)))) {
+                libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition = true;
+            }
+            else {
+                if ((lv_newState == libAIAI_ge_MinionAIStates_Advancing) && (lv_oldState == libAIAI_ge_MinionAIStates_Advancing) && (libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition == false)) {
+                    if ((libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_leashing == true)) {
+                        if (((lv_minionAbilityCommand != libAIAI_gv_aIMoveAbil) || (OrderGetTargetType(lv_minionOrder) != c_orderTargetPoint) || (OrderGetTargetPosition(lv_minionOrder) != libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_battleCorePoint))) {
+                            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition = true;
+                        }
+
+                    }
+                    else {
+                        if ((lv_minionAbilityCommand != libAIAI_gv_aIAttackAbil) && (lv_minionAbilityCommand != libAIAI_gv_aIAttackAllyAbil)) {
+                            libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition = true;
+                        }
+                        else {
+                            if ((OrderGetTargetType(lv_minionOrder) == c_orderTargetUnit)) {
+                            }
+                            else {
+                                if (((OrderGetTargetType(lv_minionOrder) != c_orderTargetPoint) || (OrderGetTargetPosition(lv_minionOrder) != libAIAI_gf_MinionAIGetNextWaypointForMinion(lv_minionIndex)))) {
+                                    libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition = true;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            if (((lv_oldState != lv_newState) || (libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition == true))) {
+                libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_state = lv_newState;
+                libAIAI_gv_minionAIActiveMinions[lv_minionIndex].lv_forceStateTransition = false;
+                libAIAI_gf_MinionAIUpdateBattleCoreDataForMinion(lv_minionIndex);
+                libAIAI_gf_MinionAITransitionMinionIntoState(lv_minionIndex, lv_newState);
+            }
+
+            if ((libAIAI_gv_minionAIDisplayAIStatus == true)) {
+                libAIAI_gf_MinionAIUpdateAIStatus(lv_minionIndex);
+            }
+
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_MinionAIAIRoutine_Init () {
+    libAIAI_gt_MinionAIAIRoutine = TriggerCreate("libAIAI_gt_MinionAIAIRoutine_Func");
+    TriggerEnable(libAIAI_gt_MinionAIAIRoutine, false);
+    TriggerAddEventTimePeriodic(libAIAI_gt_MinionAIAIRoutine, 0.0625, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Tower - AI Routine
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_TowerAIRoutine_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_towerOwner;
+    int lv_towerIndex;
+    unit lv_towerIndexUnit;
+    int lv_currentGameLoopMod;
+    fixed lv_rangeToTarget;
+    fixed lv_scanRange;
+    unit lv_currentTarget;
+    point lv_towerPosition;
+    unitgroup lv_scanGroup;
+    unitgroup lv_heroesInRange;
+    unitgroup lv_minionsInRange;
+    unitgroup lv_summonedUnitsInRange;
+    unitgroup lv_towerPriority1UnitsInRange;
+    unitgroup lv_towerPriority2UnitsInRange;
+    unit lv_summonedUnit;
+    unit lv_heroUnit;
+    unit lv_towerPriority1Unit;
+    unit lv_towerPriority2Unit;
+    order lv_towerOrder;
+    bool lv_clearedTowerUnit;
+
+    // Automatic Variable Declarations
+    int auto9B021F17_ae;
+    const int auto9B021F17_ai = 1;
+    unitgroup auto4C1F72F5_g;
+    int auto4C1F72F5_u;
+    unitgroup auto01EBC467_g;
+    int auto01EBC467_u;
+
+    // Variable Initialization
+    lv_scanGroup = UnitGroupEmpty();
+    lv_heroesInRange = UnitGroupEmpty();
+    lv_minionsInRange = UnitGroupEmpty();
+    lv_summonedUnitsInRange = UnitGroupEmpty();
+    lv_towerPriority1UnitsInRange = UnitGroupEmpty();
+    lv_towerPriority2UnitsInRange = UnitGroupEmpty();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_currentGameLoopMod = ModI(FixedToInt((GameGetMissionTime() * 16.0)), libAIAI_gv_aITowerIndexMod);
+    auto9B021F17_ae = libAIAI_gv_towerTowerCount;
+    lv_towerIndex = 1;
+    for ( ; ( (auto9B021F17_ai >= 0 && lv_towerIndex <= auto9B021F17_ae) || (auto9B021F17_ai < 0 && lv_towerIndex >= auto9B021F17_ae) ) ; lv_towerIndex += auto9B021F17_ai ) {
+        lv_towerIndexUnit = libAIAI_gv_towerTowers[lv_towerIndex].lv_towerUnit;
+        if ((UnitIsAlive(lv_towerIndexUnit) == true) && (UnitBehaviorCount(lv_towerIndexUnit, "TownCannonTowerInvulnerable") == 0) && (libAIAI_gv_towerTowers[lv_towerIndex].lv_dead == false) && (UnitHasBehavior2(libAIAI_gv_towerTowers[lv_towerIndex].lv_towerUnit, "TownDeadController@DeadBehavior") == false)) {
+            lv_clearedTowerUnit = false;
+            lv_currentTarget = libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit;
+            lv_towerOwner = libAIAI_gv_towerTowers[lv_towerIndex].lv_owner;
+            if ((lv_currentTarget != null)) {
+                if (((UnitIsAlive(lv_currentTarget) == false) || (UnitFilterMatch(lv_currentTarget, lv_towerOwner, libAIAI_gv_uF_TowerAI_Required_Invulnerable) == true) || (UnitFilterMatch(lv_currentTarget, lv_towerOwner, libAIAI_gv_uF_TowerAI_Required_Stasis) == true) || (UnitFilterMatch(lv_currentTarget, lv_towerOwner, libAIAI_gv_uF_TowerAI_Required_Visible) == false) || (UnitFilterMatch(lv_currentTarget, lv_towerOwner, libAIAI_gv_uF_TowerAI_Required_Ignored) == true) || (UnitHasBehavior2(lv_currentTarget, "TowerAIPrioritizedTarget2") == true))) {
+                    lv_clearedTowerUnit = true;
+                    libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                    libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = null;
+                    lv_currentTarget = null;
+                    UnitIssueOrder(lv_towerIndexUnit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+                }
+                else {
+                    lv_rangeToTarget = DistanceBetweenPoints(UnitGetPosition(lv_towerIndexUnit), UnitGetPosition(lv_currentTarget));
+                    lv_rangeToTarget -= UnitTypeGetProperty(UnitGetType(lv_towerIndexUnit), c_unitPropRadius);
+                    lv_rangeToTarget -= UnitTypeGetProperty(UnitGetType(lv_currentTarget), c_unitPropRadius);
+                    if ((lv_rangeToTarget > (libAIAI_gv_towerTowers[lv_towerIndex].lv_range + 0.25))) {
+                        lv_clearedTowerUnit = true;
+                        libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                        libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = null;
+                        lv_currentTarget = null;
+                        UnitIssueOrder(lv_towerIndexUnit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+                    }
+                    else {
+                        if ((libAIAI_gv_towerTowers[lv_towerIndex].lv_hasTarget == true) && ((UnitTestState(lv_towerIndexUnit, c_unitStateAttackSuppressed) == true) || (UnitFilterMatch(lv_towerIndexUnit, lv_towerOwner, UnitFilter(0, (1 << (c_targetFilterStunned - 32)), (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)))) == true) || (UnitHasBehavior2(lv_towerIndexUnit, "TownDeadController@DeadBehavior") == true) || (UnitAbilityCheck(lv_towerIndexUnit, "attack", true) == false) || (UnitFilterMatch(lv_towerIndexUnit, lv_towerOwner, UnitFilter(0, (1 << (c_targetFilterPassive - 32)), (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)))) == true))) {
+                            libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                            libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = null;
+                            lv_currentTarget = null;
+                            UnitIssueOrder(lv_towerIndexUnit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+                        }
+
+                    }
+                }
+            }
+
+            if (((lv_clearedTowerUnit == true) || ((lv_currentGameLoopMod == ModI(lv_towerIndex, libAIAI_gv_aITowerIndexMod)) && (UnitWeaponPeriodRemaining(lv_towerIndexUnit, 1) <= 2.0)))) {
+                if (((lv_currentTarget == null) || (UnitTypeTestAttribute(UnitGetType(lv_currentTarget), c_unitAttributeHeroic) == true))) {
+                    lv_scanRange = (libAIAI_gv_towerTowers[lv_towerIndex].lv_range + UnitTypeGetProperty(UnitGetType(lv_towerIndexUnit), c_unitPropRadius));
+                    lv_towerPosition = UnitGetPosition(lv_towerIndexUnit);
+                    lv_scanGroup = UnitGroupSearch(null, lv_towerOwner, lv_towerPosition, lv_scanRange, libAIAI_gv_uF_TowerAI_Scan_Group, 0);
+                    if ((UnitGroupCount(lv_scanGroup, c_unitCountAlive) > 0)) {
+                        lv_minionsInRange = UnitGroupFilter(null, c_playerAny, lv_scanGroup, libAIAI_gv_uF_TowerAI_Required_Minion, 0);
+                        if ((UnitGroupCount(lv_minionsInRange, c_unitCountAlive) > 0)) {
+                            libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                            libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = UnitGroupClosestToPoint(lv_minionsInRange, lv_towerPosition);
+                        }
+                        else {
+                            lv_summonedUnitsInRange = UnitGroupFilter(null, c_playerAny, lv_scanGroup, libAIAI_gv_uF_TowerAI_Required_Summoned, 0);
+                            if ((UnitGroupCount(lv_summonedUnitsInRange, c_unitCountAlive) > 0)) {
+                                libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                                libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = UnitGroupClosestToPoint(lv_summonedUnitsInRange, lv_towerPosition);
+                            }
+                            else {
+                                lv_towerPriority1UnitsInRange = UnitGroupSearch(null, lv_towerOwner, lv_towerPosition, lv_scanRange, libAIAI_gv_uF_TowerAI_Scan_Group, 0);
+                                auto4C1F72F5_g = lv_towerPriority1UnitsInRange;
+                                auto4C1F72F5_u = UnitGroupCount(auto4C1F72F5_g, c_unitCountAll);
+                                for (;; auto4C1F72F5_u -= 1) {
+                                    lv_towerPriority1Unit = UnitGroupUnitFromEnd(auto4C1F72F5_g, auto4C1F72F5_u);
+                                    if (lv_towerPriority1Unit == null) { break; }
+                                    if ((UnitHasBehavior2(lv_towerPriority1Unit, "TowerAIPrioritizedTarget1") == false)) {
+                                        UnitGroupRemove(lv_towerPriority1UnitsInRange, lv_towerPriority1Unit);
+                                    }
+
+                                }
+                                if ((UnitGroupCount(lv_towerPriority1UnitsInRange, c_unitCountAlive) > 0)) {
+                                    libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                                    libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = UnitGroupClosestToPoint(lv_towerPriority1UnitsInRange, lv_towerPosition);
+                                }
+                                else {
+                                    lv_towerPriority2UnitsInRange = UnitGroupSearch(null, lv_towerOwner, lv_towerPosition, lv_scanRange, libAIAI_gv_uF_TowerAI_Scan_Group, 0);
+                                    auto01EBC467_g = lv_towerPriority2UnitsInRange;
+                                    auto01EBC467_u = UnitGroupCount(auto01EBC467_g, c_unitCountAll);
+                                    for (;; auto01EBC467_u -= 1) {
+                                        lv_towerPriority2Unit = UnitGroupUnitFromEnd(auto01EBC467_g, auto01EBC467_u);
+                                        if (lv_towerPriority2Unit == null) { break; }
+                                        if ((UnitHasBehavior2(lv_towerPriority2Unit, "TowerAIPrioritizedTarget2") == false)) {
+                                            UnitGroupRemove(lv_towerPriority2UnitsInRange, lv_towerPriority2Unit);
+                                        }
+
+                                    }
+                                    if ((UnitGroupCount(lv_towerPriority2UnitsInRange, c_unitCountAlive) > 0)) {
+                                        libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                                        libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = UnitGroupClosestToPoint(lv_towerPriority2UnitsInRange, lv_towerPosition);
+                                    }
+                                    else {
+                                        if ((libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit == null)) {
+                                            lv_heroesInRange = UnitGroupFilter(null, c_playerAny, lv_scanGroup, libAIAI_gv_uF_TowerAI_Required_Heroic, 0);
+                                            if ((UnitGroupCount(lv_heroesInRange, c_unitCountAlive) > 0)) {
+                                                libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit = UnitGroupClosestToPoint(lv_heroesInRange, lv_towerPosition);
+                                            }
+
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                if ((libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit != null)) {
+                    lv_towerOrder = UnitOrder(lv_towerIndexUnit, 0);
+                    if ((UnitHasBehavior2(libAIAI_gv_towerTowers[lv_towerIndex].lv_towerUnit, "StructureAmmoDisabler") == false) && ((lv_towerOrder == null) || (OrderGetAbilityCommand(lv_towerOrder) != libAIAI_gv_aIAttackAbil) || (OrderGetAbilityCommand(lv_towerOrder) != libAIAI_gv_aIAttackAllyAbil) || (OrderGetTargetType(lv_towerOrder) != c_orderTargetUnit) || (OrderGetTargetUnit(lv_towerOrder) != libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit))) {
+                        UnitIssueOrder(lv_towerIndexUnit, OrderTargetingUnit(libAIAI_gv_aIAttackAllyAbil, libAIAI_gv_towerTowers[lv_towerIndex].lv_targetUnit), c_orderQueueReplace);
+                    }
+
+                }
+
+            }
+
+        }
+        else {
+            if ((libAIAI_gv_towerTowers[lv_towerIndex].lv_dead == false)) {
+                libAIAI_gv_towerTowers[lv_towerIndex].lv_dead = true;
+                libAIAI_gf_DestroyTowerTargetPersistent(lv_towerIndex);
+                UnitIssueOrder(lv_towerIndexUnit, Order(libAIAI_gv_aIStopAbil), c_orderQueueReplace);
+            }
+
+            if ((libAIAI_gv_towerTowers[lv_towerIndex].lv_dead == true) && (lv_towerIndex == libAIAI_gv_towerTowerCount)) {
+                libAIAI_gv_towerTowerCount -= 1;
+            }
+
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_TowerAIRoutine_Init () {
+    libAIAI_gt_TowerAIRoutine = TriggerCreate("libAIAI_gt_TowerAIRoutine_Func");
+    TriggerEnable(libAIAI_gt_TowerAIRoutine, false);
+    TriggerAddEventTimePeriodic(libAIAI_gt_TowerAIRoutine, 0.0625, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Tower Attacks Unit
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_TowerAttacksUnit_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itTower;
+
+    // Automatic Variable Declarations
+    int autoEAB92F78_ae;
+    const int autoEAB92F78_ai = 1;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitFilterMatch(EventPlayerEffectUsedUnit(c_effectUnitTarget), 0, UnitFilter((1 << c_targetFilterHeroic), 0, 0, 0)) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoEAB92F78_ae = libAIAI_gv_towerTowerCount;
+    lv_itTower = 1;
+    for ( ; ( (autoEAB92F78_ai >= 0 && lv_itTower <= autoEAB92F78_ae) || (autoEAB92F78_ai < 0 && lv_itTower >= autoEAB92F78_ae) ) ; lv_itTower += autoEAB92F78_ai ) {
+        if ((libAIAI_gv_towerTowers[lv_itTower].lv_towerUnit == EventPlayerEffectUsedUnit(c_effectUnitCaster))) {
+            if ((libAIAI_gv_towerTowers[lv_itTower].lv_hasTarget == false)) {
+                libAIAI_gv_towerTowers[lv_itTower].lv_targetUnit = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+                UnitCreateEffectUnit(libAIAI_gv_towerTowers[lv_itTower].lv_towerUnit, "TowerTargetingLaserCreatePersistent", libAIAI_gv_towerTowers[lv_itTower].lv_targetUnit);
+                libAIAI_gv_towerTowers[lv_itTower].lv_hasTarget = true;
+            }
+
+            break;
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_TowerAttacksUnit_Init () {
+    libAIAI_gt_TowerAttacksUnit = TriggerCreate("libAIAI_gt_TowerAttacksUnit_Func");
+    TriggerAddEventPlayerEffectUsed(libAIAI_gt_TowerAttacksUnit, c_playerAny, "TowerTargetingLaserAddTrackedUnit");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger:  Initialize Tower AI System
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_InitializeTowerAISystem_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_laneIndex;
+    int lv_structureIndex;
+    unit lv_structureUnit;
+    string lv_structureUnitType;
+    int lv_structureLevel;
+
+    // Automatic Variable Declarations
+    unitgroup auto35CE26E7_g;
+    int auto35CE26E7_u;
+    unitgroup autoCD236BB4_g;
+    int autoCD236BB4_u;
+    int auto29917DAC_ae;
+    const int auto29917DAC_ai = 1;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libAIAI_gv_towerTowerCount = 0;
+    libAIAI_gv_towerTowerCount += 1;
+    libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_towerUnit = libGame_gv_teams[libGame_gv_teamOrderIndex_C].lv_core;
+    libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_owner = libCore_gv_cOMPUTER_TeamOrder;
+    libAIAI_gv_towerTowerCount += 1;
+    libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_towerUnit = libGame_gv_teams[libGame_gv_teamChaosIndex_C].lv_core;
+    libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_owner = libCore_gv_cOMPUTER_TeamChaos;
+    auto35CE26E7_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto35CE26E7_u = UnitGroupCount(auto35CE26E7_g, c_unitCountAll);
+    for (;; auto35CE26E7_u -= 1) {
+        lv_structureUnit = UnitGroupUnitFromEnd(auto35CE26E7_g, auto35CE26E7_u);
+        if (lv_structureUnit == null) { break; }
+        if ((UnitTypeTestFlag(UnitGetType(lv_structureUnit), c_unitFlagTownStructureTownHall) == true)) {
+            libAIAI_gv_towerTowerCount += 1;
+            libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_towerUnit = lv_structureUnit;
+            libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_owner = UnitGetOwner(lv_structureUnit);
+        }
+
+    }
+    autoCD236BB4_g = UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoCD236BB4_u = UnitGroupCount(autoCD236BB4_g, c_unitCountAll);
+    for (;; autoCD236BB4_u -= 1) {
+        lv_structureUnit = UnitGroupUnitFromEnd(autoCD236BB4_g, autoCD236BB4_u);
+        if (lv_structureUnit == null) { break; }
+        if ((UnitTypeTestFlag(UnitGetType(lv_structureUnit), c_unitFlagTownStructureCannonTower) == true)) {
+            libAIAI_gv_towerTowerCount += 1;
+            libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_towerUnit = lv_structureUnit;
+            libAIAI_gv_towerTowers[libAIAI_gv_towerTowerCount].lv_owner = UnitGetOwner(lv_structureUnit);
+        }
+
+    }
+    auto29917DAC_ae = libAIAI_gv_towerTowerCount;
+    lv_structureIndex = 1;
+    for ( ; ( (auto29917DAC_ai >= 0 && lv_structureIndex <= auto29917DAC_ae) || (auto29917DAC_ai < 0 && lv_structureIndex >= auto29917DAC_ae) ) ; lv_structureIndex += auto29917DAC_ai ) {
+        UnitStatusBarOverride(libAIAI_gv_towerTowers[lv_structureIndex].lv_towerUnit, c_unitStatusGroupAll);
+        libAIAI_gv_towerTowers[lv_structureIndex].lv_dead = false;
+        libAIAI_gv_towerTowers[lv_structureIndex].lv_range = (UnitWeaponRange(libAIAI_gv_towerTowers[lv_structureIndex].lv_towerUnit, 1) - 0.25);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_InitializeTowerAISystem_Init () {
+    libAIAI_gt_InitializeTowerAISystem = TriggerCreate("libAIAI_gt_InitializeTowerAISystem_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DefenderAI - Creeps Attacked
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_DefenderAICreepsAttacked_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_defenderAIIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((PlayerGroupHasPlayer(libCore_gv_heroPlayersIncludeAIHeroPlayers, EventUnitDamageSourcePlayer()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_defenderAIIndex = libAIAI_gf_DefenderAIIndexOfUnit(EventUnit());
+    if ((lv_defenderAIIndex > 0)) {
+        libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_playerIsThreat[EventUnitDamageSourcePlayer()] = true;
+        if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_state == libAIAI_ge_DefenderAIState_Idle)) {
+            libAIAI_gf_DefenderAITransitionDefenderAIIntoState(lv_defenderAIIndex, libAIAI_ge_DefenderAIState_Fighting);
+        }
+        else if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_state == libAIAI_ge_DefenderAIState_Leashing)) {
+            libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_minLeashTime = (TimerGetElapsed(libGame_gv_gameTimer) + libAIAI_gv_aIDefenderMinLeashTime);
+            libAIAI_gf_DefenderAIUpdateValidTargetList(lv_defenderAIIndex);
+            if ((UnitGroupCount(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_validTargets, c_unitCountAlive) > 0)) {
+                libAIAI_gf_DefenderAITransitionDefenderAIIntoState(lv_defenderAIIndex, libAIAI_ge_DefenderAIState_Fighting);
+            }
+
+        }
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_DefenderAICreepsAttacked_Init () {
+    libAIAI_gt_DefenderAICreepsAttacked = TriggerCreate("libAIAI_gt_DefenderAICreepsAttacked_Func");
+    TriggerEnable(libAIAI_gt_DefenderAICreepsAttacked, false);
+    TriggerAddEventUnitDamaged(libAIAI_gt_DefenderAICreepsAttacked, null, c_unitDamageTypeAny, c_unitDamageEither, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DefenderAI - Defender AI Logic
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_gt_DefenderAIDefenderAILogic_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_firstDefenderAIIndex;
+    int lv_defenderAIIndex;
+    int lv_creep;
+    int lv_oldState;
+    int lv_newState;
+    order lv_currentOrder;
+    abilcmd lv_currentAbilityCommand;
+
+    // Automatic Variable Declarations
+    int autoEE4A0F50_ae;
+    const int autoEE4A0F50_ai = libAIAI_gv_aIDefenderIndexMod;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_firstDefenderAIIndex = ModI(FixedToInt((GameGetMissionTime() * 16.0)), libAIAI_gv_aIDefenderIndexMod);
+    autoEE4A0F50_ae = libAIAI_gv_defenderAIDefenderAIUpperBound;
+    lv_defenderAIIndex = lv_firstDefenderAIIndex;
+    for ( ; ( (autoEE4A0F50_ai >= 0 && lv_defenderAIIndex <= autoEE4A0F50_ae) || (autoEE4A0F50_ai < 0 && lv_defenderAIIndex >= autoEE4A0F50_ae) ) ; lv_defenderAIIndex += autoEE4A0F50_ai ) {
+        if ((UnitGroupCount(libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defendersGroup, c_unitCountAlive) == 0)) {
+            continue;
+        }
+        else {
+            if ((libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_defenderCount == 1)) {
+                lv_currentOrder = UnitOrder(libAIAI_gf_DefenderUnit(1, lv_defenderAIIndex), 0);
+                lv_currentAbilityCommand = OrderGetAbilityCommand(lv_currentOrder);
+                if ((lv_currentOrder != null) && (lv_currentAbilityCommand != libAIAI_gv_aIMoveAbil) && (lv_currentAbilityCommand != libAIAI_gv_aITurnAbil) && (lv_currentAbilityCommand != libAIAI_gv_aIAttackAbil) && (lv_currentAbilityCommand != libAIAI_gv_aIAttackAllyAbil)) {
+                    continue;
+                }
+
+            }
+
+        }
+        lv_oldState = libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_state;
+        if (((lv_oldState == libAIAI_ge_DefenderAIState_Fighting) || ((lv_oldState == libAIAI_ge_DefenderAIState_Idle) && (libAIAI_gv_defenderAI[lv_defenderAIIndex].lv_aggroRegion != null)))) {
+            libAIAI_gf_DefenderAIUpdateValidTargetList(lv_defenderAIIndex);
+        }
+
+        lv_newState = libAIAI_gf_DefenderAIDetermineState(lv_defenderAIIndex, lv_oldState);
+        if ((lv_oldState != lv_newState)) {
+            libAIAI_gf_DefenderAITransitionDefenderAIIntoState(lv_defenderAIIndex, lv_newState);
+        }
+
+        libAIAI_gf_DefenderAIStateLogic(lv_defenderAIIndex);
+        if ((libAIAI_gv_defenderAIDisplayAIStatus == true)) {
+            libAIAI_gf_DefenderAIUpdateAIStatus(lv_defenderAIIndex);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libAIAI_gt_DefenderAIDefenderAILogic_Init () {
+    libAIAI_gt_DefenderAIDefenderAILogic = TriggerCreate("libAIAI_gt_DefenderAIDefenderAILogic_Func");
+    TriggerEnable(libAIAI_gt_DefenderAIDefenderAILogic, false);
+    TriggerAddEventTimePeriodic(libAIAI_gt_DefenderAIDefenderAILogic, 0.0625, c_timeGame);
+}
+
+void libAIAI_InitTriggers () {
+    libAIAI_gt_IncludeAI_Init();
+    libAIAI_gt_MinionAIAIRoutine_Init();
+    libAIAI_gt_TowerAIRoutine_Init();
+    libAIAI_gt_TowerAttacksUnit_Init();
+    libAIAI_gt_InitializeTowerAISystem_Init();
+    libAIAI_gt_DefenderAICreepsAttacked_Init();
+    libAIAI_gt_DefenderAIDefenderAILogic_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libAIAI_InitLib_completed = false;
+
+void libAIAI_InitLib () {
+    if (libAIAI_InitLib_completed) {
+        return;
+    }
+
+    libAIAI_InitLib_completed = true;
+
+    libAIAI_InitLibraries();
+    libAIAI_InitVariables();
+    libAIAI_InitTriggers();
+}
+
+include "LibCore"
+include "LibGame"
+include "LibMapM"
+include "LibUIUI"
+

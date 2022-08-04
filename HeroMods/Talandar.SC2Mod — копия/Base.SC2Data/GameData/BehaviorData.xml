@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff default="1" id="StandardAvoidance">
+        <DamageResponse>
+            <ExcludeEffectArray value="HeroTalandarThunderousCharge@HeroicCollisionDamage"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandar@SecondSuitUIControllerQ">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandar@SecondSuitUIControllerW">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannon@MissileChargeMedium">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <MaxStackCount value="24"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannonChannel@ChargeMedium">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior"/>
+        <MaxStackCount value="24"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlare@MissileChargeMedium">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <MaxStackCount value="24"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlareChannel@ChargeMedium">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="HeroTalandarSolariteFlareChannel@CasterHasChannelBehavior"/>
+        <MaxStackCount value="24"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAccumulatedShieldBraveHearth@Unstoppable" parent="StandardUnstoppableParent">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Duration value="0.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower" parent="StandardUnitStatsModificator">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="0"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <BehaviorCategories index="TimedLife" value="1"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="5"/>
+        <Duration value="7"/>
+        <Modification>
+            <AttributeChangeArray index="16" Points="5"/>
+            <AttributeChangeArray index="17" Points="5"/>
+            <AttributeChangeArray Attribute="CategoryBuffSpellPower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAccumulatedShieldImmortal@Cooldown">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarTalentAccumulatedShieldImmortal"/>
+        <Duration value="180"/>
+        <InitialEffect value="HeroTalandarTalentAccumulatedShieldImmortal@ModifyCooldown"/>
+        <FinalEffect value="HeroTalandarTalentAccumulatedShieldImmortal@ResetAbilityCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentChampionUpgrade@ArmorReduction" parent="StandardUnitStatsModificator">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Speed.dds"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarTalentTacticalDataWeb"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="4"/>
+        <Duration value="7"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentThunderousChargeTrooperChampion" parent="StandardCarryBehaviorParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.15"/>
+        </Modification>
+        <DisableValidatorArray value="HeroTalandarPraetorArmorSuit@TalandarIsPraetor"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter" parent="StandardQuestToken">
+        <Cost>
+            <Charge CountMax="25"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <RemoveValidatorArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor"/>
+        <RefreshEffect value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounterController"/>
+        <FinalEffect value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@ResetTokenCounter"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="25"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentOperationalEfficiency@TokenCounter" parent="StandardQuestToken">
+        <Cost>
+            <Charge CountMax="30"/>
+        </Cost>
+        <InfoIcon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TechAliasArray value="QuestData Limited"/>
+        <RemoveValidatorArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <RefreshEffect value="HeroTalandarTalentOperationalEfficiency@TokenCounterController"/>
+        <FinalEffect value="HeroTalandarTalentOperationalEfficiency@ResetTokenCounter"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="30"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlare@AirBombTimedLifeFull">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="3"/>
+        <FinalEffect value="SuicideRemove"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarThunderousCharge@AnimationBehavior">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="CasterNotStasisOrStunned"/>
+        <Duration value="0.35"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarAccelerationProtocol" parent="StandardSprint">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoIcon value="assets\Icons\Hero_Talandar\Hero_Talandar_Mount_Dragoon.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <DisableValidatorArray value="HeroTalandarAccelerationProtocol@DragoonIsChargingOrHasChargedAbilities"/>
+        <RemoveValidatorArray index="0" removed="1"/>
+        <Modification UnifiedMoveSpeedFactor="0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAccumulatedShieldImmortal" parent="StandardCarryBehaviorParent">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TechAliasArray value="Absorbed Fatal Damage"/>
+        <DisableValidatorArray value="HeroTalandarTalentAccumulatedShieldImmortal@NotOnCooldown"/>
+        <RemoveValidatorArray value="HeroTalandarTalentAccumulatedShieldImmortal"/>
+        <Modification>
+            <StateFlags index="CannotDie" value="1"/>
+        </Modification>
+        <DamageResponse>
+            <Fatal value="1"/>
+            <Handled value="HeroTalandarTalentAccumulatedShieldImmortal@HandleSet"/>
+            <ModifyFraction value="0"/>
+            <Priority value="10"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierShield" parent="StandardProtect">
+        <InfoIcon value="Assets\Textures\btn-ability-stetmann-banelingmanashield.dds"/>
+        <BehaviorCategories index="Physical" value="0"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <BuffFlags index="RemoveDamageResponseExhausted" value="0"/>
+        <Duration value="3"/>
+        <DamageResponse Priority="97">
+            <Kind index="Melee" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAccumulatedShieldRapidRecharge@CarryBehavior">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarTalentAccumulatedShieldRapidRecharge"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="40"/>
+        </Modification>
+        <Period value="1"/>
+        <PeriodicEffect value="HeroTalandarTalentAccumulatedShieldRapidRecharge@Healing"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentPhaseBomb">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-weapon.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="6"/>
+        <RemoveValidatorArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+        <RemoveValidatorArray value="HeroTalandarTalentPhaseBomb"/>
+        <RemoveValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasNoArsenalOverchargeChargeBehaviors"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlare@AirBombTimedLife">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="1"/>
+        <FinalEffect value="SuicideRemove"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlare@MissileChargeDefault">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <MaxStackCount value="32"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlare@MissileChargeUpgraded">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <MaxStackCount value="16"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentPurification@TimedBonus">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotsuit-weapon.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarTalentPurification"/>
+        <RemoveValidatorArray value="HeroTalandarPraetorArmorSuit@TalandarIsPraetor"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="3"/>
+        <Duration value="6"/>
+        <InfoFlags index="Hidden" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlare@MissileChargeOvercharged">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentTacticalOverload@SpellPowerBuff" parent="StandardUnitStatsModificator">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="0"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AbilityTalent_Damage.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarTalentTacticalOverload"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="5"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="17" Points="6"/>
+            <AttributeChangeArray Attribute="CategoryBuffSpellPower"/>
+        </Modification>
+        <BehaviorCategories index="TimedLife" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarAccumulatedShield@SecondCarryBehavior">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierBeam@SwappingForm">
+        <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="1.5"/>
+        <InitialEffect value="HeroTalandarPurifierBeam@RemovePurifierBeamBehavior"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarArsenalOvercharge@Overcharged">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarPurifierArmaments"/>
+        <RemoveValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarArsenalOvercharge@Charges">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarPurifierArmaments"/>
+        <RemoveValidatorArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+        <MaxStackCount value="4"/>
+        <Duration value="12"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarArsenalOvercharge">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarPurifierArmaments"/>
+        <RemoveValidatorArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+        <RemoveValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="HoldFire"/>
+            <AbilLinkEnableArray value="stop"/>
+            <AbilLinkEnableArray value="attack"/>
+            <AbilLinkEnableArray value="HeroGenericMount"/>
+            <AbilLinkEnableArray value="HeroGenericMount@Dismount"/>
+            <AbilLinkEnableArray value="HeroGenericHearthstone"/>
+            <AbilLinkEnableArray value="HeroTalandarSolarCannon"/>
+            <AbilLinkEnableArray value="HeroTalandarSolarCannonChannel"/>
+            <AbilLinkEnableArray value="HeroTalandarSolariteFlare"/>
+            <AbilLinkEnableArray value="HeroTalandarSolariteFlareChannel"/>
+            <AbilLinkEnableArray value="HeroTalandarPraetorArmorSuit"/>
+        </Modification>
+        <Alignment value="Positive"/>
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <Duration value="12"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannon@MissileChargeDefault">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <MaxStackCount value="32"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannon@MissileChargeUpgraded">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <MaxStackCount value="16"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannonChannel@ChargeUpgraded">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior"/>
+        <MaxStackCount value="16"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannonChannel@DummyChannel">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="CasterNotDazedOrDeadOrSilencedOrStasisOrStunnedOrTimeStopped"/>
+        <RemoveValidatorArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+        <Period value="0.0625"/>
+        <PeriodCount value="32"/>
+        <PeriodicEffect value="HeroTalandarSolarCannonChannel@SwitchApplyCharge"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="HoldFire"/>
+            <AbilLinkEnableArray value="stop"/>
+            <AbilLinkEnableArray value="HeroTalandarSolarCannon"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannon@Overcharged">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolarCannonChannel@ChargeDefault">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior"/>
+        <MaxStackCount value="32"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoongroundattack.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentSolariteFlareMagneticField@Knockback" parent="StandardPushPullParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="0.1875"/>
+        <Modification Height="0.75" MoveSpeedMaximum="18" MoveSpeedMinimum="18">
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <HeightTime index="Stop" value="0.1875"/>
+            <PlaneDelta index="Air" value="1"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPraetorArmorSuit@CasterInvulnerableBehavior">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-hero-fenix.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="1.5"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="UnitAttrOnTower" value="1"/>
+            <StateFlags index="UnitAttrOnImmuneToAOE" value="1"/>
+            <StateFlags index="UnitAttrOnNoMinionAggro" value="1"/>
+            <StateFlags index="UnitAttrOnImmuneToSkillshots" value="1"/>
+            <StateFlags index="UnitAttrOnImmuneToFriendlyAbilities" value="1"/>
+        </Modification>
+        <BuffFlags index="Countdown" value="0"/>
+        <FinalEffect value="HeroTalandarTalentAccumulatedShieldAdaptiveShield@ModifyUnit"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurificationBlast@Slow" parent="StandardSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="2"/>
+        <Modification UnifiedMoveSpeedFactor="-0.15"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurificationBlast@TalandarCastStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="0.55"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-purificationblast.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurificationBlast@Knockup" parent="StandardStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="0.2"/>
+        <FinalEffect value="HeroTalandarPurificationBlast@AfterKnockupSet"/>
+        <Modification Height="4">
+            <HeightTime index="Start" value="0.25"/>
+            <HeightTime index="Stop" value="0.1875"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurificationBlast@TalandarExpireStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="0.5"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-purificationblast.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurificationBlast@TimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="0.66"/>
+        <FinalEffect value="SuicideRemove"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-purificationblast.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierBeam@CreatingBeamBehavior" parent="StandardStasisAir">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Duration value="1.5"/>
+        <Modification SightMaximum="4">
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <ModifyFlags index="EnableMove" value="1"/>
+            <StateFlags index="SuppressGateEnforcement" value="1"/>
+            <BehaviorLinkDisableArray value="HeroTalandarPurifierBeam@MovementSupression"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierBeam@HiddenBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierBeam@Invulnerable" parent="StandardStasisAir">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierBeam@MovementSupression">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <RemoveValidatorArray value="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamBehavior"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurifierBeam@PurifierBeam" parent="StandardStasisAir">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Modification SightMaximum="4">
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <StateFlags index="SuppressGateEnforcement" value="1"/>
+            <AbilLinkEnableArray value="stop"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="HeroTalandarPurifierBeam@DragoonArmorSuit"/>
+            <AbilLinkEnableArray value="HeroTalandarPurifierBeam@PraetorArmorSuit"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <Duration value="6"/>
+        <PeriodicEffect value="HeroTalandarPurifierBeam@Search"/>
+        <FinalEffect value="HeroTalandarPurifierBeam@FinalSet"/>
+        <Period value="0.125"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarAccumulatedShield" parent="StandardShield">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <DamageResponse Priority="55">
+            <ModifyLimitVitalMaxFractionArray index="Energy" value="1"/>
+            <ModifyScoreArray index="0" removed="1"/>
+            <ModifyScoreArray index="1" removed="1"/>
+        </DamageResponse>
+        <PeriodicEffect value="HeroTalandarAccumulatedShield@PeriodicSet"/>
+        <InitialEffect value="HeroTalandarAccumulatedShield@ShieldInitialSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarAccumulatedShield@CarryBehavior">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-shieldcapacitor.dds"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <DisableValidatorArray value="HeroTalandarAccumulatedShield@HasNoSecondaryBehavior"/>
+        <DisableValidatorArray value="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamBehavior"/>
+        <DisableValidatorArray value="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamCreatingBehavior"/>
+        <DisableValidatorArray value="HeroTalandarPurifierBeam@CasterHasNoSwappingForm"/>
+        <DisableValidatorArray value="HeroTalandarPurificationBlast@CasterHasNoBehavior"/>
+        <DisableValidatorArray value="HeroTalandarPurificationBlast@CasterHasNoCastBehavior"/>
+        <PeriodicEffect value="HeroTalandarAccumulatedShield@ApplySecondaryBehaviorFullEnergyChecker"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlareChannel@ChargeUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="HeroTalandarSolariteFlareChannel@CasterHasChannelBehavior"/>
+        <MaxStackCount value="16"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlareChannel@DummyChannel">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="CasterNotDazedOrDeadOrSilencedOrStasisOrStunnedOrTimeStopped"/>
+        <RemoveValidatorArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+        <Period value="0.0625"/>
+        <PeriodCount value="32"/>
+        <PeriodicEffect value="HeroTalandarSolariteFlareChannel@SwitchApplyCharge"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="HoldFire"/>
+            <AbilLinkEnableArray value="stop"/>
+            <AbilLinkEnableArray value="HeroTalandarSolariteFlare"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarSolariteFlareChannel@ChargeDefault">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="HeroTalandarSolariteFlareChannel@CasterHasChannelBehavior"/>
+        <MaxStackCount value="32"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsolariteflare.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentAvengingProtocol@DamageReduction" parent="StandardDamageReduction">
+        <InfoIcon value="assets\Icons\Hero_Talandar\Hero_Talandar_Combo_Q_W_Praetor.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-25"/>
+            <AttributeChangeArray index="1" Points="-25"/>
+            <AttributeChangeArray Attribute="CategoryDebuffSpellPower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentThunderousChargeProtectionProtocol" parent="StandardProtect">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Talandar"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Speed.dds"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <RemoveValidatorArray value="HeroTalandarTalentThunderousChargeTrooperChampion"/>
+        <RemoveValidatorArray value="HeroTalandarPraetorArmorSuit@TalandarIsPraetor"/>
+        <Duration value="6"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.15"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarThunderousCharge@Speed">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="CasterNotDazedOrDeadOrFearedOrPolymorphedOrRootedOrSilencedOrStasisOrStunned"/>
+        <FinalEffect value="HeroTalandarThunderousCharge@CasterActorAnimationDummySet"/>
+        <Modification MoveSpeedMaximum="20" MoveSpeedMinimum="20">
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="SuppressFidgeting" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarThunderousCharge@Knockback" parent="StandardPushPullParent">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="0.25"/>
+        <Modification MoveSpeedMaximum="20" MoveSpeedMinimum="20"/>
+        <InitialEffect value="HeroTalandarThunderousCharge@HeroicCollisionSet"/>
+        <PeriodicEffect value="HeroTalandarThunderousCharge@HeroicCollisionSet"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-thunderouscharge.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarThunderousCharge@DefaultStun" parent="StandardStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="0.25"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarTalentWhirlwindDisruptor@Stun" parent="StandardStun">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar"/>
+        <Duration value="0.75"/>
+        <FinalEffect value="HeroTalandarWhirlwind@ApplySlow"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarWhirlwind@AnimationBehavior">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-whirlwindfenix.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <RemoveValidatorArray value="CasterNotDazedOrDeadOrStasisOrStunnedExceptTimeStop"/>
+        <RemoveValidatorArray value="CasterNotPolymorphed"/>
+        <Duration value="0.435"/>
+        <Period value="0.5"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffect value="HeroTalandarWhirlwind@Search"/>
+        <Modification>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilLinkDisableArray value="HeroGenericHearthstone"/>
+            <AbilLinkDisableArray value="HeroGenericMount"/>
+        </Modification>
+        <FinalEffect value="HeroTalandarWhirlwind@SetWeaponCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarWhirlwind@Slow" parent="StandardSlow">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="1.5"/>
+        <Modification UnifiedMoveSpeedFactor="-0.4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarDragoonArmorSuit@CasterInvulnerableBehavior">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-hero-fenix-dragoon.dds"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="1.5"/>
+        <Modification>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="UnitAttrOnTower" value="1"/>
+            <StateFlags index="UnitAttrOnImmuneToAOE" value="1"/>
+            <StateFlags index="UnitAttrOnNoMinionAggro" value="1"/>
+            <StateFlags index="UnitAttrOnImmuneToSkillshots" value="1"/>
+            <StateFlags index="UnitAttrOnImmuneToFriendlyAbilities" value="1"/>
+        </Modification>
+        <BuffFlags index="Countdown" value="0"/>
+        <FinalEffect value="HeroTalandarTalentAccumulatedShieldAdaptiveShield@ModifyUnit"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarDragoonArmorSuit@DragoonCarryBehavior" parent="StandardUnitStatsModificator">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-hero-fenix-dragoon.dds"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Modification>
+            <WeaponEnableArray value="HeroTalandarWeaponDragoon"/>
+            <WeaponDisableArray value="HeroTalandarWeaponPraetor"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior" parent="StandardUnitStatsModificator">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-hero-fenix.dds"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Modification>
+            <WeaponEnableArray value="HeroTalandarWeaponPraetor"/>
+            <WeaponDisableArray value="HeroTalandarWeaponDragoon"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarThunderousCharge@TerrainStun" parent="StandardStun">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Duration value="1.25"/>
+        <InitialEffect value="HeroTalandarThunderousCharge@HeroicCollisionDamage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroTalandarPurificationBlast@PurificationBlast" parent="StandardStasisAir">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Duration value="2"/>
+        <Period value="1.4"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffect value="HeroTalandarPurificationBlast@FallStartDummySet"/>
+        <ExpireEffect value="HeroTalandarPurificationBlast@ExpireSet"/>
+        <Modification SightMaximum="4">
+            <StateFlags index="Silence" value="1"/>
+            <StateFlags index="SuppressGateEnforcement" value="1"/>
+            <AbilLinkDisableArray value="attack"/>
+        </Modification>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-purificationblast.dds"/>
+    </CBehaviorBuff>
+</Catalog>

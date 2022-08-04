@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorEventMacro id="HeroCommonAnimationsMacro">
+        <On Terms="Behavior.HeroTalandarThunderousCharge@Knockback.On" Send="AnimBaselineStop"/>
+        <On Terms="Behavior.HeroTalandarThunderousCharge@Knockback.Off" Send="AnimBaselineStart"/>
+    </CActorEventMacro>
+    <CActorSound id="HeroTalandarPurificationBlast@LandSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@ExpireSet.Start" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="HeroTalandarTalentAccumulatedShieldImmortal" parent="CoreItemBase" unitName="HeroTalandarTalentAccumulatedShieldImmortal">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorUnit>
+    <CActorSimple id="HeroTalandarTalentWhirlwindDisruptor@StunAnimation" parent="CoreStun" behavior="HeroTalandarTalentWhirlwindDisruptor@Stun">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSimple>
+    <CActorSound id="HeroTalandarWhirlwind@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarWhirlwind@ImpactSet.Start; At Target" Send="Create"/>
+        <Sound value="HeroTalandarWeaponPraetor@AttackImpact"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarWeaponDragoon@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarWeaponDragoon@Damage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroTalandarWeaponDragoon@SplashDamage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarWeaponDragoon@SoundImpactAOE" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarWeaponDragoon@SplashSearch.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="HeroTalandarArsenalOvercharge" parent="CoreItemBase" unitName="HeroTalandarArsenalOvercharge">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CActorUnit>
+    <CActorEventMacro id="HeroTalandar@ChannelingScaleMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="StatusIncrement.*.ChargingInstant" Send="SetScale 2.000000"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 1" Send="SetScale 1.062500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 2" Send="SetScale 1.125000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 3" Send="SetScale 1.187500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 4" Send="SetScale 1.250000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 5" Send="SetScale 1.312500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 6" Send="SetScale 1.375000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 7" Send="SetScale 1.437500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 8" Send="SetScale 1.500000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 9" Send="SetScale 1.562500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 10" Send="SetScale 1.625000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 11" Send="SetScale 1.687500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 12" Send="SetScale 1.750000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 13" Send="SetScale 1.812500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 14" Send="SetScale 1.875000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 15" Send="SetScale 1.937500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 16" Send="SetScale 2.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 1" Send="SetScale 1.041667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 2" Send="SetScale 1.083333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 3" Send="SetScale 1.125000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 4" Send="SetScale 1.166667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 5" Send="SetScale 1.208333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 6" Send="SetScale 1.250000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 7" Send="SetScale 1.291667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 8" Send="SetScale 1.333333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 9" Send="SetScale 1.375000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 10" Send="SetScale 1.416667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 11" Send="SetScale 1.458333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 12" Send="SetScale 1.500000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 13" Send="SetScale 1.541667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 14" Send="SetScale 1.583333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 15" Send="SetScale 1.625000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 16" Send="SetScale 1.666667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 17" Send="SetScale 1.708333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 18" Send="SetScale 1.750000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 19" Send="SetScale 1.791667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 20" Send="SetScale 1.833333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 21" Send="SetScale 1.875000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 22" Send="SetScale 1.916667 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 23" Send="SetScale 1.958333 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 24" Send="SetScale 2.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 1" Send="SetScale 1.031250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 2" Send="SetScale 1.062500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 3" Send="SetScale 1.093750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 4" Send="SetScale 1.125000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 5" Send="SetScale 1.156250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 6" Send="SetScale 1.187500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 7" Send="SetScale 1.218750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 8" Send="SetScale 1.250000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 9" Send="SetScale 1.281250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 10" Send="SetScale 1.312500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 11" Send="SetScale 1.343750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 12" Send="SetScale 1.375000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 13" Send="SetScale 1.406250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 14" Send="SetScale 1.437500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 15" Send="SetScale 1.468750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 16" Send="SetScale 1.500000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 17" Send="SetScale 1.531250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 18" Send="SetScale 1.562500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 19" Send="SetScale 1.593750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 20" Send="SetScale 1.625000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 21" Send="SetScale 1.656250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 22" Send="SetScale 1.687500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 23" Send="SetScale 1.718750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 24" Send="SetScale 1.750000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 25" Send="SetScale 1.781250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 26" Send="SetScale 1.812500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 27" Send="SetScale 1.843750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 28" Send="SetScale 1.875000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 29" Send="SetScale 1.906250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 30" Send="SetScale 1.937500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 31" Send="SetScale 1.968750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 32" Send="SetScale 2.000000 0.062500"/>
+    </CActorEventMacro>
+    <CActorUnit id="HeroTalandarTalentPhaseBomb" parent="CoreItemBase" unitName="HeroTalandarTalentPhaseBomb">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CActorUnit>
+    <CActorUnit id="HeroTalandarPurificationBlast" parent="CoreItemBase" unitName="HeroTalandarPurificationBlast">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CActorUnit>
+    <CActorSplat id="HeroTalandarPurificationBlast@CursorGuide" parent="CoreGuideVisualCircleSciFi" abil="HeroTalandarPurificationBlast">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSplat>
+    <CActorRange id="HeroTalandarSolarCannonChannel@RangeIndicator">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On; !ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="Destroy"/>
+        <Range value="12.400000"/>
+        <Icon value="assets\Textures\UI_Ingame_Radius_Tower.dds"/>
+        <IconArcLength value="3.000000"/>
+        <IconTint value="255,169,120,19"/>
+    </CActorRange>
+    <CActorModel id="HeroTalandarSolarCannonChannel@ChargingModel" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On index="0" Send="AnimBracketStart BSD {} Custom,B Death"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="StatusIncrement ChargingInstant"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolarCannonChannel@ChargeUpgraded.Add" Send="StatusIncrement ChargingSec_1"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolarCannonChannel@ChargeDefault.Add" Send="StatusIncrement ChargingSec_2"/>
+        <On Terms="StatusIncrement.*.ChargingInstant" Send="SetScale 1.500000"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 1" Send="SetScale 0.796875 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 2" Send="SetScale 0.843750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 3" Send="SetScale 0.890625 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 4" Send="SetScale 0.937500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 5" Send="SetScale 0.984375 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 6" Send="SetScale 1.031250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 7" Send="SetScale 1.078125 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 8" Send="SetScale 1.125000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 9" Send="SetScale 1.171875 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 10" Send="SetScale 1.218750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 11" Send="SetScale 1.265625 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 12" Send="SetScale 1.312500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 13" Send="SetScale 1.359375 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 14" Send="SetScale 1.406250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 15" Send="SetScale 1.453125 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 16" Send="SetScale 1.500000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 1" Send="SetScale 0.781250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 2" Send="SetScale 0.812500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 3" Send="SetScale 0.843750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 4" Send="SetScale 0.875000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 5" Send="SetScale 0.906250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 6" Send="SetScale 0.937500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 7" Send="SetScale 0.968750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 8" Send="SetScale 1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 9" Send="SetScale 1.031250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 10" Send="SetScale 1.062500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 11" Send="SetScale 1.093750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 12" Send="SetScale 1.125000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 13" Send="SetScale 1.156250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 14" Send="SetScale 1.187500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 15" Send="SetScale 1.218750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 16" Send="SetScale 1.250000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 17" Send="SetScale 1.281250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 18" Send="SetScale 1.312500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 19" Send="SetScale 1.343750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 20" Send="SetScale 1.375000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 21" Send="SetScale 1.406250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 22" Send="SetScale 1.437500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 23" Send="SetScale 1.468750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 24" Send="SetScale 1.500000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 1" Send="SetScale 0.773438 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 2" Send="SetScale 0.796848 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 3" Send="SetScale 0.820313 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 4" Send="SetScale 0.843750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 5" Send="SetScale 0.867188 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 6" Send="SetScale 0.890625 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 7" Send="SetScale 0.914063 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 8" Send="SetScale 0.937500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 9" Send="SetScale 0.960938 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 10" Send="SetScale 0.984375 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 11" Send="SetScale 1.007813 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 12" Send="SetScale 1.031250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 13" Send="SetScale 1.054688 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 14" Send="SetScale 1.078125 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 15" Send="SetScale 1.101563 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 16" Send="SetScale 1.125000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 17" Send="SetScale 1.148438 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 18" Send="SetScale 1.171875 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 19" Send="SetScale 1.195313 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 20" Send="SetScale 1.218750 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 21" Send="SetScale 1.242188 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 22" Send="SetScale 1.265625 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 23" Send="SetScale 1.289063 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 24" Send="SetScale 1.312500 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 25" Send="SetScale 1.335938 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 26" Send="SetScale 1.359375 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 27" Send="SetScale 1.382813 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 28" Send="SetScale 1.406250 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 29" Send="SetScale 1.429688 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 30" Send="SetScale 1.453125 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 31" Send="SetScale 1.476563 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 32" Send="SetScale 1.500000 0.062500"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpForwardSouth SOp2DRotation" HoldRotation="1"/>
+        <Macros value="HeroTalandar@ChannelingScaleMacro"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarDragoonArmorSuit@PlacementModel" parent="CursorModel" abil="HeroTalandarDragoonArmorSuit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarWeaponDragoon@Impact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarWeaponDragoon@Damage.Start; At Effect" Send="Create"/>
+        <On Terms="Effect.HeroTalandarWeaponDragoon@SplashDamage.Start" Send="Create"/>
+        <On Terms="ActorCreation; ValidatePlayer HaveCustomTestUpgradeCaster" Send="Print {Caster Has Custom Test Upgrade}"/>
+        <On Terms="ActorCreation; ValidatePlayer HaveCustomTestUpgradeTarget" Send="Print {Target Has Custom Test Upgrade}"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarWeaponDragoon@SplashImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarWeaponDragoon@SplashSearch.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpMoveUpBy1 SOpMoveUpByDot25" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPraetorArmorSuit@PlacementModel" parent="CursorModel" abil="HeroTalandarPraetorArmorSuit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolariteFlare@AirBombMissileTargetUnit" parent="CoreModelAnimationStyleContinuousUnitBase">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Inherits index="Scale" value="1"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Stop; At Target" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="Create Dragoon_Purifier_Coop_AirBomb_Beam"/>
+        <HostSiteOps Ops="SOpMoveUpBy1"/>
+        <Model value="HeroTalandarSolariteFlare@AirBombMissile"/>
+    </CActorModel>
+    <CActorAction id="HeroTalandarWeaponPraetor@Attack" parent="CoreGenericAttackHeroMelee" effectAttack="HeroTalandarWeaponPraetor@ImpactSet">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <LaunchAssets Sound="HeroTalandarWeaponPraetor@AttackLaunch"/>
+        <ImpactMap index="None" Model="HeroTalandarWeaponPraetor@AttackImpact"/>
+        <ImpactMap index="Rock" ModelReaction=""/>
+    </CActorAction>
+    <CActorAction id="HeroTalandarSolariteFlare@BeamAction" parent="GenericAttack" effectAttack="HeroTalandarSolariteFlare@AirBombSearch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <On index="0" Terms="Effect.Bogus.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On index="5" Terms="Effect.Bogus.Start; At Caster" Send="Create"/>
+        <LaunchSiteOps Ops="SOpTargetUnit SOpMoveUpBy1"/>
+        <Beam value="HeroTalandarSolariteFlare@Beam"/>
+        <ImpactSiteOps Ops="SOpCasterUnit SOpMoveUpBy1"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorBeamSimple id="HeroTalandarSolariteFlare@Beam" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Model value="Dragoon_Purifier_Coop_AirBomb_Beam"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorBeamSimple>
+    <CActorPortrait id="HeroTalandar@Portrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorPortrait>
+    <CActorModel id="HeroTalandar@PortraitAddition" parent="CompositePortraitAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPurificationBlast@LandingModelGround" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@ExpireSearch.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarPurifierBeam@Birth_B" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarPurifierBeam@Birth_C" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarPurifierBeam@Birth_D" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarPurifierBeam@Birth_E" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSound>
+    <CActorModel id="HeroTalandarPurifierBeam@CastGuide" parent="CoreModelAddition">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@CreatingBeamBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@PurifierBeam.Off" Send="Destroy Immediate"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft SOpShadow" HoldRotation="1"/>
+        <Model value="UI_Cursor_Circle_Modern_TeamColored"/>
+        <Scale value="4.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarPurifierBeam@Birth_A" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSound>
+    <CActorUnit id="HeroTalandarSolariteFlare@AirBomb" parent="CoreUnitBase" unitName="HeroTalandarSolariteFlare@AirBomb">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="$Birth"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlare@MissileChargeDefault.Add" Send="StatusIncrement ChargingSec_2"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlare@MissileChargeUpgraded.Add" Send="StatusIncrement ChargingSec_1"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlare@MissileChargeMedium.Add" Send="StatusIncrement ChargingSec_1dot5"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlare@MissileChargeOvercharged.On" Send="StatusIncrement ChargingInstant"/>
+        <Model value="Invisible"/>
+        <BuildModel value="Invisible"/>
+        <DeathArray index="Normal" ModelLink="Invisible"/>
+        <PlacementModel value="Invisible"/>
+        <Macros value="HeroTalandar@ChannelingScaleMacro"/>
+    </CActorUnit>
+    <CActorModel id="HeroTalandarThunderousCharge@Charge" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Abil.HeroTalandarThunderousCharge.SourceCastStart" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpMoveForwardBy2"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPurificationBlast@LandingModelBlast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@ExpireSearch.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpSourcePoint"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarWhirlwind@SoundCast" parent="CoreSoundOneShot">
+        <Flags index="SuppressSaveLoad" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarWhirlwind@Search.Start" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroTalandarWhirlwind@WhirlwindModel" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarWhirlwind@AnimationBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarWhirlwind@AnimationBehavior.Off" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="AutomateGlobalLoops" value="0"/>
+    </CActorModel>
+    <CActorUnit id="HeroTalandar" parent="CoreHeroBase" unitName="HeroTalandar">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="UnitDeathCustomize; !ValidateUnit SourceDoesNotHaveSuppressGenericDeath" Send="DeathCustomize Variation3"/>
+        <!-- Cover Animation setup -->
+        <On Terms="StatusOn.*.Cover" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="StatusOff.*.Cover" Send="TimerSet 4.000000 CoverDelay"/>
+        <On Terms="StatusOn.*.Cover" Send="TimerKill CoverDelay"/>
+        <On Terms="TimerExpired; TimerName CoverDelay" Send="AnimBracketStop Cover"/>
+        <!-- Praetor Weapon setup -->
+        <On Terms="WeaponStart.HeroTalandarWeaponPraetor.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.HeroTalandarWeaponPraetor.AttackStop" Send="AnimBracketStop Attack"/>
+        <!-- Dragoon Weapon setup -->
+        <On Terms="WeaponStart.HeroTalandarWeaponDragoon.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.HeroTalandarWeaponDragoon.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStart.HeroTalandarWeaponDragoon.AttackStart" Send="StatusIncrement Cover"/>
+        <On Terms="WeaponStop.HeroTalandarWeaponDragoon.AttackStop" Send="StatusDecrement Cover"/>
+        <!-- Thunderous Charge -->
+        <On Terms="Abil.HeroTalandarThunderousCharge.SourceCastStart" Send="$Spell,A PlayForever"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@CasterActorAnimationDummySet.Start" Send="$Spell,A,End"/>
+        <!--<On Terms="Effect.HeroTalandarThunderousCharge@CasterActorAnimationDummySet.Start" Send="TimerSet 0.4 ThunderousChargeClearAnim"/>
+        <On Terms="TimerExpired; TimerName ThunderousChargeClearAnim" Send="AnimClear Spell"/>-->
+        <!-- Whirlwind -->
+        <On Terms="Abil.HeroTalandarWhirlwind.SourceCastStart" Send="AnimPlay Cover Spell,B 0 -1.000000 -1.000000 1.350000 AsTimeScaleAbsolute"/>
+        <On Terms="Behavior.HeroTalandarWhirlwind@AnimationBehavior.Off" Send="AnimClear Cover"/>
+        <!-- Purification Blast -->
+        <On Terms="Effect.HeroTalandarPurificationBlast@ExpireSet.Start" Send="AnimBracketClear Spell"/>
+        <On Terms="Abil.HeroTalandarPurificationBlast.SourceCastStart" Send="AnimPlay Spell Stand,Work,End 0 -1.000000 -1.000000 1.000000 AsTimeScaleAbsolute"/>
+        <On Terms="Behavior.HeroTalandarPurificationBlast@PurificationBlast.On" Send="AnimBracketStart Spell {} Stand,Work Stand,Work,Start 0 1.000000 AsTimeScaleAbsolute"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@FallStartDummySet.Start" Send="AnimBracketStop Spell"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@InitialPersistent.Start" Send="Signal InvisibleModel"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@InitialPersistent.Start" Send="Signal InvisibleRing"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@InitialPersistent.Start" Send="SetShowStatusBar"/>
+        <On Terms="Behavior.HeroTalandarPurificationBlast@PurificationBlast.Off" Send="Signal RestoreModel"/>
+        <On Terms="Behavior.HeroTalandarPurificationBlast@PurificationBlast.Off" Send="Signal RestoreRing"/>
+        <On Terms="Behavior.HeroTalandarPurificationBlast@PurificationBlast.Off" Send="SetShowStatusBar 1"/>
+        <!-- Solar Cannon -->
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On" Send="StatusIncrement Cover"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="StatusDecrement Cover"/>
+        <!-- Solarite Flare -->
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="StatusIncrement Cover"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="StatusDecrement Cover"/>
+        <!-- Dragoon Armor Suit -->
+        <On Terms="Abil.HeroTalandarDragoonArmorSuit.SourceCastStart" Send="ModelSwap HeroTalandarDragoonArmorSuit@WarpOutFromPraetor 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Abil.HeroTalandarDragoonArmorSuit.SourceCastStart" Send="Signal InvisibleRing"/>
+        <On Terms="Abil.HeroTalandarDragoonArmorSuit.SourceCastStart" Send="SetShowStatusBar"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandarDragoonArmorSuit@WarpOutFromPraetor" Send="AnimPlay TalandarWarpOutDeath Death"/>
+        <On Terms="AnimDone; AnimName TalandarWarpOutDeath" Send="Signal InvisibleModel"/>
+        <On Terms="Effect.HeroTalandarDragoonArmorSuit@DummySet.Start" Send="ModelSwap HeroTalandarDragoonArmorSuit@WarpInToDragoon 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Effect.HeroTalandarDragoonArmorSuit@DummySet.Start" Send="Signal RestoreModel"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandarDragoonArmorSuit@WarpInToDragoon" Send="AnimPlay TalandarWarpInBirth Birth"/>
+        <On Terms="Behavior.HeroTalandarDragoonArmorSuit@CasterInvulnerableBehavior.Off" Send="ModelSwap HeroTalandar@Dragoon 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Behavior.HeroTalandarDragoonArmorSuit@CasterInvulnerableBehavior.Off" Send="SetShowStatusBar 1"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandar@Dragoon" Send="AnimBaselineStart"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimPlay Walk Walk,A VariationMatch"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandar@Dragoon" Send="SetWalkAnimMoveSpeed 1"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit HeroTalandarPraetorArmorSuit@SourceIsPraetorAndDoesnotSuppressGenericDeath" Send="DeathCustomize Variation1"/>
+        <!-- Praetor Armor Suit -->
+        <On Terms="Abil.HeroTalandarPraetorArmorSuit.SourceCastStart" Send="ModelSwap HeroTalandarPraetorArmorSuit@WarpOutFromDragoon 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Abil.HeroTalandarPraetorArmorSuit.SourceCastStart" Send="Signal InvisibleRing"/>
+        <On Terms="Abil.HeroTalandarPraetorArmorSuit.SourceCastStart" Send="SetShowStatusBar"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandarPraetorArmorSuit@WarpOutFromDragoon" Send="AnimPlay TalandarWarpOutDeath Death"/>
+        <On Terms="AnimDone; AnimName TalandarWarpOutDeath" Send="Signal InvisibleModel"/>
+        <On Terms="Effect.HeroTalandarPraetorArmorSuit@DummySet.Start" Send="ModelSwap HeroTalandarPraetorArmorSuit@WarpInToPraetor 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Effect.HeroTalandarPraetorArmorSuit@DummySet.Start" Send="Signal RestoreModel"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandarPraetorArmorSuit@WarpInToPraetor" Send="AnimPlay TalandarWarpInBirth Birth"/>
+        <On Terms="Behavior.HeroTalandarPraetorArmorSuit@CasterInvulnerableBehavior.Off" Send="ModelSwap HeroTalandar@Praetor 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Behavior.HeroTalandarPraetorArmorSuit@CasterInvulnerableBehavior.Off" Send="SetShowStatusBar 1"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandar@Praetor" Send="AnimBaselineStart"/>
+        <On Terms="ModelSwapped; ModelSwapTo HeroTalandar@Praetor" Send="SetWalkAnimMoveSpeed 2"/>
+        <On Terms="Abil.HeroTalandarPurifierBeam.SourceCastStart; ValidateUnit HeroTalandarDragoonArmorSuit@TalandarIsDragoon" Send="ModelSwap HeroTalandarPraetorArmorSuit@WarpOutFromDragoon 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Abil.HeroTalandarPurifierBeam.SourceCastStart; ValidateUnit HeroTalandarPraetorArmorSuit@TalandarIsPraetor" Send="ModelSwap HeroTalandarDragoonArmorSuit@WarpOutFromPraetor 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="Abil.HeroTalandarPurifierBeam.SourceCastStart" Send="Signal InvisibleRing"/>
+        <On Terms="Abil.HeroTalandarPurifierBeam.SourceCastStart" Send="SetShowStatusBar"/>
+        <On Terms="UnitRevive; ValidateUnit HeroTalandarDragoonArmorSuit@TalandarIsDragoon" Send="ModelSwap HeroTalandar@Dragoon 255 PreventAllDynamicTextureTransfers"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit HeroTalandarDragoonArmorSuit@SourceIsDragoonAndDoesnotSuppressGenericDeath" Send="DeathCustomize Variation2"/>
+        <On Terms="Signal.*.Dismounted; ValidateUnit HeroTalandarDragoonArmorSuit@TalandarIsDragoon" Send="SetWalkAnimMoveSpeed 1"/>
+        <!--<On Terms="UnitMovementUpdate.*.Walk; IsStatus PurificationBlast 0" Send="AnimClear Spell"/>
+        <On Terms="Abil.HeroTalandarPurificationBlast.SourceCastStart" Send="StatusSet PurificationBlast 1"/>
+        <On Terms="Effect.HeroTalandarPurificationBlast@ExpireSearch.Start" Send="StatusSet PurificationBlast 0"/>-->
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Spell"/>
+        <UnitIcon value="assets\Textures\storm_ui_ingame_heroselect_btn_talandar.dds"/>
+        <WalkAnimMoveSpeed value="2"/>
+        <PortraitActor value="HeroTalandar@Portrait"/>
+        <PortraitModel value="HeroTalandar@Portrait"/>
+        <Model value="HeroTalandar@Praetor"/>
+        <BuildModel value="HeroTalandar@Praetor"/>
+        <PlacementModel value="HeroTalandar@Praetor"/>
+        <CustomUnitStatusFrame value="UnitStatus/HeroUnitStatusFrameBlinkingOrangeEnergyTemplate"/>
+        <MinimapIcon value="assets\Textures\UI_MinimapIcon_Hero_Talandar.dds"/>
+        <DeathCustoms AnimProps="Death" ModelLink="HeroTalandar@PraetorDeath" Name="Variation1"/>
+        <DeathCustoms AnimProps="Death" ModelLink="HeroTalandar@DragoonDeath" Name="Variation2"/>
+        <DeathCustoms AnimProps="Death" ModelLink="Invisible" Name="Variation3"/>
+        <DeathArray index="Normal" ModelLink="" SoundLink="HeroTalandar@DX_Praetor_Death"/>
+        <SoundArray index="Ready" value="HeroTalandar@DX_Praetor_Revive"/>
+        <SoundArray index="Yes" value="HeroTalandar@DX_Praetor_Yes"/>
+        <SoundArray index="Attack" value="HeroTalandar@DX_Praetor_Attack"/>
+        <SoundArray index="Pissed" value="HeroTalandar@DX_Praetor_Pissed"/>
+        <Baselines index="Walk" AnimProps="Walk"/>
+    </CActorUnit>
+    <CActorUnit id="HeroTalandarPurificationBlast@WarpOutUnit" parent="CoreUnitBase" unitName="HeroTalandarPurificationBlast@WarpOutUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorUnit>
+    <CActorModel id="HeroTalandarSolariteFlare@Warning" parent="CoreModelAnimationStyleContinuousUnitBase">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Inherits index="Scale" value="1"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Stop; At Target" Send="Destroy"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPurifierBeam@Beam" parent="CoreModelAddition">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On index="2" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death 0 1.330000 AsTimeScale"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@CreatingBeamBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@PurifierBeam.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ModelEvent; ModelEventName PurifierBeam_Birth_A" Send="Create HeroTalandarPurifierBeam@Birth_A"/>
+        <On Terms="ModelEvent; ModelEventName PurifierBeam_Birth_B" Send="Create HeroTalandarPurifierBeam@Birth_B"/>
+        <On Terms="ModelEvent; ModelEventName PurifierBeam_Birth_C" Send="Create HeroTalandarPurifierBeam@Birth_C"/>
+        <On Terms="ModelEvent; ModelEventName PurifierBeam_Birth_D" Send="Create HeroTalandarPurifierBeam@Birth_D"/>
+        <On Terms="ModelEvent; ModelEventName PurifierBeam_Birth_E" Send="Create HeroTalandarPurifierBeam@Birth_E"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpShadowSyncGround" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarPurifierBeam@BuildUpSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@CreatingBeamBehavior.On" Send="Create"/>
+        <Sound value="HeroTalandarPurifierBeam@BuildUp"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarPurifierBeam@FiringLoopSound" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@PurifierBeam.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@PurifierBeam.Off" Send="Destroy"/>
+        <Sound value="HeroTalandarPurifierBeam@Firing_Loop"/>
+        <Layers Sound="HeroTalandarPurifierBeam@QuakeLayer_Loop">
+            <Chance value="0"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="HeroTalandarPurifierBeam@EndSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@PurifierBeam.Off" Send="Create"/>
+        <Sound value="HeroTalandarPurifierBeam@End"/>
+    </CActorSound>
+    <CActorQuad id="HeroTalandarThunderousCharge@CursorGuide" parent="CoreGuideVisualQuadDownSciFi" abil="HeroTalandarThunderousCharge">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Height value="6.000000"/>
+        <Width value="2.750000"/>
+    </CActorQuad>
+    <CActorModel id="HeroTalandarThunderousCharge@ModelImpact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@HeroicSearchImpactSet.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@NonHeroicImpactSet.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarAccumulatedShield@Shield" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarAccumulatedShield@ApplyShield.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create HeroTalandarAccumulatedShield@OnSound"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpForwardNorth"/>
+        <Inherits index="Scale" value="1"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarAccumulatedShield@OnSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Sound value="HeroTalandarAccumulatedShield@SoundOn"/>
+    </CActorSound>
+    <CActorModel id="HeroTalandarPurificationBlast@CastGuide" parent="CoreModelAddition">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarPurificationBlast@PurificationBlast.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarPurificationBlast@PurificationBlast.Off" Send="Destroy Immediate"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft SOpShadow" HoldRotation="1"/>
+        <Model value="UI_Cursor_Circle_Modern_TeamColored"/>
+        <Scale value="4.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarThunderousCharge@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@NonHeroicImpactSet.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@HeroicSearchImpactSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarThunderousCharge@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@HeroicSearchImpactSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarThunderousCharge@SoundImpactHero" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarThunderousCharge@HeroicSearchImpactSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroTalandarDragoonArmorSuit@WarpOutFromPraetor" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Abil.HeroTalandarDragoonArmorSuit.SourceCastStart" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarDragoonArmorSuit@WarpInToDragoon" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On index="0" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce 1.000000 AsDuration"/>
+        <On Terms="Effect.HeroTalandarDragoonArmorSuit@DummySet.Start" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPraetorArmorSuit@WarpOutFromDragoon" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPraetorArmorSuit@WarpOutToPraetor" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorModel>
+    <CActorAction id="HeroTalandarWeaponDragoon@Attack" parent="CoreGenericAttackHeroRanged" effectImpact="HeroTalandarWeaponDragoon@ImpactSet" effectLaunch="HeroTalandarWeaponDragoon@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <LaunchAssets Sound="HeroTalandarWeaponDragoon@SoundLaunch"/>
+        <ImpactSiteOps Ops="SOpAttachOrigin SOpMoveUpBy1 SOpMoveUpByDot25"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorMissile id="HeroTalandarWeaponDragoon@AttackMissile" parent="CoreGenericAttackMissileWithDeathEarly" unitName="HeroTalandarWeaponDragoon@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Macros value="HeroVorazunVoid@Macro"/>
+    </CActorMissile>
+    <CActorRange id="HeroTalandarPurificationBlast@RangeBase" parent="CoreRangeAbilPlusSplat" abil="HeroTalandarPurificationBlast">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorRange>
+    <CActorSplat id="HeroTalandarPurificationBlast@RangeBaseSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Scale value="11.000000"/>
+    </CActorSplat>
+    <CActorRange id="HeroTalandarWhirlwind@RangeBase" parent="CoreRangeAbilPlusSplat" abil="HeroTalandarWhirlwind">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorRange>
+    <CActorRange id="HeroTalandarPurifierBeam@RangeBase" parent="CoreRangeAbilPlusSplat" abil="HeroTalandarPurifierBeam">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorRange>
+    <CActorSplat id="HeroTalandarWhirlwind@RangeBaseSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Scale value="4.000000"/>
+    </CActorSplat>
+    <CActorSplat id="HeroTalandarPurifierBeam@RangeBaseSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Scale value="9.000000"/>
+    </CActorSplat>
+    <CActorSplat id="HeroTalandarPurifierBeam@CursorGuide" parent="CoreGuideVisualCircleSciFi" abil="HeroTalandarPurifierBeam">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorSplat>
+    <CActorSound id="HeroTalandarSolariteFlare@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombDamage.Start" Send="Create"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombDamageCharged.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetUnit"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandarSolariteFlare@SoundCast" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Abil.HeroTalandarSolariteFlare.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandar@ChargingSoundEnd" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Create"/>
+        <Layers Sound="HeroTalandar@ChargingSoundLaunch_SWT"/>
+    </CActorSound>
+    <CActorModel id="HeroTalandarSolariteFlareChannel@ChargingModel" parent="CoreModelAnimationStyleContinuousUnitBase">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Start Stand Death"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Destroy Immediate"/>
+        <On Terms="ActorCreation; ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="StatusIncrement ChargingInstant"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeUpgrade.Add" Send="StatusIncrement ChargingSec_1"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeDefault.Add" Send="StatusIncrement ChargingSec_2"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeMedium.Add" Send="StatusIncrement ChargingSec_1dot5"/>
+        <HostSiteOps Ops="SOpAttachWeapon01Soft SOp2DRotation" HoldRotation="1"/>
+        <Model value="HeroTalandarSolariteFlare@AirBombMissile"/>
+        <Macros value="HeroTalandar@ChannelingScaleMacro"/>
+    </CActorModel>
+    <CActorRange id="HeroTalandarSolariteFlare@RangeBase" parent="CoreRangeAbilPlusSplat" abil="HeroTalandarSolariteFlareChannel">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Destroy"/>
+    </CActorRange>
+    <CActorSplat id="HeroTalandarSolariteFlare@RangeBaseSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Scale value="14.000000"/>
+    </CActorSplat>
+    <CActorAction id="HeroTalandarSolarCannon@DefaultAttack" parent="CoreGenericAttackPoint" effectLaunch="HeroTalandarSolarCannon@DefaultLaunch">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="HeroTalandarSolarCannon@AttackLaunch"/>
+        <ImpactPointSiteOps Ops="SOpTargetPoint SOpShadow SOpMoveUpBy1"/>
+    </CActorAction>
+    <CActorMissile id="HeroTalandarSolarCannon@DefaultAttackMissile" parent="CoreGenericAttackMissileWithDeath" unitName="HeroTalandarSolarCannon@DefaultMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="Create FenixDragoonChargedBusterMissileGroundTrail"/>
+    </CActorMissile>
+    <CActorSound id="HeroTalandarSolarCannon@ChargedAttackMissileGroundTrail_AS" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@ChargedSearch.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpForwardOriginPoint"/>
+        <Sound value="HeroTalandarSolarCannon@FXFire"/>
+    </CActorSound>
+    <CActorRange id="HeroTalandarSolariteFlareChannel@RangeIndicator">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On; !ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Destroy"/>
+        <Range value="12.400000"/>
+        <Icon value="assets\Textures\UI_Ingame_Radius_Tower.dds"/>
+        <IconArcLength value="3.000000"/>
+        <IconTint value="255,169,120,19"/>
+    </CActorRange>
+    <CActorSound id="HeroTalandarSolarCannon@DefaultImpact_AS" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@DefaultImpactSet.Start; At Target" Send="Create"/>
+        <Sound value="HeroTalandarSolarCannon@Missile_Impact"/>
+        <Layers Sound="HeroTalandarSolarCannon@Missile_ImpactElectric">
+            <Chance value="100"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="HeroTalandarSolarCannon@ChargedImpact_AS" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@ChargedDamage.Start; At Target" Send="Create"/>
+        <Sound value="HeroTalandarSolarCannon@Missile_Impact_Level01"/>
+        <Layers Sound="HeroTalandarSolarCannon@Missile_ImpactElectric">
+            <Chance value="100"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorModel id="HeroTalandarSolarCannon@DefaultImpactModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@DefaultImpactSet.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSplat id="HeroTalandarSolariteFlare@RangeSplat" parent="CoreRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Destroy"/>
+        <On Terms="ActorCreation; ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="StatusIncrement ChargingInstant"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeUpgrade.Add" Send="StatusIncrement ChargingSec_1"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeMedium.Add" Send="StatusIncrement ChargingSec_1dot5"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeDefault.Add" Send="StatusIncrement ChargingSec_2"/>
+        <Macros value="HeroTalandar@ChannelingScaleMacro"/>
+        <Model value="HeroTalandarSolariteFlare@RangeSplat"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+    </CActorSplat>
+    <CActorSound id="HeroTalandarSolarCannon@ChargedLaunch_AS" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@ChargedLaunch.Start" Send="Create"/>
+        <Sound value="HeroTalandarSolarCannon@AttackLaunch_Wsh"/>
+        <Layers Sound="HeroTalandarSolarCannon@Launch_Mech">
+            <Chance value="100"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorRegionArc id="HeroTalandarSolariteFlare@CastGuideRegionArc">
+        <Aliases value="_HeroTalandarSolariteFlareGuideRegion"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="RegionSubject.*.AddedFirst" Target="_HeroTalandarSolariteFlareGuideVisual" Send="ClearTintColor 0.100000 BaseTint"/>
+        <On Terms="RegionSubject.*.AddedFirst" Target="_HeroTalandarSolariteFlareGuideVisual" Send="SetTintColor 0,255,0 0.100000 OneShot Active"/>
+        <On Terms="RegionSubject.*.RemovedLast" Target="_HeroTalandarSolariteFlareGuideVisual" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <On Terms="RegionSubject.*.RemovedLast" Target="_HeroTalandarSolariteFlareGuideVisual" Send="ClearTintColor 0.100000 Active"/>
+        <On Terms="ActorCreation" Send="QueryPersistent HeroTalandarSolariteFlare@CastGuideRegionAdd GuideRegionRemove AgainstRadiusGame"/>
+        <Host Subject="_Unit" Actor="Find"/>
+        <HostSiteOps Ops="SOpCursor" HoldRotation="1"/>
+        <Angle value="360.000000"/>
+        <Radius value="2.000000"/>
+        <AcceptedTransfers index="Position" value="0"/>
+        <AcceptedTransfers index="Rotation" value="0"/>
+    </CActorRegionArc>
+    <CActorArc id="HeroTalandarSolariteFlare@CastGuide">
+        <Aliases value="_HeroTalandarSolariteFlareGuideVisual"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Destroy Immediate"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="Create HeroTalandarSolariteFlare@CastGuideRegionArc"/>
+        <On Terms="ActorDestruction" Target="_HeroTalandarSolariteFlareGuideRegion" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <On Terms="ActorCreation; ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="StatusIncrement ChargingInstant"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeUpgrade.Add" Send="StatusIncrement ChargingSec_1"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeDefault.Add" Send="StatusIncrement ChargingSec_2"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolariteFlareChannel@ChargeMedium.Add" Send="StatusIncrement ChargingSec_1dot5"/>
+        <Host Subject="_HeroTalandarSolariteFlareGuideRegion"/>
+        <Model value="HeroTalandarSolariteFlare@CursorSplat"/>
+        <Macros value="HeroTalandar@ChannelingScaleMacro"/>
+    </CActorArc>
+    <!--<Subject Filters="Snapshot,Unit,Missile" Terms="ValidateUnit YrelVindicationTargetUnitFilters 0 System_Snapshot_Dummy" />-->
+    <CActorQueryResponse id="HeroTalandarSolariteFlare@CastGuideRegionAdd">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <Subject Filters="Snapshot,Unit,Missile" Terms="ValidateUnit HeroTalandarSolariteFlare@GuideFilters 0 System_Snapshot_Dummy"/>
+        <OnResponse Send="StatusIncrement PreTargetingModel"/>
+        <OnResponse Send="StatusIncrement PreTargetingTint"/>
+        <OnResponse Send="RefSet ::actor.PreTargetingSource ::QueryDirector"/>
+    </CActorQueryResponse>
+    <CActorModel id="HeroTalandarSolarCannon@ChargedImpactModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@ChargedDamage; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@DefaultShot" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@DefaultLaunch.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachWeapon01 SOpForwardTargetPoint SOp2DRotation" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorAction id="HeroTalandarSolarCannon@ChargedAttack" parent="CoreGenericAttackPoint" effectLaunch="HeroTalandarSolarCannon@ChargedLaunch">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="HeroTalandarSolarCannon@AttackLaunch"/>
+        <ImpactPointSiteOps Ops="SOpTargetPoint SOpShadow SOpMoveUpBy1"/>
+    </CActorAction>
+    <CActorMissile id="HeroTalandarSolarCannon@ChargedAttackMissile" parent="CoreGenericAttackMissileWithDeath" unitName="HeroTalandarSolarCannon@ChargedMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+    </CActorMissile>
+    <!--<HostSiteOps Ops="SOpForwardOriginPoint SOpShadowSyncGround SOp2DRotation" HoldPosition="1" HoldRotation="1"/>-->
+    <CActorModel id="HeroTalandarSolarCannon@ChargedAttackMissileGroundTrail">
+        <Filter index="Neutral" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Work,Start Work Work,End"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@ChargedSearch.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 5.000000 DelayDestroy"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpForwardOriginPoint"/>
+        <Model value="HeroTalandarSolarCannon@ChargedMissileCraterTrail"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@ChargedShot" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@ChargedLaunch.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachWeapon01 SOpForwardTargetPoint SOp2DRotation" HoldPosition="1" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@DefaultAttackMissileGroundTrail" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolarCannon@DefaultSearch.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpForwardOriginPoint"/>
+        <Model value="HeroTalandarSolarCannon@DefaultMissileGroundTrail"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@VisualQuadActorParent" parent="ModelAnimationStyleContinuous">
+        <Aliases value="_GuideQuadSegment"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <FogVisibility value="Visible"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <HostForProps Subject="_GuideVisual"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@VisualQuadLaunch" parent="HeroTalandarSolarCannon@VisualQuadActorParent">
+        <Model value="UI_Cursor_StretchLine_Start_SciFi"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@VisualQuadCenter" parent="HeroTalandarSolarCannon@VisualQuadActorParent">
+        <Model value="UI_Cursor_StretchLine_Mid_SciFi"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolarCannon@VisualQuadImpact" parent="HeroTalandarSolarCannon@VisualQuadActorParent">
+        <Model value="UI_Cursor_StretchLine_End_SciFi"/>
+    </CActorModel>
+    <CActorQuad id="HeroTalandarSolarCannon@GuideBase" abil="Bogus">
+        <Aliases value="_GuideVisual"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <On Terms="ActorDestruction" Target="_GuideRegion" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="_GuideQuadSegment" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Abil.HeroTalandarSolarCannonChannel.ButtonHoverOn" Send="Create"/>
+        <On Terms="Abil.HeroTalandarSolarCannonChannel.ButtonHoverOff" Send="Destroy"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow"/>
+        <LaunchActor value="HeroTalandarSolarCannon@VisualQuadLaunch"/>
+        <CenterActor value="HeroTalandarSolarCannon@VisualQuadCenter"/>
+        <ImpactActor value="HeroTalandarSolarCannon@VisualQuadImpact"/>
+        <Quad value="-0.500000,-1.000000,0.500000,0.000000"/>
+        <Height value="14.000000"/>
+        <Width value="3.000000"/>
+    </CActorQuad>
+    <CActorModel id="HeroTalandarSolariteFlare@AirBombMissileA" parent="CoreModelAnimationStyleContinuousUnitBase">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Stop" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachWeapon01Soft"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandarSolariteFlare@AirBombAttackLaunch_AS" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpCasterUnit"/>
+    </CActorSound>
+    <CActorQuad id="HeroTalandarSolarCannon@Guide">
+        <Aliases value="_GuideVisual"/>
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="ActorCreation" Send="SetTintColor 225,160,25 0.000000 OneShot BaseTint"/>
+        <On Terms="ActorDestruction" Target="_GuideRegion" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="_GuideQuadSegment" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="_GuideRegion" Send="HostSiteOpsSet ::Host {SOpShadow SOpLookAtCursor SOp2DRotation}"/>
+        <On Terms="ActorCreation; ValidateUnit HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Send="StatusIncrement ChargingInstant"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolarCannonChannel@ChargeUpgraded.Add" Send="StatusIncrement ChargingSec_1"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolarCannonChannel@ChargeMedium.Add" Send="StatusIncrement ChargingSec_1dot5"/>
+        <On Terms="BehaviorStackItem.HeroTalandarSolarCannonChannel@ChargeDefault.Add" Send="StatusIncrement ChargingSec_2"/>
+        <On Terms="StatusIncrement.*.ChargingInstant" Send="SetScale 1.000000,2.000000,1.000000"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 1" Send="SetScale 1.000000,1.062500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 2" Send="SetScale 1.000000,1.125000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 3" Send="SetScale 1.000000,1.187500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 4" Send="SetScale 1.000000,1.250000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 5" Send="SetScale 1.000000,1.312500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 6" Send="SetScale 1.000000,1.375000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 7" Send="SetScale 1.000000,1.437500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 8" Send="SetScale 1.000000,1.500000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 9" Send="SetScale 1.000000,1.562500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 10" Send="SetScale 1.000000,1.625000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 11" Send="SetScale 1.000000,1.687500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 12" Send="SetScale 1.000000,1.750000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 13" Send="SetScale 1.000000,1.812500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 14" Send="SetScale 1.000000,1.875000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 15" Send="SetScale 1.000000,1.937500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1; IsStatus ChargingSec_1 16" Send="SetScale 1.000000,2.000000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 1" Send="SetScale 1.000000,1.041700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 2" Send="SetScale 1.000000,1.083300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 3" Send="SetScale 1.000000,1.125000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 4" Send="SetScale 1.000000,1.166700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 5" Send="SetScale 1.000000,1.208300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 6" Send="SetScale 1.000000,1.250000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 7" Send="SetScale 1.000000,1.291700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 8" Send="SetScale 1.000000,1.333300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 9" Send="SetScale 1.000000,1.375000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 10" Send="SetScale 1.000000,1.416700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 11" Send="SetScale 1.000000,1.458300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 12" Send="SetScale 1.000000,1.500000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 13" Send="SetScale 1.000000,1.541700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 14" Send="SetScale 1.000000,1.583300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 15" Send="SetScale 1.000000,1.625000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 16" Send="SetScale 1.000000,1.666700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 17" Send="SetScale 1.000000,1.708300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 18" Send="SetScale 1.000000,1.750000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 19" Send="SetScale 1.000000,1.791700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 20" Send="SetScale 1.000000,1.833300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 21" Send="SetScale 1.000000,1.875000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 22" Send="SetScale 1.000000,1.916700,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 23" Send="SetScale 1.000000,1.958300,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_1dot5; IsStatus ChargingSec_1dot5 24" Send="SetScale 1.000000,2.000000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 1" Send="SetScale 1.000000,1.031250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 2" Send="SetScale 1.000000,1.062500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 3" Send="SetScale 1.000000,1.093750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 4" Send="SetScale 1.000000,1.125000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 5" Send="SetScale 1.000000,1.156250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 6" Send="SetScale 1.000000,1.187500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 7" Send="SetScale 1.000000,1.218750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 8" Send="SetScale 1.000000,1.250000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 9" Send="SetScale 1.000000,1.281250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 10" Send="SetScale 1.000000,1.312500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 11" Send="SetScale 1.000000,1.343750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 12" Send="SetScale 1.000000,1.375000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 13" Send="SetScale 1.000000,1.406250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 14" Send="SetScale 1.000000,1.437500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 15" Send="SetScale 1.000000,1.468750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 16" Send="SetScale 1.000000,1.500000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 17" Send="SetScale 1.000000,1.531250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 18" Send="SetScale 1.000000,1.562500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 19" Send="SetScale 1.000000,1.593750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 20" Send="SetScale 1.000000,1.625000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 21" Send="SetScale 1.000000,1.656250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 22" Send="SetScale 1.000000,1.687500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 23" Send="SetScale 1.000000,1.718750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 24" Send="SetScale 1.000000,1.750000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 25" Send="SetScale 1.000000,1.781250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 26" Send="SetScale 1.000000,1.812500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 27" Send="SetScale 1.000000,1.843750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 28" Send="SetScale 1.000000,1.870000,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 29" Send="SetScale 1.000000,1.906250,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 30" Send="SetScale 1.000000,1.937500,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 31" Send="SetScale 1.000000,1.968750,1.000000 0.062500"/>
+        <On Terms="StatusIncrement.*.ChargingSec_2; IsStatus ChargingSec_2 32" Send="SetScale 1.000000,2.000000,1.000000 0.062500"/>
+        <!--<On Terms="Behavior.*.On; BehaviorCategory TimeStop" Send="PauseScale" />
+        <On Terms="Behavior.*.Off; BehaviorCategory TimeStop" Send="PauseScale 0" />-->
+        <Host Subject="_Unit" Actor="Find"/>
+        <LaunchActor value="HeroTalandarSolarCannon@VisualQuadLaunch"/>
+        <CenterActor value="HeroTalandarSolarCannon@VisualQuadCenter"/>
+        <ImpactActor value="HeroTalandarSolarCannon@VisualQuadImpact"/>
+        <Quad value="-0.500000,-1.000000,0.500000,0.000000"/>
+        <Height value="7.000000"/>
+        <Width value="3.000000"/>
+        <QuadFlags index="PreserveProportionsDuringWidthScaling" value="1"/>
+        <QuadFlags index="RespectWidthScaling" value="1"/>
+        <HostImpactSiteOps Ops="SOpCursor"/>
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+    </CActorQuad>
+    <CActorModel id="HeroTalandarSolariteFlare@AirBombMissileExplode" parent="CoreModelAnimationStyleOneShotUnit">
+        <Inherits index="Scale" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombSearch.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow SOpMoveUpBy1"/>
+        <Model value="HeroTalandarSolariteFlare@AirBomb"/>
+    </CActorModel>
+    <CActorBeamSimple id="Dragoon_Purifier_Coop_AirBomb_Beam" parent="BeamSimpleAnimationStyleContinuousClosingFull">
+        <!--On Terms="Effect.FenixDragoonAirBombCP.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.FenixDragoonAirBombUpgradedCP.Start; At Caster" Send="Create"/-->
+        <On Terms="Effect.HeroTalandarSolariteFlare@CreateUnitPersistent.Stop; FromEffectTreeDescendant" Send="AnimBracketStop BSD"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <HostLaunch Subject="_Hero"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon01Soft"/>
+        <HostImpact Subject="_Unit"/>
+        <HostImpactSiteOps Ops="SOpMoveUpBy1"/>
+    </CActorBeamSimple>
+    <CActorSound id="HeroTalandarSolariteFlare@AirBombMissileExplode_AS" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombSearch.Start" Send="Create"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombSearchCharged.Start" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroTalandarSolariteFlare@ChargedAirBombMissileExplode" parent="CoreModelAnimationStyleOneShotUnit">
+        <Inherits index="Scale" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombSearchCharged.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow SOpMoveUpBy1"/>
+        <Model value="HeroTalandarSolariteFlare@ChargedAirBomb"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarPurifierBeam@CastGuidePurifierModel" parent="CoreModelAddition">
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@CreatingBeamBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarPurifierBeam@PurifierBeam.Off" Send="Destroy Immediate"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft SOpShadow" HoldRotation="1"/>
+        <Scale value="4.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolariteFlare@AirBombUnitImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombDamage.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="HeroTalandarSolariteFlare@AirBombImpact"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroTalandarSolariteFlare@ChargedAirBombUnitImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Effect.HeroTalandarSolariteFlare@AirBombDamageCharged.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpForwardFenixDragoonAirBombTargetPointInverted SOp2DRotation" HoldPosition="1" HoldRotation="1"/>
+        <Model value="HeroTalandarSolariteFlare@ChargedAirBombImpact"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <!--<Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>-->
+    <CActorModel id="HeroTalandar@ChargingModel" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On index="0" Send="AnimBracketStart BSD {} Stand Death"/>
+        <On Terms="ActorCreation" Send="SetTintColor 255,128,0"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOrigin SOpForwardSouth SOp2DRotation SOpMoveUpBy2" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSound id="HeroTalandar@ChargingSoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="Create"/>
+        <Layers Sound="HeroTalandar@ChargingSoundLaunch_SWT"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandar@ChargingSoundLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolarCannonChannel@DummyChannel.Off" Send="Destroy"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.On" Send="Create"/>
+        <On Terms="Behavior.HeroTalandarSolariteFlareChannel@DummyChannel.Off" Send="Destroy"/>
+        <Layers Sound="HeroTalandar@ChargingSoundLoop_SWT"/>
+    </CActorSound>
+    <CActorSound id="TalandarPhaseBombPrimedSound" parent="SoundOneShot">
+        <Sound value="Talandar_PhaseBomb_Activate"/>
+    </CActorSound>
+    <CActorSound id="HeroTalandar@SoundDeploy" parent="CoreSoundOneShot">
+        <InheritType value="Continuous"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Talandar"/>
+        <On Terms="Abil.HeroTalandarDragoonArmorSuit.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.HeroTalandarPraetorArmorSuit.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.HeroTalandarPurifierBeam.SourceCastStart" Send="Create"/>
+        <On Terms="Effect.HeroTalandarDragoonArmorSuit@DummySet.Start" Send="Create"/>
+        <On Terms="Effect.HeroTalandarPraetorArmorSuit@DummySet.Start" Send="Create"/>
+        <Host Subject="::Creator"/>
+        <Sound value="HeroTalandar@Deploy"/>
+        <Layers Sound="Hybrid_StealStrengthCast">
+            <Chance value="100"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+</Catalog>

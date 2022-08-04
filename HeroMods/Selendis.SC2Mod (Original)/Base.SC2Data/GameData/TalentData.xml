@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent id="HeroSelendisTalentTemplarWillpowerPhaseBulwark"/>
+    <CTalent id="HeroSelendisTalentCalldownVindicatorMothership"/>
+    <CTalent id="HeroSelendisTalentTemplarBlades"/>
+    <CTalent id="HeroSelendisTalentZealotofAiurTrueTemplar"/>
+    <CTalent id="HeroSelendisTalentVindicatorsBeamInduction"/>
+    <CTalent id="HeroSelendisZealotofAiur">
+        <AbilityModificationArray>
+            <Modifications>
+                <Type value="FlatModification"/>
+                <Catalog value="Effect"/>
+                <Entry value="HeroSelendisZealotofAiur@Set"/>
+                <Field value="Chance"/>
+                <Value value="1.000000"/>
+            </Modifications>
+        </AbilityModificationArray>
+    </CTalent>
+    <CTalent id="HeroSelendisCalldownVindicator"/>
+    <CTalent id="HeroSelendisTalentBladesofaZealot"/>
+    <CTalent id="HeroSelendisTalentPhaseWeapon"/>
+    <CTalent id="HeroSelendisTalentIntuitiveAttack"/>
+    <CTalent id="HeroSelendisTalentInTheHeatOfBattle"/>
+    <CTalent id="HeroSelendisTalentExecutorBladeExecutorPower"/>
+    <CTalent id="HeroSelendisTalentExecutorBladeImpalingBlade"/>
+    <CTalent id="HeroSelendisTalentExecutorBladeAdvancedCharge"/>
+    <CTalent id="HeroSelendisTalentTemplarWillpowerDeflectionShield"/>
+    <CTalent id="HeroSelendisTalentTemplarWillpowerInspiration"/>
+    <CTalent id="HeroSelendisTalentVindicatorsBeamThermalFire"/>
+    <CTalent id="HeroSelendisTalentTemplarWillpowerReconfigurationShield"/>
+    <CTalent id="HeroSelendisTalentPowerStrikeTemplarsZeal"/>
+    <CTalent id="HeroSelendisTalentPowerStrikeFinalCut"/>
+    <CTalent id="HeroSelendisTalentPowerStrikePsionicDash"/>
+    <CTalent id="HeroSelendisTalentTemplarWillpowerForceOfWill"/>
+    <CTalent id="HeroSelendisTalentTemplarWillPowerPlasmaShield"/>
+    <CTalent id="HeroSelendisTalentExecutorBladeUpstage"/>
+</Catalog>

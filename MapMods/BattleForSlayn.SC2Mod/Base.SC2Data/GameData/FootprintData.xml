@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CFootprint id="SlaynVoidRift@Footprint">
+        <Layers index="Check">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Layers index="Place">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+    </CFootprint>
+</Catalog>

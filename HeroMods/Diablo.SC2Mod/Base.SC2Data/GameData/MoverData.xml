@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="Diablo_DevilCharge_Missile2">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <Flags index="RestoreHeight" value="1"/>
+        <RestoreHeightDuration value="0"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="175"/>
+            <Speed value="30"/>
+            <MaxSpeed value="30"/>
+            <ActorTracking value="Actual"/>
+            <RotationLaunchActorType value="LaunchToTarget"/>
+            <RotationActorType value="LookAtTarget2D"/>
+            <Timeout value="0"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_Overpower_TargetMover_OldData">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="400"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1"/>
+            <Timeout value="0.25"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="600"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1.05"/>
+            <Timeout value="0.125"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="1000"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <FlightTime value="0.125"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_Overpower_CasterMover_OldData">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="100"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1"/>
+            <Timeout value="0.25"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="600"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1.05"/>
+            <Timeout value="0.125"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="1"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <FlightTime value="0.125"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="DiabloOverpowerRedirectMover">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <Speed value="70"/>
+            <MaxSpeed value="70"/>
+            <ArrivalTestType value="3D"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_Overpower_OldData_WalkableTargetMover">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <Flags index="RestoreHeight" value="1"/>
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="1000"/>
+            <Gravity value="1000"/>
+            <Outro value="-0.1,-0.01"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <FlightTime value="0.125,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="1000"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <FlightTime value="0.001,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="HeroDiabloFireStomp@Missile">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="-6"/>
+            <Speed value="10"/>
+            <MinSpeed value="10"/>
+            <MaxSpeed value="25"/>
+            <IgnoresTerrain value="1"/>
+            <Outro value="-2,-1.5"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <MaxSpeed value="15"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_FireStomp_ReturnMissile">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="15"/>
+            <Speed value="5"/>
+            <MinSpeed value="5"/>
+            <MaxSpeed value="22.5"/>
+            <IgnoresTerrain value="1"/>
+            <Timeout value="10"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_Overpower_OldData_TargetMoverNotWalkable">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-3"/>
+            <Gravity value="1000"/>
+            <Outro value="-0.1,-0.01"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <FlightTime value="0.24,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <FlightTime value="0.01,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_Overpower_OldData_CasterMover">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="0.1"/>
+            <Outro value="-0.1,-0.01"/>
+            <RotationLaunchActorType value="LaunchToTarget2D"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <FlightTime value="0.24,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <RotationLaunchActorType value="LaunchToTarget"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <FlightTime value="0.01,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_Overpower_OldData_TargetMover">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-3"/>
+            <Gravity value="350"/>
+            <Outro value="-0.1,-0.01"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <FlightTime value="0.24,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <FlightTime value="0.01,-1"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="Diablo_DevilCharge_Missile">
+        <RestoreHeightDuration value="0.0625"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="175"/>
+            <Speed value="0"/>
+            <MaxSpeed value="300"/>
+            <ActorTracking value="Actual"/>
+            <RotationLaunchActorType value="LaunchToTarget"/>
+            <RotationActorType value="LookAtTarget2D"/>
+            <Timeout value="1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="DiabloOverpowerTargetMover">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="400"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1"/>
+            <Timeout value="0.25"/>
+            <ThrowVector value="0,0,1.5"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="600"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1.05"/>
+            <Timeout value="0.125"/>
+            <ThrowVector value="0,-0.5,0"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="1000"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <FlightTime value="0.125"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="DiabloOverpowerCasterMover">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="100"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1"/>
+            <Timeout value="0.25"/>
+            <ThrowVector value="0,-1,0"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="600"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="1.05"/>
+            <Timeout value="0.125"/>
+            <ThrowVector value="0,-0.5,0.5"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="1"/>
+            <RotationActorType value="Upright"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <FlightTime value="0.125"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="HeroDiabloBlackSoulstone@MissileMover">
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Speed value="5"/>
+            <MaxSpeed value="5"/>
+            <ArrivalTestType value="Never"/>
+            <Outro value="0.5,3"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Speed value="15"/>
+            <MaxSpeed value="15"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <Overlays/>
+            <Overlays/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="DiabloShadowChargeMissile">
+        <RestoreHeightDuration value="0.0625"/>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="175"/>
+            <Speed value="0"/>
+            <MaxSpeed value="300"/>
+            <ActorTracking value="Actual"/>
+            <RotationLaunchActorType value="LaunchToTarget"/>
+            <RotationActorType value="LookAtTarget2D"/>
+            <Timeout value="1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

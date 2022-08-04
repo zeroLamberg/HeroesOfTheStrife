@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CutsceneState cutsceneVersion="1.300000">
+    <CCutsceneNodeDirector guid="11775563137273462753" name="Director" interactive="1" waitForResources="1">
+        <CCutsceneNodeActiveCamera guid="13770266560807469025" name="Active Camera">
+            <CCutsceneElementActiveCamera guid="9076290833004527585" cameraIndex="0" objectGuid="13818653262932246497"/>
+        </CCutsceneNodeActiveCamera>
+        <CCutsceneNodeBookmark guid="9694611955777437665" name="Start">
+            <CCutsceneElementBookmark guid="6012312686465810401" start="1" bookmarkName="Stand Start" pauseWhenHit="1"/>
+            <CCutsceneElementBookmark guid="5712525562637877217" start="2667" bookmarkName="Stand End" jumpToBookmarkWhenHit="Stand Start"/>
+        </CCutsceneNodeBookmark>
+        <CCutsceneNodeActiveLight guid="11879928574823530465" name="Active Light">
+            <CCutsceneElementActiveLight guid="6073650282651090913" lightGUID="0" lightID="StormLightHeroSelectMount" lightIndex="0" blendTime="0"/>
+        </CCutsceneNodeActiveLight>
+    </CCutsceneNodeDirector>
+    <CCutsceneNodeCamera guid="13818653262932246497" name="Game Camera" position="-0.064884,-1.170330,0.000000" fov="27.799999" nearClip="0.100000" farClip="600.000000" shadowClip="75.000000" depthOfField="0.000000" focalDepth="8.000000" falloffStart="0.000300" falloffEnd="8.000000" falloffStartNear="0.000000" falloffEndNear="0.000000" doftype="0.000000" roll="0.000000" verticalFOV="1" distance="4.938021" pitch="30.135147" yaw="162.488144" heightOffset="1.884826">
+        <CCutsceneElementObject guid="5450340615493418977" duration="2667" lockedToEnd="1"/>
+    </CCutsceneNodeCamera>
+    <CCutsceneNodeActor guid="11806030819227500513" filter="Variation1" name="Cookie Bite (Var1)" position="-0.026249,-0.545441,0.844658" finderTag="Hero" modelLink="MountHearthstoneCardCookieBiteStore" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.705800,0.078300,0.117600,1.000000" teamColorEmissive="0.545100,0.062700,0.086100,1.000000">
+        <CCutsceneElementObject guid="6137001578548068321" duration="2667" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="11438032407783964641" name="Animation Layer">
+            <CCutsceneElementAnim guid="7360334235839660001" duration="2667" lockedToEnd="1" anim="Stand" priority="3" originalDuration="2334" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="10436853177924522106" filter="Variation2" name="Cookie Bite (Var2)" position="-0.026249,-0.545441,0.844658" finderTag="Hero" modelLink="MountHearthstoneCardCookieBiteStore" variation="1" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.705800,0.078300,0.117600,1.000000" teamColorEmissive="0.545100,0.062700,0.086100,1.000000">
+        <CCutsceneElementObject guid="8238832741401563258" duration="2667" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="13485962821994352762" name="Animation Layer">
+            <CCutsceneElementAnim guid="9039179976952844410" duration="2667" lockedToEnd="1" anim="Stand" priority="3" originalDuration="2334" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="11775380695501874594" filter="Variation3" name="Cookie Bite (Var3)" position="-0.026249,-0.545441,0.844658" finderTag="Hero" modelLink="MountHearthstoneCardCookieBiteStore" variation="2" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.705800,0.078300,0.117600,1.000000" teamColorEmissive="0.545100,0.062700,0.086100,1.000000">
+        <CCutsceneElementObject guid="4900519354742973858" duration="2667" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="9361416248298153378" name="Animation Layer">
+            <CCutsceneElementAnim guid="7520226440665736610" duration="2667" lockedToEnd="1" anim="Stand" priority="3" originalDuration="2334" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="12095056570687593613" filter="Variation4" name="Cookie Bite (Var4)" position="-0.026249,-0.545441,0.844658" finderTag="Hero" modelLink="MountHearthstoneCardCookieBiteStore" variation="3" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.705800,0.078300,0.117600,1.000000" teamColorEmissive="0.545100,0.062700,0.086100,1.000000">
+        <CCutsceneElementObject guid="7655902124434693261" duration="2667" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="10404117092870036621" name="Animation Layer">
+            <CCutsceneElementAnim guid="5731821045717310605" duration="2667" lockedToEnd="1" anim="Stand" priority="3" originalDuration="2334" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="11592907854583050189" filter="Variation5" name="Cookie Bite (Var5)" position="-0.026249,-0.545441,0.844658" finderTag="Hero" modelLink="MountHearthstoneCardCookieBiteStore" variation="4" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.705800,0.078300,0.117600,1.000000" teamColorEmissive="0.545100,0.062700,0.086100,1.000000">
+        <CCutsceneElementObject guid="7739981616344346573" duration="2667" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="9838674195343617997" name="Animation Layer">
+            <CCutsceneElementAnim guid="8901632075044630477" duration="2667" lockedToEnd="1" anim="Stand" priority="3" originalDuration="2334" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+</CutsceneState>

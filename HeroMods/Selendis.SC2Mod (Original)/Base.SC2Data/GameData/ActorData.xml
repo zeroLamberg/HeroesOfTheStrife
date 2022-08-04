@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorSound id="HeroSelendisTalentVindicatorsBeamThermalFire@SoundLoop" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisTalentVindicatorsBeamThermalFire@Persistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroSelendisTalentVindicatorsBeamThermalFire@Persistent.Stop" Send="Destroy"/>
+    </CActorSound>
+    <CActorSound id="HeroSelendisVindicatorsBeam@SoundPreLaunch" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="UnitBirth.HeroSelendisVindicatorsBeam@Missile" Send="Create"/>
+    </CActorSound>
+    <CActorAction id="HeroSelendisWeapon@Attack" parent="StandardGenericAttackHeroMelee" effectAttack="HeroSelendisWeapon@ImpactSet">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <LaunchAssets Sound="HeroSelendisWeapon@AttackLaunch"/>
+    </CActorAction>
+    <CActorQuad id="HeroSelendisPowerStrike@CursorGuide" parent="StandardGuideVisualQuadDownSciFi" abil="HeroSelendisPowerStrike">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Height value="9.000000"/>
+        <Width value="4.000000"/>
+    </CActorQuad>
+    <CActorSound id="HeroSelendisVindicatorsBeam@SoundLoop" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="UnitBirth.HeroSelendisVindicatorsBeam@Missile" Send="Create"/>
+        <On Terms="UnitDeath.HeroSelendisVindicatorsBeam@Missile" Send="Destroy"/>
+    </CActorSound>
+    <CActorRange id="HeroSelendisExecutorCharge@VisionRange">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisExecutorCharge@CasterBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroSelendisExecutorCharge@CasterBehavior.Off" Send="Destroy"/>
+        <Range value="6.000000"/>
+        <Icon value="assets\Textures\UI_Ingame_Radius_Tower.dds"/>
+        <IconArcLength value="5.000000"/>
+    </CActorRange>
+    <CActorModel id="HeroSelendisVindicatorsBeam@ModelImpact" parent="StandardModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisVindicatorsBeam@ImpactSet.Start; At Effect" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroSelendisExecutorCharge@SoundDash" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisExecutorCharge@Charging.On" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroSelendisExecutorChargeApproach@SoundImpact" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisExecutorChargeApproach@Damage.Start" Send="Create"/>
+    </CActorSound>
+    <CActorMissile id="HeroSelendisVindicatorsBeam@WeaponAttackMissile" parent="GenericAttackMissile" unitName="HeroSelendisVindicatorsBeam@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <Model value="HeroSelendisVindicatorsBeam@ModelBeam"/>
+    </CActorMissile>
+    <CActorRange id="HeroSelendisCalldownVindicator@Range" parent="StandardRangeAbilPlusSplat" abil="HeroSelendisCalldownVindicator">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorRange>
+    <CActorSplat id="HeroSelendisCalldownVindicator@RangeSplat" parent="StandardRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <Scale value="10.750000"/>
+    </CActorSplat>
+    <CActorSound id="HeroSelendisZealotofAiur@SoundStart" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Abil.HeroSelendisZealotofAiur.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroSelendisExecutorChargeApproach@ModelImpact" parent="StandardModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisExecutorChargeApproach@Damage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroSelendisPowerStrike@SoundImpact" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisPowerStrike@Damage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroSelendisPowerStrike@ExpireDamage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModelMaterial id="HeroSelendisTemplarWillpower@GlazeShield" parent="GlazeParent">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisTemplarWillpower.On" Send="Create"/>
+        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
+        <On Terms="Behavior.HeroSelendisTemplarWillpower.Off" Send="AnimBracketStop BSD"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModelMaterial>
+    <CActorModel id="HeroSelendisTalentTemplarWillpowerDeflectionShield@ModelCast" parent="StandardModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisTalentTemplarWillpowerDeflectionShield@Search.Start; At Caster" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetLocalTintColor 191,255,255"/>
+        <HostSiteOps Ops="SOpMoveUpBy1Dot5"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorSound id="HeroSelendisVindicatorsBeam@SoundImpact" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisVindicatorsBeam@Damage.Start" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="HeroSelendisTalentPhaseWeapon" parent="StandardItemBase" unitName="HeroSelendisTalentPhaseWeapon">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorUnit>
+    <CActorUnit id="HeroSelendisTalentInTheHeatOfBattle" parent="StandardItemBase" unitName="HeroSelendisTalentInTheHeatOfBattle">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorUnit>
+    <CActorUnit id="HeroSelendisCalldownVindicator@Vindicator" parent="StandardUnitBase" unitName="HeroSelendisCalldownVindicator@Vindicator">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="ActorCreation" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.100000 Birth"/>
+        <On Terms="TimerExpired; TimerName Birth" Send="SetOpacity 1.000000 5.000000"/>
+        <On Terms="UnitBirth" Send="AnimGroupApply Stand,Work Stand,Work,Start Stand,Work,End 0 3.000000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <EventDataFootprint index="0" Actor="UnitFootprint" Model="MothershipFootprint"/>
+        <Baselines index="Walk" AnimProps="Walk,01"/>
+        <DeathArray index="Normal" AnimProps="Birth" ModelLink="HeroSelendisCalldownVindicator@TeleportOut"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive3"/>
+        </TerrainSquibs>
+        <VarianceWindowStandIntro value="0.330000"/>
+        <VarianceWindowWalkIntro value="0.330000"/>
+        <VarianceWindowWalkOutro value="0.330000"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="0"/>
+    </CActorUnit>
+    <CActorSound id="HeroSelendisTalentTemplarWillpowerDeflectionShield@SoundImpact" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage.Start" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroSelendisZealotofAiur@Model" parent="StandardModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisZealotofAiur@Protection.On" Send="Create"/>
+        <On Terms="Behavior.HeroSelendisZealotofAiur@Protection.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpMoveUpBy1Dot5" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSound id="HeroSelendisCalldownVindicator@SoundWarpIn" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisCalldownVindicator@TimedLifeBehavior.On" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroSelendisCalldownVindicator@SoundWarpLoop" parent="StandardSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisCalldownVindicator@TimedLifeBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroSelendisCalldownVindicator@TimedLifeBehavior.Off" Send="Destroy"/>
+    </CActorSound>
+    <CActorSound id="HeroSelendisCalldownVindicator@SoundWarpOut" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisCalldownVindicator@TimedLifeBehavior.Off" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroSelendisTalentVindicatorsBeamThermalFire@ModelFire" parent="StandardModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisTalentVindicatorsBeamThermalFire@Persistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroSelendisTalentVindicatorsBeamThermalFire@Persistent.Stop" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpForwardOriginPoint SOp90"/>
+    </CActorModel>
+    <CActorModel id="HeroSelendisExecutorBlade@ModelImpact" parent="StandardModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisExecutorBlade@ImpactSet.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroSelendisPowerStrike@SoundDash" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.On" Send="Create"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.Off" Send="Destroy"/>
+    </CActorSound>
+    <CActorSound id="HeroSelendisExecutorBlade@SoundImpact" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisExecutorBlade@ImpactSet.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroSelendisVindicatorsBeam@SoundLaunch" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="UnitBirth.HeroSelendisVindicatorsBeam@Missile" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroSelendisPowerStrike@ModelImpact" parent="StandardModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Effect.HeroSelendisPowerStrike@Damage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroSelendisPowerStrike@ExpireDamage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorAction id="HeroSelendisCalldownVindicator@WeaponAttack" parent="GenericAttack" effectImpact="HeroSelendisCalldownVindicator@WeaponImpactSet" effectLaunch="HeroSelendisCalldownVindicator@WeaponLaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <LaunchSiteOps Ops="SOpForwardTargetPoint SOp2DRotation"/>
+        <LaunchAttachQuery Methods="TurretZ"/>
+        <ImpactPhysics Name="PurifyImpact" MatchKeys="Basic" Physics="MothershipCoreAttackForce"/>
+    </CActorAction>
+    <CActorMissile id="HeroSelendisCalldownVindicator@WeaponAttackMissile" parent="GenericAttackMissile" unitName="HeroSelendisCalldownVindicator@WeaponMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="UnitBirth" Send="AnimSetTimeScaleAbsolute Lifetime 1.000000"/>
+    </CActorMissile>
+    <CActorUnit id="HeroSelendis" parent="CoreHeroBase" unitName="HeroSelendis">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <!-- Visual Model Stuff -->
+        <On Terms="UnitBirth.HeroSelendis" Send="AttachModel {} HeroSelendis@HitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitRevive.HeroSelendis" Send="AttachModel {} HeroSelendis@HitTestSphere {Origin 0} SOpMoveUpBy1Dot5"/>
+        <On Terms="UnitDeath" Target="HeroSelendis@Weapon_LeftHand" Send="SetScale 0.900000"/>
+        <On Terms="UnitDeath" Target="HeroSelendis@Weapon_LeftHand" Send="SetOpacity"/>
+        <On Terms="UnitDeath" Target="HeroSelendis@Weapon_RightHand" Send="SetOpacity"/>
+        <On Terms="UnitRevive" Target="HeroSelendis@Weapon_LeftHand" Send="SetOpacity 1.000000"/>
+        <On Terms="UnitRevive" Target="HeroSelendis@Weapon_RightHand" Send="SetOpacity 1.000000"/>
+        <On Terms="ActorCreation" Send="Attach HeroSelendis@Weapon_LeftHand AMFilterAiur"/>
+        <On Terms="ActorCreation" Send="Attach HeroSelendis@Weapon_RightHand AMFilterMoria"/>
+        <!-- Gameplay Stuff -->
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimClear Attack"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="TimerKill SelendisAttackClear"/>
+        <!--<On Terms="WeaponStart.*.AttackStart; !ValidateUnit SelendisHasTwinBladesPrimed" Send="AnimPlay Attack Attack"/>-->
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimPlay Attack Attack"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="TimerSet 0.250000 SelendisAttackClear"/>
+        <On Terms="TimerExpired; TimerName SelendisAttackClear" Send="AnimClear Attack 0.375000"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.On" Send="AnimBracketStart Spell Spell,A,Start Spell,A,Start Spell,A,End"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.Off" Send="AnimBracketStop Spell"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.On" Send="SetWalkAnimMoveSpeed 7.5"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.Off" Send="SetWalkAnimMoveSpeed 4.8007"/>
+        <On Terms="Abil.HeroSelendisVindicatorsBeam.SourcePrepStart" Send="AnimClear Spell"/>
+        <On Terms="Abil.HeroSelendisVindicatorsBeam.SourcePrepStart" Send="$Spell,Forward 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroSelendisExecutorBlade.SourcePrepStart" Send="AnimClear Spell"/>
+        <On Terms="Abil.HeroSelendisExecutorBlade.SourcePrepStart" Send="$Spell,H 0 -1.000000 -1.000000 1.250000 AsTimeScale"/>
+        <On Terms="Abil.HeroSelendisExecutorBlade.SourcePrepStart" Target="HeroSelendis@Weapon_LeftHand" Send="SetScale 0.900000,0.900000,4.000000 0.250000"/>
+        <On Terms="Abil.HeroSelendisExecutorBlade.SourcePrepStart" Send="TimerSet 0.300000 LeftHandTimer"/>
+        <On Terms="TimerExpired; TimerName LeftHandTimer" Target="HeroSelendis@Weapon_LeftHand" Send="SetScale 0.900000 0.200000"/>
+        <On Terms="Behavior.HeroSelendisExecutorCharge@Charging.On" Send="$Spell,G PlayForever"/>
+        <On Terms="Abil.HeroSelendisExecutorChargeApproach.SourceCastStart" Send="$Spell,B"/>
+        <On Terms="Abil.HeroSelendisVindicatorsBeam.SourcePrepStart" Target="HeroSelendis@Weapon_LeftHand" Send="SetOpacity 0.000000 0.100000"/>
+        <On Terms="Abil.HeroSelendisVindicatorsBeam.SourceFinishStart; ValidateUnit TargetNotDead" Target="HeroSelendis@Weapon_LeftHand" Send="SetOpacity 1.000000 1.500000"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.On" Send="AnimBracketStart Cover Spell,A,Start Spell,A,Start Spell,A,End"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.Off" Send="AnimBracketStop Cover"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.On" Send="AnimPlay Spell Walk PlayForever"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.Off" Send="AnimClear Spell"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="TimerSet 0.010000 LeftHandTimer"/>
+        <On Terms="Effect.HeroSelendisExecutorCharge@ClearOrder.Start; AnimPlaying Spell Spell,G; At Caster" Send="AnimClear Spell"/>
+        <PortraitActor value="HeroSelendis@Portrait"/>
+        <PortraitModel value="HeroSelendis@Portrait"/>
+        <HeroIcon value="assets\Textures\storm_ui_ingame_heroselect_btn_selendis.dds"/>
+        <MinimapIcon value="Assets\Textures\UI_MiniMapIcon_Hero_Selendis.dds"/>
+        <UnitIcon value="assets\Textures\storm_ui_ingame_heroselect_btn_selendis.dds"/>
+    </CActorUnit>
+    <CActorModel id="HeroSelendisPowerStrike@ModelTrail" parent="StandardModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.On" Send="Create"/>
+        <On Terms="Behavior.HeroSelendisPowerStrike@Speed.Off" Send="AnimBracketStop BSD"/>
+    </CActorModel>
+    <CActorModel id="HeroSelendisCalldownVindicator@ModelArea" parent="StandardModelAnimationStyleOneShot">
+        <Inherits index="TeamColor" value="1"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <AcceptedHostedPropTransfers index="Visibility" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On index="1" Terms="ActorOrphan"/>
+        <On index="2" Terms="Behavior.HeroSelendisCalldownVindicator@TimedLifeBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroSelendisCalldownVindicator@TimedLifeBehavior.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow SOpMoveUpByDot5"/>
+    </CActorModel>
+    <CActorSplat id="HeroSelendisVindicatorsBeam@RangeSplat" parent="StandardRangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <Scale value="10.750000"/>
+    </CActorSplat>
+    <CActorSound id="HeroSelendisExecutorBlade@SoundLaunch" parent="StandardSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="Abil.HeroSelendisExecutorBlade.SourcePrepStart" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.300000 Timer"/>
+        <On Terms="TimerExpired; TimerName Timer" Send="Destroy"/>
+    </CActorSound>
+    <CActorModel id="HeroSelendisCalldownVindicator@ModelTeleportIn" parent="ModelAddition">
+        <Inherits index="Opacity" value="0"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="UnitCreation.HeroSelendisCalldownVindicator@Vindicator" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="HeroSelendisVindicatorsBeam@ModelImpactGround">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Work,Start Stand,Work Stand,Work,End ContentPlayOnce 4.000000 AsTimeScale"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.HeroSelendisVindicatorsBeam@MissileSet.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpForwardOriginPoint"/>
+    </CActorModel>
+    <CActorModel id="Selendis_VindicatorsBeam_ModelBeam" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="Create Selendis_VindicatorsBeam_SoundLaunch"/>
+        <On Terms="Effect.HeroSelendisVindicatorsBeam@SecondPersistent.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="Effect.HeroSelendisVindicatorsBeam@Search.Start" Target="Selendis_VindicatorsBeam_ImpactSite" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <On Terms="Effect.Selendis_VindicatorsBeam_PointLaunch.Start" Send="Create"/>
+        <Host Subject="Selendis_VindicatorsBeam_ImpactSite"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <Model value="HeroSelendisVindicatorsBeam@ModelBeam"/>
+    </CActorModel>
+    <CActorRange id="HeroSelendisVindicatorsBeam@Range" parent="StandardRangeAbilPlusSplat" abil="HeroSelendisVindicatorsBeam">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorRange>
+    <CActorPortrait id="HeroSelendis@Portrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorPortrait>
+    <CActorModel id="HeroSelendis@PortraitAddition" parent="CompositePortraitAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorModel>
+    <CActorSplat id="HeroSelendisCalldownVindicator@CursorGuide" parent="StandardGuideVisualCircleModern" abil="HeroSelendisCalldownVindicator">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+    </CActorSplat>
+    <CActorModel id="HeroSelendis@Weapon_RightHand" parent="ModelAddition">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <On Terms="UnitCreation.HeroSelendis" Send="Create"/>
+        <On Terms="ActorDestruction.HeroSelendis" Send="Destroy Immediate"/>
+        <Model value="HeroSelendis@WeaponBlade"/>
+        <Scale value="0.900000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+    </CActorModel>
+    <CActorModel id="HeroSelendis@Weapon_LeftHand" parent="ModelAddition">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <On Terms="UnitCreation.HeroSelendis" Send="Create"/>
+        <On Terms="ActorDestruction.HeroSelendis" Send="Destroy Immediate"/>
+        <Model value="HeroSelendis@WeaponBlade"/>
+        <Scale value="0.900000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Inherits index="BaseModelScale" value="0"/>
+        <Inherits index="Scale" value="0"/>
+    </CActorModel>
+    <CActorQuad id="HeroSelendisExecutorBlade@CursorGuide" parent="StandardGuideVisualQuadDownSciFi" abil="HeroSelendisExecutorBlade">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Height value="6.000000"/>
+        <Width value="1.000000"/>
+    </CActorQuad>
+    <CActorQuad id="HeroSelendisVindicatorsBeam@Guide" parent="StandardGuideVisualQuadDownSciFiDetached" abil="HeroSelendisVindicatorsBeam">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Selendis"/>
+        <Height value="11.000000"/>
+        <Width value="3.000000"/>
+    </CActorQuad>
+</Catalog>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="Mercenary_Colossus_ThermalLances_TargetHasNoMarker" parent="TargetNotParent">
+        <Behavior value="Mercenary_Colossus_ThermalLances_Marker"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="Mercenary_Colossus_ThermalLances_TargetHasNoBehavior" parent="TargetNotParent">
+        <Behavior value="MercenaryColossusWeapon@GroundFireDamageBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="MercenaryColossusFireBeam@HasNoMarker">
+        <Behavior value="MercenaryColossusFireBeam@MarkerBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="SourceIsMinionCombine">
+        <CombineArray value="SourceIsMinionProtossMelee"/>
+        <CombineArray value="SourceIsMinionProtossWizard"/>
+        <CombineArray value="SourceIsMinionProtossRanged"/>
+        <CombineArray value="SourceIsMinionProtossCatapult"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetIsMinionCombine">
+        <CombineArray value="TargetIsMinionProtossMelee"/>
+        <CombineArray value="TargetIsMinionProtossWizard"/>
+        <CombineArray value="TargetIsMinionProtossRanged"/>
+        <CombineArray value="TargetIsMinionProtossCatapult"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterIsMinionCombine">
+        <CombineArray value="CasterIsMinionProtossMelee"/>
+        <CombineArray value="CasterIsMinionProtossWizard"/>
+        <CombineArray value="CasterIsMinionProtossRanged"/>
+        <CombineArray value="CasterIsMinionProtossCatapult"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="TargetIsMinionProtossMelee">
+        <Value value="MinionProtossMelee"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="TargetIsMinionProtossCatapult">
+        <Value value="MinionProtossCatapult"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="TargetIsMinionProtossRanged">
+        <Value value="MinionProtossRanged"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="TargetIsMinionProtossWizard">
+        <Value value="MinionProtossWizard"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsMinionProtossCatapult">
+        <WhichUnit Value="Source"/>
+        <Value value="MinionProtossCatapult"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsMinionProtossMelee">
+        <WhichUnit Value="Source"/>
+        <Value value="MinionProtossMelee"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsMinionProtossWizard">
+        <WhichUnit Value="Source"/>
+        <Value value="MinionProtossWizard"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsMinionProtossRanged">
+        <WhichUnit Value="Source"/>
+        <Value value="MinionProtossRanged"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="CasterIsMinionProtossMelee">
+        <WhichUnit Value="Caster"/>
+        <Value value="MinionProtossMelee"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="CasterIsMinionProtossWizard">
+        <WhichUnit Value="Caster"/>
+        <Value value="MinionProtossWizard"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="CasterIsMinionProtossRanged">
+        <WhichUnit Value="Caster"/>
+        <Value value="MinionProtossRanged"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="CasterIsMinionProtossCatapult">
+        <WhichUnit Value="Caster"/>
+        <Value value="MinionProtossCatapult"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsnotaColossusDefender">
+        <Value value="MercenaryColossus@Defender"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsaColossusDefender">
+        <Value value="MercenaryColossus@Defender"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsaColossusLaner">
+        <Value value="MercenaryColossus@Laner"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsnotaColossusLaner">
+        <Value value="MercenaryColossus@Laner"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="TargetIsNotABossUnitCombine">
+        <Type value="And"/>
+        <CombineArray value="IsnotaColossusDefender"/>
+        <CombineArray value="IsnotaColossusLaner"/>
+    </CValidatorCombine>
+</Catalog>

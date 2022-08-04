@@ -1,0 +1,345 @@
+﻿Abil/Name/HeroSelendisCalldownVindicator=Calldown Vindicator
+Abil/Name/HeroSelendisDecisiveStrike=Decisive Strike
+Abil/Name/HeroSelendisExecutorBlade=Executor Blade
+Abil/Name/HeroSelendisExecutorCharge=Executor Charge
+Abil/Name/HeroSelendisExecutorChargeApproach=Executor Charge Approach
+Abil/Name/HeroSelendisExecutorsGuard=Executor's Guard
+Abil/Name/HeroSelendisPowerStrike=Power Strike
+Abil/Name/HeroSelendisSolarLance=Solar Lance
+Abil/Name/HeroSelendisTalentInTheHeatOfBattle=In The Heat of Battle
+Abil/Name/HeroSelendisTalentPhaseWeapon=Phase Weapon
+Abil/Name/HeroSelendisTemplarWillpower=Templar Willpower
+Abil/Name/HeroSelendisVindicatorsBeam=Vindicator's Beam
+Abil/Name/HeroSelendisZealotofAiur=Zealot of Aiur
+Abil/Name/HeroSelendisZealousRush=Zealous Rush
+Abil/Name/HeroSelendisZealousRushApproach=Zealous Rush Approach
+Behavior/Name/HeroSelendisCalldownVindicator@TimedLifeBehavior=Timed Life Behavior
+Behavior/Name/HeroSelendisExecutorCharge@CasterBehavior=Executor Charge
+Behavior/Name/HeroSelendisTalentBladesofaZealot@TokenCounter=Blades of Zealot
+Behavior/Name/HeroSelendisTalentExecutorBladeAdvancedCharge=Advanced Charge
+Behavior/Name/HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter=Executor Power
+Behavior/Name/HeroSelendisTalentExecutorBladeImpalingBlade@CooldownBehavior=Impaling Blade
+Behavior/Name/HeroSelendisTalentExecutorBladeUpstage@Avoidance=Avoidance
+Behavior/Name/HeroSelendisTalentIntuitiveAttack=Intuitive Attack
+Behavior/Name/HeroSelendisTalentVindicatorsBeamInduction@BeamPercentDamageController=Beam Percent Damage Controller
+Behavior/Tooltip/HeroSelendisTalentBladesofaZealot@TokenCounter=<c val="#TooltipQuest">Increased damage: <c val="#TooltipNumbers" validator="!HeroSelendisTalentBladesofaZealot@QuestCompleted"><d ref="$BehaviorStackCount:HeroSelendisTalentBladesofaZealot@StackBuff$ * Behavior,HeroSelendisTalentBladesofaZealot@StackBuff,DamageResponse.ModifyAmount" precision="1"/>
+Behavior/Tooltip/HeroSelendisTalentExecutorBladeAdvancedCharge=Attack Speed increased by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroSelendisTalentExecutorBladeAdvancedCharge,Modification.AdditiveAttackSpeedFactor"/>%</c> .
+Behavior/Tooltip/HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter=<c val="#TooltipQuest">Increased damage: <c val="#TooltipNumbers" validator="!HeroSelendisTalentExecutorBladeExecutorPower@QuestCompleted"><d ref="$BehaviorStackCount:HeroSelendisTalentExecutorBladeExecutorPower@StackBuff$ * Behavior,HeroSelendisTalentExecutorBladeExecutorPower@StackBuff,DamageResponse.ModifyAmount" precision="2"/>/<d ref="Behavior,HeroSelendisTalentExecutorBladeExecutorPower@TokenCounter,DamageResponse.Cost.Charge.CountMax * Behavior,HeroSelendisTalentExecutorBladeExecutorPower@StackBuff,DamageResponse.ModifyAmount" precision="2"/></c>
+Behavior/Tooltip/HeroSelendisTalentExecutorBladeImpalingBlade@CooldownBehavior=«Vindicator's Beam» and «Power Strike» cooldown reduction increased by <c val="#TooltipNumbers"><d ref="-100*Effect,HeroSelendisTalentExecutorBladeImpalingBlade@ModifyCooldowns,Cost[0].CooldownTimeUse/0.0625"/>%</c>.
+Behavior/Tooltip/HeroSelendisTalentExecutorBladeUpstage@Avoidance=Prevents Ability Damage and its subsequent effects.
+Behavior/Tooltip/HeroSelendisTalentIntuitiveAttack=Next Basic Attack will deal <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentIntuitiveAttack@Damage,Amount"/></c> bonus Spell damage.
+Button/Information/HeroSelendisCalldownVindicator=Mana: <d ref="Abil,HeroSelendisCalldownVindicator,Cost[0].Vital[Energy]"/><n/>Cooldown: <d ref="Abil,HeroSelendisCalldownVindicator,Cost[0].Cooldown.TimeUse"/> seconds<n/>Duration: <d ref="Behavior,HeroSelendisCalldownVindicator@TimedLifeBehavior,Duration"/> seconds<n/>Range: <d ref="Abil,HeroSelendisCalldownVindicator,Range[0]"/> m.<n/>Radius: <d ref="Effect,HeroSelendisCalldownVindicator@Search,AreaArray[0].Radius"/> m.
+Button/Information/HeroSelendisDecisiveStrike=Mana: <d ref="Abil,HeroSelendisDecisiveStrike,Cost[0].Vital" player="0"/><n/>Cooldown: <d ref="Abil,HeroSelendisDecisiveStrike,Cost[0].Cooldown.TimeUse" precision="2" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: <d ref="Abil,HeroSelendisDecisiveStrike,Range[0]" precision="2" player="0"/> m.
+Button/Information/HeroSelendisExecutorBlade=Mana: <d ref="Abil,HeroSelendisExecutorBlade,Cost[0].Vital[Energy]" player="0"/><n/>Cooldown: <d ref="Abil,HeroSelendisExecutorBlade,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Effect,HeroSelendisExecutorBlade@Search,AreaArray[0].RectangleHeight" player="0"/> m.
+Button/Information/HeroSelendisPowerStrike=Mana: <d ref="Abil,HeroSelendisPowerStrike,Cost[0].Vital[Energy]"/><n/>Cooldown: <d ref="Abil,HeroSelendisPowerStrike,Cost[0].Cooldown.TimeUse"/> seconds<n/>Range: 8 m.
+Button/Information/HeroSelendisSolarLance=Mana: <d ref="Abil,HeroSelendisSolarLance,Cost[0].Vital" player="0"/><n/>Cooldown: <d ref="Abil,HeroSelendisSolarLance,Cost[0].Cooldown.TimeUse" precision="2" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: <d ref="Abil,HeroSelendisSolarLance,Range[0]" precision="2" player="0"/> m.
+Button/Information/HeroSelendisTalentInTheHeatOfBattle=Charges Max: <d ref="Abil,HeroSelendisTalentInTheHeatOfBattle,Cost[0].Charge.CountUse"/><n/>Duration: <d ref="Behavior,HeroSelendisTalentInTheHeatOfBattle,Duration" precision="2"/> seconds
+Button/Information/HeroSelendisTalentPhaseWeapon=Cooldown: <d ref="Abil,HeroSelendisTalentPhaseWeapon,Cost[0].Cooldown.TimeUse"/> seconds<n/>Duration: <d ref="Behavior,HeroSelendisTalentPhaseWeapon@ActiveBuff,Duration" precision="2"/> seconds
+Button/Information/HeroSelendisTalentTemplarWillpowerDeflectionShield=Area: <d ref="Effect,HeroSelendisTalentTemplarWillpowerDeflectionShield@Search,AreaArray[0].Radius" precision="2"/> m.
+Button/Information/HeroSelendisTemplarWillpower=Duration: <d ref="Behavior,HeroSelendisTemplarWillpower,Duration"/> seconds
+Button/Information/HeroSelendisVindicatorsBeam=Mana: <d ref="Abil,HeroSelendisVindicatorsBeam,Cost[0].Vital[Energy]"/><n/>Cooldown: <d ref="Abil,HeroSelendisVindicatorsBeam,Cost[0].Cooldown.TimeUse"/> seconds<n/>Range: <d ref="Actor,HeroSelendisVindicatorsBeam@Guide,Height"/> m.<n/>Distance: <d ref="Abil,HeroSelendisVindicatorsBeam,Range[0]"/> m.
+Button/Information/HeroSelendisZealotofAiur=Mana: <d ref="Abil,HeroSelendisZealotofAiur,Cost[0].Vital[Energy]"/><n/>Cooldown: <d ref="Abil,HeroSelendisZealotofAiur,Cost[0].Cooldown.TimeUse"/> seconds
+Button/Information/HeroSelendisZealousRush=Mana: <d ref="Abil,HeroSelendisZealousRush,Cost[0].Vital" player="0"/><n/>Cooldown: <d ref="Abil,HeroSelendisZealousRush,Cost[0].Cooldown.TimeUse" precision="2"player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: <d ref="Abil,HeroSelendisZealousRush,Range[0]" precision="2"/> m.
+Button/Name/HeroSelendisCalldownVindicator=Calldown Vindicator
+Button/Name/HeroSelendisDecisiveStrike=Decisive Strike
+Button/Name/HeroSelendisExecutorBlade=Executor Blade
+Button/Name/HeroSelendisExecutorCharge=Executor Charge
+Button/Name/HeroSelendisExecutorsGuard=Executor's Guard
+Button/Name/HeroSelendisPowerStrike=Power Stike
+Button/Name/HeroSelendisSolarLance=Solar Lance
+Button/Name/HeroSelendisTalentBladesofaZealot=Blades of a Zealot
+Button/Name/HeroSelendisTalentCalldownVindicatorMothership=Mothership
+Button/Name/HeroSelendisTalentExecutorBladeAdvancedCharge=Advanced Charge
+Button/Name/HeroSelendisTalentExecutorBladeExecutorPower=Executor Power
+Button/Name/HeroSelendisTalentExecutorBladeImpalingBlade=Impaling Blade
+Button/Name/HeroSelendisTalentExecutorBladeUpstage=Upstage
+Button/Name/HeroSelendisTalentInTheHeatOfBattle=In The Heat of Battle
+Button/Name/HeroSelendisTalentIntuitiveAttack=Intuitive Attack
+Button/Name/HeroSelendisTalentPhaseWeapon=Phase Weapon
+Button/Name/HeroSelendisTalentPowerStrikeFinalCut=Final Cut
+Button/Name/HeroSelendisTalentPowerStrikePsionicDash=Psionic Dash
+Button/Name/HeroSelendisTalentPowerStrikeTemplarsZeal=Templar's Zeal
+Button/Name/HeroSelendisTalentTemplarBlades=Templar Blades
+Button/Name/HeroSelendisTalentTemplarWillPowerPlasmaShield=Plasma Shield
+Button/Name/HeroSelendisTalentTemplarWillpowerDeflectionShield=Deflection Shield
+Button/Name/HeroSelendisTalentTemplarWillpowerForceOfWill=Force of Will
+Button/Name/HeroSelendisTalentTemplarWillpowerInspiration=Inspiration
+Button/Name/HeroSelendisTalentTemplarWillpowerPhaseBulwark=Phase Bulwark
+Button/Name/HeroSelendisTalentTemplarWillpowerReconfigurationShield=Reconfiguration Shield
+Button/Name/HeroSelendisTalentVindicatorsBeamInduction=Induction
+Button/Name/HeroSelendisTalentVindicatorsBeamThermalFire=Thermal Fire
+Button/Name/HeroSelendisTalentZealotofAiurTrueTemplar=True Templar
+Button/Name/HeroSelendisTemplarWillpower=Templar Willpower
+Button/Name/HeroSelendisVindicatorsBeam=Vindicator's Beam
+Button/Name/HeroSelendisZealotofAiur=Zealot of Aiur
+Button/Name/HeroSelendisZealousRush=Zealous Rush
+Button/SimpleDisplayText/HeroSelendisCalldownVindicator=Damages, Silences enemy Heroes
+Button/SimpleDisplayText/HeroSelendisExecutorBlade=Deal damage and slow enemies
+Button/SimpleDisplayText/HeroSelendisExecutorCharge=Reactivate to charge to hitted enemy Hero
+Button/SimpleDisplayText/HeroSelendisPowerStrike=Lunges towards the target location, damages and slows enemies
+Button/SimpleDisplayText/HeroSelendisTalentBladesofaZealot=<c val="#TooltipQuest">Quest:</c> Basic Attacks against Heroes increase damage
+Button/SimpleDisplayText/HeroSelendisTalentCalldownVindicatorMothership=Increase Vindicator's duration
+Button/SimpleDisplayText/HeroSelendisTalentExecutorBladeAdvancedCharge=«Executor Blade» grants Attack Speed, reduces Attack Speed
+Button/SimpleDisplayText/HeroSelendisTalentExecutorBladeExecutorPower=<c val="#TooltipQuest">Quest:</c> Increase «Executor Blade» damage
+Button/SimpleDisplayText/HeroSelendisTalentExecutorBladeImpalingBlade=Hit Heroes to reduce cooldowns
+Button/SimpleDisplayText/HeroSelendisTalentExecutorBladeUpstage=Hitting Hero grants «Avoidance»
+Button/SimpleDisplayText/HeroSelendisTalentInTheHeatOfBattle=Increase Attack Speed and Spell Power
+Button/SimpleDisplayText/HeroSelendisTalentIntuitiveAttack=Basic Attacks deal bonus Spell damage
+Button/SimpleDisplayText/HeroSelendisTalentPhaseWeapon=Dealing damage heals Selendis
+Button/SimpleDisplayText/HeroSelendisTalentPowerStrikeFinalCut=Hit enemy Heroes to reduce their Armor
+Button/SimpleDisplayText/HeroSelendisTalentPowerStrikePsionicDash=«Power Strike» grants Selendis a Shield
+Button/SimpleDisplayText/HeroSelendisTalentPowerStrikeTemplarsZeal=Enemies hit by «Power Strike» take additional damage
+Button/SimpleDisplayText/HeroSelendisTalentTemplarBlades=Increase Basic Attack damage against weak Heroes
+Button/SimpleDisplayText/HeroSelendisTalentTemplarWillPowerPlasmaShield=Increase «Templar Willpower» received Shield amount
+Button/SimpleDisplayText/HeroSelendisTalentTemplarWillpowerDeflectionShield=«Templar Willpower» deals damage
+Button/SimpleDisplayText/HeroSelendisTalentTemplarWillpowerForceOfWill=«Templar Willpower» grants Armor for Selendis
+Button/SimpleDisplayText/HeroSelendisTalentTemplarWillpowerInspiration=«Templar Willpower» inceases Basic Attack damage
+Button/SimpleDisplayText/HeroSelendisTalentTemplarWillpowerPhaseBulwark=Basic Abilities grants «Templar Willpower» Shield
+Button/SimpleDisplayText/HeroSelendisTalentTemplarWillpowerReconfigurationShield=Increase «Templar Willpower» max Shield amount and duration
+Button/SimpleDisplayText/HeroSelendisTalentVindicatorsBeamInduction=«Vindicator's Beam» deals Bonus damage
+Button/SimpleDisplayText/HeroSelendisTalentVindicatorsBeamThermalFire=«Vindicator's beam» burns the ground
+Button/SimpleDisplayText/HeroSelendisTalentZealotofAiurTrueTemplar=«Zealot of Aiur» grants Relentless
+Button/SimpleDisplayText/HeroSelendisTemplarWillpower=Basic Attacks deal more damage and grant Shield
+Button/SimpleDisplayText/HeroSelendisVindicatorsBeam=Сreate an electric beam that deals damage and reduce attack and movement speed
+Button/SimpleDisplayText/HeroSelendisZealotofAiur=Selendis becomes Protected
+Button/Tooltip/HeroSelendisCalldownVindicator=Calldown Vindicator. Vindicator deals <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisCalldownVindicator@WeaponDamage,Amount" option="player"/></c> damage every <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisCalldownVindicator@TimedLifeBehavior,Period" precision="2"/></c> seconds to each enemy unit in area. Each enemy Hero hitted will be silenced for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisCalldownVindicator@Silence,Duration" player="0"/></c> second.
+Button/Tooltip/HeroSelendisDecisiveStrike=Deal <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisDecisiveStrike@Damage,Amount"/></c> damage and Slow the target by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroSelendisDecisiveStrike@Slow,Modification.UnifiedMoveSpeedFactor"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisDecisiveStrike@Slow,Duration" precision="2" player="0"/></c> <lang rule="plural">second,seconds</lang>.<n/><n/>Casting «Decisive Strike» resets Selendis'es Basic Attack cooldown.
+Button/Tooltip/HeroSelendisExecutorBlade=Increase size of psionic blade, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisExecutorBlade@Damage,Amount" option="player"/></c> damage and Slowing enemies by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroSelendisExecutorBlade@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorBlade@Slow,Duration" precision="2" player="0"/></c> seconds.
+Button/Tooltip/HeroSelendisExecutorCharge=Reactivate in <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorCharge@CasterBehavior,Duration" player="0"/></c> seconds to Charge to first enemy Hero hitted, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisExecutorChargeApproach@Damage,Amount" option="player"/></c> damage and Slowing by <c val="#TooltipNumbers"><d ref="-100 * Behavior,HeroSelendisExecutorChargeApproach@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorChargeApproach@Slow,Duration" precision="2" player="0"/></c> seconds.
+Button/Tooltip/HeroSelendisExecutorsGuard=Hitting a Hero with an Ability causes the next Basic Attack to gain <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorsGuard@WeaponBuff,Modification.WeaponRange" precision="2" player="0"/></c> range and grant Selendis <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorsGuard@ArmorBuff,Modification.AttributeChangeArray[0].Points"/></c> Armor for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorsGuard@ArmorBuff,Duration" precision="2" player="0"/></c> <lang rule="plural">second,seconds</lang>.
+Button/Tooltip/HeroSelendisPowerStrike=Lunges towards the target location, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisPowerStrike@Damage,Amount" option="player"/></c> damage and Slows enemies by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroSelendisPowerStrike@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c>  for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisPowerStrike@Slow,Duration" precision="2" player="0"/></c> seconds. Increases Selendis Movespeed by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroSelendisPowerStrike@AdditionalMovespeed,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisPowerStrike@AdditionalMovespeed,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroSelendisSolarLance=Fire two crossing beams in the target location. Each beam deals <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisSolarLance@Damage,Amount" option="player"/></c> damage.
+Button/Tooltip/HeroSelendisTalentBladesofaZealot=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Basic Attacks against enemy Heroes increase Selendis's Basic Attack damage by <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentBladesofaZealot@StackBuff,DamageResponse.ModifyAmount" precision="1"/></c>.<n/><n/><c val="#AbilityPassive">Passive: </c>Increase Attack Speed by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroSelendisTalentBladesofaZealot@TokenCounter,Modification.AdditiveAttackSpeedFactor"/>%</c>.
+Button/Tooltip/HeroSelendisTalentCalldownVindicatorMothership=Duration of Vindicator increases by <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisCalldownVindicatorMothership$" precision="2" /></c> seconds each time it damages enemy Hero.
+Button/Tooltip/HeroSelendisTalentExecutorBladeAdvancedCharge=Hitting an enemy Hero with «Executor Charge» grants <c val="#TooltipNumbers"><d ref="100*Behavior,HeroSelendisTalentExecutorBladeAdvancedCharge,Modification.AdditiveAttackSpeedFactor"/>%</c> bonus Attack Speed for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentExecutorBladeAdvancedCharge,Duration"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive: </c>Reduce Slow efficiency of «Executor Charge» from <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroSelendisExecutorChargeApproach@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> to <c val="#TooltipNumbers"><d ref="-100*Effect,HeroSelendisTalentExecutorBladeAdvancedCharge@Modification,EffectArray[0].Value"/>%</c> but increase Slow duration from <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisExecutorChargeApproach@Slow,Duration" precision="2" player="0"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentExecutorBladeAdvancedCharge@Modification,EffectArray[1].Value"/></c> seconds.
+Button/Tooltip/HeroSelendisTalentExecutorBladeExecutorPower=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hitting Heroes with «Executor Blade» increases its damage by <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentExecutorBladeExecutorPower@StackBuff,DamageResponse.ModifyAmount" precision="2"/></c> up to a maximum of <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentExecutorBladeExecutorPower@StackBuff,MaxStackCount * Behavior,HeroSelendisTalentExecutorBladeExecutorPower@StackBuff,DamageResponse.ModifyAmount" precision="2"/></c>.
+Button/Tooltip/HeroSelendisTalentExecutorBladeImpalingBlade=Heroes hit by «Executor Blade» increase cooldown reduction of «Vindicator's Beam» and «Power Strike» by <c val="#TooltipNumbers"><d ref="-100*Effect,HeroSelendisTalentExecutorBladeImpalingBlade@ModifyCooldowns,Cost[0].CooldownTimeUse/0.0625"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentExecutorBladeImpalingBlade@CooldownBehavior,Duration" precision="2"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive: </c> «Executor Blade» no longer costs mana.
+Button/Tooltip/HeroSelendisTalentExecutorBladeUpstage=Whenever «Executor Blade» hits Hero, Selendis gains <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentExecutorBladeUpstage@ApplyAvoidance,Count"/></c> «Avoidance» effect for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentExecutorBladeUpstage@Avoidance,Duration"/></c> seconds.<n/><n/>«Avoidance» prevents Ability Damage and its subsequent effects.
+Button/Tooltip/HeroSelendisTalentInTheHeatOfBattle=Increase Selendis Attack speed by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroSelendisTalentInTheHeatOfBattle,Modification.AdditiveAttackSpeedFactor"/>%</c> and Spell Power by <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentInTheHeatOfBattle,Modification.AttributeChangeArray[17].Points"/></c> per each charge.<n/><n/>Whenever Selendis's Basic Attacks damage enemy, Selendis gains <c val="#TooltipNumbers"><d ref="-Effect,HeroSelendisTalentInTheHeatOfBattle@AddCharge,Cost.Charge.CountUse"/></c> charge.
+Button/Tooltip/HeroSelendisTalentIntuitiveAttack=Hit enemy Heroes with Basic abilities to get <c val="#TooltipNumbers">1</c> charge of «Intuitive Attack». Basic Attacks deal <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentIntuitiveAttack@Damage,Amount" option="player"/></c> Bonus Spell damage and consume <c val="#TooltipNumbers">1</c> charge.<n/><n/>Stacks up to <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentIntuitiveAttack,MaxStackCount"/></c> times. Lasts <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentIntuitiveAttack,Duration"/></c> seconds.
+Button/Tooltip/HeroSelendisTalentPhaseWeapon=Activate to make Basic Attack heal Selendis for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisPhaseWeaponLifestealActive$*100" />%</c> damage dealt.<n/><n/><c val="#AbilityPassive">Passive: </c>Primary Basic Attacks heal Selendis for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisPhaseWeaponLifestealPassive$*100" />%</c> damage dealt.
+Button/Tooltip/HeroSelendisTalentPowerStrikeFinalCut=Heroes hitted by «Power Strike» lose <c val="#TooltipNumbers"><d ref="-Behavior,HeroSelendisTalentPowerStrikeFinalCut,Modification.AttributeChangeArray[0].Points"/></c> Armor for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentPowerStrikeFinalCut,Duration"/></c> seconds.
+Button/Tooltip/HeroSelendisTalentPowerStrikePsionicDash=Each enemy Hero hit by «Power Strike» grants Selendis a Shield for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentPowerStrikePsionicDash@Shield,DamageResponse.ModifyLimitVitalMaxFractionArray[Life] * 100"/>%</c> of her max Health for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentPowerStrikePsionicDash@Shield,Duration"/></c> seconds, stacking up to <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentPowerStrikePsionicDash@Shield,DamageResponse.ModifyLimitVitalMaxFractionArray[Life] * 100 * Behavior,HeroSelendisTalentPowerStrikePsionicDash@Shield,MaxStackCount"/>%</c>.
+Button/Tooltip/HeroSelendisTalentPowerStrikeTemplarsZeal=Enemies hit by «Power Strike» take an additional <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage,Amount" option="player"/></c> damage after <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamageBehavior,Duration" precision="2"/></c> second.
+Button/Tooltip/HeroSelendisTalentTemplarBlades=Basic Attack damage against Heroes below <c val="#TooltipNumbers">50%</c> Health increased by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroSelendisTalentTemplarBlades@IncreasedDamage,Amount"/>%</c>.
+Button/Tooltip/HeroSelendisTalentTemplarWillPowerPlasmaShield=Increase «Templar Willpower» received Shield amount from <c val="#TooltipNumbers"><d ref="100* $GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerShieldsModifier$"/>%</c> to <c val="#TooltipNumbers"><d ref="100* $GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerShieldsModifierPlasmaShield$"/>%</c> of Basic Attack damage dealt against Heroes.
+Button/Tooltip/HeroSelendisTalentTemplarWillpowerDeflectionShield=Selendis deals AOE Spell damage equals <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroSelendisTalentTemplarWillpowerDeflectionShield@Modifier,Amount"/>%</c> of absorbed damage by «Templar Willpower» Shield.
+Button/Tooltip/HeroSelendisTalentTemplarWillpowerForceOfWill=While Selendis has «Templar Willpower» Shield, she gains <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior,Modification.AttributeChangeArray[0].Points"/></c> Armor.
+Button/Tooltip/HeroSelendisTalentTemplarWillpowerInspiration=While Selendis has «Templar Willpower» Shield, her Basic Attacks damage increased by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroSelendisTalentTemplarWillpowerInspiration@DamageModifier,Amount"/>%</c>.
+Button/Tooltip/HeroSelendisTalentTemplarWillpowerPhaseBulwark=Gain <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerShieldsModifierPhaseBulwark$*100"/>%</c> of damage dealt against Heroes from Basic Abilities as «Templar Willpower» Shields.
+Button/Tooltip/HeroSelendisTalentTemplarWillpowerReconfigurationShield=Increase «Templar Willpower» max Shield amount from <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifier$*100"/>%</c> to <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifierReconfigurationShields$*100"/>%</c> of max health and duration from <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTemplarWillpower,Duration" player="0" precision="2"/></c> to <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentTemplarWillpowerReconfigurationShield@Modification,EffectArray[0].Value" precision="2"/></c> seconds.
+Button/Tooltip/HeroSelendisTalentVindicatorsBeamInduction=«Vindicator's Beam» deals Bonus <c val="#TooltipNumbers"><d ref="100*Effect,HeroSelendisTalentVindicatorsBeamInduction@PercentDamage,VitalFractionMax[Life]" precision="2"/>%</c> of maximum Health as damage to the first Hero it hits.
+Button/Tooltip/HeroSelendisTalentVindicatorsBeamThermalFire=«Vindicator's Beam» creates a fire on a ground, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentVindicatorsBeamThermalFire@Damage,Amount" option="player"/></c> damage. Fire lasts for <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisTalentVindicatorsBeamThermalFire@Persistent,PeriodicPeriodArray[0] * Effect,HeroSelendisTalentVindicatorsBeamThermalFire@Persistent,PeriodCount" precision="2"/></c> seconds. Each target can be damaged every <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentVindicatorsBeamThermalFire@MarkerBehavior,Duration"precision="2"/></c> seconds.
+Button/Tooltip/HeroSelendisTalentZealotofAiurTrueTemplar=«Zealot of Aiur» grants <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisTalentZealotofAiurTrueTemplar@Relentless,Modification.AttributeChangeArray[19].Points"/></c> Relentless.
+Button/Tooltip/HeroSelendisTemplarWillpower=If Selendis Health is above <c val="#TooltipNumbers">75%</c> her Basic Attacks damage increased by <c val="#TooltipNumbers"><d ref="100 * Accumulator,HeroSelendisTemplarWillpower@CasterHighLifeDamage,Amount"/>%</c>. If target Health is below <c val="#TooltipNumbers">25%</c> her Basic Attacks damage increased by <c val="#TooltipNumbers"><d ref="100 * Accumulator,HeroSelendisTemplarWillpower@TargetLowLifeDamage,Amount"/>%</c>. <n/><n/>Each time Selendis Basic Attacks deal damage she gains shields equal <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerShieldsModifier$*100"/>%</c> damage dealt.<n/><n/><c val="ffff8a">Maximum: <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifier$*Unit,HeroSelendis,LifeMax"/></c></c>
+Button/Tooltip/HeroSelendisVindicatorsBeam=Vindicator creates a fast moving electric beam that deals <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisVindicatorsBeam@Damage,Amount" option="player"/></c> damage and Slows by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroSelendisVindicatorsBeam@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisVindicatorsBeam@Slow,Duration" player="0"/></c> second.
+Button/Tooltip/HeroSelendisZealotofAiur=Selendis becomes Protected for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisZealotofAiur@Protection,Duration" player="0"/></c> seconds. Can be used during «Power Strike».
+Button/Tooltip/HeroSelendisZealousRush=Dash through a marked enemy, consuming the mark, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroSelendisZealousRush@Damage,Amount" option="player"/></c> damage and gaining a <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisZealousRush@Shield,DamageResponse.ModifyLimit" option="player"/></c> Shield for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisZealousRush@Shield,Duration" player="0" precision="2"/></c> <lang rule="plural">second,seconds</lang>.<n/><n/><c val="#AbilityPassive">Passive: </c>«Solar Lance» and «Decisive Strike» mark enemies hit for <c val="#TooltipNumbers"><d ref="Behavior,HeroSelendisZealousRush@Mark,Duration" player="0" precision="2"/></c> <lang rule="plural">second,seconds</lang>.
+DataCollection/Name/HeroSelendis=[Selendis] - Hero
+DataCollection/Name/HeroSelendisCalldownVindicator=[Selendis] - Calldown Vindicator
+DataCollection/Name/HeroSelendisDecisiveStrike=[Selendis] - Decisive Strike
+DataCollection/Name/HeroSelendisExecutorBlade=[Selendis] - Executor Blade
+DataCollection/Name/HeroSelendisExecutorCharge=[Selendis] - Executor Charge
+DataCollection/Name/HeroSelendisExecutorChargeApproach=[Selendis] - Executor Charge Approach
+DataCollection/Name/HeroSelendisExecutorsGuard=[Selendis] - Executor's Guard
+DataCollection/Name/HeroSelendisPowerStrike=[Selendis] - Power Strike
+DataCollection/Name/HeroSelendisSolarLance=[Selendis] - Solar Lance
+DataCollection/Name/HeroSelendisTalentBladesofaZealot=[Selendis Talent] - Blades of a Zealot
+DataCollection/Name/HeroSelendisTalentCalldownVindicatorMothership=[Selendis Talent] - Calldown Vindicator @ (Mothership)
+DataCollection/Name/HeroSelendisTalentExecutorBladeAdvancedCharge=[Selendis Talent] - Executor Blade @ (Advanced Charge)
+DataCollection/Name/HeroSelendisTalentExecutorBladeExecutorPower=[Selendis Talent] - Executor Blade @ (Executor Power)
+DataCollection/Name/HeroSelendisTalentExecutorBladeImpalingBlade=[Selendis Talent] - Executor Blade @ (Impaling Blade)
+DataCollection/Name/HeroSelendisTalentExecutorBladeUpstage=[Selendis Talent] - Executor Blade @ (Upstage)
+DataCollection/Name/HeroSelendisTalentInTheHeatOfBattle=[Selendis Talent] - In the Heat of Battle
+DataCollection/Name/HeroSelendisTalentIntuitiveAttack=[Selendis Talent] - Intuitive Attack
+DataCollection/Name/HeroSelendisTalentPhaseWeapon=[Selendis Talent] - Phase Weapon
+DataCollection/Name/HeroSelendisTalentPowerStrikeFinalCut=[Selendis Talent] - Power Strike @ (Final Cut)
+DataCollection/Name/HeroSelendisTalentPowerStrikePsionicDash=[Selendis Talent] - Power Strike @ (Psionic Dash)
+DataCollection/Name/HeroSelendisTalentPowerStrikeTemplarsZeal=[Selendis Talent] - Power Strike @ (Templar's Zeal)
+DataCollection/Name/HeroSelendisTalentTemplarBlades=[Selendis Talent] - Templar Blades
+DataCollection/Name/HeroSelendisTalentTemplarWillPowerPlasmaShield=[Selendis Talent] - Templar Willpower @ (Plasma Shield)
+DataCollection/Name/HeroSelendisTalentTemplarWillpowerDeflectionShield=[Selendis Talent] - Templar Willpower @ (Deflection Shield)
+DataCollection/Name/HeroSelendisTalentTemplarWillpowerForceOfWill=[Selendis Talent] - Templar Willpower @ (Force Of Will)
+DataCollection/Name/HeroSelendisTalentTemplarWillpowerInspiration=[Selendis Talent] - Templar Willpower @ (Inspiration)
+DataCollection/Name/HeroSelendisTalentTemplarWillpowerPhaseBulwark=[Selendis Talent] - Templar Willpower @ (Phase Bulwark)
+DataCollection/Name/HeroSelendisTalentTemplarWillpowerReconfigurationShield=[Selendis Talent] - Templar Willpower @ (Reconfiguration Shield)
+DataCollection/Name/HeroSelendisTalentVindicatorsBeamInduction=[Selendis Talent] - Vindicator's Beam @ (Induction)
+DataCollection/Name/HeroSelendisTalentVindicatorsBeamThermalFire=[Selendis Talent] - Vindicator's Beam @ (Thermal Fire)
+DataCollection/Name/HeroSelendisTalentZealotofAiurTrueTemplar=[Selendis Talent] - Zealot of Aiur @ (True Templar)
+DataCollection/Name/HeroSelendisTemplarWillpower=[Selendis] - Templar Willpower
+DataCollection/Name/HeroSelendisVindicatorsBeam=[Selendis] - Vindicator's Beam
+DataCollection/Name/HeroSelendisWeapon=[Selendis] - Weapon
+DataCollection/Name/HeroSelendisZealotofAiur=[Selendis] - Zealot of Aiur
+DataCollection/Name/HeroSelendisZealousRush=[Selendis] - Zealous Rush
+DataCollection/Name/HeroSelendisZealousRushApproach=[Selendis] - Zealous Rush Approach
+DocInfo/Name=Selendis Hero Mod
+Effect/Name/HeroSelendis@LevelScalingModification=Level Scaling Modification
+Effect/Name/HeroSelendisCalldownVindicator@ApplySilence=Apply Silence
+Effect/Name/HeroSelendisCalldownVindicator@ApplyTimedLifeBehavior=Apply Timed Life Behavior
+Effect/Name/HeroSelendisCalldownVindicator@CreateUnit=Create Vindicator
+Effect/Name/HeroSelendisCalldownVindicator@Search=Search
+Effect/Name/HeroSelendisCalldownVindicator@SpawnDelay=Spawn Delay
+Effect/Name/HeroSelendisCalldownVindicator@WeaponDamage=[Weapon] - Damage
+Effect/Name/HeroSelendisCalldownVindicator@WeaponImpactSet=[Weapon] - Impact Set
+Effect/Name/HeroSelendisCalldownVindicator@WeaponLaunchMissile=[Weapon] - Launch Missile
+Effect/Name/HeroSelendisCalldownVindicator@WeaponSearch=[Weapon] - Search
+Effect/Name/HeroSelendisDecisiveStrike@ApplySlow=Apply Slow
+Effect/Name/HeroSelendisDecisiveStrike@Damage=Damage
+Effect/Name/HeroSelendisDecisiveStrike@InitialSet=Initial Set
+Effect/Name/HeroSelendisDecisiveStrike@ResetWeapon=Reset Weapon
+Effect/Name/HeroSelendisExecutorBlade=Initial Set
+Effect/Name/HeroSelendisExecutorBlade@ApplySlowBehavior=Apply Slow Behavior
+Effect/Name/HeroSelendisExecutorBlade@Damage=Damage
+Effect/Name/HeroSelendisExecutorBlade@ImpactSet=Impact Set
+Effect/Name/HeroSelendisExecutorBlade@Search=Search
+Effect/Name/HeroSelendisExecutorCharge@AddTrackedUnit=Add Tracked Unit
+Effect/Name/HeroSelendisExecutorCharge@ApplyCasterBehavior=Apply Caster Behavior
+Effect/Name/HeroSelendisExecutorCharge@ApplyCasterUnitTrackerBehavior=Apply Caster Unit Tracker Behavior
+Effect/Name/HeroSelendisExecutorCharge@ApplyCharging=Apply Charging
+Effect/Name/HeroSelendisExecutorCharge@ApplyTargetBehavior=Apply Target Behavior
+Effect/Name/HeroSelendisExecutorCharge@CastingSet=Casting Set
+Effect/Name/HeroSelendisExecutorCharge@ClearOrder=Clear Order
+Effect/Name/HeroSelendisExecutorCharge@EnumTrackedUnits=Enum Tracked Units
+Effect/Name/HeroSelendisExecutorCharge@HeroImpactSet=Hero Impact Set
+Effect/Name/HeroSelendisExecutorCharge@IssueApproachOrder=Issue Approach Order
+Effect/Name/HeroSelendisExecutorCharge@RemoveCasterBehavior=Remove Caster Behavior
+Effect/Name/HeroSelendisExecutorCharge@RemoveCasterUnitTrackerBehavior=Remove Caster Unit Tracker Behavior
+Effect/Name/HeroSelendisExecutorCharge@SearchHero=Search Hero
+Effect/Name/HeroSelendisExecutorChargeApproach@ApplySlow=Apply Slow
+Effect/Name/HeroSelendisExecutorChargeApproach@Damage=Damage
+Effect/Name/HeroSelendisExecutorChargeApproach@ImpactSet=Impact Set
+Effect/Name/HeroSelendisExecutorChargeApproach@RemoveChargingBehavior=Remove Charging Behavior
+Effect/Name/HeroSelendisExecutorChargeApproach@RemoveTargetBehavior=Remove Target Behavior
+Effect/Name/HeroSelendisExecutorsGuard@ApplyArmorBuff=Apply Armor Buff
+Effect/Name/HeroSelendisExecutorsGuard@ApplyWeaponBuff=Apply Weapon Buff
+Effect/Name/HeroSelendisExecutorsGuard@ArmorResponseSet=Armor Response Set
+Effect/Name/HeroSelendisExecutorsGuard@RemoveArmorBuff=Remove Armor Buff
+Effect/Name/HeroSelendisExecutorsGuard@RemoveWeaponBuff=Remove Weapon Buff
+Effect/Name/HeroSelendisPowerStrike@ApplyAdditionalMovespeed=Apply Additional Movespeed
+Effect/Name/HeroSelendisPowerStrike@ApplySpeed=[1] - [1] -  Apply Speed
+Effect/Name/HeroSelendisPowerStrike@CasterApplyForce=[1] - [2] - [2] - [1] -  Caster Apply Force
+Effect/Name/HeroSelendisPowerStrike@Damage=[1] - [2] - [1] - [1] - [1] -  Damage
+Effect/Name/HeroSelendisPowerStrike@ExpireDamage=[1] - [3] - [1] - [1] -  Expire Damage
+Effect/Name/HeroSelendisPowerStrike@ExpireImpactSet=[1] - [3] - [1] -  Expire Impact Set
+Effect/Name/HeroSelendisPowerStrike@ExpireSearch=[1] - [3] -  Expire Search
+Effect/Name/HeroSelendisPowerStrike@InitialPersistent=Initial Persistent
+Effect/Name/HeroSelendisPowerStrike@MovePersistent=[1] - [2] - [2] -  Move Persistent
+Effect/Name/HeroSelendisPowerStrike@PeriodicSet=[1] - [2] -  Periodic Set
+Effect/Name/HeroSelendisPowerStrike@RemoveSpeed=Remove Speed Buff
+Effect/Name/HeroSelendisPowerStrike@Slow=[1] - [2] - [1] - [1] - [2] -  Apply Slow
+Effect/Name/HeroSelendisPowerStrike@TargetImpactSet=[1] - [2] - [1] - [1] -  Target Impact Set
+Effect/Name/HeroSelendisPowerStrike@TargetSearch=[1] - [2] - [1] -  Target Search
+Effect/Name/HeroSelendisSolarLance@CreatePersistents=Create Persistents
+Effect/Name/HeroSelendisSolarLance@Damage=Damage
+Effect/Name/HeroSelendisSolarLance@ImpactSet=Impact Set
+Effect/Name/HeroSelendisSolarLance@InitialSet=Initial Set
+Effect/Name/HeroSelendisSolarLance@LaunchMissile=Launch Missile
+Effect/Name/HeroSelendisSolarLance@OffsetCP=Offset CP
+Effect/Name/HeroSelendisSolarLance@Search=Search
+Effect/Name/HeroSelendisTalentBladesofaZealot@ApplyStackBuff=Apply Stack Buff
+Effect/Name/HeroSelendisTalentBladesofaZealot@DecreaseToken=Decrease Token
+Effect/Name/HeroSelendisTalentBladesofaZealot@IncreaseToken=Increase Token
+Effect/Name/HeroSelendisTalentBladesofaZealot@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroSelendisTalentBladesofaZealot@ResetToken=Reset Token
+Effect/Name/HeroSelendisTalentBladesofaZealot@TokenCounterController=Token Counter Controller
+Effect/Name/HeroSelendisTalentCalldownVindicatorMothership@DummyTriggerSet=Dummy Trigger Set
+Effect/Name/HeroSelendisTalentCalldownVindicatorMothership@Modification=Modification
+Effect/Name/HeroSelendisTalentExecutorBladeAdvancedCharge@ApplyAttackSpeed=Apply Attack Speed
+Effect/Name/HeroSelendisTalentExecutorBladeAdvancedCharge@Modification=Modification
+Effect/Name/HeroSelendisTalentExecutorBladeExecutorPower@AddStackBuff=Add Stack Buff
+Effect/Name/HeroSelendisTalentExecutorBladeExecutorPower@DecreaseToken=Decrease Token
+Effect/Name/HeroSelendisTalentExecutorBladeExecutorPower@IncreaseToken=Increase Token
+Effect/Name/HeroSelendisTalentExecutorBladeExecutorPower@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroSelendisTalentExecutorBladeExecutorPower@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroSelendisTalentExecutorBladeExecutorPower@TokenCounterController=Token Counter Controller
+Effect/Name/HeroSelendisTalentExecutorBladeImpalingBlade@ApplyCooldownBehavior=Apply Cooldown Behavior
+Effect/Name/HeroSelendisTalentExecutorBladeImpalingBlade@Modification=Modification
+Effect/Name/HeroSelendisTalentExecutorBladeImpalingBlade@ModifyCooldowns=Modify Cooldowns
+Effect/Name/HeroSelendisTalentExecutorBladeUpstage@ApplyAvoidance=Apply Avoidance
+Effect/Name/HeroSelendisTalentExecutorBladeUpstage@HandledSet=Handled Set
+Effect/Name/HeroSelendisTalentExecutorBladeUpstage@RemoveAvoidance=Remove Avoidance
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@AbilUseSet=Abil Use Set
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@Add1CountUse=Add 1 Count Use
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@AddCharge=Add Charge
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@ApplyBehavior=Apply Behavior
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@ImpactSet=Impact Set
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@ResetAbility=Reset Ability
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@ResetAbilityCharges=Reset Ability Charges
+Effect/Name/HeroSelendisTalentInTheHeatOfBattle@SetCountUseTo1=Set Count Use To 1
+Effect/Name/HeroSelendisTalentIntuitiveAttack@ApplyBehaviorStack=Apply Behavior Stack
+Effect/Name/HeroSelendisTalentIntuitiveAttack@Damage=Damage
+Effect/Name/HeroSelendisTalentIntuitiveAttack@ImpactSet=Impact Set
+Effect/Name/HeroSelendisTalentIntuitiveAttack@RemoveStackBehavior=Remove Stack Behavior
+Effect/Name/HeroSelendisTalentPhaseWeapon@ApplyBehavior=Apply Behavior
+Effect/Name/HeroSelendisTalentPowerStrikeFinalCut@ApplyArmorDebuff=Apply Armor Debuff
+Effect/Name/HeroSelendisTalentPowerStrikePsionicDash@ApplyShieldBuff=Apply Shield Buff
+Effect/Name/HeroSelendisTalentPowerStrikeTemplarsZeal@ApplyTimedDamageBehavior=Apply Timed Damage Behavior
+Effect/Name/HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage=Timed Damage
+Effect/Name/HeroSelendisTalentTemplarBlades@ApplyTargetMarkBuff=Apply Target Mark Buff
+Effect/Name/HeroSelendisTalentTemplarBlades@SearchTargets=Search Targets
+Effect/Name/HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage=Damage
+Effect/Name/HeroSelendisTalentTemplarWillpowerDeflectionShield@Search=Search
+Effect/Name/HeroSelendisTalentTemplarWillpowerForceOfWill@ApplyArmorBuff=Apply Armor Buff
+Effect/Name/HeroSelendisTalentTemplarWillpowerForceOfWill@TalentChoosenSet=Talent Choosen Set
+Effect/Name/HeroSelendisTalentTemplarWillpowerReconfigurationShield@Modification=Modification
+Effect/Name/HeroSelendisTalentVindicatorsBeamInduction@ImpactSet=Impact Set
+Effect/Name/HeroSelendisTalentVindicatorsBeamInduction@PercentDamage=Percent Damage
+Effect/Name/HeroSelendisTalentVindicatorsBeamInduction@RemovePercentDamageController=Remove Percent Damage Controller
+Effect/Name/HeroSelendisTalentVindicatorsBeamThermalFire@ApplyMarkerBehavior=Apply Marker Behavior
+Effect/Name/HeroSelendisTalentVindicatorsBeamThermalFire@Damage=Damage
+Effect/Name/HeroSelendisTalentVindicatorsBeamThermalFire@ImpactSet=Impact Set
+Effect/Name/HeroSelendisTalentVindicatorsBeamThermalFire@Persistent=Persistent
+Effect/Name/HeroSelendisTalentVindicatorsBeamThermalFire@Search=Search
+Effect/Name/HeroSelendisTalentZealotofAiurTrueTemplar@ApplyRelentless=Apply Relentless
+Effect/Name/HeroSelendisVindicatorsBeam@ApplySlow=Apply Slow
+Effect/Name/HeroSelendisVindicatorsBeam@Damage=Damage
+Effect/Name/HeroSelendisVindicatorsBeam@ImpactSet=Impact Set
+Effect/Name/HeroSelendisVindicatorsBeam@InitialPersistent=Initial Persistent
+Effect/Name/HeroSelendisVindicatorsBeam@InitialSet=Initial Set
+Effect/Name/HeroSelendisVindicatorsBeam@LaunchMissile=Launch Missile
+Effect/Name/HeroSelendisVindicatorsBeam@MissileSet=Missile Set
+Effect/Name/HeroSelendisVindicatorsBeam@Search=Search
+Effect/Name/HeroSelendisVindicatorsBeam@SecondPersistent=Second Persistent
+Effect/Name/HeroSelendisWeapon@CriticalSwitch=Critical Switch
+Effect/Name/HeroSelendisWeapon@Damage=Damage
+Effect/Name/HeroSelendisWeapon@DamageCritical=Damage (Critical)
+Effect/Name/HeroSelendisWeapon@ImpactSet=Impact Set
+Effect/Name/HeroSelendisZealotofAiur@ApplyProtection=Apply Protection
+Effect/Name/HeroSelendisZealotofAiur@Set=Set
+Effect/Name/HeroSelendisZealousRush@AddTrackedUnit=Add Tracked Unit
+Effect/Name/HeroSelendisZealousRush@ApplyCharging=Apply Charging
+Effect/Name/HeroSelendisZealousRush@ApplyMark=Apply Mark
+Effect/Name/HeroSelendisZealousRush@ApplyMoveDummy=Apply Move Dummy
+Effect/Name/HeroSelendisZealousRush@ApplyShield=Apply Shield
+Effect/Name/HeroSelendisZealousRush@ClearOrder=Clear Order
+Effect/Name/HeroSelendisZealousRush@Damage=Damage
+Effect/Name/HeroSelendisZealousRush@DashImpactSet=Dash Impact Set
+Effect/Name/HeroSelendisZealousRush@DashSeach=Dash Search
+Effect/Name/HeroSelendisZealousRush@DistanceSwitch=Distance Switch
+Effect/Name/HeroSelendisZealousRush@FinishSet=Finish Set
+Effect/Name/HeroSelendisZealousRush@GetTrackedUnit=Get Tracked Unit
+Effect/Name/HeroSelendisZealousRush@ImpactSet=Impact Set
+Effect/Name/HeroSelendisZealousRush@InitialPersistent=Initial Persistent
+Effect/Name/HeroSelendisZealousRush@InitialSet=Initial Set
+Effect/Name/HeroSelendisZealousRush@IssueApproachOrder=Issue Approach Order
+Effect/Name/HeroSelendisZealousRush@LaunchUnit=Launch Unit
+Effect/Name/HeroSelendisZealousRush@MissileScanPersistent=Missile Scan Persistent
+Effect/Name/HeroSelendisZealousRush@RemoveMark=Remove Mark
+Effect/Name/HeroSelendisZealousRush@RemoveMoveDummy=Remove Move Dummy
+Effect/Name/HeroSelendisZealousRush@SetWeaponCooldown=Set Weapon Cooldown
+Effect/Name/HeroSelendisZealousRushApproach@Damage=Damage
+Effect/Name/HeroSelendisZealousRushApproach@ImpactSet=Impact Set
+Effect/Name/HeroSelendisZealousRushApproach@RemoveChargingBehavior=Remove Charging Behavior
+Hero/Name/HeroSelendis=Selendis
+Param/Expression/lib_HSld_28A6F2AB=[B] Remaining Duration: ~A~<n/>[B] Duration Total: ~B~
+Param/Expression/lib_HSld_56B3FADF=[B] Remaining Duration: ~A~<n/>[B] Duration Total: ~B~
+UI/HeroSelendis/ShieldsRemainingAmount=<d ref="$RunAccumulators:HeroSelendisTemplarWillpower@ShieldsRemainingAmount$"/>
+Unit/Name/HeroSelendis=Selendis
+Unit/Name/HeroSelendisCalldownVindicator@Vindicator=Vindicator
+Unit/Name/HeroSelendisCalldownVindicator@WeaponMissile=Weapon Missile
+Unit/Name/HeroSelendisSolarLance@Missile=Missile
+Unit/Name/HeroSelendisTalentInTheHeatOfBattle=In The Heat of Battle
+Unit/Name/HeroSelendisTalentPhaseWeapon=Phase Weapon
+Unit/Name/Selendis_Vindicator2=Vindicator
+UserData/Skin/SelendisBase_VariationName=Selendis
+Weapon/Name/HeroSelendisWeapon=Hero Weapon

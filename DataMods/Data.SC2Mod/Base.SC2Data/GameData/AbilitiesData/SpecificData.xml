@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="SpecificEyeofKilrogg@ApplyCloak">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="SpecificEyeofKilrogg@Cloak"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="SpecificEyeofKilrogg@CursorSearch">
+        <EditorCategories value="CoreHero:Common"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="8"/>
+    </CEffectEnumArea>
+    <CEffectCreateUnit id="SpecificEyeofKilrogg@CreateUnit">
+        <ValidatorArray value="HunterCliffCheckTargetLevel1"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnUnit value="SpecificEyeofKilrogg"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="SpecificHealingWard@ApplyCloak">
+        <EditorCategories value="CoreHero:Common"/>
+        <Behavior value="SpecificHealingWard@Cloak"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="SpecificHealingWard@PeriodicSearch">
+        <EditorCategories value="CoreHero:Common"/>
+        <SearchFilters value="Heroic;Neutral,Enemy,Massive,Structure,Hover,Worker,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="8" Effect="SpecificHealingWard@PeriodicHeal"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreateHealer id="SpecificHealingWard@PeriodicHeal">
+        <EditorCategories value="CoreHero:Common"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriod value="1"/>
+        <RechargeVitalFraction value="0.004"/>
+    </CEffectCreateHealer>
+    <CEffectCreateUnit id="SpecificHealingWard@CreateUnit">
+        <ValidatorArray value="HunterCliffCheckTargetLevel1"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnUnit value="SpecificHealingWard"/>
+    </CEffectCreateUnit>
+    <CAbilEffectTarget id="SpecificEyeofKilrogg">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Effect index="0" value="SpecificEyeofKilrogg@CreateUnit"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SpecificEyeofKilrogg">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+        <AbilityCategories index="Repair" value="1"/>
+        <CursorEffect value="SpecificEyeofKilrogg@CursorSearch"/>
+        <Cost>
+            <Charge>
+                <CountMax value="2"/>
+                <CountStart value="2"/>
+                <CountUse value="1"/>
+                <Link value="Abil/SpecificAbilityCooldown"/>
+                <Location value="Player"/>
+                <TimeUse value="60"/>
+            </Charge>
+            <Cooldown Link="Abil/SpecificAbilityCooldown" Location="Player" TimeUse="1"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="SpecificHealingWard">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <AbilityCategories index="Repair" value="1"/>
+        <Effect index="0" value="SpecificHealingWard@CreateUnit"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Charge>
+                <CountMax value="2"/>
+                <CountStart value="2"/>
+                <CountUse value="1"/>
+                <Link value="Abil/SpecificAbilityCooldown"/>
+                <Location value="Player"/>
+                <TimeUse value="60"/>
+            </Charge>
+            <Cooldown Link="Abil/SpecificAbilityCooldown" Location="Player" TimeUse="1"/>
+        </Cost>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SpecificHealingWard">
+            <Flags index="UseDefaultButton" value="1"/>
+            <Flags index="CreateDefaultButton" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CButton id="SpecificEyeofKilrogg" parent="CoreSpecificButton">
+        <Icon value="assets\Icons\Hero_Gall\Icon_Hero_Gall_EyeOfKilRogg.dds"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/SpecificEyeofKilrogg/Info"/>
+    </CButton>
+    <CButton id="SpecificHealingWard" parent="CoreSpecificButton">
+        <Icon value="assets\Icons\Common_General\Icon_General_HealingWard.dds"/>
+        <TooltipCooldownOverrideText value="Button/Tooltip/SpecificHealingWard/Info"/>
+    </CButton>
+    <CActorSplat id="SpecificEyeofKilrogg@CursorSplat" parent="CoreGuideVisualCircleFantasy" abil="SpecificEyeofKilrogg"/>
+    <CActorModel id="SpecificEyeofKilrogg@PlacementGuide" parent="CorePlacementModel">
+        <On Terms="Abil.SpecificEyeofKilrogg.Guide" Send="Create"/>
+        <HostSiteOps Ops="SOpTipabilityFloorScope SOpMoveUpBy3"/>
+        <Model value="SpecificEyeofKilrogg@Placement"/>
+    </CActorModel>
+    <CActorRange id="SpecificEyeofKilrogg@RangeofDetector">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <On Terms="UnitBirth.SpecificEyeofKilrogg" Send="Create"/>
+        <On Terms="UnitDeath.SpecificEyeofKilrogg" Send="Destroy"/>
+        <Range value="7.125000"/>
+        <Icon value="assets\Textures\UI_Ingame_Radius_Tower.dds"/>
+        <IconScale value="0.008000,0.008000"/>
+        <IconArcLength value="5.750000"/>
+    </CActorRange>
+    <CActorRange id="SpecificEyeofKilrogg@Range" parent="CoreRangeAbilPlusSplat" abil="SpecificEyeofKilrogg">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorSplat id="SpecificEyeofKilrogg@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="CoreHero:Common"/>
+        <Scale value="7.125000"/>
+    </CActorSplat>
+    <CActorSound id="SpecificEyeofKilrogg@SoundDeath" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="UnitDeath.SpecificEyeofKilrogg" Send="Create"/>
+        <Sound value="SpecificEyeofKilrogg@Death"/>
+    </CActorSound>
+    <CActorSound id="SpecificEyeofKilrogg@SoundBirth" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="UnitBirth.SpecificEyeofKilrogg" Send="Create"/>
+        <Sound value="SpecificEyeofKilrogg@Birth"/>
+    </CActorSound>
+    <CActorUnit id="SpecificEyeofKilrogg" parent="CoreUnitBase" unitName="SpecificEyeofKilrogg">
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <ProximityPosition value="CenterActor"/>
+        <DeathArray index="Normal" AnimProps="Birth" ModelLink="SpecificEyeofKilrogg@Death"/>
+        <PlacementActorModel value="CorePlacementModel"/>
+        <PlaceholderActorModel value="CorePlacementModel"/>
+        <BarOffset value="5"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <UnitIcon value="assets\Icons\Hero_Gall\Icon_Hero_Gall_EyeOfKilRogg.dds"/>
+        <Inherits index="TeamColor" value="1"/>
+        <PlacementModel value="SpecificEyeofKilrogg@Placement"/>
+    </CActorUnit>
+    <CActorModel id="Specific_HealingWardPlacement" parent="CorePlacementModel">
+        <!--On Terms="ActorCreation; ModelName ItemHealingWardPlacement" Send="Create ItemHealingWardTotemRange"/>
+        <On Terms="ActorDestruction" Target="ItemHealingWardTotemRange" Send="Destroy"/-->
+    </CActorModel>
+    <CActorUnit id="SpecificHealingWard" parent="CoreUnitBase" unitName="SpecificHealingWard">
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <ProximityPosition value="CenterActor"/>
+        <DeathArray index="Normal" SoundLink="SpecificHealingWard@Death"/>
+        <PlacementModel value="SpecificHealingWard@Placement"/>
+        <PlacementActorModel value="CorePlacementModel"/>
+        <PlaceholderActorModel value="CorePlacementModel"/>
+        <BarOffset value="-5"/>
+        <CustomUnitStatusFrame value="UnitStatus/MinionUnitStatusFrameWithDurationBars"/>
+        <SoundArray index="Birth" value="SpecificHealingWard@Birth"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="assets\Icons\Common_General\Icon_General_HealingWard.dds"/>
+    </CActorUnit>
+    <CActorModel id="SpecificHealingWard@ModelHealImpact" parent="CoreModelAnimationStyleOneShot">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Effect.SpecificHealingWard@PeriodicHeal.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <AutoScaleFactor value="1.500000"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorSplat id="SpecificHealingWard@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="CoreHero:Common"/>
+        <Scale value="7.125000"/>
+    </CActorSplat>
+    <CActorModel id="SpecificHealingWard@PlacementGuide" parent="CorePlacementModel">
+        <On Terms="Abil.SpecificHealingWard.Cursor" Send="Create"/>
+        <Model value="SpecificHealingWard@Placement"/>
+    </CActorModel>
+    <CActorSound id="SpecificHealingWard@Birth" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="UnitBirth.SpecificHealingWard" Send="Create"/>
+    </CActorSound>
+    <CActorRange id="SpecificHealingWard@Range" parent="CoreRangeAbilPlusSplat" abil="SpecificHealingWard">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+    </CActorRange>
+    <CActorSound id="SpecificHealingWard@SoundHeal" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Common"/>
+        <On Terms="Behavior.SpecificHealingWard@TimedLife.On" Send="Create"/>
+        <On Terms="Behavior.SpecificHealingWard@TimedLife.Off" Send="Destroy"/>
+    </CActorSound>
+    <CModel id="SpecificEyeofKilrogg@Placement" parent="Placement">
+        <Model value="assets\Effects\Heroes\Base_ChoGall\Base_Cho\Effect_Chogall_Base_EyeOfKilrogg\Effect_Chogall_Base_EyeOfKilrogg.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="SpecificEyeofKilrogg@Death" parent="Building">
+        <Model value="assets\Effects\Heroes\Base_ChoGall\Base_Cho\Effect_Chogall_Base_EyeOfKilrogg_Impact\Effect_Chogall_Base_EyeOfKilrogg_Impact.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="SpecificEyeofKilrogg" parent="Building">
+        <Model value="assets\Effects\Heroes\Base_ChoGall\Base_Cho\Effect_Chogall_Base_EyeOfKilrogg\Effect_Chogall_Base_EyeOfKilrogg.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CModel id="SpecificHealingWard@Placement" parent="Placement">
+        <Model value="assets\Effects\Talents\Talent_Old_HealingTotem\Talent_Old_HealingTotem.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <ScaleMax value="1.210000,1.210000,1.000000"/>
+        <ScaleMin value="1.210000,1.210000,1.000000"/>
+    </CModel>
+    <CModel id="SpecificHealingWard" parent="Building" Race="Protoss">
+        <Model value="assets\Effects\Talents\Talent_Old_HealingTotem\Talent_Old_HealingTotem.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+        <ScaleMax value="1.210000,1.210000,1.000000"/>
+        <ScaleMin value="1.210000,1.210000,1.000000"/>
+    </CModel>
+    <CModel id="SpecificHealingWard@ModelHealImpact" parent="OneShotSpellFX">
+        <!--Model value="Assets\Effects\Storm_Effect_GenericHeal_Regen_Impact\Storm_Effect_GenericHeal_Regen_Impact.m3"/-->
+        <Model value="assets\Effects\Talents\Talent_Old_HPBuff\Talent_Old_HPBuff.m3"/>
+        <EditorCategories value="CoreHero:Common"/>
+    </CModel>
+    <CSound id="SpecificEyeofKilrogg@Death" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_ChoGall\Gall_EyeofKillrogg_Dismiss_01.ogg" FacialGroup=""/>
+        <Category value="Flames"/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="SpecificEyeofKilrogg@Birth" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_ChoGall\Gall_EyeofKillrogg_Summon_01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Base_ChoGall\Gall_EyeofKillrogg_Summon_02.ogg" FacialGroup=""/>
+        <Category value="Flames"/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="SpecificHealingWard@Death" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Earth_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Earth_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Earth_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Earth_Impact04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Earth_Impact05.ogg" FacialGroup=""/>
+        <Pitch value="5.000000,5.000000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="SpecificHealingWard@SoundHeal" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Malfurion\Malfurion_Wisp_Loop01.ogg" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Pitch value="-1.820000,1.640000"/>
+        <Volume value="-15.290000,-15.290000"/>
+    </CSound>
+    <CSound id="SpecificHealingWard@Birth" parent="Spell">
+        <EditorCategories value="CoreHero:Common"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_HealingTotem_Launch01.ogg" FacialGroup=""/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CDataCollection id="SpecificEyeofKilrogg">
+        <EditorCategories value="Race:Neutral,CoreHero:Common"/>
+        <DataRecord Entry="Abil,SpecificEyeofKilrogg"/>
+        <DataRecord Entry="Button,SpecificEyeofKilrogg"/>
+        <DataRecord Entry="Effect,SpecificEyeofKilrogg@CreateUnit"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg"/>
+        <DataRecord Entry="Model,SpecificEyeofKilrogg"/>
+        <DataRecord Entry="Model,SpecificEyeofKilrogg@Death"/>
+        <DataRecord Entry="Unit,SpecificEyeofKilrogg"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@SoundBirth"/>
+        <DataRecord Entry="Sound,SpecificEyeofKilrogg@Birth"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@SoundDeath"/>
+        <DataRecord Entry="Sound,SpecificEyeofKilrogg@Death"/>
+        <DataRecord Entry="Behavior,SpecificEyeofKilrogg@TimedLife"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@Range"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@RangeSplat"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@RangeofDetector"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@PlacementGuide"/>
+        <DataRecord Entry="Actor,SpecificEyeofKilrogg@CursorSplat"/>
+        <DataRecord Entry="Effect,SpecificEyeofKilrogg@CursorSearch"/>
+        <DataRecord Entry="Model,SpecificEyeofKilrogg@Placement"/>
+    </CDataCollection>
+    <CDataCollection id="SpecificHealingWard">
+        <EditorCategories value="Race:Neutral,CoreHero:Common"/>
+        <DataRecord Entry="Abil,SpecificHealingWard"/>
+        <DataRecord Entry="Actor,SpecificHealingWard@Range"/>
+        <DataRecord Entry="Actor,SpecificHealingWard@SoundHeal"/>
+        <DataRecord Entry="Actor,SpecificHealingWard@ModelHealImpact"/>
+        <DataRecord Entry="Actor,SpecificHealingWard@PlacementGuide"/>
+        <DataRecord Entry="Behavior,SpecificHealingWard@TimedLife"/>
+        <DataRecord Entry="Button,SpecificHealingWard"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@CreateUnit"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@ApplyTimedLifeBehavior"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@PeriodicSearch"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@PeriodicHeal"/>
+        <DataRecord Entry="Model,SpecificHealingWard@ModelHealImpact"/>
+        <DataRecord Entry="Model,SpecificHealingWard@Placement"/>
+        <DataRecord Entry="Sound,SpecificHealingWard@SoundHeal"/>
+        <DataRecord Entry="Actor,SpecificHealingWard@RangeSplat"/>
+        <DataRecord Entry="Actor,SpecificHealingWard"/>
+        <DataRecord Entry="Actor,SpecificHealingWard@Birth"/>
+        <DataRecord Entry="Model,SpecificHealingWard"/>
+        <DataRecord Entry="Sound,SpecificHealingWard@Birth"/>
+        <DataRecord Entry="Sound,SpecificHealingWard@Death"/>
+        <DataRecord Entry="Unit,SpecificHealingWard"/>
+        <DataRecord Entry="Behavior,SpecificHealingWard@Invisibility"/>
+        <DataRecord Entry="Behavior,SpecificHealingWard@Cloak"/>
+        <DataRecord Entry="Behavior,SpecificHealingWard@TimerForCloak"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@CreationSet"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@TimerForCloak"/>
+        <DataRecord Entry="Effect,SpecificHealingWard@ApplyCloak"/>
+    </CDataCollection>
+    <CUnit id="SpecificEyeofKilrogg" parent="CoreSummonPassive">
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Summoned" value="0"/>
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+        <BehaviorArray index="0" Link="ReducedTakenDamage1"/>
+        <BehaviorArray Link="SpecificEyeofKilrogg@TimedLife"/>
+        <BehaviorArray Link="SpecificEyeofKilrogg@TimerForCloak"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Common"/>
+        <Height value="3"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Radius value="0.5"/>
+        <InnerRadius value="0.5"/>
+    </CUnit>
+    <CUnit id="SpecificHealingWard" parent="CoreSummonPassive">
+        <PlaneArray index="Ground" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Summoned" value="0"/>
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+        <Sight value="8"/>
+        <BehaviorArray index="0" Link="ReducedTakenDamage1"/>
+        <BehaviorArray Link="SpecificHealingWard@TimedLife"/>
+        <BehaviorArray Link="SpecificHealingWard@TimerForCloak"/>
+        <Radius value="0.5"/>
+        <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Unit,CoreHero:Common"/>
+    </CUnit>
+    <CBehaviorBuff id="SpecificEyeofKilrogg@TimerForCloak">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="3"/>
+        <FinalEffect value="SpecificEyeofKilrogg@ApplyCloak"/>
+    </CBehaviorBuff>
+    <!--On Terms="ActorCreation; ModelName ItemHealingWardPlacement" Send="Create ItemHealingWardTotemRange"/>
+        <On Terms="ActorDestruction" Target="ItemHealingWardTotemRange" Send="Destroy"/-->
+    <!--Model value="Assets\Effects\Storm_Effect_GenericHeal_Regen_Impact\Storm_Effect_GenericHeal_Regen_Impact.m3"/-->
+    <CBehaviorBuff id="SpecificEyeofKilrogg@Cloak" parent="CorePersistentCloak">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpecificEyeofKilrogg@TimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="40"/>
+        <ExpireEffect value="SuicideTimeout"/>
+        <Modification Detect="8" DetectFilters="-;Player,Ally,Neutral">
+            <StateFlags index="Benign" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpecificHealingWard@TimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="40"/>
+        <Period value="1"/>
+        <InitialEffect value="SpecificHealingWard@PeriodicSearch"/>
+        <PeriodicEffect value="SpecificHealingWard@PeriodicSearch"/>
+        <ExpireEffect value="SuicideTimeout"/>
+        <Modification>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpecificHealingWard@Cloak" parent="CorePersistentCloak">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpecificHealingWard@TimerForCloak">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Common"/>
+        <Duration value="3"/>
+        <FinalEffect value="SpecificHealingWard@ApplyCloak"/>
+    </CBehaviorBuff>
+</Catalog>

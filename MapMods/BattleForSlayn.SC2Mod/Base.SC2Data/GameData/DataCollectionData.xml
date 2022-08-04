@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CDataCollectionAbil id="SlaynVoidThrasherShooting">
+        <EditorCategories value="StandardHero:MapEvents,StandardDataGroup:Ability"/>
+        <DataRecord Entry="Abil,SlaynVoidThrasherShooting"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@Attack"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@AttackMissile"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@SoundLaunch"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasherShooting@SoundMissileLaunch"/>
+        <DataRecord Entry="Behavior,SlaynVoidThrasherShooting@Missile"/>
+        <DataRecord Entry="Behavior,SlaynVoidThrasherShooting@Active"/>
+        <DataRecord Entry="Behavior,SlaynVoidThrasherShooting@Target"/>
+        <DataRecord Entry="Effect,SlaynVoidThrasherShooting@LM"/>
+        <DataRecord Entry="Effect,SlaynVoidThrasherShooting@Damage"/>
+        <DataRecord Entry="Model,SlaynVoidThrasherShooting@Impact"/>
+        <DataRecord Entry="Model,SlaynVoidThrasherShooting@Missile"/>
+        <DataRecord Entry="Mover,SlaynVoidThrasherShooting@Mover"/>
+        <DataRecord Entry="Mover,SlaynVoidThrasherShooting@MoverBigDistance"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@AttackImpact"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@LaunchLayer2"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@SoundLaunch"/>
+        <DataRecord Entry="Sound,SlaynVoidThrasherShooting@SoundMissileLaunch"/>
+        <DataRecord Entry="Unit,SlaynVoidThrasherShooting@Missile"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="SlaynVoidRiftSpawn">
+        <EditorCategories value="StandardHero:MapEvents,StandardDataGroup:Ability"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@Action"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@ActionMissile"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@ModelBirth"/>
+        <DataRecord Entry="Actor,SlaynVoidRiftSpawn@SoundBirth"/>
+        <DataRecord Entry="Effect,SlaynVoidRiftSpawn@LM"/>
+        <DataRecord Entry="Model,SlaynVoidRiftSpawn@ModelBirth"/>
+        <DataRecord Entry="Model,SlaynVoidRiftSpawn@Missile"/>
+        <DataRecord Entry="Mover,SlaynVoidRiftSpawn@Mover"/>
+        <DataRecord Entry="Sound,SlaynVoidRiftSpawn@SoundBirth"/>
+        <DataRecord Entry="Unit,SlaynVoidRiftSpawn@Missile"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="SlaynVoidThrasher">
+        <EditorCategories value="StandardHero:MapEvents,StandardDataGroup:Unit"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasher@GroundSkirt"/>
+        <DataRecord Entry="Actor,SlaynVoidThrasher"/>
+        <DataRecord Entry="Model,SlaynVoidThrasher@GroundSkirt"/>
+        <DataRecord Entry="Model,SlaynVoidThrasher"/>
+        <DataRecord Entry="Unit,SlaynVoidThrasher"/>
+    </CDataCollectionUnit>
+    <CDataCollection id="SlaynVoidNebulaStorm">
+        <DataRecord Entry="Actor,SlaynVoidNebulaStorm"/>
+        <DataRecord Entry="Model,SlaynVoidNebulaStorm"/>
+        <EditorCategories value="StandardHero:MapEvents"/>
+    </CDataCollection>
+    <CDataCollectionAbil id="SlaynSupplicantWeapon">
+        <EditorCategories value="StandardHero:MapEvents,StandardDataGroup:Weapon"/>
+        <DataRecord Entry="Effect,SlaynSupplicantWeapon@Damage"/>
+        <DataRecord Entry="Weapon,SlaynSupplicantWeapon"/>
+        <Button value="BasicAttack"/>
+    </CDataCollectionAbil>
+    <CDataCollectionUnit id="SlaynSupplicant">
+        <EditorCategories value="StandardHero:MapEvents,StandardDataGroup:Unit"/>
+        <DataRecord Entry="Unit,SlaynSupplicant"/>
+        <DataRecord Entry="Actor,SlaynSupplicant"/>
+        <DataRecord Entry="Model,SlaynSupplicant@Model"/>
+        <DataRecord Entry="Model,SlaynSupplicant@Death"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="SlaynVoidRift">
+        <EditorCategories value="StandardHero:MapEvents,StandardDataGroup:Unit"/>
+        <DataRecord Entry="Actor,SlaynVoidRift"/>
+        <DataRecord Entry="Footprint,SlaynVoidRift@Footprint"/>
+        <DataRecord Entry="Model,SlaynVoidRift@Static"/>
+        <DataRecord Entry="Model,SlaynVoidRift"/>
+        <DataRecord Entry="Model,SlaynVoidRift@StaticDeath"/>
+        <DataRecord Entry="Unit,SlaynVoidRift@Static"/>
+    </CDataCollectionUnit>
+    <CDataCollectionAbil id="MercenarySlaynElementalEssenceLeech">
+        <EditorCategories value="StandardHero:Mercenaries,StandardDataGroup:Ability"/>
+        <DataRecord Entry="Abil,MercenarySlaynElementalEssenceLeech"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalEssenceLeech@ModelCage"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalEssenceLeech@SoundCageEnd"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalEssenceLeech@SoundCageStart"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalEssenceLeech@Warning"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalEssenceLeech@SoundCageLoop"/>
+        <DataRecord Entry="Behavior,MercenarySlaynElementalEssenceLeech@Encased"/>
+        <DataRecord Entry="Behavior,MercenarySlaynElementalEssenceLeech@UnifiedArmorReduction"/>
+        <DataRecord Entry="Button,MercenarySlaynElementalEssenceLeech"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@InitialSearch"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@ImpactSet"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@ApplyStunBehavior"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@CreateWarningPersistent"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@SearchToStun"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@ApplyUnifiedArmorReduction"/>
+        <DataRecord Entry="Model,MercenarySlaynElementalEssenceLeech@ModelCage"/>
+        <DataRecord Entry="Model,MercenarySlaynElementalEssenceLeech@Warning"/>
+        <DataRecord Entry="Sound,MercenarySlaynElementalEssenceLeech@SoundCageEnd"/>
+        <DataRecord Entry="Sound,MercenarySlaynElementalEssenceLeech@SoundCageStart"/>
+        <DataRecord Entry="Sound,MercenarySlaynElementalEssenceLeech@SoundCageLoop"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalEssenceLeech@Damage"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="MercenarySlaynElementalWeapon">
+        <EditorCategories value="StandardHero:Mercenaries,StandardDataGroup:Weapon"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalWeapon@AttackBeam"/>
+        <DataRecord Entry="Actor,MercenarySlaynElementalWeapon@Attack"/>
+        <DataRecord Entry="Effect,MercenarySlaynElementalWeapon@Damage"/>
+        <DataRecord Entry="Model,MercenarySlaynElementalWeapon@AttackBeam"/>
+        <DataRecord Entry="Model,MercenarySlaynElementalWeapon@AttackImpact"/>
+        <DataRecord Entry="Sound,MercenarySlaynElementalWeapon@AttackLaunch"/>
+        <DataRecord Entry="Sound,MercenarySlaynElementalWeapon@AttackImpact"/>
+        <DataRecord Entry="Weapon,MercenarySlaynElementalWeapon"/>
+        <Button value="BasicAttack"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="MercenarySlaynElemental">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,StandardHero:Mercenaries,StandardDataGroup:Unit"/>
+        <DataRecord Entry="Actor,MercenarySlaynElemental@Defender"/>
+        <DataRecord Entry="Behavior,MercenarySlaynElemental@ScalingDefender"/>
+        <DataRecord Entry="Model,MercenarySlaynElemental@Model"/>
+        <DataRecord Entry="Model,MercenarySlaynElemental@Death"/>
+        <DataRecord Entry="Model,MercenarySlaynElemental@DeathRagdoll"/>
+        <DataRecord Entry="Unit,MercenarySlaynElemental@Defender"/>
+    </CDataCollectionUnit>
+</Catalog>

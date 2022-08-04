@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="MercenaryColossus@Explode" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Large" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_04.wav" FacialGroup=""/>
+        <PlayDelay value="0,60"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Large_Var" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Large_04.wav" FacialGroup=""/>
+        <PlayDelay value="0,60"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Legs_Impact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Impact_03.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-1.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Legs_Spark_A" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Spark_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Spark_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Spark_03.wav" FacialGroup=""/>
+        <Volume value="-6.000000,-3.000000"/>
+        <VolumeRolloffPoints Distance="8.000000"/>
+        <VolumeRolloffPoints Distance="16.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Legs_Spark_B" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Spark_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Spark_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Spark_03.wav" FacialGroup=""/>
+        <Volume value="-10.000000,-10.000000"/>
+        <VolumeRolloffPoints Distance="8.000000"/>
+        <VolumeRolloffPoints Distance="16.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Legs_Whoosh" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Whoosh_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Whoosh_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Legs_Whoosh_03.wav" FacialGroup=""/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Ragdoll_A" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Ragdoll_A_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Ragdoll_A_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Ragdoll_A_03.wav" FacialGroup=""/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Ragdoll_B2" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Ragdoll_B_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Ragdoll_B_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Ragdoll_B_03.wav" FacialGroup=""/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Small" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Small_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Small_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Small_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Small_04.wav" FacialGroup=""/>
+        <PlayDelay value="0,60"/>
+        <Volume value="-1.000000,1.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossus@Explode_Vocalize" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Vocalize_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Vocalize_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Vocalize_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Colossus_Explode_Vocalize_04.wav" FacialGroup=""/>
+        <Pitch value="0.000000,1.000000"/>
+        <PlayDelay value="0,60"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+    <CSound id="MinionProtossCatapult@DeathExplosion" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="1.000000,2.000000"/>
+        <Volume value="-5.000000,-4.000000"/>
+    </CSound>
+    <CSound id="MinionProtossCatapult@Explode" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Category value="Combat"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="TownProtossMoonwell_Explode" parent="_FX_NPC_Combat">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+    <CSound id="TownProtossCannonTowerAttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\Stalker\Stalker_AttackImpact0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Stalker\Stalker_AttackImpact1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Stalker\Stalker_AttackImpact2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\Stalker\Stalker_AttackImpact3.wav" FacialGroup=""/>
+        <Flags index="Ignorable" value="1"/>
+        <Category value="User20"/>
+        <Pitch value="-5.000000,-5.000000"/>
+        <Volume value="-14.000000,-14.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="TownProtossCannonTowerAttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="assets\Sounds\Doodads\HVH\HVH_Common\Doodad_CannonTower_Heaven_Launch_01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Doodads\HVH\HVH_Common\Doodad_CannonTower_Heaven_Launch_02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Doodads\HVH\HVH_Common\Doodad_CannonTower_Heaven_Launch_03.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Doodads\HVH\HVH_Common\Doodad_CannonTower_Heaven_Launch_04.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Doodads\HVH\HVH_Common\Doodad_CannonTower_Heaven_Launch_05.ogg" FacialGroup=""/>
+        <Flags index="Ignorable" value="1"/>
+        <Category value="User20"/>
+        <Pitch value="-5.000000,-5.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="TownProtossTownHallAttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackImpact2.wav" FacialGroup=""/>
+        <Flags index="Ignorable" value="1"/>
+        <Category value="User20"/>
+        <CategoryLocal value="UIMovie"/>
+        <Volume value="-13.000000,-12.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+        <LocalVolumeAdjustment value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="TownProtossTownHallAttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\PhotonCannon\PhotonCannon_AttackLaunch4.wav" FacialGroup=""/>
+        <Flags index="Ignorable" value="1"/>
+        <Category value="User20"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-15.000000,-15.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode_Body_Impact" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Impact_04.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode_Body_Start" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Start_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Start_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Start_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Body_Start_04.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="5.000000,7.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode_Legs_Impact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Impact_04.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode_Legs_Mech2" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Mech_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Mech_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Mech_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Mech_04.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode_Legs_Start" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Start_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Start_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Start_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Immortal_Explode_Legs_Start_04.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguard@Explode_Var" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" FacialGroup=""/>
+        <Pitch value="5.000000,7.000000"/>
+        <Volume value="-6.000000,-3.000000"/>
+    </CSound>
+    <CSound id="TownProtossTowerDeath" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+    <CSound id="TownProtossTownDeath" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_00a.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Spread value="15.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="TownProtossBuildingSoundEnd" parent="Ambience_Object">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_BuildingWarpIn0.wav"/>
+        <Flags index="AllowMultiNotifies" value="1"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="15.000000" Volume="-60.000000"/>
+    </CSound>
+    <CSound id="TownProtossBuildingSoundStart" parent="Ambience_Object">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Construction\Protoss_BuildingWarpStart0.wav"/>
+        <Flags index="AllowMultiNotifies" value="1"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="15.000000" Volume="-60.000000"/>
+    </CSound>
+    <CSound id="TownProtossExplosionLarge" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+    <CSound id="TownProtossPreExplosionSmall" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall9.wav" Pitch="-3.000000,3.000000"/>
+    </CSound>
+    <CSound id="TownProtossAscend" parent="Ambience_Object">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\KhaydarinMonolith_PoweredAscend.wav"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="15.000000" Volume="-60.000000"/>
+        <Flags index="AllowMultiNotifies" value="1"/>
+        <DupeDestroyCount value="64"/>
+        <DupeMuteCount value="64"/>
+    </CSound>
+    <CSound id="TownProtossDescend" parent="Ambience_Object">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\KhaydarinMonolith_UnpoweredDescend.wav"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="15.000000" Volume="-60.000000"/>
+        <Flags index="AllowMultiNotifies" value="1"/>
+        <DupeDestroyCount value="64"/>
+        <DupeMuteCount value="64"/>
+    </CSound>
+    <CSound id="TownProtossPowerDown" parent="Ambience_Object">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\KhaydarinMonolith_PoweredBirth.wav"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="15.000000" Volume="-60.000000"/>
+        <Flags index="AllowMultiNotifies" value="1"/>
+        <DupeDestroyCount value="64"/>
+        <DupeMuteCount value="64"/>
+    </CSound>
+    <CSound id="TownProtossPowerUp" parent="Ambience_Object">
+        <EditorCategories value="StandardHero:MapObjects"/>
+        <AssetArray File="Assets\Sounds\KhaydarinMonolith_PoweredBirth.wav"/>
+        <VolumeRolloffPoints Distance="5.000000"/>
+        <VolumeRolloffPoints Distance="15.000000" Volume="-60.000000"/>
+        <Flags index="AllowMultiNotifies" value="1"/>
+        <DupeDestroyCount value="64"/>
+        <DupeMuteCount value="64"/>
+    </CSound>
+    <CSound id="MinionProtossRanged@Death" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AssetArray TemplateParam="Adept_Death00" Weight="15"/>
+        <AssetArray TemplateParam="Adept_Death01"/>
+        <AssetArray TemplateParam="Adept_Death02"/>
+        <AssetArray TemplateParam="Adept_Death03"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.wav"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Pitch value="-1.000000,1.000000"/>
+        <Select value="Random"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="MinionProtossWizard@Death" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death0.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death1.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death2.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death3.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death4.wav"/>
+        <Volume value="-20.000000,-20.000000"/>
+    </CSound>
+    <CSound id="MinionProtossCatapultWeapon@SoundLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch04.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,0.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossCatapultWeapon@SoundImpact" parent="_FX_NPC_Death">
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact04.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,0.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossWizardWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_04.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-25.000000,-25.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossWizardWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_04.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-20.000000,-20.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossRangedWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact03.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-25.000000,-25.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossRangedWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch04.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-25.000000,-25.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossMeleeWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice3.wav"/>
+        <Pitch value="-2.000000,5.000000"/>
+        <Volume value="-24.000000,-24.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossMeleeWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch4.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch5.wav"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="4" Volume="-3.000000"/>
+        <Pitch value="-0.890000,1.640000"/>
+        <Volume value="-24.000000,-24.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+        <EditorCategories value="StandardHero:Minions"/>
+    </CSound>
+    <CSound id="MinionProtossMelee@Death" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Minions"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death01.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death01.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death02.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death03.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death04.wav"/>
+        <Pitch value="-0.500000,0.500000"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="GenericProtossWarpLoop" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\WarpGate\WarpGate_TrainLoop.wav"/>
+        <LoopCount value="-1"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <EditorCategories value="StandardHero:Common"/>
+    </CSound>
+    <CSound id="GenericProtossWarpStart" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\WarpGate\WarpGate_TrainStart.wav"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <EditorCategories value="StandardHero:Common"/>
+    </CSound>
+    <CSound id="GenericProtossWarpStop" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\WarpGate\WarpGate_TrainFinish.wav"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <EditorCategories value="StandardHero:Common"/>
+    </CSound>
+    <CSound id="MercenaryColossusFireBeam@SoundBeamDamage" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackImpact05_1ch.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossusFireBeam@PowerUpSound" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_PowerUpPreLaunch01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_PowerUpPreLaunch02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_PowerUpPreLaunch03_1ch.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossusFireBeam@SoundLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackLaunch01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackLaunch02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackLaunch03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackLaunch04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackLaunch05_1ch.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossusFireBeam@SoundEnd" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackEndRelease01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackEndRelease02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackEndRelease03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackEndRelease04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Beam_AttackEndRelease05_1ch.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossusFireBeam@SoundLoop" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Clolarion_WeponBeam_Loop.wav" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossusChargedBlast@LaunchSound" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Launch01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Launch02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Launch03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Launch04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Launch05_1ch.wav" FacialGroup=""/>
+        <Volume value="-2.200000,-1.200000"/>
+    </CSound>
+    <CSound id="MercenaryColossusChargedBlast@PowerUpSound" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_PowerUpPreLaunch01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_PowerUpPreLaunch02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_PowerUpPreLaunch03_1ch.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="MercenaryColossusChargedBlast@GroundImpactSound" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Impact01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Impact02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Impact03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Impact04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Impact05_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\ColossusTaldarim_Missile_Impact06_1ch.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridDominator@Death" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_death00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_death01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_death02.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-4.000000,0.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridReaverWeapon@Death" parent="_FX_NPC_Death">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridZerg_Death00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridZerg_Death01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridZerg_Death02.wav" FacialGroup=""/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridReaverWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackImpact3.wav"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridReaverWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Hybrid_Zerg_Attack1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Zerg_Attack2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Zerg_Attack3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Hybrid_Zerg_Attack4.ogg" FacialGroup=""/>
+        <Volume value="-15.000000,-15.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridDominatorWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Protoss\Archon\Archon_AttackImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Archon\Archon_AttackImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Archon\Archon_AttackImpact2.wav"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridDominatorWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack00.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack02.ogg" Pitch="6.000000,6.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack06.ogg" Pitch="-3.000000,-3.000000" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridProtoss_attack07.ogg" Pitch="5.000000,5.000000" FacialGroup=""/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridNemesisWeapon@End" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Beam_End_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Beam_End_02.wav" FacialGroup=""/>
+        <Pitch value="-6.000000,-4.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridNemesisWeapon@Loop" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Beam_Loop_01.wav" LoopCount="-1" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Beam_Loop_02.wav" LoopCount="-1" FacialGroup=""/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridNemesisWeapon@Start" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Beam_Start_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Beam_Start_02.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,-1.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridNemesisWeapon@VX01" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Vx_Utter_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Vx_Utter_02.wav" FacialGroup=""/>
+        <Chance value="30"/>
+        <Pitch value="-4.000000,-1.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryHybridNemesisWeapon@VX02" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Vx_Utter_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HybridNemesis_Vx_Utter_03.wav" FacialGroup=""/>
+        <Chance value="40"/>
+        <Pitch value="-3.000000,-1.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguardWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact05_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact06_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_Impact07_1ch.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,1.000000"/>
+        <PlayDelay value="0,250"/>
+        <Volume value="-6.000000,-5.000000"/>
+    </CSound>
+    <CSound id="MercenaryVanguardWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <EditorCategories value="StandardHero:Mercenaries"/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_LaunchAttack01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_LaunchAttack02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_LaunchAttack03_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_LaunchAttack04_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_LaunchAttack05_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Vanguard_ScatterCannon_LaunchAttack06_1ch.wav" FacialGroup=""/>
+        <OverlapTimeDelta value="160"/>
+        <Pitch value="-0.500000,0.500000"/>
+        <PlayDelay value="0,150"/>
+        <Volume value="-6.000000,-5.000000"/>
+    </CSound>
+    <CSound id="Nexus_Explode_Standard" parent="Glue">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Flags index="Purgable" value="1"/>
+        <DupeDestroyCount value="5"/>
+        <Mode value="3DWorld"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ReverbBalance Room="0"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+</Catalog>

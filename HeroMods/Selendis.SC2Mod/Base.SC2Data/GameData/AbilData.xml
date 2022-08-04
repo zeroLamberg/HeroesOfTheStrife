@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectTarget id="HeroSelendisDecisiveStrike">
+        <Effect value="HeroSelendisDecisiveStrike@InitialSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="40"/>
+            <Cooldown Location="Unit" TimeUse="12"/>
+        </Cost>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="2.75"/>
+        <CastIntroTime value="0.125"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisDecisiveStrike"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroSelendisExecutorsGuard">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisExecutorsGuard">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroSelendisSolarLance">
+        <Effect value="HeroSelendisSolarLance@InitialSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="60"/>
+            <Cooldown Location="Unit" TimeUse="8"/>
+        </Cost>
+        <Range value="8"/>
+        <Arc value="14.9963"/>
+        <CursorRangeMode value="Clamp"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisSolarLance">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+        <PrepTime value="0.175"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroSelendisZealotofAiur">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Effect value="HeroSelendisZealotofAiur@Set"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Cooldown Location="Unit" TimeUse="20"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisZealotofAiur" Requirements="Ultimate2Unlocked"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroSelendisTemplarWillpower">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisTemplarWillpower">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroSelendisPowerStrike">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <Effect value="HeroSelendisPowerStrike@InitialPersistent"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="60"/>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </Cost>
+        <Range value="500"/>
+        <FinishTime value="0.25"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <CursorEffect value="HeroSelendisPowerStrike@TargetSearch"/>
+        <EffectRange index="0" value="8,1000"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisPowerStrike">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroSelendisExecutorCharge">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <Effect value="HeroSelendisExecutorCharge@EnumTrackedUnits"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.5"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisExecutorCharge" Requirements="HeroSelendisExecutorCharge@Button"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <SetLastTarget value="Attack"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroSelendisTalentInTheHeatOfBattle">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <Cost>
+            <Charge>
+                <CountMax value="25"/>
+                <CountStart value="25"/>
+                <CountUse value="25"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="0.125"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisTalentInTheHeatOfBattle"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroSelendisTalentInTheHeatOfBattle@AbilUseSet"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroSelendisCalldownVindicator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Effect value="HeroSelendisCalldownVindicator@CreateUnit"/>
+        <Cost>
+            <Vital index="Energy" value="90"/>
+            <Charge Location="Unit"/>
+            <Cooldown Location="Unit" TimeUse="120"/>
+        </Cost>
+        <Range value="10"/>
+        <Arc value="360"/>
+        <CursorEffect value="HeroSelendisCalldownVindicator@Search"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisCalldownVindicator" Requirements="Ultimate1Unlocked"/>
+        <InterruptCost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </InterruptCost>
+        <AINotifyEffect value="HeroSelendisCalldownVindicator@Modification"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroSelendisTalentPhaseWeapon">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Effect value="HeroSelendisTalentPhaseWeapon@ApplyBehavior"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="60"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisTalentPhaseWeapon"/>
+        <PrepEffect index="0" removed="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroSelendisVindicatorsBeam">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Effect value="HeroSelendisVindicatorsBeam@InitialSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="60"/>
+            <Charge Location="Unit"/>
+            <Cooldown Location="Unit" TimeUse="12"/>
+        </Cost>
+        <Range value="10"/>
+        <PrepTime value="0.175"/>
+        <FinishTime value="0.1875"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroSelendisVindicatorsBeam@Search"/>
+        <CursorRangeMode value="Clamp"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisVindicatorsBeam"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroSelendisExecutorBlade">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Cost>
+            <Vital index="Energy" value="40"/>
+            <Cooldown Location="Unit" TimeUse="5"/>
+        </Cost>
+        <Range value="500"/>
+        <PrepTime value="0.25"/>
+        <FinishTime value="0.0625"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroSelendisExecutorBlade@Search"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisExecutorBlade"/>
+        <Effect value="HeroSelendisExecutorBlade"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroSelendisExecutorChargeApproach">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Selendis"/>
+        <Effect value="HeroSelendisExecutorChargeApproach@ImpactSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="LineMovement" value="1"/>
+        <Range value="1"/>
+        <UninterruptibleArray index="Approach" value="1"/>
+        <SetLastTarget value="Attack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisExecutorCharge"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroSelendisZealousRush">
+        <AbilityCategories index="Physical" value="1"/>
+        <Effect value="HeroSelendisZealousRush@InitialSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="15"/>
+            <Cooldown Location="Unit" TimeUse="1.5"/>
+        </Cost>
+        <TargetFilters value="Visible;Player,Neutral,Missile,Dead,Hidden,Invulnerable"/>
+        <Range value="5.5"/>
+        <Arc value="360"/>
+        <SetLastTarget value="Attack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisZealousRush">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroSelendisZealousRushApproach">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect value="HeroSelendisZealousRushApproach@ImpactSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Flags index="LineMovement" value="1"/>
+        <Range value="1"/>
+        <UninterruptibleArray index="Approach" value="1"/>
+        <SetLastTarget value="Attack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroSelendisExecutorCharge"/>
+    </CAbilEffectTarget>
+</Catalog>

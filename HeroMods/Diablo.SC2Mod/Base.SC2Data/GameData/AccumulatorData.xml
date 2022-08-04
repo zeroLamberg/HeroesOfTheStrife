@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorBehavior id="HeroDiabloBlackSoulstone@SoulsCountCurrentCaster">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="100"/>
+        <Behavior value="HeroDiabloBlackSoulstone@Stacks"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorSwitch id="HeroDiabloTalentBlackSoulstoneDevilsDue@Switch">
+        <CaseArray Validator="HeroDiabloTalentBlackSoulstoneDevilsDue@IsDiabloAndHaveTalent" Accumulator="HeroDiabloTalentBlackSoulstoneDevilsDue@Arithmetic"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorArithmetic id="HeroDiabloTalentBlackSoulstoneDevilsDue@Arithmetic">
+        <MinAccumulation value="0"/>
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Parameters value="0">
+            <AccumulatorArray value="HeroDiabloBlackSoulstone@SoulsCountCurrent"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="HeroDiabloTalentBlackSoulstoneDevilsDue@Modifier"/>
+        </Parameters>
+        <Parameters value="0.01">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorConstant id="HeroDiabloTalentBlackSoulstoneDevilsDue@Modifier" parent="BaseAccumulator">
+        <Amount value="2.25"/>
+    </CAccumulatorConstant>
+    <CAccumulatorBehavior id="HeroDiabloBlackSoulstone@SoulsCountCurrent">
+        <MinAccumulation value="0"/>
+        <MaxAccumulation value="100"/>
+        <Behavior value="HeroDiabloBlackSoulstone@Stacks"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorConstant id="HeroDiabloTalentDevilChargeDevastatingCharge@Modifier">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroDiabloTalentDevilChargeDevastatingCharge@Switch">
+        <CaseArray Validator="HeroDiabloTalentDevilChargeDevastatingCharge@QuestCompleted" Accumulator="HeroDiabloTalentDevilChargeDevastatingCharge@Modifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroDiabloTalentSoulShield@SoulsModifier" parent="BaseAccumulator">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+</Catalog>

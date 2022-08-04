@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="HeroAbathur@SkinUltimateGrey">
+        <EditorCategories value="CoreHero:Abathur,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroAbathur@BaseChar">
+        <EditorCategories value="CoreHero:Abathur,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroAbathur@BaseAlbino">
+        <EditorCategories value="CoreHero:Abathur,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroAbathur@BaseVar3">
+        <EditorCategories value="CoreHero:Abathur,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroAbathur@SkinUltimateRed">
+        <EditorCategories value="CoreHero:Abathur,UpgradeType:Skins"/>
+    </CUpgrade>
+    <CUpgrade id="HeroAbathur@SkinUltimatePurple">
+        <EditorCategories value="CoreHero:Abathur,UpgradeType:Skins"/>
+    </CUpgrade>
+</Catalog>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectInstant id="HeroDiabloTalentSoulShield">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Effect value="HeroDiabloTalentSoulShield@InitialSet"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloTalentSoulShield"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="45"/>
+        </Cost>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroDiabloTalentLordofTerror">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Effect value="HeroDiabloTalentLordofTerror@Search"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="60"/>
+        </Cost>
+        <PrepTime value="0.5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloTalentLordofTerror" Requirements="HeroHasNoDeadBehavior"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroDiabloBlackSoulstone">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloBlackSoulstone">
+            <Flags index="IgnoreUser" value="1"/>
+            <Flags index="ShowInGlossary" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroDiabloFireStomp">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Effect value="HeroDiabloFireStomp@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="35"/>
+            <Cooldown Location="Unit" TimeUse="8"/>
+        </Cost>
+        <Range value="500"/>
+        <CastIntroTime value="0.2"/>
+        <FinishTime value="0.2"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroDiabloFireStomp@Search"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloFireStomp"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroDiabloLightningBreath@Cancel">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Effect value="HeroDiabloLightningBreath@CasterRemoveBehavior"/>
+        <Cost>
+            <Charge Link="Abil/DiabloLightningBreathCancel"/>
+            <Cooldown Link="Abil/DiabloLightningBreathCancel" Location="Unit" TimeStart="1.5"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloLightningBreath@Cancel" Requirements="HeroDiabloLightningBreath@Active"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroDiabloApocalypse">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Effect value="HeroDiabloApocalypse@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Cooldown Location="Unit" TimeUse="90"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloApocalypse" Requirements="Ultimate1Unlocked"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroDiabloDevilCharge">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AbilityCategories index="Physical" value="1"/>
+        <AbilityCategories index="BlockByMorph" value="1"/>
+        <AbilityCategories index="CanBeDisabled" value="1"/>
+        <Effect value="HeroDiabloDevilCharge@InitialSet"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="65"/>
+            <Cooldown Location="Unit" TimeUse="12"/>
+        </Cost>
+        <!--<TargetFilters value="Visible;Self,Player,Ally,Mechanical,Massive,RawResource,HarvestableResource,Missile,Item,Buried,Stasis,Dead,Hidden,Invulnerable"/>-->
+        <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroDiabloDevilCharge@DummySearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloDevilCharge">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+        <SetLastTarget value="Attack"/>
+        <FinishTime value="0.0625"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroDiabloLightningBreath">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Effect value="HeroDiabloLightningBreath@InitialSet"/>
+        <Flags index="ClearLastAttackTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="80"/>
+            <Cooldown Location="Unit" TimeUse="90"/>
+        </Cost>
+        <Range value="500"/>
+        <CastIntroTime value="0.5"/>
+        <CancelableArray index="Channel" value="1"/>
+        <PauseableArray index="Channel" value="0"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroDiabloLightningBreath@SearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloLightningBreath" Requirements="Ultimate2Unlocked"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroDiabloOverpower">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Diablo"/>
+        <Effect value="HeroDiabloOverpower@InitialChannelCreatePersistent"/>
+        <Flags index="AllowMovement" value="0"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="35"/>
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <HideCount value="1"/>
+                <Location value="Unit"/>
+                <TimeUse value="12"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="2"/>
+        </Cost>
+        <TargetFilters value="-;Player,Ally,Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Unstoppable"/>
+        <Range value="1"/>
+        <CastIntroTime value="0.0625"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <SetLastTarget value="Attack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloOverpower"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroDiabloTalentHellgate" parent="HeroGenericSelfTeleportAbility">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Effect value="HeroDiabloTalentHellgate@Teleport"/>
+        <Cost>
+            <Cooldown TimeUse="100"/>
+        </Cost>
+        <Range value="7.2"/>
+        <CursorEffect value="HeroDiabloApocalypse@SearchForImpact"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloTalentHellgate"/>
+        <CursorRangeMode value="Clamp"/>
+        <AbilityCategories index="Physical" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="DiabloShadowCharge">
+        <Effect value="DiabloShadowChargeInitialSet"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="1"/>
+        </Cost>
+        <TargetFilters value="Visible;Player,Ally,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroDiabloDevilCharge"/>
+        <CursorEffect value="DiabloShadowChargeCursorDummySearch"/>
+        <Arc value="360"/>
+        <SetLastTarget value="Attack"/>
+    </CAbilEffectTarget>
+</Catalog>

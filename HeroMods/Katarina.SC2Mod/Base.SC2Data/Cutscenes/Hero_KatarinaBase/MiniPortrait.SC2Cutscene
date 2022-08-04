@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CutsceneState cutsceneVersion="1.300000">
+    <CCutsceneNodeDirector guid="12807086377179234238" name="Director" interactive="1" waitForResources="1">
+        <CCutsceneNodeActiveCamera guid="12321606097495605182" name="Active Camera">
+            <CCutsceneElementActiveCamera guid="6165937812135952318" cameraIndex="0" objectGuid="13090137787276148670"/>
+        </CCutsceneNodeActiveCamera>
+        <CCutsceneNodeBookmark guid="13482569382903365566" name="Start">
+            <CCutsceneElementBookmark guid="8684814038204628926" start="1" bookmarkName="Stand Start" pauseWhenHit="1"/>
+            <CCutsceneElementBookmark guid="7082618415902572478" start="3000" bookmarkName="Stand End" jumpToBookmarkWhenHit="Stand Start"/>
+        </CCutsceneNodeBookmark>
+        <CCutsceneNodeActiveLight guid="12804425821033021374" name="Active Light">
+            <CCutsceneElementActiveLight guid="4873114714298859454" lightGUID="0" lightID="StormLightMiniPortraitBase" lightIndex="0" blendTime="0"/>
+        </CCutsceneNodeActiveLight>
+    </CCutsceneNodeDirector>
+    <CCutsceneNodeCamera guid="13090137787276148670" name="Game Camera" position="-2.012054,0.638222,1.157936" scale="0.104020,0.104020,0.104020" fov="27.799999" nearClip="0.100000" farClip="600.000000" shadowClip="0.000300" depthOfField="0.000000" focalDepth="8.000000" falloffStart="0.000300" falloffEnd="8.000000" falloffStartNear="0.000000" falloffEndNear="0.000000" doftype="0.000000" roll="0.000000" verticalFOV="1" distance="26.278889" pitch="4.928882" yaw="-309.094849" heightOffset="20.716494">
+        <CCutsceneElementObject guid="8296669361104699326" duration="3846" lockedToEnd="1"/>
+    </CCutsceneNodeCamera>
+    <CCutsceneNodeActor guid="12885098316307840958" filter="Variation1" name="HeroKatarinaBase (Var1)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="7620001464097914814" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="10514924677049302974" name="Animation Layer">
+            <CCutsceneElementAnim guid="5224182368956530622" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="9237328815495600289" filter="Variation2" name="HeroKatarinaBase (Var2)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" variation="1" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="6677393479466244257" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="12358805100214365589" name="Animation Layer">
+            <CCutsceneElementAnim guid="6130681682938834325" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="9512259379534462938" filter="Variation3" name="HeroKatarinaBase (Var3)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" variation="2" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="8133424274490228698" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="9970155164413767076" name="Animation Layer">
+            <CCutsceneElementAnim guid="4946263877410663844" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="10351783672558166661" filter="Variation4" name="HeroKatarinaBase (Var4)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" variation="3" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="6752995060155196037" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="13383253226773815796" name="Animation Layer">
+            <CCutsceneElementAnim guid="8930506995735470580" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="9408154636399798771" filter="Variation5" name="HeroKatarinaBase (Var5)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" variation="4" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="6063053730533468659" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="10581156772664866782" name="Animation Layer">
+            <CCutsceneElementAnim guid="8567260622048753630" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="12136392813334369126" filter="Variation6" name="HeroKatarinaBase (Var6)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" variation="5" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="8969143999229465446" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="13363219849918045141" name="Animation Layer">
+            <CCutsceneElementAnim guid="6212218723643710421" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="10917663950817569985" filter="Variation7" name="HeroKatarinaBase (Var7)" scale="10.000000,10.000000,10.000000" rotation="0.000000,0.000000,-218.000000" finderTag="Hero" modelLink="HeroKatarina@StoreModelBase" variation="6" enablePhysics="0" shadowBox="0" teamColorDiffuse="0.000000,0.258700,1.000000,1.000000" teamColorEmissive="0.000000,0.258824,1.000000,1.000000">
+        <CCutsceneElementObject guid="5098955267376262337" duration="3846" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="12798218541196214623" name="Animation Layer">
+            <CCutsceneElementAnim guid="7627999582434197855" duration="3000" anim="Stand" priority="3" originalDuration="3333" looping="1" fullMatchLegacy="1"/>
+        </CCutsceneNodeAnimLayer>
+    </CCutsceneNodeActor>
+</CutsceneState>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="HeroKatarinaFlashGrenade@VisionSource"/>
+<Behavior id="HeroKatarinaExclusionZone@TimedBehaviorCaster"/>
+<Behavior id="HeroKatarinaTalentMasterAutorifle@ShieldBuff"/>
+<Effect id="HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffCarried"/>
+<Effect id="HeroKatarinaWeaponFlamethrower@ApplyArmorBuffCarried"/>
+<Effect id="HeroKatarinaWeaponSnipe@ApplySpellPowerCarried"/>
+<Effect id="HeroKatarinaExclusionZone@LaserBeamImpactSet"/>
+<Effect id="HeroKatarinaExclusionZone@ZoneImpactSet"/>
+<Effect id="HeroKatarinaExclusionZone@LaserBeamSearchPersistent"/>
+<Effect id="HeroKatarinaWeaponMaster@RestoreAmmunition"/>
+<Model id="HeroKatarina@KatarinaAutoriflerSniped"/>
+<Model id="HeroKatarina@KatarinaAutoriflerFlamethrowered"/>
+<Model id="HeroKatarina@KatarinaGrenadeLauncherSniped"/>
+<Model id="HeroKatarina@KatarinaGrenadeLauncherAutorifled"/>
+<Model id="HeroKatarina@KatarinaFlamethrowerAutorifled"/>
+<Model id="HeroKatarina@KatarinaFlamethrowerSniped"/>
+<Model id="HeroKatarina@KatarinaGrenadeLauncherFlamethrowered"/>
+<Model id="HeroKatarina@KatarinaSniperGrenadeLaunched"/>
+<Model id="HeroKatarina@KatarinaFlamethrowerGrenadeLaunched"/>
+<Model id="HeroKatarina@KatarinaSniperFlamethrowered"/>
+<Model id="HeroKatarina@KatarinaSniperAutorifled"/>
+<Model id="HeroKatarina@KatarinaAutoriflerGrenadeLaunched"/>
+<Talent id="HeroKatarinaTalentClusterChargeAdvancedCharge"/>
+<Talent id="HeroKatarinaTalentMasterAutorifle"/>
+</Preload>

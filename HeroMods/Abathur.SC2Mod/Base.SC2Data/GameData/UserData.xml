@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Instances Id="[Default]"/>
+        <Instances Id="Symbiote">
+            <GameLink GameLink="HeroAbathurSymbiote">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurSymbiote">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="ToxicNest">
+            <GameLink GameLink="HeroAbathurToxicNest">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurToxicNest">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="LocustStrain">
+            <GameLink GameLink="HeroAbathurLocustStrain">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurLocustStrain">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Trait (D)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Trait">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="DeepTunnel">
+            <GameLink GameLink="HeroAbathurDeepTunnel">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurDeepTunnel">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Mount (Z)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="SymbioteStab">
+            <GameLink GameLink="HeroAbathurStab">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurStab">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired2">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="SymbioteSpikeBurst">
+            <GameLink GameLink="HeroAbathurSpikeBurst">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurSpikeBurst">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired2">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="SymbioteCarapace">
+            <GameLink GameLink="HeroAbathurCarapace">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurCarapace">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired2">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="UltimateEvolution">
+            <GameLink GameLink="HeroAbathurUltimateEvolution">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurUltimateEvolution">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="EvolveMonstrosity">
+            <GameLink GameLink="HeroAbathurEvolveMonstrosity">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurEvolveMonstrosity">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Abathur">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Instances Id="Abathur">
+            <GameLink GameLink="HeroAbathur">
+                <Field Id="Hero Link"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@LevelScalingModification">
+                <Field Id="Hero Level Scaling Effect"/>
+            </GameLink>
+            <Image Image="assets\Textures\UI_Portrait_Abathur_Hero.DDS">
+                <Field Id="PairedPortrait"/>
+            </Image>
+            <Image Image="assets\Icons\Hero_Abathur\Icon_Hero_Abathur_Symbiote.dds">
+                <Field Id="PairedPortrait" Index="1"/>
+            </Image>
+            <Text Text="UserData/Hero/Abathur_PairedName">
+                <Field Id="PairedName"/>
+            </Text>
+            <Text Text="UserData/Hero/Abathur_PairedName_001">
+                <Field Id="PairedName" Index="1"/>
+            </Text>
+            <User Type="HeroRole" Instance="Specialist">
+                <Field Id="Role"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Hero Enabled"/>
+            </User>
+            <User Type="Ability" Instance="Symbiote">
+                <Field Id="Abilities"/>
+            </User>
+            <User Type="Ability" Instance="ToxicNest">
+                <Field Id="Abilities" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsPaired"/>
+            </User>
+            <User Type="Ability" Instance="DeepTunnel">
+                <Field Id="Abilities" Index="2"/>
+            </User>
+            <User Type="Ability" Instance="LocustStrain">
+                <Field Id="Abilities" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteStab">
+                <Field Id="Abilities" Index="4"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteSpikeBurst">
+                <Field Id="Abilities" Index="5"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteCarapace">
+                <Field Id="Abilities" Index="6"/>
+            </User>
+            <User Type="Ability" Instance="UltimateEvolution">
+                <Field Id="Abilities" Index="7"/>
+            </User>
+            <User Type="Ability" Instance="EvolveMonstrosity">
+                <Field Id="Abilities" Index="8"/>
+            </User>
+            <User Type="Talent" Instance="AbathurPressurizedGlands">
+                <Field Id="TalentTier1"/>
+            </User>
+            <User Type="Talent" Instance="AbathurEnvenomedNest">
+                <Field Id="TalentTier1" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="AbathurReinforcedCarapace">
+                <Field Id="TalentTier1" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurSurvivalInstinct">
+                <Field Id="TalentTier1" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="AbathurAdrenalOverload">
+                <Field Id="TalentTier2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurNeedlespine">
+                <Field Id="TalentTier2" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="AbathurProlificDispersal">
+                <Field Id="TalentTier2" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurVileNest">
+                <Field Id="TalentTier3"/>
+            </User>
+            <User Type="Talent" Instance="AbathurNetworkedCarapace">
+                <Field Id="TalentTier3" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="GenericCalldownMULE">
+                <Field Id="TalentTier3" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurUltimateEvolution">
+                <Field Id="TalentTier4"/>
+            </User>
+            <User Type="Talent" Instance="AbathurEvolveMonstrosity">
+                <Field Id="TalentTier4" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="AbathurSpatialEfficiency">
+                <Field Id="TalentTier5"/>
+            </User>
+            <User Type="Talent" Instance="AbathurSomaTransference">
+                <Field Id="TalentTier5" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="AbathurBombardStrain">
+                <Field Id="TalentTier5" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurEnvenomedSpikes">
+                <Field Id="TalentTier6"/>
+            </User>
+            <User Type="Talent" Instance="AbathurAdrenalineBoost">
+                <Field Id="TalentTier6" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="AbathurVolatileMutation">
+                <Field Id="TalentTier6" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurLocustBrood">
+                <Field Id="TalentTier6" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="AbathurEvolutionaryLink">
+                <Field Id="TalentTier7"/>
+            </User>
+            <User Type="Talent" Instance="AbathurEvolutionComplete">
+                <Field Id="TalentTier7" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier1" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier7" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="AbathurHivemind">
+                <Field Id="TalentTier7" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="AbathurLocustNest">
+                <Field Id="TalentTier7" Index="3"/>
+            </User>
+            <User Type="Skin" Instance="AbathurBase">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Skin" Instance="AbathurUltimate">
+                <Field Id="Skins" Index="1"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Instances Id="AbathurBase">
+            <GameLink GameLink="HeroAbathur@BaseAlbino">
+                <Field Id="VariationUpgradeLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@BaseChar">
+                <Field Id="VariationUpgradeLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@BaseVar3">
+                <Field Id="VariationUpgradeLink" Index="3"/>
+            </GameLink>
+            <Text Text="UserData/Skin/AbathurBase_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationAdditionalSearchText_003">
+                <Field Id="VariationAdditionalSearchText" Index="3"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurBase_VariationName_003">
+                <Field Id="VariationName" Index="3"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="3"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="3"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurUltimate">
+            <GameLink GameLink="HeroAbathur@Ultimate">
+                <Field Id="VariationSkinLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@Ultimate">
+                <Field Id="VariationSkinLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@Ultimate">
+                <Field Id="VariationSkinLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@Ultimate">
+                <Field Id="VariationSkinLink" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@SkinUltimateGrey">
+                <Field Id="VariationUpgradeLink" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@SkinUltimatePurple">
+                <Field Id="VariationUpgradeLink" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathur@SkinUltimateRed">
+                <Field Id="VariationUpgradeLink" Index="3"/>
+            </GameLink>
+            <Text Text="UserData/Skin/AbathurUltimate_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurUltimate_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurUltimate_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurUltimate_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Skin/AbathurUltimate_VariationName_003">
+                <Field Id="VariationName" Index="3"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="3"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Silver">
+                <Field Id="VariationSupporterTypeRequired" Index="3"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Instances index="3">
+            <User index="1" removed="1"/>
+        </Instances>
+        <Instances Id="AbathurPressurizedGlands">
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstPressurizedGlands">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstPressurizedGlands@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstPressurizedGlands">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="SymbioteSpikeBurst">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurEnvenomedNest">
+            <GameLink GameLink="HeroAbathurTalentToxicNestEnvenomedNest">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentToxicNestEnvenomedNest">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentToxicNestEnvenomedNest">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="ToxicNest">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurReinforcedCarapace">
+            <GameLink GameLink="HeroAbathurTalentCarapaceReinforcedCarapace">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentCarapaceReinforcedCarapace@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentCarapaceReinforcedCarapace">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteCarapace">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurSurvivalInstinct">
+            <GameLink GameLink="HeroAbathurTalentLocustStrainSurvivalInstinct">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustStrainSurvivalInstinct">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="LocustStrain">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurAdrenalOverload">
+            <GameLink GameLink="HeroAbathurTalentSymbioteAdrenalOverload">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSymbioteAdrenalOverload">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="Symbiote">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurNeedlespine">
+            <GameLink GameLink="HeroAbathurTalentStabNeedlespine">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentStabNeedlespine@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentStabNeedlespine">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteStab">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurProlificDispersal">
+            <GameLink GameLink="HeroAbathurTalentToxicNestProlificDispersal">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentToxicNestProlificDispersal@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentToxicNestProlificDispersal">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="ToxicNest">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurVileNest">
+            <GameLink GameLink="HeroAbathurTalentToxicNestVileNest">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentToxicNestVileNest">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentToxicNestVileNest">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ToxicNest">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurNetworkedCarapace">
+            <GameLink GameLink="HeroAbathurTalentCarapaceNetworkedCarapace">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentCarapaceNetworkedCarapace">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="SymbioteCarapace">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurUltimateEvolution">
+            <GameLink GameLink="HeroAbathurUltimateEvolution">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurUltimateEvolution">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="UltimateEvolution">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurEvolveMonstrosity">
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurEvolveMonstrosity@TrackingBehavior">
+                <Field Id="TalentBehavior" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurEvolveMonstrosity">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurEvolveMonstrosity">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="EvolveMonstrosity">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurSpatialEfficiency">
+            <GameLink GameLink="HeroAbathurTalentStabSpatialEfficiency">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentStabSpatialEfficiency">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentStabSpatialEfficiency@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteStab">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurSomaTransference">
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstSomaTransference">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstSomaTransference">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="SymbioteSpikeBurst">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurBombardStrain">
+            <GameLink GameLink="HeroAbathurTalentLocustStrainBombardStrain@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustStrainBombardStrain">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustStrainBombardStrain">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="LocustStrain">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurEnvenomedSpikes">
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstEnvenomedSpikes">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstEnvenomedSpikes">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSpikeBurstEnvenomedSpikes">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteSpikeBurst">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurAdrenalineBoost">
+            <GameLink GameLink="HeroAbathurTalentCarapaceAdrenalineBoost">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentCarapaceAdrenalineBoost">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="SymbioteCarapace">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurVolatileMutation">
+            <GameLink GameLink="HeroAbathurTalentVolatileMutation">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentVolatileMutation">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="UltimateEvolution">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurLocustBrood">
+            <GameLink GameLink="HeroAbathurTalentLocustBrood">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustBrood">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustBrood">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <User Type="Ability" Instance="[Default]">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurEvolutionaryLink">
+            <GameLink GameLink="HeroAbathurTalentUltimateEvolutionEvolutionaryLink">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentUltimateEvolutionEvolutionaryLink">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="Ability" Instance="UltimateEvolution">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="Talent" Instance="AbathurUltimateEvolution">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurEvolutionComplete">
+            <GameLink GameLink="HeroAbathurTalentEvolveMonstrosityEvolutionComplete">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentEvolveMonstrosityEvolutionComplete">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="EvolveMonstrosity">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="Talent" Instance="AbathurEvolveMonstrosity">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurHivemind">
+            <GameLink GameLink="HeroAbathurTalentSymbioteHivemind">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentSymbioteHivemind">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="Symbiote">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="AbathurLocustNest">
+            <GameLink GameLink="HeroAbathurTalentLocustNest">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustNest@Item">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroAbathurTalentLocustNest">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="[Default]">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

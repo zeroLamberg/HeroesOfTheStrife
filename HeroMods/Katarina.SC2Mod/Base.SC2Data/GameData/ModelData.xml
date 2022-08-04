@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--        <TextureDeclares Prefix="Hero_Katarina_Body_" Slot="main"/>-->
+    <!--        <TextureDeclares Prefix="Hero_Katarina_Weapon_Base_" Slot="main"/>-->
+    <CModel default="1" id="HeroKatarina@Common" parent="HeroModelParent">
+        <AnimAliases Anim="Stand" Alias="Walk,A,Ridesurf"/>
+        <AnimAliases Anim="Stand" Alias="Stand,Ridesurf"/>
+        <AnimAliases Anim="Stand,Dialogue" Alias="Spell,Channel"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Events>
+            <Anim value="Walk"/>
+            <Name value="Katarina_Footstep_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.260000"/>
+            <Payload value="Katarina_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk"/>
+            <Name value="Katarina_Footstep_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.600000"/>
+            <Payload value="Katarina_Footstep_Mv"/>
+        </Events>
+        <Radius value="0.200000"/>
+        <ScaleMax value="2.550000,2.550000,2.550000"/>
+        <ScaleMin value="2.550000,2.550000,2.550000"/>
+        <SelectionRadius value="0.200000"/>
+        <TextureDeclares Prefix="Hero_Katarina_Body_" Slot="main"/>
+        <TextureDeclares Prefix="Hero_Katarina_Weapon_Base_" Slot="generic01"/>
+        <TextureDeclares Prefix="Hero_Katarina_Weapon_Flamer_" Slot="generic02"/>
+        <TextureDeclares Prefix="Scouter_" Slot="generic03"/>
+        <TextureDeclares Prefix="Techcube2_" Slot="generic04"/>
+    </CModel>
+    <CModel id="HeroKatarinaClusterCharge@Explosion">
+        <Model value="Assets\Units\Terran\ReaperMine\ReaperMine.m3"/>
+        <AnimSpeed value="5.000000"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="KatarinaTalentClusterChargeOvercharge@AOECursorSplatSciFi" parent="UI">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_SciFi\Storm_UI_AOECursor_SciFi.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="2.500000,2.500000,2.500000"/>
+        <ScaleMin value="2.500000,2.500000,2.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaFlashGrenade@TargetImpact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Anduin_Base_FlashHeal_CastComplete\Storm_FX_Anduin_Base_FlashHeal_CastComplete.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaFlashGrenade@Explosion" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\Nova_FlashGrenade\Nova_FlashGrenade.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaFlashGrenade@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Nova_FlashGrenade_Missile\Nova_FlashGrenade_Missile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@Beam" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Katarina_Base_ExclusionZone_Beam\Storm_FX_Katarina_Base_ExclusionZone_Beam.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RadiusLoose value="1000.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@MissileExplosion">
+        <Model value="Assets\Effects\Terran\Banshee_Airstrike_Impact\Banshee_Airstrike_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@FinalImpact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Tassadar_Base_EnergyMissile_Impact\Storm_FX_Tassadar_Base_EnergyMissile_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@TowerDeath" parent="UnitDeath">
+        <Model value="Assets\Buildings\Terran\SensorTowerDeath\SensorTowerDeath.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@Tower" parent="Unit">
+        <Model value="Assets\Buildings\Terran\SensorTower\SensorTower.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <AnimSpeed value="1.750000"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaClusterCharge@ClusterBomb">
+        <Model value="Assets\Units\Terran\ReaperMine\ReaperMine.m3"/>
+        <AnimSpeed value="5.000000"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Nova_PulseGrenade_Missile\Nova_PulseGrenade_Missile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaLaserShot@Impact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Fenix_Base_Pulse_Impact\Storm_FX_Fenix_Base_Pulse_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaAutoriflerFlamethrowered" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Autorifler_Flamed.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaAutoriflerSniped" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Autorifler_Sniped.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaGrenadeLauncherSniped" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_GrenadeLauncher_Sniped.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaGrenadeLauncherAutorifled" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_GrenadeLauncher_Autorifled.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaFlamethrowerAutorifled" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Flamer_Autorifled.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaFlamethrowerSniped" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Flamer_Sniped.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaGrenadeLauncherFlamethrowered" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_GrenadeLauncher_Flamed.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaSniperGrenadeLaunched" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Sniper_GrenadeLaunched.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaFlamethrowerGrenadeLaunched" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Flamer_GrenadeLaunched.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaSniperFlamethrowered" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Sniper_Flamed.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaSniperAutorifled" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Sniper_Autorifled.m3"/>
+    </CModel>
+    <CModel id="HeroKatarina@KatarinaAutoriflerGrenadeLaunched" parent="HeroKatarina@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Katarina_Base\Storm_Hero_Katarina_Base_Autorifler_GrenadeLaunched.m3"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponGrenadeLauncher@AttackImpact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Katarina_Base_WeaponAutorifle_Impact\Storm_FX_Katarina_Base_WeaponAutorifle_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaMegaShot@ModelImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Marauder_SuperMissile_Impact\Marauder_SuperMissile_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="3.000000,3.000000,3.000000"/>
+        <ScaleMin value="3.000000,3.000000,3.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaMegaShot@ActionMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MarauderMissile\MarauderMissile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="HeroKatarina@Portrait" parent="Portrait" Race="Terran">
+        <Model value="assets\Portraits\Storm_Portrait_Katarina_Base\Storm_Portrait_Katarina_Base.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <TextureDeclares Prefix="Hero_Katarina_Body_" Slot="main"/>
+        <TextureDeclares Prefix="Hero_Katarina_Weapon_Base_" Slot="generic01"/>
+        <TextureDeclares Prefix="Hero_Katarina_Weapon_Flamer_" Slot="generic02"/>
+        <TextureDeclares Prefix="Scouter_" Slot="generic03"/>
+        <TextureDeclares Prefix="Techcube2_" Slot="generic04"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponAutorifle@AttackImpact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Katarina_Base_WeaponAutorifle_Impact\Storm_FX_Katarina_Base_WeaponAutorifle_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaAimedShot@Missile" parent="MissileFX">
+        <Model value="assets\Effects\Storm_FX_Katarina_Base_AimedShot_Missile\Storm_FX_Katarina_Base_AimedShot_Missile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@PulseEffect" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Placeholder_Lightning_Impact\Storm_FX_Placeholder_Lightning_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponAutorifle@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\HybridEnergyMissile\HybridEnergyMissile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaAimedShot@ModelImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Marauder_SuperMissile_Impact\Marauder_SuperMissile_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaMegaShot@Launch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\MagrailMunition_Launch\MagrailMunition_Launch.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponGrenadeLauncher@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\YamatoMissile\YamatoMissile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaFlameStream@ModelFireLaunch" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\FlameTurretLaunch\FlameTurretLaunch.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="3.000000,1.000000,2.500000"/>
+        <ScaleMin value="3.000000,1.000000,2.500000"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponSnipe@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\PlanetaryFortressMissile\PlanetaryFortressMissile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponSnipe@AttackImpact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_GenericMeleeHero_Impact\Storm_FX_GenericMeleeHero_Impact.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponSnipe@AttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\SnipeLaunch\SnipeLaunch.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaLaserShot@Beam" parent="MissileFX">
+        <Model value="Assets\COOP\Zeratul\Effects\Construct_Mini_AttackBeam_Zeratul_COOP\Construct_Mini_AttackBeam_Zeratul_COOP.m3"/>
+        <AnimSpeed value="2.000000"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaWeaponFlamethrower@ModelFireLaunch" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\FlameTurretLaunch\FlameTurretLaunch.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+    </CModel>
+    <CModel id="HeroKatarinaClusterCharge@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MagneticMineMissile\MagneticMineMissile.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarinaClusterCharge@AOECursorSplatSciFi" parent="UI">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_SciFi\Storm_UI_AOECursor_SciFi.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@CursorGuideGround" parent="UI">
+        <Model value="Assets\Effects\Storm_FX_Katarina_Base_ExclusionZone_Splat_Tint\Storm_FX_Katarina_Base_ExclusionZone_Splat_Tint.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="HeroKatarinaExclusionZone@CursorGuide" parent="UI">
+        <Model value="Assets\Effects\Storm_FX_Katarina_Base_ExclusionZone_Splat\Storm_FX_Katarina_Base_ExclusionZone_Splat.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CModel>
+    <CModel id="HeroKatarina@StoreModelBase" parent="HeroModelParentStore">
+        <Model value="assets\Store\Store_Hero_KatarinaBase\Store_Hero_KatarinaBase.m3"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <ScaleMax value="2.400000,2.400000,2.400000"/>
+        <ScaleMin value="2.400000,2.400000,2.400000"/>
+        <VariationCount value="7"/>
+    </CModel>
+</Catalog>

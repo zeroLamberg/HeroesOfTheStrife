@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorConstant id="HeroKatarinaClusterCharge@StructureCaseDamageModifier" parent="BaseAccumulator">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroKatarinaClusterCharge@StructureCaseSwitch">
+        <CaseArray Validator="TargetIsStructure" Accumulator="HeroKatarinaClusterCharge@StructureCaseDamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroKatarinaTalentExclusionZoneExclusionPrison@DamageBonus">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroKatarinaTalentExclusionZoneExclusionPrison@Switch">
+        <CaseArray Validator="HeroKatarinaTalentExclusionZoneExclusionPrison@Combine" Accumulator="HeroKatarinaTalentExclusionZoneExclusionPrison@DamageBonus"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroKatarinaTalentWeaponMasterToTheLimit@Bonus">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="1"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroKatarinaTalentWeaponMasterToTheLimit@Switch">
+        <CaseArray Validator="HeroKatarinaTalentWeaponMasterToTheLimit@HasActiveBuff" Accumulator="HeroKatarinaTalentWeaponMasterToTheLimit@Bonus"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroKatarinaTalentTargetAcquired@DamageModifier">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroKatarinaTalentTargetAcquired@Switch">
+        <CaseArray Validator="HeroKatarinaTalentTargetAcquired@HasTalentAndAllAtacks" Accumulator="HeroKatarinaTalentTargetAcquired@DamageModifier"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorSwitch id="HeroKatarinaTalentMasterSnipe@SwitchEquipped">
+        <CaseArray Validator="HeroKatarinaTalentMasterSnipe@CombineEquipped" Accumulator="HeroKatarinaTalentMasterSnipe@DamageBonus"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorConstant id="HeroKatarinaExclusionZone@AdditionalDurationPercentConstant">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorConstant id="HeroKatarinaTalentMasterSnipe@DamageBonus">
+        <ApplicationRule value="AdditiveMultiply"/>
+        <Amount value="0.5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="HeroKatarinaTalentMasterSnipe@SwitchCarried">
+        <CaseArray Validator="HeroKatarinaTalentMasterSnipe@CombineCarried" Accumulator="HeroKatarinaTalentMasterSnipe@DamageBonus"/>
+    </CAccumulatorSwitch>
+    <CAccumulatorArithmetic id="HeroKatarinaExclusionZone@AdditionalTimeArithmetic">
+        <Parameters value="1">
+            <AccumulatorArray value="HeroKatarinaExclusionZone@CurrentDurationFractional"/>
+            <AccumulatorArray value="HeroKatarinaExclusionZone@TimedBehaviorDurationTotal"/>
+            <AccumulatorArray value="HeroKatarinaExclusionZone@AdditionalDurationPercentConstant"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorArithmetic id="HeroKatarinaExclusionZone@CurrentDurationFractional">
+        <ApplicationRule value="Multiply"/>
+        <Parameters value="-1">
+            <AccumulatorArray value="HeroKatarinaExclusionZone@TimedBehaviorDurationFraction"/>
+        </Parameters>
+        <Parameters value="1">
+            <AccumulatorArray value="ConstantMultiply1"/>
+        </Parameters>
+    </CAccumulatorArithmetic>
+    <CAccumulatorBehavior id="HeroKatarinaExclusionZone@TimedBehaviorDurationFraction">
+        <ApplicationRule value="Multiply"/>
+        <Behavior value="HeroKatarinaExclusionZone@HeroTimedBehavior"/>
+        <UnitSource Value="Target"/>
+        <Type value="DurationFraction"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="HeroKatarinaExclusionZone@TimedBehaviorDurationTotal">
+        <ApplicationRule value="Multiply"/>
+        <Behavior value="HeroKatarinaExclusionZone@HeroTimedBehavior"/>
+        <UnitSource Value="Target"/>
+        <Type value="DurationTotal"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorConstant id="HeroKatarinaExclusionZone@AdditionalDuration" parent="BaseAccumulator">
+        <MaxAccumulation value="5"/>
+    </CAccumulatorConstant>
+    <CAccumulatorBehavior id="Katarina_DestroyerAutorifleAmmo">
+        <Behavior value="KatarinaBucket_DestroyerAutorifle_Mark_1st"/>
+        <UnitSource Value="Source"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_AmmoSnipe">
+        <Behavior value="Katarina_Ammo_Snipe"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_AmmoFlamethrower">
+        <Behavior value="Katarina_Ammo_Flamethrower"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_AmmoChaingun">
+        <Behavior value="Katarina_Ammo_Chaingun"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_DestroyerChaingunAmmo">
+        <Behavior value="KatarinaBucket_DestroyerChaingun_Mark_1st"/>
+        <UnitSource Value="Source"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_DestroyerFlamethrowerAmmo">
+        <Behavior value="KatarinaBucket_DestroyerFlamethrower_Mark"/>
+        <UnitSource Value="Source"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_DestroyerSnipeAmmo">
+        <Behavior value="KatarinaBucket_DestroyerSnipe_Mark"/>
+        <UnitSource Value="Source"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorBehavior id="Katarina_AmmoAutorifle">
+        <Behavior value="Katarina_Ammo_Autorifle"/>
+    </CAccumulatorBehavior>
+</Catalog>

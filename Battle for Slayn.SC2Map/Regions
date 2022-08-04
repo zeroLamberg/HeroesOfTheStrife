@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+    <region id="1">
+        <name value="Merc Camp - 1 - Region"/>
+        <color value="255,0,255,64"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="98,187,107.5,191.5"/>
+        </shape>
+        <shape type="diamond">
+            <center value="104.25,191.75"/>
+            <width value="8.4843"/>
+            <height value="6.3632"/>
+        </shape>
+        <shape type="rect">
+            <quad value="98,191,101,192"/>
+        </shape>
+        <shape type="rect">
+            <quad value="99,185,107,187"/>
+        </shape>
+        <shape type="rect">
+            <quad value="100.5,183.5,106.5,185"/>
+        </shape>
+    </region>
+    <region id="6">
+        <name value="Merc Camp - 4 - Region"/>
+        <color value="255,255,128,64"/>
+        <invisible/>
+        <shape type="diamond">
+            <center value="152.5,191.25"/>
+            <width value="6.0097"/>
+            <height value="9.545"/>
+        </shape>
+        <shape type="rect">
+            <quad value="149.5,183.5,155.5,191"/>
+        </shape>
+        <shape type="rect">
+            <quad value="155,185,156.5,189"/>
+        </shape>
+        <shape type="diamond">
+            <center value="156.75,188"/>
+            <width value="3.8886"/>
+            <height value="1.7675"/>
+        </shape>
+        <shape type="rect">
+            <quad value="156,189.5,158,192"/>
+        </shape>
+        <shape type="rect">
+            <quad value="148.5,186.5,149.5,191"/>
+        </shape>
+    </region>
+    <region id="3">
+        <name value="Merc Camp - 5 - Region"/>
+        <color value="255,255,128,64"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="143.5,107.5"/>
+            <radius value="8.2763"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="135.5,104.75"/>
+            <width value="3.8886"/>
+            <height value="4.5957"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="135.5,100.5,138.5,104.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="138.75,100.5"/>
+            <width value="1.0605"/>
+            <height value="3.1816"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="149,104.5,153.5,114"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="148,103,149.5,106"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="148.25,104"/>
+            <width value="1.7675"/>
+            <height value="1.7675"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="147,102.5,148,104"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="149,106.25"/>
+            <width value="1.7675"/>
+            <height value="1.0605"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="150.25,110.25"/>
+            <width value="4.9492"/>
+            <height value="1.414"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="148,109,150,115"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="147.25,114.75"/>
+            <width value="4.2421"/>
+            <height value="6.3632"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="137.5,112.5,146.5,116"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="142.5,113.5"/>
+            <width value="1.414"/>
+            <height value="4.2421"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="137.5,111.5,143.5,112.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="138.5,111.5"/>
+            <width value="1.414"/>
+            <height value="1.414"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="137.5,110.5,138.5,111.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="150.25,102.25"/>
+            <width value="4.9492"/>
+            <height value="4.2421"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="147.75,100.25"/>
+            <width value="2.8281"/>
+            <height value="0.707"/>
+        </shape>
+    </region>
+    <region id="2">
+        <name value="Merc Camp - 2 - Region"/>
+        <color value="255,0,255,64"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="112,107.5"/>
+            <radius value="8.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="101.5,99.5,107,114"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="107.75,99.25"/>
+            <width value="2.8281"/>
+            <height value="6.3632"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="120.75,101.5"/>
+            <width value="8.838"/>
+            <height value="4.5957"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="120.75,104.5"/>
+            <width value="4.5957"/>
+            <height value="4.5957"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="117.5,100.5,120,104.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="117,110.5,118.5,115.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="112.5,111.5,117.5,116.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="106.5,112.5,112.5,116.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="107.5,112.75"/>
+            <width value="3.1816"/>
+            <height value="3.1816"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="112,112.75"/>
+            <width value="1.0605"/>
+            <height value="2.4746"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="106,109,108,112"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="106.25,109.5"/>
+            <width value="2.4746"/>
+            <height value="3.1816"/>
+        </shape>
+    </region>
+    <region id="5">
+        <name value="Merc Camp - 6 - Region"/>
+        <color value="255,255,128,64"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="151,89"/>
+            <radius value="7.211"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="156.75,86"/>
+            <width value="7.4238"/>
+            <height value="2.4746"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="152.5,81,155,85.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="152,83"/>
+            <width value="4.2421"/>
+            <height value="2.8281"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="145,81,153,84.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="147.25,83.75"/>
+            <width value="2.8281"/>
+            <height value="2.121"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="145.5,85"/>
+            <width value="2.121"/>
+            <height value="6.3632"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="146,84.5,147.5,85.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="144,89"/>
+            <width value="2.8281"/>
+            <height value="2.8281"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="143.5,89,146,93"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="145.5,92"/>
+            <width value="4.9492"/>
+            <height value="3.5351"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="146.75,94"/>
+            <width value="3.1816"/>
+            <height value="3.1816"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="147.5,92.5,148.5,93.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="157.5,88.5,158.5,92.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="157,89.5,158,92.5"/>
+        </shape>
+    </region>
+    <region id="4">
+        <name value="Merc Camp - 3 - Region"/>
+        <color value="255,0,255,64"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="105,89"/>
+            <radius value="7.211"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="100,84.75"/>
+            <width value="2.4746"/>
+            <height value="8.1308"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="101,81.5,103.5,85.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="104,83"/>
+            <width value="2.8281"/>
+            <height value="4.2421"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="104.5,81,113,84.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="109,83.5"/>
+            <width value="2.121"/>
+            <height value="3.5351"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="108.5,82.5,114,85.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="112.25,85.5"/>
+            <width value="3.8886"/>
+            <height value="3.8886"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="113.5,89"/>
+            <width value="4.9492"/>
+            <height value="4.9492"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="111.75,91.5"/>
+            <width value="4.5957"/>
+            <height value="7.4238"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="109.5,93.25"/>
+            <width value="2.4746"/>
+            <height value="4.5957"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="107.5,92.5,108.5,93.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="110,89,110.5,90"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="97.5,89.5,99,92.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="97.5,88,98.5,89.5"/>
+        </shape>
+    </region>
+    <region id="7">
+        <name value="Merc Camp - 7 - Region"/>
+        <color value="255,128,0,255"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="117,149,140.5,166"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="119.25,150.75"/>
+            <width value="5.6562"/>
+            <height value="10.6054"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="136.5,150"/>
+            <width value="12.0195"/>
+            <height value="6.3632"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="123,147,135.5,151"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="128,150.25"/>
+            <radius value="2.0153"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="118,165.75"/>
+            <width value="6.7167"/>
+            <height value="2.4746"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="139.5,165"/>
+            <width value="3.5351"/>
+            <height value="7.7773"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="139,148,144,163"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="119.5,165.5,137,166.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="116.5,155.5,118,160.5"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="138,155.5,140.5,160.5"/>
+        </shape>
+    </region>
+    <region id="8">
+        <name value="Merc Camp - 8 - Region"/>
+        <color value="255,128,0,255"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="128,86"/>
+            <radius value="9"/>
+        </shape>
+    </region>
+    <region id="9">
+        <name value="Team 1 - Base Region"/>
+        <color value="255,0,255,0"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="58,93,67,159.5"/>
+        </shape>
+        <shape type="diamond">
+            <center value="71,102.5"/>
+            <width value="31.8164"/>
+            <height value="4.9492"/>
+        </shape>
+        <shape type="diamond">
+            <center value="75,101"/>
+            <width value="14.1406"/>
+            <height value="2.8281"/>
+        </shape>
+        <shape type="rect">
+            <quad value="68,96,71,97"/>
+        </shape>
+        <shape type="rect">
+            <quad value="79,105,81,108"/>
+        </shape>
+        <shape type="diamond">
+            <center value="79.25,102.75"/>
+            <width value="4.9492"/>
+            <height value="1.414"/>
+        </shape>
+        <shape type="circle">
+            <center value="70.5,114.25"/>
+            <radius value="12.8864"/>
+        </shape>
+        <shape type="rect">
+            <quad value="67,126.5,83,147"/>
+        </shape>
+        <shape type="diamond">
+            <center value="75,147"/>
+            <width value="11.3125"/>
+            <height value="11.3125"/>
+        </shape>
+        <shape type="diamond">
+            <center value="70,152"/>
+            <width value="11.3125"/>
+            <height value="2.8281"/>
+        </shape>
+        <shape type="diamond">
+            <center value="67.25,154.75"/>
+            <width value="6.3632"/>
+            <height value="7.0703"/>
+        </shape>
+        <shape type="diamond">
+            <center value="71.5,156.5"/>
+            <width value="2.8281"/>
+            <height value="1.414"/>
+        </shape>
+        <shape type="diamond">
+            <center value="63.25,161.5"/>
+            <width value="1.7675"/>
+            <height value="7.4238"/>
+        </shape>
+        <shape type="diamond">
+            <center value="61.25,159.75"/>
+            <width value="4.2421"/>
+            <height value="3.5351"/>
+        </shape>
+        <shape type="circle">
+            <center value="63.75,159.75"/>
+            <radius value="0.7905"/>
+        </shape>
+        <shape type="circle">
+            <center value="61.25,162.25"/>
+            <radius value="1.2746"/>
+        </shape>
+        <shape type="circle">
+            <center value="81.25,122.25"/>
+            <radius value="7.7861"/>
+        </shape>
+        <shape type="circle">
+            <center value="82.5,115.25"/>
+            <radius value="3.3632"/>
+        </shape>
+        <shape type="diamond">
+            <center value="58,126"/>
+            <width value="22.625"/>
+            <height value="22.625"/>
+        </shape>
+        <shape type="diamond">
+            <center value="36.25,126.75"/>
+            <width value="19.0898"/>
+            <height value="9.8984"/>
+        </shape>
+        <shape type="diamond">
+            <center value="40,121.75"/>
+            <width value="9.545"/>
+            <height value="8.838"/>
+        </shape>
+        <shape type="rect">
+            <quad value="33,115.5,39.5,119.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="24,117.5,32,134.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="31.5,128.5,39,134.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="34,134,39.5,137"/>
+        </shape>
+        <shape type="diamond">
+            <center value="34,134.75"/>
+            <width value="3.8886"/>
+            <height value="3.1816"/>
+        </shape>
+        <shape type="diamond">
+            <center value="24.5,129.25"/>
+            <width value="6.7167"/>
+            <height value="8.1308"/>
+        </shape>
+        <shape type="diamond">
+            <center value="23.75,122"/>
+            <width value="6.0097"/>
+            <height value="6.7167"/>
+        </shape>
+        <shape type="rect">
+            <quad value="19.5,122,25,130"/>
+        </shape>
+        <shape type="rect">
+            <quad value="82.5,123,88.5,135.5"/>
+        </shape>
+        <shape type="circle">
+            <center value="83.25,137.5"/>
+            <radius value="2.0153"/>
+        </shape>
+        <shape type="circle">
+            <center value="84.75,136.25"/>
+            <radius value="1.4575"/>
+        </shape>
+        <shape type="circle">
+            <center value="82.75,143.25"/>
+            <radius value="0.7905"/>
+        </shape>
+        <shape type="circle">
+            <center value="82,141.5"/>
+            <radius value="2.0615"/>
+        </shape>
+        <shape type="circle">
+            <center value="83.25,140.25"/>
+            <radius value="1.2746"/>
+        </shape>
+        <shape type="rect">
+            <quad value="84,139,85,140"/>
+        </shape>
+        <shape type="rect">
+            <quad value="84.5,138.5,85,139"/>
+        </shape>
+        <shape type="diamond">
+            <center value="82,148.5"/>
+            <width value="0.707"/>
+            <height value="3.5351"/>
+        </shape>
+        <shape type="diamond">
+            <center value="67.75,95.75"/>
+            <width value="2.121"/>
+            <height value="1.414"/>
+        </shape>
+    </region>
+    <region id="10">
+        <name value="Team 2 - Base Region"/>
+        <color value="255,255,128,64"/>
+        <invisible/>
+        <shape type="diamond">
+            <center value="191,139.25"/>
+            <width value="14.4941"/>
+            <height value="37.8261"/>
+        </shape>
+        <shape type="diamond">
+            <center value="194.75,115"/>
+            <width value="44.1894"/>
+            <height value="13.08"/>
+        </shape>
+        <shape type="rect">
+            <quad value="175.5,105,198,151.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="184.5,95.5,198,105.5"/>
+        </shape>
+        <shape type="diamond">
+            <center value="193.75,94.25"/>
+            <width value="4.2421"/>
+            <height value="7.7773"/>
+        </shape>
+        <shape type="rect">
+            <quad value="194,93,198,96"/>
+        </shape>
+        <shape type="circle">
+            <center value="172.25,125.75"/>
+            <radius value="5.3967"/>
+        </shape>
+        <shape type="circle">
+            <center value="171.75,131.75"/>
+            <radius value="5.2558"/>
+        </shape>
+        <shape type="circle">
+            <center value="175.5,144.5"/>
+            <radius value="2.6923"/>
+        </shape>
+        <shape type="circle">
+            <center value="175.5,139.5"/>
+            <radius value="4.123"/>
+        </shape>
+        <shape type="circle">
+            <center value="173.25,143"/>
+            <radius value="0.9013"/>
+        </shape>
+        <shape type="circle">
+            <center value="172,137.5"/>
+            <radius value="1.8027"/>
+        </shape>
+        <shape type="rect">
+            <quad value="189,150.5,198,159"/>
+        </shape>
+        <shape type="diamond">
+            <center value="191,156.5"/>
+            <width value="13.4335"/>
+            <height value="6.3632"/>
+        </shape>
+        <shape type="diamond">
+            <center value="184.75,156.25"/>
+            <width value="1.414"/>
+            <height value="2.121"/>
+        </shape>
+        <shape type="diamond">
+            <center value="194.5,163"/>
+            <width value="2.121"/>
+            <height value="2.121"/>
+        </shape>
+        <shape type="rect">
+            <quad value="195,161.5,195.5,162.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="169.5,117,176,121.5"/>
+        </shape>
+        <shape type="diamond">
+            <center value="173.75,115"/>
+            <width value="3.1816"/>
+            <height value="8.838"/>
+        </shape>
+        <shape type="circle">
+            <center value="174.75,110.5"/>
+            <radius value="1.6005"/>
+        </shape>
+        <shape type="circle">
+            <center value="173.5,112.25"/>
+            <radius value="1.5205"/>
+        </shape>
+        <shape type="circle">
+            <center value="172.25,113.5"/>
+            <radius value="0.9013"/>
+        </shape>
+        <shape type="circle">
+            <center value="171.75,114.75"/>
+            <radius value="0.7905"/>
+        </shape>
+        <shape type="circle">
+            <center value="168.75,120.25"/>
+            <radius value="1.7675"/>
+        </shape>
+        <shape type="circle">
+            <center value="167.75,122"/>
+            <radius value="0.9013"/>
+        </shape>
+        <shape type="circle">
+            <center value="169.5,118.75"/>
+            <radius value="0.9013"/>
+        </shape>
+        <shape type="rect">
+            <quad value="170,115.5,171.5,116.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="170.5,114.5,171.5,115.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="169,117.5,170,118"/>
+        </shape>
+        <shape type="rect">
+            <quad value="169.5,116.5,170.5,117.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="173.5,108.5,176,109.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="174,108,175.5,109"/>
+        </shape>
+        <shape type="rect">
+            <quad value="174.5,107,176,108.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="175,105.5,175.5,107"/>
+        </shape>
+        <shape type="diamond">
+            <center value="220.25,127"/>
+            <width value="8.838"/>
+            <height value="20.1503"/>
+        </shape>
+        <shape type="diamond">
+            <center value="219.75,125"/>
+            <width value="19.4433"/>
+            <height value="8.1308"/>
+        </shape>
+        <shape type="diamond">
+            <center value="221.75,134.25"/>
+            <width value="3.5351"/>
+            <height value="2.8281"/>
+        </shape>
+        <shape type="rect">
+            <quad value="216.5,133.5,222,137"/>
+        </shape>
+        <shape type="rect">
+            <quad value="223.5,117,232,136"/>
+        </shape>
+        <shape type="rect">
+            <quad value="216,115,222,120.5"/>
+        </shape>
+        <shape type="diamond">
+            <center value="222.25,118"/>
+            <width value="4.5957"/>
+            <height value="3.8886"/>
+        </shape>
+        <shape type="diamond">
+            <center value="231.75,122.25"/>
+            <width value="7.0703"/>
+            <height value="7.7773"/>
+        </shape>
+        <shape type="diamond">
+            <center value="232,130"/>
+            <width value="7.0703"/>
+            <height value="7.0703"/>
+        </shape>
+        <shape type="rect">
+            <quad value="232,122,237,130.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="167,133.5,169.5,135.5"/>
+        </shape>
+    </region>
+    <region id="11">
+        <name value="Revealable Area"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="128.4,126.1494"/>
+            <radius value="112.5002"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="61.4,216.4,201.4,241.4"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="187.5947,203.7304"/>
+            <width value="31.1093"/>
+            <height value="69.996"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="68.2512,204.3073"/>
+            <width value="70.7031"/>
+            <height value="30.4023"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="87.5798,202.762"/>
+            <width value="55.502"/>
+            <height value="9.545"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="162.7058,205.416"/>
+            <width value="11.3125"/>
+            <height value="46.664"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="143.896,214.6252"/>
+            <width value="7.7773"/>
+            <height value="21.918"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="109.8728,215.0703"/>
+            <width value="22.2714"/>
+            <height value="8.1308"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="94.5,204.3398,105,209.8398"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="148.5002,206.34,159,211.8398"/>
+        </shape>
+    </region>
+    <region id="12">
+        <name value="Event - 1 - Region"/>
+        <color value="255,255,128,192"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="119,191,137,207.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="116,194.5,120,207"/>
+        </shape>
+        <shape type="rect">
+            <quad value="136.1037,194.4216,140.1037,206.9216"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="138.9975,205.7343"/>
+            <width value="3.5"/>
+            <height value="8.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="117.205,205.7324"/>
+            <width value="8.5"/>
+            <height value="3.5"/>
+        </shape>
+        <shape type="rect">
+            <quad value="122.3854,206.271,133.6643,209.4357"/>
+        </shape>
+    </region>
+    <region id="14">
+        <name value="Event - 3 - Region"/>
+        <color value="255,255,128,192"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="117,32.5,139,50.5"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="137.5,48.5"/>
+            <width value="4.9492"/>
+            <height value="9.1914"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="118.5004,48.5007"/>
+            <width value="9.19"/>
+            <height value="4.95"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="124.25,50.25"/>
+            <width value="3.5351"/>
+            <height value="2.8281"/>
+        </shape>
+        <shape type="diamond">
+            <negative/>
+            <center value="131.865,50.25"/>
+            <width value="2.8298"/>
+            <height value="3.5397"/>
+        </shape>
+    </region>
+    <region id="15">
+        <name value="Team [1] - Keep 3 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="70.839,99.5832"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="16">
+        <name value="Team [1] - Keep 2 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="81.0002,124.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="17">
+        <name value="Team [1] - Keep 1 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="70.5002,150.0002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="18">
+        <name value="Team [1] - Fort 1 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="103.5002,173.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="19">
+        <name value="Team [1] - Fort 2 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="106.5002,124.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="20">
+        <name value="Team [1] - Fort 3 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="104.0002,69.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="21">
+        <name value="Team [2] - Fort 3 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="152.0002,69.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="22">
+        <name value="Team [2] - Keep 3 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="185.0002,101.0002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="23">
+        <name value="Team [2] - Keep 2 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="175.5002,125.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="24">
+        <name value="Team [2] - Fort 2 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="150.0002,125.5002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="25">
+        <name value="Team [2] - Keep 1 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="185.5002,151.0002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="26">
+        <name value="Team [2] - Fort 1 - Region"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="152.0002,173.0002"/>
+            <radius value="12.5297"/>
+        </shape>
+    </region>
+    <region id="13">
+        <name value="Event - 2 - Region"/>
+        <color value="255,255,128,192"/>
+        <invisible/>
+        <shape type="circle">
+            <center value="128,143.5"/>
+            <radius value="10.0498"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="119.5,148.75,136.5,153.75"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="136.1423,148.276"/>
+            <radius value="3.0102"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="137.1582,144.3007"/>
+            <radius value="2.0153"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="119.811,148.3974"/>
+            <radius value="3.0102"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="135.5,144"/>
+            <radius value="1.118"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="118.6777,144.3576"/>
+            <radius value="2.0153"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="120.3735,144.0585"/>
+            <radius value="1.118"/>
+        </shape>
+    </region>
+    <region id="27">
+        <name value="Safe Zone - Team 2 Region"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="215.9135,115.4323,224.5312,136.6743"/>
+        </shape>
+        <shape type="diamond">
+            <center value="215.8991,126.0532"/>
+            <width value="14.947"/>
+            <height value="15.0764"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="204.8928,121.3132,208.9055,130.7932"/>
+        </shape>
+    </region>
+    <region id="28">
+        <name value="Safe Zone - Team 1 Region"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="31.448,115.4125,40.0656,136.6545"/>
+        </shape>
+        <shape type="diamond">
+            <center value="40.0751,126.032"/>
+            <width value="14.947"/>
+            <height value="15.0764"/>
+        </shape>
+        <shape type="rect">
+            <negative/>
+            <quad value="47.07,121.2934,51.0827,130.7734"/>
+        </shape>
+    </region>
+    <region id="29">
+        <name value="Event - 1 - Region New"/>
+        <color value="255,255,128,192"/>
+        <shape type="circle">
+            <center value="128,200"/>
+            <radius value="7"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="128,200"/>
+            <radius value="3.5"/>
+        </shape>
+    </region>
+    <region id="30">
+        <name value="Event - 2 - Region New"/>
+        <color value="255,255,128,192"/>
+        <shape type="circle">
+            <center value="128,142"/>
+            <radius value="7"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="128,142"/>
+            <radius value="3.5"/>
+        </shape>
+    </region>
+    <region id="31">
+        <name value="Event - 3 - Region New"/>
+        <color value="255,255,128,192"/>
+        <shape type="circle">
+            <center value="128,39.5"/>
+            <radius value="7"/>
+        </shape>
+        <shape type="circle">
+            <negative/>
+            <center value="128,39.5"/>
+            <radius value="3.5"/>
+        </shape>
+    </region>
+</Regions>

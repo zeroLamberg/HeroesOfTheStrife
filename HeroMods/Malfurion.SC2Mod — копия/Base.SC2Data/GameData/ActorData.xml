@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorSound id="HeroMalfurionEntanglingRoots@VOX" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourceCastStart" Send="CreateCopy"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionMoonfire@VOX" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTwilightDream@SoundLoop" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionTwilightDream@Silence.On" Send="Create"/>
+        <On Terms="Behavior.HeroMalfurionTwilightDream@Silence.Off" Send="Destroy"/>
+        <Sound value="HeroMalfurionTwilightDream@Loop"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionEntanglingRoots@ImpactSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionEntanglingRoots@DamageBehavior.On" Send="Create"/>
+        <Sound value="HeroMalfurionEntanglingRoots@Impact"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionMoonfire@SoundLaunch" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionMoonfire@Search.Start; At Caster" Send="Create"/>
+        <Host Subject="::Creator"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionRegrowth@SoundLaunch" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionInnervate@SoundCast" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionInnervate@SearchImpactSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroMalfurionInnervate@ModelImpact" parent="CoreModelOneShotUnit">
+        <Flags index="SuppressSaveLoad" value="0"/>
+        <Flags index="VisionTestCenterOnly" value="1"/>
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CreepEngulfment" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionInnervate@SearchImpactSet.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft" HoldRotation="1"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroMalfurionTreant@AttackImpactSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTreant@WeaponInitialSet.Start; At Target" Send="Create"/>
+        <Sound value="HeroMalfurionTreant@AttackImpact"/>
+    </CActorSound>
+    <CActorRange id="HeroMalfurionTalentNaturesCleanse@Range" parent="CoreRangeAbilPlusSplat" abil="HeroMalfurionTalentNaturesCleanse">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorRange>
+    <CActorSplat id="HeroMalfurionTalentNaturesCleanse@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Scale value="9.837500"/>
+    </CActorSplat>
+    <CActorUnit id="HeroMalfurionTalentNaturesCleanse" parent="CoreItemBase" unitName="HeroMalfurionTalentNaturesCleanse">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorUnit>
+    <CActorSimple id="HeroMalfurionTalentNaturesCleanse@BuffUnstoppable">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionTalentNaturesCleanse.On" Send="Create"/>
+        <On Terms="Behavior.HeroMalfurionTalentNaturesCleanse.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="ModelMaterialApply PrestigeCleanseGlaze"/>
+        <On Terms="ActorDestruction" Target="PrestigeCleanse@Glaze" Send="AnimBracketStop BSD"/>
+    </CActorSimple>
+    <CActorSound id="HeroMalfurionTalentNaturesCleanse@SoundCast" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTalentNaturesCleanse@ApplyCleanse.Start" Send="Create"/>
+        <Sound value="HeroMalfurionTalentNaturesCleanse@SoundImpact"/>
+    </CActorSound>
+    <CActorModelMaterial id="HeroMalfurionTalentNaturesCleanse@Glaze" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="ActorCreation" Send="AnimPlay GLstand GLstand PlayForever -1.000000 -1.000000 0.750000 AsTimeScale"/>
+        <Model value="GlazeUnstoppableHoly"/>
+    </CActorModelMaterial>
+    <CActorModel id="HeroMalfurionTalentNaturesCleanse@ModelImpact" parent="CoreModelAnimationStyleOneShot">
+        <On Terms="Effect.HeroMalfurionTalentNaturesCleanse@ApplyCleanse.Start; At Target" Send="Create"/>
+        <AutoScaleFactor value="1.000000"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorModel>
+    <CActorEventMacro id="HeroMalfurion@SkinEventMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroMalfurion@BasePurple" Send="EventMacroRun HeroMalfurion@BasePurpleMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroMalfurion@BaseWhite" Send="EventMacroRun HeroMalfurion@BaseWhiteMacro"/>
+    </CActorEventMacro>
+    <CActorRange id="HeroMalfurionInnervate@Range">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <On Terms="UnitBirth.HeroMalfurion" Send="Create"/>
+        <On Terms="UnitRevive.HeroMalfurion" Send="Create"/>
+        <On Terms="Behavior.Dead.On" Send="Destroy"/>
+        <Range value="5.500000"/>
+        <Icon value="Assets\Textures\UI_Ingame_Radius_Knights_Camp_Spell_Shield.dds"/>
+        <IconScale value="0.008000,0.008000"/>
+        <IconArcLength value="5.750000"/>
+    </CActorRange>
+    <CActorModel id="HeroMalfurionEntanglingRoots@BindingRootsModel" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionEntanglingRoots@RootBehavior.On" Send="Create"/>
+        <On Terms="Behavior.HeroMalfurionEntanglingRoots@RootBehavior.Off" Send="AnimBracketStop BSD"/>
+    </CActorModel>
+    <CActorPortrait id="MalfurionSkinBetrayerPortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorPortrait>
+    <CActorPortrait id="MalfurionSkinWinterPortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorPortrait>
+    <CActorModel id="HeroMalfurionRegrowth@ModelWeaponCast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourceCastStart" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+    </CActorModel>
+    <CActorPortrait id="MalfurionSkinUltimatePortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorPortrait>
+    <CActorModel id="MalfurionSkinWinterPortraitAddition" parent="CompositePortraitAddition">
+        <Filter index="All" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+    </CActorModel>
+    <CActorPortrait id="MalfurionSkinFlamePortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorPortrait>
+    <CActorModel id="HeroMalfurionMoonfire@ModelCast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CActorModel id="MalfurionSkinBetrayerPortraitAddition" parent="CompositePortraitAddition">
+        <Filter index="All" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurionMoonfire@ModelMain" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionMoonfire@Search.Start" Send="Create"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroMalfurionTalentMoonfireFullMoonfire" Send="ModelSwap HeroMalfurionMoonfire@ModelMain_Full"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurionMoonfire@ModelWeaponCast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+    </CActorModel>
+    <CActorModel id="MalfurionSkinFlamePortraitAddition" parent="CompositePortraitAddition">
+        <Filter index="All" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+    </CActorModel>
+    <CActorUnit id="HeroMalfurionEntanglingRoots" parent="CoreMinionStandard" unitName="HeroMalfurionEntanglingRoots">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Model value="Invisible"/>
+    </CActorUnit>
+    <CActorModel id="MalfurionSkinUltimatePortraitAddition" parent="CompositePortraitAddition">
+        <Filter index="All" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+    </CActorModel>
+    <!--                                                                                         -->
+    <!-- Malfurion                                                                               -->
+    <!--                                                                                         -->
+    <CActorUnit id="HeroMalfurion" parent="CoreHeroBasePredictive" unitName="HeroMalfurion">
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <!-- Regrowth -->
+        <On Terms="Abil.HeroMalfurionRegrowth.SourcePrecastStart; !HasStatus Precast" Send="AnimClear Spell"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourcePrecastStart; !HasStatus Precast" Send="$Spell,B"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourcePrecastStart; !HasStatus Precast" Send="StatusSet Precast 1"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourceCastStart" Send="$Spell,B 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourceCastStart" Send="AnimSetTime Spell 1.000000"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourceCastStart; HasStatus Precast" Send="StatusSet Precast 0"/>
+        <On Terms="Abil.HeroMalfurionRegrowth.SourcePrecastStart; !HasStatus Precast" Send="AnimClear Spell"/>
+        <!-- Moonfire -->
+        <On Terms="Abil.HeroMalfurionMoonfire.SourcePrecastStart; !HasStatus Precast" Send="$Spell,A"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourcePrecastStart; !HasStatus Precast" Send="StatusSet Precast 1"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart" Send="$Spell,A 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart" Send="AnimSetTime Spell 1.000000"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart; HasStatus Precast" Send="StatusSet Precast 0"/>
+        <!-- Entangling Roots -->
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourcePrecastStart; !HasStatus Precast" Send="AnimClear Spell"/>
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourcePrecastStart; !HasStatus Precast" Send="$Spell,C"/>
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourcePrecastStart; !HasStatus Precast" Send="StatusSet Precast 1"/>
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourceCastStart" Send="$Spell,C 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourceCastStart" Send="AnimSetTime Spell 1.000000"/>
+        <On Terms="Abil.HeroMalfurionEntanglingRoots.SourceCastStart; HasStatus Precast" Send="StatusSet Precast 0"/>
+        <!-- Tranquility -->
+        <On Terms="UnitBirth" Send="StatusSet TranquilityFly 0"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Start" Send="StatusIncrement TranquilityFly"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Stop" Send="StatusDecrement TranquilityFly"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Start" Send="AnimPlay Spell Stand,Work,Start"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Start" Send="AnimGroupApply Cover"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Stop; UnitWalking" Send="AnimPlay Spell Stand,Work,End,A"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Stop; !UnitWalking" Send="AnimPlay Spell Stand,Work,End"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Stop" Send="AnimGroupRemove Cover"/>
+        <!-- Twilight Dream -->
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourcePrecast; !HasStatus Precast" Send="AnimClear Spell"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourcePrecast; !HasStatus Precast" Send="$Spell,D"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourcePrecast; !HasStatus Precast" Send="StatusSet Precast 1"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourceCastStart" Send="$Spell,D 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourceCastStart" Send="AnimSetTime Spell 1.000000"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourceCastStart; HasStatus Precast" Send="StatusSet Precast 0"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="Create MalfurionAttackLaunchSound"/>
+        <!--On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Spell" Send="AnimClear Spell"/-->
+        <On Terms="UnitDeath" Send="AnimGroupRemove Cover"/>
+        <!-- Innervation -->
+        <On Terms="Abil.MalfurionInnervate.SourcePrecast; !HasStatus Precast" Send="AnimClear Spell"/>
+        <On Terms="Abil.MalfurionInnervate.SourcePrecast; !HasStatus Precast" Send="$Spell,A"/>
+        <On Terms="Abil.MalfurionInnervate.SourcePrecast; !HasStatus Precast" Send="StatusSet Precast 1"/>
+        <On Terms="Abil.MalfurionInnervate.SourceCastStart" Send="$Spell,A 0 -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="Abil.MalfurionInnervate.SourceCastStart" Send="AnimSetTime Spell 1.000000"/>
+        <On Terms="Abil.MalfurionInnervate.SourceCastStart; HasStatus Precast" Send="StatusSet Precast 0"/>
+        <!-- Other -->
+        <On Terms="Behavior.HeroGenericMount@Mounted.On" Send="AnimGroupRemove Cover"/>
+        <On Terms="Behavior.HeroGenericMount@Mounted.Off; ValidateUnit SourceHasTranquility" Send="AnimGroupApply Cover"/>
+        <AnimBlendTime value="0.200000"/>
+        <DeathArray index="Normal" SoundLink="Malfurion_Death"/>
+        <DeathCustoms index="1">
+            <ActorModel value="HeroMalfurion@BaseDeathRagdoll"/>
+            <ModelLink value="HeroMalfurion@BaseDeathRagdoll"/>
+            <Name value="RagdollMidair"/>
+            <InheritsFrom value="RagdollBasic"/>
+        </DeathCustoms>
+        <DeathCustoms index="2" ActorModel="HeroMalfurion@BaseDeathRagdoll" ModelLink="HeroMalfurion@BaseDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms index="3" ActorModel="HeroMalfurion@BaseDeathRagdoll" ModelLink="HeroMalfurion@BaseDeathRagdoll" Name="RagdollFire"/>
+        <DeathCustoms index="4" ActorModel="HeroMalfurion@BaseDeathRagdoll" ModelLink="HeroMalfurion@BaseDeathRagdoll" Name="RagdollAcid"/>
+        <PortraitActor value="HeroMalfurion@BasePortrait"/>
+        <PortraitModel value="HeroMalfurion@BasePortrait"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <AbilSoundArray AbilCmd="HeroMalfurionRegrowth,255"/>
+        <AbilSoundArray AbilCmd="HeroMalfurionMoonfire,255" Sound="Malfurion_VOX_Casting"/>
+        <AbilSoundArray AbilCmd="HeroMalfurionEntanglingRoots,255" Sound="Malfurion_VOX_Casting"/>
+        <AbilSoundArray AbilCmd="HeroMalfurionTranquility,255" Sound="Malfurion_Ultimate1Used"/>
+        <AbilSoundArray AbilCmd="HeroMalfurionTwilightDream,255" Sound="Malfurion_Ultimate2Used"/>
+        <ErrorArray Error="NotEnoughEnergy" Sound="Malfurion_LowMana"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_hero_malfurion.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\ui_targetportrait_hero_malfurion.dds"/>
+        <LifeArmorIcon value="Assets\Textures\storm_temp_btn-research-terran-vanadiumplating.dds"/>
+        <MinimapIcon value="Assets\Textures\UI_MinimapIcon_Hero_Malfurion.dds"/>
+        <MinimapIconScale value="0.740000"/>
+        <SoundArray index="Ready" value="Malfurion_Revive"/>
+        <SoundArray index="Yes" value="Malfurion_Yes"/>
+        <SoundArray index="Attack" value="Malfurion_Attack"/>
+        <SoundArray index="Pissed" value="Malfurion_Pissed"/>
+        <UnitIcon value="Assets\Textures\storm_ui_ingame_heroselect_btn_malfurion.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_hero_malfurion.dds"/>
+        </Wireframe>
+        <Model value="HeroMalfurion@Base"/>
+        <BuildModel value="HeroMalfurion@Base"/>
+        <PlacementModel value="HeroMalfurion@Base"/>
+    </CActorUnit>
+    <CActorSound id="HeroMalfurionMoonfire@SoundCast" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionMoonfire.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroMalfurionEntanglingRoots@WarningModel" parent="CoreModelAnimationStyleContinuous">
+        <Inherits index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Preload value="HeroMalfurionEntanglingRoots@WarningModel"/>
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth {} {} OpeningPlayForever"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@CreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@CreatePersistent.Stop" Send="Destroy"/>
+        <Scale value="3.500000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSplat id="HeroMalfurionEntanglingRoots@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Scale value="9.837500"/>
+    </CActorSplat>
+    <CActorSound id="HeroMalfurionMoonfire@SoundImpact" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionMoonfire@Damage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSplat id="HeroMalfurionMoonfire@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Scale value="9.837500"/>
+    </CActorSplat>
+    <CActorSplat id="HeroMalfurionRegrowth@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Scale value="9.837500"/>
+    </CActorSplat>
+    <!-- Entangling Roots                                                                          -->
+    <CActorRange id="HeroMalfurionEntanglingRoots@Range" parent="CoreRangeAbilPlusSplat" abil="HeroMalfurionEntanglingRoots">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorRange>
+    <!--    <On Terms="ActorCreation; ValidateCreationEffect MalfurionDoesNotHaveTenaciousRoots" Send="AnimBracketStart Spell IGNORE Stand,A Death" />-->
+    <!--    <On Terms="ActorCreation; ValidateCreationEffect MalfurionHasTenaciousRoots" Send="AnimBracketStart Spell IGNORE Stand,A Death,F" />-->
+    <!--    <On Terms="ActorOrphan" Send="Destroy" />-->
+    <!--    <On Terms="Effect.EntanglingRootsCreatePersistent.Start" Send="Create" />-->
+    <!--    <On Terms="ActorCreation" Send="TimerSet 0.375000 Grow1" />-->
+    <!--    <On Terms="ActorCreation" Send="TimerSet 0.875000 Grow2" />-->
+    <!--    <On Terms="ActorCreation" Send="TimerSet 1.375000 Grow3" />-->
+    <!--    <On Terms="ActorCreation" Send="TimerSet 1.875000 Grow4" />-->
+    <!--    <On Terms="ActorCreation" Send="TimerSet 2.375000 Grow5" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow1" Send="AnimPlay Spell Stand,B" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow2" Send="AnimPlay Spell Stand,C" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow3" Send="AnimPlay Spell Stand,D" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow4; ValidateCreationEffect MalfurionHasDeepRoots" Send="AnimPlay Spell Stand,E" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow4; ValidateCreationEffect MalfurionDoesNotHaveDeepRoots; HasStatus SpellDone" Send="Destroy" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow4; ValidateCreationEffect MalfurionDoesNotHaveDeepRoots" Send="AnimPlay Spell Stand,E PlayForever" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow5; ValidateCreationEffect MalfurionHasDeepRoots; HasStatus SpellDone" Send="Destroy" />-->
+    <!--    <On Terms="TimerExpired; TimerName Grow5; ValidateCreationEffect MalfurionHasDeepRoots" Send="AnimPlay Spell Stand,F PlayForever" />-->
+    <!--    <On Terms="Effect.EntanglingRootsCreatePersistent.Stop" Send="StatusSet SpellDone 1" />-->
+    <!--    <On Terms="Effect.EntanglingRootsCreatePersistent.Stop" Send="AnimBracketStop Spell" />-->
+    <!--    <On Terms="AnimDone; AnimName Spell" Send="Destroy" />-->
+    <!--    <ModelFlags index="AutomateGlobalLoops" value="1" />-->
+    <CActorModel id="HeroMalfurionEntanglingRoots@Growth" parent="CoreModelNoAnims">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Spell IGNORE Stand,A Death"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@CreatePersistent.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.375000 Grow1"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.875000 Grow2"/>
+        <On Terms="ActorCreation" Send="TimerSet 1.375000 Grow3"/>
+        <On Terms="ActorCreation" Send="TimerSet 1.875000 Grow4"/>
+        <On Terms="ActorCreation" Send="TimerSet 2.375000 Grow5"/>
+        <On Terms="TimerExpired; TimerName Grow1" Send="AnimPlay Spell Stand,B"/>
+        <On Terms="TimerExpired; TimerName Grow2" Send="AnimPlay Spell Stand,C"/>
+        <On Terms="TimerExpired; TimerName Grow3" Send="AnimPlay Spell Stand,D"/>
+        <On Terms="TimerExpired; TimerName Grow4" Send="AnimPlay Spell Stand,E PlayForever"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@CreatePersistent.Stop" Send="StatusSet SpellDone 1"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@CreatePersistent.Stop" Send="AnimBracketStop Spell"/>
+        <On Terms="AnimDone; AnimName Spell" Send="Destroy"/>
+    </CActorModel>
+    <!-- Moonfire                                                                          -->
+    <CActorRange id="HeroMalfurionMoonfire@Range" parent="CoreRangeAbilPlusSplat" abil="HeroMalfurionMoonfire">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorRange>
+    <CActorRange id="HeroMalfurionRegrowth@Range" parent="CoreRangeAbilPlusSplat" abil="HeroMalfurionRegrowth">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorRange>
+    <CActorSound id="HeroMalfurionTranquility@SoundHeal" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTranquility@Heal.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTranquility@SoundCast" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionTranquility.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTranquility@SoundLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Start; At Target" Send="Create"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Stop" Send="Destroy"/>
+    </CActorSound>
+    <CActorPortrait id="HeroMalfurion@BasePortrait" parent="CoreCompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorPortrait>
+    <!-- Regrowth                                                                          -->
+    <CActorModel id="HeroMalfurionRegrowth@ModelHeal" parent="CoreModelAddition">
+        <Inherits index="Visibility" value="1"/>
+        <FogVisibility value="Hidden"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionRegrowth.On" Send="Create"/>
+        <On Terms="Behavior.HeroMalfurionRegrowth.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft" HoldRotation="1"/>
+        <Model value="HeroMalfurionRegrowth@Heal"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurion@BasePortraitAddition" parent="CoreCompositePortraitAddition">
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorModel>
+    <CActorPortrait id="MalfurionSkinStormragePortrait" parent="CompositePortrait">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorPortrait>
+    <!-- Attack                                                                          -->
+    <CActorAction id="HeroMalfurionWeapon@Attack" parent="RangedHeroAttack" effectImpact="HeroMalfurionWeapon@ImpactSet" effectLaunch="HeroMalfurionWeapon@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+    </CActorAction>
+    <CActorMissile id="HeroMalfurionWeapon@AttackMissile" parent="CoreHeroMissileWithDeath" unitName="HeroMalfurionWeapon@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorMissile>
+    <CActorModel id="MalfurionSkinStormragePortraitAddition" parent="CompositePortraitAddition">
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+        <Filter index="All" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorModel>
+    <CActorSound id="Malfurion_Regrowth_SoundAllyHeal" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.Malfurion_Regrowth_FindAllyHeal.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroMalfurionMoonfire@ModelReveal" parent="CoreModelAddition">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionMoonfire@Reveal.On" Send="Create"/>
+        <On Terms="Behavior.HeroMalfurionMoonfire@Reveal.Off" Send="Destroy Immediate"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+    <CActorSound id="HeroMalfurionRegrowth@SoundHeal" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionRegrowth@BehaviorSwitch.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionRegrowth@SoundHealTick" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionRegrowth@PeriodicHealing.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorSplat id="HeroMalfurionMoonfire@CursorSplat" parent="CoreGuideVisualCircleFantasy" abil="HeroMalfurionMoonfire">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorSplat>
+    <CActorModel id="HeroMalfurionMoonfire@ModelImpact" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionMoonfire@Damage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.MoonfireRelic1StackDamage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.MoonfireRelic2StackDamage.Start; At Target" Send="Create"/>
+        <On Terms="Effect.MoonfireRelic3StackDamage.Start; At Target" Send="Create"/>
+        <ModelFlags index="AllowHitTest" value="1"/>
+    </CActorModel>
+    <CActorForceSphere id="HeroMalfurionMoonfire@OutForce">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionMoonfire@Search.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+        <Duration value="0.250000"/>
+        <Magnitude value="55.000000"/>
+        <Radius value="1.750000"/>
+    </CActorForceSphere>
+    <CActorSplat id="HeroMalfurionEntanglingRoots@CursorSplatInner" parent="GuideVisualCircle" abil="HeroMalfurionEntanglingRoots">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Model value="HeroMalfurionEntanglingRoots@CursorSplatInner"/>
+    </CActorSplat>
+    <CActorSplat id="HeroMalfurionEntanglingRoots@CursorSplatOuter" parent="GuideVisualCircle" abil="HeroMalfurionEntanglingRoots">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Model value="HeroMalfurionEntanglingRoots@CursorSplatOuter"/>
+    </CActorSplat>
+    <CActorUnit id="HeroMalfurionTreant" parent="CoreMinionStandard" unitName="HeroMalfurionTreant">
+        <Macros index="3" value="GrabbedAnimationMacro"/>
+        <Macros index="4" value="WarpTrain_HasWarpModel"/>
+        <Macros index="6" removed="1"/>
+        <Macros index="7" removed="1"/>
+        <Macros index="8" removed="1"/>
+        <Macros index="9" removed="1"/>
+        <Macros index="10" removed="1"/>
+        <Macros index="11" removed="1"/>
+        <Macros index="12" removed="1"/>
+        <Macros index="13" removed="1"/>
+        <Macros index="14" removed="1"/>
+        <Macros index="15" removed="1"/>
+        <Macros index="16" removed="1"/>
+        <Macros index="17" removed="1"/>
+        <Macros index="18" removed="1"/>
+        <Macros index="19" removed="1"/>
+        <Macros index="20" removed="1"/>
+        <Macros index="21" removed="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="ActorCreation" Send="$Birth 0 0.000000"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="Create HeroMalfurionTreant@AttackSound"/>
+        <On Terms="ActorCreation" Send="Create HeroMalfurionTreant@BirthSound"/>
+        <WalkAnimMoveSpeed value="2.5"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_hero_treantblue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_hero_treantred.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorModel id="HeroMalfurionTranquility@ModelImpact" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTranquility@Heal.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurionTranquility@ModelCast" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionTranquility.SourceCastStart" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurionTranquility@ModelWeaponCast" parent="CoreModelOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionTranquility.SourceCastStart" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+    </CActorModel>
+    <CActorSplat id="HeroMalfurionTwilightDream@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Scale value="6.950000"/>
+    </CActorSplat>
+    <CActorModel id="HeroMalfurionTranquility@ModelPersistent" parent="CoreModelAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HeroMalfurionTranquility@CreatePersistent.Stop" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldRotation="1"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurion@BaseDeathRagdoll" parent="CoreHeroDeathRagdoll">
+        <Macros value="HeroMalfurion@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorModel>
+    <CActorRange id="HeroMalfurionTwilightDream@Range" parent="CoreRangeAbilPlusSplat" abil="HeroMalfurionTwilightDream">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+    </CActorRange>
+    <CActorForceSphere id="HeroMalfurionTwilightDream@Force">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTwilightDream@Search.Start; At Caster" Send="Create"/>
+        <Host Subject="SOpTargetPoint SOpSplashDamagePositionVariance"/>
+        <Duration value="0.150000"/>
+        <Magnitude value="80.000000"/>
+        <Radius value="5.000000"/>
+    </CActorForceSphere>
+    <CActorModel id="HeroMalfurionTwilightDream@Launch" parent="CoreModelNoAnimsUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourceCastStart" Send="Create"/>
+        <On Terms="ActorCreation" Send="AnimPlay Build Build"/>
+        <On Terms="AnimDone; AnimName Build" Send="Destroy"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="Effect.MalfurionTwilightDreamModifyUnitCCInterruption.Start" Send="Destroy Immediate"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurionTwilightDream@Cast" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTwilightDream@Search.Start; At Caster" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Model value="HeroMalfurionTwilightDream@Launch"/>
+    </CActorModel>
+    <CActorModel id="HeroMalfurionTwilightDream@Impact" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Behavior.HeroMalfurionTwilightDream@Silence.On" Send="Create"/>
+        <On Terms="Behavior.HeroMalfurionTwilightDream@Silence.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachOriginSoft"/>
+    </CActorModel>
+    <CActorSound id="HeroMalfurionTwilightDream@CastSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Abil.HeroMalfurionTwilightDream.SourceCastStart" Send="Create"/>
+        <On Terms="Effect.MalfurionAstralCommunionSoundDummy.Start; At Caster" Send="Create"/>
+        <Sound value="HeroMalfurionTwilightDream@Cast"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTwilightDream@LaunchSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionTwilightDream@Search.Start" Send="Create"/>
+        <Sound value="HeroMalfurionTwilightDream@Launch"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionEntanglingRoots@LaunchSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@InitialSet.Start" Send="Create"/>
+        <Sound value="HeroMalfurionEntanglingRoots@Cast"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionEntanglingRoots@WarningSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="Effect.HeroMalfurionEntanglingRoots@CreatePersistent.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTreant@BirthSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Sound value="HeroMalfurionTreant@Birth"/>
+        <Layers Sound="HeroMalfurionTreant@Birth_SFX"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTreant@AttackSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Sound value="HeroMalfurionTreant@AttackLaunch"/>
+    </CActorSound>
+    <CActorSound id="HeroMalfurionTreant@DeathSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <On Terms="UnitDeath.HeroMalfurionTreant" Send="Create"/>
+        <Sound value="HeroMalfurionTreant@Death"/>
+        <Layers Sound="HeroMalfurionTreant@Death_SFX" PlayDelaySource="Actor">
+            <PlayDelay value="1000,1000"/>
+        </Layers>
+    </CActorSound>
+    <CActorEventMacroRunnable id="HeroMalfurion@BasePurpleMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Do Send="TextureSelectById Storm_Malfurion_Purple_Diff"/>
+        <Do Send="TextureSelectById Storm_Malfurion_Purple_Emis"/>
+        <Do Send="TextureSelectById Storm_Malfurion_Purple_Spec"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroMalfurion@BaseWhiteMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Malfurion"/>
+        <Do Send="TextureSelectById Storm_Malfurion_White_Diff"/>
+        <Do Send="TextureSelectById Storm_Malfurion_White_Emis"/>
+        <Do Send="TextureSelectById Storm_Malfurion_White_Spec"/>
+    </CActorEventMacroRunnable>
+</Catalog>

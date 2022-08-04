@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CutsceneState cutsceneVersion="1.300000">
+    <CCutsceneNodeFolder referenceGuid="13816444896993412237" referenceFile="Cutscenes/Draft_AAARef.SC2Cutscene" guid="13816444896993412237" name="Imported Assets"/>
+    <CCutsceneNodeActor guid="13314004606301222229" filter="Variation1" name="HeroAbathurBase (Var1)" scale="1.040000,1.040000,1.040000" finderTag="Hero" modelLink="HeroAbathur@StoreModelBase" shadowBox="0" opacity="0.000000" tintColorRed="3.921569" tintColorGreen="3.921569" tintColorBlue="3.921569" teamColorDiffuse="1.000000,0.000000,0.000000,1.000000" teamColorEmissive="0.700000,0.000000,0.000000,1.000000">
+        <CCutsceneElementObject guid="8869414767266084181" duration="27082" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="12624523934458670317" name="Animation Layer">
+            <CCutsceneElementAnim guid="7384700331970751725" duration="27082" lockedToEnd="1" anim="Stand Ready S" priority="4" originalDuration="2000" looping="1"/>
+        </CCutsceneNodeAnimLayer>
+        <CCutsceneNodePropertyValue guid="11893118770913438957" name="Property - Halo" propertyName="halo">
+            <CCutsceneElementPropertyValue guid="5918533414924020973" value="0"/>
+            <CCutsceneElementPropertyValue guid="8388378994421230829" start="3480" value="1"/>
+            <CCutsceneElementPropertyValue guid="8190245882404498669" start="4470" value="0"/>
+            <CCutsceneElementPropertyValue guid="4726108669439339757" start="17480" value="1"/>
+            <CCutsceneElementPropertyValue guid="7477830663355460845" start="18470" value="0"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="11527111712466758893" name="Property - Opacity" propertyName="opacity">
+            <CCutsceneElementPropertyCurve guid="6969908007024159981" value="0.000000" time="0.000000" curveInValue="3458.000000,0.000000" curveOutValue="3466.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="8922817962794249453" start="3497" value="1.000000" time="3497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="6390079433424989421" start="13990" value="1.000000" time="13990.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="4758789328997674221" start="16690" value="0.000000" time="16690.000000" curveInValue="15790.000000,0.333333" curveOutValue="16959.000000,0.333333" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7552287473369574637" start="17497" value="1.000000" time="17497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="12189101597394169069" name="Property - Tint Color - Red" propertyName="tintColorRed">
+            <CCutsceneElementPropertyCurve guid="8689618787857820909" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="4784148181712858349" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5329469046730747117" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6169405774693100781" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5804759585224092909" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6929206556170087661" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="9434752320443477229" name="Property - Tint Color - Green" propertyName="tintColorGreen">
+            <CCutsceneElementPropertyCurve guid="5753931018097880301" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6247522029987392749" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8919789220576586989" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6767884049774243053" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5055361601085074669" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8126393088946171117" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="13209666228711550189" name="Property - Tint Color - Blue" propertyName="tintColorBlue">
+            <CCutsceneElementPropertyCurve guid="8834907472668093677" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7344866705028639981" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6707671619056397549" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6793821984340012269" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6386352123366567149" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5039706423816318189" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodeConversation guid="9387465918353897196" name="Conversation">
+            <CCutsceneElementConversation guid="7658447231195612676" start="3500" duration="1000" conversationLink="" conversationLine="" soundLink="AbathurHero_UI_Lockin" facialGroup="Default" facialAnim="" durationOffset="1000" assetDuration="0" fireAndForget="1"/>
+        </CCutsceneNodeConversation>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="12623727353627455354" filter="Variation2" name="HeroAbathurBase (Var2)" scale="1.040000,1.040000,1.040000" finderTag="Hero" modelLink="HeroAbathur@StoreModelBase" variation="1" shadowBox="0" opacity="0.000000" tintColorRed="3.921569" tintColorGreen="3.921569" tintColorBlue="3.921569" teamColorDiffuse="1.000000,0.000000,0.000000,1.000000" teamColorEmissive="0.700000,0.000000,0.000000,1.000000">
+        <CCutsceneElementObject guid="7818452835453415290" duration="27082" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="11945726367491469178" name="Animation Layer">
+            <CCutsceneElementAnim guid="8866347752424517498" duration="27082" lockedToEnd="1" anim="Stand Ready S" priority="4" originalDuration="2000" looping="1"/>
+        </CCutsceneNodeAnimLayer>
+        <CCutsceneNodePropertyValue guid="9953022199694143354" name="Property - Halo" propertyName="halo">
+            <CCutsceneElementPropertyValue guid="8247221005456027514" value="0"/>
+            <CCutsceneElementPropertyValue guid="7133213141501521786" start="3480" value="1"/>
+            <CCutsceneElementPropertyValue guid="6847079589858553722" start="4470" value="0"/>
+            <CCutsceneElementPropertyValue guid="4674352851396898682" start="17480" value="1"/>
+            <CCutsceneElementPropertyValue guid="5285208839973023610" start="18470" value="0"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="12039256822324440954" name="Property - Opacity" propertyName="opacity">
+            <CCutsceneElementPropertyCurve guid="8208487920933842810" value="0.000000" time="0.000000" curveInValue="3458.000000,0.000000" curveOutValue="3466.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="5328965704791666554" start="3497" value="1.000000" time="3497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="4926141430769430394" start="13990" value="1.000000" time="13990.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="5928604900942983034" start="16690" value="0.000000" time="16690.000000" curveInValue="15790.000000,0.333333" curveOutValue="16959.000000,0.333333" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="4963026682921922426" start="17497" value="1.000000" time="17497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="9727383412739190650" name="Property - Tint Color - Red" propertyName="tintColorRed">
+            <CCutsceneElementPropertyCurve guid="6486909104204328826" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7252661520647630714" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8665160639487455098" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8337248012515979130" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6498793416151314298" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9046219475247476602" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="9739235112999497594" name="Property - Tint Color - Green" propertyName="tintColorGreen">
+            <CCutsceneElementPropertyCurve guid="6684741220617990010" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5141394896608341882" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6291296897472180090" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6329471490216996730" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8986531627540197242" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7884056210336952186" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="10630875280041357178" name="Property - Tint Color - Blue" propertyName="tintColorBlue">
+            <CCutsceneElementPropertyCurve guid="8740056171820920698" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9066625071029202810" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8136619348406611834" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7000159195019915130" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5777551785905926010" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5762811986427031418" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodeConversation guid="10161068706115399546" name="Conversation">
+            <CCutsceneElementConversation guid="8863344818665336698" start="3500" duration="1000" conversationLink="" conversationLine="" soundLink="AbathurHero_UI_Lockin" facialGroup="Default" facialAnim="" durationOffset="1000" assetDuration="0" fireAndForget="1"/>
+        </CCutsceneNodeConversation>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="13192019835839454152" filter="Variation3" name="HeroAbathurBase (Var3)" scale="1.040000,1.040000,1.040000" finderTag="Hero" modelLink="HeroAbathur@StoreModelBase" variation="2" shadowBox="0" opacity="0.000000" tintColorRed="3.921569" tintColorGreen="3.921569" tintColorBlue="3.921569" teamColorDiffuse="1.000000,0.000000,0.000000,1.000000" teamColorEmissive="0.700000,0.000000,0.000000,1.000000">
+        <CCutsceneElementObject guid="8568758678685883336" duration="27082" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="13310276163992427464" name="Animation Layer">
+            <CCutsceneElementAnim guid="4885539431674420168" duration="27082" lockedToEnd="1" anim="Stand Ready S" priority="4" originalDuration="2000" looping="1"/>
+        </CCutsceneNodeAnimLayer>
+        <CCutsceneNodePropertyValue guid="13150504471502920648" name="Property - Halo" propertyName="halo">
+            <CCutsceneElementPropertyValue guid="5773045400636103624" value="0"/>
+            <CCutsceneElementPropertyValue guid="7644621844189682632" start="3480" value="1"/>
+            <CCutsceneElementPropertyValue guid="6770678149293153224" start="4470" value="0"/>
+            <CCutsceneElementPropertyValue guid="5362554451076717512" start="17480" value="1"/>
+            <CCutsceneElementPropertyValue guid="7872548435669162952" start="18470" value="0"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="11951217862927850440" name="Property - Opacity" propertyName="opacity">
+            <CCutsceneElementPropertyCurve guid="4986401468696107976" value="0.000000" time="0.000000" curveInValue="3458.000000,0.000000" curveOutValue="3466.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="5759270663128751048" start="3497" value="1.000000" time="3497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="7704769923412532168" start="13990" value="1.000000" time="13990.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="6290705310468152264" start="16690" value="0.000000" time="16690.000000" curveInValue="15790.000000,0.333333" curveOutValue="16959.000000,0.333333" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5035456261573712840" start="17497" value="1.000000" time="17497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="12108423286688193480" name="Property - Tint Color - Red" propertyName="tintColorRed">
+            <CCutsceneElementPropertyCurve guid="8443795690380729288" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="4970588528688634824" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7341281528277507016" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5797757615960103880" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5885886286129929160" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9085960062104378312" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="11444082113324653512" name="Property - Tint Color - Green" propertyName="tintColorGreen">
+            <CCutsceneElementPropertyCurve guid="7024232608764402632" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6799648399489375176" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7496473252326153160" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5740134775643839432" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7603778741019220936" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6944785179896323016" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="12787113477636234184" name="Property - Tint Color - Blue" propertyName="tintColorBlue">
+            <CCutsceneElementPropertyCurve guid="6805783270645439432" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6098944181866994632" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9134063914862910408" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8196688092784892872" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8127185059395279816" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9152559053356800968" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodeConversation guid="10921204763120769992" name="Conversation">
+            <CCutsceneElementConversation guid="7971765775094389704" start="3500" duration="1000" conversationLink="" conversationLine="" soundLink="AbathurHero_UI_Lockin" facialGroup="Default" facialAnim="" durationOffset="1000" assetDuration="0" fireAndForget="1"/>
+        </CCutsceneNodeConversation>
+    </CCutsceneNodeActor>
+    <CCutsceneNodeActor guid="10128935158274837789" filter="Variation4" name="HeroAbathurBase (Var4)" scale="1.040000,1.040000,1.040000" finderTag="Hero" modelLink="HeroAbathur@StoreModelBase" variation="3" shadowBox="0" opacity="0.000000" tintColorRed="3.921569" tintColorGreen="3.921569" tintColorBlue="3.921569" teamColorDiffuse="1.000000,0.000000,0.000000,1.000000" teamColorEmissive="0.700000,0.000000,0.000000,1.000000">
+        <CCutsceneElementObject guid="5196965036218633501" duration="27082" lockedToEnd="1"/>
+        <CCutsceneNodeAnimLayer guid="12526221779316755741" name="Animation Layer">
+            <CCutsceneElementAnim guid="7918863279742504221" duration="27082" lockedToEnd="1" anim="Stand Ready S" priority="4" originalDuration="2000" looping="1"/>
+        </CCutsceneNodeAnimLayer>
+        <CCutsceneNodePropertyValue guid="9347655090731732253" name="Property - Halo" propertyName="halo">
+            <CCutsceneElementPropertyValue guid="8499306016485133597" value="0"/>
+            <CCutsceneElementPropertyValue guid="8891237381566352669" start="3480" value="1"/>
+            <CCutsceneElementPropertyValue guid="7823495412130499869" start="4470" value="0"/>
+            <CCutsceneElementPropertyValue guid="5995259633884712221" start="17480" value="1"/>
+            <CCutsceneElementPropertyValue guid="5784836034863811869" start="18470" value="0"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="9696886462186769693" name="Property - Opacity" propertyName="opacity">
+            <CCutsceneElementPropertyCurve guid="8560950908990508317" value="0.000000" time="0.000000" curveInValue="3458.000000,0.000000" curveOutValue="3466.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="4880225753782799645" start="3497" value="1.000000" time="3497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="8053740753373875485" start="13990" value="1.000000" time="13990.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+            <CCutsceneElementPropertyCurve guid="8276956397089836317" start="16690" value="0.000000" time="16690.000000" curveInValue="15790.000000,0.333333" curveOutValue="16959.000000,0.333333" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8862540553283161373" start="17497" value="1.000000" time="17497.000000" curveInValue="3473.000000,0.666667" curveOutValue="3481.000000,1.000000" curveOutType="6" curveInType="6"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="13432952532996443421" name="Property - Tint Color - Red" propertyName="tintColorRed">
+            <CCutsceneElementPropertyCurve guid="6898295117962005789" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9095153460888718621" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="9055642987285957917" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6673167668338478365" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6294968954380078365" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="4640234655003430173" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="9434591649778879773" name="Property - Tint Color - Green" propertyName="tintColorGreen">
+            <CCutsceneElementPropertyCurve guid="7112652224126242077" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5414773470727752989" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="8240128770513554717" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7035823045976509725" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5903616228767812893" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="6552751633060580637" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodePropertyValue guid="13346667022271892765" name="Property - Tint Color - Blue" propertyName="tintColorBlue">
+            <CCutsceneElementPropertyCurve guid="4708505930427256093" value="1000.000000" time="0.000000" curveInValue="-1.000000,1000.000000" curveOutValue="1165.666748,1000.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5516374688800951581" start="3497" value="1000.000000" time="3497.000000" curveInValue="2331.333252,1000.000000" curveOutValue="3553.666748,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="5649355139802189085" start="3667" value="255.000000" time="3667.000000" curveInValue="3610.333252,503.333344" curveOutValue="7108.000000,255.000000" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7769847216154332445" start="13990" value="255.000000" time="13990.000000" curveInValue="10549.000000,255.000000" curveOutValue="15159.000000,503.333344" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="7316851749815307549" start="17497" value="1000.000000" time="17497.000000" curveInValue="16328.000000,751.666626" curveOutValue="17547.333984,751.666626" curveOutType="3" curveInType="3"/>
+            <CCutsceneElementPropertyCurve guid="4937617743901871389" start="17648" value="255.000000" time="17648.000000" curveInValue="17597.666016,503.333344" curveOutValue="17649.000000,255.000000" curveOutType="3" curveInType="3"/>
+        </CCutsceneNodePropertyValue>
+        <CCutsceneNodeConversation guid="12208579497186807069" name="Conversation">
+            <CCutsceneElementConversation guid="7062398430998416669" start="3500" duration="1000" conversationLink="" conversationLine="" soundLink="AbathurHero_UI_Lockin" facialGroup="Default" facialAnim="" durationOffset="1000" assetDuration="0" fireAndForget="1"/>
+        </CCutsceneNodeConversation>
+    </CCutsceneNodeActor>
+</CutsceneState>

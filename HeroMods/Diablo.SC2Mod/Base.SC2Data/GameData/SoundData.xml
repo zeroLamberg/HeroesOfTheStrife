@@ -1,0 +1,1844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="HeroDiabloDX@Celebrate" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="Diablo_Celebrate00"/>
+        <AssetArray TemplateParam="Diablo_Celebrate01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Comeback" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="Diablo_Comeback00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_GetHitSmall" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit04.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit08.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit12.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+        <Exclusivity value="HeroCritical"/>
+        <DupeWait value="3000,7000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@AI_Heal" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="Diablo_AI_Heal00"/>
+        <AssetArray TemplateParam="Diablo_AI_Heal01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="25000,30000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@KillAzmodan" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_KillAzmodan00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@AI_Uhoh" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="Diablo_AI_Uhoh00"/>
+        <AssetArray TemplateParam="Diablo_AI_Uhoh01"/>
+        <AssetArray TemplateParam="Diablo_AI_Uhoh02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <Exclusivity value=""/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Angry" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_RevengeStart00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Kneel" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_UI_ExLocked00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Leoric" parent="HeroVO_3D_Intro">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VoiceLineFour00.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Negative" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion_Negative00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Positive" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion_Positive00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Confident" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_UI_Purchase00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Insult" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_Social_Goodbye01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Leoric" parent="HeroVO_3D_Intro">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_IntroResponse_D3Hero00.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Murky" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroResponse_Murky00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Negative" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroResponse_Negative00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Positive" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroResponse_Positive00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Corrupt" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_UI_Gift00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiablo@VOX_CastingA" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting08.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="80"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="Butcher_Vox_Stomp"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDevilCharge@Whoosh" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Charge_Whoosh01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Charge_Whoosh02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Charge_Whoosh03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Charge_Whoosh04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Charge_Whoosh05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Charge_Whoosh06.ogg"/>
+        <ConeAngle value="300.000000,300.000000"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroDiablo@VOX_CastingB" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Attack02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting00.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting04.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting06.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="80"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiablo@VOX_CastingC" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting00.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting04.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting07.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting08.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting09.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting10.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting11.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting12.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting13.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting14.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Casting15.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@Attack" parent="Hero_Medium">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Attack06.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@Death" parent="Hero_Death">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Death00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Death01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Death02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Death03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Death04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Death05.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@LowMana" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_LowMana00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_LowMana01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_LowMana02.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@Pissed" parent="Hero_Pissed">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed08.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed09.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed10.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed11.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed12.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed13.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Pissed14.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@Revive" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Revive00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Revive01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Revive02.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@Ultimate1Used" parent="Hero_Critical">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Ultimate1Used00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Ultimate1Used01.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archangel@Ultimate2Used" parent="Hero_Critical">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Ultimate2Used00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Archange@Yes" parent="Hero_Low">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Archangel\Skin_Diablo_Archangel_Yes08.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <VolumeRolloffPoints index="0" Distance="216.304337"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Attack" parent="Hero_Medium">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Attack00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Attack01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Attack03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Attack04.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Death" parent="Hero_Death">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Death00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Death01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Death02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Death03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Death04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Death05.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@LowMana" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_LowMana00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_LowMana01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_LowMana02.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Pissed" parent="Hero_Pissed">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Pissed01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Pissed02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Pissed03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Pissed04_Joke.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Pissed04_Song02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Pissed04_Song03.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Revive" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Revive00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Revive01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Revive02.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Ultimate1Used" parent="Hero_Critical">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry05.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Ultimate2Used" parent="Hero_Critical">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_VOX_Warcry05.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Lurkablo@Yes" parent="Hero_Low">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Lurkablo\Skin_Diablo_Lurkablo_Yes08.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <VolumeRolloffPoints index="0" Distance="216.304337"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Attack" parent="Hero_Medium">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Attack06.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Death" parent="Hero_Death">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath08.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath09.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath10.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath11.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Breath12.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@LowMana" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_LowMana00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_LowMana01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_LowMana02.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Pissed" parent="Hero_Pissed">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed08.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed09.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed10.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed11.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed12.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed13.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Pissed14.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Revive" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Revive00_ALT.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Revive01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Revive02.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Ultimate1Used" parent="Hero_Critical">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Ultimate1Used00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Ultimate1Used01_ALT.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Ultimate2Used" parent="Hero_Critical">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Ultimate2Used00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Prime@Yes" parent="Hero_Low">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Skin_Diablo_Prime\Skin_Diablo_Prime_Yes08.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <VolumeRolloffPoints index="0" Distance="216.304337"/>
+    </CSound>
+    <CSound id="DiabloArchangel_FireStomp_SoundLaunch" parent="Spell">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Firestomp_Start_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Firestomp_Start_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Firestomp_Start_03.ogg"/>
+        <Flags index="Purgable" value="0"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Exclusivity value="PlayerVoxStomp"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="DiabloArchangel_Footstep" parent="Movement">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS04.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS05.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS06.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS07.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS08.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS09.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Gen_FS10.ogg"/>
+        <Pitch value="1.000000,3.000000"/>
+        <PlayDelay value="0,10"/>
+        <Volume value="-19.000000,-19.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="DiabloArchangel_DevilCharge_Cast" parent="Spell">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Demonic_Charge_Launch01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Demonic_Charge_Launch02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_Archangel\Diablo_Archangel_Demonic_Charge_Launch03.ogg"/>
+        <ConeAngle value="300.000000,300.000000"/>
+        <Exclusivity value="HeroVOX"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloTalentLightningBreathHellstorm@Launch" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Diablo\Diablo_LightningBreath_Hellstorm_Launch01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Diablo\Diablo_LightningBreath_Hellstorm_Launch02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Diablo\Diablo_LightningBreath_Hellstorm_Launch03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Base_Diablo\Diablo_LightningBreath_Hellstorm_Launch04.ogg"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+        <Exclusivity value="PlayerVoxStomp"/>
+    </CSound>
+    <CSound id="HeroDiabloOverpower@Impact" parent="_FX_Hero_Spell_Warning">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_OverPower_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_OverPower_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_OverPower_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_OverPower_Impact04.ogg"/>
+        <PanLevel value="0.900000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloOverpower@Launch" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Overpower_Start01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Overpower_Start02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Overpower_Start03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Overpower_Start04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Overpower_Start05.ogg"/>
+        <Volume value="-3.000000,-2.000000"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+        <Pitch value="-1.000000,0.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloBlackSoulstone@Resurrect_Laugh" parent="_FX_Hero_Spell_Proc">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_DarkLaugh00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_DarkLaugh01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_DarkLaugh02.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloBlackSoulstone@Resurrect_Laugh_Player" parent="_2D_FX_Hero_Spell">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Resurrect_Laugh01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Resurrect_Laugh02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Resurrect_Laugh03.ogg"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-38.689999"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_VOX_Spun" parent="Hero_Store">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit08.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit09.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit10.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit11.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit12.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit15.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="ManualOverride" value="1"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="40.000000" Volume="-96.000000"/>
+        <PanLevel value="0.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_ExLocked" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="Diablo_UI_ExLocked00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_ExPurchased" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="Diablo_UI_ExPurchased00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_Gift" parent="HeroVO_2D_UI_Purchase">
+        <AssetArray TemplateParam="Diablo_UI_Gift00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_Lockin" parent="HeroVO_2D_UI_Lockin">
+        <AssetArray TemplateParam="Diablo_Attack02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="110" Volume="-96.000000"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+        <DupeWait value="250,250"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_D3Hero" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroResponse_D3Hero00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Lesser" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroResponse_Lesser00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroResponse_Prime" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroResponse_Prime00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_Purchase" parent="HeroVO_2D_UI_Purchase">
+        <AssetArray TemplateParam="Diablo_UI_Purchase00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_Trial" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_UI_Trial00"/>
+        <AssetArray TemplateParam="Diablo_UI_Trial01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_WaitLocked" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="Diablo_UI_WaitLocked00"/>
+        <AssetArray TemplateParam="Diablo_UI_WaitLocked01"/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_D3Hero" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion_D3Hero00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Lesser" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion_Lesser00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Prime" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion_Prime00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion_Angel" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion_Angel00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@UI_WaitPurchased" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="Diablo_UI_WaitPurchased00"/>
+        <AssetArray TemplateParam="Diablo_UI_WaitPurchased01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_Cheer" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_VOX_Cheer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDevilCharge@Impact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Diablo_Base\Diablo_Demonic_Charge_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Diablo_Base\Diablo_Demonic_Charge_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="assets\Sounds\Heroes\Diablo_Base\Diablo_Demonic_Charge_Impact03.ogg" FacialGroup=""/>
+        <LocalVolumeAdjustment value="3.000000,3.000000"/>
+        <Category value="UIMovie"/>
+        <CategoryLocal value="UIMovie"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-2.000000,-2.000000"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDevilCharge@Cast" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Demonic_Charge_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Demonic_Charge_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Demonic_Charge_Launch03.ogg"/>
+        <ConeAngle value="300.000000,300.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroRespond" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroRespond00"/>
+        <AssetArray TemplateParam="Diablo_IntroRespond02"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroQuestion" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroQuestion00"/>
+        <AssetArray TemplateParam="Diablo_IntroQuestion01"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloTalentLordofTerror@LaunchSound" parent="_FX_Hero_Spell_Proc">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LordofTerror_Cast01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LordofTerror_Cast02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LordofTerror_Cast03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LordofTerror_Cast04.ogg"/>
+        <Flags index="Purgable" value="0"/>
+        <DupeDestroyCountPerPlayer value="10"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloTalentLordofTerror@ImpactSound" parent="_FX_Talent_Impact">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact01.ogg"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact02.ogg"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact03.ogg"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact04.ogg"/>
+        <AssetArray File="assets\Sounds\Talents\Talent_BloodforBlood_Impact05.ogg"/>
+        <Flags index="Purgable" value="0"/>
+        <DupeHistoryCount value="3"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ReverbBalance Room="-10000"/>
+        <Volume value="-2.000000,-2.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroAgree" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroAgree00"/>
+        <AssetArray TemplateParam="Diablo_IntroAgree01"/>
+        <AssetArray TemplateParam="Diablo_IntroAgree02"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@IntroBoast" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="Diablo_IntroBoast00"/>
+        <AssetArray TemplateParam="Diablo_IntroBoast01"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@KillSpreeEnd" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_KillSpreeEnd00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_AssistMe" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_AssistMe00"/>
+        <AssetArray TemplateParam="Diablo_Ping_AssistMe01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_Danger" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_Danger00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_Danger01.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@TeamKilled" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_TeamKilled00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="0,0"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiablo@Footstep" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS08.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS09.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Gen_FS10.ogg"/>
+        <Pitch value="1.000000,3.000000"/>
+        <PlayDelay value="0,10"/>
+        <Volume value="-19.000000,-19.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloFireStomp@Return" parent="_FX_Hero_Spell_End">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Return02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Return03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Return04.ogg"/>
+        <Pitch value="4.000000,6.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <PanLevel value="0.800000"/>
+        <DupeWait value="200,200"/>
+        <DupeMuteCount value="5"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_AssistHero" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_AssistHero00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_AttackCastle" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_AttackCastle00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_AttackMerc" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_AttackMerc00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_AttackOutpost" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_AttackOutpost00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_AttackTower" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_AttackTower00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_AngryGrowl" parent="Hero_Vox">
+        <AssetArray TemplateParam="Diablo_VOX_AngryGrowl01"/>
+        <AssetArray TemplateParam="Diablo_VOX_AngryGrowl02"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_AngryGrowl03.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="Diablo_VOX_AngryGrowl03"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_DefendCastle" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_DefendCastle00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_DefendOutpost" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_DefendOutpost00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_DefendTower" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_DefendTower00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_KillHero" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Ping_KillHero00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_Attack" parent="Hero_Vox">
+        <AssetArray TemplateParam="Diablo_VOX_Attack01"/>
+        <AssetArray TemplateParam="Diablo_VOX_Attack04"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Attack05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Attack06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_Attack07.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="Diablo_VOX_Attack06"/>
+        <AssetArray TemplateParam="Diablo_VOX_Attack08"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_Casting" parent="Hero_Vox">
+        <AssetArray TemplateParam="Diablo_VOX_Casting00"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting01"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting02"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting03"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting04"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting05"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting06"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting07"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting08"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting09"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting10"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting11"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting12"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting13"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting14"/>
+        <AssetArray TemplateParam="Diablo_VOX_Casting15"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_MellowGrowl" parent="Hero_Vox">
+        <AssetArray TemplateParam="Diablo_VOX_MellowGrowl00"/>
+        <AssetArray TemplateParam="Diablo_VOX_MellowGrowl01"/>
+        <AssetArray TemplateParam="Diablo_VOX_MellowGrowl02"/>
+        <AssetArray TemplateParam="Diablo_VOX_MellowGrowl03"/>
+        <AssetArray TemplateParam="Diablo_VOX_MellowGrowl04"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_MellowGrowl03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_MellowGrowl04.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_GetHitLarge" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit11.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit13.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit14.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_VOX_GetHit15.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+        <Exclusivity value="HeroCritical"/>
+        <DupeWait value="3000,7000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@VOX_Pulled" parent="Hero_Vox">
+        <AssetArray TemplateParam="Diablo_VOX_Pulled00"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled02"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled03"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled04"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled05"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled08"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled09"/>
+        <AssetArray TemplateParam="Diablo_VOX_Pulled10"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@AI_Attack" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_AI_Attack00"/>
+        <AssetArray TemplateParam="Diablo_AI_Attack01"/>
+        <AssetArray TemplateParam="Diablo_AI_Attack02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="15000,20000"/>
+        <Category value="Dialogue"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@AI_Caution" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_AI_Caution00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="Dialogue"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@AI_Retreat" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="Diablo_AI_Retreat00"/>
+        <AssetArray TemplateParam="Diablo_AI_Retreat01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <SustainFade index="1" Time="500"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+        <Exclusivity value="DefaultRetreat"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@No" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_No00"/>
+        <AssetArray TemplateParam="Diablo_No01"/>
+        <AssetArray TemplateParam="Diablo_No02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@AI_GoodJob" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="Diablo_AI_GoodJob00"/>
+        <AssetArray TemplateParam="Diablo_AI_GoodJob01"/>
+        <AssetArray TemplateParam="Diablo_AI_GoodJob02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Laugh" parent="Hero_Vox">
+        <AssetArray TemplateParam="Diablo_Laugh00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Healed" parent="HeroVO_3D_Healed">
+        <AssetArray TemplateParam="Diablo_Healed00"/>
+        <AssetArray TemplateParam="Diablo_Healed01"/>
+        <AssetArray TemplateParam="Diablo_Healed02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Kill" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_Kill00"/>
+        <AssetArray TemplateParam="Diablo_Kill01"/>
+        <AssetArray TemplateParam="Diablo_Kill02"/>
+        <AssetArray TemplateParam="Diablo_Kill03"/>
+        <AssetArray TemplateParam="Diablo_Kill04"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@KillD3Hero" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_KillD3Hero00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@KillTychus" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_KillTychus00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@KillTyrael" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_KillTyrael00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@KillUther" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="Diablo_KillUther00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloApocalypse@SoundRoar" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_Roar.ogg"/>
+        <NonLocalVolumeAdjustment value="-4.000000,-4.000000"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_Attack" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_Attack00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ping_Defend" parent="Hero_High">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_Ping_Defend00.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Resurrected" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="Diablo_Resurrected00"/>
+        <AssetArray TemplateParam="Diablo_Resurrected01"/>
+        <Flags index="Ignorable" value="0"/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="1.000000"/>
+        <ReverbBalance Room="-10000"/>
+        <SustainFade index="1" Time="500"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Spec" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Spec00"/>
+        <AssetArray TemplateParam="Diablo_Spec01"/>
+        <AssetArray TemplateParam="Diablo_Spec02"/>
+        <AssetArray TemplateParam="Diablo_Spec03"/>
+        <AssetArray TemplateParam="Diablo_Spec04"/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Taunt" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="Diablo_Taunt00"/>
+        <AssetArray TemplateParam="Diablo_Taunt01"/>
+        <AssetArray TemplateParam="Diablo_Taunt02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ultimate1Used" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="Diablo_Ultimate1Used00"/>
+        <AssetArray TemplateParam="Diablo_Ultimate1Used01"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Ultimate2Used" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="Diablo_Ultimate2Used00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloFireStomp@Impact" parent="_FX_Hero_Spell_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact07.ogg"/>
+        <Volume value="-7.000000,-6.000000"/>
+        <CategoryDuckingLocal value="Local_Spell_Hero_Impacts"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_Impact"/>
+        <DupeMuteCount value="3"/>
+        <DupeWait value="20,20"/>
+        <PanLevel value="0.800000"/>
+        <NonLocalVolumeAdjustment value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints index="0" Distance="15.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloWeapon@AttackImpactUnit" parent="Combat">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Impact_Unit07.ogg"/>
+        <DupeHistoryCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloWeapon@AttackWhoosh" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Attack_Whoosh01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Attack_Whoosh02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Attack_Whoosh03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Attack_Whoosh04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Base_Diablo\Diablo_Attack_Whoosh05.ogg"/>
+        <Category value="Combat"/>
+        <CategoryLocal value="Unknown"/>
+        <DupeHistoryCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Volume value="-10.040000,-7.040000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="0.000000"/>
+        <CategoryDuckingLocal value=""/>
+    </CSound>
+    <CSound id="HeroDiabloWeapon@AttackImpactBuilding" parent="Impact_Melee_Large_Stone">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Blunt_Large_Stone07.ogg"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Blunt_Large_Stone08.ogg"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Blunt_Large_Stone09.ogg"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Blunt_Large_Stone10.ogg"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Blunt_Large_Stone11.ogg"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Blunt_Large_Stone12.ogg"/>
+        <SpeakerMix index="FrontLeft" value="1.000000"/>
+        <SpeakerMix index="FrontRight" value="1.000000"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <Volume value="-2.040000,-2.040000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Death" parent="Hero_Death">
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_Death00.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_Death01.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_Death02.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_Death03.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_Death04.wav" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\Diablo_Death05.wav" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Attack" parent="HeroVO_2D_Medium">
+        <AssetArray TemplateParam="Diablo_Attack00"/>
+        <AssetArray TemplateParam="Diablo_Attack01"/>
+        <AssetArray TemplateParam="Diablo_Attack02"/>
+        <AssetArray TemplateParam="Diablo_Attack03"/>
+        <AssetArray TemplateParam="Diablo_Attack04"/>
+        <AssetArray TemplateParam="Diablo_Attack05"/>
+        <AssetArray TemplateParam="Diablo_Attack06"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="100.000000"/>
+        <VolumeRolloffPoints index="1" Distance="10000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Revive" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_Revive00"/>
+        <AssetArray TemplateParam="Diablo_Revive01"/>
+        <AssetArray TemplateParam="Diablo_Revive02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@LowMana" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="Diablo_LowMana00"/>
+        <AssetArray TemplateParam="Diablo_LowMana01"/>
+        <AssetArray TemplateParam="Diablo_LowMana02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="5000,10000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Yes" parent="HeroVO_2D_Low">
+        <AssetArray TemplateParam="Diablo_Yes00"/>
+        <AssetArray TemplateParam="Diablo_Yes01"/>
+        <AssetArray TemplateParam="Diablo_Yes02"/>
+        <AssetArray TemplateParam="Diablo_Yes03"/>
+        <AssetArray TemplateParam="Diablo_Yes04"/>
+        <AssetArray TemplateParam="Diablo_Yes05"/>
+        <AssetArray TemplateParam="Diablo_Yes06"/>
+        <AssetArray TemplateParam="Diablo_Yes07"/>
+        <AssetArray TemplateParam="Diablo_Yes08"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="HeroLow"/>
+        <VolumeRolloffPoints index="1" Distance="10000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloDX@Pissed" parent="HeroVO_2D_Pissed">
+        <AssetArray TemplateParam="Diablo_Pissed00"/>
+        <AssetArray TemplateParam="Diablo_Pissed01"/>
+        <AssetArray TemplateParam="Diablo_Pissed02"/>
+        <AssetArray TemplateParam="Diablo_Pissed03"/>
+        <AssetArray TemplateParam="Diablo_Pissed04"/>
+        <AssetArray TemplateParam="Diablo_Pissed05"/>
+        <AssetArray TemplateParam="Diablo_Pissed06"/>
+        <AssetArray TemplateParam="Diablo_Pissed07"/>
+        <AssetArray TemplateParam="Diablo_Pissed08SFX"/>
+        <AssetArray TemplateParam="Diablo_Pissed09"/>
+        <AssetArray TemplateParam="Diablo_Pissed10"/>
+        <AssetArray TemplateParam="Diablo_Pissed11"/>
+        <AssetArray TemplateParam="Diablo_Pissed12"/>
+        <AssetArray TemplateParam="Diablo_Pissed13"/>
+        <AssetArray TemplateParam="Diablo_Pissed14"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="HeroDiabloFireStomp@Impact_Return" parent="_FX_Hero_Spell_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return07.ogg"/>
+        <CategoryDuckingLocal value="Local_Spell_Hero_Impacts"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_Impact"/>
+        <Volume value="-8.000000,-7.000000"/>
+        <DupeMuteCount value="3"/>
+        <DupeWait value="40,40"/>
+        <PanLevel value="0.800000"/>
+        <NonLocalVolumeAdjustment value="-3.000000,-3.000000"/>
+        <PlayDelay value="0,100"/>
+        <VolumeRolloffPoints index="0" Distance="15.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloFireStomp@Return_End" parent="_FX_Hero_Spell_End">
+        <AssetArray File="Assets\Sounds\Event\HVH\BattlefieldOfEternity\Event_BoE_Immortal_Hell_Ranged_Attack_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\HVH\BattlefieldOfEternity\Event_BoE_Immortal_Hell_Ranged_Attack_Launch05.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\HVH\BattlefieldOfEternity\Event_BoE_Immortal_Hell_Ranged_Attack_Launch10.ogg"/>
+        <PanLevel value="0.900000"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="-16.000000,-16.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <DupeMuteCount value="1"/>
+        <DupeWait value="500,500"/>
+    </CSound>
+    <CSound id="HeroDiabloFireStomp@Return_Start" parent="_FX_Hero_Spell_Secondary">
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact08.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact09.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact10.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact11.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Firebat_Base\Blaze_Pyromania_Impact12.ogg"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <DupeMuteCount value="1"/>
+        <DupeWait value="200,200"/>
+        <NonLocalVolumeAdjustment value="-3.000000,-3.000000"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <Volume value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="0" Distance="15.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloFireStomp@SoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Launch04.ogg"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloTalentLightningBreathHellstorm@VOX" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Lightning_Hellstorm01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Lightning_Hellstorm02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Lightning_Hellstorm03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Lightning_Hellstorm04.ogg"/>
+        <Flags index="AllowDuckingInPlayDelay" value="1"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloLightningBreath@Charge" parent="_FX_Hero_Ult_Secondary">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Charge01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Charge02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Charge03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Charge04.ogg"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="-5.060000,-2.060000"/>
+    </CSound>
+    <CSound id="HeroDiabloLightningBreath@End" parent="_FX_Hero_Ult_End">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Lightning_Breath_End01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Lightning_Breath_End02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Lightning_Breath_End03.ogg"/>
+        <Pitch value="8.000000,8.000000"/>
+        <Volume value="-16.000000,-16.000000"/>
+        <PanLevelNonLocal value="1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloLightningBreath@Impact" parent="_FX_Hero_Ult_Impact">
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Lightning_Impact04.ogg"/>
+        <Pitch value="5.000000,5.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloLightningBreath@Launch" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_LightningBreath_Launch04.ogg"/>
+        <Exclusivity value="PlayerVoxStomp"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+    </CSound>
+    <CSound id="HeroDiabloOverpower@VOX" parent="HeroVO_3D_Vox">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting08.ogg"/>
+        <Category value="User31"/>
+        <CategoryLocal value="User10"/>
+        <VolumeRolloffPoints/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloOverpower@Whoosh" parent="_FX_Hero_Spell_Secondary">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Whoosh01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Whoosh02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Whoosh03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Whoosh04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Attack_Whoosh05.ogg"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloTalentFireStompHellfire@Active" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="Assets\Sounds\Talents\Talent_BurningRage_Launch01.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloBlackSoulstone@Death" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_BlackSoulstone_Death01.ogg"/>
+        <Flags index="AllowDuckingInPlayDelay" value="1"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="100"/>
+        <OffsetShiftIn Time="55" Pitch="-10.190000"/>
+        <OffsetShiftIn Time="882" Pitch="-1.270000"/>
+        <OffsetShiftOut/>
+        <OffsetShiftOut Time="500" Pitch="-6.000000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+        <SustainFade index="1" Time="1000"/>
+        <Volume value="-9.000000,-9.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloApocalypse@SoundCast" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_Start01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_Start02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_Start03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_Start04.ogg"/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="8"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <PlayDelay value="5,40"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+        <Category value="UIMovie"/>
+        <CategoryDuckingNonLocal value="FX_NPC_Warning"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloApocalypse@SoundExplosion" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_End01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Apocalypse_End02.ogg"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <LoopDelay value="25,100"/>
+        <NonLocalVolumeAdjustment value="-3.000000,-2.000000"/>
+        <PanLevel value="0.800000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <VolumeRolloffPoints index="0" Distance="2.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloApocalypse@SoundImpact" parent="_FX_Hero_Ult_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_FireStomp_Impact_Return07.ogg"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <PanLevel value="1.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <PlayDelay value="50,200"/>
+        <Volume value="-5.000000,-3.000000"/>
+        <VolumeRolloffPoints index="0" Distance="2.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiablo@Summer18@VOX_CastingA" parent="Hero_Vox">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting08.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="80"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="Butcher_Vox_Stomp"/>
+        <PlayDelay value="0,150"/>
+        <Volume value="1.000000,1.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-3.000000,-3.000000"/>
+        <CategoryDuckingLocal value="Local_Spell_Not_Instacast"/>
+    </CSound>
+    <CSound id="HeroDiablo@Summer18@VOX_CastingB" parent="Hero_Vox">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Attack02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting06.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="85"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="Butcher_Vox_Stomp"/>
+        <Volume value="1.000000,1.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiablo@Summer18@VOX_CastingC" parent="Hero_Vox">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting08.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting09.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting10.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting11.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting12.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting13.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting14.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Base_Diablo\Diablo_VOX_Casting15.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloOverpower@Summer18@Impact" parent="_FX_Hero_Spell_Warning">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_Overpower_Impact01.ogg"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.900000"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-2.000000,-2.000000"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_OverPower_Impact_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain02.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain03.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain04.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain05.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain06.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-24.000000,-21.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000" Volume="-0.160000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <OffsetFadeIn Time="906"/>
+        <OffsetFadeIn Time="3000" Volume="-21.000000"/>
+        <OffsetFadeIn Time="4000" Volume="-96.000000"/>
+        <OffsetFadeIn Time="10000" Volume="-96.000000"/>
+        <PlayDelay value="100,100"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_DemonicCharge_Impact_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain02.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain03.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain04.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-24.000000,-20.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000" Volume="-0.160000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <PlayDelay value="100,100"/>
+        <DupeWait value="50,50"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_FireStomp_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain02.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain03.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain04.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain05.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain06.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <DupeMuteCount value="2"/>
+        <DupeWait value="50,50"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-22.000000,-19.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000" Volume="-0.160000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <DupeDestroyCountPerPlayer value="5"/>
+        <DupeFadeOut/>
+        <DupeFadeOut Time="500" Volume="-96.000000"/>
+        <DupeFadeIn Volume="-96.000000"/>
+        <DupeFadeIn Time="50"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <PlayDelay value="0,100"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_FireStomp_Return_End_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_AllySlain03.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <DupeDestroyCountPerPlayer value="5"/>
+        <DupeFadeOut/>
+        <DupeFadeOut Time="500" Volume="-96.000000"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="1"/>
+        <DupeWait value="300,300"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-24.000000,-19.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000" Volume="-0.160000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_LightningBreath_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain01_1.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain01_2.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_EnemySlain01_3.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-18.000000,-18.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000" Volume="-0.160000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_Apocalypse_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_Cheer01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_Cheer02.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <DupeMuteCount value="1"/>
+        <DupeWait value="50,50"/>
+        <OffsetFadeIn Time="906"/>
+        <OffsetFadeIn Time="3500" Volume="-17.000000"/>
+        <OffsetFadeIn Time="6000" Volume="-96.000000"/>
+        <OffsetFadeIn Time="10000" Volume="-96.000000"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <PlayDelay value="300,300"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-15.000000,-15.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_Taunt_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_Dance_Cheer01.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="1"/>
+        <DupeWait value="5000,5000"/>
+        <NonLocalVolumeAdjustment value="-4.000000,-4.000000"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-11.000000,-11.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_Dance_Crowd" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_HOTS01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\ArenaMode\ArenaMode_Common\ArenaMode_Crowd_Mayhem01.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <DupeMuteCount value="1"/>
+        <DupeWait value="10000,10000"/>
+        <NonLocalVolumeAdjustment value="-4.000000,-4.000000"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-16.000000,-16.000000"/>
+        <VolumeRolloffPoints index="0" Distance="0.000000"/>
+        <VolumeRolloffPoints index="1" Distance="22.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroDiablo@Summer18@Footstep" parent="_FX_Hero_Movement">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS04.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS05.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS06.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS07.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_FS08.ogg"/>
+        <Pitch value="0.000000,1.000000"/>
+        <PlayDelay value="0,10"/>
+        <Volume value="-23.000000,-21.000000"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_Overpower_Footstep" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_ElChamuco\Diablo_ElChamuco_Overpower_FS08.ogg"/>
+        <NonLocalVolumeAdjustment value="2.000000,2.000000"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <PlayDelay value="0,10"/>
+        <Volume value="-19.000000,-18.000000"/>
+        <CategoryLocal value="UIMovie"/>
+    </CSound>
+    <CSound id="HeroDiabloLightningBreath@Summer18@Launch" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_LightningBreath_Launch01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_LightningBreath_Launch02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_LightningBreath_Launch03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_LightningBreath_Launch04.ogg"/>
+        <Exclusivity value="PlayerVoxStomp"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="1500" Volume="-96.000000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+        <SustainFade index="1" Time="1500"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroDiabloTalentLightningBreathHellstorm@Summer18@Launch" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_LightningBreath_Hellstorm_Launch01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Skin_Diablo_ElChamuco\Diablo_ElChamuco_LightningBreath_Hellstorm_Launch02.ogg"/>
+        <Exclusivity value="PlayerVoxStomp"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="1500" Volume="-96.000000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="0.800000"/>
+        <SustainFade index="1" Time="1500"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <NonLocalVolumeAdjustment value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Diablo_ElChamuco_Crowd_Loop" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_01.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_02.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_03.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_04.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_05.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_06.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_07.ogg"/>
+        <AssetArray File="Assets\Sounds\Event\Summer\Summer_Crowd_Player_Loop_08.ogg"/>
+        <Category value="Movement"/>
+        <CategoryLocal value="Movement"/>
+        <LoopCount value="-1"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-21.000000,-21.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Mount_TerrorCharge_Move_Loop" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Mounts\Mount_Eye\Mount_Eye_Movement_Loop_01.ogg"/>
+        <MixerPriority value="75"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="1539"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="2178" Volume="-96.000000"/>
+        <Pitch value="-4.000000,2.000000"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-21.000000,-19.000000"/>
+        <LoopCount value="-1"/>
+    </CSound>
+    <CSound id="HeroDiablo@Mount_Terrorcharge_FS" parent="_FX_Hero_Movement">
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Diablo_Base\Diablo_Terrorcharge_FS07.ogg" FacialGroup=""/>
+        <DupeHistoryCount value="5"/>
+        <MixerPriority value="75"/>
+        <PlayDelay value="75,100"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-21.000000,-21.000000"/>
+        <SustainFade index="1" Time="100"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_036">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_037">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_039">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_078">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_081">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_087">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_090">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_107">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_111">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_130">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+    <CSound id="ObsoleteTutorialVO_Diablo_138">
+        <AssetArray index="0" PortraitModel="HeroDiablo@BasePortrait" PortraitActor="HeroDiablo@BasePortrait"/>
+    </CSound>
+</Catalog>

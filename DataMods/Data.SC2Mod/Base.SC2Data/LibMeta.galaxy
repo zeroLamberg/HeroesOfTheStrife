@@ -1,0 +1,681 @@
+include "TriggerLibs/NativeLib"
+include "LibCore_h"
+include "LibGame_h"
+
+include "LibMeta_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Meta Data
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libMeta_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+}
+
+// Variable Initialization
+bool libMeta_InitVariables_completed = false;
+
+void libMeta_InitVariables () {
+    int init_i;
+    int init_i1;
+    int init_i3;
+
+    if (libMeta_InitVariables_completed) {
+        return;
+    }
+
+    libMeta_InitVariables_completed = true;
+
+    libMeta_gv_metaDataBNetGrabberEditBox = c_invalidDialogControlId;
+    libMeta_gv_metaDataIngameVerifiedPlayerGroup = PlayerGroupEmpty();
+    libMeta_gv_metaDataIngameNonVerifiedPlayerGroup = PlayerGroupEmpty();
+    for (init_i1 = 0; init_i1 <= libMeta_gv_metaDataBasePlayerMaxPlayersCount_C; init_i1 += 1) {
+        libMeta_gv_metaDataBase.lv_players[init_i1].lv_bNet = "";
+        libMeta_gv_metaDataBase.lv_players[init_i1].lv_discord = "";
+        for (init_i3 = 0; init_i3 <= libCore_gv_dataHeroesMaxAllowedSkinCount_C; init_i3 += 1) {
+            libMeta_gv_metaDataBase.lv_players[init_i1].lv_loadoutData.lv_skinPersonalID[init_i3] = "";
+        }
+        for (init_i3 = 0; init_i3 <= libCore_gv_dataMountsMaxMountCount; init_i3 += 1) {
+            libMeta_gv_metaDataBase.lv_players[init_i1].lv_loadoutData.lv_mountPersonalID[init_i3] = "";
+        }
+    }
+    for (init_i = 0; init_i <= libMeta_gv_metaData_MaxRecordedMatchCount_C; init_i += 1) {
+        for (init_i1 = 0; init_i1 <= libCore_gv_bALMaxPlayers; init_i1 += 1) {
+            libMeta_gv_metaDataMatch[init_i].lv_playerData[init_i1].lv_heroID = "";
+        }
+    }
+}
+
+// Presets
+string libMeta_ge_MetaDataLoadoutType_Ident (int lp_val) {
+         if (lp_val == libMeta_ge_MetaDataLoadoutType_Skin) { return "Skin"; }
+    else if (lp_val == libMeta_ge_MetaDataLoadoutType_Mount) { return "Mount"; }
+    return null;
+}
+
+// Functions
+void libMeta_gf_MetaDataBNetGrabberInitialization () {
+    // Variable Declarations
+    int lv_itPlayer;
+
+    // Automatic Variable Declarations
+    playergroup auto9994843A_g;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((GameIsOnline() == false)) {
+        libGame_gv_players[1].lv_bNet = "OfflineTester";
+        return ;
+    }
+
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenUpperContainer");
+    DialogControlHookup(DialogControlLastCreated(), c_triggerControlTypeEditBox, "BNetGrabber");
+    libMeta_gv_metaDataBNetGrabberEditBox = DialogControlLastCreated();
+    DialogControlSetAnimationState(libMeta_gv_metaDataBNetGrabberEditBox, PlayerGroupAll(), "State", "GetBNet");
+    Wait(0.0625, c_timeGame);
+    auto9994843A_g = libCore_gv_activeHumanPlayers;
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(auto9994843A_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        libGame_gv_players[lv_itPlayer].lv_bNet = libNtve_gf_DialogItemEditValue(libMeta_gv_metaDataBNetGrabberEditBox, lv_itPlayer);
+    }
+    Wait(0.0625, c_timeGame);
+    DialogControlSetEnabled(libMeta_gv_metaDataBNetGrabberEditBox, PlayerGroupAll(), false);
+    DialogControlDestroy(libMeta_gv_metaDataBNetGrabberEditBox);
+    libMeta_gv_metaDataBNetGrabberEditBox = c_invalidDialogControlId;
+}
+
+bool libMeta_gf_MetaDataIngameElementAccessedForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((libMeta_gf_MetaDataBaseFreeToPlayElementItemIsF2P(lp_loadoutType, lp_elementIndex) == true) || (libMeta_gf_MetaDataIngameElementIsAlowedForPlayer(lp_player, lp_loadoutType, lp_elementIndex) == true))) {
+        return true;
+    }
+
+    return false;
+}
+
+bool libMeta_gf_MetaDataIngameElementVisibleForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex) {
+    // Variable Declarations
+    int lv_metaDataPlayerIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_metaDataPlayerIndex = libMeta_gf_MetaDataMetaDataPlayerIndex(lp_player);
+
+    // Implementation
+    if (((libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_staffData.lv_offlineTester == true) || (libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_staffData.lv_developer == true) || (libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_staffData.lv_vIP == true))) {
+        return true;
+    }
+
+    if ((libMeta_gf_MetaDataBaseEventElementHasEvent(lp_loadoutType, lp_elementIndex) == false)) {
+        return true;
+    }
+
+    if ((libMeta_gf_MetaDataBaseEventElementHasMetaDataEvent(lp_loadoutType, lp_elementIndex) == true)) {
+        return true;
+    }
+
+    if ((libMeta_gf_MetaDataPersonalElementIndexAllowedForPlayer(lp_player, lp_loadoutType, lp_elementIndex) == true)) {
+        return true;
+    }
+
+    return false;
+}
+
+void libMeta_gf_MetaDataIngameFillPlayersLoadoutData () {
+    // Variable Declarations
+    int lv_itPlayer;
+    int lv_itSkin;
+    int lv_itMount;
+
+    // Automatic Variable Declarations
+    playergroup auto2D9880C1_g;
+    int autoCDB4A8E1_ae;
+    const int autoCDB4A8E1_ai = 1;
+    int auto2F27ED88_ae;
+    const int auto2F27ED88_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    auto2D9880C1_g = libCore_gv_activeHumanPlayers;
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(auto2D9880C1_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        autoCDB4A8E1_ae = libCore_gv_dataSkinsSkinCount;
+        lv_itSkin = 1;
+        for ( ; ( (autoCDB4A8E1_ai >= 0 && lv_itSkin <= autoCDB4A8E1_ae) || (autoCDB4A8E1_ai < 0 && lv_itSkin >= autoCDB4A8E1_ae) ) ; lv_itSkin += autoCDB4A8E1_ai ) {
+            libMeta_gv_metaDataIngame[lv_itPlayer].lv_skinAllowed[lv_itSkin] = libMeta_gf_MetaDataPlayerAccessExpanded(lv_itPlayer, libMeta_ge_MetaDataLoadoutType_Skin, lv_itSkin);
+        }
+        auto2F27ED88_ae = libCore_gv_dataMountsMountCount;
+        lv_itMount = 1;
+        for ( ; ( (auto2F27ED88_ai >= 0 && lv_itMount <= auto2F27ED88_ae) || (auto2F27ED88_ai < 0 && lv_itMount >= auto2F27ED88_ae) ) ; lv_itMount += auto2F27ED88_ai ) {
+            libMeta_gv_metaDataIngame[lv_itPlayer].lv_mountAllowed[lv_itMount] = libMeta_gf_MetaDataPlayerAccessExpanded(lv_itPlayer, libMeta_ge_MetaDataLoadoutType_Mount, lv_itMount);
+        }
+    }
+}
+
+void libMeta_gf_MetaDataIngameVerifyPlayers () {
+    // Variable Declarations
+    string lv_itInstance;
+    int lv_itPlayer;
+    int lv_itMetaDataPlayer;
+    int lv_verifiedPlayers;
+    int lv_metaDataPlayerIndex;
+
+    // Automatic Variable Declarations
+    playergroup auto90BBFDD9_g;
+    int auto052770CE_ae;
+    const int auto052770CE_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((GameIsOnline() == false)) {
+        PlayerGroupAdd(libMeta_gv_metaDataIngameVerifiedPlayerGroup, lv_itPlayer);
+        libGame_gv_players[1].lv_metaDataPlayerIndex = 1;
+        lv_metaDataPlayerIndex = libGame_gv_players[lv_itPlayer].lv_metaDataPlayerIndex;
+        return ;
+    }
+
+    libMeta_gv_metaDataIngameNonVerifiedPlayerGroup = PlayerGroupCopy(libCore_gv_activeHumanPlayers);
+    auto90BBFDD9_g = libCore_gv_activeHumanPlayers;
+    lv_itPlayer = -1;
+    while (true) {
+        lv_itPlayer = PlayerGroupNextPlayer(auto90BBFDD9_g, lv_itPlayer);
+        if (lv_itPlayer < 0) { break; }
+        auto052770CE_ae = libMeta_gv_metaDataBasePlayerCurrentPlayerCount;
+        lv_itMetaDataPlayer = 1;
+        for ( ; ( (auto052770CE_ai >= 0 && lv_itMetaDataPlayer <= auto052770CE_ae) || (auto052770CE_ai < 0 && lv_itMetaDataPlayer >= auto052770CE_ae) ) ; lv_itMetaDataPlayer += auto052770CE_ai ) {
+            if ((libGame_gv_players[lv_itPlayer].lv_bNet == libMeta_gv_metaDataBase.lv_players[lv_itMetaDataPlayer].lv_bNet)) {
+                libGame_gv_players[lv_itPlayer].lv_metaDataPlayerIndex = lv_itMetaDataPlayer;
+                PlayerGroupRemove(libMeta_gv_metaDataIngameNonVerifiedPlayerGroup, lv_itPlayer);
+                PlayerGroupAdd(libMeta_gv_metaDataIngameVerifiedPlayerGroup, lv_itPlayer);
+                break;
+            }
+
+        }
+        if ((PlayerGroupCount(libMeta_gv_metaDataIngameNonVerifiedPlayerGroup) <= 0)) {
+            return ;
+        }
+
+    }
+}
+
+bool libMeta_gf_MetaDataIngameElementIsAlowedForPlayer (int lp_player, int lp_loadoutType, int lp_elementItemIndex) {
+    // Automatic Variable Declarations
+    int auto538932CB_val;
+
+    // Implementation
+    auto538932CB_val = lp_loadoutType;
+    if (auto538932CB_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        return libMeta_gv_metaDataIngame[lp_player].lv_skinAllowed[lp_elementItemIndex];
+    }
+    else if (auto538932CB_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        return libMeta_gv_metaDataIngame[lp_player].lv_mountAllowed[lp_elementItemIndex];
+    }
+    else {
+    }
+    return false;
+}
+
+bool libMeta_gf_MetaDataPlayerAccessExpanded (int lp_player, int lp_loadoutType, int lp_elementIndex) {
+    // Variable Declarations
+    int lv_itElement;
+    int lv_playerSupporterTypeIndex;
+    int lv_elementSupporterTypeIndex;
+    int lv_metaDataPlayerIndex;
+
+    // Automatic Variable Declarations
+    int auto192E1D8E_val;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libMeta_gf_MetaDataPlayerExistsInDataBase(lp_player) == true)) {
+        lv_metaDataPlayerIndex = libMeta_gf_MetaDataMetaDataPlayerIndex(lp_player);
+        if (((libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_staffData.lv_offlineTester == true) || (libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_staffData.lv_developer == true) || (libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_staffData.lv_vIP == true))) {
+            return true;
+        }
+        else {
+            lv_playerSupporterTypeIndex = libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_supporterTypeCurrent);
+        }
+    }
+    else {
+        lv_playerSupporterTypeIndex = 0;
+    }
+    auto192E1D8E_val = lp_loadoutType;
+    if (auto192E1D8E_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        lv_elementSupporterTypeIndex = libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", libCore_gv_dataSkinsSkinData[lp_elementIndex].lv_supporterTypeRequired);
+    }
+    else if (auto192E1D8E_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        lv_elementSupporterTypeIndex = libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", libCore_gv_dataMountsMountData[lp_elementIndex].lv_supporterTypeRequired);
+    }
+    else {
+    }
+    if ((libMeta_gf_MetaDataBaseEventElementHasEvent(lp_loadoutType, lp_elementIndex) == true)) {
+        if ((libMeta_gf_MetaDataPersonalElementIndexAllowedForPlayer(lp_player, lp_loadoutType, lp_elementIndex) == true)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    if ((libMeta_gf_MetaDataPersonalElementIndexAllowedForPlayer(lp_player, lp_loadoutType, lp_elementIndex) == true)) {
+        return true;
+    }
+
+    if ((lv_playerSupporterTypeIndex < lv_elementSupporterTypeIndex)) {
+        return false;
+    }
+
+    return true;
+}
+
+bool libMeta_gf_MetaDataPlayerExistsInDataBase (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libGame_gv_players[lp_player].lv_metaDataPlayerIndex > 0)) {
+        return true;
+    }
+
+    return false;
+}
+
+int libMeta_gf_MetaDataMetaDataPlayerIndex (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    return libGame_gv_players[lp_player].lv_metaDataPlayerIndex;
+}
+
+bool libMeta_gf_MetaDataPersonalElementIndexAllowedForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex) {
+    // Variable Declarations
+    int lv_metaDataPlayerIndex;
+    int lv_itElement;
+    string lv_elementIDPersonal;
+
+    // Automatic Variable Declarations
+    int auto6D0DD0BB_val;
+
+    // Variable Initialization
+    lv_elementIDPersonal = "";
+
+    // Implementation
+    if ((libMeta_gf_MetaDataPlayerExistsInDataBase(lp_player) == false)) {
+        return false;
+    }
+
+    lv_metaDataPlayerIndex = libMeta_gf_MetaDataMetaDataPlayerIndex(lp_player);
+    auto6D0DD0BB_val = lp_loadoutType;
+    if (auto6D0DD0BB_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        lv_elementIDPersonal = libCore_gv_dataSkinsSkinData[lp_elementIndex].lv_skinIDPersonal;
+    }
+    else if (auto6D0DD0BB_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        lv_elementIDPersonal = libCore_gv_dataMountsMountData[lp_elementIndex].lv_mountIDPersonal;
+    }
+    else {
+    }
+    if ((libMeta_gf_MetaDataBasePlayerPersonalElementIDExistsInDataBaseForPlayer(lp_loadoutType, lv_elementIDPersonal, lv_metaDataPlayerIndex) == true)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool libMeta_gf_MetaDataSupporterTypeAccepted (string lp_currentSupporterType, string lp_targetSupporterType) {
+    // Variable Declarations
+    int lv_currentIndex;
+    int lv_targetIndex;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_currentIndex = libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", lp_currentSupporterType);
+    lv_targetIndex = libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", lp_targetSupporterType);
+    if ((lv_currentIndex >= lv_targetIndex)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+void libMeta_gf_MetaDataBasePlayerAddPersonalElementToDataBaseForPlayer (int lp_loadoutType, string lp_elementIDPersonal, int lp_metaDataPlayerIndex) {
+    // Variable Declarations
+    int lv_elementCount;
+
+    // Automatic Variable Declarations
+    int auto709F0667_val;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libMeta_gf_MetaDataBasePlayerPersonalElementIDExistsInDataBaseForPlayer(lp_loadoutType, lp_elementIDPersonal, lp_metaDataPlayerIndex) == true)) {
+        return ;
+    }
+
+    auto709F0667_val = lp_loadoutType;
+    if (auto709F0667_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalIDCount += 1;
+        lv_elementCount = libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalIDCount;
+        libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalID[lv_elementCount] = lp_elementIDPersonal;
+    }
+    else if (auto709F0667_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalIDCount += 1;
+        lv_elementCount = libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalIDCount;
+        libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalID[lv_elementCount] = lp_elementIDPersonal;
+    }
+    else {
+    }
+}
+
+bool libMeta_gf_MetaDataBasePlayerPersonalElementIDExistsInDataBaseForPlayer (int lp_loadoutType, string lp_elementIDPersonal, int lp_metaDataPlayerIndex) {
+    // Variable Declarations
+    int lv_itElement;
+    int lv_currentElementCount;
+    int lv_elementCount;
+
+    // Automatic Variable Declarations
+    int autoC7312C50_val;
+    int autoCDE9E083_ae;
+    const int autoCDE9E083_ai = 1;
+    int autoD46B22E5_ae;
+    const int autoD46B22E5_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_elementIDPersonal == "")) {
+        TextExpressionSetToken("Param/Expression/lib_Meta_7E63485B", "A", IntToText(lp_metaDataPlayerIndex));
+        TextExpressionSetToken("Param/Expression/lib_Meta_7E63485B", "B", StringToText(libMeta_ge_MetaDataLoadoutType_Ident(lp_loadoutType)));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_Meta_7E63485B"), true);
+        return false;
+    }
+
+    autoC7312C50_val = lp_loadoutType;
+    if (autoC7312C50_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        lv_currentElementCount = libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalIDCount;
+        autoCDE9E083_ae = lv_currentElementCount;
+        lv_itElement = 1;
+        for ( ; ( (autoCDE9E083_ai >= 0 && lv_itElement <= autoCDE9E083_ae) || (autoCDE9E083_ai < 0 && lv_itElement >= autoCDE9E083_ae) ) ; lv_itElement += autoCDE9E083_ai ) {
+            if ((libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalID[lv_itElement] == lp_elementIDPersonal)) {
+                return true;
+            }
+
+        }
+    }
+    else if (autoC7312C50_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        lv_currentElementCount = libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalIDCount;
+        autoD46B22E5_ae = lv_currentElementCount;
+        lv_itElement = 1;
+        for ( ; ( (autoD46B22E5_ai >= 0 && lv_itElement <= autoD46B22E5_ae) || (autoD46B22E5_ai < 0 && lv_itElement >= autoD46B22E5_ae) ) ; lv_itElement += autoD46B22E5_ai ) {
+            if ((libMeta_gv_metaDataBase.lv_players[lp_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalID[lv_itElement] == lp_elementIDPersonal)) {
+                return true;
+            }
+
+        }
+    }
+    else {
+    }
+    return false;
+}
+
+bool libMeta_gf_MetaDataBasePlayerNewDataBasePlayerIndexValid () {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libMeta_gv_metaDataBasePlayerCurrentPlayerCount >= libMeta_gv_metaDataBasePlayerMaxPlayersCount_C)) {
+        TextExpressionSetToken("Param/Expression/lib_Meta_A7FEFD32", "A", IntToText(libMeta_gv_metaDataBasePlayerCurrentPlayerCount));
+        TextExpressionSetToken("Param/Expression/lib_Meta_A7FEFD32", "B", IntToText(libMeta_gv_metaDataBasePlayerMaxPlayersCount_C));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_Meta_A7FEFD32"), true);
+        return false;
+    }
+
+    return true;
+}
+
+void libMeta_gf_MetaDataBaseFreeToPlayAddPersonalElementToF2PList (int lp_loadoutType, string lp_elementIDPersonal) {
+    // Variable Declarations
+    int lv_elementIndex;
+
+    // Automatic Variable Declarations
+    int auto642D6EB9_val;
+
+    // Variable Initialization
+
+    // Implementation
+    auto642D6EB9_val = lp_loadoutType;
+    if (auto642D6EB9_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        lv_elementIndex = libCore_gf_DataSkinsFindSkinWithSkinIDPersonal(lp_elementIDPersonal);
+        libMeta_gv_metaDataBase.lv_freeToPlay.lv_skinAllowed[lv_elementIndex] = true;
+    }
+    else if (auto642D6EB9_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        lv_elementIndex = libCore_gf_DataMountsFindMountWithMountIDPersonal(lp_elementIDPersonal);
+        libMeta_gv_metaDataBase.lv_freeToPlay.lv_mountAllowed[lv_elementIndex] = true;
+    }
+    else {
+    }
+}
+
+bool libMeta_gf_MetaDataBaseFreeToPlayElementItemIsF2P (int lp_loadoutType, int lp_elementItemIndex) {
+    // Automatic Variable Declarations
+    int autoE413C3C3_val;
+
+    // Implementation
+    autoE413C3C3_val = lp_loadoutType;
+    if (autoE413C3C3_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        return libMeta_gv_metaDataBase.lv_freeToPlay.lv_skinAllowed[lp_elementItemIndex];
+    }
+    else if (autoE413C3C3_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        return libMeta_gv_metaDataBase.lv_freeToPlay.lv_mountAllowed[lp_elementItemIndex];
+    }
+    else {
+    }
+    return false;
+}
+
+void libMeta_gf_MetaDataBaseSupporterSetPlayerSupporterTypeDuringDate (datetime lp_startDateTime, datetime lp_endDateTime, string lp_supporterType, int lp_playerMetaDataIndex) {
+    // Variable Declarations
+    int lv_yearCount;
+    int lv_monthCount;
+    int lv_monthDiff;
+    int lv_currentMonthIndex;
+    const int lv_monthsInYear = 12;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", lp_supporterType) > libNtve_gf_UserDataInstanceGetIndex("PlayerSupporterType", libMeta_gv_metaDataBase.lv_players[lp_playerMetaDataIndex].lv_supporterTypeCurrent))) {
+        libMeta_gv_metaDataBase.lv_players[lp_playerMetaDataIndex].lv_supporterTypeCurrent = lp_supporterType;
+    }
+
+    lv_monthDiff = (GetDateTimeMonth(libGame_gv_gameData.lv_gameReleaseDate) - 1);
+    lv_yearCount = (GetDateTimeYear(lp_startDateTime) - GetDateTimeYear(libGame_gv_gameData.lv_gameReleaseDate));
+    lv_monthCount = GetDateTimeMonth(lp_startDateTime);
+    lv_currentMonthIndex = ((lv_yearCount*lv_monthsInYear)+lv_monthCount-lv_monthDiff);
+    libMeta_gv_metaDataBase.lv_players[lp_playerMetaDataIndex].lv_supporterTypeSubscribeDateTimeStart[lv_currentMonthIndex] = lp_startDateTime;
+    libMeta_gv_metaDataBase.lv_players[lp_playerMetaDataIndex].lv_supporterTypeSubscribeDateTimeEnd[lv_currentMonthIndex] = lp_endDateTime;
+    libMeta_gv_metaDataBase.lv_players[lp_playerMetaDataIndex].lv_supporterTypeSubscribeSinceReleaseAtMonth[lv_currentMonthIndex] = libMeta_gv_metaDataBase.lv_players[lp_playerMetaDataIndex].lv_supporterTypeCurrent;
+}
+
+bool libMeta_gf_MetaDataBaseEventEventElementAllowedForPlayer (int lp_player, int lp_loadoutType, int lp_elementIndex) {
+    // Variable Declarations
+    int lv_metaDataPlayerIndex;
+    int lv_itPersonalElement;
+    int lv_event;
+
+    // Automatic Variable Declarations
+    int auto4ED8FC31_val;
+    int autoAD7B50B0_ae;
+    const int autoAD7B50B0_ai = 1;
+    int auto5702FECC_ae;
+    const int auto5702FECC_ai = 1;
+
+    // Variable Initialization
+
+    // Implementation
+    if ((libMeta_gf_MetaDataBaseEventElementHasEvent(lp_loadoutType, lp_elementIndex) == false)) {
+        return true;
+    }
+
+    if ((libMeta_gf_MetaDataPlayerExistsInDataBase(lp_player) == false)) {
+        return false;
+    }
+
+    lv_metaDataPlayerIndex = libMeta_gf_MetaDataMetaDataPlayerIndex(lp_player);
+    auto4ED8FC31_val = lp_loadoutType;
+    if (auto4ED8FC31_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        autoAD7B50B0_ae = libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalIDCount;
+        lv_itPersonalElement = 1;
+        for ( ; ( (autoAD7B50B0_ai >= 0 && lv_itPersonalElement <= autoAD7B50B0_ae) || (autoAD7B50B0_ai < 0 && lv_itPersonalElement >= autoAD7B50B0_ae) ) ; lv_itPersonalElement += autoAD7B50B0_ai ) {
+            if ((libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_loadoutData.lv_skinPersonalID[lv_itPersonalElement] == libCore_gv_dataSkinsSkinData[lp_elementIndex].lv_skinIDPersonal)) {
+                return true;
+            }
+
+        }
+    }
+    else if (auto4ED8FC31_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        auto5702FECC_ae = libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalIDCount;
+        lv_itPersonalElement = 1;
+        for ( ; ( (auto5702FECC_ai >= 0 && lv_itPersonalElement <= auto5702FECC_ae) || (auto5702FECC_ai < 0 && lv_itPersonalElement >= auto5702FECC_ae) ) ; lv_itPersonalElement += auto5702FECC_ai ) {
+            if ((libMeta_gv_metaDataBase.lv_players[lv_metaDataPlayerIndex].lv_loadoutData.lv_mountPersonalID[lv_itPersonalElement] == libCore_gv_dataMountsMountData[lp_elementIndex].lv_mountIDPersonal)) {
+                return true;
+            }
+
+        }
+    }
+    else {
+    }
+    return false;
+}
+
+bool libMeta_gf_MetaDataBaseEventEventElementAllowedDuringEvent (int lp_loadoutType, int lp_elementIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((libMeta_gf_MetaDataBaseEventElementHasEvent(lp_loadoutType, lp_elementIndex) == false)) {
+        return true;
+    }
+
+    if ((libMeta_gf_MetaDataBaseEventElementHasMetaDataEvent(lp_loadoutType, lp_elementIndex) == true)) {
+        return true;
+    }
+
+    return false;
+}
+
+bool libMeta_gf_MetaDataBaseEventElementHasEvent (int lp_loadoutType, int lp_elementIndex) {
+    // Variable Declarations
+    string lv_eventInstance;
+
+    // Automatic Variable Declarations
+    int auto07D005F8_val;
+
+    // Variable Initialization
+
+    // Implementation
+    auto07D005F8_val = lp_loadoutType;
+    if (auto07D005F8_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        lv_eventInstance = libCore_gv_dataSkinsSkinData[lp_elementIndex].lv_event;
+    }
+    else if (auto07D005F8_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        lv_eventInstance = libCore_gv_dataMountsMountData[lp_elementIndex].lv_event;
+    }
+    else {
+    }
+    if ((lv_eventInstance != "[Default]") && (lv_eventInstance != null)) {
+        return true;
+    }
+
+    return false;
+}
+
+bool libMeta_gf_MetaDataBaseEventElementHasMetaDataEvent (int lp_loadoutType, int lp_elementIndex) {
+    // Automatic Variable Declarations
+    int autoD5EA0F52_val;
+
+    // Implementation
+    autoD5EA0F52_val = lp_loadoutType;
+    if (autoD5EA0F52_val == libMeta_ge_MetaDataLoadoutType_Skin) {
+        return (libCore_gv_dataSkinsSkinData[lp_elementIndex].lv_event == libMeta_gv_metaDataBase.lv_event);
+    }
+    else if (autoD5EA0F52_val == libMeta_ge_MetaDataLoadoutType_Mount) {
+        return (libCore_gv_dataMountsMountData[lp_elementIndex].lv_event == libMeta_gv_metaDataBase.lv_event);
+    }
+    else {
+    }
+    return false;
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: #Include Meta Data
+//--------------------------------------------------------------------------------------------------
+bool libMeta_gt_IncludeMetaData_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMeta_gt_IncludeMetaData_Init () {
+    libMeta_gt_IncludeMetaData = TriggerCreate("libMeta_gt_IncludeMetaData_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initialize Meta Data
+//--------------------------------------------------------------------------------------------------
+bool libMeta_gt_InitializeMetaData_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libMeta_gf_MetaDataBNetGrabberInitialization();
+    libGame_gf_SendEventMetaDataDataBaseInitialization();
+    while (!((libMeta_gv_metaDataInitialized == true))) {
+        Wait(0.25, c_timeGame);
+    }
+    libMeta_gf_MetaDataIngameVerifyPlayers();
+    libMeta_gf_MetaDataIngameFillPlayersLoadoutData();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libMeta_gt_InitializeMetaData_Init () {
+    libMeta_gt_InitializeMetaData = TriggerCreate("libMeta_gt_InitializeMetaData_Func");
+}
+
+void libMeta_InitTriggers () {
+    libMeta_gt_IncludeMetaData_Init();
+    libMeta_gt_InitializeMetaData_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libMeta_InitLib_completed = false;
+
+void libMeta_InitLib () {
+    if (libMeta_InitLib_completed) {
+        return;
+    }
+
+    libMeta_InitLib_completed = true;
+
+    libMeta_InitLibraries();
+    libMeta_InitVariables();
+    libMeta_InitTriggers();
+}
+
+include "LibCore"
+include "LibGame"
+

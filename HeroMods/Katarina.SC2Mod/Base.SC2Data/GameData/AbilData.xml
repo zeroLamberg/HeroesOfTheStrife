@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilEffectInstant id="HeroKatarinaWeaponMaster">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaWeaponMaster">
+            <Flags index="IgnoreUser" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroKatarinaTalentWeaponMasterToTheLimit">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaTalentWeaponMasterToTheLimit@ApplyBehavior"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="40"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaTalentWeaponMasterToTheLimit" Requirements="HeroKatarinaTalentWeaponMasterToTheLimit"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroKatarinaFlashGrenade">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaFlashGrenade" Requirements="Ultimate2Unlocked"/>
+        <Effect value="HeroKatarinaFlashGrenade@InitialSet"/>
+        <Range value="12"/>
+        <Arc value="45"/>
+        <Flags index="ClearLastMoveTarget" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="30"/>
+        </Cost>
+        <InterruptCost>
+            <Cooldown Location="Unit" TimeUse="10"/>
+        </InterruptCost>
+        <CastIntroTime value="0.27"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroKatarinaFlashGrenade@TargetSearch"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroKatarinaExclusionZone@Activate">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaExclusionZone@RemoveCasterTimedBehavior"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="1"/>
+        </Cost>
+        <AINotifyEffect value="HeroKatarinaExclusionZone@RemoveCasterTimedBehavior"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaExclusionZone@Activate" Requirements="HeroKatarinaExclusionZone@Activation"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroKatarinaExclusionZone">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaExclusionZone@LaunchMissileFromCaster"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="110"/>
+        </Cost>
+        <Range value="10"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaExclusionZone" Requirements="Ultimate1Unlocked"/>
+        <CastIntroTime value="0.27"/>
+        <FinishTime value="0.15"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroKatarinaClusterCharge">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaClusterCharge@LaunchMissile"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="11"/>
+        </Cost>
+        <Range value="8"/>
+        <CastIntroTime value="0.27"/>
+        <FinishTime value="0.15"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroKatarinaClusterCharge@TimedLifeSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaClusterCharge"/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroKatarinaWeaponSwap">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <PrepEffect index="0" removed="1"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.0124"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaWeaponSwap"/>
+        <Effect value="HeroKatarinaWeaponSwap"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroKatarinaFlameStream">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaFlameStream@InitialSet"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Flags index="UninterruptibleTurn" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown Location="Unit" TimeUse="9"/>
+        </Cost>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaFlameStream" Requirements="Katarina_EquippedFlamethrower"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroKatarinaLaserShot">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaLaserShot@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown Location="Unit" TimeUse="9"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="4.9987"/>
+        <CastIntroTime value="0.5"/>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroKatarinaLaserShot@Search"/>
+        <AINotifyEffect value="HeroKatarinaLaserShot@InitialPersistent"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaLaserShot" Requirements="Katarina_EquippedSnipe">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="HeroKatarinaEquipFlamethrower">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.125"/>
+        </Cost>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaEquipFlamethrower"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroKatarinaEquipFlamethrower"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroKatarinaEquipGrenadeLauncher">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.125"/>
+        </Cost>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaEquipGrenadeLauncher"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroKatarinaEquipGrenadeLauncher"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroKatarinaEquipSnipe">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.125"/>
+        </Cost>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaEquipSnipe"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroKatarinaEquipSnipe"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="HeroKatarinaEquipAutorifle">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="0.125"/>
+        </Cost>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaEquipAutorifle"/>
+        <Flags index="ChannelingMinimum" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <PrepEffect index="0" removed="1"/>
+        <Effect value="HeroKatarinaEquipAutorifle"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="HeroKatarinaMegaShot">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaMegaShot@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown Location="Unit" TimeUse="9"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="19.995"/>
+        <CastIntroTime value="0.5"/>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroKatarinaMegaShot@ImpactSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaMegaShot" Requirements="Katarina_EquippedChaingun">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HeroKatarinaAimedShot">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Effect value="HeroKatarinaAimedShot@InitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown Location="Unit" TimeUse="9"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="19.995"/>
+        <CastIntroTime value="0.5"/>
+        <FinishTime value="0.5"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="HeroKatarinaAimedShot@MissileSearch"/>
+        <AINotifyEffect value="HeroKatarinaAimedShot@InitialPersistent"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HeroKatarinaAimedShot" Requirements="Katarina_EquippedAutorifle">
+            <Flags index="AllowSelfCast" value="0"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+</Catalog>

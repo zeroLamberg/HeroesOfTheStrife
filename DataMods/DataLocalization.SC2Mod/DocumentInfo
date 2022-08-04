@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <ModifiableDependencies>
+        <Value>Mods\Commanders Conflict\Development\DataMods\Data.SC2Mod</Value>
+    </ModifiableDependencies>
+    <Dependencies>
+        <Value>file:Mods\Commanders Conflict\Development\DataMods\Data.SC2Mod</Value>
+    </Dependencies>
+</DocInfo>

@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TriggerData>
+    <Library Id="HMfn">
+        <Root>
+            <Item Type="Trigger" Library="HMfn" Id="6864C1A3"/>
+            <Item Type="Comment" Library="HMfn" Id="01BC3870"/>
+            <Item Type="Trigger" Library="HMfn" Id="9220E8FC"/>
+            <Item Type="Trigger" Library="HMfn" Id="C92590DF"/>
+            <Item Type="Trigger" Library="HMfn" Id="5C8C02E1"/>
+            <Item Type="Comment" Library="HMfn" Id="F6363ABF"/>
+            <Item Type="Trigger" Library="HMfn" Id="22DD9635"/>
+            <Item Type="Variable" Library="HMfn" Id="13E09FC4"/>
+            <Item Type="Comment" Library="HMfn" Id="0A9B6B3C"/>
+            <Item Type="Trigger" Library="HMfn" Id="EF5BB1E2"/>
+            <Item Type="Trigger" Library="HMfn" Id="8032500C"/>
+        </Root>
+        <Element Type="Trigger" Id="6864C1A3">
+            <Event Type="FunctionCall" Library="HMfn" Id="03D1569D"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="CC32B793"/>
+        </Element>
+        <Element Type="FunctionCall" Id="03D1569D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="F94262C0"/>
+            <Parameter Type="Param" Library="HMfn" Id="D4B5C726"/>
+            <Parameter Type="Param" Library="HMfn" Id="7B2E6D3C"/>
+        </Element>
+        <Element Type="Param" Id="F94262C0">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="D4B5C726">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionTreant@TimedLife</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="7B2E6D3C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="0059E8B3"/>
+        </Element>
+        <Element Type="FunctionCall" Id="CC32B793">
+            <FunctionDef Type="FunctionDef" Library="AIAI" Id="17D47486"/>
+            <Parameter Type="Param" Library="HMfn" Id="662AB5AB"/>
+            <Parameter Type="Param" Library="HMfn" Id="31241459"/>
+            <Parameter Type="Param" Library="HMfn" Id="F6CB275B"/>
+            <Parameter Type="Param" Library="HMfn" Id="A65B2685"/>
+        </Element>
+        <Element Type="Param" Id="662AB5AB">
+            <ParameterDef Type="ParamDef" Library="AIAI" Id="8392E7AE"/>
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Param" Id="31241459">
+            <ParameterDef Type="ParamDef" Library="AIAI" Id="DB668514"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="7DE87BFA"/>
+        </Element>
+        <Element Type="FunctionCall" Id="7DE87BFA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+        </Element>
+        <Element Type="Param" Id="F6CB275B">
+            <ParameterDef Type="ParamDef" Library="AIAI" Id="8695DB67"/>
+            <Variable Type="Variable" Library="Game" Id="1B231B96"/>
+            <StructMember Type="Param" Library="HMfn" Id="ADC0CB48"/>
+            <Array Type="Param" Library="HMfn" Id="15C8AB7D"/>
+        </Element>
+        <Element Type="Param" Id="ADC0CB48">
+            <Variable Type="Variable" Library="Game" Id="70F51477"/>
+        </Element>
+        <Element Type="Param" Id="15C8AB7D">
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="AD6366D4"/>
+        </Element>
+        <Element Type="FunctionCall" Id="AD6366D4">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000053"/>
+        </Element>
+        <Element Type="Param" Id="A65B2685">
+            <ParameterDef Type="ParamDef" Library="AIAI" Id="ED50E074"/>
+            <Value>true</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Comment" Id="01BC3870">
+        </Element>
+        <Element Type="Trigger" Id="9220E8FC">
+            <Variable Type="Variable" Library="HMfn" Id="39F656AD"/>
+            <Variable Type="Variable" Library="HMfn" Id="2E220ACA"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="B144A7C7"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="69E419CA"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="B3729A7A"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="7F78D195"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="F94BCEA5"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="80030C7A"/>
+        </Element>
+        <Element Type="Variable" Id="39F656AD">
+            <VariableType>
+                <Type Value="fixed"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="5CD9D3FA"/>
+        </Element>
+        <Element Type="Param" Id="5CD9D3FA">
+            <Value>0</Value>
+            <ValueType Type="fixed"/>
+        </Element>
+        <Element Type="Variable" Id="2E220ACA">
+            <VariableType>
+                <Type Value="gamelink"/>
+                <GameType Value="Effect"/>
+                <EntryType Value="CEffectModifyUnit"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="066066E3"/>
+        </Element>
+        <Element Type="Param" Id="066066E3">
+            <Preset Type="PresetValue" Library="Ntve" Id="C9DCA6C0"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B144A7C7">
+            <FunctionDef Type="FunctionDef" Library="Core" Id="1C3E8A01"/>
+            <Parameter Type="Param" Library="HMfn" Id="295E1594"/>
+            <Parameter Type="Param" Library="HMfn" Id="AF894176"/>
+            <Parameter Type="Param" Library="HMfn" Id="EB251297"/>
+            <Parameter Type="Param" Library="HMfn" Id="9B8C6B14"/>
+        </Element>
+        <Element Type="Param" Id="295E1594">
+            <ParameterDef Type="ParamDef" Library="Core" Id="CF17D600"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="AF894176">
+            <ParameterDef Type="ParamDef" Library="Core" Id="4833DE88"/>
+            <Preset Type="PresetValue" Library="Core" Id="C013BBF7"/>
+        </Element>
+        <Element Type="Param" Id="EB251297">
+            <ParameterDef Type="ParamDef" Library="Core" Id="D26BC42F"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="D33DD35C"/>
+        </Element>
+        <Element Type="Param" Id="9B8C6B14">
+            <ParameterDef Type="ParamDef" Library="Core" Id="1DA00E56"/>
+            <Value>HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="FunctionCall" Id="69E419CA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+            <Parameter Type="Param" Library="HMfn" Id="3B5419EF"/>
+            <Parameter Type="Param" Library="HMfn" Id="B482A07A"/>
+        </Element>
+        <Element Type="Param" Id="3B5419EF">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+            <Variable Type="Variable" Library="HMfn" Id="39F656AD"/>
+        </Element>
+        <Element Type="Param" Id="B482A07A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="84D1D1BF"/>
+        </Element>
+        <Element Type="FunctionCall" Id="84D1D1BF">
+            <FunctionDef Type="FunctionDef" Library="Core" Id="02F4E9AD"/>
+            <Parameter Type="Param" Library="HMfn" Id="BA67C5B6"/>
+            <Parameter Type="Param" Library="HMfn" Id="DBF285EA"/>
+            <Parameter Type="Param" Library="HMfn" Id="897EA1C3"/>
+        </Element>
+        <Element Type="Param" Id="BA67C5B6">
+            <ParameterDef Type="ParamDef" Library="Core" Id="B55B2D01"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="61A29769"/>
+        </Element>
+        <Element Type="FunctionCall" Id="61A29769">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000098"/>
+        </Element>
+        <Element Type="Param" Id="DBF285EA">
+            <ParameterDef Type="ParamDef" Library="Core" Id="BB0D7E10"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000085"/>
+        </Element>
+        <Element Type="Param" Id="897EA1C3">
+            <ParameterDef Type="ParamDef" Library="Core" Id="930D4444"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="5A426F2C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="5A426F2C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3E5CC42D"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B3729A7A">
+            <FunctionDef Type="FunctionDef" Library="Core" Id="D9FC8F5E"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="81DA60CF"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="D7F1C3A1"/>
+        </Element>
+        <Element Type="FunctionCall" Id="81DA60CF">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000139"/>
+            <SubFunctionType Type="SubFuncType" Library="Core" Id="847DDF53"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D7F1C3A1">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Core" Id="9F2BB977"/>
+            <Parameter Type="Param" Library="HMfn" Id="578244BD"/>
+            <Parameter Type="Param" Library="HMfn" Id="6A0A72C1"/>
+            <Parameter Type="Param" Library="HMfn" Id="862838B2"/>
+        </Element>
+        <Element Type="Param" Id="578244BD">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <Variable Type="Variable" Library="HMfn" Id="39F656AD"/>
+        </Element>
+        <Element Type="Param" Id="6A0A72C1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="E123C832"/>
+        </Element>
+        <Element Type="Param" Id="862838B2">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>0.0</Value>
+            <ValueType Type="fixed"/>
+        </Element>
+        <Element Type="FunctionCall" Id="7F78D195">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+            <Parameter Type="Param" Library="HMfn" Id="3895099D"/>
+            <Parameter Type="Param" Library="HMfn" Id="8306BD86"/>
+        </Element>
+        <Element Type="Param" Id="3895099D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+            <Variable Type="Variable" Library="HMfn" Id="2E220ACA"/>
+        </Element>
+        <Element Type="Param" Id="8306BD86">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+            <Value>HeroMalfurionTalentMoonfireCelestialAlignment@Heal</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F94BCEA5">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="22AACFEE"/>
+            <Parameter Type="Param" Library="HMfn" Id="C18C1FB3"/>
+            <Parameter Type="Param" Library="HMfn" Id="ECA66CF4"/>
+            <Parameter Type="Param" Library="HMfn" Id="8DBC1434"/>
+            <Parameter Type="Param" Library="HMfn" Id="E3073A3D"/>
+            <Parameter Type="Param" Library="HMfn" Id="27DBB367"/>
+        </Element>
+        <Element Type="Param" Id="C18C1FB3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="D53EE8AC"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="81EE12C8"/>
+        </Element>
+        <Element Type="FunctionCall" Id="81EE12C8">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000100"/>
+        </Element>
+        <Element Type="Param" Id="ECA66CF4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ACC6227A"/>
+            <Variable Type="Variable" Library="HMfn" Id="39F656AD"/>
+        </Element>
+        <Element Type="Param" Id="8DBC1434">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B92249C4"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000519"/>
+        </Element>
+        <Element Type="Param" Id="E3073A3D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="E495C06B"/>
+            <Variable Type="Variable" Library="HMfn" Id="2E220ACA"/>
+        </Element>
+        <Element Type="Param" Id="27DBB367">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C4D2C189"/>
+            <Value>VitalArray[0].Change</Value>
+            <ValueType Type="catalogfieldpath"/>
+            <ValueContext Value="CEffectModifyUnit"/>
+            <ValueParam Type="Param" Library="HMfn" Id="A3CA9B88"/>
+        </Element>
+        <Element Type="Param" Id="A3CA9B88">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="80030C7A">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="73C0339B"/>
+            <Parameter Type="Param" Library="HMfn" Id="6F277B44"/>
+            <Parameter Type="Param" Library="HMfn" Id="EA6E3E37"/>
+            <Parameter Type="Param" Library="HMfn" Id="72624697"/>
+        </Element>
+        <Element Type="Param" Id="6F277B44">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="2BB8CB05"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="3B806C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="3B806C3C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000099"/>
+        </Element>
+        <Element Type="Param" Id="EA6E3E37">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="9A7F392A"/>
+            <Value>HeroMalfurionTalentMoonfireCelestialAlignment@Search</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="Param" Id="72624697">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="88375332"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="183097C9"/>
+        </Element>
+        <Element Type="FunctionCall" Id="183097C9">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000099"/>
+        </Element>
+        <Element Type="Trigger" Id="C92590DF">
+            <Variable Type="Variable" Library="HMfn" Id="76723F94"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="71FAD449"/>
+            <Condition Type="FunctionCall" Library="HMfn" Id="F4A2D2DF"/>
+            <Condition Type="FunctionCall" Library="HMfn" Id="A2489F84"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="DA5BAB44"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="E274AA54"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="D40BFFA2"/>
+        </Element>
+        <Element Type="Variable" Id="76723F94">
+            <VariableType>
+                <Type Value="gamelink"/>
+                <GameType Value="Effect"/>
+                <EntryType Value="CEffectModifyUnit"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="8DAF984C"/>
+        </Element>
+        <Element Type="Param" Id="8DAF984C">
+            <Preset Type="PresetValue" Library="Ntve" Id="C9DCA6C0"/>
+        </Element>
+        <Element Type="FunctionCall" Id="71FAD449">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="6D5C96AC"/>
+            <Parameter Type="Param" Library="HMfn" Id="E2A2DD1B"/>
+            <Parameter Type="Param" Library="HMfn" Id="AF485494"/>
+        </Element>
+        <Element Type="Param" Id="E2A2DD1B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="0FE3DCAD"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="AF485494">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="9E064507"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000231"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F4A2D2DF">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <Parameter Type="Param" Library="HMfn" Id="E8D637D0"/>
+            <Parameter Type="Param" Library="HMfn" Id="8EFF53F0"/>
+            <Parameter Type="Param" Library="HMfn" Id="007B77AC"/>
+        </Element>
+        <Element Type="Param" Id="E8D637D0">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="12AE1310"/>
+        </Element>
+        <Element Type="FunctionCall" Id="12AE1310">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="E7ABAA18"/>
+        </Element>
+        <Element Type="Param" Id="8EFF53F0">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="007B77AC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>HeroMalfurionTalentMoonfireCelestialAlignment@PercentDamage</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="FunctionCall" Id="A2489F84">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <Parameter Type="Param" Library="HMfn" Id="B551C3AE"/>
+            <Parameter Type="Param" Library="HMfn" Id="C832AECB"/>
+            <Parameter Type="Param" Library="HMfn" Id="01806111"/>
+        </Element>
+        <Element Type="Param" Id="B551C3AE">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="44E5C9F7"/>
+        </Element>
+        <Element Type="FunctionCall" Id="44E5C9F7">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="98DA6AD1"/>
+        </Element>
+        <Element Type="Param" Id="C832AECB">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="40567BEE"/>
+        </Element>
+        <Element Type="Param" Id="01806111">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>0.0</Value>
+            <ValueType Type="fixed"/>
+        </Element>
+        <Element Type="FunctionCall" Id="DA5BAB44">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+            <Parameter Type="Param" Library="HMfn" Id="13B6BF31"/>
+            <Parameter Type="Param" Library="HMfn" Id="A5CF2960"/>
+        </Element>
+        <Element Type="Param" Id="13B6BF31">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+            <Variable Type="Variable" Library="HMfn" Id="76723F94"/>
+        </Element>
+        <Element Type="Param" Id="A5CF2960">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+            <Value>HeroMalfurionTalentMoonfireCelestialAlignment@Heal</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E274AA54">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="22AACFEE"/>
+            <Parameter Type="Param" Library="HMfn" Id="27FBEB2F"/>
+            <Parameter Type="Param" Library="HMfn" Id="11A937B3"/>
+            <Parameter Type="Param" Library="HMfn" Id="80682455"/>
+            <Parameter Type="Param" Library="HMfn" Id="B76D798F"/>
+            <Parameter Type="Param" Library="HMfn" Id="AEF7C153"/>
+        </Element>
+        <Element Type="Param" Id="27FBEB2F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="D53EE8AC"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="E6C07D85"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E6C07D85">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000100"/>
+        </Element>
+        <Element Type="Param" Id="11A937B3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ACC6227A"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="B23F11AE"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B23F11AE">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="98DA6AD1"/>
+        </Element>
+        <Element Type="Param" Id="80682455">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B92249C4"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000519"/>
+        </Element>
+        <Element Type="Param" Id="B76D798F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="E495C06B"/>
+            <Variable Type="Variable" Library="HMfn" Id="76723F94"/>
+        </Element>
+        <Element Type="Param" Id="AEF7C153">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C4D2C189"/>
+            <Value>VitalArray[0].Change</Value>
+            <ValueType Type="catalogfieldpath"/>
+            <ValueContext Value="CEffectModifyUnit"/>
+            <ValueParam Type="Param" Library="HMfn" Id="FF83B5A6"/>
+        </Element>
+        <Element Type="Param" Id="FF83B5A6">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D40BFFA2">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="73C0339B"/>
+            <Parameter Type="Param" Library="HMfn" Id="6F44E473"/>
+            <Parameter Type="Param" Library="HMfn" Id="3ED5DCBA"/>
+            <Parameter Type="Param" Library="HMfn" Id="CF7E9211"/>
+        </Element>
+        <Element Type="Param" Id="6F44E473">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="2BB8CB05"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="FB4C8EEC"/>
+        </Element>
+        <Element Type="FunctionCall" Id="FB4C8EEC">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000099"/>
+        </Element>
+        <Element Type="Param" Id="3ED5DCBA">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="9A7F392A"/>
+            <Value>HeroMalfurionTalentMoonfireCelestialAlignment@Search</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="Param" Id="CF7E9211">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="88375332"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="0C606CAF"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0C606CAF">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000099"/>
+        </Element>
+        <Element Type="Trigger" Id="5C8C02E1">
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="AA77496F"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="B8AF9664"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="9A8A5C13"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="5C6DBD8C"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="996033D7"/>
+        </Element>
+        <Element Type="Variable" Id="2F80532E">
+            <VariableType>
+                <Type Value="unit"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="0C03B6D5"/>
+        </Element>
+        <Element Type="Param" Id="0C03B6D5">
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="D7926612"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D7926612">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+        </Element>
+        <Element Type="FunctionCall" Id="AA77496F">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="E801889F"/>
+            <Parameter Type="Param" Library="HMfn" Id="75133A5A"/>
+            <Parameter Type="Param" Library="HMfn" Id="4C86F44B"/>
+        </Element>
+        <Element Type="Param" Id="E801889F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="75133A5A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@Controller</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="4C86F44B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C2CE1E18"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B8AF9664">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="6B11E87C"/>
+            <Parameter Type="Param" Library="HMfn" Id="F139CE6D"/>
+            <Parameter Type="Param" Library="HMfn" Id="E53DBE88"/>
+        </Element>
+        <Element Type="Param" Id="6B11E87C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="F139CE6D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="E53DBE88">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C2CE1E18"/>
+        </Element>
+        <Element Type="FunctionCall" Id="9A8A5C13">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="A7B92E4A"/>
+            <Parameter Type="Param" Library="HMfn" Id="0E04AEB4"/>
+            <Parameter Type="Param" Library="HMfn" Id="4E6C1EF9"/>
+        </Element>
+        <Element Type="Param" Id="A7B92E4A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="0E04AEB4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="4E6C1EF9">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C2CE1E18"/>
+        </Element>
+        <Element Type="FunctionCall" Id="5C6DBD8C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C0083258"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="0B46873E"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="0B68A166"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="C4FE7E1F"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0B46873E">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BB1891ED"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="D23E0C5D"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="9D173C34"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D23E0C5D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C0083258"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="15EA0912"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="8B40D69E"/>
+        </Element>
+        <Element Type="FunctionCall" Id="15EA0912">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BB1891ED"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="1231FD08"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="B14A0A28"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="760708EA"/>
+        </Element>
+        <Element Type="FunctionCall" Id="1231FD08">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
+            <Parameter Type="Param" Library="HMfn" Id="9470E646"/>
+            <Parameter Type="Param" Library="HMfn" Id="69A2DCAC"/>
+            <Parameter Type="Param" Library="HMfn" Id="EA068C5E"/>
+        </Element>
+        <Element Type="Param" Id="9470E646">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="61A189E3"/>
+        </Element>
+        <Element Type="FunctionCall" Id="61A189E3">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="142FF15A"/>
+            <Parameter Type="Param" Library="HMfn" Id="CF175CB3"/>
+            <Parameter Type="Param" Library="HMfn" Id="19DE35B6"/>
+        </Element>
+        <Element Type="Param" Id="CF175CB3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="033DFD05"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="19DE35B6">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B29EDD13"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="69A2DCAC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="EA068C5E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>true</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B14A0A28">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="5D218339"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="AAC3C2BC"/>
+            <Parameter Type="Param" Library="HMfn" Id="D648FC4D"/>
+            <Parameter Type="Param" Library="HMfn" Id="8D4DBD4E"/>
+        </Element>
+        <Element Type="Param" Id="AAC3C2BC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="0828B94F"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="D648FC4D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="A654ADC9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="0C6700B0"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0C6700B0">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="576B4EA1"/>
+            <Parameter Type="Param" Library="HMfn" Id="4ECCB926"/>
+            <Parameter Type="Param" Library="HMfn" Id="4E79BE8B"/>
+        </Element>
+        <Element Type="Param" Id="4ECCB926">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4D7178DA"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="4E79BE8B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1C7F2E18"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="8D4DBD4E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F42FAA2E"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="760708EA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="0A1BADFB"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="EF35758E"/>
+            <Parameter Type="Param" Library="HMfn" Id="9A634DFC"/>
+            <Parameter Type="Param" Library="HMfn" Id="12CD8FA3"/>
+        </Element>
+        <Element Type="Param" Id="EF35758E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="67A2F7A0"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="9A634DFC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="94890C71"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="BD6A7F76"/>
+        </Element>
+        <Element Type="FunctionCall" Id="BD6A7F76">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09C6C463"/>
+            <Parameter Type="Param" Library="HMfn" Id="D22C1BBA"/>
+            <Parameter Type="Param" Library="HMfn" Id="2DD4AD6C"/>
+        </Element>
+        <Element Type="Param" Id="D22C1BBA">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F791413A"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="2DD4AD6C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="975D6F9C"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="12CD8FA3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABE52ABE"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="8B40D69E">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BB1891ED"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="D3DD0957"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="EB563D20"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="A6A52568"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D3DD0957">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
+            <Parameter Type="Param" Library="HMfn" Id="BE19DB3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="95F35348"/>
+            <Parameter Type="Param" Library="HMfn" Id="90D8369A"/>
+        </Element>
+        <Element Type="Param" Id="BE19DB3C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="297AF86C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="297AF86C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="142FF15A"/>
+            <Parameter Type="Param" Library="HMfn" Id="04C592A4"/>
+            <Parameter Type="Param" Library="HMfn" Id="C1FA583C"/>
+        </Element>
+        <Element Type="Param" Id="04C592A4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="033DFD05"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="C1FA583C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B29EDD13"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="95F35348">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="90D8369A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>true</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="FunctionCall" Id="EB563D20">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="5D218339"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="4EFFC931"/>
+            <Parameter Type="Param" Library="HMfn" Id="4FD3FF7F"/>
+            <Parameter Type="Param" Library="HMfn" Id="477313AF"/>
+        </Element>
+        <Element Type="Param" Id="4EFFC931">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="0828B94F"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="4FD3FF7F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="A654ADC9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="6A3719C8"/>
+        </Element>
+        <Element Type="FunctionCall" Id="6A3719C8">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="576B4EA1"/>
+            <Parameter Type="Param" Library="HMfn" Id="5D853F42"/>
+            <Parameter Type="Param" Library="HMfn" Id="D212909F"/>
+        </Element>
+        <Element Type="Param" Id="5D853F42">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4D7178DA"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="D212909F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1C7F2E18"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="477313AF">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F42FAA2E"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="A6A52568">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="0A1BADFB"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="7D27C74A"/>
+            <Parameter Type="Param" Library="HMfn" Id="50350419"/>
+            <Parameter Type="Param" Library="HMfn" Id="6394A49A"/>
+        </Element>
+        <Element Type="Param" Id="7D27C74A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="67A2F7A0"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="50350419">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="94890C71"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="C192EE44"/>
+        </Element>
+        <Element Type="FunctionCall" Id="C192EE44">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09C6C463"/>
+            <Parameter Type="Param" Library="HMfn" Id="56810BAD"/>
+            <Parameter Type="Param" Library="HMfn" Id="FF8CA6E4"/>
+        </Element>
+        <Element Type="Param" Id="56810BAD">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F791413A"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="FF8CA6E4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="975D6F9C"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="6394A49A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABE52ABE"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="9D173C34">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
+            <Parameter Type="Param" Library="HMfn" Id="63BB651C"/>
+            <Parameter Type="Param" Library="HMfn" Id="EA42CC06"/>
+            <Parameter Type="Param" Library="HMfn" Id="734DEA0A"/>
+        </Element>
+        <Element Type="Param" Id="63BB651C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="5F493A6D"/>
+        </Element>
+        <Element Type="FunctionCall" Id="5F493A6D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000355"/>
+        </Element>
+        <Element Type="Param" Id="EA42CC06">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="734DEA0A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@Controller</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0B68A166">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BB1891ED"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="25867B43"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="554655B1"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="87929A09"/>
+        </Element>
+        <Element Type="FunctionCall" Id="25867B43">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="5D218339"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="150821E5"/>
+            <Parameter Type="Param" Library="HMfn" Id="3221746C"/>
+            <Parameter Type="Param" Library="HMfn" Id="60C3051D"/>
+        </Element>
+        <Element Type="Param" Id="150821E5">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="0828B94F"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="3221746C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="A654ADC9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="2366C9B2"/>
+        </Element>
+        <Element Type="FunctionCall" Id="2366C9B2">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="576B4EA1"/>
+            <Parameter Type="Param" Library="HMfn" Id="A043341C"/>
+            <Parameter Type="Param" Library="HMfn" Id="58EAC044"/>
+        </Element>
+        <Element Type="Param" Id="A043341C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4D7178DA"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="58EAC044">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1C7F2E18"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="60C3051D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F42FAA2E"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="554655B1">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="0A1BADFB"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="076ABBB4"/>
+            <Parameter Type="Param" Library="HMfn" Id="C1520455"/>
+            <Parameter Type="Param" Library="HMfn" Id="FB1572EE"/>
+        </Element>
+        <Element Type="Param" Id="076ABBB4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="67A2F7A0"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="C1520455">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="94890C71"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="B19ABF04"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B19ABF04">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09C6C463"/>
+            <Parameter Type="Param" Library="HMfn" Id="03C7D083"/>
+            <Parameter Type="Param" Library="HMfn" Id="C7B5A730"/>
+        </Element>
+        <Element Type="Param" Id="03C7D083">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F791413A"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="C7B5A730">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="975D6F9C"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="FB1572EE">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABE52ABE"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="87929A09">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
+            <Parameter Type="Param" Library="HMfn" Id="EA0B7D5B"/>
+            <Parameter Type="Param" Library="HMfn" Id="B6610F46"/>
+            <Parameter Type="Param" Library="HMfn" Id="65C9B08D"/>
+        </Element>
+        <Element Type="Param" Id="EA0B7D5B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="718E9D24"/>
+        </Element>
+        <Element Type="FunctionCall" Id="718E9D24">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000355"/>
+        </Element>
+        <Element Type="Param" Id="B6610F46">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="65C9B08D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeGE33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="C4FE7E1F">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BB1891ED"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="A8C26E61"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="E2455249"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="E5371F89"/>
+        </Element>
+        <Element Type="FunctionCall" Id="A8C26E61">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="5D218339"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="F65E12D5"/>
+            <Parameter Type="Param" Library="HMfn" Id="FB404C8A"/>
+            <Parameter Type="Param" Library="HMfn" Id="6F75227F"/>
+        </Element>
+        <Element Type="Param" Id="F65E12D5">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="0828B94F"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="FB404C8A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="A654ADC9"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="F3C9C90E"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F3C9C90E">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="576B4EA1"/>
+            <Parameter Type="Param" Library="HMfn" Id="BBF24964"/>
+            <Parameter Type="Param" Library="HMfn" Id="312D9D89"/>
+        </Element>
+        <Element Type="Param" Id="BBF24964">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4D7178DA"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="312D9D89">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1C7F2E18"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="6F75227F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F42FAA2E"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E2455249">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="0A1BADFB"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="HMfn" Id="CE9A3544"/>
+            <Parameter Type="Param" Library="HMfn" Id="96AEE699"/>
+            <Parameter Type="Param" Library="HMfn" Id="5DDD89D5"/>
+        </Element>
+        <Element Type="Param" Id="CE9A3544">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="67A2F7A0"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="96AEE699">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="94890C71"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="FCC22AFF"/>
+        </Element>
+        <Element Type="FunctionCall" Id="FCC22AFF">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09C6C463"/>
+            <Parameter Type="Param" Library="HMfn" Id="857A0679"/>
+            <Parameter Type="Param" Library="HMfn" Id="A18767E1"/>
+        </Element>
+        <Element Type="Param" Id="857A0679">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F791413A"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Param" Id="A18767E1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="975D6F9C"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="5DDD89D5">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABE52ABE"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E5371F89">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
+            <Parameter Type="Param" Library="HMfn" Id="805A33DA"/>
+            <Parameter Type="Param" Library="HMfn" Id="C8E78283"/>
+            <Parameter Type="Param" Library="HMfn" Id="77120E33"/>
+        </Element>
+        <Element Type="Param" Id="805A33DA">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="B1C67C93"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B1C67C93">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000355"/>
+        </Element>
+        <Element Type="Param" Id="C8E78283">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="77120E33">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>HeroMalfurionRegrowthNaturesProtection@LifeLT33</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="996033D7">
+            <FunctionDef Type="FunctionDef" Library="UIUI" Id="123E6391"/>
+            <Parameter Type="Param" Library="HMfn" Id="4C5D0CDA"/>
+        </Element>
+        <Element Type="Param" Id="4C5D0CDA">
+            <ParameterDef Type="ParamDef" Library="UIUI" Id="1DA30F4D"/>
+            <Variable Type="Variable" Library="HMfn" Id="2F80532E"/>
+        </Element>
+        <Element Type="Comment" Id="F6363ABF">
+        </Element>
+        <Element Type="Trigger" Id="22DD9635">
+            <Event Type="FunctionCall" Library="HMfn" Id="82030DBA"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="BE331461"/>
+        </Element>
+        <Element Type="FunctionCall" Id="82030DBA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9FFA06A7"/>
+            <Parameter Type="Param" Library="HMfn" Id="6001C113"/>
+            <Parameter Type="Param" Library="HMfn" Id="D669DE1C"/>
+        </Element>
+        <Element Type="Param" Id="6001C113">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="44A8E2B6"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="2999701E"/>
+        </Element>
+        <Element Type="Param" Id="D669DE1C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="6FB1C942"/>
+            <Value>HeroMalfurionInnervate@SearchImpactSet</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
+        </Element>
+        <Element Type="FunctionCall" Id="BE331461">
+            <FunctionDef Type="FunctionDef" Library="Game" Id="2997DE1E"/>
+            <Parameter Type="Param" Library="HMfn" Id="6CA484C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="096714DC"/>
+            <Parameter Type="Param" Library="HMfn" Id="E3E4273F"/>
+            <Parameter Type="Param" Library="HMfn" Id="DCE5D935"/>
+            <Parameter Type="Param" Library="HMfn" Id="57E2AC17"/>
+            <Parameter Type="Param" Library="HMfn" Id="DE6C61E5"/>
+        </Element>
+        <Element Type="Param" Id="6CA484C4">
+            <ParameterDef Type="ParamDef" Library="Game" Id="6F8D78E8"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="A1A7C3A7"/>
+        </Element>
+        <Element Type="FunctionCall" Id="A1A7C3A7">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BADA9C08"/>
+            <Parameter Type="Param" Library="HMfn" Id="AA504866"/>
+        </Element>
+        <Element Type="Param" Id="AA504866">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F6C0132E"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="6ABB7B54"/>
+        </Element>
+        <Element Type="Param" Id="096714DC">
+            <ParameterDef Type="ParamDef" Library="Game" Id="5F991014"/>
+            <Variable Type="Variable" Library="HMfn" Id="13E09FC4"/>
+        </Element>
+        <Element Type="Param" Id="E3E4273F">
+            <ParameterDef Type="ParamDef" Library="Game" Id="97A26E04"/>
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Param" Id="DCE5D935">
+            <ParameterDef Type="ParamDef" Library="Game" Id="2878B428"/>
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Param" Id="57E2AC17">
+            <ParameterDef Type="ParamDef" Library="Game" Id="0E9875F1"/>
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Param" Id="DE6C61E5">
+            <ParameterDef Type="ParamDef" Library="Game" Id="A22BEF1D"/>
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Variable" Id="13E09FC4">
+            <VariableType>
+                <Type Value="fixed"/>
+                <Constant/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="802D2FFF"/>
+        </Element>
+        <Element Type="Param" Id="802D2FFF">
+            <Value>1.5</Value>
+            <ValueType Type="fixed"/>
+        </Element>
+        <Element Type="Comment" Id="0A9B6B3C">
+            <Comment>
+                 
+                Talents
+                 
+            </Comment>
+        </Element>
+        <Element Type="Trigger" Id="EF5BB1E2">
+            <Variable Type="Variable" Library="HMfn" Id="CFB5DEB5"/>
+            <Variable Type="Variable" Library="HMfn" Id="5A821758"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="5B541D5E"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="EF9D68EE"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="DE4F9DC3"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="E3BA6DB5"/>
+            <Condition Type="FunctionCall" Library="HMfn" Id="E652709C"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="535449DA"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="B991196A"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="E1E1B5E7"/>
+        </Element>
+        <Element Type="Variable" Id="CFB5DEB5">
+            <VariableType>
+                <Type Value="unit"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="8D34C684"/>
+        </Element>
+        <Element Type="Param" Id="8D34C684">
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="F372234E"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F372234E">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="AB47D73B"/>
+            <Parameter Type="Param" Library="HMfn" Id="5B068F52"/>
+            <Parameter Type="Param" Library="HMfn" Id="BF9EC5DC"/>
+            <Parameter Type="Param" Library="HMfn" Id="1A420CCB"/>
+            <Parameter Type="Param" Library="HMfn" Id="4409D7BB"/>
+        </Element>
+        <Element Type="Param" Id="5B068F52">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B45FF251"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="981E57E0"/>
+        </Element>
+        <Element Type="FunctionCall" Id="981E57E0">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+        </Element>
+        <Element Type="Param" Id="BF9EC5DC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="DCC31474"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="F2124C07"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F2124C07">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000355"/>
+        </Element>
+        <Element Type="Param" Id="1A420CCB">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4F101676"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="090AE922"/>
+        </Element>
+        <Element Type="Param" Id="4409D7BB">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F7491E29"/>
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Variable" Id="5A821758">
+            <VariableType>
+                <Type Value="int"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="6CADF7D7"/>
+        </Element>
+        <Element Type="Param" Id="6CADF7D7">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="5B541D5E">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="380B6437"/>
+            <Parameter Type="Param" Library="HMfn" Id="6BDE5642"/>
+            <Parameter Type="Param" Library="HMfn" Id="B3542D85"/>
+        </Element>
+        <Element Type="Param" Id="380B6437">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="6BDE5642">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="B3542D85">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="079527A6"/>
+        </Element>
+        <Element Type="FunctionCall" Id="EF9D68EE">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="BEE6215F"/>
+            <Parameter Type="Param" Library="HMfn" Id="D45B5C56"/>
+            <Parameter Type="Param" Library="HMfn" Id="CCBBCE3F"/>
+        </Element>
+        <Element Type="Param" Id="BEE6215F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="D45B5C56">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionRegrowth</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="CCBBCE3F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="77C172A5"/>
+        </Element>
+        <Element Type="FunctionCall" Id="DE4F9DC3">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="45C337A1"/>
+            <Parameter Type="Param" Library="HMfn" Id="1C5F1513"/>
+            <Parameter Type="Param" Library="HMfn" Id="18450290"/>
+        </Element>
+        <Element Type="Param" Id="45C337A1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="1C5F1513">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="18450290">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="079527A6"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E3BA6DB5">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="AD529B0D"/>
+            <Parameter Type="Param" Library="HMfn" Id="6FF82298"/>
+            <Parameter Type="Param" Library="HMfn" Id="7C5F2707"/>
+        </Element>
+        <Element Type="Param" Id="AD529B0D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="6FF82298">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="7C5F2707">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="77C172A5"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E652709C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <Parameter Type="Param" Library="HMfn" Id="DBB5FF1A"/>
+            <Parameter Type="Param" Library="HMfn" Id="A7D8719B"/>
+            <Parameter Type="Param" Library="HMfn" Id="E8F0F2F8"/>
+        </Element>
+        <Element Type="Param" Id="DBB5FF1A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="EDD9F935"/>
+        </Element>
+        <Element Type="FunctionCall" Id="EDD9F935">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="142FF15A"/>
+            <Parameter Type="Param" Library="HMfn" Id="FB896590"/>
+            <Parameter Type="Param" Library="HMfn" Id="EB332645"/>
+        </Element>
+        <Element Type="Param" Id="FB896590">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="033DFD05"/>
+            <Variable Type="Variable" Library="HMfn" Id="CFB5DEB5"/>
+        </Element>
+        <Element Type="Param" Id="EB332645">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B29EDD13"/>
+            <Value>HeroMalfurionTalentRegrowthLifeseed@MainSpeedBuff</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="A7D8719B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="E8F0F2F8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>true</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="FunctionCall" Id="535449DA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09840835"/>
+            <Parameter Type="Param" Library="HMfn" Id="CCB325E7"/>
+            <Parameter Type="Param" Library="HMfn" Id="9A50D85E"/>
+            <Parameter Type="Param" Library="HMfn" Id="0C5148BE"/>
+        </Element>
+        <Element Type="Param" Id="CCB325E7">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="A45406E1"/>
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="9A50D85E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="EB47C731"/>
+            <Value>HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="0C5148BE">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="A6600060"/>
+            <Variable Type="Variable" Library="HMfn" Id="CFB5DEB5"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B991196A">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+            <Parameter Type="Param" Library="HMfn" Id="B63FF04E"/>
+            <Parameter Type="Param" Library="HMfn" Id="FBD762F0"/>
+        </Element>
+        <Element Type="Param" Id="B63FF04E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+            <Variable Type="Variable" Library="HMfn" Id="5A821758"/>
+        </Element>
+        <Element Type="Param" Id="FBD762F0">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="F510C10C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F510C10C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="83B4BF45"/>
+            <Parameter Type="Param" Library="HMfn" Id="3C3B99F1"/>
+            <Parameter Type="Param" Library="HMfn" Id="9D87B964"/>
+        </Element>
+        <Element Type="Param" Id="3C3B99F1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A5B3C88"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="0E62911C"/>
+        </Element>
+        <Element Type="Param" Id="9D87B964">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="62D9DA63"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="0011644D"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0011644D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="6C135AD4"/>
+            <Parameter Type="Param" Library="HMfn" Id="F916AC5B"/>
+            <Parameter Type="Param" Library="HMfn" Id="E6392E6F"/>
+        </Element>
+        <Element Type="Param" Id="F916AC5B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="2D3929E9"/>
+            <Variable Type="Variable" Library="HMfn" Id="CFB5DEB5"/>
+        </Element>
+        <Element Type="Param" Id="E6392E6F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="D0C3C869"/>
+            <Value>HeroMalfurionRegrowth@TrackedUnitCounter</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="E1E1B5E7">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
+            <Parameter Type="Param" Library="HMfn" Id="0DC5DA6F"/>
+            <Parameter Type="Param" Library="HMfn" Id="BE465C8C"/>
+            <Parameter Type="Param" Library="HMfn" Id="B0EE1715"/>
+            <Parameter Type="Param" Library="HMfn" Id="172C02F8"/>
+        </Element>
+        <Element Type="Param" Id="0DC5DA6F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
+            <Variable Type="Variable" Library="HMfn" Id="5A821758"/>
+        </Element>
+        <Element Type="Param" Id="BE465C8C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
+            <Value>HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="B0EE1715">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
+            <Variable Type="Variable" Library="HMfn" Id="CFB5DEB5"/>
+        </Element>
+        <Element Type="Param" Id="172C02F8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
+            <Variable Type="Variable" Library="HMfn" Id="CFB5DEB5"/>
+        </Element>
+        <Element Type="Trigger" Id="8032500C">
+            <Variable Type="Variable" Library="HMfn" Id="C2B7262E"/>
+            <Variable Type="Variable" Library="HMfn" Id="799A6313"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="9E10E811"/>
+            <Event Type="FunctionCall" Library="HMfn" Id="2777D1A1"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="D8A50947"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="1621B86D"/>
+            <Action Type="FunctionCall" Library="HMfn" Id="00577E84"/>
+        </Element>
+        <Element Type="Variable" Id="C2B7262E">
+            <VariableType>
+                <Type Value="unit"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="2687A710"/>
+        </Element>
+        <Element Type="Param" Id="2687A710">
+            <Preset Type="PresetValue" Library="Ntve" Id="D6EA4D09"/>
+        </Element>
+        <Element Type="Variable" Id="799A6313">
+            <VariableType>
+                <Type Value="unit"/>
+            </VariableType>
+            <Value Type="Param" Library="HMfn" Id="DD00FF82"/>
+        </Element>
+        <Element Type="Param" Id="DD00FF82">
+            <Preset Type="PresetValue" Library="Ntve" Id="D6EA4D09"/>
+        </Element>
+        <Element Type="FunctionCall" Id="9E10E811">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="86D8A90C"/>
+            <Parameter Type="Param" Library="HMfn" Id="CD53A958"/>
+            <Parameter Type="Param" Library="HMfn" Id="82FA22E1"/>
+        </Element>
+        <Element Type="Param" Id="86D8A90C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="CD53A958">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionTalentTranquilitySerenity@Armor</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="82FA22E1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="0059E8B3"/>
+        </Element>
+        <Element Type="FunctionCall" Id="2777D1A1">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="3C0566C4"/>
+            <Parameter Type="Param" Library="HMfn" Id="7844F659"/>
+            <Parameter Type="Param" Library="HMfn" Id="30E33AD3"/>
+            <Parameter Type="Param" Library="HMfn" Id="93F032C8"/>
+        </Element>
+        <Element Type="Param" Id="7844F659">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F3A8B0DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
+        </Element>
+        <Element Type="Param" Id="30E33AD3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="1CDCC284"/>
+            <Value>HeroMalfurionTalentTranquilitySerenity@Armor</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="93F032C8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3029CA3C"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="E3C66153"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D8A50947">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+            <Parameter Type="Param" Library="HMfn" Id="B3F14F75"/>
+            <Parameter Type="Param" Library="HMfn" Id="CA4B6B3D"/>
+        </Element>
+        <Element Type="Param" Id="B3F14F75">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+            <Variable Type="Variable" Library="HMfn" Id="799A6313"/>
+        </Element>
+        <Element Type="Param" Id="CA4B6B3D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="8954BC6D"/>
+        </Element>
+        <Element Type="FunctionCall" Id="8954BC6D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+        </Element>
+        <Element Type="FunctionCall" Id="1621B86D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000136"/>
+            <Parameter Type="Param" Library="HMfn" Id="93C313BD"/>
+            <Parameter Type="Param" Library="HMfn" Id="5DFA21D1"/>
+        </Element>
+        <Element Type="Param" Id="93C313BD">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000219"/>
+            <Variable Type="Variable" Library="HMfn" Id="C2B7262E"/>
+        </Element>
+        <Element Type="Param" Id="5DFA21D1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="F680424C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F680424C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="AB47D73B"/>
+            <Parameter Type="Param" Library="HMfn" Id="DC0DAB9B"/>
+            <Parameter Type="Param" Library="HMfn" Id="9FDA767A"/>
+            <Parameter Type="Param" Library="HMfn" Id="B1C88EC9"/>
+            <Parameter Type="Param" Library="HMfn" Id="5BA91C23"/>
+        </Element>
+        <Element Type="Param" Id="DC0DAB9B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B45FF251"/>
+            <Variable Type="Variable" Library="HMfn" Id="799A6313"/>
+        </Element>
+        <Element Type="Param" Id="9FDA767A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="DCC31474"/>
+            <Value>HeroMalfurionTalentTranquilitySerenity@Armor</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="B1C88EC9">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4F101676"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="090AE922"/>
+        </Element>
+        <Element Type="Param" Id="5BA91C23">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F7491E29"/>
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="00577E84">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="0A1BADFB"/>
+            <Parameter Type="Param" Library="HMfn" Id="B3DF6B8A"/>
+            <Parameter Type="Param" Library="HMfn" Id="FFCCCC83"/>
+            <Parameter Type="Param" Library="HMfn" Id="143D4F5D"/>
+        </Element>
+        <Element Type="Param" Id="B3DF6B8A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="67A2F7A0"/>
+            <Variable Type="Variable" Library="HMfn" Id="799A6313"/>
+        </Element>
+        <Element Type="Param" Id="FFCCCC83">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="94890C71"/>
+            <FunctionCall Type="FunctionCall" Library="HMfn" Id="91399B4D"/>
+        </Element>
+        <Element Type="FunctionCall" Id="91399B4D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09C6C463"/>
+            <Parameter Type="Param" Library="HMfn" Id="46F8CCE3"/>
+            <Parameter Type="Param" Library="HMfn" Id="2CCF01BF"/>
+        </Element>
+        <Element Type="Param" Id="46F8CCE3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="F791413A"/>
+            <Variable Type="Variable" Library="HMfn" Id="C2B7262E"/>
+        </Element>
+        <Element Type="Param" Id="2CCF01BF">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="975D6F9C"/>
+            <Value>HeroMalfurionTranquility</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="143D4F5D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABE52ABE"/>
+            <Value>HeroMalfurionTalentTranquilitySerenity@Armor</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+    </Library>
+</TriggerData>

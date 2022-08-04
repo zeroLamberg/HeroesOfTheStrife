@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="HeroMalfurionRegrowth@TrackedUnitCounter"/>
+<Behavior id="HeroMalfurionTalentRegrowthLifeseed@SecondarySpeedBuff"/>
+<Effect id="HeroMalfurionTalentMoonfireCelestialAlignment@Search"/>
+</Preload>

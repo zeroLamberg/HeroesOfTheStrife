@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSoundtrack id="Amb_2D_Slayn_EXT" parent="Ambience_Map"/>
+    <CSoundtrack id="MX_Event_Slayn_VoidRift_Spawn" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Event_Slayn_VoidRift_Spawn"/>
+            <SlaveLayers>
+                <Sections Sound="MX_Event_Slayn_VoidRift_Spawn_SlaveLayer" Start="270000"/>
+            </SlaveLayers>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Event_Slayn_VoidThrasher_Ally_End" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Event_Slayn_VoidThrasher_Ally_End"/>
+            <SlaveLayers>
+                <Sections Sound="MX_Event_Slayn_VoidThrasher_Ally_End_SlaveLayer" Start="44100"/>
+            </SlaveLayers>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Event_Slayn_VoidThrasher_Enemy_End" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Event_Slayn_VoidThrasher_Enemy_End"/>
+            <SlaveLayers>
+                <Sections Sound="MX_Event_Slayn_VoidThrasher_Enemy_End_SlaveLayer" Start="50000"/>
+            </SlaveLayers>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Slayn_Intro" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Slayn_Intro"/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+        </CueArray>
+        <Flags index="Continuous" value="0"/>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Slayn_LVL_1" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Slayn_LVL_1"/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Slayn_LVL_10" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Slayn_LVL_10"/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+        </CueArray>
+    </CSoundtrack>
+    <CSoundtrack id="MX_Slayn_LVL_20" parent="Music">
+        <CueArray>
+            <MasterLayer Sound="MX_Slayn_LVL_20"/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+            <SlaveLayers/>
+        </CueArray>
+    </CSoundtrack>
+</Catalog>

@@ -1,0 +1,40 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Game Data Helper
+//--------------------------------------------------------------------------------------------------
+// Constants
+const int libGDHL_gv_prestigeBloodForBloodHealModificator = 2;
+
+// Function Declarations
+point libGDHL_gf_TargetCalculation (point lp_targetPoint, point lp_casterPoint, region lp_bFGRegion);
+bool libGDHL_gf_TalentHardenedFocusBasicAbilitiesOnCD (int lp_player);
+
+// Trigger Declarations
+trigger libGDHL_gt_IncludeGameDataHelper;
+trigger libGDHL_gt_HeroGenericCameraShakeLightTarget;
+trigger libGDHL_gt_HeroGenericCameraShakeMediumTarget;
+trigger libGDHL_gt_HeroGenericCameraShakeHeavyTarget;
+trigger libGDHL_gt_HeroGenericCameraShakeLightCaster;
+trigger libGDHL_gt_HeroGenericCameraShakeMediumCaster;
+trigger libGDHL_gt_HeroGenericCameraShakeHeavyCaster;
+trigger libGDHL_gt_HeroPortBackToBase;
+trigger libGDHL_gt_HearthstoneChannelingBuffOn;
+trigger libGDHL_gt_HearthstoneChannelingBuffOff;
+trigger libGDHL_gt_HearthstoneChannelingBuffCanceled;
+trigger libGDHL_gt_PrestigeBloodForBlood;
+trigger libGDHL_gt_RegenerationGlobeTalents;
+trigger libGDHL_gt_TalentCalldownMULEApplyXPToMULE;
+trigger libGDHL_gt_TalentRewindActivate;
+trigger libGDHL_gt_TalentFuryoftheStormActivate;
+trigger libGDHL_gt_TalentFuryoftheStorm;
+trigger libGDHL_gt_TalentBribe;
+trigger libGDHL_gt_TalentSwiftStorm;
+trigger libGDHL_gt_TalentStormShield;
+trigger libGDHL_gt_TalentHardenedFocus;
+trigger libGDHL_gt_TalentHardenedFocusUpdate;
+trigger libGDHL_gt_TalentResurgenceOfTheStorm;
+
+// Library Initialization
+void libGDHL_InitVariables ();
+

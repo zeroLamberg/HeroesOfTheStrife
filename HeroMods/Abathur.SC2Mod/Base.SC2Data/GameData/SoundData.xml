@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="Abathur_UltimateEvolution_End" parent="_FX_Hero_Ult_End">
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.ogg" FacialGroup=""/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Volume value="-96.000000,-96.000000"/>
+    </CSound>
+    <CSound id="Abathur_UltimateEvolution_Screen_Loop" parent="_FX_Hero_Spell_Loop">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Screen_Loop_01.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <LoopCount value="-1"/>
+        <Mode value="2D"/>
+        <OffsetFadeIn Time="48" Volume="-96.000000"/>
+        <OffsetFadeIn Time="759" Volume="-0.120000"/>
+        <OffsetFadeOut Time="48" Volume="-0.120000"/>
+        <OffsetFadeOut Time="832" Volume="-96.000000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <Category value="User32"/>
+        <CategoryLocal value="User33"/>
+    </CSound>
+    <CSound id="Abathur_Attack_Impact" parent="_FX_Hero_Attack_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Attack_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Attack_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Attack_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Attack_Impact04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Attack_Impact05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Attack_Impact06.ogg"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-7.000000,-7.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="-0.080000"/>
+    </CSound>
+    <CSound id="Abathur_Attack_Launch" parent="_FX_Hero_Attack_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch04.ogg"/>
+        <Volume value="-14.000000,-14.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurWeaponEvolveMonstrosity@Attack_Impact_Building" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit10.ogg" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <Volume value="-9.000000,-6.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <CategoryDuckingNonLocal value="NPC_Attack_Impact"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Attack_Launch" parent="_FX_Hero_Attack_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\ETC_Base\ETC_Attack_Launch04.ogg"/>
+        <Volume value="-8.000000,-8.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="0.000000"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <CategoryDuckingNonLocal value="NPC_Attack_Launch1"/>
+        <Pitch value="-1.000000,1.000000"/>
+    </CSound>
+    <CSound id="Abathur_CarapaceEvolution_Cast" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_Launch03.ogg"/>
+        <Volume value="-2.000000,-2.000000"/>
+        <NonLocalVolumeAdjustment value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Abathur_CarapaceEvolution_End" parent="_FX_Hero_Spell_End">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_End01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_End02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_End03.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Abathur_CarapaceEvolution_Loop" parent="_FX_Hero_Spell_Loop">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Shield_Loop01.ogg"/>
+        <LoopCount value="-1"/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="Abathur_CullingStrands_AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="-0.080000"/>
+    </CSound>
+    <CSound id="Abathur_DeepTunnel_Cast" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch05.ogg"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+    </CSound>
+    <CSound id="Abathur_DeepTunnel_End" parent="_FX_Hero_Spell_End">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_End01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_End02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_End03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_End04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_End05.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_AssaultStrain_AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_Bleed01.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_Bleed02.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_Bleed03.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_Bleed04.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_Bleed05.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_AssaultStrain_Cleave_Attack" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.ogg" FacialGroup=""/>
+        <Pitch value="5.000000,8.000000"/>
+        <Volume value="-31.000000,-26.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_AssaultStrain_Cleave_Impact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_Small_Unit01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_Small_Unit02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_Small_Unit03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_Small_Unit04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_Small_Unit05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_Small_Unit06.ogg" FacialGroup=""/>
+        <Pitch value="3.000000,3.000000"/>
+        <Volume value="-27.000000,-22.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_AssaultStrain_Explosion" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_KnockedInAir01.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_KnockedInAir02.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_KnockedInAir03.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_KnockedInAir04.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_KnockedInAir05.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Status_KnockedInAir06.ogg"/>
+        <Volume value="-15.000000,-15.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact04.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact05.ogg"/>
+        <Volume value="-17.000000,-17.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch05.ogg"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_Birth" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn08.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Locust_Spawn09.ogg"/>
+        <Pitch value="7.000000,9.000000"/>
+        <Volume value="-21.000000,-18.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_BombardStrain_AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact01.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact02.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact03.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact04.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Impact05.ogg"/>
+        <Volume value="-16.000000,-16.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_BombardStrain_AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Generic\Gen_Spell_Slime_Launch05.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Abathur_Locust_Death" parent="_FX_Breakables">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo08.ogg"/>
+        <Category value="Death"/>
+        <CategoryLocal value="Death"/>
+        <Pitch value="2.000000,4.000000"/>
+        <VariationMinimum value="5"/>
+        <Volume value="-13.000000,-12.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="HeroAbathurWeaponEvolveMonstrosity@Attack_Impact_Unit" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Sharp_LargeV2_Unit10.ogg" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <Volume value="-8.000000,-5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <CategoryDuckingNonLocal value="NPC_Attack_Impact"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Attack_Vox" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Attack01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Attack02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Attack03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Attack04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Attack05.ogg" FacialGroup=""/>
+        <Chance value="30"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Birth_Unburrow" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_UnburrowLarge0.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_UnburrowLarge1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_UnburrowLarge2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_UnburrowLarge3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_UnburrowLarge4.ogg" FacialGroup=""/>
+        <Volume value="-14.000000,-14.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Birth_Vox" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Birth01.ogg" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Death_Vox" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Death01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Monstrosity_Vox_Death02.ogg" FacialGroup=""/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Death_Splat" parent="_FX_NPC_Death">
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium0.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium1.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium2.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium3.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium4.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium5.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionMedium6.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <Category value="User28"/>
+        <CategoryLocal value="Death"/>
+    </CSound>
+    <CSound id="Abathur_Monstrosity_Death_Burrow" parent="_FX_NPC_Death">
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_Burrow_Large01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_Burrow_Large02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_Burrow_Large03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_Burrow_Large04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_Burrow_Large05.ogg" FacialGroup=""/>
+        <Volume value="-8.000000,-8.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <CategoryDuckingLocal value="Local_Spell_Instacast"/>
+        <CategoryDuckingNonLocal value="NPC_Spell_InstaCast"/>
+        <Category value="User28"/>
+        <CategoryLocal value="Death"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Birth" parent="_FX_Hero_Spell_Warning">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch04.ogg"/>
+        <Volume value="-2.000000,-2.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="-0.080000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Abathur_NeuralParasite_Impact" parent="_FX_Hero_Spell_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch04.ogg"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Death" parent="_FX_Hero_Spell_End">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSlime0.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall0.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall1.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall2.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall3.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall4.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall5.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall6.ogg"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Impact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Launch04.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Screen_End" parent="_FX_Hero_Spell_End">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Screen_End_01.ogg"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Screen_Loop" parent="_2D_FX_Hero_Spell">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Screen_Loop_01.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <LoopCount value="-1"/>
+        <OffsetFadeIn Time="48" Volume="-96.000000"/>
+        <OffsetFadeIn Time="759" Volume="-0.120000"/>
+        <OffsetFadeOut Time="48" Volume="-0.120000"/>
+        <OffsetFadeOut Time="832" Volume="-96.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Screen_Launch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Screen_Launch_01.ogg"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Self_End" parent="_FX_Hero_Spell_End">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_End01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_End02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_End03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_End04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_End05.ogg"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Self_Launch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_Launch05.ogg"/>
+    </CSound>
+    <CSound id="HeroAbathurSymbiote@Self_Loop" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Self_Loop.ogg"/>
+        <LoopCount value="-1"/>
+        <Volume value="-13.000000,-13.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_SpikeBlast_Cast" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Spikeblast_Launch04.ogg"/>
+        <Volume value="-2.000000,-2.000000"/>
+        <NonLocalVolumeAdjustment value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_SpikeBlast_Impact" parent="_FX_Hero_Spell_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit10.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit11.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit12.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Tychus_Base\Tychus_Attack_Impact_Multi_Unit13.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+        <NonLocalVolumeAdjustment value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Stab_AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_Ranged_BowV2_Unit10.ogg" FacialGroup=""/>
+        <Volume value="-10.000000,-10.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="-0.080000"/>
+        <DupeDestroyCount value="2"/>
+        <DupeMuteCount value="2"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Stab_AttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Stab_Launch05.ogg"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Vox_Attack" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack08.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Vox_Birth" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack16.ogg"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Vox_Death" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack16.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Vox_Idle" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle08.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle09.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle10.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Idle11.ogg"/>
+        <Chance value="50"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Vox_SpellA" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack08.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Abathur_Symbiote_Vox_SpellB" parent="_FX_Hero_Vox">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack09.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack10.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack11.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack12.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack13.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack14.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack15.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_Symbiote_Vox_Attack16.ogg"/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="Abathur_ToxicNest_Armed" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Generic\Test_NoSound.ogg"/>
+        <Volume value="-4.930000,-4.930000"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="0.750000"/>
+    </CSound>
+    <CSound id="Abathur_ToxicNest_Arming" parent="_FX_Hero_Spell_Secondary">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Arm01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Arm02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Arm03.ogg"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Abathur_ToxicNest_Explosion" parent="_FX_Hero_Spell_Impact">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Explo08.ogg"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Abathur_ToxicNest_Spawn" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Exlode01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Exlode02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Exlode03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Exlode04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Exlode05.ogg"/>
+        <Volume value="-2.000000,-2.000000"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+    </CSound>
+    <CSound id="Abathur_ToxicNest_Warning" parent="_FX_Hero_Spell_Secondary">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning05.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning06.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning07.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_ToxicNest_Warning08.ogg"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurUltimateEvolution@Birth" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_UltEvo_Explode01.ogg"/>
+        <PanLevel value="0.750000"/>
+        <PanLevelNonLocal value="0.750000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="HeroAbathurUltimateEvolution@Build" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Abathur"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_UltEvo_Launch01.ogg"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Abathur_UltimateEvolution_Burrow" parent="_FX_Hero_Ult_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch01.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch02.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch03.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch04.ogg"/>
+        <AssetArray File="Assets\Sounds\Heroes\Abathur_Base\Abathur_DeepTunnel_Launch05.ogg"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Volume value="-12.000000,-10.000000"/>
+    </CSound>
+    <CSound id="Abathur_UltimateEvolution_Impact" parent="_FX_Hero_Ult_Impact">
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall0.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall1.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall2.ogg"/>
+        <AssetArray File="Assets\Sounds\SC2_SharedEffects\Zerg\SC2_Zerg_ExplosionSmall3.ogg"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroAbathur_Impact" parent="_FX_Hero_Attack_GetHit">
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Impact_FX\Impact_GetHit_Vs_Carapace10.ogg" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-13.000000,-12.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000" Volume="-0.080000"/>
+    </CSound>
+    <CSound id="Abathur_VolatileMutation_Explosion" parent="_FX_Hero_Spell_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact01.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact02.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact03.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact04.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact05.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact06.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact07.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact08.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact09.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Heroes\Zagara_Base\Zagara_Banelings_Impact10.ogg" FacialGroup=""/>
+        <Pitch value="-3.000000,-2.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroAffirmative" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroAgree00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroResponse_Orphea" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroAgree00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurA_Preview" parent="AnnouncerVO_Preview" aid="Abathur"/>
+    <CSound id="AbathurHero_VoiceLineFive" parent="HeroVO_Voice_Line">
+        <AssetArray TemplateParam="AbathurHero_VoiceLineFive00"/>
+    </CSound>
+    <CSound id="AbathurHero_VoiceLineFour" parent="HeroVO_Voice_Line">
+        <AssetArray TemplateParam="AbathurHero_VoiceLineFour00"/>
+    </CSound>
+    <CSound id="AbathurHero_VoiceLineOne" parent="HeroVO_Voice_Line">
+        <AssetArray TemplateParam="AbathurHero_VoiceLineOne00"/>
+    </CSound>
+    <CSound id="AbathurHero_VoiceLineThree" parent="HeroVO_Voice_Line">
+        <AssetArray TemplateParam="AbathurHero_VoiceLineThree00"/>
+    </CSound>
+    <CSound id="AbathurHero_VoiceLineTwo" parent="HeroVO_Voice_Line">
+        <AssetArray TemplateParam="AbathurHero_VoiceLineTwo00"/>
+    </CSound>
+    <CSound id="AbathurHero_MatchEnd" parent="HeroVO_2D_Ending">
+        <AssetArray TemplateParam="AbathurHero_MatchEnd00"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Cheer00"/>
+        <AssetArray TemplateParam="AbathurHero_UI_Lockin00"/>
+    </CSound>
+    <CSound id="AbathurHero_KillKerrigan" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillKerrigan00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_CastingA" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting11.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting12.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting13.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting15.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting17.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_CastingB" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting04.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting07.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting08.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting09.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting10.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting12.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting14.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <DupeWait value="0,0"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_GetHitLarge" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit07.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit08.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit09.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+        <Exclusivity value="HeroCritical"/>
+        <DupeWait value="3000,7000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_GetHitSmall" parent="Hero_Vox">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit00.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit04.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+        <Exclusivity value="HeroCritical"/>
+        <DupeWait value="3000,7000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_AI_Heal" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="AbathurHero_AI_Heal00"/>
+        <AssetArray TemplateParam="AbathurHero_AI_Heal01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="25000,30000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_AI_Uhoh" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_AI_Uhoh00"/>
+        <AssetArray TemplateParam="AbathurHero_AI_Uhoh01"/>
+        <AssetArray TemplateParam="AbathurHero_AI_Uhoh02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <Exclusivity value=""/>
+    </CSound>
+    <CSound id="AbathurHero_Celebrate" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_Celebrate00"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Cheer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_Comeback" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="AbathurHero_Comeback00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroAgree" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroAgree00"/>
+        <AssetArray TemplateParam="AbathurHero_IntroAgree01"/>
+        <AssetArray TemplateParam="AbathurHero_IntroAgree02"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroBoast" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroBoast00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroQuestion" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroQuestion00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroQuestion_Brightwing" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroQuestion_Brightwing00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroQuestion_Kerrigan" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroQuestion_Kerrigan00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroQuestion_Murky" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroQuestion_Murky00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroQuestion_Negative" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroQuestion_Negative00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroQuestion_Positive" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroQuestion_Positive00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroResponse_Brightwing" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroResponse_Brightwing00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroResponse_Kerrigan" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroResponse_Kerrigan00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroResponse_Murky" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroResponse_Murky00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroResponse_Negative" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroResponse_Negative00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroResponse_Positive" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroResponse_Positive00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_KillCreature" parent="HeroVO_3D_Critical">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_KillCreature00.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="AbathurHero_KillCreature01"/>
+        <AssetArray TemplateParam="AbathurHero_KillCreature02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_IntroRespond" parent="HeroVO_3D_Intro">
+        <AssetArray TemplateParam="AbathurHero_IntroRespond00"/>
+        <AssetArray TemplateParam="AbathurHero_IntroRespond01"/>
+        <AssetArray TemplateParam="AbathurHero_IntroRespond02"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_KillUndead" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillUndead00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <ReverbRolloffBlend value="Unknown"/>
+    </CSound>
+    <CSound id="AbathurHero_Laugh" parent="Hero_Vox">
+        <AssetArray TemplateParam="AbathurHero_Laugh00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="HeroVOX"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_LowLifeHeal" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_LowLifeHeal00"/>
+        <AssetArray TemplateParam="AbathurHero_LowLifeHeal01"/>
+        <AssetArray TemplateParam="AbathurHero_LowLifeHeal02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_VOX_Spun" parent="Hero_Store">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit07.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled00.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled01.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled02.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled03.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled04.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled05.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled06.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Pulled07.ogg"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="ManualOverride" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="40.000000" Volume="-96.000000"/>
+        <PanLevel value="0.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_WorthIt" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_WorthIt00"/>
+        <AssetArray TemplateParam="AbathurHero_WorthIt01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="0,0"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_Attack" parent="HeroVO_2D_Medium">
+        <AssetArray TemplateParam="AbathurHero_Attack00"/>
+        <AssetArray TemplateParam="AbathurHero_Attack01"/>
+        <AssetArray TemplateParam="AbathurHero_Attack02"/>
+        <AssetArray TemplateParam="AbathurHero_Attack03"/>
+        <AssetArray TemplateParam="AbathurHero_Attack04"/>
+        <AssetArray TemplateParam="AbathurHero_Attack05"/>
+        <AssetArray TemplateParam="AbathurHero_Attack06"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="100.000000"/>
+        <VolumeRolloffPoints index="1" Distance="10000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_Death" parent="Hero_Death">
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Death00.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Death01.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Death02.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Death03.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Death04.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="0"/>
+        <Flags index="HideSubtitle" value="0"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="0,0"/>
+        <PanLevel value="1.000000"/>
+        <SpeakerMix index="Center" value="1.000000"/>
+        <SpeakerMix index="BackLeft" value="1.000000"/>
+        <SpeakerMix index="BackRight" value="1.000000"/>
+        <SpeakerMix index="SideLeft" value="1.000000"/>
+        <SpeakerMix index="SideRight" value="1.000000"/>
+        <SustainFade index="1" Time="500"/>
+        <VolumeRolloffFadeOut/>
+        <VolumeRolloffFadeOut Time="246" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_ExLocked" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="AbathurHero_UI_ExLocked00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_ExPurchased" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="AbathurHero_UI_ExPurchased00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_Gift" parent="HeroVO_2D_UI_Purchase">
+        <AssetArray TemplateParam="AbathurHero_UI_Gift00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_Lockin" parent="HeroVO_2D_UI_Lockin">
+        <AssetArray TemplateParam="AbathurHero_UI_Lockin00"/>
+        <AssetArray TemplateParam="AbathurHero_UI_Lockin01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="110" Volume="-96.000000"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+        <DupeWait value="250,250"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_Purchase" parent="HeroVO_2D_UI_Purchase">
+        <AssetArray TemplateParam="AbathurHero_UI_Purchase00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_Trial" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_UI_Trial00"/>
+        <AssetArray TemplateParam="AbathurHero_UI_Trial01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_WaitLocked" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="AbathurHero_UI_WaitLocked00"/>
+        <AssetArray TemplateParam="AbathurHero_UI_WaitLocked01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="AbathurHero_UI_WaitPurchased" parent="HeroVO_2D_UI_Stomp">
+        <AssetArray TemplateParam="AbathurHero_UI_WaitPurchased00"/>
+        <AssetArray TemplateParam="AbathurHero_UI_WaitPurchased01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="0.000000"/>
+        <VolumeRolloffPoints index="0" removed="1"/>
+        <VolumeRolloffPoints index="1" removed="1"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_Cheer" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_VOX_Cheer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="DefaultMediumVOPriority"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_AI_Attack" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_AI_Attack00"/>
+        <AssetArray TemplateParam="AbathurHero_AI_Attack02"/>
+        <AssetArray TemplateParam="AbathurHero_AI_Attack01"/>
+        <AssetArray TemplateParam="AbathurHero_AI_Attack02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="Dialogue"/>
+    </CSound>
+    <CSound id="AbathurHero_AI_Caution" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_AI_Caution00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Category value="Dialogue"/>
+    </CSound>
+    <CSound id="AbathurHero_AI_GoodJob" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_AI_GoodJob00"/>
+        <AssetArray TemplateParam="AbathurHero_AI_GoodJob01"/>
+        <AssetArray TemplateParam="AbathurHero_AI_GoodJob02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PanLevel value="1.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_AI_Retreat" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="AbathurHero_AI_Retreat00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <SustainFade index="1" Time="500"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+        <Exclusivity value="DefaultRetreat"/>
+    </CSound>
+    <CSound id="AbathurHero_Healed" parent="HeroVO_3D_Healed">
+        <AssetArray TemplateParam="AbathurHero_Healed00"/>
+        <AssetArray TemplateParam="AbathurHero_Healed01"/>
+        <AssetArray TemplateParam="AbathurHero_Healed02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_Kill" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_Kill00"/>
+        <AssetArray TemplateParam="AbathurHero_Kill01"/>
+        <AssetArray TemplateParam="AbathurHero_Kill02"/>
+        <AssetArray TemplateParam="AbathurHero_Kill03"/>
+        <AssetArray TemplateParam="AbathurHero_Kill04"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_KillDehaka" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillDehaka00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_KillHuman" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillHuman00"/>
+        <AssetArray TemplateParam="AbathurHero_KillHuman01"/>
+        <AssetArray TemplateParam="AbathurHero_KillHuman02"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_KillSpreeEnd" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillSpreeEnd00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_LowMana" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_LowMana00"/>
+        <AssetArray TemplateParam="AbathurHero_LowMana01"/>
+        <AssetArray TemplateParam="AbathurHero_LowMana02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="5000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_No" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_No00"/>
+        <AssetArray TemplateParam="AbathurHero_No01"/>
+        <AssetArray TemplateParam="AbathurHero_No02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_AssistHero" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_AssistHero00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_AssistMe" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_AssistMe00"/>
+        <AssetArray TemplateParam="AbathurHero_Ping_AssistMe01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_AttackCastle" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_AttackCastle00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_AttackMerc" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_AttackMerc00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_AttackOutpost" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_AttackOutpost00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_AttackTower" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_AttackTower00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_DefendCastle" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_DefendCastle00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_DefendOutpost" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_DefendOutpost00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_DefendTower" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_DefendTower00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ping_KillHero" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Ping_KillHero00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Pissed" parent="HeroVO_2D_Pissed">
+        <AssetArray TemplateParam="AbathurHero_Pissed00"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed01"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed02"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed03"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed04"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed05"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed06"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed07"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed08"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed09"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed10"/>
+        <AssetArray TemplateParam="AbathurHero_Pissed11"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Pissed12_ALT.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_Pissed13_ALT.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="AbathurHero_Pissed14"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_Resurrected" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_Resurrected00"/>
+        <AssetArray TemplateParam="AbathurHero_Resurrected01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_Revive" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Revive00"/>
+        <AssetArray TemplateParam="AbathurHero_Revive01"/>
+        <AssetArray TemplateParam="AbathurHero_Revive02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="50.000000" Volume="-0.080000"/>
+        <VolumeRolloffPoints index="1" Distance="100000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_Spec" parent="HeroVO_2D_High">
+        <AssetArray TemplateParam="AbathurHero_Spec00"/>
+        <AssetArray TemplateParam="AbathurHero_Spec01"/>
+        <AssetArray TemplateParam="AbathurHero_Spec02"/>
+        <AssetArray TemplateParam="AbathurHero_Spec03"/>
+        <AssetArray TemplateParam="AbathurHero_Spec04"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_Symbiote" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_Symbiote00"/>
+        <AssetArray TemplateParam="AbathurHero_Symbiote01"/>
+        <AssetArray TemplateParam="AbathurHero_Symbiote02"/>
+        <AssetArray TemplateParam="AbathurHero_Symbiote03"/>
+        <AssetArray TemplateParam="AbathurHero_Symbiote04"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Mode value="2D"/>
+        <Volume value="2.000000,2.000000"/>
+        <PlayDelay value="750,750"/>
+    </CSound>
+    <CSound id="AbathurHero_Taunt" parent="HeroVO_3D_High">
+        <AssetArray TemplateParam="AbathurHero_Taunt00"/>
+        <AssetArray TemplateParam="AbathurHero_Taunt01"/>
+        <AssetArray TemplateParam="AbathurHero_Taunt02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="AbathurHero_TeamKilled" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_TeamKilled00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="0,0"/>
+        <Mode value="3DWorld"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="400.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ultimate1Used" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_Ultimate1Used00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="10000,10000"/>
+    </CSound>
+    <CSound id="AbathurHero_Ultimate2Used" parent="HeroVO_3D_Critical">
+        <AssetArray TemplateParam="AbathurHero_Ultimate2Used00"/>
+        <AssetArray TemplateParam="AbathurHero_Ultimate2Used01"/>
+        <AssetArray TemplateParam="AbathurHero_Ultimate2Used02"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <PlayDelay value="750,750"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_Attack" parent="Hero_Vox">
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack00"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack01"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack02"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack03"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack07.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack08.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack09.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack10.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack11.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack13.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack14.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Attack15.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack06"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack07"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack08"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack09"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack10"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack11"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Attack12"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_Casting" parent="Hero_Vox">
+        <AssetArray TemplateParam="AbathurHero_VOX_Casting00"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Casting01"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Casting02"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Casting03"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Casting04"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting07.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting08.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting09.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting10.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting11.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting12.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting13.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting14.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting15.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting16.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_Casting17.ogg" FacialGroup=""/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="0"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_GetHit" parent="Hero_Vox">
+        <AssetArray TemplateParam="AbathurHero_VOX_GetHit00"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_GetHit01"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_GetHit02"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_GetHit03"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_GetHit04"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit05.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit06.ogg" FacialGroup=""/>
+        <AssetArray File="LocalizedData\Sounds\VO\AbathurHero_VOX_GetHit08.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="AbathurHero_VOX_GetHit09"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+        <DupeWait value="3000,7000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="30.000000" Volume="-96.000000"/>
+        <Exclusivity value="HeroCritical"/>
+    </CSound>
+    <CSound id="AbathurHero_VOX_Pulled" parent="Hero_Vox">
+        <AssetArray TemplateParam="AbathurHero_VOX_Pulled01"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Pulled02"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Pulled03"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Pulled05"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Pulled06"/>
+        <AssetArray TemplateParam="AbathurHero_VOX_Pulled07"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Chance value="100"/>
+    </CSound>
+    <CSound id="AbathurHero_Yes" parent="HeroVO_2D_Low">
+        <AssetArray TemplateParam="AbathurHero_Yes00"/>
+        <AssetArray TemplateParam="AbathurHero_Yes01"/>
+        <AssetArray TemplateParam="AbathurHero_Yes02"/>
+        <AssetArray TemplateParam="AbathurHero_Yes03"/>
+        <AssetArray TemplateParam="AbathurHero_Yes04"/>
+        <AssetArray TemplateParam="AbathurHero_Yes05"/>
+        <AssetArray TemplateParam="AbathurHero_Yes06"/>
+        <AssetArray TemplateParam="AbathurHero_Yes07"/>
+        <AssetArray TemplateParam="AbathurHero_Yes08"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <VolumeRolloffPoints index="1" Distance="10000.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroAbathur_Death" parent="Hero_Death">
+        <Pitch value="-6.000000,-6.000000"/>
+        <Volume value="-7.000000,-6.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="AbathurHero_KillMurky" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillMurky00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="HeroCritical"/>
+    </CSound>
+    <CSound id="AbathurHero_KillZagara" parent="HeroVO_2D_Critical">
+        <AssetArray TemplateParam="AbathurHero_KillZagara00"/>
+        <Flags index="HideSubtitle" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_CastleAttackAlly" parent="AnnouncerVO_CastleAttack">
+        <AssetArray TemplateParam="Abathur_CastleAttackAlly00"/>
+        <AssetArray TemplateParam="Abathur_CastleAttackAlly01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_CastleAttack_Blue" parent="AnnouncerVO_CastleAttack">
+        <AssetArray TemplateParam="Abathur_CastleAttack_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_CastleAttack_Red" parent="AnnouncerVO_CastleAttack">
+        <AssetArray TemplateParam="Abathur_CastleAttack_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown10sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown10sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown1sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown1sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown2sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown2sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown30sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown30sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown3sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown3sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown4sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown4sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Countdown5sec" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_Countdown5sec00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_CountdownRemain" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_CountdownRemain00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_DoubleKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="Abathur_DoubleKill00"/>
+        <AssetArray TemplateParam="Abathur_DoubleKill01"/>
+        <AssetArray TemplateParam="Abathur_DoubleKill02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_EndingLose" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="Abathur_EndingLose00"/>
+        <AssetArray TemplateParam="Abathur_EndingLose01"/>
+        <AssetArray TemplateParam="Abathur_EndingLose02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_EndingWin" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="Abathur_EndingWin00"/>
+        <AssetArray TemplateParam="Abathur_EndingWin01" Weight="50"/>
+        <AssetArray TemplateParam="Abathur_EndingWin02" Weight="50"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Ending_Blue" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="Abathur_Ending_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Ending_Red" parent="AnnouncerVO_Ending">
+        <AssetArray TemplateParam="Abathur_Ending_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_FirstBloodAlly" parent="AnnouncerVO_FirstBlood">
+        <AssetArray TemplateParam="Abathur_FirstBloodAlly00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_FirstBlood_Blue" parent="AnnouncerVO_FirstBlood">
+        <AssetArray TemplateParam="Abathur_FirstBlood_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_FirstBlood_Red" parent="AnnouncerVO_FirstBlood">
+        <AssetArray TemplateParam="Abathur_FirstBlood_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_FourKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="Abathur_FourKill00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_GameStart" parent="AnnouncerVO_Countdown">
+        <AssetArray TemplateParam="Abathur_GameStart00" Weight="50"/>
+        <AssetArray TemplateParam="Abathur_GameStart01" Weight="50"/>
+        <AssetArray TemplateParam="Abathur_GameStart02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Gravestomp" parent="AnnouncerVO_GraveStomp">
+        <AssetArray TemplateParam="Abathur_Gravestomp00"/>
+        <AssetArray TemplateParam="Abathur_Gravestomp01" Weight="10"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Gravestomp_Observer" parent="AnnouncerVO_GraveStomp">
+        <AssetArray TemplateParam="Abathur_Gravestomp_Observer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Health" parent="AnnouncerVO_Health">
+        <AssetArray TemplateParam="Abathur_Health00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_HeroKill" parent="AnnouncerVO_HeroKill">
+        <AssetArray TemplateParam="Abathur_HeroKill00"/>
+        <AssetArray TemplateParam="Abathur_HeroKill01"/>
+        <AssetArray TemplateParam="Abathur_HeroKill02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerKills"/>
+    </CSound>
+    <CSound id="Abathur_HeroSelect" parent="AnnouncerVO_HeroSelect">
+        <AssetArray TemplateParam="Abathur_HeroSelect00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="Rerecord" value="1"/>
+        <Exclusivity value="AnnouncerLow"/>
+    </CSound>
+    <CSound id="Abathur_HeroSelectPlayer" parent="AnnouncerVO_HeroSelect">
+        <AssetArray File="LocalizedData\Sounds\VO\Abathur_HeroSelectPlayer00.ogg" FacialGroup=""/>
+        <AssetArray TemplateParam="Abathur_HeroSelectPlayer01"/>
+        <AssetArray TemplateParam="Abathur_HeroSelectPlayer02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_HeroSelect_Observer" parent="AnnouncerVO_HeroSelect">
+        <AssetArray TemplateParam="Abathur_HeroSelect_Observer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerLow"/>
+    </CSound>
+    <CSound id="Abathur_HeroSlain" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="Abathur_HeroSlain00"/>
+        <AssetArray TemplateParam="Abathur_HeroSlain01" Weight="11"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="Rerecord" value="1"/>
+    </CSound>
+    <CSound id="Abathur_KeepDestroy" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_KeepDestroy00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="Rerecord" value="1"/>
+    </CSound>
+    <CSound id="Abathur_KeepDestroy_Blue" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_KeepDestroy_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_KeepDestroy_Red" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_KeepDestroy_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_KeepLost" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_KeepLost00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Kill_Observer" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="Abathur_Kill_Observer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_LevelAnnounce" parent="AnnouncerVO_LevelUp">
+        <AssetArray TemplateParam="Abathur_LevelAnnounce01"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerLow"/>
+    </CSound>
+    <CSound id="Abathur_Mana" parent="AnnouncerVO">
+        <AssetArray TemplateParam="Abathur_Mana00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <DupeWait value="5000,10000"/>
+        <Exclusivity value="AnnouncerMed"/>
+    </CSound>
+    <CSound id="Abathur_MegaKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="Abathur_MegaKill00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_MercCapture_Blue" parent="AnnouncerVO_MercCapture">
+        <AssetArray TemplateParam="Abathur_MercCapture_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerMed"/>
+    </CSound>
+    <CSound id="Abathur_MercCapture_Red" parent="AnnouncerVO_MercCapture">
+        <AssetArray TemplateParam="Abathur_MercCapture_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerMed"/>
+    </CSound>
+    <CSound id="Abathur_OutpostDestroy" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_OutpostDestroy00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="Rerecord" value="1"/>
+    </CSound>
+    <CSound id="Abathur_OutpostDestroy_Blue" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_OutpostDestroy_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_OutpostDestroy_Red" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_OutpostDestroy_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_OutpostLost" parent="AnnouncerVO_Fort">
+        <AssetArray TemplateParam="Abathur_OutpostLost00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_PlayerAbandon" parent="AnnouncerVO_PlayerStatus">
+        <AssetArray TemplateParam="Abathur_PlayerAbandon00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="Rerecord" value="1"/>
+        <Exclusivity value="AnnouncerLow"/>
+    </CSound>
+    <CSound id="Abathur_PlayerRejoin" parent="AnnouncerVO_PlayerStatus">
+        <AssetArray TemplateParam="Abathur_PlayerRejoin00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Flags index="Rerecord" value="1"/>
+        <Exclusivity value="AnnouncerLow"/>
+    </CSound>
+    <CSound id="Abathur_Revive" parent="AnnouncerVO">
+        <AssetArray TemplateParam="Abathur_Revive00"/>
+        <AssetArray TemplateParam="Abathur_Revive01" Weight="10"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_Revive_Observer" parent="AnnouncerVO">
+        <AssetArray TemplateParam="Abathur_Revive_Observer00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_SpreeEnd" parent="AnnouncerVO_SpreeEnd">
+        <AssetArray TemplateParam="Abathur_SpreeEnd00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_SpreeEnd_Ally" parent="AnnouncerVO_SpreeEnd">
+        <AssetArray TemplateParam="Abathur_SpreeEnd_Ally00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerMed"/>
+    </CSound>
+    <CSound id="Abathur_SpreeFirstUpgrade" parent="AnnouncerVO_Spree">
+        <AssetArray TemplateParam="Abathur_SpreeFirstUpgrade00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_SpreeMax" parent="AnnouncerVO_Spree">
+        <AssetArray TemplateParam="Abathur_SpreeMax00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_SpreeSecondUpgrade" parent="AnnouncerVO_Spree">
+        <AssetArray TemplateParam="Abathur_SpreeSecondUpgrade00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_SpreeStart" parent="AnnouncerVO_Spree">
+        <AssetArray TemplateParam="Abathur_SpreeStart00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_SpreeThirdUpgrade" parent="AnnouncerVO_Spree">
+        <AssetArray TemplateParam="Abathur_SpreeThirdUpgrade00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_TalentUnlock" parent="AnnouncerVO_TalentUnlock">
+        <AssetArray TemplateParam="Abathur_TalentUnlock00"/>
+        <AssetArray TemplateParam="Abathur_TalentUnlock01"/>
+        <AssetArray TemplateParam="Abathur_TalentUnlock02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_TeamKill" parent="AnnouncerVO_TeamKill">
+        <AssetArray TemplateParam="Abathur_TeamKill00"/>
+        <AssetArray TemplateParam="Abathur_TeamKill01" Weight="10"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Exclusivity value="AnnouncerKills"/>
+    </CSound>
+    <CSound id="Abathur_TeamKill_Blue" parent="AnnouncerVO_TeamKill">
+        <AssetArray TemplateParam="Abathur_TeamKill_Blue00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_TeamKill_Red" parent="AnnouncerVO_TeamKill">
+        <AssetArray TemplateParam="Abathur_TeamKill_Red00"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    <CSound id="Abathur_TripleKill" parent="AnnouncerVO_Kills">
+        <AssetArray TemplateParam="Abathur_TripleKill00"/>
+        <AssetArray TemplateParam="Abathur_TripleKill01"/>
+        <AssetArray TemplateParam="Abathur_TripleKill02"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+</Catalog>

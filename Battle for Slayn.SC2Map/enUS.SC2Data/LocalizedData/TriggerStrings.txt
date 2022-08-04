@@ -1,0 +1,20 @@
+﻿Category/Name/478208C4=== INITIALIZATION ==
+Category/Name/96014883=== DATA HOOKUPS ==
+Trigger/Name/0F80C679=Hookup Lane Data
+Trigger/Name/113EE261=Hookup Region Data
+Trigger/Name/1409B2F6=Hookup Town Data
+Trigger/Name/59B38330=Initialize Map
+Trigger/Name/6E1B6D1D=Hookup Jungle Creep Data
+Trigger/Name/B2137B8A=Hookup Global Variables
+Trigger/Name/BB3AA05C=Hookup Start Point Data
+Trigger/Name/DDBB997C=Initialize Map Mechanics
+Variable/Name/36236765=TownIndexes
+Variable/Name/3BFD0518=Team
+Variable/Name/628BC4D0=Player
+Variable/Name/6660139C=Team
+Variable/Name/706E846B=Structure Count
+Variable/Name/7192BFFA=Lane
+Variable/Name/8A700E7A=jungle camp
+Variable/Name/A0EC5991=Town
+Variable/Name/A4AB78A2=LaneTownIndex
+Variable/Name/CB1DF442=Waypoint Count

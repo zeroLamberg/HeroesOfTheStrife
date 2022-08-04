@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="BattleForSlaynPanel">
+      <Width val="550" />
+      <Height val="500" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Frame type="Frame" name="WarningModeFrame">
+        <Anchor relative="$parent" />
+        <Visible val="False"/>
+        <Frame type="Image" name="BackgroundImage">
+          <Anchor side="Bottom" relative="$parent/TimerImage" pos="Max" offset="-25" />
+          <Anchor side="Right" relative="$parent/TimerImage" pos="Max" offset="15" />
+          <Texture val="@UI/HUD_MapMechanic_BG_CenterBar" />
+        </Frame>
+        <Frame type="Image" name="TimerImage">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+          <Texture val="@UI/storm_ui_hud_minimap_slayn_event1" />
+        </Frame>
+        <Frame type="Label" name="WarningInfoLabel">
+          <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="13" />
+          <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Max" offset="0" />
+          <Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="30" />
+          <Anchor side="Right" relative="$parent/BackgroundImage" pos="Max" offset="-130" />
+          <Style val="Storm_MapMechanic_MechanicTimerCentered_Blue" />
+          <Text val="@UI/MapMechanics/BattleForSlayn/SpawnTimer"/>
+        </Frame>
+        <Frame type="Label" name="WarningTimerLabel">
+          <Anchor side="Top" relative="$parent/TimerImage" pos="Max" offset="0" />
+          <Anchor side="Left" relative="$parent/TimerImage" pos="Min" offset="20" />
+          <Anchor side="Right" relative="$parent/TimerImage" pos="Max" offset="-20" />
+          <Style val="Storm_MapMechanic_MechanicCounterCentered" />
+          <Text val="88:88" />
+        </Frame>
+      </Frame>
+      <Frame type="Frame" name="SupplicantsModeFrame">
+        <Anchor relative="$parent" />
+        <Visible val="False"/>
+        <Frame type="Image" name="Team1Background">
+          <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+          <Anchor side="Right" relative="$parent/Team2Background" pos="Min" offset="0" />
+          <Texture val="@UI/HUD_MapMechanic_BG_TeamHighlight_Blue" />
+          <ColorAdjustMode val="Colorize" />
+          <DarkAdjustColor val="{$GameUI/TeamOrderColors/@Color}" />
+        </Frame>
+        <Frame type="Image" name="Team2Background">
+          <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="7"/>
+          <Texture val="@UI/HUD_MapMechanic_BG_TeamHighlight_Blue" />
+          <TextureCoords top="0.0" left="1.0" bottom="1.0" right="0.0" />
+          <ColorAdjustMode val="Colorize" />
+          <DarkAdjustColor val="{$GameUI/TeamChaosColors/@Color}" />
+        </Frame>
+        <Frame type="Image" name="Team1BackgroundBlue" template="MyStandardTemplates/RemoveThisFrameTemplate" />
+        <Frame type="Image" name="Team1BackgroundRed" template="MyStandardTemplates/RemoveThisFrameTemplate" />
+        <Frame type="Image" name="Team2BackgroundRed" template="MyStandardTemplates/RemoveThisFrameTemplate" />
+        <Frame type="Image" name="Team2BackgroundBlue" template="MyStandardTemplates/RemoveThisFrameTemplate" />
+        <Frame type="Image" name="Team1SupplicantBlue">
+          <Anchor side="Bottom" relative="$parent/Team1Background" pos="Max" offset="2" />
+          <Anchor side="Left" relative="$parent/Team1Background" pos="Min" offset="5" />
+          <Texture val="@UI/hud_minimap_slayn_Team1_supplicant" />
+        </Frame>
+        <Frame type="Image" name="Team1SupplicantRed">
+          <Anchor side="Bottom" relative="$parent/Team1Background" pos="Max" offset="2" />
+          <Anchor side="Left" relative="$parent/Team1Background" pos="Min" offset="5" />
+          <Texture val="@UI/hud_minimap_slayn_Team2_supplicant" />
+          <TextureCoords top="0.0" left="1.0" bottom="1.0" right="0.0" />
+        </Frame>
+        <Frame type="Image" name="Team2SupplicantRed">
+          <Anchor side="Bottom" relative="$parent/Team2Background" pos="Max" offset="2" />
+          <Anchor side="Right" relative="$parent/Team2Background" pos="Max" offset="-5" />
+          <Texture val="@UI/hud_minimap_slayn_Team2_supplicant" />
+        </Frame>
+        <Frame type="Image" name="Team2SupplicantBlue">
+          <Anchor side="Bottom" relative="$parent/Team2Background" pos="Max" offset="2" />
+          <Anchor side="Right" relative="$parent/Team2Background" pos="Max" offset="-5" />
+          <Texture val="@UI/hud_minimap_slayn_Team1_supplicant" />
+          <TextureCoords top="0.0" left="1.0" bottom="1.0" right="0.0" />
+        </Frame>
+        <Frame type="Label" name="Team1SupplicantCounter">
+          <Anchor side="Bottom" relative="$parent/Team1Background" pos="Max" offset="-10" />
+          <Anchor side="Left" relative="$parent/Team1Background" pos="Min" offset="87" />
+          <Style val="Storm_MapMechanic_MechanicCounterLeft" />
+          <Text val="88" />
+          <ColorAdjustMode val="Colorize" />
+          <LightAdjustColor val="#ColorWhite" />
+          <DarkAdjustColor val="{$GameUI/TeamOrderColors/@Color}" />
+          <GlowColor val="{$GameUI/TeamOrderColors/@Color}" />
+        </Frame>
+        <Frame type="Label" name="Team2SupplicantCounter">
+          <Anchor side="Bottom" relative="$parent/Team2Background" pos="Max" offset="-10" />
+          <Anchor side="Right" relative="$parent/Team2Background" pos="Max" offset="-87" />
+          <Style val="Storm_MapMechanic_MechanicCounterRight" />
+          <Text val="88" />
+          <ColorAdjustMode val="Colorize" />
+          <LightAdjustColor val="#ColorWhite" />
+          <DarkAdjustColor val="{$GameUI/TeamChaosColors/@Color}" />
+          <GlowColor val="{$GameUI/TeamChaosColors/@Color}" />
+        </Frame>
+        <StateGroup name="StateGroup">
+          <State name="TeamOrder">
+            <When type="StateGroup" frame="$GameUI" Team="TeamOrder"/>
+            <Action type="SetProperty" frame="Team1SupplicantBlue" Visible="True"/>
+            <Action type="SetProperty" frame="Team2SupplicantBlue" Visible="False"/>
+            <Action type="SetProperty" frame="Team1SupplicantRed" Visible="False"/>
+            <Action type="SetProperty" frame="Team2SupplicantRed" Visible="True"/>
+          </State>
+          <State name="TeamChaos">
+            <When type="StateGroup" frame="$GameUI" Team="TeamChaos"/>
+            <Action type="SetProperty" frame="Team1SupplicantBlue" Visible="False"/>
+            <Action type="SetProperty" frame="Team2SupplicantBlue" Visible="True"/>
+            <Action type="SetProperty" frame="Team1SupplicantRed" Visible="True"/>
+            <Action type="SetProperty" frame="Team2SupplicantRed" Visible="False"/>
+          </State>
+        </StateGroup>
+      </Frame>
+      <Frame type="Frame" name="VoidThrasherModeFrame">
+        <Anchor relative="$parent" />
+        <Visible val="False"/>
+        <Frame type="Image" name="BackgroundImage">
+          <Anchor side="Bottom" relative="$parent/CenterpieceImageCannon" pos="Max" offset="-25" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/CenterpieceImageCannon" pos="Max" offset="15" />
+          <Texture val="@UI/HUD_MapMechanic_BG_CenterBar" />
+          <TextureType val="Nineslice" />
+          <Height val="62" />
+        </Frame>
+        <Frame type="Image" name="CenterpieceImageCannon">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="15" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="-20" />
+          <Texture val="@UI/storm_ui_hud_minimap_slayn_event2" />
+        </Frame>
+        <Frame type="Label" name="Team1ShotCounter">
+          <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Min" offset="10" />
+          <Anchor side="Left" relative="$parent/ShotsLeftLabel" pos="Max" offset="2" />
+          <Anchor side="Right" relative="$parent/CenterpieceImageCannon" pos="Min" offset="4" />
+          <Style val="Storm_MapMechanic_MechanicCounterSmallLeft_Blue" />
+          <Text val="88" />
+        </Frame>
+        <Frame type="Label" name="Team2ShotCounter">
+          <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Min" offset="10" />
+          <Anchor side="Left" relative="$parent/ShotsLeftLabel" pos="Max" offset="2" />
+          <Anchor side="Right" relative="$parent/CenterpieceImageCannon" pos="Min" offset="4" />
+          <Style val="Storm_MapMechanic_MechanicCounterSmallLeft_Red" />
+          <Text val="88" />
+          <ColorAdjustMode val="Colorize" />
+          <LightAdjustColor val="#ColorWhite" />
+          <DarkAdjustColor val="{$GameUI/TeamChaosColors/@Color}" />
+          <GlowColor val="{$GameUI/TeamChaosColors/@Color}" />
+        </Frame>
+        <Frame type="Label" name="ShotsLeftLabel">
+          <Anchor side="Bottom" relative="$parent/Team1ShotCounter" pos="Max" offset="0" />
+          <Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="10" />
+          <Anchor side="Right" relative="$parent/CenterpieceImageCannon" pos="Max" offset="-180" />
+          <Style val="Storm_MapMechanic_MechanicCounterSmallRight_Blue" />
+          <Text val="@UI/MapMechanics/BattleForSlayn/ShootsRemaining" />
+          <StateGroup name="TeamState">
+            <State name="Team1Active">
+              <When type="Property" frame="$parent/Team1ShotCounter" Visible="True" />
+              <Action type="SetProperty" frame="$this" ColorAdjustMode="Colorize" />
+              <Action type="SetProperty" frame="$this" LightAdjustColor="#ColorWhite" />
+              <Action type="SetProperty" frame="$this" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+              <Action type="SetProperty" frame="$this" GlowColor="{$GameUI/TeamOrderColors/@Color}" />
+            </State>
+            <State name="Team2Active">
+              <When type="Property" frame="$parent/Team2ShotCounter" Visible="True" />
+              <Action type="SetProperty" frame="$this" ColorAdjustMode="Colorize" />
+              <Action type="SetProperty" frame="$this" LightAdjustColor="#ColorWhite" />
+              <Action type="SetProperty" frame="$this" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+              <Action type="SetProperty" frame="$this" GlowColor="{$GameUI/TeamChaosColors/@Color}" />
+            </State>
+          </StateGroup>
+        </Frame>
+        <Frame type="Frame" name="ShotFrame1" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="15" />
+          <Anchor side="Right" relative="$parent/CenterpieceImageCannon" pos="Min" offset="3" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame2" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame1" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame1" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame3" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame2" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame2" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame4" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame3" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame3" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame5" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame4" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame4" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame6" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame5" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame5" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame7" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame6" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame6" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame8" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame7" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame7" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame9" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame8" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame8" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame10" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame9" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame9" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame11" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame10" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame10" pos="Min" offset="12" />
+        </Frame>
+        <Frame type="Frame" name="ShotFrame12" template="MapMechanicPanel/CannonShotFrame">
+          <Anchor side="Top" relative="$parent/ShotFrame11" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent/ShotFrame11" pos="Min" offset="12" />
+        </Frame>
+        <StateGroup name="TeamState">
+          <State name="Team1Active">
+            <When type="Property" frame="Team1ShotCounter" Visible="True" />
+            <Action type="SetProperty" frame="ShotFrame1/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame1/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame1/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame2/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame2/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame2/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame3/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame3/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame3/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame4/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame4/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame4/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame5/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame5/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame5/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame6/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame6/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame6/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame7/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame7/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame7/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame8/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame8/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame8/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame9/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame9/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame9/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame10/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame10/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame10/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame11/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame11/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame11/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame12/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame12/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame12/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamOrderColors/@Color}" />
+          </State>
+          <State name="Team2Active">
+            <When type="Property" frame="Team2ShotCounter" Visible="True" />
+            <Action type="SetProperty" frame="ShotFrame1/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame1/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame1/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame2/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame2/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame2/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame3/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame3/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame3/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame4/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame4/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame4/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame5/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame5/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame5/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame6/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame6/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame6/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame7/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame7/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame7/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame8/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame8/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame8/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame9/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame9/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame9/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame10/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame10/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame10/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame11/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame11/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame11/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+            <Action type="SetProperty" frame="ShotFrame12/ActiveCannonBall" ColorAdjustMode="Colorize" />
+            <Action type="SetProperty" frame="ShotFrame12/ActiveCannonBall" LightAdjustColor="#ColorWhite" />
+            <Action type="SetProperty" frame="ShotFrame12/ActiveCannonBall" DarkAdjustColor="{$GameUI/TeamChaosColors/@Color}" />
+          </State>
+        </StateGroup>
+      </Frame>
+    </Frame>
+</Desc>

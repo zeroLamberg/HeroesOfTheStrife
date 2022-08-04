@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="HeroTalandarWeaponDragoon@Mover">
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="10"/>
+            <Speed value="5"/>
+            <MaxSpeed value="15"/>
+            <BlendType value="Linear"/>
+            <Outro value="0.1,0.5"/>
+            <ThrowVector value="0,0,1"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="45"/>
+            <Speed value="18"/>
+            <MinSpeed value="18"/>
+            <MaxSpeed value="40"/>
+            <RotationLaunchActorType value="LaunchToTarget"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroTalandarSolarCannon@DefaultMover" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="16"/>
+            <ClearanceAcceleration value="75"/>
+            <ActorTracking value="Actual"/>
+            <Outro value="-1"/>
+            <RotationLaunchActorType value="LaunchToTarget2D"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

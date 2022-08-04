@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Ability">
+        <Instances Id="[Default]"/>
+        <Instances Id="ThunderousCharge">
+            <GameLink GameLink="HeroTalandarThunderousCharge">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarThunderousCharge">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="Whirlwind">
+            <GameLink GameLink="HeroTalandarWhirlwind">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarWhirlwind">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="DragoonArmorSuit">
+            <GameLink GameLink="HeroTalandarDragoonArmorSuit">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarDragoonArmorSuit">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired1">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="SolarCannon">
+            <GameLink GameLink="HeroTalandarSolarCannonChannel">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarSolarCannon">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors">
+                <Field Id="CDRSkipValidator"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired2">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (Q)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="SolariteFlare">
+            <GameLink GameLink="HeroTalandarSolariteFlareChannel">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarSolariteFlare">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors">
+                <Field Id="CDRSkipValidator"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired2">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (W)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="PraetorArmorSuit">
+            <GameLink GameLink="HeroTalandarPraetorArmorSuit">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPraetorArmorSuit">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Basic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Basic Ability (E)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityPaired" Instance="Paired2">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="AccumulatedShield">
+            <GameLink GameLink="HeroTalandarAccumulatedShield">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarAccumulatedShield">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Trait (D)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Trait">
+                <Field Id="Type"/>
+            </User>
+        </Instances>
+        <Instances Id="PurifierArmaments">
+            <GameLink GameLink="HeroTalandarPurifierArmaments">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurificationBlast">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+        </Instances>
+        <Instances Id="PurificationBlast">
+            <GameLink GameLink="HeroTalandarPurificationBlast">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurificationBlast">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="ArsenalOvercharge">
+            <GameLink GameLink="HeroTalandarArsenalOvercharge">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarArsenalOvercharge">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+        <Instances Id="PurifierBeam">
+            <GameLink GameLink="HeroTalandarPurifierBeam">
+                <Field Id="AbilityEntry"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurifierBeam">
+                <Field Id="ButtonEntry"/>
+            </GameLink>
+            <User Type="AbilityType" Instance="Heroic">
+                <Field Id="Type"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_AffectedByCooldownReduction"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsInventory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsMountReplacement"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="[Default]">
+                <Field Id="Flag_IsUsesCharges"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="Flag_ShowInHeroSelection"/>
+            </User>
+            <User Type="Hero" Instance="Talandar">
+                <Field Id="Hero"/>
+            </User>
+            <User Type="AbilityPaired" Instance="[Default]">
+                <Field Id="Paired"/>
+            </User>
+            <User Type="AbilitySlot" Instance="Heroic Ability (R)">
+                <Field Id="Slot"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Hero">
+        <Instances Id="Talandar">
+            <Fixed Fixed="1.3498">
+                <Field Id="Mount Scaling Override"/>
+            </Fixed>
+            <GameLink GameLink="HeroTalandar">
+                <Field Id="Hero Link"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandar@LevelScalingModification">
+                <Field Id="Hero Level Scaling Effect"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarAccumulatedShield@DamageController">
+                <Field Id="Player Response"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-hero-fenix.dds">
+                <Field Id="PairedPortrait"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-hero-fenix-dragoon.dds">
+                <Field Id="PairedPortrait" Index="1"/>
+            </Image>
+            <Text Text="UserData/Hero/Talandar_PairedName">
+                <Field Id="PairedName"/>
+            </Text>
+            <Text Text="UserData/Hero/Talandar_PairedName_001">
+                <Field Id="PairedName" Index="1"/>
+            </Text>
+            <User Type="HeroOptionSelectingStatus" Instance="PTR and Live">
+                <Field Id="Selecting Status"/>
+            </User>
+            <User Type="HeroRole" Instance="Bruiser">
+                <Field Id="Role"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Shield Capacitor">
+                <Field Id="TalentTier1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Akhundelar">
+                <Field Id="TalentTier1" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Rapid Recharge">
+                <Field Id="TalentTier2"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Tactical Data Web">
+                <Field Id="TalentTier2" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Operational Efficience">
+                <Field Id="TalentTier1" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier1" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier1" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier2" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Tactical Overload">
+                <Field Id="TalentTier2" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier2" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier3" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - System Reconfiguration">
+                <Field Id="TalentTier3"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Purification">
+                <Field Id="TalentTier3" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Phase Bomb">
+                <Field Id="TalentTier3" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier3" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier4" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier4" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier4" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier5" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Adaptive Shield">
+                <Field Id="TalentTier5"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Champion Upgrade">
+                <Field Id="TalentTier5" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Assault Protocol">
+                <Field Id="TalentTier5" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier5" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier6" Index="4"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Brave Hearth">
+                <Field Id="TalentTier6"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Avenging Protocol">
+                <Field Id="TalentTier6" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Titan Destroyer">
+                <Field Id="TalentTier6" Index="2"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier6" Index="3"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Purifier Armaments">
+                <Field Id="TalentTier4"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Purifier Beam">
+                <Field Id="TalentTier4" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Empowered Beam">
+                <Field Id="TalentTier7" Index="1"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Advanced Armaments">
+                <Field Id="TalentTier7"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Immortal">
+                <Field Id="TalentTier7" Index="2"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="Mount Category Array"/>
+            </User>
+            <User Type="Skin" Instance="TalandarBase">
+                <Field Id="Skins"/>
+            </User>
+            <User Type="Ability" Instance="ThunderousCharge">
+                <Field Id="Abilities"/>
+            </User>
+            <User Type="Ability" Instance="Whirlwind">
+                <Field Id="Abilities" Index="1"/>
+            </User>
+            <User Type="Ability" Instance="DragoonArmorSuit">
+                <Field Id="Abilities" Index="2"/>
+            </User>
+            <User Type="Ability" Instance="SolarCannon">
+                <Field Id="Abilities" Index="3"/>
+            </User>
+            <User Type="Ability" Instance="SolariteFlare">
+                <Field Id="Abilities" Index="4"/>
+            </User>
+            <User Type="Ability" Instance="PraetorArmorSuit">
+                <Field Id="Abilities" Index="5"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="Abilities" Index="6"/>
+            </User>
+            <User Type="Ability" Instance="PurificationBlast">
+                <Field Id="Abilities" Index="7"/>
+            </User>
+            <User Type="Ability" Instance="ArsenalOvercharge">
+                <Field Id="Abilities" Index="8"/>
+            </User>
+            <User Type="Ability" Instance="PurifierArmaments">
+                <Field Id="Abilities" Index="9"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsPaired"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="1"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="2"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="3"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="4"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="5"/>
+            </User>
+            <User Type="GameVersion" Instance="0.0.1.5">
+                <Field Id="Talents - Reset Favorite Talents At Patch" Index="6"/>
+            </User>
+            <User Type="Ability" Instance="PurifierBeam">
+                <Field Id="Abilities" Index="10"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="TalentTier7" Index="3"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Skin">
+        <Instances Id="TalandarBase">
+            <Text Text="UserData/Skin/TalandarBase_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="[Default]">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="Talent">
+        <Instances index="3">
+            <User index="1" removed="1"/>
+        </Instances>
+        <Instances Id="Talandar - Purification">
+            <GameLink GameLink="HeroTalandarTalentPurification">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurification">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurification@Controller">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurification@RemoveBuff">
+                <Field Id="TalentPlayerResponse" Index="1"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Trooper Champion">
+            <GameLink GameLink="HeroTalandarTalentThunderousChargeTrooperChampion">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentThunderousChargeTrooperChampion">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentThunderousChargeTrooperChampion">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentThunderousChargeTrooperChampion">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ThunderousCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Avenging Protocol">
+            <GameLink GameLink="HeroTalandarTalentAvengingProtocol">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAvengingProtocol">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAvengingProtocol">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Protection Protocol">
+            <GameLink GameLink="HeroTalandarTalentThunderousChargeProtectionProtocol">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentThunderousChargeProtectionProtocol">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ThunderousCharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Shield Capacitor">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldShieldCapacitor">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldShieldCapacitor">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Immortal">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldImmortal">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldImmortal">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldImmortal">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldImmortal">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Rapid Recharge">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldRapidRecharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldRapidRecharge@CarryBehavior">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldRapidRecharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - System Reconfiguration">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldSystemReconfiguration">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldSystemReconfiguration">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Operational Efficience">
+            <GameLink GameLink="HeroTalandarTalentOperationalEfficiency">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentOperationalEfficiency">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentOperationalEfficiency@TokenCounter">
+                <Field Id="QuestDataTokenCounterBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentOperationalEfficiency@QuestController">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="QuestDataIsQuest"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Phase Bomb">
+            <GameLink GameLink="HeroTalandarTalentPhaseBomb">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPhaseBomb">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPhaseBomb">
+                <Field Id="TalentItem"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPhaseBomb">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Active">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Purifier Beam">
+            <GameLink GameLink="HeroTalandarPurifierBeam">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurifierBeam">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurifierBeam@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="PurifierBeam">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Purification Blast">
+            <GameLink GameLink="HeroTalandarPurificationBlast">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurificationBlast">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="PurificationBlast">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Arsenal Overcharge">
+            <GameLink GameLink="HeroTalandarArsenalOvercharge">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarArsenalOvercharge">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate2Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="ArsenalOvercharge">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Magnectic Field">
+            <GameLink GameLink="HeroTalandarTalentSolariteFlareMagneticField">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentSolariteFlareMagneticField">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="SolariteFlare">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Solarite Burn">
+            <GameLink GameLink="HeroTalandarTalentSolariteFlareSolariteBurn">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentSolariteFlareSolariteBurn">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="SolariteFlare">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Tactical Overload">
+            <GameLink GameLink="HeroTalandarTalentTacticalOverload">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentTacticalOverload">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentTacticalOverload">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Assault Protocol">
+            <GameLink GameLink="HeroTalandarTalentAssaultProtocol">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAssaultProtocol">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarAssaultProtocol@SolarCannon">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarAssaultProtocol@SolariteFlare">
+                <Field Id="TalentBehavior" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAssaultProtocol@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAssaultProtocol@SolarCannon">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAssaultProtocol@SolariteFlare">
+                <Field Id="TalentPlayerResponse" Index="1"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Empowered Beam">
+            <GameLink GameLink="HeroTalandarTalentPurifierBeamEmpoweredBeam">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurifierBeamEmpoweredBeam">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurifierBeamEmpoweredBeam@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurifierBeamEmpoweredBeam@PlayerResponse">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Purifier Beam">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="PurifierBeam">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Akhundelar">
+            <GameLink GameLink="HeroTalandarTalentAkhundelar">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAkhundelar">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAkhundelar">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="Talent" Instance="[Default]">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+            <User Type="Ability" Instance="[Default]">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Tactical Data Web">
+            <GameLink GameLink="HeroTalandarTalentTacticalDataWeb">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentTacticalDataWeb">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentTacticalDataWeb">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Purifier Armaments">
+            <GameLink GameLink="HeroTalandarPurifierArmaments">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarPurifierArmaments">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="Ultimate1Unlocked">
+                <Field Id="TalentBehavior"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="PurifierArmaments">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Champion Upgrade">
+            <GameLink GameLink="HeroTalandarTalentChampionUpgrade">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentChampionUpgrade">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentChampionUpgrade">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="Ability" Instance="[Default]">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Adaptive Shield">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldAdaptiveShield">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldAdaptiveShield@Modification">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldAdaptiveShield">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Titan Destroyer">
+            <GameLink GameLink="HeroTalandarTalentTitanDestroyer">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentTitanDestroyer">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentTitanDestroyer">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Passive">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Brave Hearth">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldBraveHearth">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldBraveHearth">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Advanced Armaments">
+            <GameLink GameLink="HeroTalandarTalentPurifierArmamentsAdvancedArmaments">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurifierArmamentsAdvancedArmaments">
+                <Field Id="TalentPlayerResponse"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurifierArmamentsAdvancedArmaments">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentPurifierArmamentsAdvancedArmaments">
+                <Field Id="TalentEffectModification"/>
+            </GameLink>
+            <User Type="Ability" Instance="PurifierArmaments">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+            <User Type="Talent" Instance="Talandar - Purifier Armaments">
+                <Field Id="PrerequisiteTalent"/>
+            </User>
+        </Instances>
+        <Instances Id="Talandar - Disruptor">
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldDisruptor">
+                <Field Id="TalentLink"/>
+            </GameLink>
+            <GameLink GameLink="HeroTalandarTalentAccumulatedShieldDisruptor">
+                <Field Id="TalentButton"/>
+            </GameLink>
+            <User Type="Ability" Instance="AccumulatedShield">
+                <Field Id="AbilityHotkey"/>
+            </User>
+            <User Type="TalentType" Instance="Ability">
+                <Field Id="TalentType"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

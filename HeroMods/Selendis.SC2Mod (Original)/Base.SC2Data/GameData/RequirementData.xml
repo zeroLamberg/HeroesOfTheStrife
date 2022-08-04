@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HeroSelendisTalentInTheHeatOfBattle">
+        <EditorCategories value="CoreHero:Selendis"/>
+        <NodeArray index="Use" Link="AndCountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnitEqCountBehaviorHeroSelendisTalentInTheHeatOfBattleCompleteOnlyAtUnit0"/>
+    </CRequirement>
+    <CRequirement id="HeroSelendisExecutorCharge@Button">
+        <EditorCategories value="CoreHero:Selendis,TechType:Ability"/>
+        <NodeArray index="Use" Link="OrCountBehaviorHeroSelendisExecutorCharge@CasterBehaviorCompleteOnlyAtUnitCountBehaviorHeroSelendisExecutorCharge@ChargingCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorHeroSelendisExecutorCharge@CasterBehaviorCompleteOnlyAtUnit"/>
+    </CRequirement>
+</Catalog>

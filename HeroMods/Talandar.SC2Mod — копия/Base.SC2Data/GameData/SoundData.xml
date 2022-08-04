@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="HeroTalandar@Praetor_Death_B" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Death_0451ms_1ch.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_Death_C" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Death_1092ms_1ch.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_Death_D" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Death_1783ms_1ch.wav" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_Death_E" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Death_2357ms_1ch.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurificationBlast@LandSound" parent="_FX_Hero_Ult_End">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Land01_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Land02_1ch.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Land03_1ch.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,2.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarWeaponDragoon@SoundImpactAOE" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_04.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_05.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_06.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_07.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_08.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_09.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_10.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="18"/>
+        <OffsetFadeIn Time="965" Volume="-4.260000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-2.300000,-2.300000"/>
+        <VolumeRolloffFadeIn Volume="-96.000000"/>
+        <VolumeRolloffFadeIn Time="200"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Praetor_Death" parent="Hero_Death">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="Fenix_Death00"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.wav"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Praetor_Yes" parent="Hero_Low">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="Fenix_Yes00"/>
+        <AssetArray TemplateParam="Fenix_Yes01"/>
+        <AssetArray TemplateParam="Fenix_Yes02"/>
+        <AssetArray TemplateParam="Fenix_Yes03"/>
+        <AssetArray TemplateParam="Fenix_Yes04"/>
+        <AssetArray TemplateParam="Fenix_Yes05"/>
+        <AssetArray TemplateParam="Fenix_Yes06"/>
+        <AssetArray TemplateParam="Fenix_Yes07"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Praetor_Attack" parent="Hero_Medium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="Fenix_Attack00"/>
+        <AssetArray TemplateParam="Fenix_Attack01"/>
+        <AssetArray TemplateParam="Fenix_Attack02"/>
+        <AssetArray TemplateParam="Fenix_Attack03"/>
+        <AssetArray TemplateParam="Fenix_Attack04"/>
+        <AssetArray TemplateParam="Fenix_Attack05"/>
+        <AssetArray TemplateParam="Fenix_Attack06"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Praetor_Pissed" parent="Hero_Pissed">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="Fenix_Pissed00"/>
+        <AssetArray TemplateParam="Fenix_Pissed01"/>
+        <AssetArray TemplateParam="Fenix_Pissed02"/>
+        <AssetArray TemplateParam="Fenix_Pissed03"/>
+        <AssetArray TemplateParam="Fenix_Pissed04"/>
+        <AssetArray TemplateParam="Fenix_Pissed05"/>
+        <AssetArray TemplateParam="Fenix_Pissed06"/>
+        <AssetArrayTemplate File="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg" FacialFile="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Praetor_Revive" parent="Hero_High">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="Fenix_Ready00"/>
+        <AssetArrayTemplate File="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg" FacialFile="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Dragoon_Revive" parent="Hero_High">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="FenixDragoon_Ready00"/>
+        <AssetArrayTemplate File="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg" FacialFile="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_Death_A" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Death_0000ms_1ch.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_A" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_SpellAEnd_0000ms01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_SpellAEnd_0000ms02_1ch.wav"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <Pitch value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_B" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_SpellAEnd_4441ms_1ch.wav"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_C" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_SpellAEnd_4949ms_1ch.wav"/>
+        <Volume value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_D" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_SpellAEnd_5825ms_1ch.wav"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_StandWorkEnd_A" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_StandWorkEnd_0000ms_1ch.wav"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_StandWorkEnd_B" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_StandWorkEnd_0458ms_1ch.wav"/>
+        <Volume value="-12.000000,-11.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_WhirlwindOneShot_A" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms06_1ch.wav"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_Whirlwind_OneShot_B" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0400ms01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0400ms02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0400ms03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0400ms04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0400ms05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0400ms06_1ch.wav"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_MoveGrowl" parent="_FX_Hero_Movement">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart06_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart07_1ch.wav"/>
+        <Chance value="20"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-6.000000,-5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_MoveStart" parent="_FX_Hero_Movement">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart06_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_MoveStart07_1ch.wav"/>
+        <Flags index="Download" value="0"/>
+        <ResourcePriority value="16"/>
+        <Volume value="-6.000000,-5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Praetor_Footsteps" parent="_FX_Hero_Movement">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps06_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Foosteps07_1ch.wav"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <DupeMuteCount value="1"/>
+        <Pitch value="1.000000,4.000000"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarAccumulatedShield@SoundOn" parent="_FX_Hero_Ult_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ShieldCapacitor01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ShieldCapacitor02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ShieldCapacitor03_1ch.wav"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <Pitch value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarWeaponDragoon@SoundImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_04.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="18"/>
+        <OffsetFadeIn Time="965" Volume="-4.260000"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-2.300000,-2.300000"/>
+        <VolumeRolloffFadeIn Volume="-96.000000"/>
+        <VolumeRolloffFadeIn Time="200"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+        <NonLocalVolumeAdjustment value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarWeaponPraetor@AttackImpact" parent="_FX_Hero_Attack_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackImpact01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackImpact02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackImpact03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackImpact04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackImpact05_1ch.wav"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarWeaponPraetor@AttackLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch06_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch07_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_AttackLaunch08_1ch.wav"/>
+        <Pitch value="1.000000,1.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@Birth_A" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Birth_0000ms_2ch.wav"/>
+        <Spread value="45.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@Birth_B" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Birth_0624ms_2ch.wav"/>
+        <Spread value="60.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@Birth_C" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Birth_1409ms_2ch.wav"/>
+        <Spread value="90.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@Birth_D" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Birth_1830ms_2ch.wav"/>
+        <Pitch value="-1.000000,2.000000"/>
+        <Spread value="45.000000"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@Birth_E" parent="_FX_Hero_Spell_Proc">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Birth_2219ms_2ch.wav"/>
+        <Pitch value="-1.000000,2.000000"/>
+        <Spread value="90.000000"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@BuildUp" parent="_FX_Hero_Ult_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray>
+            <File value="Assets\Sounds\SOA_PurificationBeam_ChargeUp01_2ch.wav"/>
+            <Pitch value="-1.000000,0.000000"/>
+            <Volume value="-1.000000,1.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray>
+            <File value="Assets\Sounds\SOA_PurificationBeam_ChargeUp02_2ch.wav"/>
+            <Pitch value="-1.000000,0.000000"/>
+            <Volume value="-1.000000,1.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <AssetArray>
+            <File value="Assets\Sounds\SOA_PurificationBeam_ChargeUp03_2ch.wav"/>
+            <Pitch value="-1.000000,0.000000"/>
+            <Volume value="-1.000000,1.000000"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <OcclusionReverb value="1.000000,1.000000"/>
+        <OffsetFadeOut/>
+        <OffsetFadeOut Time="54" Volume="-96.000000"/>
+        <Volume value="-11.000000,-10.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@Firing_Loop" parent="_FX_Hero_Ult_Loop">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Loop_2ch.wav"/>
+        <LoopCount value="-1"/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@QuakeLayer_Loop" parent="_FX_Hero_Ult_Loop">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SoA_PurifierBeam_QuakeGrit_Loop_02.wav"/>
+        <LoopCount value="-1"/>
+        <Pitch value="-2.000000,-2.000000"/>
+        <SpeakerMix index="LFE" value="0.400000"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarPurifierBeam@End" parent="_FX_Hero_Ult_End">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\SOA_PurifierBeam_Death_2ch.wav"/>
+        <Spread value="90.000000"/>
+        <Volume value="-5.000000,-3.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarWeaponDragoon@SoundLaunch" parent="_FX_Hero_Attack_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_AttackLaunch_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_AttackLaunch_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_AttackLaunch_03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_AttackLaunch_04.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_AttackLaunch_05.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="18"/>
+        <OffsetFadeIn Time="965" Volume="-4.260000"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <VolumeRolloffFadeIn Volume="-96.000000"/>
+        <VolumeRolloffFadeIn Time="200"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000" Volume="0.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Dragoon_Death_Fx" parent="_FX_Hero_Attack_GetHit">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Vorazun_Death_01.wav"/>
+        <AssetArray File="Assets\Sounds\Vorazun_Death_02.wav"/>
+    </CSound>
+    <CSound id="HeroTalandar@Dragoon_DeathExp" parent="_FX_Hero_Attack_GetHit">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall3.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall4.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall5.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall6.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall7.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall8.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall9.wav"/>
+        <Volume value="-1.000000,0.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Dragoon_Death" parent="Hero_Death">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="FenixDragoon_Death00"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.wav"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Dragoon_Attack" parent="Hero_Medium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="FenixDragoon_Attack00"/>
+        <AssetArray TemplateParam="FenixDragoon_Attack01"/>
+        <AssetArray TemplateParam="FenixDragoon_Attack02"/>
+        <AssetArray TemplateParam="FenixDragoon_Attack03"/>
+        <AssetArray TemplateParam="FenixDragoon_Attack04"/>
+        <AssetArray TemplateParam="FenixDragoon_Attack05"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Dragoon_Yes" parent="Hero_Low">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes00"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes01"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes02"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes03"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes04"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes05"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes06"/>
+        <AssetArray TemplateParam="FenixDragoon_Yes07"/>
+        <AssetArrayTemplate>
+            <File value="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg"/>
+            <FacialAnim value="^TemplateParam1^"/>
+            <FacialGroup value="^TemplateParam1^"/>
+            <FacialFile value="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        </AssetArrayTemplate>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@DX_Dragoon_Pissed" parent="Hero_Pissed">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed00"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed01"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed02"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed03"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed04"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed05"/>
+        <AssetArray TemplateParam="FenixDragoon_Pissed06"/>
+        <AssetArrayTemplate File="LocalizedData\Sounds\VO\Protoss\^TemplateParam2^.ogg" FacialFile="LocalizedData\Sounds\VO\Protoss\^TemplateParam1^.fxe"/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Dragoon_Foley_FS" parent="_FX_Hero_Movement">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_04.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_05.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_06.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_07.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_08.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_09.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Foley_FS_10.ogg"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <DupeMuteCount value="1"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="32"/>
+        <Volume value="-15.000000,-15.000000"/>
+        <VolumeRolloffPoints index="0" Distance="5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarThunderousCharge@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_SpellAEnd_5825ms_1ch.wav"/>
+    </CSound>
+    <CSound id="HeroTalandarThunderousCharge@SoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_AttackLaunch01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_AttackLaunch02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_AttackLaunch03_1ch.wav"/>
+    </CSound>
+    <CSound id="HeroTalandarThunderousCharge@SoundImpactHero" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_AttackImpact01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_AttackImpact02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_ThunderousCharge_AttackImpact03_1ch.wav"/>
+    </CSound>
+    <CSound id="HeroTalandarSolariteFlare@SoundImpact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Impact_04.ogg"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarWhirlwind@SoundCast" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms01_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms02_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms03_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms04_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms05_1ch.wav"/>
+        <AssetArray File="Assets\Sounds\FenixChampion_Whirlwind_SpellB_0000ms06_1ch.wav"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <Volume value="5.000000,5.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolariteFlare@SoundCast" parent="_FX_Talent_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_A_Activate_01.ogg"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="-4.000000,-4.000000"/>
+        <NonLocalVolumeAdjustment value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@ChargingSoundEnd" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Heroes\Fenix_Base\Fenix_Q_End_01.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <Pitch value="-1.000000,-1.000000"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@Launch_Mech" parent="Combat">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Mech_04.wav"/>
+        <AssetArray File="Assets\Sounds\Eradicator_RailGun_Mech_02.wav"/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="8"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="4" Volume="-4.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-3.000000,-1.000000"/>
+        <Select value="Random"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@AttackLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch2.wav"/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Volume value="-0.940000,-0.940000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@AttackLaunch_Wsh" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackLaunch01.wav"/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackLaunch02.wav"/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackLaunch03.wav"/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackLaunch04.wav"/>
+        <AssetArray File="Assets\Sounds\Dragoon_AttackLaunch05.wav"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="16" Volume="-6.000000"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@Missile_Impact" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Launch_01.wav"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Launch_01a.wav"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Launch_01b.wav"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Launch_03a.wav"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Launch_03b.wav"/>
+        <Flags index="AllowDuckingInPlayDelay" value="1"/>
+        <Category value="Combat"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@FXFire" parent="_FX_Hero_Spell_Secondary">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@Missile_Impact_Level01" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Impact_02.wav"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Impact_03b.wav"/>
+        <AssetArray File="Assets\Sounds\VoidShard_Zone_Impact_03c.wav"/>
+        <DupeMaximumMethod value="Replace"/>
+        <SpeakerMix index="LFE" value="0.250000"/>
+        <Spread value="15.000000"/>
+        <Volume value="-7.000000,-7.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolarCannon@Missile_ImpactElectric" parent="Combat">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_ImpactElectric_04.wav"/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_ImpactElectric_05.wav"/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_ImpactElectric_Short_01.wav"/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_ImpactElectric_Short_02.wav"/>
+        <AssetArray File="Assets\Sounds\HybridThrasher_ResidualElectric.wav"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Spread value="20.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolariteFlare@AirBombMissileExplode_AS" parent="_FX_Hero_Spell_Impact">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_01.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_02.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_03.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_04.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_05.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_06.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_07.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_08.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_09.ogg"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Impact_10.ogg"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="HeroTalandarSolariteFlare@AirBombAttackLaunch_AS" parent="Combat">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Immortal\Immortal_AttackLaunch2.wav"/>
+        <Pitch value="-2.000000,-1.000000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@ChargingSoundLaunch" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_Q_Launch_01.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-3.000000,-3.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@ChargingSoundLaunch_SWT" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="assets\Sounds\Heroes\Fenix_Base\Fenix_PlasmaCutter_Start_01.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+        <CategoryDuckingLocal value=""/>
+        <CategoryDuckingNonLocal value=""/>
+    </CSound>
+    <CSound id="HeroTalandar@ChargingSoundLoop_SWT" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Heroes\Fenix_Base\Fenix_PlasmaCutter_Loop_01.ogg"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,3.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@ChargingSoundLoop" parent="_FX_Hero_Spell_Loop">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\Heroes\Fenix_Base\Fenix_Q_Mid_02.ogg"/>
+        <LoopCount value="-1"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="500"/>
+        <PanLevel value="0.800000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-5.000000,-5.000000"/>
+        <VolumeRolloffPoints index="0" Distance="10.000000"/>
+        <VolumeRolloffPoints index="1" Distance="25.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="Talandar_PhaseBomb_Activate" parent="_FX_Talent_Launch">
+        <AssetArray File="Assets\Sounds\Heroes\Fenix_Base\Fenix_Attack_B_Activate_01.ogg"/>
+        <Flags index="AllowDuckingInPlayDelay" value="0"/>
+        <NonLocalVolumeAdjustment value="-6.000000,-6.000000"/>
+        <PanLevel value="1.000000"/>
+        <PanLevelNonLocal value="-1.000000"/>
+        <SpeakerMix index="Center" value="0.000000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="HeroTalandar@Deploy" parent="_FX_Hero_Spell_Launch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <AssetArray File="Assets\Sounds\FenixWarpOut_01.wav"/>
+        <AssetArray File="Assets\Sounds\FenixWarpOut_02.wav"/>
+        <AssetArray File="Assets\Sounds\FenixWarpOut_03.wav"/>
+        <AssetArray File="Assets\Sounds\FenixWarpOut_04.wav"/>
+        <Pitch value="1.000000,2.000000"/>
+        <SpeakerMix index="FrontLeft" value="0.800000"/>
+        <SpeakerMix index="FrontRight" value="0.800000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <SustainFade index="1" Time="2000"/>
+        <Volume value="1.000000,1.000000"/>
+    </CSound>
+</Catalog>

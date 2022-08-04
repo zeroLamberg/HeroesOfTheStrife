@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CHero id="HeroDiablo" HeroID="Diablo">
+        <AttributeId value="HDbl"/>
+        <Melee value="1"/>
+        <IntroCutsceneSize value="Large"/>
+        <SpecificKillVOArray Target="HeroTyrael" Sound="HeroDiabloDX@KillTyrael"/>
+        <SpecificKillVOArray Target="HeroWitchDoctor" Sound="HeroDiabloDX@KillD3Hero"/>
+        <SpecificKillVOArray Target="HeroUther" Sound="HeroDiabloDX@KillUther"/>
+        <SpecificKillVOArray Target="HeroTychus" Sound="HeroDiabloDX@KillTychus"/>
+        <SpecificKillVOArray Target="HeroDemonHunter" Sound="HeroDiabloDX@KillD3Hero"/>
+        <SpecificKillVOArray Target="HeroBarbarian" Sound="HeroDiabloDX@KillD3Hero"/>
+        <VariationIcon value="Assets\Textures\UI_Glues_Swatch_Red.dds"/>
+        <Difficulty value="Medium"/>
+        <SpecificIntroVOArray Target="HeroTyrael" Question="HeroDiabloDX@IntroQuestion_Angel" Response="HeroDiabloDX@IntroResponse_Angel"/>
+        <SpecificIntroVOArray Target="HeroWitchDoctor" Question="HeroDiabloDX@IntroQuestion_D3Hero" Response="HeroDiabloDX@IntroResponse_D3Hero"/>
+        <SpecificIntroVOArray Target="HeroDemonHunter" Question="HeroDiabloDX@IntroQuestion_D3Hero" Response="HeroDiabloDX@IntroResponse_D3Hero"/>
+        <SpecificIntroVOArray Target="HeroBarbarian" Question="HeroDiabloDX@IntroQuestion_D3Hero" Response="HeroDiabloDX@IntroResponse_D3Hero"/>
+        <Universe value="Diablo"/>
+        <UniverseIcon value="Assets\Textures\UI_Glues_Store_GameIcon_D3.dds"/>
+        <Model value="HeroDiablo@Base"/>
+    </CHero>
+</Catalog>

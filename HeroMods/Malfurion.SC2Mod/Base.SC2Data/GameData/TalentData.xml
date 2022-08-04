@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent id="HeroMalfurionTalentTwilightDreamAstralCommunion"/>
+    <CTalent id="HeroMalfurionTalentCourseofLife"/>
+    <CTalent id="HeroMalfurionTranquility"/>
+    <CTalent id="HeroMalfurionTwilightDream"/>
+    <CTalent id="HeroMalfurionTalentMoonfireCelestialAlignment"/>
+    <CTalent id="HeroMalfurionTalentMoonfireMoonlight"/>
+    <CTalent id="HeroMalfurionTalentNaturesCleanse"/>
+    <CTalent id="HeroMalfurionTalentInnervateMoonlitHarmony"/>
+    <CTalent id="HeroMalfurionTalentElunesChosen"/>
+    <CTalent id="HeroMalfurionTalentMoonfireHinderingMoonfire"/>
+    <CTalent id="HeroMalfurionTalentInnervateRevitalize"/>
+    <CTalent id="HeroMalfurionRegrowthLifebloom"/>
+    <CTalent id="HeroMalfurionTalentEntanglingRootsDangerousRoots"/>
+    <CTalent id="HeroMalfurionTalentEntanglingRootsTenaciousRoots"/>
+    <CTalent id="HeroMalfurionTalentRegrowthLifeseed"/>
+    <CTalent id="HeroMalfurionTalentMoonfireFullMoonfire"/>
+    <CTalent id="HeroMalfurionTalentTranquilitySerenity"/>
+    <CTalent id="HeroMalfurionTalentEntanglingRootsOvergrownPath"/>
+    <CTalent id="HeroMalfurionRegrowthNaturesProtection"/>
+    <CTalent id="HeroMalfurionRegrowthYserasGift"/>
+</Catalog>

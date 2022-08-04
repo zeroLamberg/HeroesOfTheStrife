@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="HeroTalandar@PraetorDeath" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Fenix_Death\Fenix_Death.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Praetor_Death_A"/>
+            <Type value="Sound"/>
+            <Time value="0.001000"/>
+            <Payload value="HeroTalandar@Praetor_Death_A"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Praetor_Death_B"/>
+            <Type value="Sound"/>
+            <Time value="0.451000"/>
+            <Payload value="HeroTalandar@Praetor_Death_B"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Praetor_Death_C"/>
+            <Type value="Sound"/>
+            <Time value="1.092000"/>
+            <Payload value="HeroTalandar@Praetor_Death_C"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Praetor_Death_D"/>
+            <Type value="Sound"/>
+            <Time value="1.783000"/>
+            <Payload value="HeroTalandar@Praetor_Death_D"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Praetor_Death_E"/>
+            <Type value="Sound"/>
+            <Time value="2.357000"/>
+            <Payload value="HeroTalandar@Praetor_Death_E"/>
+        </Events>
+        <Flags index="TeenSafe" value="1"/>
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="HeroTalandar@StoreModelBase" parent="HeroModelParentStore">
+        <Model value="assets\Store\Store_Hero_TalandarBase\Store_Hero_TalandarBase_00.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@CursorSplat" parent="UI" Race="Neutral">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_SciFi\Storm_UI_AOECursor_SciFi.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@RangeSplat" parent="UI">
+        <Model value="assets\UI\Cursors\Storm_UI_TargetingRadiusReticle\Storm_UI_TargetingRadiusReticle.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="7.000000,7.000000,7.000000"/>
+        <ScaleMin value="7.000000,7.000000,7.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="HeroTalandarDragoonArmorSuit@PlacementModel" parent="Placement" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Dragoon_Purifier_Coop_PlacementModel\Dragoon_Purifier_Coop_PlacementModel.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModelFoliage id="HeroTalandarWeaponDragoon@Impact">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb_Impact\Dragoon_Purifier_Coop_AirBomb_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModelFoliage>
+    <CModelFoliage id="HeroTalandarWeaponDragoon@SplashImpact">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb\Dragoon_Purifier_Coop_AirBomb.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModelFoliage>
+    <CModel id="HeroTalandarPraetorArmorSuit@PlacementModel" parent="Placement" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Fenix_Coop_PlacementModel\Fenix_Coop_PlacementModel.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarWeaponPraetor@AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Fenix_Whirlwind_Impact\Fenix_Whirlwind_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarPraetorArmorSuit@WarpInToPraetor" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Fenix_Coop_WarpIn\Fenix_Coop_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionRadius value="0.750000"/>
+    </CModel>
+    <CModel id="HeroTalandar@Portrait" parent="Portrait" Race="Protoss">
+        <Model value="Assets\Portraits\Protoss\FenixEx2Portrait\FenixEx2Portrait.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Image value="Assets\Textures\fenixportrait_static.dds"/>
+        <Lighting value="FenixEx2Portrait"/>
+    </CModel>
+    <CModel id="HeroTalandar@PortraitAddition" parent="FXAPortrait" Race="Protoss">
+        <Model value="Assets\StoryModeCharacters\Protoss\SMX2_Fenix\SMX2_Fenix.m3"/>
+        <RequiredAnims value="Assets\StoryModeCharacters\Protoss\SMX2_Fenix_RequiredAnims\SMX2_Fenix_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <FacialController value="LocalizedData\Facial\SMX2_Fenix.fxa"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+    </CModel>
+    <CModel id="HeroTalandarPurificationBlast@LandingModelGround" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Fenix_Birth_Impact\Fenix_Birth_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarThunderousCharge@Charge" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Fenix_ThunderousCharge_Impact\Fenix_ThunderousCharge_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Fenix_ThunderousCharge_AttackImpact"/>
+            <Type value="Sound"/>
+            <Time value="0.001000"/>
+            <Payload value="Fenix_ThunderousCharge_AttackImpact"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroTalandarPurificationBlast@LandingModelBlast" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\HybridPsionicShockwave\HybridPsionicShockwave.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroTalandarWhirlwind@WhirlwindModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Fenix_Whirlwind\Fenix_Whirlwind.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="HeroTalandar@Praetor" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Fenix\Fenix.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Praetor_Whirlwind_OneShot_A"/>
+            <Type value="Sound"/>
+            <Time value="0.001000"/>
+            <Payload value="HeroTalandar@Praetor_WhirlwindOneShot_A"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Praetor_Whirlwind_OneShot_B"/>
+            <Type value="Sound"/>
+            <Time value="0.404000"/>
+            <Payload value="HeroTalandar@Praetor_WhirlwindOneShot_B"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Praetor_Whirlwind_OneShot_A"/>
+            <Type value="Sound"/>
+            <Time value="0.598000"/>
+            <Payload value="HeroTalandar@Praetor_WhirlwindOneShot_A"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Praetor_Whirlwind_OneShot_B"/>
+            <Type value="Sound"/>
+            <Time value="0.995000"/>
+            <Payload value="HeroTalandar@Praetor_WhirlwindOneShot_B"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Praetor_Whirlwind_OneShot_A"/>
+            <Type value="Sound"/>
+            <Time value="1.096000"/>
+            <Payload value="HeroTalandar@Praetor_WhirlwindOneShot_A"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,B,00"/>
+            <Name value="Praetor_Whirlwind_OneShot_B"/>
+            <Type value="Sound"/>
+            <Time value="1.489000"/>
+            <Payload value="HeroTalandar@Praetor_WhirlwindOneShot_B"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Praetor_StandWorkEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="0.001000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="Praetor_StandWorkEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="0.448000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_B"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,A,End,00"/>
+            <Name value="Praetor_ThunderousCharge_SpellAEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="0.016000"/>
+            <Payload value="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,A,End,00"/>
+            <Name value="Praetor_ThunderousCharge_SpellAEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="4.441000"/>
+            <Payload value="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_B"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,A,End,00"/>
+            <Name value="Praetor_ThunderousCharge_SpellAEnd_C"/>
+            <Type value="Sound"/>
+            <Time value="4.949000"/>
+            <Payload value="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_C"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,A,End,00"/>
+            <Name value="Praetor_ThunderousCharge_SpellAEnd_D"/>
+            <Type value="Sound"/>
+            <Time value="5.825000"/>
+            <Payload value="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_D"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.503000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.015000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,00"/>
+            <Name value="Praetor_MoveGrowl"/>
+            <Type value="Sound"/>
+            <Time value="0.713000"/>
+            <Payload value="HeroTalandar@Praetor_MoveGrowl"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Ready,End,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="4.389000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Ready,End,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="5.210000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Ready,End,00"/>
+            <Name value="Praetor_StandWorkEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="4.297000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Ready,End,00"/>
+            <Name value="Praetor_StandWorkEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="4.923000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_B"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Ready,End,00"/>
+            <Name value="Praetor_MoveStart"/>
+            <Type value="Sound"/>
+            <Time value="3.532000"/>
+            <Payload value="HeroTalandar@Praetor_MoveStart"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="1.570000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_StandWorkEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="1.598000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_StandWorkEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="7.009000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_B"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="6.170000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_MoveGrowl"/>
+            <Type value="Sound"/>
+            <Time value="3.610000"/>
+            <Payload value="HeroTalandar@Praetor_MoveGrowl"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_MoveStart"/>
+            <Type value="Sound"/>
+            <Time value="5.873000"/>
+            <Payload value="HeroTalandar@Praetor_MoveStart"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_ThunderousCharge_SpellAEnd_C"/>
+            <Type value="Sound"/>
+            <Payload value="HeroTalandar@Praetor_ThunderousCharge_SpellAEnd_C"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="Praetor_Death_A"/>
+            <Type value="Sound"/>
+            <Payload value="HeroTalandar@Praetor_Death_A"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="Praetor_MoveStart"/>
+            <Type value="Sound"/>
+            <Time value="4.431000"/>
+            <Payload value="HeroTalandar@Praetor_MoveStart"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="Praetor_StandWorkEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="5.168000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="Praetor_StandWorkEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="5.926000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_B"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="6.055000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="Praetor_MoveGrowl"/>
+            <Type value="Sound"/>
+            <Time value="4.517000"/>
+            <Payload value="HeroTalandar@Praetor_MoveGrowl"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="Praetor_StandWorkEnd_A"/>
+            <Type value="Sound"/>
+            <Time value="5.243000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_A"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="5.125000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="Praetor_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="5.948000"/>
+            <Payload value="HeroTalandar@Praetor_Footsteps"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="Praetor_StandWorkEnd_B"/>
+            <Type value="Sound"/>
+            <Time value="6.023000"/>
+            <Payload value="HeroTalandar@Praetor_StandWorkEnd_B"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid05"/>
+        <Radius value="0.350000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraMid05"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="1.500000"/>
+        <TipabilityWidth value="1.500000"/>
+        <UnitGlossaryCamera value="Star2CameraMid05"/>
+        <AnimAliases Anim="Stand" Alias="Walk,A,Ridesurf"/>
+        <AnimAliases Anim="Stand" Alias="Stand,Ridesurf"/>
+    </CModel>
+    <CModel id="HeroTalandarPurificationBlast@WarpOutUnit" parent="Unit">
+        <Model value="Assets\Effects\Protoss\Fenix_WarpOut\Fenix_WarpOut.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarThunderousCharge@ModelImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam_Impact\Dragoon_Purifier_Coop_SolarBeam_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@Warning" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_SciFi_TeamColor\Storm_UI_AOECursor_SciFi_TeamColor.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="HeroTalandarPurifierBeam@Beam" parent="Unit" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\SOA_PurifierBeam\SOA_PurifierBeam.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Events Anim="Birth,00" Name="PurifierBeam_Birth_A" Time="0.001000"/>
+        <Events Anim="Birth,00" Name="PurifierBeam_Birth_B" Time="0.624000"/>
+        <Events Anim="Birth,00" Name="PurifierBeam_Birth_C" Time="1.409000"/>
+        <Events Anim="Birth,00" Name="PurifierBeam_Birth_D" Time="1.830000"/>
+        <Events Anim="Birth,00" Name="PurifierBeam_Birth_E" Time="2.019000"/>
+        <Radius value="3.000000"/>
+        <SelectionRadius value="3.000000"/>
+    </CModel>
+    <CModel id="HeroTalandarAccumulatedShield@Shield" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Fenix_ShieldCapacitor\Fenix_ShieldCapacitor.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+    </CModel>
+    <CModel id="HeroTalandar@Dragoon" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Heroes\Storm_Morph_TalandarDragoon_Base\Storm_Morph_TalandarDragoon_Base.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Events>
+            <Anim value="Walk,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.794000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.753000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,B,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,B,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.753000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,C,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,C,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.753000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,D,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,D,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.494000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,D,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.802000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,E,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,E,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.498000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,E,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.795000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,F,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,F,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.464000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,F,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.749000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,G,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,G,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.453000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,G,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.749000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,H,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.226000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,H,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.453000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,H,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,I,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,I,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,I,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,J,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,J,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,J,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,K,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,K,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,K,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,L,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,L,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,L,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,M,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,M,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,M,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,N,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,N,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,N,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,O,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,O,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,O,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,P,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.208000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,P,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.432000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,P,00"/>
+            <Name value="Dragoon_Footsteps"/>
+            <Type value="Sound"/>
+            <Time value="0.763000"/>
+            <Payload value="HeroTalandar@Dragoon_Foley_FS"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigh08"/>
+        <Radius value="0.350000"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+        <SelectionRadius value="0.650000"/>
+        <ShadowRadius value="0.866400"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh08"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.800000"/>
+        <TipabilityWidth value="0.800000"/>
+        <UnitGlossaryCamera value="Star2CameraHigh08"/>
+        <AnimAliases Anim="Stand,Mount" Alias="Walk,A,Ridesurf"/>
+        <AnimAliases Anim="Stand,Mount" Alias="Stand,Ridesurf"/>
+    </CModel>
+    <CModel id="HeroTalandar@DragoonDeath" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Dragoon_Purifier_Coop_Death\Dragoon_Purifier_Coop_Death.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Dragoon_DeathExp"/>
+            <Type value="Sound"/>
+            <Time value="0.515000"/>
+            <Payload value="HeroTalandar@Dragoon_DeathExp"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="Dragoon_Death_Fx"/>
+            <Type value="Sound"/>
+            <Time value="0.218000"/>
+            <Payload value="HeroTalandar@Dragoon_Death_Fx"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="Dragoon_DeathExp"/>
+            <Type value="Sound"/>
+            <Time value="0.214000"/>
+            <Payload value="HeroTalandar@Dragoon_DeathExp"/>
+        </Events>
+        <Events>
+            <Anim value="Death,01"/>
+            <Name value="Dragoon_Death_Fx"/>
+            <Type value="Sound"/>
+            <Time value="0.379000"/>
+            <Payload value="HeroTalandar@Dragoon_Death_Fx"/>
+        </Events>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+        <Flags index="TeenSafe" value="1"/>
+        <AnimSpeed value="0.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarDragoonArmorSuit@WarpInToDragoon" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Dragoon_Purifier_Coop_WarpIn\Dragoon_Purifier_Coop_WarpIn.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+        <SelectionRadius value="0.650000"/>
+    </CModel>
+    <CModel id="HeroTalandarPraetorArmorSuit@WarpOutFromDragoon" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Dragoon_Purifier_Coop_WarpOut\Dragoon_Purifier_Coop_WarpOut.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+        <SelectionRadius value="0.650000"/>
+    </CModel>
+    <CModel id="HeroTalandarDragoonArmorSuit@WarpOutFromPraetor" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Fenix_Coop_WarpOut\Fenix_Coop_WarpOut.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionRadius value="0.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarWeaponDragoon@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_Missile\Dragoon_Purifier_Coop_Missile.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@ChargedImpactModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam_Impact\Dragoon_Purifier_Coop_SolarBeam_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@DefaultShot" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_BusterShot\Dragoon_Purifier_Coop_BusterShot.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@DefaultImpactModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam_Impact\Dragoon_Purifier_Coop_SolarBeam_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@ChargedShot" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_BusterShot_Charged\Dragoon_Purifier_Coop_BusterShot_Charged.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@DefaultMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam\Dragoon_Purifier_Coop_SolarBeam.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@DefaultMissileGroundTrail" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam_GroundTrail\Dragoon_Purifier_Coop_SolarBeam_GroundTrail.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@ChargedMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam_Charged\Dragoon_Purifier_Coop_SolarBeam_Charged.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannon@ChargedMissileCraterTrail">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_SolarBeam_RockTrail\Dragoon_Purifier_Coop_SolarBeam_RockTrail.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <VariationCount value="5"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@AirBombMissileA" parent="RaceMissileFX" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb_MissileA\Dragoon_Purifier_Coop_AirBomb_MissileA.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@AirBombMissile" parent="RaceMissileFX" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb_Missile\Dragoon_Purifier_Coop_AirBomb_Missile.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@AirBomb" parent="RaceImpactFX" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb\Dragoon_Purifier_Coop_AirBomb.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@ChargedAirBomb" parent="RaceImpactFX" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb_Charged\Dragoon_Purifier_Coop_AirBomb_Charged.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@AirBombImpact" parent="RaceImpactFX" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb_Impact\Dragoon_Purifier_Coop_AirBomb_Impact.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarSolariteFlare@ChargedAirBombImpact" parent="RaceImpactFX" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\Dragoon_Purifier_Coop_AirBomb_Impact_Charged\Dragoon_Purifier_Coop_AirBomb_Impact_Charged.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="HeroTalandarPurifierBeam@CastGuidePurifierModel" parent="UI">
+        <Model value="Assets\UI\Cursors\ProtossCursor_Purifier_Small\ProtossCursor_Purifier_Small.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CModel>
+    <CModel id="Dragoon_Purifier_Coop_AirBomb_Beam" parent="RaceMissileFX" Race="Protoss">
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="SoundFollowContinuous"/>
+            <Type value="Sound"/>
+            <Time value="0.003000"/>
+            <Payload value="HeroTalandarSolariteFlare@AirBombMissile"/>
+        </Events>
+    </CModel>
+    <CModel id="HeroTalandar@ChargingModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\Void_Kerrigan_QuantumRay_Charge\Void_Kerrigan_QuantumRay_Charge.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HeroTalandarSolarCannonChannel@ChargingModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Yrel_Base_SearingLight_Channel\Storm_FX_Yrel_Base_SearingLight_Channel.m3"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+</Catalog>

@@ -1,0 +1,454 @@
+﻿Abil/Name/HeroTalandarAccelerationProtocol=Acceleration Protocol
+Abil/Name/HeroTalandarAccumulatedShield=Accumulated Shield
+Abil/Name/HeroTalandarArsenalOvercharge=Arsenal Overcharge
+Abil/Name/HeroTalandarDragoonArmorSuit=Dragoon Armor Suit
+Abil/Name/HeroTalandarPraetorArmorSuit=Praetor Armor Suit
+Abil/Name/HeroTalandarPurificationBlast=Purification Blast
+Abil/Name/HeroTalandarPurifierBeam=Purifier Beam
+Abil/Name/HeroTalandarPurifierBeam@DragoonArmorSuit=Dragoon Armor Suit
+Abil/Name/HeroTalandarPurifierBeam@PraetorArmorSuit=Praetor Armor Suit
+Abil/Name/HeroTalandarPurifierShield=Purifier Shield
+Abil/Name/HeroTalandarSolarCannon=Solar Cannon
+Abil/Name/HeroTalandarSolarCannonChannel=Solar Cannon Channel
+Abil/Name/HeroTalandarSolariteFlare=Solarite Flare
+Abil/Name/HeroTalandarSolariteFlareChannel=Solarite Flare Channel
+Abil/Name/HeroTalandarTalentAccumulatedShieldImmortal=Immortal
+Abil/Name/HeroTalandarTalentPhaseBomb=Phase Bomb
+Abil/Name/HeroTalandarThunderousCharge=Thunderous Charge
+Abil/Name/HeroTalandarWarbringerProtocol=Warbringer Protocol
+Abil/Name/HeroTalandarWhirlwind=Whirlwind
+Behavior/Name/HeroTalandarArsenalOvercharge=Arsenal Overcharge
+Behavior/Name/HeroTalandarDragoonArmorSuit@CasterInvulnerableBehavior=Dragoon Armor Suit
+Behavior/Name/HeroTalandarPraetorArmorSuit@CasterInvulnerableBehavior=Praetor Armor Suit
+Behavior/Name/HeroTalandarPurificationBlast@PurificationBlast=Purification Blast
+Behavior/Name/HeroTalandarPurifierBeam@CreatingBeamBehavior=Warp In Purifier Beam
+Behavior/Name/HeroTalandarPurifierBeam@PurifierBeam=Purifier Beam
+Behavior/Name/HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower=Damage Power
+Behavior/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter=Shield Capacitor
+Behavior/Name/HeroTalandarTalentOperationalEfficiency@TokenCounter=Operational Efficiency
+Behavior/Name/HeroTalandarTalentPurification@TimedBonus=Purification
+Behavior/Name/HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff=Attack Speed Buff
+Behavior/Name/HeroTalandarTalentTacticalOverload@SpellPowerBuff=Tactical Overload
+Behavior/Name/HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff=Trooper Champion
+Behavior/Name/HeroTalandarWhirlwind@AnimationBehavior=Whirlwind
+Behavior/Tooltip/HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower=+ <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower,Modification.AttributeChangeArray[16].Points * $BehaviorStackCount:HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower$"/>%</c> Damage Power
+Behavior/Tooltip/HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter=<c val="#TooltipQuest">Bonus amount: <c val="#TooltipNumbers" validator="!HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestCompleted" ><d ref="100 * (Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken,EffectArray[2].Value*Accumulator,HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestUIDisplayer,Amount)" precision="1"/>%</c><n/>Total amount: <c val="#TooltipNumbers" validator="!HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestCompleted" ><d ref="100*Effect,HeroTalandarAccumulatedShield@EnergyAddDamageTaken,VitalArray[Energy].ChangeFraction" precision="1"/>%</c><n/><n/>Collect Regeneration Globes: <c val="#TooltipNumbers" validator="!HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestCompleted" ><d ref="Accumulator,HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestUIDisplayer,Amount"/>/<d ref="Behavior,HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c>
+Behavior/Tooltip/HeroTalandarTalentOperationalEfficiency@TokenCounter=<c val="#TooltipQuest">Hit Heroes: <c val="#TooltipNumbers" validator="!HeroTalandarTalentOperationalEfficiency@QuestCompleted" ><d ref="Accumulator,HeroTalandarTalentOperationalEfficiency@QuestUIDisplayer,Amount"/>/<d ref="Behavior,HeroTalandarTalentOperationalEfficiency@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c>
+Behavior/Tooltip/HeroTalandarTalentPurification@TimedBonus=Next Basic Attack within <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentPurification@TimedBonus,Duration"/></c> seconds will deal an additional <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentPurification@TimedBonus,Amount"/>%</c> damage.
+Behavior/Tooltip/HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff=+ <c val="#TooltipNumbers"><d ref="100 * Behavior,HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff,Modification.AdditiveAttackSpeedFactor * $BehaviorStackCount:HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff$"/>%</c> Attack Speed
+Behavior/Tooltip/HeroTalandarTalentTacticalOverload@SpellPowerBuff=+ <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentTacticalOverload@SpellPowerBuff,Modification.AttributeChangeArray[17].Points * $BehaviorStackCount:HeroTalandarTalentTacticalOverload@SpellPowerBuff$"/>%</c> Spell Power
+Button/Information/HeroTalandarArsenalOvercharge=Cooldown: <d ref="Abil,HeroTalandarArsenalOvercharge,Cost[0].Cooldown.TimeUse" player="0"/> seconds
+Button/Information/HeroTalandarDragoonArmorSuit=Cooldown: <d ref="Abil,HeroTalandarDragoonArmorSuit,Cost[0].Cooldown.TimeUse" player="0"/> seconds
+Button/Information/HeroTalandarPraetorArmorSuit=Cooldown: <d ref="Abil,HeroTalandarPraetorArmorSuit,Cost[0].Cooldown.TimeUse" player="0"/> seconds
+Button/Information/HeroTalandarPurificationBlast=Cooldown: <d ref="Abil,HeroTalandarPurificationBlast,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Abil,HeroTalandarPurificationBlast,Range[0]" player="0"/> m.<n/>Radius: <d ref="Effect,HeroTalandarPurificationBlast@ExpireSearch,AreaArray[0].Radius" player="0"/> m.
+Button/Information/HeroTalandarPurifierArmaments=Cooldown: <d ref="Abil,HeroTalandarPurificationBlast,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/><n/><c val="ffff8a">Both abilities have shared cooldown.</c>
+Button/Information/HeroTalandarPurifierBeam=Cooldown: <d ref="Abil,HeroTalandarPurifierBeam,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range: <d ref="Abil,HeroTalandarPurifierBeam,Range[0]" player="0"/> m.<n/>Radius: <d ref="Effect,HeroTalandarPurifierBeam@Search,AreaArray[0].Radius"/> m.
+Button/Information/HeroTalandarSolarCannon=Cooldown: <d ref="Abil,HeroTalandarSolarCannonChannel,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range Base: <d ref="$GalaxyVar:libHTld_gv_heroTalandarChannelingRangeDefault$"/> m.<n/>Range Charged: <d ref="$GalaxyVar:libHTld_gv_heroTalandarChannelingRangeCharged$"/> m.
+Button/Information/HeroTalandarSolariteFlare=Cooldown: <d ref="Abil,HeroTalandarSolariteFlareChannel,Cost[0].Cooldown.TimeUse" player="0"/> seconds<n/>Range Base: <d ref="$GalaxyVar:libHTld_gv_heroTalandarChannelingRangeDefault$"/> m.<n/>Range Charged: <d ref="$GalaxyVar:libHTld_gv_heroTalandarChannelingRangeCharged$"/> m.<n/>Radius Base: <d ref="$GalaxyVar:libHTld_gv_heroTalandarSolariteFlareRadiusDefault$"/> m.<n/>Radius Charged: <d ref="$GalaxyVar:libHTld_gv_heroTalandarSolariteFlareRadiusCharged$"/> m.
+Button/Information/HeroTalandarTalentAccumulatedShieldImmortal=Cooldown: <d ref="Abil,HeroTalandarTalentAccumulatedShieldImmortal,Cost[0].Cooldown.TimeUse"/> <lang rule="plural">second,seconds</lang>
+Button/Information/HeroTalandarTalentPhaseBomb=Cooldown: <d ref="Abil,HeroTalandarTalentPhaseBomb,Cost[0].Cooldown.TimeUse"/> seconds<n/>Radius: <d ref="Effect,HeroTalandarWeaponDragoon@SplashSearch,AreaArray[0].Radius" precision="2"/> m.
+Button/Information/HeroTalandarThunderousCharge=Cooldown: <d ref="Abil,HeroTalandarThunderousCharge,Cost[0].Cooldown.TimeUse"/> seconds<n/>Range: <d ref="Actor,HeroTalandarThunderousCharge@CursorGuide,Height"/> m.
+Button/Information/HeroTalandarWhirlwind=Cooldown: <d ref="Abil,HeroTalandarWhirlwind,Cost[0].Charge.TimeUse"/> seconds<n/>Radius: <d ref="Effect,HeroTalandarWhirlwind@Search,AreaArray[0].Radius"/> m.
+Button/Name/HeroTalandarAccelerationProtocol=Acceleration Protocol
+Button/Name/HeroTalandarAccumulatedShield=Accumulated Shield
+Button/Name/HeroTalandarArsenalOvercharge=Arsenal Overcharge
+Button/Name/HeroTalandarDragoonArmorSuit=Dragoon Armor Suit
+Button/Name/HeroTalandarPraetorArmorSuit=Praetor Armor Suit
+Button/Name/HeroTalandarPurificationBlast=Purification Blast
+Button/Name/HeroTalandarPurifierArmaments=Purifier Armaments
+Button/Name/HeroTalandarPurifierBeam=Purifier Beam
+Button/Name/HeroTalandarPurifierBeam@Whirlwind=Purifier Beam
+Button/Name/HeroTalandarPurifierShield=Purifier Shield
+Button/Name/HeroTalandarSolarCannon=Solar Cannon
+Button/Name/HeroTalandarSolariteFlare=Solarite Flare
+Button/Name/HeroTalandarTalentAccumulatedShieldAdaptiveShield=Adaptive Shield
+Button/Name/HeroTalandarTalentAccumulatedShieldBraveHearth=Brave Hearth
+Button/Name/HeroTalandarTalentAccumulatedShieldDisruptor=Disruptor
+Button/Name/HeroTalandarTalentAccumulatedShieldImmortal=Immortal
+Button/Name/HeroTalandarTalentAccumulatedShieldRapidRecharge=Rapid Recharge
+Button/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor=Shield Capacitor
+Button/Name/HeroTalandarTalentAccumulatedShieldSystemReconfiguration=System Reconfiguration
+Button/Name/HeroTalandarTalentAkhundelar=Akhundelar
+Button/Name/HeroTalandarTalentAssaultProtocol=Assault Protocol
+Button/Name/HeroTalandarTalentAvengingProtocol=Avenging Protocol
+Button/Name/HeroTalandarTalentChampionUpgrade=Champion Upgrade
+Button/Name/HeroTalandarTalentOperationalEfficiency=Operational Efficiency
+Button/Name/HeroTalandarTalentPhaseBomb=Phase Bomb
+Button/Name/HeroTalandarTalentPurification=Purification
+Button/Name/HeroTalandarTalentPurifierArmamentsAdvancedArmaments=Advanced Armaments
+Button/Name/HeroTalandarTalentPurifierBeamEmpoweredBeam=Empowered Beam
+Button/Name/HeroTalandarTalentSolariteFlareMagneticField=Purifier Armaments
+Button/Name/HeroTalandarTalentSolariteFlareSolariteBurn=Purifier Beam
+Button/Name/HeroTalandarTalentTacticalDataWeb=Tactical Data Web
+Button/Name/HeroTalandarTalentTacticalOverload=Tactical Overload
+Button/Name/HeroTalandarTalentThunderousChargeProtectionProtocol=Protection Protocol
+Button/Name/HeroTalandarTalentThunderousChargeTrooperChampion=Trooper Champion
+Button/Name/HeroTalandarTalentTitanDestroyer=Titan Destroyer
+Button/Name/HeroTalandarTalentWhirlwindDisruptor=Purifier Armaments
+Button/Name/HeroTalandarThunderousCharge=Thunderous Charge
+Button/Name/HeroTalandarWarbringerProtocol=Warbringer Protocol
+Button/Name/HeroTalandarWhirlwind=Whirlwind
+Button/SimpleDisplayText/HeroTalandarAccelerationProtocol=<c val="#ColorViolet">Dragoon</c><n/>Abilities increase Movespeed
+Button/SimpleDisplayText/HeroTalandarAccumulatedShield=Regenerate energy in combat. Convert energy to shield
+Button/SimpleDisplayText/HeroTalandarArsenalOvercharge=<c val="#ColorViolet">Dragoon</c><n/>Empower basic abilities
+Button/SimpleDisplayText/HeroTalandarDragoonArmorSuit=Switch Talandar to <c val="#ColorViolet">Dragoon</c> Armor Suit
+Button/SimpleDisplayText/HeroTalandarPraetorArmorSuit=Switch Talandar to <c val="#ColorCreamYellow">Praetor</c> Armor Suit
+Button/SimpleDisplayText/HeroTalandarPurificationBlast=<c val="#ColorCreamYellow">Praetor</c><n/>Damage and Slow enemies
+Button/SimpleDisplayText/HeroTalandarPurifierArmaments=Empower <c val="#ColorCreamYellow">Praetor</c> and <c val="#ColorViolet">Dragoon</c> Armor Suits
+Button/SimpleDisplayText/HeroTalandarPurifierBeam=Warp in the Purifier Beam dealing damage
+Button/SimpleDisplayText/HeroTalandarPurifierBeam@Whirlwind=«Whilrwind» deals more damage
+Button/SimpleDisplayText/HeroTalandarSolarCannon=Fire a penetrating beam that deals damage
+Button/SimpleDisplayText/HeroTalandarSolariteFlare=Fire an air-bursting flare that deals AOE damage to enemies and slow them
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldAdaptiveShield=Changing Armor Suit resets cooldown and grants Energy
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldBraveHearth=Applying Shield makes Talandar Unstoppable
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldDisruptor=Shielding increases Damage Power
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldImmortal=Taking Fatal damage changes Armor Suit
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldRapidRecharge=Talandar regenerates Energy
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldShieldCapacitor=<c val="#TooltipQuest">Quest:</c> Regen Globes increase Energy and Shield amount
+Button/SimpleDisplayText/HeroTalandarTalentAccumulatedShieldSystemReconfiguration=Increase Basic Attack damage
+Button/SimpleDisplayText/HeroTalandarTalentAkhundelar=<c val="#ColorCreamYellow">Praetor</c><n/>Empower basic Abilities
+Button/SimpleDisplayText/HeroTalandarTalentAssaultProtocol=<c val="#ColorViolet">Dragoon</c><n/>Reduce cooldowns
+Button/SimpleDisplayText/HeroTalandarTalentAvengingProtocol=<c val="#ColorCreamYellow">Praetor</c><n/>Make Heroes weakness
+Button/SimpleDisplayText/HeroTalandarTalentChampionUpgrade=<c val="#ColorCreamYellow">Praetor</c><n/>Reduce Heroes Armor
+Button/SimpleDisplayText/HeroTalandarTalentOperationalEfficiency=<c val="#ColorViolet">Dragoon</c><n/><c val="#TooltipQuest">Quest:</c> Increase charging speed
+Button/SimpleDisplayText/HeroTalandarTalentPhaseBomb=<c val="#ColorViolet">Dragoon</c><n/>Basic Attacks reduce cooldowns
+Button/SimpleDisplayText/HeroTalandarTalentPurification=<c val="#ColorCreamYellow">Praetor</c><n/>Empower Basic Attacks
+Button/SimpleDisplayText/HeroTalandarTalentPurifierArmamentsAdvancedArmaments=More Slow. More Charges
+Button/SimpleDisplayText/HeroTalandarTalentPurifierBeamEmpoweredBeam=Increase Damage, reduce Cooldown
+Button/SimpleDisplayText/HeroTalandarTalentSolariteFlareMagneticField=«Solarite Flare» pulls in enemies
+Button/SimpleDisplayText/HeroTalandarTalentSolariteFlareSolariteBurn=Launch the second flare
+Button/SimpleDisplayText/HeroTalandarTalentTacticalDataWeb=Basic Abilities increase Attack Speed
+Button/SimpleDisplayText/HeroTalandarTalentTacticalOverload=Basic Attacks increase Spell Power
+Button/SimpleDisplayText/HeroTalandarTalentThunderousChargeProtectionProtocol=<c val="#ColorCreamYellow">Praetor</c><n/>Grant Protection
+Button/SimpleDisplayText/HeroTalandarTalentThunderousChargeTrooperChampion=<c val="#ColorCreamYellow">Praetor</c><n/>Increase Attack Speed
+Button/SimpleDisplayText/HeroTalandarTalentTitanDestroyer=<c val="#ColorViolet">Dragoon</c><n/>Charged Abilities deal Bonus damage
+Button/SimpleDisplayText/HeroTalandarTalentWhirlwindDisruptor=«Whirlwind» stuns enemies
+Button/SimpleDisplayText/HeroTalandarThunderousCharge=Charge to the target location, dealing damage and knocking back first enemy Hero
+Button/SimpleDisplayText/HeroTalandarWarbringerProtocol=<c val="#ColorCreamYellow">Praetor</c><n/>Cannot be slowed
+Button/SimpleDisplayText/HeroTalandarWhirlwind=Deal AOE damage and Slow enemies
+Button/Tooltip/HeroTalandarAccelerationProtocol=<c val="#ColorViolet">Dragoon</c> increases Movespeed by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroTalandarAccelerationProtocol,Modification.UnifiedMoveSpeedFactor"/>%</c> while charging or has charged «Solar Cannon» or «Solarite Flare».
+Button/Tooltip/HeroTalandarAccumulatedShield=Talandar's Basic Attacks restore <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarAccumulatedShield@EnergyAddDamageDealt,VitalArray[Energy].ChangeFraction" player="0"/>%</c> of maximum energy. Whenever Talandar takes damage from Heroes he restores <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarAccumulatedShield@EnergyAddDamageTaken,VitalArray[Energy].ChangeFraction" player="0"/>%</c> of maximum energy. <n/>When energy is full Talandar gains a <c val="#TooltipNumbers"><d ref="Unit,HeroTalandar,EnergyMax"  player="0"/></c> Shield until he takes damage. After taking damage the Shield will last for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHTld_gv_heroTalandarAccumulatedShieldDefaultShieldsDuration$" /></c> seconds and energy will be reset.
+Button/Tooltip/HeroTalandarArsenalOvercharge=Activate to reset Basic Abilities and gain <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarArsenalOvercharge@ApplyCharged,Count" player="0"/></c> charges of «Solar Cannon» and «Solarite Flare» with <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarArsenalOvercharge@SetCooldowns,Cost[1].CooldownTimeUse" precision="1"/></c> seconds cooldown between use for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarArsenalOvercharge,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroTalandarDragoonArmorSuit=Warp in Talandar's Solarite <c val="#ColorViolet">Dragoon</c> Suit. While using this suit configuration, Talandar can attack at long range and use devastating abilities.<n/><n/><c val="#ColorViolet">Dragoon: «Praetor Armor Suit»</c><n/>Warp in Talandar's <c val="#ColorCreamYellow">Praetor</c> Armor Suit to use crowd control abilities and absorbing damage.
+Button/Tooltip/HeroTalandarPraetorArmorSuit=Warp in Talandar's <c val="#ColorCreamYellow">Praetor</c> Armor Suit. While using this suit configuration, Talandar is a powerful melee warrior capable of crowd control abilities and absorbing damage.<n/><n/><c val="#ColorCreamYellow">Praetor: «Dragoon Armor Suit»</c><n/>Warp in Talandar's Solarite <c val="#ColorViolet">Dragoon</c> Suit to attack at long range and use devastating abilities.
+Button/Tooltip/HeroTalandarPurificationBlast=<c val="#ColorCreamYellow">Praetor</c> leaps into the air for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurificationBlast@PurificationBlast,Duration" player="0"/></c> seconds and he can steer the landing location by moving.<n/><n/>Upon landing enemies hit take <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarPurificationBlast@ExpireDamage,Amount" option="player"/></c> damage and are Stunned for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurificationBlast@Knockup,Duration" precision="2" player="0"/></c> seconds and also Slowed by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroTalandarPurificationBlast@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurificationBlast@Slow,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroTalandarPurifierArmaments=<c val="#ColorCreamYellow">Praetor: «Purification Blast»</c><n/>Leaps into the air for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurificationBlast@PurificationBlast,Duration" player="0"/></c> seconds and he can steer the landing location by moving.<n/>Upon landing enemies hit take <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarPurificationBlast@ExpireDamage,Amount" option="player"/></c> damage and are Stunned for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurificationBlast@Knockup,Duration" precision="2" player="0"/></c> seconds and also Slowed by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroTalandarPurificationBlast@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurificationBlast@Slow,Duration" player="0"/></c> seconds.<n/><n/><c val="#ColorViolet">Dragoon: «Arsenal Overcharge»</c><n/>Activate to reset Basic Abilities and gain <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarArsenalOvercharge@ApplyCharged,Count" player="0"/></c> charges of «Solar Cannon» and «Solarite Flare» with <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarArsenalOvercharge@SetCooldowns,Cost[1].CooldownTimeUse" precision="1"/></c> seconds cooldown between use for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarArsenalOvercharge,Duration" player="0"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> <c val="#ColorCreamYellow">Praetor</c><n/>Enemies hit by «Whirlwind» are Stunned for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentWhirlwindDisruptor@Stun,Duration" precision="2"/></c> seconds before Slow.<n/><n/><c val="#AbilityPassive">Passive:</c> <c val="#ColorViolet">Dragoon</c><n/>When charged «Solarite Flare» damages enemies, they are pulled toward its center.
+Button/Tooltip/HeroTalandarPurifierBeam=Warp in the Purifier Beam within <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurifierBeam@CreatingBeamBehavior,Duration" precision="2"/></c> seconds, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarPurifierBeam@Damage,Amount" option="player"/></c> damage every <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarPurifierBeam@InitialPersistent,Marker.Duration" precision="2" player="0"/></c> seconds for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarPurifierBeam@PurifierBeam,Duration" player="0"/></c> seconds.<n/>During warping or channeling you can steer the landing location by moving. You can interrupt ability and warp in armor suit.<n/><n/><c val="#AbilityPassive">Passive:</c> <c val="#ColorCreamYellow">Praetor</c><n/>«Whirlwind» deals damage <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarWhirlwind@AnimationBehavior,PeriodCount"/></c> more times with period <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarWhirlwind@AnimationBehavior,Period" precision="1"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> <c val="#ColorViolet">Dragoon</c><n/>«Solarite Flare» launches the second flare <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitPersistentInitial,ExpireDelay"/></c> seconds later.
+Button/Tooltip/HeroTalandarPurifierBeam@Whirlwind=«Whirlwind» deals damage <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarWhirlwind@AnimationBehavior,PeriodCount"/></c> more times with period <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarWhirlwind@AnimationBehavior,Period" precision="1"/></c> seconds.
+Button/Tooltip/HeroTalandarSolarCannon=Fire a penetrating beam that deals <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarSolarCannon@DefaultDamage,Amount" option="player"/></c> damage to all enemies in its path.<n/><n/>Charging up this Ability increases its damage up to <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarSolarCannon@ChargedDamage,Amount" option="player"/></c>.
+Button/Tooltip/HeroTalandarSolariteFlare=Fire an air-bursting flare that deals <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarSolariteFlare@AirBombDamage,Amount" option="player"/></c> damage to all enemies in an area.<n/><n/>Charging up this Ability increases its damage up to <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarSolariteFlare@AirBombDamageCharged,Amount" option="player"/></c>.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldAdaptiveShield=Changing Armor Suit resets «Accumulated Shield» cooldown and grants <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarTalentAccumulatedShieldAdaptiveShield@ModifyUnit,VitalArray.ChangeFraction"/>%</c> Energy.<n/><n/><c val="#AbilityPassive">Passive: </c>Reduce «Praetor Armor Suit» and «Dragoon Armor Suit» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentAccumulatedShieldAdaptiveShield@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldBraveHearth=Applying Shield makes Talandar Unstoppable for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldBraveHearth@Unstoppable,Duration" precision="2"/></c> <lang rule="plural">second,seconds</lang>.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldDisruptor=Each time Talandar gains shield from «Accumulated Shield» his damage power increases by <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower,Modification.AttributeChangeArray[16].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower,Duration"/></c> seconds up to <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower,Modification.AttributeChangeArray[16].Points * Behavior,HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower,MaxStackCount"/>%</c>.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldImmortal=Taking Fatal damage instantly changes Armor Suit and set it on <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentAccumulatedShieldImmortal@ModifyCooldown,Cost[0].CooldownTimeUse"/></c> seconds cooldown and also heals Talandar for <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarTalentAccumulatedShieldImmortal@Heal,VitalArray[Life].ChangeFraction"/>%</c> of maximum Health.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldRapidRecharge=Talandar regenerates <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldRapidRecharge@CarryBehavior,Modification.VitalRegenArray[Energy]"/></c> energy per second.<n/><n/><c val="#AbilityPassive">Passive:</c> While Talandar shielded by «Accumulated Shield» he restores <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarTalentAccumulatedShieldRapidRecharge@Healing,VitalArray[Life].ChangeFraction" precision="2"/>%</c> Health every <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldRapidRecharge@CarryBehavior,Period"/></c> second.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldShieldCapacitor=Basic Abilities recharges <c val="#TooltipNumbers"><d ref="-100*Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBase,Cost[0].CooldownTimeUse/0.0625" player="0"/>%</c> faster while Talandar shielded by «Accumulated Shield».<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe permanently increases Energy and Shield of «Accumulated Shield» by <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken,EffectArray[1].Value"/></c>, to a maximum of <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken,EffectArray[1].Value*Behavior,HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c> and also increases restored Energy amount upon damage taken by additional <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken,EffectArray[2].Value" precision="2"/>%</c> up to <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken,EffectArray[2].Value*Behavior,HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter,DamageResponse.Cost.Charge.CountMax" precision="2"/>%</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c> Regeneration Globes, Cooldown Reduction increases from <c val="#TooltipNumbers"><d ref="-100*Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBase,Cost[0].CooldownTimeUse/0.0625" player="0"/>%</c> to <c val="#TooltipNumbers"><d ref="-100*(Effect,HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgraded,Cost[0].CooldownTimeUse/0.0625)" player="0"/>%</c>.
+Button/Tooltip/HeroTalandarTalentAccumulatedShieldSystemReconfiguration=Increase Basic Attack damage by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageModifierBase,Amount"/>%</c>. While Talandar shielded by «Accumulated Shield» this value increases to <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageModifierAdvanced,Amount"/>%</c>.
+Button/Tooltip/HeroTalandarTalentAkhundelar=<c val="#ColorCreamYellow">Praetor</c><n/><n/>Increase «Thunderous Charge» range by <c val="#TooltipNumbers"><d ref="100 * (Effect,HeroTalandarTalentAkhundelar,EffectArray[0].Value/ Effect,HeroTalandarThunderousCharge@InitialPersistent,PeriodCount)" player="0"/>%</c> and grant «Whirlwind» <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentAkhundelar,EffectArray[3].Value"/></c> additional charge. Also increase its Damage by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentAkhundelar@DamageModifier,Amount"/>%</c>.
+Button/Tooltip/HeroTalandarTalentAssaultProtocol=<c val="#ColorViolet">Dragoon</c><n/><n/>Reduce «Solar Cannon» Cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentAssaultProtocol@Modification,EffectArray[1].Value"/></c> seconds and «Solarite Flare» Cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentAssaultProtocol@Modification,EffectArray[0].Value"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Solarite Flare» Cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentAssaultProtocol@ModifyCooldownSolariteFlare,Cost[0].CooldownTimeUse"/></c> seconds for each «Solar Cannon» enemy Hero hit.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Solar Cannon» Cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentAssaultProtocol@ModifyCooldownSolarCannon,Cost[0].CooldownTimeUse"/></c> second for each «Solarite Flare» enemy Hero hit.
+Button/Tooltip/HeroTalandarTalentAvengingProtocol=<c val="#ColorCreamYellow">Praetor</c><n/><n/>«Thunderous Charge» and «Whirlwind» reduce Heroes damage dealt by <c val="#TooltipNumbers"><d ref="-Behavior,HeroTalandarTalentAvengingProtocol@DamageReduction,Modification.AttributeChangeArray[0].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentAvengingProtocol@DamageReduction,Duration" precision="2"/></c> seconds.
+Button/Tooltip/HeroTalandarTalentChampionUpgrade=<c val="#ColorCreamYellow">Praetor</c><n/><n/>«Thunderous Charge» and «Whirlwind» reduce Heroes Armor by <c val="#TooltipNumbers"><d ref="-Behavior,HeroTalandarTalentChampionUpgrade@ArmorReduction,Modification.AttributeChangeArray[0].Points"/></c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentChampionUpgrade@ArmorReduction,Duration" precision="2"/></c> seconds.
+Button/Tooltip/HeroTalandarTalentOperationalEfficiency=<c val="#ColorViolet">Dragoon</c><n/><n/>Reduce charging time of «Solar Cannon» and «Solarite Flare» from <c val="#TooltipNumbers"><d ref="0.0625 * Behavior,HeroTalandarSolarCannonChannel@ChargeDefault,MaxStackCount"/></c> seconds to <c val="#TooltipNumbers"><d ref="0.0625 * Behavior,HeroTalandarSolarCannonChannel@ChargeMedium,MaxStackCount" precision="2"/></c> seconds.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hit enemy Heroes with charged «Solar Cannon» or «Solarite Flare» <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentOperationalEfficiency@TokenCounter,DamageResponse.Cost.Charge.CountMax"/></c> times.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Charging time of «Solar Cannon» and «Solarite Flare» will be reduced from <c val="#TooltipNumbers"><d ref="0.0625 * Behavior,HeroTalandarSolarCannonChannel@ChargeMedium,MaxStackCount" precision="2"/></c> to <c val="#TooltipNumbers"><d ref="0.0625 * Behavior,HeroTalandarSolarCannonChannel@ChargeUpgraded,MaxStackCount"/></c> second.
+Button/Tooltip/HeroTalandarTalentPhaseBomb=<c val="#ColorViolet">Dragoon</c><n/><n/>Activate to make <c val="#ColorViolet">Dragoon</c> Basic Attacks within <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentPhaseBomb,Duration"/></c> seconds reduce «Solar Cannon» and «Solarite Flare» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentPhaseBomb@AbilitiesCooldownReduction,Cost[0].CooldownTimeUse"/></c> second per each enemy hit.<n/><n/><c val="#AbilityPassive">Passive:</c> <c val="#ColorViolet">Dragoon</c> Basic Attacks deal AOE damage. Whenever <c val="#ColorViolet">Dragoon</c> Basic Attack hits Hero «Phase Bomb» cooldown reduces by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentPhaseBomb@ReducePhaseBombCooldown,Cost.Cooldown.TimeUse" precision="2"/></c> seconds.
+Button/Tooltip/HeroTalandarTalentPurification=<c val="#ColorCreamYellow">Praetor</c><n/><n/>Whenever «Thunderous Charge» or «Whirlwind» hit Hero, Talandar's next Basic Attack within <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentPurification@TimedBonus,Duration"/></c> seconds deals additional <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentPurification@TimedBonus,Amount"/>%</c> damage. <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentPurification@EnergyModifier,Amount"/>%</c> damage of Empowered Basic Attack converts to Energy. Stores up to <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentPurification@TimedBonus,MaxStackCount"/></c> charges.<n/><n/><c val="#AbilityPassive">Passive:</c> <c val="#ColorCreamYellow">Praetor</c> Basic Attacks deal additional <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentPurification@PermanentBonus,Amount"/>%</c> damage.
+Button/Tooltip/HeroTalandarTalentPurifierArmamentsAdvancedArmaments=<c val="#ColorCreamYellow">Praetor: «Purification Blast»</c><n/>Increase Slow from <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroTalandarPurificationBlast@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> to <c val="#TooltipNumbers"><d ref="-100*Effect,HeroTalandarTalentPurifierArmamentsAdvancedArmaments,EffectArray[0].Value"/>%</c> and damage by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroTalandarTalentPurifierArmamentsAdvancedArmaments@PurificationBlastDamageModifier,Amount"/>%</c>.<n/><n/><c val="#ColorViolet">Dragoon: «Arsenal Overcharge»</c><n/>Increase charges amount by <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentPurifierArmamentsAdvancedArmaments,EffectArray[1].Value"/></c>.
+Button/Tooltip/HeroTalandarTalentPurifierBeamEmpoweredBeam=Whenever «Purifier Beam» damages Heroes, its cooldown reduces by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentPurifierBeamEmpoweredBeam@CooldownReduction,Cost[0].CooldownTimeUse" precision="2"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Reduce «Purifier Beam» cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarTalentPurifierBeamEmpoweredBeam@Modification,EffectArray[0].Value"/></c> seconds.
+Button/Tooltip/HeroTalandarTalentSolariteFlareMagneticField=When charged «Solarite Flare» damages enemies, they are pulled toward its center.
+Button/Tooltip/HeroTalandarTalentSolariteFlareSolariteBurn=«Solarite Flare» launches the second flare <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitPersistentInitial,ExpireDelay"/></c> seconds later.
+Button/Tooltip/HeroTalandarTalentTacticalDataWeb=Whenever Basic Abilities deal damage to Heroes, Talandar Attack Speed increases by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff,Modification.AdditiveAttackSpeedFactor"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff,Duration"/></c> seconds up to <c val="#TooltipNumbers"><d ref="100*Behavior,HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff,Modification.AdditiveAttackSpeedFactor*Behavior,HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff,MaxStackCount"/>%</c>.
+Button/Tooltip/HeroTalandarTalentTacticalOverload=Basic Attacks against Heroes increase Spell Power by <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentTacticalOverload@SpellPowerBuff,Modification.AttributeChangeArray[17].Points"/>%</c> up to <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentTacticalOverload@SpellPowerBuff,MaxStackCount*Behavior,HeroTalandarTalentTacticalOverload@SpellPowerBuff,Modification.AttributeChangeArray[17].Points"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentTacticalOverload@SpellPowerBuff,Duration"/></c> seconds.
+Button/Tooltip/HeroTalandarTalentThunderousChargeProtectionProtocol=<c val="#ColorCreamYellow">Praetor</c><n/><n/>Talandar becomes Protected during «Thunderous charge» and <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABTimed,Duration" precision="1"/></c> second after. Works with «Accumulated Shield».
+Button/Tooltip/HeroTalandarTalentThunderousChargeTrooperChampion=<c val="#ColorCreamYellow">Praetor</c><n/><n/>Whenever «Thunderous Charge» reaches enemy Hero, <c val="#ColorCreamYellow">Praetor</c> Attack Speed will be increased by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff,Modification.AdditiveAttackSpeedFactor"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff,Duration"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase <c val="#ColorCreamYellow">Praetor</c> Attack Speed by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroTalandarTalentThunderousChargeTrooperChampion,Modification.AdditiveAttackSpeedFactor"/>%</c>.
+Button/Tooltip/HeroTalandarTalentTitanDestroyer=<c val="#ColorViolet">Dragoon</c><n/><n/>Charged «Solar Cannon» and «Solarite Flare» against Heroes deal Bonus <c val="#TooltipNumbers"><d ref="100*Effect,HeroTalandarTalentTitanDestroyer@Damage,VitalFractionMax[Life]" precision="2"/>%</c> of the target's maximum Health as damage.
+Button/Tooltip/HeroTalandarTalentWhirlwindDisruptor=Enemies hit by «Whirlwind» are Stunned for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarTalentWhirlwindDisruptor@Stun,Duration" precision="2"/></c> seconds before Slow.
+Button/Tooltip/HeroTalandarThunderousCharge=Charge to the target location, dealing <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarThunderousCharge@NonHeroicDamage,Amount" option="player"/></c> damage to non-Heroic targets and <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarThunderousCharge@HeroicDamage,Amount" option="player"/></c> to first Heroic target and knock him away. If an enemy Hero hits terrain, they are Stunned for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarThunderousCharge@TerrainStun,Duration" precision="2" player="0"/></c> seconds and take an additional <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarThunderousCharge@HeroicCollisionDamage,Amount" option="player"/></c> damage.<n/><n/>If Ability is not Interrupted and no Hero hitted, its Cooldown reduces by <c val="#TooltipNumbers"><d ref="-Effect,HeroTalandarThunderousCharge@CooldownReduce,Cost[0].CooldownTimeUse"/></c> seconds.
+Button/Tooltip/HeroTalandarWarbringerProtocol=<c val="#ColorCreamYellow">Praetor</c> cannot be slowed.
+Button/Tooltip/HeroTalandarWhirlwind=Deal <c val="#TooltipNumbers"><d ref="Effect,HeroTalandarWhirlwind@Damage,Amount" option="player"/></c> damage to nearby enemies and Slow them by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroTalandarWhirlwind@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroTalandarWhirlwind@Slow,Duration" precision="2" player="0" /></c> seconds.
+DataCollection/Name/HeroTalandar=[Talandar] - Hero
+DataCollection/Name/HeroTalandarAccelerationProtocol=[Talandar] - Acceleration Protocol
+DataCollection/Name/HeroTalandarAccumulatedShield=[Talandar] - Accumulated Shield
+DataCollection/Name/HeroTalandarArsenalOvercharge=[Talandar] - Arsenal Overcharge
+DataCollection/Name/HeroTalandarDragoonArmorSuit=[Talandar] - Dragoon Armor Suit
+DataCollection/Name/HeroTalandarPraetorArmorSuit=[Talandar] - Praetor Armor Suit
+DataCollection/Name/HeroTalandarPurificationBlast=[Talandar] - Purification Blast
+DataCollection/Name/HeroTalandarPurifierArmaments=[Talandar] - Purifier Armaments
+DataCollection/Name/HeroTalandarPurifierBeam=[Talandar] - Purifier Beam
+DataCollection/Name/HeroTalandarPurifierShield=[Talandar] - Purifier Shield
+DataCollection/Name/HeroTalandarSolarCannon=[Talandar] - Solar Cannon
+DataCollection/Name/HeroTalandarSolarCannonChannel=[Talandar] - Solar Cannon Channel
+DataCollection/Name/HeroTalandarSolariteFlare=[Talandar] - Solarite Flare
+DataCollection/Name/HeroTalandarSolariteFlareChannel=[Talandar] - Solarite Flare Channel
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldAdaptiveShield=[Talandar Talent] - Accumulated Shield @ (Adaptive Shield)
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldBraveHearth=[Talandar Talent] - Accumulated Shield @ (Brave Hearth)
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldDisruptor=[Talandar Talent] - Accumulated Shield @ (Disruptor)
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldImmortal=[Talandar Talent] - Accumulated Shield @ (Immortal)
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldRapidRecharge=[Talandar Talent] - Accumulated Shield @ (Rapid Recharge)
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor=[Talandar Talent] - Accumulated Shield @ (Shield Capacitor)
+DataCollection/Name/HeroTalandarTalentAccumulatedShieldSystemReconfiguration=[Talandar Talent] - Accumulated Shield @ (System Reconfiguration)
+DataCollection/Name/HeroTalandarTalentAkhundelar=[Talandar Talent] - Akhundelar
+DataCollection/Name/HeroTalandarTalentAssaultProtocol=[Talandar Talent] - Assault Protocol
+DataCollection/Name/HeroTalandarTalentAvengingProtocol=[Talandar Talent] - Avenging Protocol
+DataCollection/Name/HeroTalandarTalentChampionUpgrade=[Talandar Talent] - Champion Upgrade
+DataCollection/Name/HeroTalandarTalentOperationalEfficiency=[Talandar Talent] - Operational Efficiency
+DataCollection/Name/HeroTalandarTalentPhaseBomb=[Talandar Talent] - Phase Bomb
+DataCollection/Name/HeroTalandarTalentPurification=[Talandar Talent] - Purification
+DataCollection/Name/HeroTalandarTalentPurifierArmamentsAdvancedArmaments=[Talandar Talent] - Purifier Armaments @ (Advanced Armaments)
+DataCollection/Name/HeroTalandarTalentPurifierBeamEmpoweredBeam=[Talandar Talent] - Purifier Beam @ (Empowered Beam)
+DataCollection/Name/HeroTalandarTalentSolariteFlareMagneticField=[Talandar Talent] - Solarite Flare @ (Magnetic Field)
+DataCollection/Name/HeroTalandarTalentSolariteFlareSolariteBurn=[Talandar Talent] - Solarite Flare @ (Solarite Burn)
+DataCollection/Name/HeroTalandarTalentTacticalDataWeb=[Talandar Talent] - Tactical Data Web
+DataCollection/Name/HeroTalandarTalentTacticalOverload=[Talandar Talent] - Tactical Overload
+DataCollection/Name/HeroTalandarTalentThunderousChargeProtectionProtocol=[Talandar Talent] - Thunderous Charge @ (Protection Protocol)
+DataCollection/Name/HeroTalandarTalentThunderousChargeTrooperChampion=[Talandar Talent] - Thunderous Charge @ (Trooper Champion)
+DataCollection/Name/HeroTalandarTalentTitanDestroyer=[Talandar Talent] - Titan Destroyer
+DataCollection/Name/HeroTalandarTalentWhirlwindDisruptor=[Talandar Talent] - Whirlwind @ (Disruptor)
+DataCollection/Name/HeroTalandarThunderousCharge=[Talandar] - Thunderous Charge
+DataCollection/Name/HeroTalandarWarbringerProtocol=[Talandar] - Warbringer Protocol
+DataCollection/Name/HeroTalandarWeaponDragoon=[Talandar] - Weapon Dragoon
+DataCollection/Name/HeroTalandarWeaponPraetor=[Talandar] - Weapon Praetor
+DataCollection/Name/HeroTalandarWhirlwind=[Talandar] - Whirlwind
+DocInfo/Name=Talandar Hero Mod
+Effect/Name/HeroTalandar@LevelScalingModification=Level Scaling Modification
+Effect/Name/HeroTalandar@RegenGlobePickupImpactSet=Regen Globe Pickup Impact Set
+Effect/Name/HeroTalandarAccumulatedShield@ApplySecondaryBehaviorFullEnergyChecker=Apply Secondary Behavior (Full Energy Checker)
+Effect/Name/HeroTalandarAccumulatedShield@ApplyShield=Apply Shield
+Effect/Name/HeroTalandarAccumulatedShield@EnergyAddDamageDealt=Energy Add (Damage Dealt)
+Effect/Name/HeroTalandarAccumulatedShield@EnergyAddDamageTaken=Energy Add (Damage Taken)
+Effect/Name/HeroTalandarAccumulatedShield@PeriodicSet=Periodic Set
+Effect/Name/HeroTalandarAccumulatedShield@ShieldInitialSet=Shield Initial Set
+Effect/Name/HeroTalandarArsenalOvercharge=Arsenal Overcharge
+Effect/Name/HeroTalandarArsenalOvercharge@1ChargeUsed=1 Charge Used
+Effect/Name/HeroTalandarArsenalOvercharge@ApplyArsenalOvercharge=Apply Arsenal Overcharge
+Effect/Name/HeroTalandarArsenalOvercharge@ApplyCharged=Apply Charges
+Effect/Name/HeroTalandarArsenalOvercharge@ApplyOverchargedBehavior=Apply Overcharged Behavior
+Effect/Name/HeroTalandarArsenalOvercharge@RemoveChargeBehavior=Remove Charge Behavior
+Effect/Name/HeroTalandarArsenalOvercharge@ResetCooldowns=Reset Cooldowns
+Effect/Name/HeroTalandarArsenalOvercharge@SetCooldowns=Set Cooldowns
+Effect/Name/HeroTalandarArsenalOvercharge@SetTalandarAbilitiesChargesDefault=Set Talandar Abilities Charges Default
+Effect/Name/HeroTalandarDragoonArmorSuit@ApplyCasterInvulnerableBehavior=[1] - [1] -  Apply Caster Invulnerable Behavior
+Effect/Name/HeroTalandarDragoonArmorSuit@ApplyDragoonCarryBehavior=[1] - [3] -  Apply Dragoon Carry Behavior
+Effect/Name/HeroTalandarDragoonArmorSuit@DummySet=[1] - [4] -  Dummy Set
+Effect/Name/HeroTalandarDragoonArmorSuit@InitialPersistent=[1] -  Initial Persistent
+Effect/Name/HeroTalandarDragoonArmorSuit@RemovePraetorCarryBehavior=[1] - [2] -  Remove Praetor Carry Behavior
+Effect/Name/HeroTalandarPraetorArmorSuit@ApplyCasterInvulnerableBehavior=[1] - [1] -  Apply Caster Invulnerable Behavior
+Effect/Name/HeroTalandarPraetorArmorSuit@ApplyPraetorCarryBehavior=[1] - [3] -  Apply Praetor Carry Behavior
+Effect/Name/HeroTalandarPraetorArmorSuit@DummySet=[1] - [4] -  Dummy Set
+Effect/Name/HeroTalandarPraetorArmorSuit@InitialPersistent=[1] -  Initial Persistent
+Effect/Name/HeroTalandarPraetorArmorSuit@RemoveDragoonCarryBehavior=[1] - [2] -  Remove Dragoon Carry Behavior
+Effect/Name/HeroTalandarPurificationBlast@AfterKnockupSet=[1] - [3] - [2] - [2] - [1] - [2] - [1] -  After Knockup Set
+Effect/Name/HeroTalandarPurificationBlast@ApplyAfterKnockupSlow=[1] - [3] - [2] - [2] - [1] - [2] - [1] - [1] -  Apply After Knockup Slow
+Effect/Name/HeroTalandarPurificationBlast@ApplyKnockup=[1] - [3] - [2] - [2] - [1] - [2] -  Apply Knockup
+Effect/Name/HeroTalandarPurificationBlast@ApplyPurificationBlastBehavior=[1] - [3] -  Apply Purification Blast Behavior
+Effect/Name/HeroTalandarPurificationBlast@ApplyTalandarCastStun=[1] - [2] -  Apply Talandar Cast Stun
+Effect/Name/HeroTalandarPurificationBlast@ApplyTalandarExpireStun=[1] - [3] - [2] - [1] -  Apply Talandar Expire Stun
+Effect/Name/HeroTalandarPurificationBlast@CasterTeleport=[1] - [4] -  Caster Teleport
+Effect/Name/HeroTalandarPurificationBlast@CreateWarpoutUnit=[1] - [1] -  Create Warpout Unit
+Effect/Name/HeroTalandarPurificationBlast@ExpireDamage=[1] - [3] - [2] - [2] - [1] - [1] -  Expire Damage
+Effect/Name/HeroTalandarPurificationBlast@ExpireSearch=[1] - [3] - [2] - [2] -  Expire Search
+Effect/Name/HeroTalandarPurificationBlast@ExpireSearchSet=[1] - [3] - [2] - [2] - [1] -  Expire Search Set
+Effect/Name/HeroTalandarPurificationBlast@ExpireSet=[1] - [3] - [2] -  Expire Set
+Effect/Name/HeroTalandarPurificationBlast@FallStartDummySet=[1] - [3] - [1] -  Fall Start Dummy Set
+Effect/Name/HeroTalandarPurificationBlast@InitialPersistent=[1] -  Initial Persistent
+Effect/Name/HeroTalandarPurificationBlast@SetWarpoutUnitFacing=[1] - [1] - [1] -  Set Warpout Unit Facing
+Effect/Name/HeroTalandarPurifierBeam@ApplyCastingBehavior=Apply Casting Behavior
+Effect/Name/HeroTalandarPurifierBeam@ApplyHiddenBehavior=Apply Hidden Behavior
+Effect/Name/HeroTalandarPurifierBeam@ApplyInvulnerable=Apply Invulnerable
+Effect/Name/HeroTalandarPurifierBeam@ApplyMovementSupression=Apply Movement Supression
+Effect/Name/HeroTalandarPurifierBeam@ApplyPurifierBeam=Apply Purifier Beam
+Effect/Name/HeroTalandarPurifierBeam@ApplySwappingFormBehavior=Apply Swapping Form Behavior
+Effect/Name/HeroTalandarPurifierBeam@Damage=Damage
+Effect/Name/HeroTalandarPurifierBeam@DragoonArmorSuitInitialSet=Dragoon Armor Suit Initial Set
+Effect/Name/HeroTalandarPurifierBeam@FinalRemoveBehaviorHidden=Final Remove Behavior Hidden
+Effect/Name/HeroTalandarPurifierBeam@FinalRemoveBehaviorInvulnerable=Final Remove Behavior Invulnerable
+Effect/Name/HeroTalandarPurifierBeam@FinalRemoveBehaviorMovementSupression=Final Remove Behavior Movement Supression
+Effect/Name/HeroTalandarPurifierBeam@FinalSet=Final Set
+Effect/Name/HeroTalandarPurifierBeam@FinalSetArmorSuitCooldown=Final Set Armor Suit Cooldown
+Effect/Name/HeroTalandarPurifierBeam@FinalSetupNewArmorSuitSwitch=Final Setup New Armor Suit Switch
+Effect/Name/HeroTalandarPurifierBeam@InitialPersistent=Initial Persistent
+Effect/Name/HeroTalandarPurifierBeam@Modification=Modification
+Effect/Name/HeroTalandarPurifierBeam@PraetorArmorSuitInitialSet=Praetor Armor Suit Initial Set
+Effect/Name/HeroTalandarPurifierBeam@RemovePurifierBeamBehavior=Remove Purifier Beam Behavior
+Effect/Name/HeroTalandarPurifierBeam@Search=Search
+Effect/Name/HeroTalandarPurifierBeam@SearchImpactSet=Search Impact Set
+Effect/Name/HeroTalandarPurifierBeam@Teleport=Teleport
+Effect/Name/HeroTalandarPurifierShield@ApplyCasterBehavior=Apply Caster Behavior
+Effect/Name/HeroTalandarSolarCannon@ApplyMissileChargesDefault=Apply Missile Charges (Default)
+Effect/Name/HeroTalandarSolarCannon@ApplyMissileChargesMedium=Apply Missile Charges (Medium)
+Effect/Name/HeroTalandarSolarCannon@ApplyMissileChargesUpgraded=Apply Missile Charges (Upgraded)
+Effect/Name/HeroTalandarSolarCannon@ChargedDamage=Charged Damage
+Effect/Name/HeroTalandarSolarCannon@ChargedImpactSet=Charged Impact Set
+Effect/Name/HeroTalandarSolarCannon@ChargedLaunch=Charged Launch
+Effect/Name/HeroTalandarSolarCannon@ChargedLaunchSet=Charged Launch Set
+Effect/Name/HeroTalandarSolarCannon@ChargedSearch=Charged Search
+Effect/Name/HeroTalandarSolarCannon@CooldownSetDefault=Cooldown Set Default
+Effect/Name/HeroTalandarSolarCannon@CooldownSwitch=Cooldown Switch
+Effect/Name/HeroTalandarSolarCannon@DefaultDamage=Default Damage
+Effect/Name/HeroTalandarSolarCannon@DefaultImpactSet=Default Impact Set
+Effect/Name/HeroTalandarSolarCannon@DefaultLaunch=Default Launch
+Effect/Name/HeroTalandarSolarCannon@DefaultLaunchSet=Default Launch Set
+Effect/Name/HeroTalandarSolarCannon@DefaultSearch=Default Search
+Effect/Name/HeroTalandarSolarCannon@LaunchSwitch=Launch Switch
+Effect/Name/HeroTalandarSolarCannon@StartChannelActiveBehavior=Start Remove Channel Behavior
+Effect/Name/HeroTalandarSolarCannon@StartPersistent=Start Persistent
+Effect/Name/HeroTalandarSolarCannon@StartSet=Start Set
+Effect/Name/HeroTalandarSolarCannonChannel@ApplyChannelDummyBuff=Apply Channel Dummy Buff
+Effect/Name/HeroTalandarSolarCannonChannel@InitialSet=Initial Set
+Effect/Name/HeroTalandarSolarCannonChannel@SwitchApplyCharge=Switch Apply Charge
+Effect/Name/HeroTalandarSolarCannonChannel@SwitchApplyChargeDefault=Switch Apply Charge Default
+Effect/Name/HeroTalandarSolarCannonChannel@SwitchApplyChargeMedium=Switch Apply Charge Medium
+Effect/Name/HeroTalandarSolarCannonChannel@SwitchApplyChargeUpgraded=Switch Apply Charge Upgraded
+Effect/Name/HeroTalandarSolariteFlare@AirBombDamage=Air Bomb Damage
+Effect/Name/HeroTalandarSolariteFlare@AirBombDamageCharged=Air Bomb Damage (Charged)
+Effect/Name/HeroTalandarSolariteFlare@AirBombImpactSet=Air Bomb Impact Set
+Effect/Name/HeroTalandarSolariteFlare@AirBombImpactSetCharged=Air Bomb Impact Set (Charged)
+Effect/Name/HeroTalandarSolariteFlare@AirBombSearch=Air Bomb Search
+Effect/Name/HeroTalandarSolariteFlare@AirBombSearchCharged=Air Bomb Search (Charged)
+Effect/Name/HeroTalandarSolariteFlare@AirBombSearchSwitch=Air Bomb Search Switch
+Effect/Name/HeroTalandarSolariteFlare@ApplyMissileChargesDefault=Apply Missile Charges (Default)
+Effect/Name/HeroTalandarSolariteFlare@ApplyMissileChargesMedium=Apply Missile Charges (Medium)
+Effect/Name/HeroTalandarSolariteFlare@ApplyMissileChargesOvercharged=Apply Missile Charges (Overcharged)
+Effect/Name/HeroTalandarSolariteFlare@ApplyMissileChargesUpgraded=Apply Missile Charges (Upgraded)
+Effect/Name/HeroTalandarSolariteFlare@CooldownSetDefault=Cooldown Set Default
+Effect/Name/HeroTalandarSolariteFlare@CooldownSwitch=Cooldown Switch
+Effect/Name/HeroTalandarSolariteFlare@CreateUnit=Create Unit
+Effect/Name/HeroTalandarSolariteFlare@CreateUnitPersistent=Create Unit Persistent
+Effect/Name/HeroTalandarSolariteFlare@CreateUnitPersistentFinalSet=Create Unit Presistent Final Set
+Effect/Name/HeroTalandarSolariteFlare@CreateUnitSet=Create Unit Set
+Effect/Name/HeroTalandarSolariteFlare@StartRemoveChannelBehavior=Start Remove Channel Behavior
+Effect/Name/HeroTalandarSolariteFlare@StartSet=Start Set
+Effect/Name/HeroTalandarSolariteFlare@TimedLifeAB=Timed Life AB
+Effect/Name/HeroTalandarSolariteFlareChannel@ApplyChannelBehavior=Apply Channel Behavior
+Effect/Name/HeroTalandarSolariteFlareChannel@InitialSet=Initial Set
+Effect/Name/HeroTalandarSolariteFlareChannel@SwitchApplyCharge=Switch Apply Charge
+Effect/Name/HeroTalandarSolariteFlareChannel@SwitchApplyChargeDefault=Switch Apply Charge Default
+Effect/Name/HeroTalandarSolariteFlareChannel@SwitchApplyChargeMedium=Switch Apply Charge Medium
+Effect/Name/HeroTalandarSolariteFlareChannel@SwitchApplyChargeUpgrade=Switch Apply Charge Upgrade
+Effect/Name/HeroTalandarTalentAccumulatedShieldAdaptiveShield@Modification=Modification
+Effect/Name/HeroTalandarTalentAccumulatedShieldAdaptiveShield@ModifyUnit=Modify Unit
+Effect/Name/HeroTalandarTalentAccumulatedShieldBraveHearth@ApplyUnstoppable=Apply Unstoppable
+Effect/Name/HeroTalandarTalentAccumulatedShieldDisruptor@ApplyDamagePower=Apply Damage Power
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@AddAbilityCooldown=Add Ability Cooldown
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@ApplyCooldownBehavior=Apply Cooldown Behavior
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@HandleSet=Handle Set
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@Heal=Heal
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@ModifyCooldown=Modify Cooldown
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@ResetAbilityCooldown=Reset Ability Cooldown
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@ResetECooldown=Reset E Cooldown
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@Switch=Switch
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@WarpToDragoon=Warp To Dragoon
+Effect/Name/HeroTalandarTalentAccumulatedShieldImmortal@WarpToPraetor=Warp To Praetor
+Effect/Name/HeroTalandarTalentAccumulatedShieldRapidRecharge@Healing=Healing
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBase=Cooldown Reduction (Base)
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBaseSpecialDragoonCase=Cooldown Reduction (Base) Special Dragoon Case
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSetBase=Cooldown Reduction Set (Base)
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSetUpgraded=Cooldown Reduction Set (Upgraded)
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSwitch=Switch
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgraded=Cooldown Reduction (Upgraded)
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgradedSpecialDragoonCase=Cooldown Reduction (Upgraded) Special Dragoon Case
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@DecreaseToken=Decrease Token
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken=Increase Token
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounterController=Token Counter Controller
+Effect/Name/HeroTalandarTalentAkhundelar=Modification
+Effect/Name/HeroTalandarTalentAssaultProtocol@Modification=Modification
+Effect/Name/HeroTalandarTalentAssaultProtocol@ModifyCooldownSolarCannon=Modify Cooldown (Solar Cannon)
+Effect/Name/HeroTalandarTalentAssaultProtocol@ModifyCooldownSolariteFlare=Modify Cooldown (Solarite Flare)
+Effect/Name/HeroTalandarTalentAvengingProtocol@ApplyDamageReduction=Apply Damage Reduction
+Effect/Name/HeroTalandarTalentChampionUpgrade@ApplyArmorReduction=Apply Armor Reduction
+Effect/Name/HeroTalandarTalentOperationalEfficiency@DecreaseToken=Decrease Token
+Effect/Name/HeroTalandarTalentOperationalEfficiency@IncreaseToken=Increase Token
+Effect/Name/HeroTalandarTalentOperationalEfficiency@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroTalandarTalentOperationalEfficiency@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroTalandarTalentOperationalEfficiency@TokenCounterController=Token Counter Controller
+Effect/Name/HeroTalandarTalentPhaseBomb@AbilitiesCooldownReduction=Abilities Cooldown Reduction
+Effect/Name/HeroTalandarTalentPhaseBomb@CasterAB=Caster AB
+Effect/Name/HeroTalandarTalentPhaseBomb@ImpactSet=Impact Set
+Effect/Name/HeroTalandarTalentPhaseBomb@ReducePhaseBombCooldown=Reduce Phase Bomb Cooldown
+Effect/Name/HeroTalandarTalentPurification@ApplyTimedBonus=Apply Timed Bonus
+Effect/Name/HeroTalandarTalentPurification@DelayBeforeRemove=Delay Before Remove
+Effect/Name/HeroTalandarTalentPurification@EnergyAdd=Energy Add
+Effect/Name/HeroTalandarTalentPurification@RemoveTimedBonus=Remove Timed Bonus
+Effect/Name/HeroTalandarTalentPurifierArmamentsAdvancedArmaments=Modification
+Effect/Name/HeroTalandarTalentPurifierBeamEmpoweredBeam@CooldownReduction=Cooldown Reduction
+Effect/Name/HeroTalandarTalentPurifierBeamEmpoweredBeam@Modification=Modification
+Effect/Name/HeroTalandarTalentSolariteFlareMagneticField@ApplyForce=Apply Force
+Effect/Name/HeroTalandarTalentSolariteFlareMagneticField@KnockbackAB=Knockback AB
+Effect/Name/HeroTalandarTalentSolariteFlareMagneticField@KnockbackInitialSet=Knockback Initial Set
+Effect/Name/HeroTalandarTalentSolariteFlareMagneticField@KnockbackPersistent=Knockback Persistent
+Effect/Name/HeroTalandarTalentSolariteFlareMagneticField@KnockbackRB=Knockback RB
+Effect/Name/HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnit=Create Unit
+Effect/Name/HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitPersistentInitial=Create Unit Persistent Initial
+Effect/Name/HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitSet=Create Unit Set
+Effect/Name/HeroTalandarTalentTacticalDataWeb@ApplyAttackSpeedBuff=Apply Attack Speed Buff
+Effect/Name/HeroTalandarTalentTacticalOverload@SpellPowerAB=Spell Power AB
+Effect/Name/HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABNonTimed=Protection AB (Non Timed)
+Effect/Name/HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABTimed=Protection AB (Timed)
+Effect/Name/HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff=Apply Attack Speed Buff
+Effect/Name/HeroTalandarTalentTitanDestroyer@Damage=Damage
+Effect/Name/HeroTalandarTalentWhirlwindDisruptor@ApplyStun=Apply Stun
+Effect/Name/HeroTalandarThunderousCharge@CasterActorAnimationDummySet=Caster Actor Animation (Dummy Set)
+Effect/Name/HeroTalandarThunderousCharge@CasterApplyForce=Caster Apply Force
+Effect/Name/HeroTalandarThunderousCharge@CasterApplySpeed=Caster Apply Speed
+Effect/Name/HeroTalandarThunderousCharge@CasterPeriodicSet=Caster Periodic Set
+Effect/Name/HeroTalandarThunderousCharge@CasterRemoveSpeed=Caster Remove Speed
+Effect/Name/HeroTalandarThunderousCharge@CooldownReduce=Cooldown Reduce
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionApplyStun=Heroic Collision Apply Stun
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionCheckLargeHeroTargetSet=Heroic Collision Check Large Hero Target Set
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionCheckSmallHeroTargetSet=Heroic Collision Check Small Hero Target Set
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionDamage=Heroic Collision Damage
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionImpactSet=Heroic Collision Impact Set
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionPersistent=Heroic Collision Persistent
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionRemoveDefaultStun=Heroic Collision Remove Default Stun
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionRemoveKnockbackBehavior=Heroic Collision Remove Knockback Behavior
+Effect/Name/HeroTalandarThunderousCharge@HeroicCollisionSet=Heroic Collision Set
+Effect/Name/HeroTalandarThunderousCharge@HeroicDamage=Heroic Damage
+Effect/Name/HeroTalandarThunderousCharge@HeroicIssueStopOrder=Heroic Issue Stop Order
+Effect/Name/HeroTalandarThunderousCharge@HeroicKnockbackApplyBehavior=Heroic Knockback Apply Behavior
+Effect/Name/HeroTalandarThunderousCharge@HeroicKnockbackApplyForce=Heroic Knockback Apply Force
+Effect/Name/HeroTalandarThunderousCharge@HeroicKnockbackPersistent=Heroic Knockback Persistent
+Effect/Name/HeroTalandarThunderousCharge@HeroicSearchApplyStun=Heroic Search Apply Stun
+Effect/Name/HeroTalandarThunderousCharge@HeroicSearchImpactSet=Heroic Search Impact Set
+Effect/Name/HeroTalandarThunderousCharge@HeroicSearchSetFacingTarget=Heroic Search Set Facing Target
+Effect/Name/HeroTalandarThunderousCharge@HeroicSearchTargets=Heroic Search Targets
+Effect/Name/HeroTalandarThunderousCharge@InitialPersistent=Initial Persistent
+Effect/Name/HeroTalandarThunderousCharge@InitialPersistentFinalSet=Initial Persistent Final Set
+Effect/Name/HeroTalandarThunderousCharge@InitialPersistentStartSet=Initial Persistent Start Set
+Effect/Name/HeroTalandarThunderousCharge@NonHeroicDamage=Non-Heroic Damage
+Effect/Name/HeroTalandarThunderousCharge@NonHeroicImpactSet=Non-Heroic Impact Set
+Effect/Name/HeroTalandarThunderousCharge@NonHeroicSearchTargets=Non-Heroic Search Targets
+Effect/Name/HeroTalandarThunderousCharge@OffsetPersistent=Offset Persistent
+Effect/Name/HeroTalandarThunderousCharge@SearchSet=Search Set
+Effect/Name/HeroTalandarWeaponDragoon@Damage=[2] - [1] -  Damage
+Effect/Name/HeroTalandarWeaponDragoon@ImpactSet=[2] -  Impact Set
+Effect/Name/HeroTalandarWeaponDragoon@LaunchMissile=[1] -  Launch Missile
+Effect/Name/HeroTalandarWeaponDragoon@SplashDamage=[2] - [2] - [1] - [1] -  Splash Damage
+Effect/Name/HeroTalandarWeaponDragoon@SplashImpactSet=[2] - [2] - [1] -  Splash Impact Set
+Effect/Name/HeroTalandarWeaponDragoon@SplashSearch=[2] - [2] -  Splash Search
+Effect/Name/HeroTalandarWeaponPraetor@Damage=Damage
+Effect/Name/HeroTalandarWeaponPraetor@ImpactSet=Impact Set
+Effect/Name/HeroTalandarWhirlwind@ApplyAnimationBehavior=Apply Animation Behavior
+Effect/Name/HeroTalandarWhirlwind@ApplySlow=Apply Slow
+Effect/Name/HeroTalandarWhirlwind@Damage=Damage
+Effect/Name/HeroTalandarWhirlwind@ImpactSet=Impact Set
+Effect/Name/HeroTalandarWhirlwind@ImpactSlowStunSwitch=Impact Slow Stun Switch
+Effect/Name/HeroTalandarWhirlwind@InitialSet=Initial Set
+Effect/Name/HeroTalandarWhirlwind@RemoveAnimationBehavior=Remove Animation Behavior
+Effect/Name/HeroTalandarWhirlwind@Search=Search
+Effect/Name/HeroTalandarWhirlwind@SetWeaponCooldown=Set Weapon Cooldown
+Hero/Name/HeroTalandar=Talandar
+Unit/Name/HeroTalandar=Talandar
+Unit/Name/HeroTalandarArsenalOvercharge=Arsenal Overcharge
+Unit/Name/HeroTalandarPurificationBlast=Purification Blast
+Unit/Name/HeroTalandarPurificationBlast@WarpOutUnit=Warp Out Unit
+Unit/Name/HeroTalandarSolarCannon@ChargedMissile=Charged Missile
+Unit/Name/HeroTalandarSolarCannon@DefaultMissile=Default Missile
+Unit/Name/HeroTalandarSolariteFlare@AirBomb=Air Bomb
+Unit/Name/HeroTalandarTalentAccumulatedShieldImmortal=Immortal
+Unit/Name/HeroTalandarTalentPhaseBomb=Phase Bomb
+Unit/Name/HeroTalandarWeaponDragoon@Missile=Missile
+UserData/Hero/Talandar_PairedName=<c val="#ColorCreamYellow">Praetor Armor Suit</c>
+UserData/Hero/Talandar_PairedName_001=<c val="#ColorViolet">Dragoon Armor Suit</c>
+UserData/Skin/TalandarBase_VariationName=Talandar
+Weapon/Name/HeroTalandarWeaponDragoon=Dragoon Weapon
+Weapon/Name/HeroTalandarWeaponPraetor=Praetor Weapon

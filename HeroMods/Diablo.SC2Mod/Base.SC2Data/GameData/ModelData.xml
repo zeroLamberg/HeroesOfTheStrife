@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel default="1" id="HeroDiablo@Common" parent="HeroModelParent">
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_RequiredAnims\Storm_Hero_Diablo_RequiredAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Diablo_PortraitAnims\Storm_Hero_Diablo_PortraitAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_FacialAnims\Storm_Hero_Diablo_FacialAnims_v01.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="0.100000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="0.600000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Taunt,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="0.500000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Taunt,00"/>
+            <Name value="Diablo_Footstep_OverPower"/>
+            <Type value="Sound"/>
+            <Time value="0.500000"/>
+            <Payload value="Diablo_Footstep_OverPower"/>
+        </Events>
+        <Events>
+            <Anim value="Taunt,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="1.900000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Taunt,00"/>
+            <Name value="Diablo_Attack_Whoosh"/>
+            <Type value="Sound"/>
+            <Time value="0.000100"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Dance,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="0.430000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Dance,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="1.170000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Dance,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="3.426000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Dance,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="4.044000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Channel,Hearth,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="0.461000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Channel,Hearth,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="1.153000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Channel,Hearth,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="1.863000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Channel,Hearth,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="2.494000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Channel,Hearth,00"/>
+            <Name value="Diablo_Footstep"/>
+            <Type value="Sound"/>
+            <Time value="3.446000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Diablo"/>
+        <Radius value="0.700000"/>
+        <TechPurchaseCamera value="CameraDiablo"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="DiabloArchangel_Apocalypse_ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_Apocalypse_Cast\Effect_Diablo_Archangel_Apocalypse_Cast.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_Apocalypse_ModelWarning" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_Apocalypse\Effect_Diablo_Archangel_Apocalypse.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="3.000000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+    </CModel>
+    <CModel id="DiabloArchangel_DevilCharge_Trail" parent="MissileFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_DemonicCharge\Effect_Diablo_Archangel_DemonicCharge.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_DevilCharge_Impact" parent="ImpactFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_DemonicCharge_Impact\Effect_Diablo_Archangel_DemonicCharge_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_FireStomp_ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_FireStomp\Effect_Diablo_Archangel_FireStomp.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="0.500000"/>
+    </CModel>
+    <CModel id="DiabloArchangel_FireStomp_ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_FireStomp_Impact\Effect_Diablo_Archangel_FireStomp_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_FireStomp_ReturnMissile" parent="MissileFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_FireStorm_Missile\Effect_Diablo_Archangel_FireStorm_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_FireStomp_Missile" parent="MissileFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_FireStomp_Missile\Effect_Diablo_Archangel_FireStomp_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_LightningBreath_ChargeModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_LightningBreath\Effect_Diablo_Archangel_LightningBreath.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_LightningBreath_ModelCastGround" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_LightningBreath_Ground\Effect_Diablo_Archangel_LightningBreath_Ground.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_LightningBreath_Impact">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_LightningBreath_Impact\Effect_Diablo_Archangel_LightningBreath_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="0.750000"/>
+    </CModel>
+    <CModel id="DiabloArchangelBucket_LordOfTerror_ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_LordOfTerror\Effect_Diablo_Archangel_LordOfTerror.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangelBucket_LordOfTerror_AttackBeam" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_LordOfTerror_Beam\Effect_Diablo_Archangel_LordOfTerror_Beam.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_Overpower_Cast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_Overpower_Cast\Effect_Diablo_Archangel_Overpower_Cast.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_Overpower_Impact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_Overpower_Impact\Effect_Diablo_Archangel_Overpower_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_Overpower_Missile" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_Overpower_Missile\Effect_Diablo_Archangel_Overpower_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloSummer18_Apocalypse_ModelWarning" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Summer18\Effect_Diablo_Summer18_Apocalypse\Effect_Diablo_Summer18_Apocalypse.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="3.000000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+    </CModel>
+    <CModel id="Diablo_BlackSoulStone_SoulStoneMark">
+        <Model value="assets\Effects\Heroes\Base_Diablo\Effect_Diablo_Base_SoulStone_Mark\Effect_Diablo_Base_SoulStone_Mark.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloArchangel_BlackSoulStone_SoulStoneMark">
+        <Model value="assets\Effects\Heroes\Skin_Diablo_Archangel\Effect_Diablo_Archangel_SoulStone_Mark\Effect_Diablo_Archangel_SoulStone_Mark.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimePortraitVar3" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Prime\Portrait_Background_Diablo_Prime.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Prime_Var3"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimePortraitVar4" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Prime\Portrait_Background_Diablo_Prime.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Prime_Var4"/>
+    </CModel>
+    <CModel id="DiabloSkinSummer18PortraitVar1" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Summer18\Portrait_Background_Diablo_Summer18.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Summer18_Var1"/>
+    </CModel>
+    <CModel id="DiabloSkinSummer18PortraitVar2" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Summer18\Portrait_Background_Diablo_Summer18.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Summer18_Var2"/>
+    </CModel>
+    <CModel id="DiabloSkinArchangelDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Archangel\Hero_Skin_Diablo_Archangel_DeathRagdoll\Hero_Skin_Diablo_Archangel_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Archangel_" Slot="main"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinUltimatePortrait" parent="CorePortrait">
+        <Model value="Assets\Portraits\Storm_Portrait_Diablo_Base_Background\Storm_Portrait_Diablo_Base_Background_v01.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Lighting value="Hero_Diablo_Portrait_Ultimate"/>
+    </CModel>
+    <CModel id="DiabloSkinSummer18PortraitAddition" parent="Portrait">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Summer18\Hero_Skin_Diablo_Summer18\Hero_Skin_Diablo_Summer18.m3"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Summer18_" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_diablo_base.fxa"/>
+    </CModel>
+    <CModel id="DiabloSkinSummer18Portrait" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Summer18\Portrait_Background_Diablo_Summer18.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Summer18"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimeDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime_DeathRagdoll\Hero_Skin_Diablo_Prime_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Prime_" Slot="main"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimePortraitVar1" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Prime_Var1\Portrait_Background_Diablo_Prime_Var1.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Prime_Var1"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimePortraitVar2" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Prime_Var2\Portrait_Background_Diablo_Prime_Var2.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Prime_Var2"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinUltimatePortraitAddition" parent="CorePortrait">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Diablo_Ultimate\Storm_Hero_Diablo_Ultimate_v01.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_RequiredAnims\Storm_Hero_Diablo_RequiredAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Diablo_PortraitAnims\Storm_Hero_Diablo_PortraitAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_FacialAnims\Storm_Hero_Diablo_FacialAnims_v01.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <FacialController value="LocalizedData\Facial\Storm_Hero_Diablo_Base.fxa"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Ultimate_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinUltimateDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Diablo_Ultimate_DeathRagdoll\Storm_Hero_Diablo_Ultimate_DeathRagdoll_v01.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Ultimate_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="DiabloSkinSummer18DeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Summer18\Hero_Skin_Diablo_Summer18_DeathRagdoll\Hero_Skin_Diablo_Summer18_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Summer18_" Slot="main"/>
+    </CModel>
+    <CModel id="DiabloSkinArchangelPortrait" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo\Portrait_Background_Diablo.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Archangel"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimePortrait" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Prime\Portrait_Background_Diablo_Prime.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Prime"/>
+    </CModel>
+    <CModel id="DiabloSkinPrimePortraitAddition" parent="Portrait">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime.m3"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo_Prime\Portrait_Anims_Diablo_Prime.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Prime_" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_diablo_prime.fxa"/>
+    </CModel>
+    <CModel id="DiabloSkinArchangelPortraitAddition" parent="Portrait">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Archangel\Hero_Skin_Diablo_Archangel\Hero_Skin_Diablo_Archangel.m3"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Archangel_" Slot="main"/>
+        <TextureDeclares Prefix="gold_reflection" Slot="reflection"/>
+        <FacialController value="LocalizedData\Facial\hero_diablo_base.fxa"/>
+    </CModel>
+    <CModel id="HeroDiablo@Base" parent="HeroDiablo@Common">
+        <Model value="assets\Units\Heroes\Storm_Hero_Diablo_Base\Storm_Hero_Diablo_Base_v01.m3"/>
+        <FacialController value="localizeddata\Facial\Storm_Hero_Diablo_Base.fxa"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Base_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="HeroDiablo@StoreModelBase" parent="HeroModelParentStore">
+        <Model value="Assets\Store\Store_Hero_DiabloBase\Store_Hero_DiabloBase.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_RequiredAnims\Storm_Hero_Diablo_RequiredAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Diablo_PortraitAnims\Storm_Hero_Diablo_PortraitAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_FacialAnims\Storm_Hero_Diablo_FacialAnims_v01.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <VariationCount value="4"/>
+    </CModel>
+    <CModel id="HeroDiablo@StoreModelUltimate" parent="HeroModelParentStore">
+        <Model value="Assets\Store\Store_Hero_DiabloUltimate\Store_Hero_DiabloUltimate.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_RequiredAnims\Storm_Hero_Diablo_RequiredAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Diablo_PortraitAnims\Storm_Hero_Diablo_PortraitAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_FacialAnims\Storm_Hero_Diablo_FacialAnims_v01.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="HeroDiablo@BaseDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="assets\Units\Heroes\Storm_Hero_Diablo_Base_DeathRagdoll\Storm_Hero_Diablo_Base_DeathRagdoll_v01.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Base_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="DiabloSkinKaijoeDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Kaijo\Hero_Skin_Diablo_Kaijo_DeathRagdoll\Hero_Skin_Diablo_Kaijo_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Kaijo_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="DiabloSkinLurkabloDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="assets\Units\Heroes\Diablo\Diablo_Lurkablo\Diablo_Lurkablo\Diablo_Lurkablo_v01.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Lurkablo_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="HeroDiablo@BasePortrait" parent="CorePortrait">
+        <Model value="Assets\Portraits\Storm_Portrait_Diablo_Base_Background\Storm_Portrait_Diablo_Base_Background_v01.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Lighting value="Hero_Diablo_Portrait_Base"/>
+    </CModel>
+    <CModel id="HeroDiablo@BasePortraitAddition" parent="CorePortrait">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Diablo_Base\Storm_Hero_Diablo_Base_v01.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_RequiredAnims\Storm_Hero_Diablo_RequiredAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Diablo_PortraitAnims\Storm_Hero_Diablo_PortraitAnims_v01.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_FacialAnims\Storm_Hero_Diablo_FacialAnims_v01.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <FacialController value="LocalizedData\Facial\Storm_Hero_Diablo_Base.fxa"/>
+        <Image value="Assets\Textures\HeroDiablo@PortraitAddition_Static.dds"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Base_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="DiabloSkinKaijoePortrait" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Kaijo\Portrait_Background_Diablo_Kaijo.m3"/>
+        <Lighting value="Hero_Diablo_Portrait_Kaijo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="DiabloSkinKaijoePortraitAddition" parent="Portrait">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Kaijo\Hero_Skin_Diablo_Kaijo\Hero_Skin_Diablo_Kaijo.m3"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Kaijo_v01_" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_diablo_base.fxa"/>
+    </CModel>
+    <CModel id="DiabloSkinLurkabloPortrait" parent="Portrait">
+        <Model value="assets\Portraits\Backgrounds\Portrait_Background_Diablo_Lurkablo\Portrait_Background_Diablo_Lurkablo.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Diablo_Portrait_Lurkablo"/>
+    </CModel>
+    <CModel id="DiabloSkinLurkabloPortraitAddition" parent="Portrait">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Lurkablo\Hero_Skin_Diablo_Lurkablo\Hero_Skin_Diablo_Lurkablo.m3"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Lurkablo_v01_" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_diablo_base.fxa"/>
+    </CModel>
+    <CModel id="HeroDiabloSkinArchangel" Prefix="Units\" Race="Neutral">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Archangel\Hero_Skin_Diablo_Archangel\Hero_Skin_Diablo_Archangel.m3"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Archangel_" Slot="main"/>
+        <TextureDeclares Prefix="gold_reflection" Slot="reflection"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_RequiredAnims\Hero_Base_Diablo_RequiredAnims.m3a"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_FacialAnims\Hero_Base_Diablo_FacialAnims.m3a"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.073000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.565000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepLeft"/>
+            <Type value="Custom"/>
+            <Time value="0.100000"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepRight"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,C,00"/>
+            <Name value="Diablo_Apocalypse_Cast"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="HeroDiabloApocalypse@SoundRoar"/>
+        </Events>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Diablo"/>
+        <Occlusion value="Show"/>
+        <TechPurchaseCamera value="CameraDiablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinKaijoe" Prefix="Units\" Race="Neutral">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Kaijo\Hero_Skin_Diablo_Kaijo\Hero_Skin_Diablo_Kaijo.m3"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Kaijo_v01_" Slot="main"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_RequiredAnims\Hero_Base_Diablo_RequiredAnims.m3a"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_FacialAnims\Hero_Base_Diablo_FacialAnims.m3a"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.073000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.565000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepLeft"/>
+            <Type value="Custom"/>
+            <Time value="0.100000"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepRight"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,C,00"/>
+            <Name value="Diablo_Apocalypse_Cast"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="HeroDiabloApocalypse@SoundRoar"/>
+        </Events>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Diablo"/>
+        <Occlusion value="Show"/>
+        <TechPurchaseCamera value="CameraDiablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinLurkablo" Prefix="Units\" Race="Neutral">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Lurkablo\Hero_Skin_Diablo_Lurkablo\Hero_Skin_Diablo_Lurkablo.m3"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Lurkablo_v01_" Slot="main"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_RequiredAnims\Hero_Base_Diablo_RequiredAnims.m3a"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_FacialAnims\Hero_Base_Diablo_FacialAnims.m3a"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.073000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.565000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepLeft"/>
+            <Type value="Custom"/>
+            <Time value="0.100000"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepRight"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,C,00"/>
+            <Name value="Diablo_Apocalypse_Cast"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="HeroDiabloApocalypse@SoundRoar"/>
+        </Events>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Diablo"/>
+        <Occlusion value="Show"/>
+        <TechPurchaseCamera value="CameraDiablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinPrime" Prefix="Units\" Race="Neutral">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime.m3"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime_RequiredAnims\Hero_Skin_Diablo_Prime_RequiredAnims.m3a"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Skin_Diablo_Prime\Hero_Skin_Diablo_Prime_FacialAnims\Hero_Skin_Diablo_Prime_FacialAnims.m3a"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo_Prime\Portrait_Anims_Diablo_Prime.m3a"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Prime_" Slot="main"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.073000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.565000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepLeft"/>
+            <Type value="Custom"/>
+            <Time value="0.100000"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepRight"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,C,00"/>
+            <Name value="Diablo_Apocalypse_Cast"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="HeroDiabloApocalypse@SoundRoar"/>
+        </Events>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Diablo"/>
+        <Occlusion value="Show"/>
+        <TechPurchaseCamera value="CameraDiablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinSummer18" Prefix="Units\" Race="Neutral">
+        <Model value="assets\Units\Heroes\Hero_Skin_Diablo_Summer18\Hero_Skin_Diablo_Summer18\Hero_Skin_Diablo_Summer18.m3"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Skin_Diablo_Summer18\Hero_Skin_Diablo_Summer18_RequiredAnims\Hero_Skin_Diablo_Summer18_RequiredAnims.m3a"/>
+        <RequiredAnims value="assets\Units\Heroes\Hero_Base_Diablo\Hero_Base_Diablo_FacialAnims\Hero_Base_Diablo_FacialAnims.m3a"/>
+        <RequiredAnims value="assets\Portraits\Anims\Portrait_Anims_Diablo\Portrait_Anims_Diablo.m3a"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Summer18_" Slot="main"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.073000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A"/>
+            <Name value="Diablo_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.565000"/>
+            <Payload value="HeroDiablo@Footstep"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepLeft"/>
+            <Type value="Custom"/>
+            <Time value="0.100000"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,02"/>
+            <Name value="StepRight"/>
+            <Type value="Custom"/>
+            <Time value="0.600000"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,01"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,00"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.010000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="DiabloAttackWhoosh"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+            <Payload value="HeroDiabloWeapon@AttackWhoosh"/>
+        </Events>
+        <Events>
+            <Anim value="Spell,C,00"/>
+            <Name value="Diablo_Apocalypse_Cast"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="HeroDiabloApocalypse@SoundRoar"/>
+        </Events>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Diablo"/>
+        <Occlusion value="Show"/>
+        <TechPurchaseCamera value="CameraDiablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@SkinUltimate" parent="HeroDiablo@Common">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Diablo_Ultimate\Storm_Hero_Diablo_Ultimate_v01.m3"/>
+        <TextureDeclares Prefix="Storm_Hero_Diablo_Ultimate_v01_" Slot="main"/>
+    </CModel>
+    <CModel id="HeroDiabloLightningBreath@ModelCastGround" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_LightningBreath_Ground\Storm_FX_Diablo_Base_LightningBreath_Ground.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloFireStomp@ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_FireStomp\Storm_FX_Diablo_Base_FireStomp.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="0.500000"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentLordofTerror@ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_LordofTerror\Storm_FX_Diablo_Base_LordofTerror.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloFireStomp@Missile" parent="MissileFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_FireStomp_Missile\Storm_FX_Diablo_Base_FireStomp_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloApocalypse@ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_Apocalypse_Cast\Storm_FX_Diablo_Base_Apocalypse_Cast.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloApocalypse@ModelWarning" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_Apocalypse\Storm_FX_Diablo_Base_Apocalypse.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="3.000000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+    </CModel>
+    <CModel id="HeroDiabloFireStomp@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_FireStomp_Impact\Storm_FX_Diablo_Base_FireStomp_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloApocalypse@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_Apocalypse_Impact\Storm_FX_Diablo_Base_Apocalypse_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloOverpower@Impact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_Overpower_Impact\Storm_FX_Diablo_Base_Overpower_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloOverpower@Cast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_Overpower_Cast\Storm_FX_Diablo_Base_Overpower_Cast.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloOverpower@Missile" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_Overpower_Missile\Storm_FX_Diablo_Base_Overpower_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloDevilCharge@Impact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_DemonicCharge_Impact\Storm_FX_Diablo_Base_DemonicCharge_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloDevilCharge@Trail" parent="MissileFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_DemonicCharge\Storm_FX_Diablo_Base_DemonicCharge.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloLightningBreath@Impact">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_LightningBreath_Impact\Storm_FX_Diablo_Base_LightningBreath_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="0.750000"/>
+    </CModel>
+    <CModel id="HeroDiabloLightningBreath@ChargeModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_LightningBreath\Storm_FX_Diablo_Base_LightningBreath.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentLordofTerror@AttackBeam" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_LordofTerror_Beam\Storm_FX_Diablo_Base_LordofTerror_Beam.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@Death" parent="CoreUnitDeath">
+        <EditorCategories value="CoreHero:Diablo"/>
+        <RadiusLoose value="0.500000"/>
+    </CModel>
+    <CModel id="HeroDiabloBlackSoulstone@NonHeroMissile" parent="MissileFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_BlackSoulstone_Missile\Storm_FX_Diablo_Base_BlackSoulstone_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloBlackSoulstone@HeroMissile" parent="MissileFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_BlackSoulstone_Missile\Storm_FX_Diablo_Base_BlackSoulstone_Missile.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloBlackSoulstone@CanReviveFX" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_SoulStone_Mark\Storm_FX_Diablo_Base_SoulStone_Mark.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloBlackSoulstone@Model" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Diablo_Base_BlackSoulstone\Storm_FX_Diablo_Base_BlackSoulstone.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentFireStompHellfire@Damage" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Talent_BurningRage_Impact\Storm_FX_Talent_BurningRage_Impact.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Radius value="0.750000"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentFireStompHellfire@Buff" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Talent_BurningRage\Storm_FX_Talent_BurningRage.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentHellgate@TeleportInModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Talent_BoltoftheStorm_In\Storm_FX_Talent_BoltoftheStorm_In.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Priority value="16"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentHellgate@TeleportOutModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Talent_BoltoftheStorm_Out\Storm_FX_Talent_BoltoftheStorm_Out.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+        <Priority value="16"/>
+    </CModel>
+    <CModel id="HeroDiabloTalentHellgate@CursorSplat" parent="UI">
+        <Model value="Assets\UI\Cursors\Storm_UI_AOECursor_Fantasy\Storm_UI_AOECursor_Fantasy.m3"/>
+        <EditorCategories value="CoreHero:Diablo"/>
+    </CModel>
+    <CModel id="HeroDiablo@MountFX" parent="BaseMount">
+        <Model value="Assets\Effects\Storm_FX_Diablo_Base_Mount\Storm_FX_Diablo_Base_Mount.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Diablo_RequiredAnims\Storm_Hero_Diablo_RequiredAnims.m3a"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Diablo"/>
+        <Events>
+            <Anim value="Walk,A,Ridenone,00"/>
+            <Name value="HeroDiablo@Mount_Terrorcharge_FS"/>
+            <Type value="Sound"/>
+            <Time value="0.467000"/>
+            <Payload value="HeroDiablo@Mount_Terrorcharge_FS"/>
+        </Events>
+    </CModel>
+</Catalog>

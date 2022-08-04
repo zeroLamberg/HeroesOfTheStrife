@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <Dependencies>
+        <Value>file:Mods\Commanders Conflict\Development\DataMods\Data.SC2Mod</Value>
+    </Dependencies>
+    <ModifiableDependencies>
+        <Value>Mods\Commanders Conflict\Development\DataMods\Data.SC2Mod</Value>
+    </ModifiableDependencies>
+    <Preload>
+        <Value>GameLink:Unit;MinionProtossCatapult</Value>
+        <Value>GameLink:Unit;MinionProtossCatapultWeapon@AttackMissile</Value>
+        <Value>GameLink:Unit;MinionProtossMelee</Value>
+        <Value>GameLink:Unit;MinionProtossRanged</Value>
+        <Value>GameLink:Unit;MinionProtossRangedWeapon@AttackMissile</Value>
+        <Value>GameLink:Unit;MinionProtossWizard</Value>
+        <Value>GameLink:Unit;MinionProtossWizardWeapon@AttackMissile</Value>
+        <Value>GameLink:Unit;MercenaryVanguard@Defender</Value>
+        <Value>GameLink:Unit;MercenaryVanguard@Laner</Value>
+        <Value>GameLink:Unit;MercenaryVanguardWeapon@Missile</Value>
+        <Value>GameLink:Unit;MercenaryHybridDominator@Defender</Value>
+        <Value>GameLink:Unit;MercenaryHybridDominator@Laner</Value>
+        <Value>GameLink:Unit;MercenaryHybridNemesis@Defender</Value>
+        <Value>GameLink:Unit;MercenaryHybridNemesis@Laner</Value>
+        <Value>GameLink:Unit;MercenaryHybridReaver@Defender</Value>
+        <Value>GameLink:Unit;MercenaryHybridReaver@Laner</Value>
+        <Value>GameLink:Unit;MercenaryColossus@Defender</Value>
+        <Value>GameLink:Unit;MercenaryColossus@Laner</Value>
+    </Preload>
+</DocInfo>

@@ -1,0 +1,483 @@
+﻿Abil/Activity/HeroAbathurDeepTunnelActivity=Deep Tunnel
+Abil/Activity/HeroAbathurUltimateEvolution=Ultimate Evolution
+Abil/Name/AbathurNeuralParasite=Neural Parasite
+Abil/Name/AbathurSpawnLocustsAssaultStrain=Spawn Locusts (Assault Strain)
+Abil/Name/AbathurSpawnLocustsBombardStrain=Spawn Locusts (Bombard Strain)
+Abil/Name/HeroAbathurAssumingDirectControl@Cancel=Cancel
+Abil/Name/HeroAbathurCarapace=Carapace
+Abil/Name/HeroAbathurDeepTunnel=Deep Tunnel
+Abil/Name/HeroAbathurDeepTunnelMonstrosity=Deep Tunnel
+Abil/Name/HeroAbathurEvolveMonstrosity=Evolve Monstrosity
+Abil/Name/HeroAbathurEvolveMonstrosityActivate=Symbiote
+Abil/Name/HeroAbathurLocustStrain=Locust Strain
+Abil/Name/HeroAbathurSpikeBurst=Spike Burst
+Abil/Name/HeroAbathurStab=Stab
+Abil/Name/HeroAbathurSymbiote=Symbiote
+Abil/Name/HeroAbathurTalentLocustBrood=Locust Brood
+Abil/Name/HeroAbathurTalentLocustNest=Locust Nest
+Abil/Name/HeroAbathurToxicNest=Toxic Nest
+Abil/Name/HeroAbathurUltimateEvolution=Ultimate Evolution
+AnnouncerPack/Name/AbathurA=Abathur Announcer
+Behavior/Name/HeroAbathurEvolveMonstrosityStacks@TokenCounter=Token Counter
+Behavior/Tooltip/HeroAbathurEvolveMonstrosityStacks@TokenCounter=Bonus Health: <c val="#TooltipNumbers"><d ref="100*(Behavior,HeroAbathurEvolveMonstrosityStacks@HealthStack,Modification.VitalMaxArray[Life]/Unit,HeroAbathurEvolveMonstrosity,LifeMax)*(Accumulator,HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount,Amount)"/>%</c><n/>Bonus Attack Damage: <c val="#TooltipNumbers"><d ref="100 *$RunAccumulators:HeroAbathurEvolveMonstrosityStacks@CurrentDamageBonusAdd$"/>%</c>
+Bundle/Name/XenotechAbathurHeroicBundle=Xenotech Abathur Heroic Bundle
+Button/Information/HeroAbathurAssumingDirectControl@CancelSymbiote=Cooldown: <d ref="Abil,HeroAbathurAssumingDirectControl@Cancel,Cost[0].Cooldown.TimeUse" precision="1" player="0"/> <lang rule="plural">second,seconds</lang>
+Button/Information/HeroAbathurCarapace=Cooldown: <d ref="Abil,HeroAbathurCarapace,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang>
+Button/Information/HeroAbathurDeepTunnel=Cooldown: <d ref="Abil,HeroAbathurDeepTunnel,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: Global
+Button/Information/HeroAbathurDeepTunnelMonstrosity=Cooldown: <d ref="Abil,HeroAbathurDeepTunnelMonstrosity,Cost[0].Cooldown.TimeUse"/> <lang rule="plural">second,seconds</lang><n/>Range: Global
+Button/Information/HeroAbathurEvolveMonstrosity=Cooldown: <d ref="Abil,HeroAbathurEvolveMonstrosity,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: Global
+Button/Information/HeroAbathurLocustStrain=Cooldown: <d ref="Abil,HeroAbathurLocustStrain,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Timed life: <d ref="Behavior,HeroAbathurLocust@TimedLife,Duration" player="0"/> <lang rule="plural">second,seconds</lang>
+Button/Information/HeroAbathurSpikeBurst=Cooldown: <d ref="Abil,HeroAbathurSpikeBurst,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Radius: <d ref="Effect,HeroAbathurSpikeBurst@DamageSearch,AreaArray[0].Radius" player="0"/> m.
+Button/Information/HeroAbathurStab=Charge Cooldown: <d ref="Abil,HeroAbathurStab,Cost[0].Charge.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: <d ref="Actor,HeroAbathurStab@GuideVisual,Height" player="0"/> m.
+Button/Information/HeroAbathurSymbiote=Cooldown: <d ref="Abil,HeroAbathurSymbiote,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: Global
+Button/Information/HeroAbathurTalentLocustBrood=Cooldown: <d ref="Abil,HeroAbathurTalentLocustBrood,Cost[0].Cooldown.TimeUse"/> <lang rule="plural">second,seconds</lang><n/>Range: <d ref="Abil,HeroAbathurTalentLocustBrood,Range[0]"/> m.
+Button/Information/HeroAbathurTalentLocustNest=Cooldown: <d ref="Abil,HeroAbathurTalentLocustNest,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: <d ref="Abil,HeroAbathurTalentLocustNest,Range[0]" player="0"/> m.
+Button/Information/HeroAbathurToxicNest=Charge Cooldown: <d ref="Abil,HeroAbathurToxicNest,Cost[0].Charge.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Charges Max: <d ref="Abil,HeroAbathurToxicNest,Cost[0].Charge.CountMax" player="0"/> charges<n/>Range: <d ref="Abil,HeroAbathurToxicNest,Range[0]" player="0"/>  m.<n/>Duration: <d ref="Behavior,HeroAbathurToxicNest@TimedLife,Duration" player="0"/> <lang rule="plural">second,seconds</lang>
+Button/Information/HeroAbathurUltimateEvolution=Cooldown: <d ref="Abil,HeroAbathurUltimateEvolution,Cost[0].Cooldown.TimeUse" player="0"/> <lang rule="plural">second,seconds</lang><n/>Range: Global
+Button/Name/AbathurLocustStrainAssaultStrainTalent=Assault Strain
+Button/Name/AbathurLocustStrainCombatAdaptationTalent=Combat Adaptation
+Button/Name/AbathurSymbioteOrganicDynamoTalent=Organic Dynamo
+Button/Name/AbathurSymbioteOrganicDynamoTalentSimple=Organic Dynamo
+Button/Name/AbathurToxicNestBallistosporesTalent=Ballistospores
+Button/Name/AbathurToxicNestTalent=Toxic Nest
+Button/Name/AbathurUltimateEvolutionEvolutionMasterTalentSimple=Evolution Master
+Button/Name/AbathurUltimateEvolutionEvolutionMasterUltimateEvolutionTalent=Evolution Master
+Button/Name/HeroAbathurAssumingDirectControl@CancelSymbiote=Cancel Symbiote
+Button/Name/HeroAbathurCarapace=Carapace
+Button/Name/HeroAbathurDeepTunnel=Deep Tunnel
+Button/Name/HeroAbathurDeepTunnelMonstrosity=Deep Tunnel
+Button/Name/HeroAbathurEvolveMonstrosity=Evolve Monstrosity
+Button/Name/HeroAbathurEvolveMonstrosityActivate=Evolve Monstrosity
+Button/Name/HeroAbathurLocustStrain=Locust Strain
+Button/Name/HeroAbathurSpikeBurst=Spike Burst
+Button/Name/HeroAbathurStab=Stab
+Button/Name/HeroAbathurSymbiote=Symbiote
+Button/Name/HeroAbathurTalentCarapaceAdrenalineBoost=Adrenaline Boost
+Button/Name/HeroAbathurTalentCarapaceNetworkedCarapace=Networked Carapace
+Button/Name/HeroAbathurTalentCarapaceReinforcedCarapace=Reinforced Carapace
+Button/Name/HeroAbathurTalentEvolveMonstrosityEvolutionComplete=Evolution Complete
+Button/Name/HeroAbathurTalentLocustBrood=Locust Brood
+Button/Name/HeroAbathurTalentLocustNest=Locust Nest
+Button/Name/HeroAbathurTalentLocustStrainBombardStrain=Bombard Strain
+Button/Name/HeroAbathurTalentLocustStrainSurvivalInstinct=Survival Instincts
+Button/Name/HeroAbathurTalentSpikeBurstEnvenomedSpikes=Envenomed Spikes
+Button/Name/HeroAbathurTalentSpikeBurstPressurizedGlands=Pressurized Glands
+Button/Name/HeroAbathurTalentSpikeBurstSomaTransference=Soma Transference
+Button/Name/HeroAbathurTalentStabNeedlespine=Needlespine
+Button/Name/HeroAbathurTalentStabSpatialEfficiency=Spatial Efficiency
+Button/Name/HeroAbathurTalentSymbioteAdrenalOverload=Adrenal Overload
+Button/Name/HeroAbathurTalentSymbioteHivemind=Hivemind
+Button/Name/HeroAbathurTalentToxicNestEnvenomedNest=Envenomed Nest
+Button/Name/HeroAbathurTalentToxicNestProlificDispersal=Prolific Dispersal
+Button/Name/HeroAbathurTalentToxicNestVileNest=Vile Nest
+Button/Name/HeroAbathurTalentUltimateEvolutionEvolutionaryLink=Evolutionary Link
+Button/Name/HeroAbathurTalentVolatileMutation=Volatile Mutation
+Button/Name/HeroAbathurToxicNest=Toxic Nest
+Button/Name/HeroAbathurUltimateEvolution=Ultimate Evolution
+Button/SimpleDisplayText/AbathurDeepTunnel=Tunnel to a location.
+Button/SimpleDisplayText/AbathurEvolveMonstrosityHotbar=Minion or Locust becomes a powerful Monstrosity
+Button/SimpleDisplayText/AbathurLocustMasterHotbar=Create Locust Nests
+Button/SimpleDisplayText/AbathurLocustStrain=Spawn locusts that attack down the nearest lane
+Button/SimpleDisplayText/AbathurLocustStrainAssaultStrainTalent=Locusts cleave and explode
+Button/SimpleDisplayText/AbathurLocustStrainBombardStrainTalent=Locusts gain a ranged attack, increased duration
+Button/SimpleDisplayText/AbathurLocustStrainSurvivalInstinctsTalent=Increases Locust Health and damage
+Button/SimpleDisplayText/AbathurLocustSwarm=Spawn a group of Locusts
+Button/SimpleDisplayText/AbathurMonstrosityDeepTunnel=Tunnel to a location.
+Button/SimpleDisplayText/AbathurMonstrosityEvolutionCompleteTalent=Monstrosity gains Attack Damage
+Button/SimpleDisplayText/AbathurReinforcedCarapaceTalent=Increase Carapace Shield
+Button/SimpleDisplayText/AbathurSymbiote=Assist an ally and gain new abilities
+Button/SimpleDisplayText/AbathurSymbioteAdrenalOverloadTalent=Symbiote host gains Attack Speed
+Button/SimpleDisplayText/AbathurSymbioteAdrenalineBoostTalent=Carapace increases Move Speed
+Button/SimpleDisplayText/AbathurSymbioteCarapaceNetworkedCarapaceTalent=Carapace Shields all nearby allies
+Button/SimpleDisplayText/AbathurSymbioteCarapaceSustainedCarapaceTalent=Increases Carapace shield and persists after Symbiote
+Button/SimpleDisplayText/AbathurSymbioteEnvenomedSpikesTalent=Spike Burst Slows Move Speed
+Button/SimpleDisplayText/AbathurSymbioteHivemindTalent=Symbiote two targets
+Button/SimpleDisplayText/AbathurSymbioteNeedlespineTalent=Increases Stab damage and range
+Button/SimpleDisplayText/AbathurSymbiotePressurizedGlandsTalent=Increases Spike Burst range and decreases cooldown
+Button/SimpleDisplayText/AbathurSymbioteRegenerativeMicrobesTalent=Carapace heals target
+Button/SimpleDisplayText/AbathurSymbioteSpatialEfficiencyTalent=Stab gains an additional charge
+Button/SimpleDisplayText/AbathurSymbioteSpikeBurst=Damage nearby enemies
+Button/SimpleDisplayText/AbathurSymbioteSpikeBurstSomaTransferenceTalent=Spike Burst heals for each Hero hit
+Button/SimpleDisplayText/AbathurSymbioteStab=Shoots a spike that deals damage to the first enemy it contacts.
+Button/SimpleDisplayText/AbathurToxicNest=Spawn a mine
+Button/SimpleDisplayText/AbathurToxicNestBallistosporesTalent=Toxic Nests have global range and last longer
+Button/SimpleDisplayText/AbathurToxicNestEnvenomedNestTalent=Toxic Nests deal more damage
+Button/SimpleDisplayText/AbathurToxicNestProlificDispersalTalent=Increases Toxic Nest range, charges
+Button/SimpleDisplayText/AbathurToxicNestVileNestTalent=Toxic Nests slow Move Speed
+Button/SimpleDisplayText/AbathurUltimateEvolution=Clone target allied Hero and control it
+Button/SimpleDisplayText/AbathurUltimateEvolutionEvolutionaryLinkTalent=Ultimate Evolution target gets a Shield
+Button/SimpleDisplayText/AbathurVolatileMutationTalent=Heroic summons radiate damage
+Button/SimpleDisplayText/HeroAbathurCarapace=Shields and Heals an ally
+Button/SimpleDisplayText/HeroAbathurDeepTunnel=Tunnel to a location
+Button/SimpleDisplayText/HeroAbathurEvolveMonstrosity=Minion or Locust becomes a powerful Monstrosity
+Button/SimpleDisplayText/HeroAbathurLocustStrain=Spawn locusts that attack down the nearest lane
+Button/SimpleDisplayText/HeroAbathurSpikeBurst=Damage nearby enemies
+Button/SimpleDisplayText/HeroAbathurStab=Shoots a spike that deals damage to the first enemy it contacts
+Button/SimpleDisplayText/HeroAbathurSymbiote=Assist an ally and gain new abilities
+Button/SimpleDisplayText/HeroAbathurTalentCarapaceAdrenalineBoost=«Carapace» increases Move Speed
+Button/SimpleDisplayText/HeroAbathurTalentCarapaceNetworkedCarapace=«Carapace» Shields all nearby allies
+Button/SimpleDisplayText/HeroAbathurTalentCarapaceReinforcedCarapace=Increase «Carapace» shield
+Button/SimpleDisplayText/HeroAbathurTalentEvolveMonstrosityEvolutionComplete=Monstrosity gains Attack Damage
+Button/SimpleDisplayText/HeroAbathurTalentLocustBrood=Spawn a group of Locusts
+Button/SimpleDisplayText/HeroAbathurTalentLocustNest=Create Locust Nests
+Button/SimpleDisplayText/HeroAbathurTalentLocustStrainBombardStrain=Locusts gain a ranged attack, increased duration
+Button/SimpleDisplayText/HeroAbathurTalentLocustStrainSurvivalInstinct=Increase Locust Health and damage
+Button/SimpleDisplayText/HeroAbathurTalentSpikeBurstEnvenomedSpikes=«Spike Burst» Slows Move Speed
+Button/SimpleDisplayText/HeroAbathurTalentSpikeBurstPressurizedGlands=Increase «Spike Burst» range and decrease cooldown
+Button/SimpleDisplayText/HeroAbathurTalentSpikeBurstSomaTransference=«Spike Burst» heals per each Hero hit
+Button/SimpleDisplayText/HeroAbathurTalentStabNeedlespine=Increase «Stab» Damage and Range
+Button/SimpleDisplayText/HeroAbathurTalentStabSpatialEfficiency=«Stab» gains an additional charge
+Button/SimpleDisplayText/HeroAbathurTalentSymbioteAdrenalOverload=«Symbiote» hosts gain Attack Speed
+Button/SimpleDisplayText/HeroAbathurTalentSymbioteHivemind=Symbiote two targets
+Button/SimpleDisplayText/HeroAbathurTalentToxicNestEnvenomedNest=«Toxic Nest» deals more damage, reduces Armor
+Button/SimpleDisplayText/HeroAbathurTalentToxicNestProlificDispersal=Increases «Toxic Nest» charges, duration
+Button/SimpleDisplayText/HeroAbathurTalentToxicNestVileNest=«Toxic Nest» slows Move Speed
+Button/SimpleDisplayText/HeroAbathurTalentUltimateEvolutionEvolutionaryLink=«Ultimate Evolution» target gets a Shield
+Button/SimpleDisplayText/HeroAbathurTalentVolatileMutation=Heroic summons radiate damage
+Button/SimpleDisplayText/HeroAbathurToxicNest=Spawn a mine
+Button/SimpleDisplayText/HeroAbathurUltimateEvolution=Clone target allied Hero and control it
+Button/Tooltip/AbathurEvolvedMonstrosity=<s val="StandardTooltipDetails">Heroic Ability</s><n/><s val="StandardTooltipDetails">Cooldown: <d ref="Abil,WitchDoctorGargantuan,Cost[0].Cooldown.TimeUse" precision="1"/> seconds<n/><n/><s val="StandardTooltip">Summon a Gargantuan that deals <s val="StandardTooltipDetails"><d ref="Effect,WitchDoctorGargantuanInitialImpactDamage,Amount"/></s> damage when created. The Gargantuan can grab enemy minions, and will stomp nearby enemies, slowing their Movement Speed by <s val="StandardTooltipDetails"><d ref="-Behavior,WitchDoctorGargantuanSlow,Modification.UnifiedMoveSpeedFactor*100"/>%</s>. Lasts for <s val="StandardTooltipDetails">20</s> seconds.
+Button/Tooltip/AbathurLocustNest=<s val="StandardTooltipDetails">Charge Cooldown: <d ref="Abil,AbathurToxicNest,Cost[0].Charge.TimeUse" precision="1"/> seconds<n/><n/><s val="StandardTooltip">Spawn a mine that becomes active after a short time. Deals <s val="StandardTooltipDetails"><d ref="Effect,ToxicNestDamage,Amount"/></s> damage and reveals the enemy for <s val="StandardTooltipDetails"><d ref="Behavior,ToxicNestReveal,Duration" player="0"/></s> seconds. Lasts <s val="StandardTooltipDetails"><d ref="Behavior,ToxicNestSearchBehaviorTimedLife,Duration" player="0"/></s> seconds.</s>
+Button/Tooltip/AbathurLocustNestItem=<s val="StandardTooltipHeader">Locust Brood</s><n/><s val="StandardTooltipDetails">Cooldown: <d ref="Abil,AbathurLocustSwarm,Cost[0].Cooldown.TimeUse" precision="1"/> seconds<n/><s val="StandardTooltip"><n/><s val="StandardTooltip">Activate to place a nest in target area that spawns <s val="StandardTooltipDetails">3</s> Locusts.
+Button/Tooltip/AbathurLocustStrainAssaultStrainTalent=Locust Basic Attacks cleave for <c val="#TooltipNumbers"><d ref="Effect,AbathurLocustAssaultWeaponCleaveDamage,Amount/Effect,AbathurLocustAssaultWeaponDamage,Amount*100"/>%</c> damage, and explode on death for <c val="#TooltipNumbers"><d ref="Effect,AbathurLocustAssaultExplodeDamage,Amount"/></c> damage.
+Button/Tooltip/AbathurLocustStrainCombatAdaptationTalent=<s val="StandardTooltipHeader">Combat Adaptation</s><s val="StandardTooltipDetails"><n/><n/><s val="StandardTooltip">Locusts gain <s val="StandardTooltipDetails"><d ref="100*Behavior,CombatAdaptation,Modification.AdditiveAttackSpeedFactor"/>%</s> more Attack Speed.
+Button/Tooltip/AbathurSymbioteOrganicDynamoTalent=<s val="StandardTooltipHeader">Organic Dynamo </s><n/><s val="StandardTooltip"><n/>Symbiote host passively gains <s val="StandardTooltipDetails"><d ref="Effect,AbathurSymbioteOrganicDynamoLifeHealer,RechargeVitalRate"/></s> Health and <s val="StandardTooltipDetails"><d ref="Effect,AbathurSymbioteOrganicDynamoManaHealer,RechargeVitalRate"/></s> Mana per second while Symbiote is active.</s>
+Button/Tooltip/AbathurSymbioteOrganicDynamoTalentSimple=<s val="TalentChoiceNameLabel">Organic Dynamo</s><n/><s val="TalentChoiceDescriptionLabel">Host passively gains health and mana</s>
+Button/Tooltip/AbathurToxicNestBallistosporesTalent=Increases Toxic Nest's range to global and increases duration by <c val="#TooltipNumbers"><d ref="Talent,AbathurMasteryBallistospores,AbilityModificationArray[0].Modifications[1].Value/Behavior,ToxicNestSearchBehaviorTimedLife,Duration*100" player="0"/>%</c>.
+Button/Tooltip/AbathurToxicNestTalent=<s val="StandardTooltipHeader">Choking Nest</s><n/><n/><s val="StandardTooltip">Nests slow damaged enemies.
+Button/Tooltip/AbathurUltimateEvolutionCDRTalent=<s val="StandardTooltipHeader">Ultimate Evolution</s><n/><s val="StandardTooltip">Abathur builds a copy of target ally Hero and can control it for a limited amount of time.<n/><s val="StandardTooltipDetails">+<d ref="$GalaxyVar:libGDHL_gv_heroAbathurUltimateEvolutionCDRMod$ *100"/>%</s> Cooldown Reduction</s>
+Button/Tooltip/AbathurUltimateEvolutionCDRTalentSimple=<s val="TalentChoiceNameLabel">Ultimate Evolution </s><n/><s val="TalentChoiceDescriptionLabel">+10% Cooldown Reduction</s>
+Button/Tooltip/AbathurUltimateEvolutionEvolutionMasterTalentSimple=<s val="TalentChoiceNameLabel">Evolution Master </s><n/><s val="TalentChoiceDescriptionLabel">Lower cooldown, increased duration
+Button/Tooltip/AbathurUltimateEvolutionEvolutionMasterUltimateEvolutionTalent=<s val="StandardTooltipHeader">Evolution Master </s><n/><s val="StandardTooltip"><n/>Lower the cooldown of Ultimate Evolution to <s val="StandardTooltipDetails">90</s> seconds, and increase the duration to <s val="StandardTooltipDetails">60</s> seconds.
+Button/Tooltip/HeroAbathurAssumingDirectControl@CancelSymbiote=Cancels the Symbiote ability.
+Button/Tooltip/HeroAbathurCarapace=Shields the assisted ally for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurCarapace@ShieldTooltipDummy,DamageResponse.ModifyLimit" option="player"/></c>. Allied Heroes are healed for <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurCarapace@RegenerativeMicrobesCreateHealer,VitalArray[Life].Change" option="player"/></c> Health per second while the Shield is active. Lasts for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurCarapace@Shield,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroAbathurDeepTunnel=Quickly tunnel to a visible location
+Button/Tooltip/HeroAbathurDeepTunnelMonstrosity=Order your Evolved Monstrosity to quickly tunnel to a visible location
+Button/Tooltip/HeroAbathurEvolveMonstrosity=Turn an allied Minion or Locust into a Monstrosity. When enemy Minions near the Monstrosity die, it gains <c val="#TooltipNumbers"><d ref="100*Behavior,HeroAbathurEvolveMonstrosityStacks@HealthStack,Modification.VitalMaxArray[Life]/Unit,HeroAbathurEvolveMonstrosity,LifeMax" player="0"/>%</c> Health and <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroAbathurEvolveMonstrosityStacks@DamageBonusContant,Amount" player="0"/>%</c> Basic Attack damage, stacking up to <c val="#TooltipNumbers"><d ref="Accumulator,HeroAbathurEvolveMonstrosityStacks@CurrentStackAmount,MaxAccumulation" player="0"/></c> times.  The Monstrosity can be healed by «Carapace» and has the ability to Burrow to a visible location every <c val="#TooltipNumbers"><d ref="Abil,HeroAbathurDeepTunnelMonstrosity,Cost[0].Cooldown.TimeUse" player="0"/></c> seconds.<n/><n/>Using «Symbiote» on the Monstrosity allows Abathur to control it, in addition to «Symbiote» normal benefits.  This Ability can be reactivated to automatically cast «Symbiote» on his Monstrosity.
+Button/Tooltip/HeroAbathurEvolveMonstrosityActivate=Activate to cast «Symbiote» on Monstrosity.
+Button/Tooltip/HeroAbathurLocustStrain=Spawns a Locust to attack down the nearest lane. Locusts have <c val="#TooltipNumbers"><d ref="Unit,HeroAbathurLocust@Normal,LifeMax" option="player"/></c> health and deal <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurWeaponLocustNormal@Damage,Amount" option="player"/></c> damage with each Basic Attack.
+Button/Tooltip/HeroAbathurSpikeBurst=Deals <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurSpikeBurst@BurstDamage,Amount" option="player"/></c> damage to nearby enemies.
+Button/Tooltip/HeroAbathurStab=Shoots a spike towards target area that deals <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurStab@Damage,Amount" option="player"/></c> damage to the first enemy it contacts.
+Button/Tooltip/HeroAbathurSymbiote=Spawn and attach a Symbiote to a target ally or Structure. While active, Abathur controls the Symbiote, gaining access to new Abilities. The Symbiote is able to gain XP from nearby enemy deaths.
+Button/Tooltip/HeroAbathurTalentCarapaceAdrenalineBoost=«Carapace» increases the Movement Speed of the target by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroAbathurTalentCarapaceAdrenalineBoost,Modification.UnifiedMoveSpeedFactor"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentCarapaceAdrenalineBoost,Duration" precision="1" player="0"/></c> seconds.
+Button/Tooltip/HeroAbathurTalentCarapaceNetworkedCarapace=Using «Carapace» also applies an untalented Shield to all nearby allied Heroes, Minions, and Mercenaries.
+Button/Tooltip/HeroAbathurTalentCarapaceReinforcedCarapace=Increase «Carapace» Shield amount by <c val="#TooltipNumbers"><d ref="100*(Effect,HeroAbathurTalentCarapaceReinforcedCarapace@Modification,EffectArray[0].Value)-100"Precision="2"/>%.
+Button/Tooltip/HeroAbathurTalentEvolveMonstrosityEvolutionComplete=Increase Monstrosity's Basic Attack damage by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroAbathurTalentEvolveMonstrosityEvolutionComplete@DamageIncreaser,Amount"/>%</c>.
+Button/Tooltip/HeroAbathurTalentLocustBrood=Activate to spawn <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurTalentLocustBrood@CreatePersistent,PeriodCount"/></c> Locusts at a nearby location.
+Button/Tooltip/HeroAbathurTalentLocustNest=Activate to create a nest that periodically spawns Locusts. Only one Locust Nest can be active at a time.
+Button/Tooltip/HeroAbathurTalentLocustStrainBombardStrain=Locust's Basic Attacks become a long-range siege attack and their duration is increased by <c val="#TooltipNumbers"><d ref="100 *Effect,HeroAbathurTalentLocustStrainBombardStrain@Modification,EffectArray[0].Value /Behavior,HeroAbathurLocust@TimedLife,Duration" player="0"/>%</c>.
+Button/Tooltip/HeroAbathurTalentLocustStrainSurvivalInstinct=Increases Locust's Health by <c val="#TooltipNumbers"><d ref="100*Behavior,HeroAbathurTalentLocustStrainSurvivalInstinct,Modification.VitalMaxAdditiveMultiplierArray[Life]" player="0"/>%</c> and damage by <c val="#TooltipNumbers"><d ref="100*Accumulator,HeroAbathurTalentLocustStrainSurvivalInstinct@DamageModifier,Amount"/>%</c>.
+Button/Tooltip/HeroAbathurTalentSpikeBurstEnvenomedSpikes=Abathur's Symbiote's Spike Burst also Slows enemy Movement Speed by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroAbathurTalentSpikeBurstEnvenomedSpikes@Slow,Modification.UnifiedMoveSpeedFactor" player="0"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentSpikeBurstEnvenomedSpikes@Slow,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroAbathurTalentSpikeBurstPressurizedGlands=Increase «Spike Burst» range by <c val="#TooltipNumbers"><d ref="100 *Effect,HeroAbathurTalentSpikeBurstPressurizedGlands@Modification,EffectArray[0].Value/Effect,HeroAbathurSpikeBurst@DamageSearch,AreaArray[0].Radius" player="0"/>%</c> and decrease cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroAbathurTalentSpikeBurstPressurizedGlands@Modification,EffectArray[4].Value" player="0"/></c> second.
+Button/Tooltip/HeroAbathurTalentSpikeBurstSomaTransference=Symbiote's Spike Burst heals the host for <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurTalentSpikeBurstSomaTransference@CreateHealer,VitalArray[Life].Change" option="player"/></c> Health per enemy Hero hit.
+Button/Tooltip/HeroAbathurTalentStabNeedlespine=Increase «Stab» Damage and Range by <c val="#TooltipNumbers"><d ref="Accumulator,HeroAbathurTalentStabNeedlespine@DamageModifier,Amount * 100"/>%</c>.
+Button/Tooltip/HeroAbathurTalentStabSpatialEfficiency=«Stab» gains <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurTalentStabSpatialEfficiency@Modification,EffectArray[1].Value"/></c> additional charge and its cooldown is reduced by <c val="#TooltipNumbers"><d ref="-Effect,HeroAbathurTalentStabSpatialEfficiency@Modification,EffectArray[0].Value" precision="2"/></c> <lang rule="plural">second,seconds</lang>
+Button/Tooltip/HeroAbathurTalentSymbioteAdrenalOverload=Heroic «Symbiote» hosts gain <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentSymbioteAdrenalOverload,Modification.AdditiveAttackSpeedFactor*100" />%</c> increased Attack Speed.
+Button/Tooltip/HeroAbathurTalentSymbioteHivemind=«Symbiote» creates an additional Symbiote on a nearby allied Hero. This Symbiote mimics the commands of the first, but does <c val="#TooltipNumbers"><d ref="100*(Behavior,HeroAbathurCarapace@ShieldHivemind,DamageResponse.ModifyLimit)/(Behavior,HeroAbathurCarapace@Shield,DamageResponse.ModifyLimit)" player="0"/>%</c> damage and Shielding.
+Button/Tooltip/HeroAbathurTalentToxicNestEnvenomedNest=«Toxic Nest» deals <c val="#TooltipNumbers"><d ref="(Effect,HeroAbathurTalentToxicNestEnvenomedNest@Damage,Amount*Behavior,HeroAbathurTalentToxicNestEnvenomedNest,PeriodCount)/Effect,HeroAbathurToxicNest@Damage,Amount*100"/>%</c> additional damage over <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentToxicNestEnvenomedNest,Duration"/></c> seconds and reduces Armor of enemy Heroes hit by <c val="#TooltipNumbers"><d ref="-Behavior,HeroAbathurTalentToxicNestEnvenomedNest@ArmorDebuff,Modification.AttributeChangeArray[0].Points"/></c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentToxicNestEnvenomedNest@ArmorDebuff,Duration"/></c> seconds. 
+Button/Tooltip/HeroAbathurTalentToxicNestProlificDispersal=Increase «Toxic Nest» duration by <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurTalentToxicNestProlificDispersal@Modification,EffectArray[2].Value"/></c> seconds, reduce its cooldown by <c val="#TooltipNumbers"><d ref="-Effect,HeroAbathurTalentToxicNestProlificDispersal@Modification,EffectArray[1].Value"/></c> seconds, and add <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurTalentToxicNestProlificDispersal@Modification,EffectArray[0].Value"/></c> additional charges.
+Button/Tooltip/HeroAbathurTalentToxicNestVileNest=«Toxic Nest» Slows enemy Movement Speed by <c val="#TooltipNumbers"><d ref="-100*Behavior,HeroAbathurTalentToxicNestVileNest@Slow,Modification.UnifiedMoveSpeedFactor"/>%</c> for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentToxicNestVileNest@Slow,Duration" precision="1"/></c> seconds.
+Button/Tooltip/HeroAbathurTalentUltimateEvolutionEvolutionaryLink=As long as the «Ultimate Evolution» is alive, the original target of the clone gains a Shield equal to <c val="#TooltipNumbers"><d ref="100*Behavior,HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Shield,DamageResponse.ModifyLimitVitalMaxFractionArray[Life]" precision="2"/>%</c> of their maximum Health. Refreshes every <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurUltimateEvolution@TimedLife,Period"/></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase the duration of «Ultimate Evolution» by <c val="#TooltipNumbers"><d ref="100*(Effect,HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Modification,EffectArray[0].Value)/(Behavior,HeroAbathurUltimateEvolution@TimedLife,Duration)" player="0"/>%</c>.
+Button/Tooltip/HeroAbathurTalentVolatileMutation=Ultimate Evolution clones and Monstrosities deal <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurTalentVolatileMutation@Damage,Amount" option="player"/></c> damage to nearby enemies every <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurTalentVolatileMutation,Period" precision="2"/></c> seconds and when they die. Enemy Heroes hit heal the clone or Monstrosity for <c val="#TooltipNumbers"><d ref="$GalaxyVar:libHAba_gv_heroAbathurVolatileMutationLeechPercent$*100" />%</c> of the damage dealt.
+Button/Tooltip/HeroAbathurToxicNest=Spawn a mine that becomes active after a short time. Deals <c val="#TooltipNumbers"><d ref="Effect,HeroAbathurToxicNest@Damage,Amount" option="player"/></c> damage and reveals the enemy for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurToxicNest@Reveal,Duration" player="0"/></c> seconds.
+Button/Tooltip/HeroAbathurUltimateEvolution=Clone target allied Hero and control it for <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurUltimateEvolution@TimedLife,Duration" player="0" precision="2"/></c> seconds. Abathur has perfected the clone, granting it <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurUltimateEvolution@Buff,Modification.AttributeChangeArray[1].Points" player="0"/>%</c> Spell Power, <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurUltimateEvolution@Buff,Modification.AttributeChangeArray[0].Points" player="0"/>%</c> Physical Power, and <c val="#TooltipNumbers"><d ref="Behavior,HeroAbathurUltimateEvolution@Buff,Modification.UnifiedMoveSpeedFactor*100" player="0"/>%</c> bonus Movement Speed. Cannot use their Heroic Ability.
+DataCollection/Name/HeroAbathur=Abathur - Hero
+DataCollection/Name/HeroAbathurAssumingDirectControl=Abathur - Assuming Direct Control
+DataCollection/Name/HeroAbathurCarapace=Abathur - Carapace
+DataCollection/Name/HeroAbathurDeepTunnel=Abathur - Deep Tunnel
+DataCollection/Name/HeroAbathurDeepTunnelMonstrosity=Abathur - Deep Tunnel (Monstrosity)
+DataCollection/Name/HeroAbathurEvolveMonstrosity=Abathur - Evolve Monstrosity
+DataCollection/Name/HeroAbathurEvolveMonstrosityActivate=Abathur - Evolve Monstrosity Activate
+DataCollection/Name/HeroAbathurEvolveMonstrosityStacks=Abathur - Evolve Monstrosity Stacks
+DataCollection/Name/HeroAbathurLocust=Abathur - Locust
+DataCollection/Name/HeroAbathurLocustStrain=Abathur - Locust Strain
+DataCollection/Name/HeroAbathurSpikeBurst=Abathur - Spike Burst
+DataCollection/Name/HeroAbathurStab=Abathur - Stab
+DataCollection/Name/HeroAbathurSymbiote=Abathur - Symbiote
+DataCollection/Name/HeroAbathurTalentCarapaceAdrenalineBoost=Abathur Talent - Carapace @ (Adrenaline Boost)
+DataCollection/Name/HeroAbathurTalentCarapaceNetworkedCarapace=Abathur Talent - Carapace @ (Networked Carapace)
+DataCollection/Name/HeroAbathurTalentCarapaceReinforcedCarapace=Abathur Talent - Carapace @ (Reinforced Carapace)
+DataCollection/Name/HeroAbathurTalentEvolveMonstrosityEvolutionComplete=Abathur Talent - Evolve Monstrosity @ (Evolution Complete)
+DataCollection/Name/HeroAbathurTalentLocustBrood=Abathur Talent - Locust Brood
+DataCollection/Name/HeroAbathurTalentLocustNest=Abathur Talent - Locust Nest
+DataCollection/Name/HeroAbathurTalentLocustStrainBombardStrain=Abathur Talent - Locust Straint @ (Bombard Strain)
+DataCollection/Name/HeroAbathurTalentLocustStrainSurvivalInstinct=Abathur Talent - Locust Strain @ (Survival Instinct)
+DataCollection/Name/HeroAbathurTalentSpikeBurstEnvenomedSpikes=Abathur Talent - Spike Burst @ (Envenomed Spikes)
+DataCollection/Name/HeroAbathurTalentSpikeBurstPressurizedGlands=Abathur Talent - Spike Burst @ (Pressurized Glands)
+DataCollection/Name/HeroAbathurTalentSpikeBurstSomaTransference=Abathur Talent - Spike Burst @ (Soma Transference)
+DataCollection/Name/HeroAbathurTalentStabNeedlespine=Abathur Talent - Stab @ (Needlespine)
+DataCollection/Name/HeroAbathurTalentStabSpatialEfficiency=Abathur Talent - Stab @ (Spatial Efficiency)
+DataCollection/Name/HeroAbathurTalentSymbioteAdrenalOverload=Abathur Talent - Symbiote @ (Adrenal Overload)
+DataCollection/Name/HeroAbathurTalentSymbioteHivemind=Abathur Talent - Symbiote @ (Hivemind)
+DataCollection/Name/HeroAbathurTalentToxicNestEnvenomedNest=Abathur Talent - Toxic Nest @ (Envenomed Nest)
+DataCollection/Name/HeroAbathurTalentToxicNestProlificDispersal=Abathur Talent - Toxic Nest @ (Prolific Dispersal)
+DataCollection/Name/HeroAbathurTalentToxicNestVileNest=Abathur Talent - Toxic Nest @ (Vile Nest)
+DataCollection/Name/HeroAbathurTalentUltimateEvolutionEvolutionaryLink=Abathur Talent - Ultimate Evolution @ (Evolutionary Link)
+DataCollection/Name/HeroAbathurTalentVolatileMutation=Abathur Talent - Volatile Mutation
+DataCollection/Name/HeroAbathurToxicNest=Abathur - Toxic Nest
+DataCollection/Name/HeroAbathurUltimateEvolution=Abathur - Ultimate Evolution
+DataCollection/Name/HeroAbathurWeapon=Abathur - Weapon
+DataCollection/Name/HeroAbathurWeaponEvolveMonstrosity=Abathur - Weapon - Evolve Monstrosity
+DataCollection/Name/HeroAbathurWeaponLocustAssault=Abathur - Weapon - Locust Assault
+DataCollection/Name/HeroAbathurWeaponLocustBombard=Abathur - Weapon - Locust Bombard
+DataCollection/Name/HeroAbathurWeaponLocustNormal=Abathur - Weapon - Locust Normal
+DocInfo/Name=Hero Abathur Mod
+Effect/Name/HeroAbathur@LevelScalingModification=Level Scaling Modification
+Effect/Name/HeroAbathurAssumingDirectControl@ApplyBehavior=Apply Behavior
+Effect/Name/HeroAbathurAssumingDirectControl@ApplyFinalStun=Apply Final Stun
+Effect/Name/HeroAbathurAssumingDirectControl@BehaviorFinalSet=Behavior Final Set
+Effect/Name/HeroAbathurAssumingDirectControl@CancelSet=Cancel Set
+Effect/Name/HeroAbathurAssumingDirectControl@RemoveBehavior=Remove Behavior
+Effect/Name/HeroAbathurAssumingDirectControl@Set=Set
+Effect/Name/HeroAbathurCarapace@ApplySet=Apply Set
+Effect/Name/HeroAbathurCarapace@ApplyShield=Apply Shield
+Effect/Name/HeroAbathurCarapace@ApplyShieldSwitch=Apply Shield Switch
+Effect/Name/HeroAbathurCarapace@RegenerativeMicrobesApplyBehavior=Regenerative Microbes Apply Behavior
+Effect/Name/HeroAbathurCarapace@RegenerativeMicrobesCreateHealer=Regenerative Microbes Create Healer
+Effect/Name/HeroAbathurCarapace@RegenerativeMicrobesRemoveBehavior=Regenerative Microbes Remove Behavior
+Effect/Name/HeroAbathurCarapace@SearchArea=Search Area
+Effect/Name/HeroAbathurCarapace@TalentBuffsApplySet=Talent Buffs Apply Set
+Effect/Name/HeroAbathurDeepTunnel@ApplyDisablerBehavior=Apply Disabler Behavior
+Effect/Name/HeroAbathurDeepTunnel@ApplyTravelBehavior=Apply Travel Behavior
+Effect/Name/HeroAbathurDeepTunnel@DestroyPersistent=Destroy Persistent
+Effect/Name/HeroAbathurDeepTunnel@DummyPing=Dummy Ping
+Effect/Name/HeroAbathurDeepTunnel@FinalSet=Final Set
+Effect/Name/HeroAbathurDeepTunnel@Persistent=Persistent
+Effect/Name/HeroAbathurDeepTunnel@PrepSet=Prep Set
+Effect/Name/HeroAbathurDeepTunnel@RemoveDisablerBehavior=Remove Disabler Behavior
+Effect/Name/HeroAbathurDeepTunnel@Set=Set
+Effect/Name/HeroAbathurDeepTunnel@Teleport=Teleport
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@ApplyDisablerBehavior=Apply Disabler Behavior
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@CooldownReset=Cooldown Reset
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@DestroyPersistent=Destroy Persistent
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSet=Destroy Persistent Set
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSymbioteIssueOrder=Destroy Persistent Symbiote Issue Order
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@DestroyPersistentSymbioteIssueOrderSearch=Destroy Persistent Symbiote Issue Order Search
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@FinalSet=Final Set
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@Persistent=Persistent
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@PrepSet=Prep Set
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@RemoveDisablerBehavior=Remove Disabler Behavior
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@Set=Set
+Effect/Name/HeroAbathurDeepTunnelMonstrosity@TargetPersistent=Target Persistent
+Effect/Name/HeroAbathurEvolveMonstrosity@AddToTrackingBehavior=Add To Tracking Behavior
+Effect/Name/HeroAbathurEvolveMonstrosity@ApplyActiveBehavior=Apply Active Behavior
+Effect/Name/HeroAbathurEvolveMonstrosity@ApplyCollisionSuppresser=Apply Collision Suppresser
+Effect/Name/HeroAbathurEvolveMonstrosity@ApplyStasisController=Apply Stasis Controller
+Effect/Name/HeroAbathurEvolveMonstrosity@ApplyTimedLife=Apply Timed Life
+Effect/Name/HeroAbathurEvolveMonstrosity@CreateUnit=Create Unit
+Effect/Name/HeroAbathurEvolveMonstrosity@InitialSet=Initial Set
+Effect/Name/HeroAbathurEvolveMonstrosity@SetCooldown=Set Cooldown
+Effect/Name/HeroAbathurEvolveMonstrosity@SpawnSet=Spawn Set
+Effect/Name/HeroAbathurEvolveMonstrosityActivate@SymbioteEnumerator=Symbiote Enumerator
+Effect/Name/HeroAbathurEvolveMonstrosityActivate@SymbioteLinkSet=Symbiote Link Set
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@AddTokenCounterToCaster=Add Token Counter To Caster
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@DecreaseToken=Decrease Token
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@HealthStackHealer=Health Stack Healer
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@IncreaseToken=Increase Token
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@RefreshTokenCounter=Refresh Token Counter
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@RemoveAbathurStack=Remove Abathur Stack
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@ResetTokenCounter=Reset Token Counter
+Effect/Name/HeroAbathurEvolveMonstrosityStacks@TokenCounterController=Token Counter Controller
+Effect/Name/HeroAbathurLocustStrain@CreateNormalUnit=Create Normal Unit
+Effect/Name/HeroAbathurLocustStrain@IssueSpawnOrder=Issue Spawn Order
+Effect/Name/HeroAbathurLocustStrain@LanerDummy=Laner Dummy
+Effect/Name/HeroAbathurLocustStrain@LocustSwitch=Locust Switch
+Effect/Name/HeroAbathurSpikeBurst@BurstDamage=Burst Damage
+Effect/Name/HeroAbathurSpikeBurst@CastSearch=Cast Search
+Effect/Name/HeroAbathurSpikeBurst@DamageSearch=Damage Search
+Effect/Name/HeroAbathurSpikeBurst@HostPersistent=Host Persistent
+Effect/Name/HeroAbathurSpikeBurst@ImpactSet=Impact Set
+Effect/Name/HeroAbathurStab@ApplyMissileScan=Apply Missile Scan
+Effect/Name/HeroAbathurStab@CreatePersistent=Create Persistent
+Effect/Name/HeroAbathurStab@CreateSet=Create Set
+Effect/Name/HeroAbathurStab@Damage=Damage
+Effect/Name/HeroAbathurStab@ImpactSet=Impact Set
+Effect/Name/HeroAbathurStab@LaunchMissile=Launch Missile
+Effect/Name/HeroAbathurStab@MissileScan=Missile Scan
+Effect/Name/HeroAbathurStab@RemoveBehavior=Remove Behavior
+Effect/Name/HeroAbathurSymbiote@ActorLink=Actor Link
+Effect/Name/HeroAbathurSymbiote@ApplyCasterBehavior=Apply Caster Behavior
+Effect/Name/HeroAbathurSymbiote@ApplyHostBehavior=Apply Host Behavior
+Effect/Name/HeroAbathurSymbiote@ApplyHostThreatBehavior=Apply Host Threat Behavior
+Effect/Name/HeroAbathurSymbiote@ApplyStealthController=Apply Stealth Controller
+Effect/Name/HeroAbathurSymbiote@ApplySuperStealthController=Apply Super Stealth Controller
+Effect/Name/HeroAbathurSymbiote@ApplySuppressSuperStealthController=Apply Suppress Super Stealth Controller
+Effect/Name/HeroAbathurSymbiote@FinalSet=Final Set
+Effect/Name/HeroAbathurSymbiote@HostBehaviorRemovedSet=Host Behavior Removed Set
+Effect/Name/HeroAbathurSymbiote@InitialDelay=Initial Delay
+Effect/Name/HeroAbathurSymbiote@LinkPersistent=Link Persistent
+Effect/Name/HeroAbathurSymbiote@PropertyLink=Property Link
+Effect/Name/HeroAbathurSymbiote@RemoveAbilityDisabler=Remove Ability Disabler
+Effect/Name/HeroAbathurSymbiote@RemoveCasterBehavior=Remove Caster Behavior
+Effect/Name/HeroAbathurSymbiote@RemoveHostBehavior=Remove Host Behavior
+Effect/Name/HeroAbathurSymbiote@RemoveHostThreatBehavior=Remove Host Threat Behavior
+Effect/Name/HeroAbathurSymbiote@Set=Set
+Effect/Name/HeroAbathurSymbiote@VisibilityControllerRemoveBehavior=Visibility Controller Remove Behavior
+Effect/Name/HeroAbathurTalentCarapaceAdrenalineBoost@ApplyBehavior=Apply Behavior
+Effect/Name/HeroAbathurTalentCarapaceNetworkedCarapace@ApplySearch=Apply Search
+Effect/Name/HeroAbathurTalentCarapaceNetworkedCarapace@ApplySet=Apply Set
+Effect/Name/HeroAbathurTalentCarapaceNetworkedCarapace@ApplyTalentShield=Apply Talent Shield
+Effect/Name/HeroAbathurTalentCarapaceNetworkedCarapace@Switch=Switch
+Effect/Name/HeroAbathurTalentCarapaceReinforcedCarapace@Modification=Modification
+Effect/Name/HeroAbathurTalentLocustBrood@CreateAssaultUnit=Create Assault Unit
+Effect/Name/HeroAbathurTalentLocustBrood@CreateBombardUnit=Create Bombard Unit
+Effect/Name/HeroAbathurTalentLocustBrood@CreateNormalUnit=Create Normal Unit
+Effect/Name/HeroAbathurTalentLocustBrood@CreatePersistent=Create Persistent
+Effect/Name/HeroAbathurTalentLocustBrood@LocustSwitch=Locust Switch
+Effect/Name/HeroAbathurTalentLocustNest@CreateUnit=Create Unit
+Effect/Name/HeroAbathurTalentLocustNest@InitialSet=Initial Set
+Effect/Name/HeroAbathurTalentLocustNest@InitialSpawnModifyUnit=Initial Spawn Modify Unit
+Effect/Name/HeroAbathurTalentLocustNest@SpawnSet=Spawn Set
+Effect/Name/HeroAbathurTalentLocustStrainBombardStrain@Modification=Modification
+Effect/Name/HeroAbathurTalentLocustStrainSurvivalInstinct@ApplyBehavior=Apply Behavior
+Effect/Name/HeroAbathurTalentSpikeBurstEnvenomedSpikes@ApplySlowBehavior=Apply Slow Behavior
+Effect/Name/HeroAbathurTalentSpikeBurstPressurizedGlands@Modification=Modification
+Effect/Name/HeroAbathurTalentSpikeBurstSomaTransference@CreateHealer=Create Healer
+Effect/Name/HeroAbathurTalentStabNeedlespine@Modification=Modification
+Effect/Name/HeroAbathurTalentStabSpatialEfficiency@Modification=Modification
+Effect/Name/HeroAbathurTalentSymbioteAdrenalOverload@ApplyBuff=Apply Buff
+Effect/Name/HeroAbathurTalentSymbioteHivemind@ApplyCarapaceShield=Apply Carapace Shield
+Effect/Name/HeroAbathurTalentSymbioteHivemind@CreateUnitLinkDummyA=Create Unit Link Dummy A
+Effect/Name/HeroAbathurTalentSymbioteHivemind@RemoveCarapaceShield=Remove Carapace Shield
+Effect/Name/HeroAbathurTalentToxicNestEnvenomedNest@ApplyArmorDebuffBehavior=Apply Armor Debuff Behavior
+Effect/Name/HeroAbathurTalentToxicNestEnvenomedNest@ApplyBehavior=Apply Behavior
+Effect/Name/HeroAbathurTalentToxicNestEnvenomedNest@Damage=Damage
+Effect/Name/HeroAbathurTalentToxicNestEnvenomedNest@Set=Set
+Effect/Name/HeroAbathurTalentToxicNestProlificDispersal@Modification=Modification
+Effect/Name/HeroAbathurTalentToxicNestVileNest@ApplySlowBehavior=Apply Slow Behavior
+Effect/Name/HeroAbathurTalentUltimateEvolutionEvolutionaryLink@AddTrackedUnit=Add Tracked Unit
+Effect/Name/HeroAbathurTalentUltimateEvolutionEvolutionaryLink@ApplyShield=Apply Shield
+Effect/Name/HeroAbathurTalentUltimateEvolutionEvolutionaryLink@EnumTrackedUnits=Enum Tracked Units
+Effect/Name/HeroAbathurTalentUltimateEvolutionEvolutionaryLink@Modification=Modification
+Effect/Name/HeroAbathurTalentVolatileMutation@ApplyVolatileMutation=Apply Volatile Mutation
+Effect/Name/HeroAbathurTalentVolatileMutation@Damage=Damage
+Effect/Name/HeroAbathurTalentVolatileMutation@ExplosionSearch=Explosion Search
+Effect/Name/HeroAbathurTalentVolatileMutation@FinalExplosionSearch=Final Explosion Search
+Effect/Name/HeroAbathurToxicNest@ApplyArmingBehavior=Apply Arming Behavior
+Effect/Name/HeroAbathurToxicNest@ApplySearchBehavior=Apply Search Behavior
+Effect/Name/HeroAbathurToxicNest@ApplySelfRevealer=Apply Self Revealer
+Effect/Name/HeroAbathurToxicNest@ApplyVisionBehavior=Apply Vision Behavior
+Effect/Name/HeroAbathurToxicNest@CreateUnit=Create Unit
+Effect/Name/HeroAbathurToxicNest@Damage=Damage
+Effect/Name/HeroAbathurToxicNest@DestroyVisionDestroyPersistent=Destroy Vision Destroy Persistent
+Effect/Name/HeroAbathurToxicNest@InitialSet=Initial Set
+Effect/Name/HeroAbathurToxicNest@SearchAreaImpact=Search Area Impact
+Effect/Name/HeroAbathurToxicNest@SearchAreaTrigger=Search Area Trigger
+Effect/Name/HeroAbathurToxicNest@SearchSet=Search Set
+Effect/Name/HeroAbathurToxicNest@SuicideSet=Suicide Set
+Effect/Name/HeroAbathurToxicNest@TriggerSet=Trigger Set
+Effect/Name/HeroAbathurToxicNest@VisionAfterSuicideCreatePersistent=Vision After Suicide Create Persistent
+Effect/Name/HeroAbathurToxicNest@VisionCreatePersistent=Vision Create Persistent
+Effect/Name/HeroAbathurUltimateEvolution@ApplyCasterVehicleBehavior=Apply Caster Vehicle Behavior
+Effect/Name/HeroAbathurUltimateEvolution@ApplyHeroicDetector=Apply Heroic Detector
+Effect/Name/HeroAbathurUltimateEvolution@ApplyTimedLife=Apply Timed Life
+Effect/Name/HeroAbathurUltimateEvolution@CastDummy=Cast Dummy
+Effect/Name/HeroAbathurUltimateEvolution@CastSet=Cast Set
+Effect/Name/HeroAbathurUltimateEvolution@CleanupKill=Cleanup Kill
+Effect/Name/HeroAbathurUltimateEvolution@ControlSet=Control Set
+Effect/Name/HeroAbathurUltimateEvolution@InitialCreatePersistent=Initial Create Persistent
+Effect/Name/HeroAbathurUltimateEvolution@RemoveControlBehavior=Remove Control Behavior
+Effect/Name/HeroAbathurUltimateEvolution@RemoveInvalidTargetBehavior=Remove Invalid Target Behavior
+Effect/Name/HeroAbathurUltimateEvolution@RemovePostDeathEffect=Remove Post Death Effects
+Effect/Name/HeroAbathurUltimateEvolution@TimedLifeFinalSet=Timed Life Final Set
+Effect/Name/HeroAbathurWeapon@Damage=Damage
+Effect/Name/HeroAbathurWeapon@DamageSet=Damage Set
+Effect/Name/HeroAbathurWeaponEvolveMonstrosity@Damage=Damage
+Effect/Name/HeroAbathurWeaponEvolveMonstrosity@MeleeSwitch=Melee Switch
+Effect/Name/HeroAbathurWeaponEvolveMonstrosity@Set=Set
+Effect/Name/HeroAbathurWeaponEvolveMonstrosity@Switch=Switch
+Effect/Name/HeroAbathurWeaponLocustAssault@AttackSet=Attack Set
+Effect/Name/HeroAbathurWeaponLocustAssault@AttackSwitch=Attack Switch
+Effect/Name/HeroAbathurWeaponLocustAssault@CleaveDamage=Cleave Damage
+Effect/Name/HeroAbathurWeaponLocustAssault@CleaveSearchArea=Cleave Search Area
+Effect/Name/HeroAbathurWeaponLocustAssault@Damage=Damage
+Effect/Name/HeroAbathurWeaponLocustBombard@CloseRangeDamage=Close Range Damage
+Effect/Name/HeroAbathurWeaponLocustBombard@CloseRangeDamageSwitch=Close Range Damage Switch
+Effect/Name/HeroAbathurWeaponLocustBombard@CloseRangeLaunchMissile=Close Range Launch Missile
+Effect/Name/HeroAbathurWeaponLocustBombard@Damage=Damage
+Effect/Name/HeroAbathurWeaponLocustBombard@ImpactSearch=Impact Search
+Effect/Name/HeroAbathurWeaponLocustBombard@ImpactSet=Impact Set
+Effect/Name/HeroAbathurWeaponLocustBombard@ImpactSwitch=Impact Switch
+Effect/Name/HeroAbathurWeaponLocustBombard@LaunchMissile=Launch Missile
+Effect/Name/HeroAbathurWeaponLocustNormal@Damage=Damage
+Effect/Name/HeroAbathurWeaponLocustNormal@DamageSwitch=Damage Switch
+Effect/Name/HeroAbathurWeaponLocustNormal@LaunchMissile=Launch Missile
+Error/AbathurSymbiote=Can't Symbiote that target
+Hero/AdditionalSearchText/HeroAbathur=Zerg Swarm HotS Heart of the Swarm StarCraft II 2 SC2 Star2 Starcraft2 SC slug
+Hero/AlternateNameSearchText/Abathur=Abathur
+Hero/Description/HeroAbathur=A unique Hero that can manipulate the battle from anywhere on the map.
+Hero/Info/HeroAbathur=Abathur, the Evolution Master of Kerrigan's Swarm, works ceaselessly to improve the zerg from the genetic level up. His hate for chaos and imperfection almost rivals his hatred of pronouns.
+Hero/Name/HeroAbathur=Abathur
+Hero/Title/HeroAbathur=Evolution Master
+Param/Expression/lib_HAba_795C5CBA=<c val="00ff00">~A~</c>
+Param/Expression/lib_HAba_81791B56=<c val="#PingAlly">~A~</c> is Deep Tunneling!
+Param/Expression/lib_HAba_CC20066A=<c val="#PingAlly">~A~</c> is Deep Tunneling!
+Param/Expression/lib_HAba_D06D9271=<c val="00ff00">~A~</c>
+Param/Value/lib_HAba_6EAB1015=Abathur
+Skin/Name/HeroAbathur@Ultimate=Ultimate
+Spray/AdditionalSearchText/SprayMecha19ChibiAbathur=mecha robot chibi
+Spray/AdditionalSearchText/SprayStaticCarbotsAbathur=Carbot Abathur
+Spray/AdditionalSearchText/SprayStaticMechaAbathur=mecha
+Spray/Name/SprayAnimatedCookieAbathur=Gingerbread Abathur
+Spray/Name/SprayMecha19ChibiAbathur=Cute Xenotech Abathur
+Spray/Name/SprayStaticAbathurSlugLife=Slug Life
+Spray/Name/SprayStaticCarbotsAbathur=Carbot Abathur
+Spray/Name/SprayStaticMechaAbathur=Xenotech Abathur Insignia
+Spray/Name/SprayStaticPumpkinAbathur=Abathur-O'-Lantern
+Spray/Name/SprayStaticStylizedPachimariAbathur=Pachimari Abathur
+Spray/SortName/SprayMecha19ChibiAbathur=MechaChibi
+Spray/SortName/SprayStaticCarbotsAbathur=6StaticCarbot
+Spray/SortName/SprayStaticMechaAbathur=Mecha
+Spray/SortName/SprayStaticStylizedPachimariAbathur=6StaticPachimari
+Unit/Name/AbathurLocust=Locust
+Unit/Name/AbathurLocustAssaultStrain=Assault Locust
+Unit/Name/AbathurLocustBombardStrain=Locust
+Unit/Name/AbathurLocustNormal=Locust
+Unit/Name/HeroAbathur=Abathur
+Unit/Name/HeroAbathurEvolveMonstrosity=Evolved Monstrosity
+Unit/Name/HeroAbathurStab@Missile=Missile
+Unit/Name/HeroAbathurSymbiote=Symbiote
+Unit/Name/HeroAbathurTalentLocustBrood=Locust Brood
+Unit/Name/HeroAbathurTalentLocustNest=Locust Nest
+Unit/Name/HeroAbathurTalentLocustNest@Item=Locust Nest
+Unit/Name/HeroAbathurToxicNest=Toxic Nest
+Unit/Name/HeroAbathurWeaponLocustBombard@Missile=Missile
+Unit/Name/HeroAbathurWeaponLocustNormal@Missile=Missile
+Upgrade/Name/HeroAbathur@BaseAlbino=Base Albino
+Upgrade/Name/HeroAbathur@BaseChar=Base Char
+Upgrade/Name/HeroAbathur@BaseVar3=Base Var3
+Upgrade/Name/HeroAbathur@SkinUltimateGrey=Skin Ultimate Grey
+Upgrade/Name/HeroAbathur@SkinUltimatePurple=Skin Ultimate Purple
+Upgrade/Name/HeroAbathur@SkinUltimateRed=Skin Ultimate Red
+UserData/Hero/Abathur_PairedName=Abathur
+UserData/Hero/Abathur_PairedName_001=Symbiote
+UserData/Skin/AbathurBase_VariationAdditionalSearchText_001=White Pink
+UserData/Skin/AbathurBase_VariationAdditionalSearchText_002=Black Orange
+UserData/Skin/AbathurBase_VariationAdditionalSearchText_003=Blue
+UserData/Skin/AbathurBase_VariationInfo=Abathur, the Evolution Master of Kerrigan's Swarm, works ceaselessly to improve the zerg from the genetic level up. His hate for chaos and imperfection almost rivals his hatred of pronouns.
+UserData/Skin/AbathurBase_VariationName=Abathur
+UserData/Skin/AbathurBase_VariationName_001=Bone Abathur
+UserData/Skin/AbathurBase_VariationName_002=Char Abathur
+UserData/Skin/AbathurBase_VariationName_003=Kaldir Abathur
+UserData/Skin/AbathurUltimate_VariationInfo=Evolution is a process that's unending. Survival requires adaptation. Even Abathur, a master of manipulating evolution itself, is no exception to this cardinal rule of nature.
+UserData/Skin/AbathurUltimate_VariationName=Swarm Abathur
+UserData/Skin/AbathurUltimate_VariationName_001=Pallid Swarm Abathur
+UserData/Skin/AbathurUltimate_VariationName_002=Feral Swarm Abathur
+UserData/Skin/AbathurUltimate_VariationName_003=Crimson Swarm Abathur
+VoiceLine/Name/AbathurBase_VoiceLine01=For the Swarm
+VoiceLine/Name/AbathurBase_VoiceLine02=Poor Essence
+VoiceLine/Name/AbathurBase_VoiceLine03=Unacceptable!
+VoiceLine/Name/AbathurBase_VoiceLine04=Eradication Complete
+VoiceLine/Name/AbathurBase_VoiceLine05=Unclear
+VoiceLine/Name/AbathurMecha_VoiceLine01=For the Swarm
+VoiceLine/Name/AbathurMecha_VoiceLine02=Poor Essence
+VoiceLine/Name/AbathurMecha_VoiceLine03=Unacceptable!
+VoiceLine/Name/AbathurMecha_VoiceLine04=Eradication Complete
+VoiceLine/Name/AbathurMecha_VoiceLine05=Unclear
+Weapon/Name/HeroAbathurWeapon=Weapon
+Weapon/Name/HeroAbathurWeaponEvolveMonstrosity=Weapon
+Weapon/Name/HeroAbathurWeaponEvolveMonstrosity@Melee=Weapon Melee
+Weapon/Name/HeroAbathurWeaponLocustAssault=Weapon
+Weapon/Name/HeroAbathurWeaponLocustBombard=Weapon
+Weapon/Name/HeroAbathurWeaponLocustBombard@CloseRange=Weapon Close Range
+Weapon/Name/HeroAbathurWeaponLocustNormal=Weapon

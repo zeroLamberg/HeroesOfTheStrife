@@ -1,0 +1,12 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: StarCraft Protoss
+//--------------------------------------------------------------------------------------------------
+// Trigger Declarations
+trigger libSCPT_gt_IncludeSCPT;
+trigger libSCPT_gt_RunAnimationsProtossMapSpecialCase;
+trigger libSCPT_gt_InitializeVanguardMercType;
+trigger libSCPT_gt_InitializeHybridMercType;
+trigger libSCPT_gt_InitializeColossusMercType;
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <Flags>
+        <Value>PreloadNoTrigger</Value>
+    </Flags>
+    <Dependencies>
+        <Value>file:Mods\Commanders Conflict\Development\MapMods\ProtossData.SC2Mod</Value>
+    </Dependencies>
+    <ModifiableDependencies>
+        <Value>Mods\Commanders Conflict\Development\DataMods\Data.SC2Mod</Value>
+        <Value>Mods\Commanders Conflict\Development\MapMods\ProtossData.SC2Mod</Value>
+    </ModifiableDependencies>
+</DocInfo>

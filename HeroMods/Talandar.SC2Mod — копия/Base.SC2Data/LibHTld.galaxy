@@ -1,0 +1,667 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+
+include "LibHTld_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Talandar
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHTld_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+}
+
+// Variable Initialization
+bool libHTld_InitVariables_completed = false;
+
+void libHTld_InitVariables () {
+    if (libHTld_InitVariables_completed) {
+        return;
+    }
+
+    libHTld_InitVariables_completed = true;
+
+    libHTld_gv_heroTalandarChannelingRangeCharged = (libHTld_gv_heroTalandarChannelingScaleFactorMax * libHTld_gv_heroTalandarChannelingRangeDefault);
+    libHTld_gv_heroTalandarSolariteFlareRadiusCharged = (libHTld_gv_heroTalandarChannelingScaleFactorMax * libHTld_gv_heroTalandarSolariteFlareRadiusDefault);
+    libHTld_gv_heroTalandarSolariteFlareMissileScaleCharged = (libHTld_gv_heroTalandarChannelingScaleFactorMax * libHTld_gv_heroTalandarSolariteFlareMissileScaleDefault);
+}
+
+// Functions
+void libHTld_gf_HeroTalandarAccumulatedShield (unit lp_talandar, fixed lp_damageAmount, unit lp_damagingUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((UnitTypeTestAttribute(UnitGetType(lp_damagingUnit), c_unitAttributeHeroic) == true)) {
+        UnitCreateEffectUnit(lp_talandar, "HeroTalandarAccumulatedShield@EnergyAddDamageTaken", lp_talandar);
+    }
+
+    if ((UnitGetPropertyFixed(lp_talandar, c_unitPropEnergyPercent, c_unitPropCurrent) == 100.0)) {
+        if ((UnitHasBehavior2(lp_talandar, "HeroTalandarAccumulatedShield@SecondCarryBehavior") == false)) {
+            UnitBehaviorAdd(lp_talandar, "HeroTalandarAccumulatedShield@SecondCarryBehavior", lp_talandar, 1);
+        }
+
+        UnitSetPropertyFixed(lp_talandar, c_unitPropEnergy, 0.0);
+        UnitBehaviorRemove(lp_talandar, "HeroTalandarAccumulatedShield@SecondCarryBehavior", 1);
+    }
+
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Solar Cannon
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarSolarCannon_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_delta;
+    int lv_owner;
+    string lv_solarCannonPersistentEffectLink;
+    fixed lv_newRange;
+    int lv_channelStacks;
+    int lv_channelStacksMax;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_owner = EventPlayer();
+    lv_solarCannonPersistentEffectLink = "HeroTalandarSolarCannon@StartPersistent";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitBehaviorChange() == c_unitBehaviorChangeIncrease)) {
+        lv_channelStacks = UnitBehaviorCount(EventUnit(), EventUnitBehavior());
+        if ((EventUnitBehavior() == "HeroTalandarSolarCannonChannel@ChargeDefault")) {
+            lv_channelStacksMax = libHTld_gv_heroTalandarChannelingMaxCycles;
+        }
+        else if ((EventUnitBehavior() == "HeroTalandarSolarCannonChannel@ChargeMedium")) {
+            lv_channelStacksMax = libHTld_gv_heroTalandarChannelingMaxCyclesMedium;
+        }
+        else if ((EventUnitBehavior() == "HeroTalandarSolarCannonChannel@ChargeUpgraded")) {
+            lv_channelStacksMax = libHTld_gv_heroTalandarChannelingMaxCyclesUpgraded;
+        }
+        if ((lv_channelStacks == lv_channelStacksMax)) {
+            lv_newRange = libHTld_gv_heroTalandarChannelingRangeCharged;
+        }
+        else {
+            lv_delta = (libHTld_gv_heroTalandarChannelingRangeDefault * (IntToFixed(lv_channelStacks) / lv_channelStacksMax));
+            lv_newRange = (libHTld_gv_heroTalandarChannelingRangeDefault + lv_delta);
+        }
+        CatalogFieldValueSet(c_gameCatalogEffect, lv_solarCannonPersistentEffectLink, "InitialOffset", lv_owner, ("0,-" + FixedToString(lv_newRange, 5) + ",0"));
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarSolarCannon_Init () {
+    libHTld_gt_HeroTalandarSolarCannon = TriggerCreate("libHTld_gt_HeroTalandarSolarCannon_Func");
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarSolarCannon, null, "HeroTalandarSolarCannonChannel@ChargeDefault", c_unitBehaviorChangeIncrease);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarSolarCannon, null, "HeroTalandarSolarCannonChannel@ChargeMedium", c_unitBehaviorChangeIncrease);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarSolarCannon, null, "HeroTalandarSolarCannonChannel@ChargeUpgraded", c_unitBehaviorChangeIncrease);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Solarite Flare
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarSolariteFlare_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_delta;
+    int lv_channelStacks;
+    int lv_channelStacksMax;
+    int lv_owner;
+    fixed lv_scaleMissileA;
+    fixed lv_abilityRange;
+    fixed lv_abilityRadius;
+    string lv_solariteFlareAbilityLink;
+    string lv_solariteFlareActorLinkGuideRegion;
+    string lv_solariteFlareActorLinkMissile;
+    string lv_solariteFlareSearchEffectLink;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_owner = EventPlayer();
+    lv_solariteFlareAbilityLink = "HeroTalandarSolariteFlare";
+    lv_solariteFlareActorLinkGuideRegion = "HeroTalandarSolariteFlare@CastGuideRegionArc";
+    lv_solariteFlareActorLinkMissile = "HeroTalandarSolariteFlare@AirBombMissileA";
+    lv_solariteFlareSearchEffectLink = "HeroTalandarSolariteFlare@AirBombSearch";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitBehaviorChange() == c_unitBehaviorChangeIncrease)) {
+        lv_channelStacks = UnitBehaviorCount(EventUnit(), EventUnitBehavior());
+        if ((EventUnitBehavior() == "HeroTalandarSolariteFlareChannel@ChargeDefault")) {
+            lv_channelStacksMax = libHTld_gv_heroTalandarChannelingMaxCycles;
+        }
+        else if ((EventUnitBehavior() == "HeroTalandarSolariteFlareChannel@ChargeMedium")) {
+            lv_channelStacksMax = libHTld_gv_heroTalandarChannelingMaxCyclesMedium;
+        }
+        else if ((EventUnitBehavior() == "HeroTalandarSolariteFlareChannel@ChargeUpgrade")) {
+            lv_channelStacksMax = libHTld_gv_heroTalandarChannelingMaxCyclesUpgraded;
+        }
+        if ((lv_channelStacks == lv_channelStacksMax)) {
+            lv_abilityRange = libHTld_gv_heroTalandarChannelingRangeCharged;
+            lv_abilityRadius = libHTld_gv_heroTalandarSolariteFlareRadiusCharged;
+            lv_scaleMissileA = libHTld_gv_heroTalandarSolariteFlareMissileScaleCharged;
+        }
+        else {
+            lv_delta = (libHTld_gv_heroTalandarChannelingRangeDefault * (IntToFixed(lv_channelStacks) / IntToFixed(lv_channelStacksMax)));
+            lv_abilityRange = (libHTld_gv_heroTalandarChannelingRangeDefault + lv_delta);
+            lv_delta = (libHTld_gv_heroTalandarSolariteFlareRadiusDefault * (IntToFixed(lv_channelStacks) / IntToFixed(lv_channelStacksMax)));
+            lv_abilityRadius = (libHTld_gv_heroTalandarSolariteFlareRadiusDefault + lv_delta);
+            lv_delta = (libHTld_gv_heroTalandarSolariteFlareMissileScaleDefault * (IntToFixed(lv_channelStacks) / IntToFixed(lv_channelStacksMax)));
+            lv_scaleMissileA = (libHTld_gv_heroTalandarSolariteFlareMissileScaleDefault + lv_delta);
+        }
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogAbil, lv_solariteFlareAbilityLink, "Range[" + IntToString(0) + "]", lv_owner, lv_abilityRange);
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogActor, lv_solariteFlareActorLinkMissile, "Scale", lv_owner, lv_scaleMissileA);
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogActor, lv_solariteFlareActorLinkGuideRegion, "Radius", lv_owner, lv_abilityRadius);
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, lv_solariteFlareSearchEffectLink, "AreaArray[" + IntToString(0) + "].Radius", lv_owner, lv_abilityRadius);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarSolariteFlare_Init () {
+    libHTld_gt_HeroTalandarSolariteFlare = TriggerCreate("libHTld_gt_HeroTalandarSolariteFlare_Func");
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarSolariteFlare, null, "HeroTalandarSolariteFlareChannel@ChargeDefault", c_unitBehaviorChangeIncrease);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarSolariteFlare, null, "HeroTalandarSolariteFlareChannel@ChargeMedium", c_unitBehaviorChangeIncrease);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarSolariteFlare, null, "HeroTalandarSolariteFlareChannel@ChargeUpgrade", c_unitBehaviorChangeIncrease);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - VO Controller
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarVOController_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = UnitGetOwner(EventUnit());
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitBehavior() == "HeroTalandarPraetorArmorSuit@PraetorCarryBehavior")) {
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Attack"), ("HeroTalandar@DX_Praetor_Attack"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Death"), ("HeroTalandar@DX_Praetor_Death"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Pissed"), ("HeroTalandar@DX_Praetor_Pissed"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Revive"), ("HeroTalandar@DX_Praetor_Revive"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Yes"), ("HeroTalandar@DX_Praetor_Yes"));
+    }
+    else {
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Attack"), ("HeroTalandar@DX_Dragoon_Attack"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Death"), ("HeroTalandar@DX_Dragoon_Death"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Pissed"), ("HeroTalandar@DX_Dragoon_Pissed"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Revive"), ("HeroTalandar@DX_Dragoon_Revive"));
+        CatalogLinkReplace(lv_player, c_gameCatalogSound, ("HeroTalandar@DX_Praetor_Yes"), ("HeroTalandar@DX_Dragoon_Yes"));
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarVOController_Init () {
+    libHTld_gt_HeroTalandarVOController = TriggerCreate("libHTld_gt_HeroTalandarVOController_Func");
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarVOController, null, "HeroTalandarPraetorArmorSuit@PraetorCarryBehavior", c_unitBehaviorChangeActivate);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarVOController, null, "HeroTalandarDragoonArmorSuit@DragoonCarryBehavior", c_unitBehaviorChangeActivate);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Armor Suit Swap
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarArmorSuitSwap_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_talandar;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_talandar = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    UnitSetFacing(lv_talandar, -90.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarArmorSuitSwap_Init () {
+    libHTld_gt_HeroTalandarArmorSuitSwap = TriggerCreate("libHTld_gt_HeroTalandarArmorSuitSwap_Func");
+    TriggerAddEventPlayerEffectUsed(libHTld_gt_HeroTalandarArmorSuitSwap, c_playerAny, "HeroTalandarDragoonArmorSuit@DummySet");
+    TriggerAddEventPlayerEffectUsed(libHTld_gt_HeroTalandarArmorSuitSwap, c_playerAny, "HeroTalandarPraetorArmorSuit@DummySet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Second Suit UI Controller
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarSecondSuitUIController_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_owner;
+    unit lv_talandar;
+    fixed lv_cooldown;
+    fixed lv_cooldownMax;
+    string lv_thunderousChargeLink;
+    string lv_whirlwindLink;
+    string lv_solarCannonLink;
+    string lv_solariteFlareLink;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnitCreatedUnit()) == "HeroTalandar"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_talandar = EventUnitCreatedUnit();
+    lv_owner = UnitGetOwner(EventUnitCreatedUnit());
+    lv_thunderousChargeLink = CatalogFieldValueGet(c_gameCatalogAbil, "HeroTalandarThunderousCharge", "Cost[" + IntToString(0) + "].Cooldown.Link", lv_owner);
+    lv_whirlwindLink = CatalogFieldValueGet(c_gameCatalogAbil, "HeroTalandarWhirlwind", "Cost[" + IntToString(0) + "].Charge.Link", lv_owner);
+    lv_solarCannonLink = CatalogFieldValueGet(c_gameCatalogAbil, "HeroTalandarSolarCannonChannel", "Cost[" + IntToString(0) + "].Cooldown.Link", lv_owner);
+    lv_solariteFlareLink = CatalogFieldValueGet(c_gameCatalogAbil, "HeroTalandarSolariteFlareChannel", "Cost[" + IntToString(0) + "].Cooldown.Link", lv_owner);
+    while (true) {
+        if ((UnitIsValid(lv_talandar) == false)) {
+            break;
+        }
+
+        if ((UnitHasBehavior2(lv_talandar, "HeroTalandarPraetorArmorSuit@PraetorCarryBehavior") == true)) {
+            lv_cooldown = UnitGetCooldown(lv_talandar, lv_solarCannonLink);
+            if ((lv_cooldown > 0.0)) {
+                lv_cooldownMax = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, "HeroTalandarSolarCannonChannel", "Cost[" + IntToString(0) + "].Cooldown.TimeUse", lv_owner);
+                if ((UnitHasBehavior2(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ") == false)) {
+                    UnitBehaviorAdd(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", lv_talandar, 1);
+                }
+
+                UnitBehaviorSetDuration(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", lv_cooldownMax);
+                UnitBehaviorSetDurationRemaining(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", lv_cooldown);
+            }
+            else {
+                UnitBehaviorRemove(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", 1);
+            }
+            lv_cooldown = UnitGetCooldown(lv_talandar, lv_solariteFlareLink);
+            if ((lv_cooldown > 0.0)) {
+                lv_cooldownMax = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, "HeroTalandarSolariteFlareChannel", "Cost[" + IntToString(0) + "].Cooldown.TimeUse", lv_owner);
+                if ((UnitHasBehavior2(lv_talandar, "HeroTalandar@SecondSuitUIControllerW") == false)) {
+                    UnitBehaviorAdd(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", lv_talandar, 1);
+                }
+
+                UnitBehaviorSetDuration(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", lv_cooldownMax);
+                UnitBehaviorSetDurationRemaining(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", lv_cooldown);
+            }
+            else {
+                UnitBehaviorRemove(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", 1);
+            }
+        }
+        else if ((UnitHasBehavior2(lv_talandar, "HeroTalandarDragoonArmorSuit@DragoonCarryBehavior") == true)) {
+            lv_cooldown = UnitGetCooldown(lv_talandar, lv_thunderousChargeLink);
+            if ((lv_cooldown > 0.0)) {
+                lv_cooldownMax = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, "HeroTalandarThunderousCharge", "Cost[" + IntToString(0) + "].Cooldown.TimeUse", lv_owner);
+                if ((UnitHasBehavior2(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ") == false)) {
+                    UnitBehaviorAdd(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", lv_talandar, 1);
+                }
+
+                UnitBehaviorSetDuration(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", lv_cooldownMax);
+                UnitBehaviorSetDurationRemaining(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", lv_cooldown);
+            }
+            else {
+                UnitBehaviorRemove(lv_talandar, "HeroTalandar@SecondSuitUIControllerQ", 1);
+            }
+            lv_cooldown = UnitGetChargeRegen(lv_talandar, lv_whirlwindLink);
+            if ((lv_cooldown > 0.0) && (UnitGetChargeUsed(lv_talandar, lv_whirlwindLink) != 0.0)) {
+                lv_cooldownMax = libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, "HeroTalandarWhirlwind", "Cost[" + IntToString(0) + "].Charge.TimeUse", lv_owner);
+                if ((UnitHasBehavior2(lv_talandar, "HeroTalandar@SecondSuitUIControllerW") == false)) {
+                    UnitBehaviorAdd(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", lv_talandar, 1);
+                }
+
+                UnitBehaviorSetDuration(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", lv_cooldownMax);
+                UnitBehaviorSetDurationRemaining(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", lv_cooldown);
+            }
+            else {
+                UnitBehaviorRemove(lv_talandar, "HeroTalandar@SecondSuitUIControllerW", 1);
+            }
+        }
+        Wait(0.125, c_timeGame);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarSecondSuitUIController_Init () {
+    libHTld_gt_HeroTalandarSecondSuitUIController = TriggerCreate("libHTld_gt_HeroTalandarSecondSuitUIController_Func");
+    TriggerAddEventUnitCreated(libHTld_gt_HeroTalandarSecondSuitUIController, null, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Accumulated Shield - Damaged
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarAccumulatedShieldDamaged_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnit()) == "HeroTalandar"))) {
+            return false;
+        }
+
+        if (!((UnitIsAlive(EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libHTld_gf_HeroTalandarAccumulatedShield(EventUnit(), (EventUnitDamageAmount() + EventUnitDamageBehaviorShield()), EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarAccumulatedShieldDamaged_Init () {
+    libHTld_gt_HeroTalandarAccumulatedShieldDamaged = TriggerCreate("libHTld_gt_HeroTalandarAccumulatedShieldDamaged_Func");
+    TriggerAddEventUnitDamaged(libHTld_gt_HeroTalandarAccumulatedShieldDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Accumulated Shield - Absorbed
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnit()) == "HeroTalandar"))) {
+            return false;
+        }
+
+        if (!((UnitIsAlive(EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libHTld_gf_HeroTalandarAccumulatedShield(EventUnit(), EventUnitDamageAbsorbed(), EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed_Init () {
+    libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed = TriggerCreate("libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Accumulated Shield - Carry Behavior
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_talandar;
+    string lv_accumulatedShieldBehaviorLink;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_talandar = EventUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitIsAlive(lv_talandar) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_accumulatedShieldBehaviorLink = "HeroTalandarAccumulatedShield";
+    if ((EventUnitBehaviorChange() != c_unitBehaviorChangeDestroy)) {
+        if (((UnitHasBehavior2(lv_talandar, "HeroTalandarAccumulatedShield") == false) || (UnitBehaviorDamageModifyRemaining(lv_talandar, "HeroTalandarAccumulatedShield") < UnitBehaviorDamageModifyLimit(lv_talandar, "HeroTalandarAccumulatedShield")))) {
+            UnitCreateEffectUnit(lv_talandar, "HeroTalandarAccumulatedShield@ApplyShield", lv_talandar);
+        }
+
+    }
+    else {
+        UnitBehaviorSetDuration(lv_talandar, "HeroTalandarAccumulatedShield", libHTld_gv_heroTalandarAccumulatedShieldDefaultShieldsDuration);
+        UnitBehaviorSetDurationRemaining(lv_talandar, "HeroTalandarAccumulatedShield", libHTld_gv_heroTalandarAccumulatedShieldDefaultShieldsDuration);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior_Init () {
+    libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior = TriggerCreate("libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior_Func");
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior, null, "HeroTalandarAccumulatedShield@SecondCarryBehavior", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior, null, "HeroTalandarAccumulatedShield@SecondCarryBehavior", c_unitBehaviorChangeRefresh);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior, null, "HeroTalandarAccumulatedShield@SecondCarryBehavior", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Talent - Arsenal Overcharge
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarTalentArsenalOvercharge_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_casterUnit;
+    int lv_owner;
+    fixed lv_delta;
+    int lv_channelStacks;
+    string lv_solarCannonAbilityLink;
+    string lv_solarCannonAbilityLinkChannel;
+    string lv_solarCannonAbilityLinkChannelCooldown;
+    string lv_solarCannonPersistentEffectLink;
+    string lv_solariteFlareAbilityLink;
+    string lv_solariteFlareAbilityLinkChannel;
+    string lv_solariteFlareAbilityLinkChannelCooldown;
+    string lv_solariteFlareActorLinkGuide;
+    string lv_solariteFlareActorLinkMissile;
+    string lv_solariteFlareSearchEffectLink;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_casterUnit = EventUnit();
+    lv_owner = EventPlayer();
+    lv_solarCannonAbilityLink = "HeroTalandarSolarCannon";
+    lv_solarCannonAbilityLinkChannel = "HeroTalandarSolarCannonChannel";
+    lv_solarCannonAbilityLinkChannelCooldown = "";
+    lv_solarCannonPersistentEffectLink = "HeroTalandarSolarCannon@StartPersistent";
+    lv_solariteFlareAbilityLink = "HeroTalandarSolariteFlare";
+    lv_solariteFlareAbilityLinkChannel = "HeroTalandarSolariteFlareChannel";
+    lv_solariteFlareAbilityLinkChannelCooldown = "";
+    lv_solariteFlareActorLinkGuide = "HeroTalandarSolariteFlare@CastGuideRegionArc";
+    lv_solariteFlareActorLinkMissile = "HeroTalandarSolariteFlare@AirBombMissileA";
+    lv_solariteFlareSearchEffectLink = "HeroTalandarSolariteFlare@AirBombSearch";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_solarCannonAbilityLinkChannelCooldown = CatalogFieldValueGet(c_gameCatalogAbil, lv_solarCannonAbilityLinkChannel, "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny);
+    lv_solariteFlareAbilityLinkChannelCooldown = CatalogFieldValueGet(c_gameCatalogAbil, lv_solariteFlareAbilityLinkChannel, "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny);
+    if ((EventUnitBehaviorChange() == c_unitBehaviorChangeCreate)) {
+        CatalogFieldValueSet(c_gameCatalogEffect, lv_solarCannonPersistentEffectLink, "InitialOffset", lv_owner, ("0,-" + FixedToString(libHTld_gv_heroTalandarChannelingRangeCharged, 5) + ",0"));
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogAbil, lv_solariteFlareAbilityLink, "Range[" + IntToString(0) + "]", lv_owner, libHTld_gv_heroTalandarChannelingRangeCharged);
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogActor, lv_solariteFlareActorLinkGuide, "Radius", lv_owner, libHTld_gv_heroTalandarSolariteFlareRadiusCharged);
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogActor, lv_solariteFlareActorLinkMissile, "Scale", lv_owner, libHTld_gv_heroTalandarSolariteFlareMissileScaleCharged);
+        libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, lv_solariteFlareSearchEffectLink, "AreaArray[" + IntToString(0) + "].Radius", lv_owner, libHTld_gv_heroTalandarSolariteFlareRadiusCharged);
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solarCannonAbilityLink, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(false));
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solarCannonAbilityLinkChannel, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(false));
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solariteFlareAbilityLink, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(false));
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solariteFlareAbilityLinkChannel, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(false));
+        UnitCreateEffectUnit(lv_casterUnit, "HeroTalandarArsenalOvercharge@SetTalandarAbilitiesChargesDefault", lv_casterUnit);
+    }
+    else {
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solarCannonAbilityLink, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(true));
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solarCannonAbilityLinkChannel, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(true));
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solariteFlareAbilityLink, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(true));
+        CatalogFieldValueSet(c_gameCatalogAbil, lv_solariteFlareAbilityLinkChannel, "Cost[" + IntToString(0) + "].Charge.HideCount", lv_owner, libNtve_gf_ConvertBooleanToString(true));
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarTalentArsenalOvercharge_Init () {
+    libHTld_gt_HeroTalandarTalentArsenalOvercharge = TriggerCreate("libHTld_gt_HeroTalandarTalentArsenalOvercharge_Func");
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarTalentArsenalOvercharge, null, "HeroTalandarArsenalOvercharge", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(libHTld_gt_HeroTalandarTalentArsenalOvercharge, null, "HeroTalandarArsenalOvercharge", c_unitBehaviorChangeDestroy);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Talent - Accumulated Shield - Shield Capacitor
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitCreateEffectUnit(EventPlayerEffectUsedUnit(c_effectUnitTarget), "HeroTalandarTalentAccumulatedShieldShieldCapacitor@RefreshTokenCounter", EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor_Init () {
+    libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor = TriggerCreate("libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor_Func");
+    TriggerAddEventPlayerEffectUsed(libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor, c_playerAny, "HeroTalandar@RegenGlobePickupImpactSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Talent - Accumulated Shield - Immortal
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitCreateEffectUnit(EventPlayerEffectUsedUnit(c_effectUnitTarget), "HeroTalandarTalentAccumulatedShieldImmortal@Heal", EventPlayerEffectUsedUnit(c_effectUnitTarget));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal_Init () {
+    libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal = TriggerCreate("libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal_Func");
+    TriggerAddEventPlayerEffectUsed(libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal, c_playerAny, "HeroTalandarTalentAccumulatedShieldImmortal@ModifyCooldown");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Talent - Purification - Damaged
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarTalentPurificationDamaged_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(EventUnitDamageSourceUnit(), "HeroTalandarTalentPurification@TimedBonus") == true))) {
+            return false;
+        }
+
+        if (!(((EventUnitDamageAmount() + EventUnitDamageBehaviorShield()) > 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, "HeroTalandarTalentPurification@EnergyAdd", "VitalArray[Energy].Change", EventUnitDamageSourcePlayer(), (EventUnitDamageAmount() + EventUnitDamageBehaviorShield()));
+    UnitCreateEffectUnit(EventUnitDamageSourceUnit(), "HeroTalandarTalentPurification@EnergyAdd", EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarTalentPurificationDamaged_Init () {
+    libHTld_gt_HeroTalandarTalentPurificationDamaged = TriggerCreate("libHTld_gt_HeroTalandarTalentPurificationDamaged_Func");
+    TriggerAddEventUnitDamaged(libHTld_gt_HeroTalandarTalentPurificationDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroTalandarWeaponPraetor@Damage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Talandar - Talent - Purification - Absorbed
+//--------------------------------------------------------------------------------------------------
+bool libHTld_gt_HeroTalandarTalentPurificationAbsorbed_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(EventUnitDamageSourceUnit(), "HeroTalandarTalentPurification@TimedBonus") == true))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageEffect() == "HeroTalandarWeaponPraetor@Damage"))) {
+            return false;
+        }
+
+        if (!((EventUnitDamageAbsorbed() > 0.0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CatalogFieldValueSetAsReal(c_gameCatalogEffect, "HeroTalandarTalentPurification@EnergyAdd", "VitalArray[Energy].Change", EventUnitDamageSourcePlayer(), EventUnitDamageAbsorbed());
+    UnitCreateEffectUnit(EventUnitDamageSourceUnit(), "HeroTalandarTalentPurification@EnergyAdd", EventUnitDamageSourceUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHTld_gt_HeroTalandarTalentPurificationAbsorbed_Init () {
+    libHTld_gt_HeroTalandarTalentPurificationAbsorbed = TriggerCreate("libHTld_gt_HeroTalandarTalentPurificationAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHTld_gt_HeroTalandarTalentPurificationAbsorbed, null, null);
+}
+
+void libHTld_InitTriggers () {
+    libHTld_gt_HeroTalandarSolarCannon_Init();
+    libHTld_gt_HeroTalandarSolariteFlare_Init();
+    libHTld_gt_HeroTalandarVOController_Init();
+    libHTld_gt_HeroTalandarArmorSuitSwap_Init();
+    libHTld_gt_HeroTalandarSecondSuitUIController_Init();
+    libHTld_gt_HeroTalandarAccumulatedShieldDamaged_Init();
+    libHTld_gt_HeroTalandarAccumulatedShieldAbsorbed_Init();
+    libHTld_gt_HeroTalandarAccumulatedShieldCarryBehavior_Init();
+    libHTld_gt_HeroTalandarTalentArsenalOvercharge_Init();
+    libHTld_gt_HeroTalandarTalentAccumulatedShieldShieldCapacitor_Init();
+    libHTld_gt_HeroTalandarTalentAccumulatedShieldImmortal_Init();
+    libHTld_gt_HeroTalandarTalentPurificationDamaged_Init();
+    libHTld_gt_HeroTalandarTalentPurificationAbsorbed_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHTld_InitLib_completed = false;
+
+void libHTld_InitLib () {
+    if (libHTld_InitLib_completed) {
+        return;
+    }
+
+    libHTld_InitLib_completed = true;
+
+    libHTld_InitLibraries();
+    libHTld_InitVariables();
+    libHTld_InitTriggers();
+}
+

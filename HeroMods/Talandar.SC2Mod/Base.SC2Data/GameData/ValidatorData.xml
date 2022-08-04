@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarAccumulatedShield@HasNoSecondaryBehavior">
+        <Behavior value="HeroTalandarAccumulatedShield@SecondCarryBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarAccumulatedShield@HasNotShield" parent="CasterNotParent">
+        <Behavior value="HeroTalandarAccumulatedShield"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarDragoonArmorSuit@SourceIsDragoon" parent="SourceIsParent">
+        <Behavior value="HeroTalandarDragoonArmorSuit@DragoonCarryBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarDragoonArmorSuit@SourceIsDragoonAndDoesnotSuppressGenericDeath">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarDragoonArmorSuit@SourceIsDragoon"/>
+        <CombineArray value="SourceDoesNotHaveSuppressGenericDeath"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPraetorArmorSuit@SourceIsPraetor" parent="SourceIsParent">
+        <Behavior value="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarPraetorArmorSuit@SourceIsPraetorAndDoesnotSuppressGenericDeath">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarPraetorArmorSuit@SourceIsPraetor"/>
+        <CombineArray value="SourceDoesNotHaveSuppressGenericDeath"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroTalandarPurificationBlast" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPurificationBlast@CasterHasNoBehavior" parent="CasterNotParent">
+        <Behavior value="HeroTalandarPurificationBlast@PurificationBlast"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPurificationBlast@CasterHasNoCastBehavior" parent="CasterNotParent">
+        <Behavior value="HeroTalandarPurificationBlast@TalandarCastStun"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroTalandarPurifierBeam" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@CasterIsFullyChargedMedium">
+        <WhichUnit Value="Caster"/>
+        <Value value="24"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@MediumChargesCasterHasNoBehaviors">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@MediumChargesCasterHasBehaviors">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedMedium">
+        <WhichUnit Effect="HeroTalandarSolariteFlare@CreateUnitSet"/>
+        <Value value="24"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedMedium">
+        <WhichUnit Value="Caster"/>
+        <Value value="24"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterNotFullyChargedMedium">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="24"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@MediumChargesCasterHasNoBehaviors">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@MediumChargesCasterHasBehaviors">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeMedium"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentAccumulatedShieldImmortal@NotOnCooldown" parent="CasterNotParent">
+        <Behavior value="HeroTalandarTalentAccumulatedShieldImmortal@Cooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@HasTalentAndHasNotShield">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentAccumulatedShieldSystemReconfiguration"/>
+        <CombineArray value="HeroTalandarAccumulatedShield@HasNotShield"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@MediumCombineSolarCannon">
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestIsCompletedAndHaveMediumChargesSolarCannon"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestNotCompletedAndHaveNoDefaultChargesSolarCannon"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@MediumCombineSolariteFlare">
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestIsCompletedandCasterHasMediumChargesSolariteFlare"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestNotCompletedAndHaveNoDefaultChargesSolariteFlare"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@QuestNotCompletedAndHaveNoDefaultChargesSolarCannon">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestNotCompleted"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@DefaultChargesCasterHasNoBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@QuestIsCompletedAndHaveMediumChargesSolarCannon">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestCompleted"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@MediumChargesCasterHasBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@QuestNotCompletedAndHaveNoDefaultChargesSolariteFlare">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestNotCompleted"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@DefaultChargesCasterHasNoBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@QuestIsCompletedandCasterHasMediumChargesSolariteFlare">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestCompleted"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@MediumChargesCasterHasBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroTalandarTalentTacticalDataWeb" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAkhundelar" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentAkhundelar@TargeetHasNoPowerBuff" parent="TargetNotParent">
+        <Behavior value="HeroTalandarTalentAkhundelar@PowerBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyChargedDefault">
+        <WhichUnit Effect="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitSet"/>
+        <Value value="32"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyChargedOvercharged">
+        <WhichUnit Effect="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitSet"/>
+        <Value value="1"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeOvercharged"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyChargedUpgraded">
+        <WhichUnit Effect="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitSet"/>
+        <Value value="16"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeUpgraded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyCharged">
+        <CombineArray value="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyChargedDefault"/>
+        <CombineArray value="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyChargedUpgraded"/>
+        <CombineArray value="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyChargedOvercharged"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@QuestCompletedAndHaveNoDefaultorMediumChargesSolariteFlare">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestCompleted"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@DefaultChargesCasterHasNoBehaviors"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@MediumChargesCasterHasNoBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@DefaultChargesCasterHasNoBehaviors">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarSolariteFlare@CastValidator">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamBehavior"/>
+        <CombineArray value="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamCreatingBehavior"/>
+        <CombineArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+        <CombineArray value="CasterNotPolymorphed"/>
+        <CombineArray value="CasterNotDead"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedDefault">
+        <WhichUnit Effect="HeroTalandarSolariteFlare@CreateUnitSet"/>
+        <Value value="32"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedUpgraded">
+        <WhichUnit Effect="HeroTalandarSolariteFlare@CreateUnitSet"/>
+        <Value value="16"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeUpgraded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedOvercharged">
+        <WhichUnit Effect="HeroTalandarSolariteFlare@CreateUnitSet"/>
+        <Value value="1"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeOvercharged"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareChargeUsed id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestInProgress" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter">
+        <Compare value="LT"/>
+        <Value value="25"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterNotFullyChargedUpgraded">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="16"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeUpgrade"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterNotFullyChargedDefault">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="32"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareChargeUsed id="HeroTalandarTalentOperationalEfficiency@QuestInProgress" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroTalandarTalentOperationalEfficiency@TokenCounter">
+        <Compare value="NE"/>
+        <Value value="30"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentPurification@HasTimedBuff">
+        <Compare value="GT"/>
+        <Behavior value="HeroTalandarTalentPurification@TimedBonus"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareChargeUsed id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter"/>
+    <CValidatorCombine id="HeroTalandarAccelerationProtocol@DragoonIsChargingOrHasChargedAbilities">
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterIsFullyChargedDefault"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterIsFullyChargedUpgraded"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedDefault"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedUpgraded"/>
+        <CombineArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAssaultProtocol" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldShieldCapacitor" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@HasTalentAndHasShield">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentAccumulatedShieldSystemReconfiguration"/>
+        <CombineArray value="HeroTalandarAccumulatedShield@HasShield"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamCreatingBehavior" parent="CasterNotParent">
+        <Behavior value="HeroTalandarPurifierBeam@CreatingBeamBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareChargeUsed id="HeroTalandarTalentOperationalEfficiency@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroTalandarTalentOperationalEfficiency@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentTacticalOverload" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarAccumulatedShield@HasShield" parent="CasterIsParent">
+        <Behavior value="HeroTalandarAccumulatedShield"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldRapidRecharge" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentPhaseBomb@CasterHasBuff">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="HeroTalandarTalentPhaseBomb"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroTalandarTalentPurifierBeamEmpoweredBeam" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroTalandarSolariteFlare@BombUnitIsFullyCharged">
+        <CombineArray value="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedDefault"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedMedium"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedUpgraded"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@BombUnitIsFullyChargedOvercharged"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroTalandarTalentSolariteFlareMagneticField" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentSolariteFlareSolariteBurn" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentThunderousChargeProtectionProtocol" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" parent="CasterIsParent">
+        <Behavior value="HeroTalandarArsenalOvercharge@Charges"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarArsenalOvercharge@CasterHasNoArsenalOverchargeChargeBehaviors" parent="CasterNotParent">
+        <Behavior value="HeroTalandarArsenalOvercharge@Charges"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroTalandarArsenalOvercharge" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentOperationalEfficiency" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarWhirlwind@TargetIsSlowed" parent="TargetIsParent">
+        <Behavior value="HeroTalandarWhirlwind@Slow"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroTalandarTalentWhirlwindDisruptor" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAvengingProtocol" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroTalandarTalentOperationalEfficiency@QuestCompletedAndHaveNoDefaultorMediumChargesSolarCannon">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency@QuestCompleted"/>
+        <CombineArray value="HeroTalandarTalentOperationalEfficiency"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@DefaultChargesCasterHasNoBehaviors"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@MediumChargesCasterHasNoBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroTalandarSolarCannon@CasterIsFullyCharged">
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterIsFullyChargedDefault"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterIsFullyChargedMedium"/>
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterIsFullyChargedUpgraded"/>
+        <CombineArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareChargeUsed id="HeroTalandarTalentOperationalEfficiency@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroTalandarTalentOperationalEfficiency@TokenCounter"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@CasterIsFullyChargedDefault">
+        <WhichUnit Value="Caster"/>
+        <Value value="32"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior" parent="CasterIsParent">
+        <Behavior value="HeroTalandarSolarCannonChannel@DummyChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@DefaultChargesCasterHasNoBehaviors">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedDefault">
+        <WhichUnit Value="Caster"/>
+        <Value value="32"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeDefault"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolarCannonChannel@CasterIsFullyChargedUpgraded">
+        <WhichUnit Value="Caster"/>
+        <Value value="16"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeUpgraded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPurifierBeam@CasterHasNoPurifierBeamBehavior" parent="CasterNotParent">
+        <Behavior value="HeroTalandarPurifierBeam@PurifierBeam"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedUpgraded">
+        <WhichUnit Value="Caster"/>
+        <Value value="16"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeUpgrade"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPurifierBeam@CasterHasNoSwappingForm" parent="CasterNotParent">
+        <Behavior value="HeroTalandarPurifierBeam@SwappingForm"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarSolariteFlare@CasterIsFullyCharged">
+        <CombineArray value="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedDefault"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedMedium"/>
+        <CombineArray value="HeroTalandarSolariteFlareChannel@CasterIsFullyChargedUpgraded"/>
+        <CombineArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarSolariteFlareChannel@CasterHasChannelBehavior" parent="CasterIsParent">
+        <Behavior value="HeroTalandarSolariteFlareChannel@DummyChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarThunderousCharge@CasterHasSpeedBuff" parent="CasterIsParent">
+        <Behavior value="HeroTalandarThunderousCharge@Speed"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarThunderousCharge@TargetHasKnockbackBehavior">
+        <Compare value="GT"/>
+        <Behavior value="HeroTalandarThunderousCharge@Knockback"/>
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="HeroTalandarThunderousCharge@TargetNotOnPoint">
+        <WhichLocation Effect="HeroTalandarThunderousCharge@SearchSet"/>
+        <Compare value="NE"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarDragoonArmorSuit@TalandarIsDragoon">
+        <Value value="1"/>
+        <Behavior value="HeroTalandarDragoonArmorSuit@DragoonCarryBehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HeroTalandarTalentThunderousChargeTrooperChampion" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldImmortal" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentPurification" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentPhaseBomb" parent="PlayerTalent"/>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarPraetorArmorSuit@TalandarIsPraetor">
+        <Value value="1"/>
+        <Behavior value="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarThunderousCharge@TargetCollisionNotFat">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarThunderousCharge@TargetIsNotFat"/>
+        <CombineArray value="NotWalkable"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarThunderousCharge@TargetIsNotFat">
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <Behavior value="HeroGenericIsFat"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroTalandarThunderousCharge@TargetCollisionFat">
+        <Type value="And"/>
+        <CombineArray value="HeroTalandarThunderousCharge@TargetIsFat"/>
+        <CombineArray value="NotWalkable"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarThunderousCharge@TargetIsFat">
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <Value value="1"/>
+        <Behavior value="HeroGenericIsFat"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroTalandarTalentSolariteFlareMagneticField@HasKnockback">
+        <Value value="1"/>
+        <Behavior value="HeroTalandarTalentSolariteFlareMagneticField@Knockback"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="IsTalandar">
+        <Value value="HeroTalandar"/>
+    </CValidatorUnitType>
+    <CValidatorUnitFilters id="HeroTalandarSolariteFlare@GuideFilters">
+        <Filters value="Visible;Player,Ally,Neutral,Mechanical,Worker,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="AbilButtonActiveQDamage">
+        <CombineArray value="HeroTalandarSolarCannonChannel@CasterHasChannelBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AbilButtonActiveWDamage">
+        <CombineArray value="HeroTalandarSolariteFlareChannel@CasterHasChannelBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CritAliasPhysicalPower">
+        <CombineArray value="HeroTalandarTalentPurification@HasTimedBuff"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="IsTalandarCaster">
+        <WhichUnit Value="Caster"/>
+        <Value value="HeroTalandar"/>
+    </CValidatorUnitType>
+    <CValidatorPlayerTalent id="HeroTalandarPurifierArmaments" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentChampionUpgrade" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldAdaptiveShield" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldBraveHearth" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentTitanDestroyer" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroTalandarTalentAccumulatedShieldDisruptor" parent="PlayerTalent"/>
+</Catalog>

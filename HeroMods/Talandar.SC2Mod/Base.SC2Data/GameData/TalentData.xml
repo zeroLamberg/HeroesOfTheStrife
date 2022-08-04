@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CTalent id="HeroTalandarTalentTacticalDataWeb"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldSystemReconfiguration"/>
+    <CTalent id="HeroTalandarTalentAkhundelar"/>
+    <CTalent id="HeroTalandarTalentAssaultProtocol"/>
+    <CTalent id="HeroTalandarTalentPhaseBomb"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldRapidRecharge"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldShieldCapacitor"/>
+    <CTalent id="HeroTalandarArsenalOvercharge"/>
+    <CTalent id="HeroTalandarTalentOperationalEfficiency"/>
+    <CTalent id="HeroTalandarPurificationBlast"/>
+    <CTalent id="HeroTalandarPurifierBeam"/>
+    <CTalent id="HeroTalandarTalentPurifierBeamEmpoweredBeam"/>
+    <CTalent id="HeroTalandarTalentSolariteFlareMagneticField"/>
+    <CTalent id="HeroTalandarTalentSolariteFlareSolariteBurn"/>
+    <CTalent id="HeroTalandarTalentTacticalOverload"/>
+    <CTalent id="HeroTalandarTalentThunderousChargeProtectionProtocol"/>
+    <CTalent id="HeroTalandarTalentWhirlwindDisruptor"/>
+    <CTalent id="HeroTalandarTalentAvengingProtocol"/>
+    <CTalent id="HeroTalandarTalentThunderousChargeTrooperChampion"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldImmortal"/>
+    <CTalent id="HeroTalandarTalentPurification"/>
+    <CTalent id="HeroTalandarPurifierArmaments"/>
+    <CTalent id="HeroTalandarTalentChampionUpgrade"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldAdaptiveShield"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldBraveHearth"/>
+    <CTalent id="HeroTalandarTalentTitanDestroyer"/>
+    <CTalent id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments"/>
+    <CTalent id="HeroTalandarTalentAccumulatedShieldDisruptor"/>
+</Catalog>

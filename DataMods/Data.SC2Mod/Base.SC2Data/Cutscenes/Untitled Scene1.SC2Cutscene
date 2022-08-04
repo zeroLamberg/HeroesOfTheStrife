@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CutsceneState cutsceneVersion="1.300000">
+    <CCutsceneNodeActor guid="12017937762314629323" name="Dark Templar" position="-0.921459,2.235497,-0.000000" modelLink="DarkTemplar" variation="1" skinOverride="DarkTemplarPurifier" shadowBox="0" teamColorDiffuse="0.000000,0.000000,0.000000,0.000000" teamColorEmissive="0.000000,0.000000,0.000000,0.000000">
+        <CCutsceneElementObject guid="8369322551410962635" duration="5000" lockedToEnd="1"/>
+    </CCutsceneNodeActor>
+</CutsceneState>

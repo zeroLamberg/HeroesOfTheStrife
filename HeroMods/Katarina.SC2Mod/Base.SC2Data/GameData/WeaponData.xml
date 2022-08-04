@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HeroKatarinaWeaponAutorifle" parent="CoreHeroWeaponFast">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <DisplayEffect value="HeroKatarinaWeaponAutorifle@Damage"/>
+        <MinScanRange value="5.5"/>
+        <Range value="5.5"/>
+        <Arc value="14.9963"/>
+        <Period value="1"/>
+        <Effect value="HeroKatarinaWeaponAutorifle@InitialPersitent"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroKatarinaWeaponGrenadeLauncher" parent="CoreHeroWeaponMedium">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_GrenadeLauncher_Carried.dds"/>
+        <DisplayEffect value="HeroKatarinaWeaponGrenadeLauncher@Damage"/>
+        <MinScanRange value="5.5"/>
+        <Range value="5.5"/>
+        <Arc value="14.9963"/>
+        <Period value="1"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="HeroKatarinaWeaponGrenadeLauncher@InitialPersistent"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroKatarinaWeaponSnipe" parent="CoreHeroWeaponFast">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Icon value="Assets\Textures\btn-upgrade-nova-equipment-canisterrifle.dds"/>
+        <DisplayEffect value="HeroKatarinaWeaponSnipe@Damage"/>
+        <MinScanRange value="7.5"/>
+        <Range value="7.5"/>
+        <Period value="2"/>
+        <Effect value="HeroKatarinaWeaponSnipe@InitialSet"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HeroKatarinaWeaponFlamethrower" parent="CoreHeroWeaponMedium">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Icon value="assets\Icons\Hero_Katarina\Katarina_Weapon_Flamethrower_Carried.dds"/>
+        <DisplayEffect value="HeroKatarinaWeaponFlamethrower@Damage"/>
+        <MinScanRange value="4.5"/>
+        <Range value="4.5"/>
+        <RangeSlop value="1.5"/>
+        <Arc value="14.9963"/>
+        <Period value="0.25"/>
+        <DamagePoint value="0.15"/>
+        <Effect value="HeroKatarinaWeaponFlamethrower@InitialCreatePersistent"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <PreEffect value="DismountDecloakCasterSet"/>
+    </CWeaponLegacy>
+</Catalog>

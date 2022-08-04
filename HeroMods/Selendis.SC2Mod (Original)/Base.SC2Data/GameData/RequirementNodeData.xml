@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementAnd id="AndCountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnitEqCountBehaviorHeroSelendisTalentInTheHeatOfBattleCompleteOnlyAtUnit0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+        <OperandArray value="EqCountBehaviorHeroSelendisTalentInTheHeatOfBattleCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorHeroSelendisTalentInTheHeatOfBattleCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroSelendisTalentInTheHeatOfBattle" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementEq id="EqCountBehaviorHeroSelendisTalentInTheHeatOfBattleCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroSelendisTalentInTheHeatOfBattleCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementCountBehavior id="CountBehaviorHeroSelendisExecutorCharge@ChargingCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroSelendisExecutorCharge@Charging" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementOr id="OrCountBehaviorHeroSelendisExecutorCharge@CasterBehaviorCompleteOnlyAtUnitCountBehaviorHeroSelendisExecutorCharge@ChargingCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroSelendisExecutorCharge@CasterBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorHeroSelendisExecutorCharge@ChargingCompleteOnlyAtUnit"/>
+    </CRequirementOr>
+    <CRequirementCountBehavior id="CountBehaviorHeroSelendisExecutorCharge@CasterBehaviorCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroSelendisExecutorCharge@CasterBehavior" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+</Catalog>

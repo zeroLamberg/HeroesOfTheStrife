@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel default="1" id="HeroMalfurion@CommonModel" parent="HeroModelParent">
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Malfurion_RequiredAnims\Storm_Hero_Malfurion_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Malfurion_PortraitAnims\Storm_Hero_Malfurion_PortraitAnims.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Malfurion_FacialAnims\Storm_Hero_Malfurion_FacialAnims.m3a"/>
+        <AttachProps Id="Ref_Center">
+            <Keys index="MacGuffin" value="0"/>
+        </AttachProps>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.267000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.668000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Start,00"/>
+            <Name value="Malfurion_Footstep_StandStart"/>
+            <Type value="Sound"/>
+            <Time value="0.348000"/>
+            <Payload value="Malfurion_Footstep_StandStart"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,02"/>
+            <Name value="Malfurion_Attack_PreLaunch"/>
+            <Type value="Actor"/>
+            <Time value="1.080000"/>
+            <Payload value="HeroMalfurionWeapon@PreLaunch"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,03"/>
+            <Name value="Malfurion_Attack_PreLaunch"/>
+            <Type value="Actor"/>
+            <Time value="1.080000"/>
+            <Payload value="HeroMalfurionWeapon@PreLaunch"/>
+        </Events>
+        <Events>
+            <Anim value="Attack,04"/>
+            <Name value="Malfurion_Attack_PreLaunch"/>
+            <Type value="Actor"/>
+            <Time value="1.080000"/>
+            <Payload value="HeroMalfurionWeapon@PreLaunch"/>
+        </Events>
+        <FacialController value="LocalizedData\Facial\Storm_Hero_Malfurion_Base.fxa"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Storm_ShopModelLight_Malfurion"/>
+        <SelectionRadius value="0.560000"/>
+        <ShadowRadius value="0.560000"/>
+    </CModel>
+    <CModel default="1" id="HeroMalfurion@CommonPortrait" parent="CorePortrait">
+        <Model value="Assets\Portraits\Storm_Portrait_Malfurion_Base_Background\Storm_Portrait_Malfurion_Base_Background.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Lighting value="Hero_Portrait_Malfurion_Base"/>
+    </CModel>
+    <CModel default="1" id="HeroMalfurion@CommonPortraitAddition" parent="CorePortrait">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Malfurion_Base\Storm_Hero_Malfurion_Base.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Malfurion_RequiredAnims\Storm_Hero_Malfurion_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Malfurion_PortraitAnims\Storm_Hero_Malfurion_PortraitAnims.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Malfurion_FacialAnims\Storm_Hero_Malfurion_FacialAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <FacialController value="LocalizedData\Facial\Storm_Hero_Malfurion_Base.fxa"/>
+        <Lighting value="HeroMalfurion@CommonPortraitAddition"/>
+        <PausedParticleSystemBehavior value="Automatic"/>
+        <Priority value="32"/>
+        <Quality value="1"/>
+    </CModel>
+    <CModel id="HeroMalfurion@Base" parent="HeroMalfurion@CommonModel">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Malfurion_Base\Storm_Hero_Malfurion_Base.m3"/>
+        <TextureDeclares Prefix="Storm_Malfurion" Slot="main"/>
+    </CModel>
+    <CModel id="HeroMalfurion@BasePortrait" parent="HeroMalfurion@CommonPortrait"/>
+    <CModel id="HeroMalfurion@StoreModelBase" parent="HeroModelParentStore">
+        <Model value="Assets\Store\Store_Hero_MalfurionBase\Store_Hero_MalfurionBase.m3"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Malfurion_RequiredAnims\Storm_Hero_Malfurion_RequiredAnims.m3a"/>
+        <RequiredAnims value="Assets\Portraits\Storm_Hero_Malfurion_PortraitAnims\Storm_Hero_Malfurion_PortraitAnims.m3a"/>
+        <RequiredAnims value="Assets\Units\Heroes\Storm_Hero_Malfurion_FacialAnims\Storm_Hero_Malfurion_FacialAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="HeroMalfurionInnervate@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Innervation_Impact\Storm_FX_Malfurion_Base_Innervation_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionMoonfire@ModelMain_Full" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_FullMoonfire\Storm_FX_Malfurion_Base_FullMoonfire.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="HeroMalfurionEntanglingRoots@WarningModel" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Fantasy_TeamColor\Storm_UI_AOECursor_Fantasy_TeamColor.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionTalentNaturesCleanse@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Talent_Cleanse_Impact\Storm_FX_Talent_Cleanse_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionFlame_EntanglingRoots_Treant" parent="Unit">
+        <Model value="Assets\Units\Pets\Pet_Skin_Malfurion_Flame\Pet_Skin_Malfurion_Flame_Treant\Pet_Skin_Malfurion_Flame_Treant.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+    </CModel>
+    <CModel id="MalfurionWinter_EntanglingRoots_Treant" parent="Unit">
+        <Model value="Assets\Units\Pets\Pet_Skin_Malfurion_Winter\Pet_Skin_Malfurion_Winter_Treant\Pet_Skin_Malfurion_Winter_Treant.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Weapon_AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Weapon_Impact\Effect_Malfurion_Winter_Weapon_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Weapon_Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Weapon\Effect_Malfurion_Winter_Weapon.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Tranquility_ModelCast" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Tranquility_Cast\Effect_Malfurion_Winter_Tranquility_Cast.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Tranquility_ModelImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Tranquility_Impact\Effect_Malfurion_Winter_Tranquility_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Tranquility_ModelPersistent" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Tranquility\Effect_Malfurion_Winter_Tranquility.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+        <ScaleMax value="2.625000,2.625000,1.000000"/>
+        <ScaleMin value="2.625000,2.625000,1.000000"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Moonfire_ModelImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Moonfire_Impact\Effect_Malfurion_Winter_Moonfire_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionWinter_Moonfire_ModelMain" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_Moonfire\Effect_Malfurion_Winter_Moonfire.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="MalfurionWinter_EntanglingRoots_Growth" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_EntanglingRoots\Effect_Malfurion_Winter_EntanglingRoots.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Moonfire_ModelImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Moonfire_Impact\Effect_Malfurion_Flame_Moonfire_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Moonfire_ModelMain" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Moonfire\Effect_Malfurion_Flame_Moonfire.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="MalfurionFlame_EntanglingRoots_Growth" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_EntanglingRoots\Effect_Malfurion_Flame_EntanglingRoots.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="HeroMalfurionEntanglingRoots@BindingRootsModel" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_EntanglingRoots_Impact\Storm_FX_Malfurion_Base_EntanglingRoots_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="MalfurionFlame_EntanglingRoots_BindingRootsModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_EntanglingRoots_Impact\Effect_Malfurion_Flame_EntanglingRoots_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="MalfurionSkinStormrageDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Stormrage\Hero_Skin_Malfurion_Stormrage_DeathRagdoll\Hero_Skin_Malfurion_Stormrage_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="Download" value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Stormrage" Slot="main"/>
+    </CModel>
+    <CModel id="MalfurionSkinUltimateDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Ultimate\Hero_Skin_Malfurion_Ultimate_DeathRagdoll\Hero_Skin_Malfurion_Ultimate_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="Download" value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Ultimate" Slot="main"/>
+    </CModel>
+    <CModel id="MalfurionSkinWinterDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Winter\Hero_Skin_Malfurion_Winter_DeathRagdoll\Hero_Skin_Malfurion_Winter_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="Download" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Malfurion_Winter" Slot="main"/>
+    </CModel>
+    <CModel id="MalfurionSkinBetrayerPortrait" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion\Portrait_Background_Malfurion.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Betrayer"/>
+    </CModel>
+    <CModel id="MalfurionSkinWinterPortrait" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion_Winter\Portrait_Background_Malfurion_Winter.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Winter"/>
+    </CModel>
+    <CModel id="MalfurionSkinUltimatePortrait" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion\Portrait_Background_Malfurion.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Ultimate"/>
+    </CModel>
+    <CModel id="MalfurionSkinWinterPortraitAddition" parent="Portrait">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Winter\Hero_Skin_Malfurion_Winter\Hero_Skin_Malfurion_Winter.m3"/>
+        <RequiredAnims value="Assets\Portraits\Anims\Portrait_Anims_Malfurion\Portrait_Anims_Malfurion.m3a"/>
+        <AnimBlendTime value="-1.000000"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <PausedParticleSystemBehavior value="Automatic"/>
+        <Priority value="32"/>
+        <Quality value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Malfurion_Winter" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_malfurion_base.fxa"/>
+        <RequiredAnimsEx FilePath="Assets\Portraits\Anims\Portrait_Anims_Malfurion_Winter\Portrait_Anims_Malfurion_Winter.m3a">
+            <Flags index="Override" value="1"/>
+        </RequiredAnimsEx>
+    </CModel>
+    <CModel id="MalfurionSkinFlamePortrait" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion_Flame\Portrait_Background_Malfurion_Flame.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Flame"/>
+    </CModel>
+    <CModel id="MalfurionSkinBetrayerPortraitAddition" parent="Portrait">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Betrayer\Hero_Skin_Malfurion_Betrayer\Hero_Skin_Malfurion_Betrayer.m3"/>
+        <RequiredAnims value="Assets\Portraits\Anims\Portrait_Anims_Malfurion\Portrait_Anims_Malfurion.m3a"/>
+        <AnimBlendTime value="-1.000000"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <PausedParticleSystemBehavior value="Automatic"/>
+        <Priority value="32"/>
+        <Quality value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Betrayer" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_malfurion_base.fxa"/>
+    </CModel>
+    <CModel id="MalfurionSkinFlamePortraitVar1" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion_Flame_Var1\Portrait_Background_Malfurion_Flame_Var1.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Flame_Var1"/>
+    </CModel>
+    <CModel id="MalfurionSkinFlamePortraitAddition" parent="Portrait">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Flame\Hero_Skin_Malfurion_Flame\Hero_Skin_Malfurion_Flame.m3"/>
+        <RequiredAnims value="Assets\Portraits\Anims\Portrait_Anims_Malfurion\Portrait_Anims_Malfurion.m3a"/>
+        <AnimBlendTime value="-1.000000"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <PausedParticleSystemBehavior value="Automatic"/>
+        <Priority value="32"/>
+        <Quality value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Malfurion_Flame" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_malfurion_base.fxa"/>
+    </CModel>
+    <CModel id="MalfurionSkinFlamePortraitVar2" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion_Flame_Var2\Portrait_Background_Malfurion_Flame_Var2.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Flame_Var2"/>
+    </CModel>
+    <CModel id="MalfurionSkinFlamePortraitVar3" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion_Flame_Var3\Portrait_Background_Malfurion_Flame_Var3.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="Hero_Portrait_Malfurion_Flame_Var3"/>
+    </CModel>
+    <CModel id="MalfurionSkinUltimatePortraitAddition" parent="Portrait">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Ultimate\Hero_Skin_Malfurion_Ultimate\Hero_Skin_Malfurion_Ultimate.m3"/>
+        <RequiredAnims value="Assets\Portraits\Anims\Portrait_Anims_Malfurion\Portrait_Anims_Malfurion.m3a"/>
+        <AnimBlendTime value="-1.000000"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <PausedParticleSystemBehavior value="Automatic"/>
+        <Priority value="32"/>
+        <Quality value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Ultimate" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_malfurion_base.fxa"/>
+    </CModel>
+    <CModel id="MalfurionBetrayer_EntanglingRoots_BindingRootsModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Betrayer\Effect_Malfurion_Betrayer_EntanglingRoots_Impact\Effect_Malfurion_Betrayer_EntanglingRoots_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="MalfurionBetrayer_EntanglingRoots_Growth" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Betrayer\Effect_Malfurion_Betrayer_EntanglingRoots\Effect_Malfurion_Betrayer_EntanglingRoots.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MalfurionBetrayer_Moonfire_ModelImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Betrayer\Effect_Malfurion_Betrayer_Moonfire_Impact\Effect_Malfurion_Betrayer_Moonfire_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionBetrayer_Moonfire_ModelMain" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Betrayer\Effect_Malfurion_Betrayer_Moonfire\Effect_Malfurion_Betrayer_Moonfire.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="MalfurionBetrayer_Moonfire_ModelWeaponCast" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Betrayer\Effect_Malfurion_Betrayer_Moonfire_Cast_Weapon\Effect_Malfurion_Betrayer_Moonfire_Cast_Weapon.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionWinter_EntanglingRoots_BindingRootsModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Winter\Effect_Malfurion_Winter_EntanglingRoots_Impact\Effect_Malfurion_Winter_EntanglingRoots_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="HeroMalfurion@BaseDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Storm_Hero_Malfurion_Base_DeathRagdoll\Storm_Hero_Malfurion_Base_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="Download" value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion" Slot="main"/>
+    </CModel>
+    <CModel id="MalfurionSkinFlameDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Flame\Hero_Skin_Malfurion_Flame_DeathRagdoll\Hero_Skin_Malfurion_Flame_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="Download" value="1"/>
+        <TextureDeclares Prefix="Storm_Hero_Malfurion_Flame" Slot="main"/>
+    </CModel>
+    <CModel id="MalfurionSkinBetrayerDeathRagdoll" parent="HeroDeathRagdoll" low="">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Betrayer\Hero_Skin_Malfurion_Betrayer_DeathRagdoll\Hero_Skin_Malfurion_Betrayer_DeathRagdoll.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="Download" value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Betrayer" Slot="main"/>
+    </CModel>
+    <CModel id="HeroMalfurionTreant" parent="Unit">
+        <Model value="assets\Units\Pets\Storm_Pet_MalfurionTreant_Base\Storm_Pet_MalfurionTreant_Base.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Tranquility_ModelCast" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Tranquility_Cast\Effect_Malfurion_Flame_Tranquility_Cast.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Tranquility_ModelImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Tranquility_Impact\Effect_Malfurion_Flame_Tranquility_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Tranquility_ModelPersistent" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Tranquility\Effect_Malfurion_Flame_Tranquility.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+        <ScaleMax value="2.625000,2.625000,1.000000"/>
+        <ScaleMin value="2.625000,2.625000,1.000000"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Tranquility_ModelWeaponCast" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Tranquility_Weapon_Cast\Effect_Malfurion_Flame_Tranquility_Weapon_Cast.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Weapon_AttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Weapon_Impact\Effect_Malfurion_Flame_Weapon_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionFlame_Weapon_Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Heroes\Skin_Malfurion_Flame\Effect_Malfurion_Flame_Weapon\Effect_Malfurion_Flame_Weapon.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionSkinStormragePortrait" parent="Portrait">
+        <Model value="Assets\Portraits\Backgrounds\Portrait_Background_Malfurion\Portrait_Background_Malfurion.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Image value="Assets\Textures\MalfurionPortrait_Static.dds"/>
+        <Lighting value="Hero_Portrait_Malfurion_Stormrage"/>
+    </CModel>
+    <CModel id="MalfurionSkinStormragePortraitAddition" parent="Portrait">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Stormrage\Hero_Skin_Malfurion_Stormrage\Storm_Hero_Malfurion_Stormrage.m3"/>
+        <RequiredAnims value="Assets\Portraits\Anims\Portrait_Anims_Malfurion\Portrait_Anims_Malfurion.m3a"/>
+        <AnimBlendTime value="-1.000000"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+        <Lighting value="MalfurionPortraitAddition"/>
+        <PausedParticleSystemBehavior value="Automatic"/>
+        <Priority value="32"/>
+        <Quality value="1"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Stormrage" Slot="main"/>
+        <FacialController value="LocalizedData\Facial\hero_malfurion_base.fxa"/>
+    </CModel>
+    <CModel id="HeroMalfurionMoonfire@ModelReveal" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Reveal_Impact\Storm_FX_Reveal_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionWeapon@AttackImpact" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Weapon_Impact\Storm_FX_Malfurion_Base_Weapon_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionRegrowth@Heal" parent="ImpactFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Rejuvenation_Impact\Storm_FX_Malfurion_Base_Rejuvenation_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.750000"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="HeroMalfurionRegrowth@ModelWeaponCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Rejuvenation_Cast_Weapon\Storm_FX_Malfurion_Base_Rejuvenation_Cast_Weapon.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.500000"/>
+    </CModel>
+    <CModel id="HeroMalfurionMoonfire@ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Moonfire_Cast\Storm_FX_Malfurion_Base_Moonfire_Cast.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionMoonfire@ModelMain" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Moonfire\Storm_FX_Malfurion_Base_Moonfire.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+    </CModel>
+    <CModel id="HeroMalfurionMoonfire@ModelWeaponCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Moonfire_Cast_Weapon\Storm_FX_Malfurion_Base_Moonfire_Cast_Weapon.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionTranquility@ModelCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Tranquility_Cast\Storm_FX_Malfurion_Base_Tranquility_Cast.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionTranquility@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Tranquility_Impact\Storm_FX_Malfurion_Base_Tranquility_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionTranquility@ModelPersistent" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Tranquility\Storm_FX_Malfurion_Base_Tranquility.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.000000"/>
+        <ScaleMax value="2.625000,2.625000,1.000000"/>
+        <ScaleMin value="2.625000,2.625000,1.000000"/>
+    </CModel>
+    <CModel id="HeroMalfurionEntanglingRoots@Growth" parent="PersistentSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_EntanglingRoots\Storm_FX_Malfurion_Base_EntanglingRoots.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Occlusion value="Show"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="HeroMalfurionTranquility@ModelWeaponCast" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Tranquility_Cast\Storm_FX_Malfurion_Base_Tranquility_Cast.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="MalfurionSkinFlame" Prefix="Units\" Race="Neutral">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Flame\Hero_Skin_Malfurion_Flame\Hero_Skin_Malfurion_Flame.m3"/>
+        <TextureDeclares Prefix="Storm_Hero_Malfurion_Flame" Slot="main"/>
+        <RequiredAnims value="Assets\Units\Heroes\Hero_Base_Malfurion\Hero_Base_Malfurion_RequiredAnims\Hero_Base_Malfurion_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.267000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.668000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Lighting value="Storm_ShopModelLight_Malfurion"/>
+        <SelectionRadius value="0.560000"/>
+        <ShadowRadius value="0.560000"/>
+        <TechPurchaseCamera value="CameraMalfurion"/>
+    </CModel>
+    <CModel id="MalfurionSkinStormRage" Prefix="Units\" Race="Neutral">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Stormrage\Hero_Skin_Malfurion_Stormrage\Storm_Hero_Malfurion_Stormrage.m3"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Stormrage" Slot="main"/>
+        <RequiredAnims value="Assets\Units\Heroes\Hero_Base_Malfurion\Hero_Base_Malfurion_RequiredAnims\Hero_Base_Malfurion_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.267000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.668000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Lighting value="Storm_ShopModelLight_Malfurion"/>
+        <SelectionRadius value="0.560000"/>
+        <ShadowRadius value="0.560000"/>
+        <TechPurchaseCamera value="CameraMalfurion"/>
+    </CModel>
+    <CModel id="MalfurionSkinUltimate" Prefix="Units\" Race="Neutral">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Ultimate\Hero_Skin_Malfurion_Ultimate\Hero_Skin_Malfurion_Ultimate.m3"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Ultimate" Slot="main"/>
+        <RequiredAnims value="Assets\Units\Heroes\Hero_Base_Malfurion\Hero_Base_Malfurion_RequiredAnims\Hero_Base_Malfurion_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.267000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.668000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Lighting value="Storm_ShopModelLight_Malfurion"/>
+        <SelectionRadius value="0.560000"/>
+        <ShadowRadius value="0.560000"/>
+        <TechPurchaseCamera value="CameraMalfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionEntanglingRoots@CursorSplatInner" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Fantasy\Storm_UI_AOECursor_Fantasy.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.500000"/>
+        <ScaleMax value="0.350000,0.350000,1.000000"/>
+        <ScaleMin value="0.350000,0.350000,1.000000"/>
+    </CModel>
+    <CModel id="MalfurionSkinWinter" Prefix="Units\" Race="Neutral">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Winter\Hero_Skin_Malfurion_Winter\Hero_Skin_Malfurion_Winter.m3"/>
+        <TextureDeclares Prefix="Storm_Hero_Malfurion_Winter" Slot="main"/>
+        <RequiredAnimsEx FilePath="Assets\Portraits\Anims\Portrait_Anims_Malfurion_Winter\Portrait_Anims_Malfurion_Winter.m3a">
+            <Flags index="Override" value="1"/>
+        </RequiredAnimsEx>
+        <RequiredAnims value="Assets\Units\Heroes\Hero_Base_Malfurion\Hero_Base_Malfurion_RequiredAnims\Hero_Base_Malfurion_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.267000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.668000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Lighting value="Storm_ShopModelLight_Malfurion"/>
+        <SelectionRadius value="0.560000"/>
+        <ShadowRadius value="0.560000"/>
+        <TechPurchaseCamera value="CameraMalfurion"/>
+    </CModel>
+    <CModel id="MalfurionSkinBetrayer" Prefix="Units\" Race="Neutral">
+        <Model value="Assets\Units\Heroes\Hero_Skin_Malfurion_Betrayer\Hero_Skin_Malfurion_Betrayer\Hero_Skin_Malfurion_Betrayer.m3"/>
+        <TextureDeclares Prefix="Storm_Malfurion_Betrayer" Slot="main"/>
+        <RequiredAnims value="Assets\Units\Heroes\Hero_Base_Malfurion\Hero_Base_Malfurion_RequiredAnims\Hero_Base_Malfurion_RequiredAnims.m3a"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.267000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Events>
+            <Anim value="Walk,A,00"/>
+            <Name value="Malfurion_Fs_Mv"/>
+            <Type value="Sound"/>
+            <Time value="0.668000"/>
+            <Payload value="Malfurion_Footstep_Mv"/>
+        </Events>
+        <Lighting value="Storm_ShopModelLight_Malfurion"/>
+        <SelectionRadius value="0.560000"/>
+        <ShadowRadius value="0.560000"/>
+        <TechPurchaseCamera value="CameraMalfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionEntanglingRoots@CursorSplatOuter" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Fantasy\Storm_UI_AOECursor_Fantasy.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="0.500000"/>
+        <ScaleMax value="1.140000,1.140000,1.000000"/>
+        <ScaleMin value="1.140000,1.140000,1.000000"/>
+    </CModel>
+    <CModel id="HeroMalfurionMoonfire@ModelImpact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Moonfire_Impact\Storm_FX_Malfurion_Base_Moonfire_Impact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionWeapon@Missile" parent="MissileFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_Weapon\Storm_FX_Malfurion_Base_Weapon.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionTwilightDream@Impact" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_TwilightDream_BaseImpact\Storm_FX_Malfurion_Base_TwilightDream_BaseImpact.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+    </CModel>
+    <CModel id="HeroMalfurionTwilightDream@Launch" parent="OneShotSpellFX">
+        <Model value="assets\Effects\Storm_FX_Malfurion_Base_TwilightDream\Storm_FX_Malfurion_Base_TwilightDream.m3"/>
+        <EditorCategories value="CoreHero:Malfurion"/>
+        <RadiusLoose value="6.875000"/>
+    </CModel>
+    <CModel id="HeroMalfurion@BasePortraitAddition" parent="HeroMalfurion@CommonPortraitAddition">
+        <TextureDeclares Prefix="Storm_Malfurion" Slot="main"/>
+    </CModel>
+</Catalog>

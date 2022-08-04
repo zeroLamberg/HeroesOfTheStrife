@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorCombine id="AbathurHasProlificDispersalAndTargetIsIn91Range">
+        <Type value="And"/>
+        <CombineArray value="TargetWithin91RangeProlificDispersal"/>
+        <CombineArray value="HeroAbathurTalentToxicNestProlificDispersal"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="HeroAbathur@SkinUltimateGrey">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroAbathur@SkinUltimateGrey"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroAbathur@BaseChar">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroAbathur@BaseChar"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroAbathur@BaseVar3">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroAbathur@BaseVar3"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroAbathur@SkinUltimateRed">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroAbathur@SkinUltimateRed"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HeroAbathur@SkinUltimatePurple">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroAbathur@SkinUltimatePurple"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareChargeUsed id="HeroAbathurEvolveMonstrosityStacks@QuestNotCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroAbathurEvolveMonstrosityStacks@TokenCounter">
+        <Compare value="NE"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroAbathurEvolveMonstrosityStacks@QuestInProgress" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroAbathurEvolveMonstrosityStacks@TokenCounter">
+        <Compare value="LT"/>
+        <Value value="40"/>
+    </CValidatorUnitCompareChargeUsed>
+    <CValidatorUnitCompareChargeUsed id="HeroAbathurEvolveMonstrosityStacks@QuestCompleted" parent="CoreTokenCounterUnitCompareChargeUsed" TokenCounterBehavior="HeroAbathurEvolveMonstrosityStacks@TokenCounter"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentEvolveMonstrosityEvolutionComplete" parent="PlayerTalent"/>
+    <CValidatorCombine id="HeroLevelUpVisualValidatorCombine">
+        <CombineArray value="HeroAbathurUltimateEvolution@SourceHasNoVehicleCasterBehavior"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="HeroAbathurLocust@SourceIsLocustAssaultStrain">
+        <Value value="HeroAbathurLocust@Assault"/>
+    </CValidatorUnitType>
+    <CValidatorLocationCompareRange id="TargetWithin91RangeProlificDispersal">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="LE"/>
+        <Range value="91"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="HeroAbathurCarapace@TargetIsHeroOrMonstrosity">
+        <CombineArray value="TargetIsHero"/>
+        <CombineArray value="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="HeroAbathurEvolveMonstrosity@CasterIsMonstrosity">
+        <WhichUnit Value="Caster"/>
+        <Value value="HeroAbathurEvolveMonstrosity"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareOrderCount id="HeroAbathurDeepTunnelMonstrosity@IsCastingDeepTunnel">
+        <AbilLink value="HeroAbathurDeepTunnelMonstrosity"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorPlayerTalent id="HeroAbathurTalentCarapaceReinforcedCarapace" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="AbathurDoesNotHaveMasteryBallistospores">
+        <WhichPlayer Value="Caster"/>
+        <Value value="AbathurMasteryBallistospores"/>
+    </CValidatorPlayerTalent>
+    <CValidatorCombine id="AbathurCarapaceActiveCombine">
+        <CombineArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+        <CombineArray value="AbathurHasSymbioteCarapaceSustainedCarapace"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AbathurSymbioteBenignTargetValidatorCombine">
+        <CombineArray value="TargetNotBenign"/>
+        <CombineArray value="TargetNotImmuneToFriendlyAbilities"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurEvolveMonstrosity@UnitIsInStasis">
+        <WhichUnit Effect="HeroAbathurEvolveMonstrosity@SpawnSet"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Categories index="User5" value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="HeroAbathurSymbiote@IsNotSymbiote">
+        <Value value="HeroAbathurSymbiote"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitFilters id="HeroAbathurEvolveMonstrosity@UnitNotDead">
+        <WhichUnit Effect="HeroAbathurEvolveMonstrosity@SpawnSet"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="AbathurUltimateEvolutionUserCategoryHasSpecialDeathStateTarget">
+        <WhichUnit Effect="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurTalentSymbioteHivemind@SpikeBurstHivemindTarget">
+        <WhichUnit Effect="HeroAbathurSpikeBurst@HostPersistent"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurTalentSymbioteHivemind"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurTalentSymbioteHivemind@HivemindTarget">
+        <WhichUnit Effect="HeroAbathurCarapace@ApplySet"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurTalentSymbioteHivemind"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurTalentSymbioteHivemind@HivemindSource">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurTalentSymbioteHivemind"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="AbathurToxicNestNotNearby">
+        <ResultFailed value="CantLandLocationInvalid"/>
+        <AreaArray Radius="0.49" Validator="HeroAbathurToxicNest@TargetIsToxicNest"/>
+        <Compare value="Eq"/>
+        <SearchFilters value="-;Ally,Neutral,Enemy,Creep,Missile,Item,Dead,Hallucination"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@IsInvalidTarget">
+        <WhichUnit Effect="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurUltimateEvolution@InvalidTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@TargetDoesntHaveInvalidBuff">
+        <Behavior value="HeroAbathurUltimateEvolution@InvalidTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@NotInvalidTarget">
+        <WhichUnit Effect="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+        <Behavior value="HeroAbathurUltimateEvolution@InvalidTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="HeroAbathurToxicNest@TargetIsToxicNest">
+        <Value value="HeroAbathurToxicNest"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="HeroAbathurDeepTunnel@ValidatorCombine">
+        <Type value="And"/>
+        <CombineArray value="CasterNotStunned"/>
+        <CombineArray value="CasterNotSilenced"/>
+        <CombineArray value="CasterNotRooted"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AbathurUltimateEvolutionAbathurHasNotBeenCCd">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroAbathurLocust@TargetIsLocust">
+        <CombineArray value="HeroAbathurLocust@TargetIsLocustAssaultStrain"/>
+        <CombineArray value="HeroAbathurLocust@TargetIsLocustBombardStrain"/>
+        <CombineArray value="HeroAbathurLocust@TargetIsLocustNormal"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroAbathurLocust@TargetIsLocustorMinion">
+        <CombineArray value="HeroAbathurLocust@TargetIsLocust"/>
+        <CombineArray value="TargetIsMinion"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="HeroAbathur@BaseAlbino">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="HeroAbathur@BaseAlbino"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="UltimateEvolutionPeriodicValidator">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDeadOrSilencedOrStasisOrStunnedExceptTimeStopAndTargetNotDead"/>
+        <CombineArray value="HeroAbathurUltimateEvolution@NotInvalidTarget"/>
+        <CombineArray value="TargetNotSpecialDeathState"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AbathurUltimateEvolutionUserCategoryNoSpecialDeathStateTarget">
+        <WhichUnit Effect="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerTalent id="HasAbathurMasteryBarbedSpines">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurMasteryBarbedSpines"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HasAbathurMasteryEradicateMinions">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurMasteryEradicateMinions"/>
+    </CValidatorPlayerTalent>
+    <CValidatorCombine id="UltimateEvolutionCCReductionCombine">
+        <CombineArray value="UltimateEvolutionTargetIsDead"/>
+        <CombineArray value="HeroAbathurUltimateEvolution@IsInvalidTarget"/>
+        <CombineArray value="AbathurUltimateEvolutionUserCategoryHasSpecialDeathStateTarget"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="UltimateEvolutionTargetNotDead">
+        <WhichUnit Effect="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@DoesNotHaveCasterBuff">
+        <Behavior value="HeroAbathurUltimateEvolution@VehicleCasterBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroAbathurSymbiote@ShrubVisibilityCombine">
+        <Type value="And"/>
+        <CombineArray value="TargetInShrub"/>
+        <CombineArray value="HeroAbathurSymbiote@AllowVisibleCombine"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroAbathurSymbiote@AllowVisibleCombine">
+        <CombineArray value="TargetHasShrubProximityDetector"/>
+        <CombineArray value="UserCategoryTargetRevealed"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="UltimateEvolutionTargetIsDead">
+        <WhichUnit Effect="HeroAbathurUltimateEvolution@InitialCreatePersistent"/>
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitType id="HeroAbathurLocust@CasterIsLocustNormal">
+        <WhichUnit Value="Caster"/>
+        <Value value="HeroAbathurLocust@Normal"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurLocust@CasterIsLocustAssaultStrain">
+        <WhichUnit Value="Caster"/>
+        <Value value="HeroAbathurLocust@Assault"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathur@CasterNotAbathur">
+        <WhichUnit Value="Caster"/>
+        <Value value="HeroAbathur"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurLocust@CasterIsLocustBombardStrain">
+        <WhichUnit Value="Caster"/>
+        <Value value="HeroAbathurLocust@Bombard"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurLocust@TargetIsLocustNormal">
+        <Value value="HeroAbathurLocust@Normal"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurLocust@TargetIsLocustAssaultStrain">
+        <Value value="HeroAbathurLocust@Assault"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurLocust@TargetIsLocustBombardStrain">
+        <Value value="HeroAbathurLocust@Bombard"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@CasterDoesNotHaveControl">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroAbathurUltimateEvolution@ControlBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@SourceHasControl">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurUltimateEvolution@ControlBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@SourceHasNoVehicleCasterBehavior">
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroAbathurUltimateEvolution@VehicleCasterBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroAbathurCarapace@TargetHasBuffOrBuffHivemind">
+        <CombineArray value="HeroAbathurCarapace@CarapaceBuff"/>
+        <CombineArray value="HeroAbathurTalentSymbioteHivemind@CarapaceBuff"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurCarapace@CarapaceBuff">
+        <Value value="1"/>
+        <Behavior value="HeroAbathurCarapace@Shield"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurTalentSymbioteHivemind@CarapaceBuff">
+        <Value value="1"/>
+        <Behavior value="HeroAbathurCarapace@ShieldHivemind"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasAbathurBombardStrain">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="AbathurCombatStyleBombardStrain"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasAbathurAssaultStrain">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="AbathurCombatStyleAssaultStrain"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AbathurNeuralParasiteControlActive">
+        <Type value="And"/>
+        <CombineArray value="CasterHasAbathurDirectControl"/>
+        <CombineArray value="TargetHasAbathurNeuralParasiteControl"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="HeroAbathurSymbiote@ControlActive">
+        <Type value="And"/>
+        <CombineArray value="CasterHasAbathurDirectControl"/>
+        <CombineArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AbathurUltimateEvolutionControlActive">
+        <Type value="And"/>
+        <CombineArray value="CasterHasAbathurDirectControl"/>
+        <CombineArray value="HeroAbathurUltimateEvolution@TargetHasControl"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="CasterHasAbathurDirectControl">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurAssumingDirectControl"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@HasCleanupBehavior">
+        <Value value="1"/>
+        <Behavior value="HeroAbathurUltimateEvolution@CleanupTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="TargetHasAbathurNeuralParasiteControl">
+        <Value value="1"/>
+        <Behavior value="AbathurNeuralParasiteControl"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CasterNoAbathurNeuralParasiteControl">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AbathurNeuralParasiteControl"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="HeroAbathurSymbiote@TargetNotDeadAndHasSymbioteHost">
+        <Type value="And"/>
+        <CombineArray value="TargetNotDead"/>
+        <CombineArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurSymbiote@TargetHasSymbioteHost">
+        <Value value="1"/>
+        <Behavior value="HeroAbathurSymbiote@HostBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurSymbiote@TargetDoesNotHaveSymbioteHost">
+        <Behavior value="HeroAbathurSymbiote@HostBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@TargetHasControl">
+        <Value value="1"/>
+        <Behavior value="HeroAbathurUltimateEvolution@ControlBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurUltimateEvolution@TargetDoesNotHaveControl">
+        <Behavior value="HeroAbathurUltimateEvolution@ControlBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AbathurToxicNestInRangeorHasProlificDispersalCombine">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <CombineArray value="TargetWithin70Range"/>
+        <CombineArray value="AbathurHasProlificDispersalAndTargetIsIn91Range"/>
+    </CValidatorCombine>
+    <CValidatorPlayerTalent id="HeroAbathurTalentSymbioteHivemind@HasTalentSource" parent="PlayerTalent">
+        <WhichPlayer Value="Source"/>
+        <Value value="HeroAbathurTalentSymbioteHivemind"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HasAbathurCombatStyleCombatAdaptation">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurCombatStyleCombatAdaptation"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroAbathurTalentLocustStrainSurvivalInstinct" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentToxicNestEnvenomedNest" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentSpikeBurstPressurizedGlands" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="AbathurHasMasteryBallistospores">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurMasteryBallistospores"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroAbathurTalentStabNeedlespine" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HasAbathurMasteryRegenerativeMicrobes">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurMasteryRegenerativeMicrobes"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroAbathurTalentToxicNestVileNest" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentStabSpatialEfficiency" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentToxicNestProlificDispersal" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HasAbathurCombatStyleAssaultStrain">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurCombatStyleAssaultStrain"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroAbathurTalentLocustStrainBombardStrain" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentSpikeBurstEnvenomedSpikes" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentCarapaceAdrenalineBoost" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HasAbathurCombatStyleLocustBrood">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="HeroAbathurTalentLocustBrood"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HasAbathurMasteryEvolutionMasterUltimateEvolution">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurMasteryEvolutionMasterUltimateEvolution"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="AbathurHasSymbioteCarapaceSustainedCarapace">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurSymbioteCarapaceSustainedCarapace"/>
+    </CValidatorPlayerTalent>
+    <CValidatorPlayerTalent id="HeroAbathurTalentSymbioteAdrenalOverload" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentCarapaceNetworkedCarapace" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentLocustNest" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentSpikeBurstSomaTransference" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentSymbioteHivemind" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentUltimateEvolutionEvolutionaryLink" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurEvolveMonstrosity" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="HeroAbathurTalentVolatileMutation" parent="PlayerTalent"/>
+    <CValidatorPlayerTalent id="AbathurHasLocustStrainSelfReplicatingSwarm">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AbathurLocustStrainSelfReplicatingSwarm"/>
+    </CValidatorPlayerTalent>
+    <CValidatorUnitCompareBehaviorCount id="HeroAbathurSymbiote@SourceHasSymbioteHost">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurSymbiote@HostBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AbathurTargetHasSymbioteHostOrSustainedCarapace">
+        <CombineArray value="HeroAbathurSymbiote@TargetHasSymbioteHost"/>
+        <CombineArray value="AbathurHasSymbioteCarapaceSustainedCarapace"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AbathurTargetHasUltimateEvolutionOrIsMonstrosity">
+        <CombineArray value="HeroAbathurUltimateEvolution@TargetHasControl"/>
+        <CombineArray value="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="HeroAbathurToxicNest@TargetNotToxicNest">
+        <Value value="HeroAbathurToxicNest"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurEvolveMonstrosity@TargetIsMonstrosity">
+        <Value value="HeroAbathurEvolveMonstrosity"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HeroAbathurEvolveMonstrosity@TargetNotMonstrosity">
+        <Value value="HeroAbathurEvolveMonstrosity"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="AbathurTargetHasUltimateEvolutionEvolutionaryLink">
+        <Value value="1"/>
+        <Behavior value="AbathurUltimateEvolutionEvolutionaryLinkTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="HeroAbathurEvolveMonstrosity@HasActiveMonstrosity">
+        <Find value="1"/>
+        <Value value="HeroAbathurEvolveMonstrosity@HasActiveMonstrosity"/>
+        <WhichUnit Value="Target"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitType id="HeroAbathurSymbiote@IsSymbiote">
+        <Value value="HeroAbathurSymbiote"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="AbathurNestIsArming">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="HeroAbathurToxicNest@ArmingBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareOrderCount id="HeroAbathurDeepTunnel@IsCastingDeepTunnel">
+        <AbilLink value="HeroAbathurDeepTunnel"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorCombine id="HeroAbathurSymbiote@IsValidSymbioteTarget">
+        <CombineArray value="TargetNotImmuneToFriendlyAbilities"/>
+    </CValidatorCombine>
+</Catalog>

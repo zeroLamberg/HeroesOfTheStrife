@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectModifyPlayer id="HeroTalandar@LevelScalingModification">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroTalandar,LifeMax" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroTalandar,LifeStart" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Unit,HeroTalandar,LifeRegenRate" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarWeaponDragoon@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarWeaponDragoon@SplashDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarWeaponPraetor@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarThunderousCharge@HeroicCollisionDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarThunderousCharge@HeroicDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarThunderousCharge@NonHeroicDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarWhirlwind@Damage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarSolarCannon@ChargedDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarSolarCannon@DefaultDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarSolariteFlare@AirBombDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarSolariteFlare@AirBombDamageCharged,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarPurificationBlast@ExpireDamage,Amount" Value="1.04"/>
+        <EffectArray Operation="Multiply" Reference="Effect,HeroTalandarPurifierBeam@Damage,Amount" Value="1.04"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroTalandarAccumulatedShield@EnergyAddDamageTaken">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="0.05"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarAccumulatedShield@EnergyAddDamageDealt">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="0.1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroTalandarAccumulatedShield@PeriodicSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSwitch"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarAccumulatedShield@ShieldInitialSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldBraveHearth@ApplyUnstoppable"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldDisruptor@ApplyDamagePower"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroTalandarArsenalOvercharge@ResetCooldowns">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Set"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Set"/>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroTalandarPurifierBeam@Modification">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Operation="Set" Reference="Effect,HeroTalandarWhirlwind@ApplyAnimationBehavior,Duration" Value="1.26"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannon@ApplyMissileChargesMedium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroTalandarSolarCannon@MissileChargeMedium"/>
+        <Count value="0">
+            <AccumulatorArray value="HeroTalandarSolarCannon@ChargesCountCasterMedium"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannonChannel@SwitchApplyChargeMedium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeMedium"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlare@ApplyMissileChargesMedium">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeMedium"/>
+        <Count value="0">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@ChargesCountCasterMedium"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlareChannel@SwitchApplyChargeMedium">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeMedium"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyPlayer id="HeroTalandarTalentAccumulatedShieldAdaptiveShield@Modification">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Abil,HeroTalandarPraetorArmorSuit,Cost[0].Cooldown.TimeUse" Value="-3.000000"/>
+        <EffectArray Reference="Abil,HeroTalandarDragoonArmorSuit,Cost[0].Cooldown.TimeUse" Value="-3.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldAdaptiveShield@ModifyUnit">
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldAdaptiveShield"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarAccumulatedShield,Execute" CooldownOperation="Set"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroTalandarTalentAccumulatedShieldBraveHearth@ApplyUnstoppable">
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldBraveHearth"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarTalentAccumulatedShieldBraveHearth@Unstoppable"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentAccumulatedShieldDisruptor@ApplyDamagePower">
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldDisruptor"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentAccumulatedShieldDisruptor@DamagePower"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldImmortal@Heal" parent="CoreHealingParent">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <VitalArray index="Life">
+            <ChangeFraction value="0.75"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroTalandarTalentAccumulatedShieldImmortal@ResetAbilityCooldown">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichPlayer Value="Caster"/>
+        <Cost Abil="HeroTalandarTalentAccumulatedShieldImmortal">
+            <Cooldown Link="Abil/HeroTalandarTalentAccumulatedShieldImmortal" Location="Unit" Operation="Set"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroTalandarTalentAccumulatedShieldImmortal@ApplyCooldownBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentAccumulatedShieldImmortal@Cooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarTalentAccumulatedShieldImmortal@HandleSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldImmortal@ResetECooldown"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldImmortal@Switch"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldImmortal@ApplyCooldownBehavior"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldImmortal@AddAbilityCooldown"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldImmortal@ResetECooldown">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarPraetorArmorSuit,Execute" CooldownOperation="Set"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldImmortal@ModifyCooldown">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarPraetorArmorSuit,Execute" CooldownOperation="Set" CooldownTimeUse="30"/>
+    </CEffectModifyUnit>
+    <CEffectSwitch id="HeroTalandarTalentAccumulatedShieldImmortal@Switch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <CaseArray Validator="HeroTalandarDragoonArmorSuit@TalandarIsDragoon" Effect="HeroTalandarTalentAccumulatedShieldImmortal@WarpToPraetor"/>
+        <CaseArray Validator="HeroTalandarPraetorArmorSuit@TalandarIsPraetor" Effect="HeroTalandarTalentAccumulatedShieldImmortal@WarpToDragoon"/>
+    </CEffectSwitch>
+    <CEffectIssueOrder id="HeroTalandarTalentAccumulatedShieldImmortal@WarpToDragoon">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="HeroTalandarDragoonArmorSuit"/>
+        <CmdFlags index="Preempt" value="1"/>
+        <Player Value="Caster"/>
+        <Target Value="CasterUnit"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="HeroTalandarTalentAccumulatedShieldImmortal@WarpToPraetor">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="HeroTalandarPraetorArmorSuit"/>
+        <CmdFlags index="Preempt" value="1"/>
+        <Player Value="Caster"/>
+        <Target Value="CasterUnit"/>
+    </CEffectIssueOrder>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldRapidRecharge@Healing" parent="CoreHealingParent">
+        <ValidatorArray value="HeroTalandarAccumulatedShield@HasShield"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <VitalArray index="Life">
+            <ChangeFraction value="0.0075"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgradedSpecialDragoonCase">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasNoArsenalOverchargeChargeBehaviors"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0312"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0312"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgraded">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarThunderousCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0312"/>
+        <Cost Abil="HeroTalandarWhirlwind,Execute" ChargeTimeUse="-0.0312" CooldownOperation="Add"/>
+        <Cost Abil="HeroTalandarPraetorArmorSuit,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0312"/>
+        <Cost Abil="HeroTalandarDragoonArmorSuit,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0312"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBaseSpecialDragoonCase">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasNoArsenalOverchargeChargeBehaviors"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0156"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0156"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBase">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarThunderousCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0156"/>
+        <Cost Abil="HeroTalandarWhirlwind,Execute" ChargeTimeUse="-0.0156" CooldownOperation="Add"/>
+        <Cost Abil="HeroTalandarPraetorArmorSuit,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0156"/>
+        <Cost Abil="HeroTalandarDragoonArmorSuit,Execute" CooldownOperation="Add" CooldownTimeUse="-0.0156"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSetBase">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBase"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionBaseSpecialDragoonCase"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSetUpgraded">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgraded"/>
+        <EffectArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionUpgradedSpecialDragoonCase"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSwitch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <CaseArray Validator="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestCompleted" Effect="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSetUpgraded"/>
+        <CaseDefault value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@CooldownReductionSetBase"/>
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroTalandarTalentAkhundelar">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Effect,HeroTalandarThunderousCharge@InitialPersistent,PeriodCount" Value="3"/>
+        <EffectArray Reference="Actor,HeroTalandarThunderousCharge@CursorGuide,Height" Value="3.000000"/>
+        <EffectArray Operation="Set" Reference="Effect,HeroTalandarThunderousCharge@InitialPersistent,PeriodicOffsetArray[0]" Value="0.000000,-9.000000,0.000000"/>
+        <EffectArray Reference="Abil,HeroTalandarWhirlwind,Cost[0].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,HeroTalandarWhirlwind,Cost[0].Charge.CountStart" Value="1"/>
+        <EffectArray Operation="Set" Reference="Abil,HeroTalandarWhirlwind,Cost[0].Charge.HideCount" Value="0"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroTalandarTalentChampionUpgrade@ApplyArmorReduction">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarTalentChampionUpgrade@ArmorReduction"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroTalandarTalentPhaseBomb@AbilitiesCooldownReduction">
+        <ValidatorArray value="HeroTalandarTalentPhaseBomb@CasterHasBuff"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-1"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroTalandarTalentPhaseBomb@ImpactSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarTalentPhaseBomb@ReducePhaseBombCooldown"/>
+        <EffectArray value="HeroTalandarTalentPhaseBomb@AbilitiesCooldownReduction"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroTalandarTalentAccumulatedShieldImmortal@AddAbilityCooldown">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichPlayer Value="Caster"/>
+        <Cost Abil="HeroTalandarTalentAccumulatedShieldImmortal">
+            <Cooldown>
+                <Link value="Abil/HeroTalandarTalentAccumulatedShieldImmortal"/>
+                <Location value="Unit"/>
+                <Operation value="Set"/>
+                <TimeUse value="180"/>
+            </Cooldown>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroTalandarTalentPurification@EnergyAdd">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <VitalArray index="Energy">
+            <Change value="0">
+                <AccumulatorArray value="HeroTalandarTalentPurification@EnergyModifier"/>
+            </Change>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarTalentPurifierBeamEmpoweredBeam@CooldownReduction">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarPurifierBeam,Execute" CooldownOperation="Add" CooldownTimeUse="-1.5"/>
+    </CEffectModifyUnit>
+    <CEffectModifyPlayer id="HeroTalandarTalentPurifierBeamEmpoweredBeam@Modification">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Abil,HeroTalandarPurifierBeam,Cost[0].Cooldown.TimeUse" Value="-15.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroTalandarTalentAssaultProtocol@Modification">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Abil,HeroTalandarSolariteFlareChannel,Cost[0].Cooldown.TimeUse" Value="-3.000000"/>
+        <EffectArray Reference="Abil,HeroTalandarSolarCannonChannel,Cost[0].Cooldown.TimeUse" Value="-2.000000"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroTalandarTalentTacticalDataWeb@ApplyAttackSpeedBuff">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentTacticalDataWeb@AttackSpeedBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandar@RegenGlobePickupImpactSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Accumulator,HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestUIDisplayer,Amount" Value="1"/>
+        <EffectArray Reference="Behavior,HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter,Modification.VitalMaxArray[Energy]" Value="10"/>
+        <EffectArray Reference="Effect,HeroTalandarAccumulatedShield@EnergyAddDamageTaken,VitalArray[Energy].ChangeFraction" Value="0.002"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@DecreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter">
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Cost>
+            <Charge CountUse="1"/>
+        </Cost>
+        <EffectArray Reference="Accumulator,HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestUIDisplayer,Amount" Value="-1"/>
+        <EffectArray Reference="Behavior,HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter,Modification.VitalMaxArray[Energy]" Value="-10"/>
+        <EffectArray Reference="Effect,HeroTalandarAccumulatedShield@EnergyAddDamageTaken,VitalArray[Energy].ChangeFraction" Value="-0.002"/>
+    </CEffectModifyPlayer>
+    <CEffectApplyBehavior id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@RefreshTokenCounter">
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor"/>
+        <ValidatorArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestNotCompleted"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@ResetTokenCounter">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="CasterUnit"/>
+        <PeriodCount value="25"/>
+        <PeriodicEffectArray value="HeroTalandarTalentAccumulatedShieldShieldCapacitor@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@TokenCounterController">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <CaseArray Validator="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestNotCompleted" Effect="HeroTalandarTalentAccumulatedShieldShieldCapacitor@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroTalandarTalentAccumulatedShieldShieldCapacitor@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectCreatePersistent id="HeroTalandarTalentOperationalEfficiency@ResetTokenCounter">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <PeriodCount value="30"/>
+        <PeriodicEffectArray value="HeroTalandarTalentOperationalEfficiency@DecreaseToken"/>
+    </CEffectCreatePersistent>
+    <CEffectModifyPlayer id="HeroTalandarTalentOperationalEfficiency@IncreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroTalandarTalentOperationalEfficiency@TokenCounter">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Accumulator,HeroTalandarTalentOperationalEfficiency@QuestUIDisplayer,Amount" Value="1"/>
+        <Cost>
+            <Charge CountUse="-1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="HeroTalandarTalentOperationalEfficiency@DecreaseToken" parent="CoreChangeTokenValue" TokenCounterBehavior="HeroTalandarTalentOperationalEfficiency@TokenCounter">
+        <ValidatorArray value="HeroTalandarTalentOperationalEfficiency@QuestInProgress"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Reference="Accumulator,HeroTalandarTalentOperationalEfficiency@QuestUIDisplayer,Amount" Value="-1"/>
+        <Cost>
+            <Charge CountUse="1"/>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectSwitch id="HeroTalandarTalentOperationalEfficiency@TokenCounterController">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@QuestNotCompleted" Effect="TalentQuestProgressDummySet" FallThrough="1"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@QuestNotCompleted" Effect="HeroTalandarTalentOperationalEfficiency@IncreaseToken" FallThrough="1"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@QuestCompleted" Effect="TalentQuestCompleteDummySet" FallThrough="1"/>
+    </CEffectSwitch>
+    <CEffectCreatePersistent id="HeroTalandarTalentPurification@DelayBeforeRemove">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="CasterUnit"/>
+        <InitialDelay value="0.125"/>
+        <InitialEffect value="HeroTalandarTalentPurification@RemoveTimedBonus"/>
+        <TimeScaleSource Value="Caster"/>
+    </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="HeroTalandarTalentPurification@RemoveTimedBonus">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarTalentPurification@TimedBonus"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurifierShield@ApplyCasterBehavior">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierShield"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarTalentSolariteFlareMagneticField@KnockbackInitialSet">
+        <ValidatorArray value="TargetNotUnstoppable"/>
+        <ValidatorArray value="NotStructureTarget"/>
+        <ValidatorArray value="HeroTalandarPurifierArmaments"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroRemovePushPullDebuffs"/>
+        <EffectArray value="HeroTalandarTalentSolariteFlareMagneticField@KnockbackPersistent"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarTalentTacticalOverload@SpellPowerAB">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentTacticalOverload@SpellPowerBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentPhaseBomb@CasterAB">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentPhaseBomb"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyPlayer id="HeroTalandarTalentPhaseBomb@ReducePhaseBombCooldown">
+        <ValidatorArray value="TargetIsHero"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichPlayer Value="Caster"/>
+        <Cost Abil="HeroTalandarTalentPhaseBomb">
+            <Cooldown>
+                <Link value="Abil/HeroTalandarTalentPhaseBomb"/>
+                <Location value="Unit"/>
+                <Operation value="Add"/>
+                <TimeUse value="-1.5"/>
+            </Cooldown>
+        </Cost>
+    </CEffectModifyPlayer>
+    <CEffectModifyUnit id="HeroTalandarTalentAssaultProtocol@ModifyCooldownSolariteFlare">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-1.5"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroTalandarSolariteFlare@CreateUnitPersistentFinalSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarSolariteFlare@AirBombSearchSwitch"/>
+        <EffectArray value="HeroTalandarSolariteFlare@TimedLifeAB"/>
+        <ValidatorArray value="CasterNotDead"/>
+        <ValidatorArray value="HeroTalandarDragoonArmorSuit@TalandarIsDragoon"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlare@TimedLifeAB">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarSolariteFlare@AirBombTimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentOperationalEfficiency@RefreshTokenCounter">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentOperationalEfficiency@TokenCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesDefault"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesUpgraded"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesOvercharged"/>
+        <EffectArray value="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitPersistentInitial"/>
+        <SetSource value="1"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroTalandarTalentAssaultProtocol@ModifyCooldownSolarCannon">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Add" CooldownTimeUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectCreateUnit id="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnit">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="TargetPoint"/>
+        <Origin Value="TargetPoint"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <CreateFlags index="NormalizeSpawnOffset" value="0"/>
+        <SpawnEffect value="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitSet"/>
+        <SpawnUnit value="HeroTalandarSolariteFlare@AirBomb"/>
+        <ValidatorArray value="HeroTalandarTalentSolariteFlareSolariteBurn"/>
+    </CEffectCreateUnit>
+    <CEffectCreatePersistent id="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnitPersistentInitial">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="2"/>
+        <FinalEffect value="HeroTalandarSolariteFlare@CreateUnitPersistent"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroTalandarTalentPurification@ApplyTimedBonus">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentPurification@TimedBonus"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroTalandarTalentTitanDestroyer@Damage" parent="CorePercentDamage">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <VitalFractionMax index="Life" value="0.06"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="HeroTalandarThunderousCharge@CooldownReduce">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarThunderousCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-5"/>
+    </CEffectModifyUnit>
+    <CEffectDamage id="HeroTalandarThunderousCharge@HeroicDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="125">
+            <AccumulatorArray value="HeroTalandarTalentAkhundelar@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="HeroTalandarThunderousCharge@NonHeroicDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="73">
+            <AccumulatorArray value="HeroTalandarTalentAkhundelar@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroTalandarTalentAvengingProtocol@ApplyDamageReduction">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarTalentAvengingProtocol@DamageReduction"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABNonTimed">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentThunderousChargeProtectionProtocol"/>
+        <ValidatorArray value="HeroTalandarTalentThunderousChargeProtectionProtocol"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABTimed">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarTalentThunderousChargeProtectionProtocol"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="1"/>
+        <ValidatorArray value="HeroTalandarTalentThunderousChargeProtectionProtocol"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarSolariteFlare@AirBombImpactSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarSolariteFlare@AirBombDamage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarSolariteFlare@AirBombImpactSetCharged">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarSolariteFlare@AirBombDamageCharged"/>
+        <EffectArray value="HeroTalandarTalentSolariteFlareMagneticField@KnockbackInitialSet"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroTalandarSolariteFlare@AirBombSearchSwitch">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CaseArray Validator="HeroTalandarSolariteFlare@BombUnitIsFullyCharged" Effect="HeroTalandarSolariteFlare@AirBombSearchCharged"/>
+        <CaseArray Validator="HeroTalandarTalentSolariteFlareSolariteBurn@BombUnitIsFullyCharged" Effect="HeroTalandarSolariteFlare@AirBombSearchCharged"/>
+        <CaseDefault value="HeroTalandarSolariteFlare@AirBombSearch"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlare@ApplyMissileChargesUpgraded">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeUpgraded"/>
+        <Count value="0">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@ChargesCountCasterUpgraded"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarSolariteFlare@CreateUnitSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesDefault"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesMedium"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesUpgraded"/>
+        <EffectArray value="HeroTalandarSolariteFlare@ApplyMissileChargesOvercharged"/>
+        <EffectArray value="HeroTalandarSolariteFlare@CreateUnitPersistent"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@1ChargeUsed"/>
+        <SetSource value="1"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroTalandarTalentSolariteFlareMagneticField@KnockbackPersistent">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="HeroTalandarTalentSolariteFlareMagneticField@KnockbackAB"/>
+        <FinalEffect value="HeroTalandarTalentSolariteFlareMagneticField@KnockbackRB"/>
+        <PeriodCount value="3"/>
+        <PeriodicValidator value="HeroTalandarTalentSolariteFlareMagneticField@HasKnockback"/>
+        <PeriodicEffectArray value="HeroTalandarTalentSolariteFlareMagneticField@ApplyForce"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <TimeScaleSource Value="Target"/>
+    </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="HeroTalandarTalentSolariteFlareMagneticField@KnockbackRB">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <BehaviorLink value="HeroTalandarTalentSolariteFlareMagneticField@Knockback"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyForce id="HeroTalandarTalentSolariteFlareMagneticField@ApplyForce">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichLocation Effect="HeroTalandarSolariteFlare@StartSet" Value="TargetPoint"/>
+        <WhichUnit Effect="HeroTalandarTalentSolariteFlareMagneticField@KnockbackPersistent"/>
+        <Amount value="-40"/>
+    </CEffectApplyForce>
+    <CEffectApplyBehavior id="HeroTalandarTalentSolariteFlareMagneticField@KnockbackAB">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarTalentSolariteFlareMagneticField@Knockback"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentThunderousChargeTrooperChampion@AttackSpeedBuff">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroTalandarWeaponDragoon@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Amount value="137">
+            <AccumulatorArray value="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageSwtich"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="HeroTalandarWeaponDragoon@SplashDamage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Amount value="137">
+            <AccumulatorArray value="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageSwtich"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="HeroTalandarWeaponPraetor@Damage" parent="CorePhysicalDamage">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Amount value="137">
+            <AccumulatorArray value="HeroTalandarTalentPurification@SwitchPermanentBonus"/>
+            <AccumulatorArray value="HeroTalandarTalentPurification@SwitchTimedBonus"/>
+            <AccumulatorArray value="HeroTalandarTalentAccumulatedShieldSystemReconfiguration@DamageSwtich"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="HeroTalandarWhirlwind@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="125">
+            <AccumulatorArray value="HeroTalandarTalentAkhundelar@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroTalandarWhirlwind@ApplySlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarWhirlwind@Slow"/>
+    </CEffectApplyBehavior>
+    <CEffectCreateUnit id="HeroTalandarSolariteFlare@CreateUnit">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichLocation Value="TargetPoint"/>
+        <Origin Value="TargetPoint"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="Placement" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <CreateFlags index="NormalizeSpawnOffset" value="0"/>
+        <SpawnEffect value="HeroTalandarSolariteFlare@CreateUnitSet"/>
+        <SpawnUnit value="HeroTalandarSolariteFlare@AirBomb"/>
+        <ValidatorArray value="HeroTalandarSolariteFlare@CastValidator"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="HeroTalandarArsenalOvercharge@ApplyArsenalOvercharge">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarArsenalOvercharge"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroTalandarArsenalOvercharge@SetCooldowns">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Set" CooldownTimeUse="1"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Set" CooldownTimeUse="1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="HeroTalandarArsenalOvercharge@1ChargeUsed">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" ChargeCountUse="1" CooldownOperation="Add"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" ChargeCountUse="1" CooldownOperation="Add"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="HeroTalandarPurifierBeam@PraetorArmorSuitInitialSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarPurifierBeam@FinalSetArmorSuitCooldown"/>
+        <EffectArray value="HeroTalandarPraetorArmorSuit@InitialPersistent"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarPurifierBeam@DragoonArmorSuitInitialSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarWhirlwind@RemoveAnimationBehavior"/>
+        <EffectArray value="HeroTalandarPurifierBeam@FinalSetArmorSuitCooldown"/>
+        <EffectArray value="HeroTalandarDragoonArmorSuit@InitialPersistent"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarSolarCannon@ChargedImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarSolarCannon@ChargedDamage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarSolarCannon@ChargedLaunchSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarSolarCannon@ApplyMissileChargesDefault"/>
+        <EffectArray value="HeroTalandarSolarCannon@ApplyMissileChargesUpgraded"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannonChannel@ApplyChannelDummyBuff">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@DummyChannel"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroTalandarSolarCannon@CooldownSetDefault">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannonChannel,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroTalandarArsenalOvercharge@ApplyOverchargedBehavior">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarArsenalOvercharge@Overcharged"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannonChannel@SwitchApplyChargeDefault">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeDefault"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarWeaponPraetor@ImpactSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarWeaponPraetor@Damage"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroTalandarDragoonArmorSuit@RemovePraetorCarryBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPraetorArmorSuit@ApplyCasterInvulnerableBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPraetorArmorSuit@CasterInvulnerableBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPraetorArmorSuit@ApplyPraetorCarryBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroTalandarPraetorArmorSuit@RemoveDragoonCarryBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarDragoonArmorSuit@DragoonCarryBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurifierBeam@ApplyHiddenBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierBeam@HiddenBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurifierBeam@ApplyInvulnerable">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierBeam@Invulnerable"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurifierBeam@ApplySwappingFormBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierBeam@SwappingForm"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="HeroTalandarPurifierBeam@Damage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="137">
+            <AccumulatorArray value="HeroTalandarTalentPurifierBeamEmpoweredBeam@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectRemoveBehavior id="HeroTalandarPurifierBeam@FinalRemoveBehaviorMovementSupression">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarPurifierBeam@MovementSupression"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreatePersistent id="HeroTalandarPurifierBeam@InitialPersistent">
+        <ValidatorArray value="Walkable"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffectArray value="HeroTalandarPurifierBeam@ApplyInvulnerable"/>
+        <PeriodicEffectArray value="HeroTalandarPurifierBeam@ApplyMovementSupression"/>
+        <PeriodicEffectArray value="HeroTalandarPurifierBeam@ApplyHiddenBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarPurifierBeam@Teleport"/>
+        <PeriodicEffectArray value="HeroTalandarPurifierBeam@ApplyCastingBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarPurifierBeam@ApplyPurifierBeam"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.55"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="1.5"/>
+        <Marker Duration="0.5">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <InitialEffect value="HeroTalandarWhirlwind@RemoveAnimationBehavior"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroTalandarPurificationBlast@AfterKnockupSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarPurificationBlast@ApplyAfterKnockupSlow"/>
+        <EffectArray value="HeroTalandarPurificationBlast@ApplyAfterKnockupBlind"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarPurificationBlast@ApplyAfterKnockupSlow" parent="CoreApplySlow">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarPurificationBlast@Slow"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurificationBlast@ApplyPurificationBlastBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurificationBlast@PurificationBlast"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurificationBlast@ApplyTalandarExpireStun">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurificationBlast@TalandarExpireStun"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurificationBlast@ApplyTalandarCastStun">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurificationBlast@TalandarCastStun"/>
+    </CEffectApplyBehavior>
+    <CEffectTeleport id="HeroTalandarPurificationBlast@CasterTeleport">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <TargetLocation Value="TargetPoint"/>
+        <TeleportFlags index="TestFog" value="0"/>
+    </CEffectTeleport>
+    <CEffectCreateUnit id="HeroTalandarPurificationBlast@CreateWarpoutUnit">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="CasterPoint"/>
+        <Origin Value="CasterPoint"/>
+        <CreateFlags index="Placement" value="0"/>
+        <SpawnEffect value="HeroTalandarPurificationBlast@SetWarpoutUnitFacing"/>
+        <SpawnUnit value="HeroTalandarPurificationBlast@WarpOutUnit"/>
+    </CEffectCreateUnit>
+    <CEffectDamage id="HeroTalandarPurificationBlast@ExpireDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Amount value="237">
+            <AccumulatorArray value="HeroTalandarTalentPurifierArmamentsAdvancedArmaments@PurificationBlastSwitch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="HeroTalandarPurificationBlast@ApplyKnockup" parent="CoreApplyStun">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <Behavior value="HeroTalandarPurificationBlast@Knockup"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HeroTalandarPurificationBlast@ExpireSearch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <DebugTrace value="1"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4" Effect="HeroTalandarPurificationBlast@ExpireSearchSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroTalandarPurificationBlast@ExpireSearchSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarPurificationBlast@ExpireDamage"/>
+        <EffectArray value="HeroTalandarPurificationBlast@ApplyKnockup"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarPurificationBlast@FallStartDummySet">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarPurificationBlast@ExpireSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarPurificationBlast@ApplyTalandarExpireStun"/>
+        <EffectArray value="HeroTalandarPurificationBlast@ExpireSearch"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroTalandarPurificationBlast@InitialPersistent">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="HeroTalandarPurificationBlast@CreateWarpoutUnit"/>
+        <PeriodicEffectArray value="HeroTalandarPurificationBlast@ApplyTalandarCastStun"/>
+        <PeriodicEffectArray value="HeroTalandarPurificationBlast@ApplyPurificationBlastBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarPurificationBlast@CasterTeleport"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.5"/>
+        <PeriodicPeriodArray value="0"/>
+        <ValidatorArray value="Walkable"/>
+        <TimeScaleSource Value="Caster"/>
+    </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="HeroTalandarPurifierBeam@RemovePurifierBeamBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarPurifierBeam@PurifierBeam"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroTalandarPurifierBeam@SearchImpactSet">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <ValidatorArray value="noMarkers"/>
+        <EffectArray value="HeroTalandarPurifierBeam@Damage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroTalandarSolariteFlare@CooldownSetDefault">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolariteFlareChannel,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectSwitch id="HeroTalandarSolariteFlare@CooldownSwitch">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CaseArray Validator="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Effect="HeroTalandarArsenalOvercharge@SetCooldowns"/>
+        <CaseDefault value="HeroTalandarSolariteFlare@CooldownSetDefault"/>
+    </CEffectSwitch>
+    <CEffectSet id="HeroTalandarSolariteFlareChannel@InitialSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarSolariteFlareChannel@ApplyChannelBehavior"/>
+    </CEffectSet>
+    <CEffectSwitch id="HeroTalandarSolariteFlareChannel@SwitchApplyCharge">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasNoArsenalOverchargeChargeBehaviors"/>
+        <ValidatorArray value="HeroTalandarSolariteFlareChannel@CasterNotFullyChargedDefault"/>
+        <ValidatorArray value="HeroTalandarSolariteFlareChannel@CasterNotFullyChargedMedium"/>
+        <ValidatorArray value="HeroTalandarSolariteFlareChannel@CasterNotFullyChargedUpgraded"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CaseDefault value="HeroTalandarSolariteFlareChannel@SwitchApplyChargeDefault"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@MediumCombineSolariteFlare" Effect="HeroTalandarSolariteFlareChannel@SwitchApplyChargeMedium"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@QuestCompletedAndHaveNoDefaultorMediumChargesSolariteFlare" Effect="HeroTalandarSolariteFlareChannel@SwitchApplyChargeUpgrade"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlareChannel@SwitchApplyChargeUpgrade">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeUpgrade"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarThunderousCharge@CasterApplySpeed">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarThunderousCharge@Speed"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyForce id="HeroTalandarThunderousCharge@CasterApplyForce">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Effect="HeroTalandarThunderousCharge@CasterPeriodicSet" Value="TargetPoint"/>
+        <Amount value="-10"/>
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyForce>
+    <CEffectSet id="HeroTalandarThunderousCharge@HeroicSearchImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+        <EffectArray value="HeroRemovePushPullDebuffs"/>
+        <EffectArray value="HeroTalandarThunderousCharge@CasterRemoveSpeed"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicIssueStopOrder"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicSearchSetFacingTarget"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicDamage"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicKnockbackPersistent"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="HeroTalandarThunderousCharge@InitialPersistent">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="OriginPoint"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="HeroTalandarThunderousCharge@InitialPersistentStartSet"/>
+        <FinalEffect value="HeroTalandarThunderousCharge@InitialPersistentFinalSet"/>
+        <PeriodCount value="6"/>
+        <PeriodicValidator value="HeroTalandarThunderousCharge@CasterHasSpeedBuff"/>
+        <PeriodicEffectArray value="HeroTalandarThunderousCharge@CasterPeriodicSet"/>
+        <PeriodicOffsetArray value="0,-6,0"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <ExpireEffect value="HeroTalandarThunderousCharge@CooldownReduce"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroTalandarThunderousCharge@HeroicKnockbackApplyBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <Behavior value="HeroTalandarThunderousCharge@Knockback"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyForce id="HeroTalandarThunderousCharge@HeroicKnockbackApplyForce">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Effect="HeroTalandarThunderousCharge@SearchSet" Value="TargetPoint"/>
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <Amount value="-10"/>
+    </CEffectApplyForce>
+    <CEffectCreatePersistent id="HeroTalandarThunderousCharge@HeroicKnockbackPersistent">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="CasterPoint"/>
+        <InitialEffect value="HeroTalandarThunderousCharge@HeroicKnockbackApplyBehavior"/>
+        <PeriodicValidator value="HeroTalandarThunderousCharge@TargetHasKnockbackBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarThunderousCharge@HeroicKnockbackApplyForce"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <ValidatorArray value="TargetNotUnstoppable"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <PeriodCount value="4"/>
+        <FinalEffect value="HeroTalandarThunderousCharge@HeroicCollisionRemoveKnockbackBehavior"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="HeroTalandarThunderousCharge@OffsetPersistent">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichLocation Value="CasterPoint"/>
+        <InitialEffect value="HeroTalandarThunderousCharge@SearchSet"/>
+        <InitialOffset value="0,-5,0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroTalandarThunderousCharge@CasterPeriodicSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@CasterApplyForce"/>
+        <EffectArray value="HeroTalandarThunderousCharge@OffsetPersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroTalandarThunderousCharge@CasterRemoveSpeed">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarThunderousCharge@Speed"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroTalandarThunderousCharge@SearchSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicSearchTargets"/>
+        <EffectArray value="HeroTalandarThunderousCharge@NonHeroicSearchTargets"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarThunderousCharge@NonHeroicImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@NonHeroicDamage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroTalandarThunderousCharge@NonHeroicSearchTargets">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,ImmuneToSkillshots,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="2.5" RectangleHeight="2" Effect="HeroTalandarThunderousCharge@NonHeroicImpactSet"/>
+        <AreaRelativeOffset value="0,-1"/>
+        <RevealerParams Duration="0.75">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="HeroTalandarThunderousCharge@HeroicSearchTargets">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="Heroic;Player,Ally,Neutral,ImmuneToAOE,ImmuneToSkillshots,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray>
+            <MaxCount value="1"/>
+            <RectangleWidth value="2.5"/>
+            <RectangleHeight value="2"/>
+            <Effect value="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        </AreaArray>
+        <AreaRelativeOffset value="0,-1"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroTalandarThunderousCharge@HeroicSearchApplyStun" parent="CoreApplyStun">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarThunderousCharge@DefaultStun"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarTalentWhirlwindDisruptor@ApplyStun" parent="CoreApplyStun">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarTalentWhirlwindDisruptor@Stun"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarWhirlwind@ImpactSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarWhirlwind@Damage"/>
+        <EffectArray value="HeroTalandarWhirlwind@ImpactSlowStunSwitch"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarWhirlwind@ApplyAnimationBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarWhirlwind@AnimationBehavior"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="0.435"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarWhirlwind@InitialSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarWhirlwind@ApplyAnimationBehavior"/>
+        <EffectArray value="HeroTalandarWhirlwind@Search"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroTalandarWhirlwind@RemoveAnimationBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarWhirlwind@AnimationBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="HeroTalandarWhirlwind@Search">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4" Effect="HeroTalandarWhirlwind@ImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectModifyUnit id="HeroTalandarPurificationBlast@SetWarpoutUnitFacing">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <LaunchUnit Value="Target"/>
+        <FacingLocation Effect="HeroTalandarPurificationBlast@InitialPersistent" Value="TargetPoint"/>
+        <FacingType value="LookAt"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroTalandarDragoonArmorSuit@ApplyDragoonCarryBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarDragoonArmorSuit@DragoonCarryBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarThunderousCharge@CasterActorAnimationDummySet">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarThunderousCharge@AnimationBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroTalandarDragoonArmorSuit@InitialPersistent">
+        <ValidatorArray value="Walkable"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="HeroTalandarDragoonArmorSuit@ApplyCasterInvulnerableBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarDragoonArmorSuit@RemovePraetorCarryBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarDragoonArmorSuit@ApplyDragoonCarryBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarDragoonArmorSuit@DummySet"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.55"/>
+        <InitialEffect value="HeroTalandarPurifierBeam@ApplySwappingFormBehavior"/>
+        <Marker Duration="1">
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroTalandarDragoonArmorSuit@DummySet">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarDragoonArmorSuit@ApplyCasterInvulnerableBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarDragoonArmorSuit@CasterInvulnerableBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroTalandarPraetorArmorSuit@InitialPersistent">
+        <ValidatorArray value="Walkable"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="HeroTalandarPraetorArmorSuit@ApplyCasterInvulnerableBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarPraetorArmorSuit@RemoveDragoonCarryBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarPraetorArmorSuit@ApplyPraetorCarryBehavior"/>
+        <PeriodicEffectArray value="HeroTalandarPraetorArmorSuit@DummySet"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.5"/>
+        <InitialEffect value="HeroTalandarPurifierBeam@ApplySwappingFormBehavior"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="HeroTalandarPraetorArmorSuit@DummySet">
+        <EditorCategories value="CoreHero:Talandar"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarWeaponDragoon@ImpactSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarWeaponDragoon@SplashSearch"/>
+        <EffectArray value="HeroTalandarWeaponDragoon@Damage"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannon@ApplyMissileChargesDefault">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroTalandarSolarCannon@MissileChargeDefault"/>
+        <Count value="0">
+            <AccumulatorArray value="HeroTalandarSolarCannon@ChargesCountCasterDefault"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroTalandarSolarCannon@StartChannelActiveBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarSolarCannonChannel@DummyChannel"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroTalandarSolarCannon@DefaultLaunchSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarSolarCannon@ApplyMissileChargesDefault"/>
+        <EffectArray value="HeroTalandarSolarCannon@ApplyMissileChargesMedium"/>
+        <EffectArray value="HeroTalandarSolarCannon@ApplyMissileChargesUpgraded"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarSolarCannon@DefaultImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarSolarCannon@DefaultDamage"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlareChannel@ApplyChannelBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@DummyChannel"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="HeroTalandarSolariteFlare@StartRemoveChannelBehavior">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarSolariteFlareChannel@DummyChannel"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlareChannel@SwitchApplyChargeDefault">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolariteFlareChannel@ChargeDefault"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroTalandarSolarCannonChannel@SwitchApplyCharge">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasNoArsenalOverchargeChargeBehaviors"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <CaseDefault value="HeroTalandarSolarCannonChannel@SwitchApplyChargeDefault"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@MediumCombineSolarCannon" Effect="HeroTalandarSolarCannonChannel@SwitchApplyChargeMedium"/>
+        <CaseArray Validator="HeroTalandarTalentOperationalEfficiency@QuestCompletedAndHaveNoDefaultorMediumChargesSolarCannon" Effect="HeroTalandarSolarCannonChannel@SwitchApplyChargeUpgraded"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="HeroTalandarArsenalOvercharge@ApplyCharged">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Behavior value="HeroTalandarArsenalOvercharge@Charges"/>
+        <Count value="2"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarArsenalOvercharge">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@ApplyCharged"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@ApplyArsenalOvercharge"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@ResetCooldowns"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroTalandarArsenalOvercharge@SetTalandarAbilitiesChargesDefault">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarSolarCannon,Execute" ChargeCountUse="-2" CooldownOperation="Set"/>
+        <Cost Abil="HeroTalandarSolariteFlare,Execute" ChargeCountUse="-2" CooldownOperation="Set"/>
+    </CEffectModifyUnit>
+    <CEffectSwitch id="HeroTalandarSolarCannon@CooldownSwitch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <CaseArray Validator="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors" Effect="HeroTalandarArsenalOvercharge@SetCooldowns"/>
+        <CaseDefault value="HeroTalandarSolarCannon@CooldownSetDefault"/>
+    </CEffectSwitch>
+    <CEffectRemoveBehavior id="HeroTalandarArsenalOvercharge@RemoveChargeBehavior">
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarArsenalOvercharge@Charges"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroTalandarSolarCannonChannel@InitialSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@ApplyOverchargedBehavior"/>
+        <EffectArray value="HeroTalandarSolarCannonChannel@ApplyChannelDummyBuff"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannonChannel@SwitchApplyChargeUpgraded">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarSolarCannonChannel@ChargeUpgraded"/>
+    </CEffectApplyBehavior>
+    <CEffectTeleport id="HeroTalandarPurifierBeam@Teleport">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <TargetLocation Value="TargetPoint"/>
+        <TeleportFlags index="TestFog" value="0"/>
+    </CEffectTeleport>
+    <CEffectApplyBehavior id="HeroTalandarPurifierBeam@ApplyPurifierBeam">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierBeam@PurifierBeam"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurifierBeam@ApplyMovementSupression">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierBeam@MovementSupression"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarPurifierBeam@ApplyCastingBehavior">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarPurifierBeam@CreatingBeamBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="HeroTalandarPurifierBeam@FinalSet">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarPurifierBeam@FinalSetupNewArmorSuitSwitch"/>
+        <EffectArray value="HeroTalandarPurifierBeam@FinalRemoveBehaviorHidden"/>
+        <EffectArray value="HeroTalandarPurifierBeam@FinalRemoveBehaviorInvulnerable"/>
+        <EffectArray value="HeroTalandarPurifierBeam@FinalRemoveBehaviorMovementSupression"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="HeroTalandarPurifierBeam@FinalSetArmorSuitCooldown">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="HeroTalandarPraetorArmorSuit,Execute" CooldownOperation="Set">
+            <Fraction Cooldown="1"/>
+        </Cost>
+    </CEffectModifyUnit>
+    <CEffectSwitch id="HeroTalandarPurifierBeam@FinalSetupNewArmorSuitSwitch">
+        <ValidatorArray value="HeroTalandarPurifierBeam@CasterHasNoSwappingForm"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CaseArray Validator="HeroTalandarPraetorArmorSuit@TalandarIsPraetor" Effect="HeroTalandarPraetorArmorSuit@InitialPersistent"/>
+        <CaseArray Validator="HeroTalandarDragoonArmorSuit@TalandarIsDragoon" Effect="HeroTalandarDragoonArmorSuit@InitialPersistent"/>
+    </CEffectSwitch>
+    <CEffectRemoveBehavior id="HeroTalandarPurifierBeam@FinalRemoveBehaviorHidden">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarPurifierBeam@HiddenBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="HeroTalandarPurifierBeam@FinalRemoveBehaviorInvulnerable">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="HeroTalandarPurifierBeam@Invulnerable"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="HeroTalandarPurifierBeam@Search">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="4" Effect="HeroTalandarPurifierBeam@SearchImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="HeroTalandarAccumulatedShield@ApplyShield">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarAccumulatedShield"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolarCannon@ApplyMissileChargesUpgraded">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="HeroTalandarSolarCannon@MissileChargeUpgraded"/>
+        <Count value="0">
+            <AccumulatorArray value="HeroTalandarSolarCannon@ChargesCountCasterUpgraded"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="HeroTalandarThunderousCharge@HeroicSearchSetFacingTarget">
+        <ValidatorArray value="TargetNotUnstoppable"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <LaunchUnit Value="Caster"/>
+        <FacingLocation Effect="HeroTalandarThunderousCharge@InitialPersistent" Value="OriginPoint"/>
+        <FacingType value="LookAt"/>
+        <ImpactUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlare@ApplyMissileChargesDefault">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeDefault"/>
+        <Count value="0">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@ChargesCountCasterDefault"/>
+        </Count>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarSolariteFlare@ApplyMissileChargesOvercharged">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Behavior value="HeroTalandarSolariteFlare@MissileChargeOvercharged"/>
+        <ValidatorArray value="HeroTalandarArsenalOvercharge@CasterHasArsenalOverchargeChargeBehaviors"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HeroTalandarAccumulatedShield@ApplySecondaryBehaviorFullEnergyChecker">
+        <ValidatorArray value="EnergyFullCaster"/>
+        <ValidatorArray value="HeroTalandarAccumulatedShield@HasNoSecondaryBehavior"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="HeroTalandarAccumulatedShield@SecondCarryBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="HeroTalandarThunderousCharge@HeroicCollisionPersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichLocation Value="SourceUnit"/>
+        <OffsetVectorStartLocation Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet" Value="CasterPoint"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffectArray value="HeroTalandarThunderousCharge@HeroicCollisionCheckSmallHeroTargetSet"/>
+        <PeriodicEffectArray value="HeroTalandarThunderousCharge@HeroicCollisionCheckLargeHeroTargetSet"/>
+        <PeriodicOffsetArray value="0,-1,0"/>
+        <PeriodicOffsetArray value="0,-1.5,0"/>
+        <PeriodicOffsetArray value="0.8,-0.75,0"/>
+        <PeriodicOffsetArray value="1.3,-0.75,0"/>
+        <PeriodicOffsetArray value="-0.8,-0.75,0"/>
+        <PeriodicOffsetArray value="-1.3,-0.75,0"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="HeroTalandarThunderousCharge@HeroicCollisionApplyStun">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <Behavior value="HeroTalandarThunderousCharge@TerrainStun"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="HeroTalandarWhirlwind@ImpactSlowStunSwitch">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <CaseArray Validator="HeroTalandarPurifierArmaments" Effect="HeroTalandarTalentWhirlwindDisruptor@ApplyStun"/>
+        <CaseDefault value="HeroTalandarWhirlwind@ApplySlow"/>
+        <ValidatorArray value="TargetNotUnstoppable"/>
+        <ValidatorArray value="TargetNotStructure"/>
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+    </CEffectSwitch>
+    <CEffectDamage id="HeroTalandarThunderousCharge@HeroicCollisionDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet" Value="TargetUnit"/>
+        <Amount value="210">
+            <AccumulatorArray value="HeroTalandarTalentAkhundelar@Switch"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSet id="HeroTalandarThunderousCharge@HeroicCollisionSet">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicCollisionPersistent"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="HeroTalandarWeaponDragoon@LaunchMissile">
+        <ValidatorArray value="TargetNotDead"/>
+        <EditorCategories value="Race:Protoss,CoreHero:Talandar"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <ImpactEffect value="HeroTalandarWeaponDragoon@ImpactSet"/>
+        <Flags index="TravelValidation" value="1"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <AmmoUnit value="HeroTalandarWeaponDragoon@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectEnumArea id="HeroTalandarWeaponDragoon@SplashSearch">
+        <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+        <ValidatorArray value="HeroTalandarTalentPhaseBomb"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ExcludeArray Effect="HeroTalandarWeaponDragoon@ImpactSet" Value="Target"/>
+        <AreaArray Radius="2.75" Effect="HeroTalandarWeaponDragoon@SplashImpactSet"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroTalandarWeaponDragoon@SplashImpactSet">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarWeaponDragoon@SplashDamage"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarThunderousCharge@HeroicCollisionCheckSmallHeroTargetSet">
+        <ValidatorArray value="HeroTalandarThunderousCharge@TargetCollisionNotFat"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicCollisionImpactSet"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarThunderousCharge@HeroicCollisionImpactSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicCollisionApplyStun"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicCollisionRemoveKnockbackBehavior"/>
+        <EffectArray value="ApplyAbilityImpactReveal"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarThunderousCharge@HeroicCollisionCheckLargeHeroTargetSet">
+        <ValidatorArray value="HeroTalandarThunderousCharge@TargetCollisionFat"/>
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarThunderousCharge@HeroicCollisionImpactSet"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroTalandarThunderousCharge@HeroicCollisionRemoveKnockbackBehavior">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <BehaviorLink value="HeroTalandarThunderousCharge@Knockback"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectIssueOrder id="HeroTalandarThunderousCharge@HeroicIssueStopOrder">
+        <ValidatorArray value="AbilityEffectTreeCheckCombine"/>
+        <ValidatorArray value="TargetNotUnstoppable"/>
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Abil value="stop"/>
+    </CEffectIssueOrder>
+    <CEffectDamage id="HeroTalandarSolarCannon@DefaultDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="90">
+            <AccumulatorArray value="HeroTalandarSolarCannon@DamageDefault"/>
+            <AccumulatorArray value="HeroTalandarSolarCannon@DamageMedium"/>
+            <AccumulatorArray value="HeroTalandarSolarCannon@DamageUpgraded"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroTalandarSolarCannon@DefaultSearch">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <LaunchLocation Value="OriginPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToSkillshots,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="3" RectangleHeight="2" Effect="HeroTalandarSolarCannon@DefaultImpactSet"/>
+        <RevealerParams Duration="0.75" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectDamage id="HeroTalandarSolarCannon@ChargedDamage" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="262.8"/>
+        <TechAliasArray value="Critical"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="HeroTalandarSolarCannon@DefaultLaunch">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <LaunchOffset value="0,-0.4,0"/>
+        <LaunchEffect value="HeroTalandarSolarCannon@DefaultLaunchSet"/>
+        <SearchEffect value="HeroTalandarSolarCannon@DefaultSearch"/>
+        <Flags index="2D" value="1"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <AmmoUnit value="HeroTalandarSolarCannon@DefaultMissile"/>
+        <Movers Link="HeroTalandarSolarCannon@DefaultMover"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="HeroTalandarSolarCannon@StartPersistent">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <WhichLocation Value="SourcePoint"/>
+        <InitialEffect value="HeroTalandarSolarCannon@LaunchSwitch"/>
+        <InitialOffset value="0,-7,0"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="HeroTalandarSolarCannon@LaunchSwitch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <CaseArray Validator="HeroTalandarSolarCannon@CasterIsFullyCharged" Effect="HeroTalandarSolarCannon@ChargedLaunch"/>
+        <CaseDefault value="HeroTalandarSolarCannon@DefaultLaunch"/>
+    </CEffectSwitch>
+    <CEffectLaunchMissile id="HeroTalandarSolarCannon@ChargedLaunch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <LaunchOffset value="0,-0.4,0"/>
+        <SearchEffect value="HeroTalandarSolarCannon@ChargedSearch"/>
+        <Flags index="2D" value="1"/>
+        <SearchFlags index="DynamicSearchArea" value="1"/>
+        <AmmoUnit value="HeroTalandarSolarCannon@ChargedMissile"/>
+        <Movers Link="HeroTalandarSolarCannon@DefaultMover"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="HeroTalandarSolarCannon@StartSet">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray value="HeroTalandarSolarCannon@StartPersistent"/>
+        <EffectArray value="HeroTalandarSolarCannon@StartChannelActiveBehavior"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@RemoveChargeBehavior"/>
+        <EffectArray value="HeroTalandarSolarCannon@CooldownSwitch"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@1ChargeUsed"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="HeroTalandarSolarCannon@ChargedSearch">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar"/>
+        <LaunchLocation Value="OriginPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToSkillshots,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray RectangleWidth="3" RectangleHeight="2" Effect="HeroTalandarSolarCannon@ChargedImpactSet"/>
+        <RevealerParams Duration="0.75" ShapeExpansion="1">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="HeroTalandarSolariteFlare@CreateUnitPersistent">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.5"/>
+        <FinalEffect value="HeroTalandarSolariteFlare@CreateUnitPersistentFinalSet"/>
+        <ValidatorArray value="HeroTalandarSolariteFlare@CastValidator"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="HeroTalandarSolariteFlare@AirBombDamage" parent="CoreSpellDamage">
+        <ValidatorArray index="0" removed="1"/>
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <LaunchLocation Effect="HeroTalandarSolariteFlare@CreateUnitSet" Value="TargetUnit"/>
+        <Visibility value="Snapshot"/>
+        <Amount value="100">
+            <AccumulatorArray value="HeroTalandarSolariteFlare@DamageDefault"/>
+            <AccumulatorArray value="HeroTalandarSolariteFlare@DamageMedium"/>
+            <AccumulatorArray value="HeroTalandarSolariteFlare@DamageUpgraded"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroTalandarSolariteFlare@AirBombSearch">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="HeroTalandarSolariteFlare@AirBombImpactSet"/>
+        <DebugTrace value="1"/>
+        <RevealerParams Duration="0.75">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnit"/>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroTalandarSolariteFlare@StartSet">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <EffectArray value="HeroTalandarSolariteFlare@CreateUnit"/>
+        <EffectArray value="HeroTalandarTalentSolariteFlareSolariteBurn@CreateUnit"/>
+        <EffectArray value="HeroTalandarSolariteFlare@StartRemoveChannelBehavior"/>
+        <EffectArray value="HeroTalandarArsenalOvercharge@RemoveChargeBehavior"/>
+        <EffectArray value="HeroTalandarSolariteFlare@CooldownSwitch"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectDamage id="HeroTalandarSolariteFlare@AirBombDamageCharged" parent="CoreSpellDamage">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <Amount value="292"/>
+        <TechAliasArray value="Critical"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="HeroTalandarSolariteFlare@AirBombSearchCharged">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <DebugTrace value="1"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4" Effect="HeroTalandarSolariteFlare@AirBombImpactSetCharged"/>
+        <RevealerParams Duration="0.75">
+            <RevealFlags index="Unfog" value="1"/>
+        </RevealerParams>
+    </CEffectEnumArea>
+    <CEffectSet id="HeroTalandarThunderousCharge@InitialPersistentStartSet">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarWhirlwind@RemoveAnimationBehavior"/>
+        <EffectArray value="HeroTalandarThunderousCharge@CasterApplySpeed"/>
+        <EffectArray value="HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABNonTimed"/>
+    </CEffectSet>
+    <CEffectSet id="HeroTalandarThunderousCharge@InitialPersistentFinalSet">
+        <EditorCategories value="CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <EffectArray value="HeroTalandarThunderousCharge@CasterRemoveSpeed"/>
+        <EffectArray value="HeroTalandarTalentThunderousChargeProtectionProtocol@ProtectionABTimed"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="HeroTalandarThunderousCharge@HeroicCollisionRemoveDefaultStun">
+        <EditorCategories value="Race:Neutral,CoreHero:Talandar,StandardTypeCategory:HeroAbility"/>
+        <WhichUnit Effect="HeroTalandarThunderousCharge@HeroicSearchImpactSet"/>
+        <BehaviorLink value="HeroTalandarThunderousCharge@DefaultStun"/>
+    </CEffectRemoveBehavior>
+    <CEffectModifyUnit id="HeroTalandarWhirlwind@SetWeaponCooldown">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <Weapon Weapon="HeroTalandarWeaponPraetor" CooldownOperation="Set" CooldownFraction="0.25"/>
+    </CEffectModifyUnit>
+    <CEffectSwitch id="RegenGlobe@PickupHeroImpactSwitch">
+        <CaseArray Validator="IsTalandar" Effect="HeroTalandar@RegenGlobePickupImpactSet"/>
+    </CEffectSwitch>
+    <CEffectModifyPlayer id="HeroTalandarTalentPurifierArmamentsAdvancedArmaments">
+        <EditorCategories value="CoreHero:Talandar"/>
+        <EffectArray Operation="Set" Reference="Behavior,HeroTalandarPurificationBlast@Slow,Modification.UnifiedMoveSpeedFactor" Value="-0.3"/>
+        <EffectArray Reference="Effect,HeroTalandarArsenalOvercharge@ApplyCharged,Count" Value="2"/>
+        <EffectArray Reference="Effect,HeroTalandarArsenalOvercharge@SetTalandarAbilitiesChargesDefault,Cost[0].ChargeCountUse" Value="-2"/>
+        <EffectArray Reference="Effect,HeroTalandarArsenalOvercharge@SetTalandarAbilitiesChargesDefault,Cost[1].ChargeCountUse" Value="-2"/>
+    </CEffectModifyPlayer>
+</Catalog>

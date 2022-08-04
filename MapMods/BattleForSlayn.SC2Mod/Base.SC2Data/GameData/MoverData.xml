@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="SlaynVoidThrasherShooting@Mover" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Ballistic"/>
+            <Acceleration value="-1"/>
+            <Speed value="20"/>
+            <MaxSpeed value="-1"/>
+            <Gravity value="10"/>
+            <ClearanceLookahead value="3"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="SlaynVoidRiftSpawn@Mover">
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Acceleration value="1"/>
+            <Speed value="12"/>
+            <MaxSpeed value="12"/>
+            <Outro value="2,4"/>
+            <ThrowVector value="0,0,1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="1"/>
+            <Speed value="6"/>
+            <MaxSpeed value="12"/>
+            <ActorTracking value="Actual"/>
+            <YawPitchRoll value="119.8828"/>
+            <YawPitchRollAccel value="180"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="SlaynVoidThrasherShooting@MoverBigDistance" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Ballistic"/>
+            <Acceleration value="-1"/>
+            <Speed value="37.5"/>
+            <MaxSpeed value="-1"/>
+            <Gravity value="10"/>
+            <ClearanceLookahead value="3"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

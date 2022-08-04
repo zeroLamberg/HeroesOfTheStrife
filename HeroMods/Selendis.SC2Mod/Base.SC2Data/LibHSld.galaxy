@@ -1,0 +1,33 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+include "LibUIUI"
+
+include "LibHSld_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Selendis
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHSld_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libUIUI_InitVariables();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHSld_InitLib_completed = false;
+
+void libHSld_InitLib () {
+    if (libHSld_InitLib_completed) {
+        return;
+    }
+
+    libHSld_InitLib_completed = true;
+
+    libHSld_InitLibraries();
+}
+

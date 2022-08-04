@@ -1,0 +1,1880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectEnumArea id="MinionProtossCatapultWeapon@ImpactSearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Player,Ally,Neutral,ImmuneToAOE,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1" Effect="MinionProtossCatapultWeapon@Damage"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="MinionProtossCatapultWeapon@Damage" parent="CoreKineticDamage">
+        <EditorCategories value=""/>
+        <AttributeFactor index="Biological" value="0.5"/>
+        <AttributeFactor index="Structure" value="2"/>
+        <Visibility value="Snapshot"/>
+        <Amount value="60"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MinionProtossCatapultWeapon@CP">
+        <ValidatorArray value="CasterNotDead"/>
+        <EditorCategories value=""/>
+        <InitialDelay value="0.25"/>
+        <InitialEffect value="MinionProtossCatapultWeapon@LM"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="1.25"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="MinionProtossCatapultWeapon@LM">
+        <EditorCategories value=""/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="MinionProtossCatapultWeapon@ImpactSearch"/>
+        <AmmoUnit value="MinionProtossCatapultWeapon@AttackMissile"/>
+        <ImpactRange value="1"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="MinionProtossWizardWeapon@ImpactSet">
+        <EditorCategories value=""/>
+        <EffectArray value="MinionProtossWizardWeapon@Damage"/>
+    </CEffectSet>
+    <CEffectDamage id="MinionProtossWizardWeapon@Damage" parent="CoreKineticDamage">
+        <EditorCategories value=""/>
+        <AttributeFactor index="Biological" value="1.5"/>
+        <AttributeFactor index="Robotic" value="-1.5"/>
+        <Amount value="17"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="MinionProtossWizardWeapon@LM">
+        <EditorCategories value=""/>
+        <ImpactEffect value="MinionProtossWizardWeapon@ImpactSet"/>
+        <AmmoUnit value="MinionProtossWizardWeapon@AttackMissile"/>
+        <Movers Link="HighTemplarWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="MinionProtossRangedWeapon@Damage" parent="CoreKineticDamage">
+        <EditorCategories value=""/>
+        <AttributeFactor index="Biological" value="1"/>
+        <AttributeFactor index="Robotic" value="-1"/>
+        <Amount value="40"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="MinionProtossRangedWeapon@LaunchMissile">
+        <EditorCategories value=""/>
+        <ImpactEffect value="MinionProtossRangedWeapon@Damage"/>
+        <AmmoUnit value="MinionProtossRangedWeapon@AttackMissile"/>
+        <Movers Link="MinionProtossRangedWeapon@Mover"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="MinionProtossMeleeWeapon@Damage" parent="CoreKineticDamage">
+        <EditorCategories value=""/>
+        <AttributeFactor index="Biological" value="0.5"/>
+        <AttributeFactor index="Robotic" value="-0.5"/>
+        <Visibility value="Snapshot"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CActorTurret id="TownProtossTownHallTurret">
+        <On Terms="TurretEnable.TownProtossTownHallTurret" Send="Create"/>
+    </CActorTurret>
+    <CActorUnit id="TownProtossCore" parent="CoreUnitBase" unitName="TownProtossCore">
+        <Aliases value="_CreepEngulfable"/>
+        <Aliases value="_UnitHuge"/>
+        <Aliases value="_SpecialPowerNexus"/>
+        <EditorCategories value="DoodadType:NotDoodad"/>
+        <On Terms="ActorCreation; PlayerId 11 11" Send="RefSet ::global.Team1Core ::Self"/>
+        <On Terms="ActorCreation; PlayerId 12 12" Send="RefSet ::global.Team2Core ::Self"/>
+        <On Terms="UnitHighlightLocal.*.Start" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitHighlightLocal.*.Stop" Send="StatusDecrement PreTargetingTint"/>
+        <On Terms="ActorCreation" Send="Create CoreFireBraziersSoundLoop"/>
+        <On Terms="AnimDone; AnimName CoreStart" Send="Create CoreElectricArcSoundLoop"/>
+        <On Terms="Behavior.CoreInvulnerability.On" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Behavior.CoreInvulnerability.Off" Send="AnimBracketStop Cover"/>
+        <On Terms="ActorDestruction" Target="CoreFireBraziersSoundLoop" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="CoreElectricArcSoundLoop" Send="Destroy Immediate"/>
+        <!-- Common Setup -->
+        <On Terms="UnitBirth" Send="ModelSwap TownProtossCorePlacement"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="Create SOAProxyPylonWarpInSound"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+        <!--              -->
+        <On Terms="Signal.*.PlayBuild" Send="ModelSwap TownProtossCoreBirth"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCoreBirth" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap TownProtossCore"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCore" Send="Signal BuildingComplete"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <CreepHeightClass value="Medium"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <BuildModel value="TownProtossCoreBirth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCoreDeath" SoundLink="Nexus_Explode_Core"/>
+        <PlacementModel value="TownProtossCorePlacement"/>
+        <VarianceWindowStandIntro value="0.330000"/>
+        <VarianceWindowWalkIntro value="0.330000"/>
+        <VarianceWindowWalkOutro value="0.330000"/>
+        <CustomUnitStatusFrame value="UnitStatus/LordOrderUnitStatusFrameTemplate"/>
+        <MinimapRenderPriority value="Town"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapCoreIcon"/>
+    </CActorUnit>
+    <CActorSound id="MinionProtossCatapultWeapon@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.MinionProtossCatapultWeapon@LM.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="MinionProtossCatapultWeapon@Warning" parent="CoreModelAnimationStyleContinuous">
+        <AcceptedHostedPropTransfers index="TeamColor" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad"/>
+        <On Terms="Effect.MinionProtossCatapultWeapon@CP.Start" Send="Create"/>
+        <On Terms="Effect.MinionProtossCatapultWeapon@CP.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetPointStationary"/>
+    </CActorModel>
+    <CActorAction id="MinionProtossCatapultWeapon@Attack" parent="GenericAttack" effectImpact="MinionProtossCatapultWeapon@ImpactSearch" effectLaunch="MinionProtossCatapultWeapon@LM">
+        <LaunchAssets Sound=""/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeCoreSOpForwardLaunchGuide"/>
+        <ImpactMap index="None" Model="MinionProtossCatapultWeapon@Impact" Sound=""/>
+        <ImpactPhysics Name="Explosion" MatchKeys="Basic" Physics="ScarabExplosionForce"/>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CActorMissile id="MinionProtossCatapultWeapon@AttackMissile" parent="GenericAttackMissileWithDeathAnim" unitName="MinionProtossCatapultWeapon@AttackMissile">
+        <Macros value="GlobalLoopMacro"/>
+    </CActorMissile>
+    <CActorUnit id="TownProtossTownHallL3" parent="CoreTownBaseStructure" unitName="TownProtossTownHallL3">
+        <Macros value="UnpoweredAnim"/>
+        <Macros value="MULERepairCastleMacro"/>
+        <!-- Common Setup -->
+        <On Terms="UnitBirth" Send="ModelSwap TownProtossTownHallL3Placement"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="Create SOAProxyPylonWarpInSound"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+        <On Terms="Behavior.Building_Town_AmmoReload.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Effect.Building_AmmoReload_WakeUp.Start" Send="AnimBracketStop Unpowered"/>
+        <!--              -->
+        <On Terms="Signal.*.PlayBuild" Send="ModelSwap TownProtossTownHallL3Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL3Birth" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap TownProtossTownHallL3"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL3" Send="Signal BuildingComplete"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit Building_Town_HasReload" Send="DeathCustomize Variation1"/>
+        <On Terms="Effect.TownHallL2WeaponLaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <BuildModel value="TownProtossTownHallL3Birth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTownHallL3Death" SoundLink="PhotonCannon_Forged_Death_00"/>
+        <DeathCustoms>
+            <AnimProps value="Death,00"/>
+            <ModelLink value="TownProtossTownHallL3DeathUnpowered"/>
+            <SoundLink value="PhotonCannon_Forged_Death_00"/>
+            <Name value="Variation1"/>
+        </DeathCustoms>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossTownHallL3Placement"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate40Ammo"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <MinimapRenderPriority value="Town"/>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-khaydarinmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapTownIcon"/>
+    </CActorUnit>
+    <CActorTurret id="TownProtossCannonTowerTurret">
+        <On Terms="TurretEnable.TownProtossCannonTowerTurret" Send="Create"/>
+    </CActorTurret>
+    <CActorTurret id="TownProtossCannonTowerStandaloneTurret">
+        <On Terms="TurretEnable.TownProtossCannonTowerStandaloneTurret" Send="Create"/>
+    </CActorTurret>
+    <CActorUnit id="TownProtossTownHallL2" parent="CoreTownBaseStructure" unitName="TownProtossTownHallL2">
+        <Aliases value="_Tower"/>
+        <Macros value="MULERepairCastleMacro"/>
+        <!-- Common Setup -->
+        <On Terms="UnitBirth" Send="ModelSwap TownProtossTownHallL2Placement"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirthLarge"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="Create SOAProxyPylonWarpInSound"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+        <!--               -->
+        <On Terms="Signal.*.PlayBuild" Send="ModelSwap TownProtossTownHallL2Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL2Birth" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap TownProtossTownHallL2"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossTownHallL2" Send="Signal BuildingComplete"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit Building_Town_HasReload" Send="DeathCustomize Variation1"/>
+        <!-- Weapon Setup -->
+        <On Terms="Behavior.Building_Town_AmmoReload.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Effect.Building_AmmoReload_WakeUp.Start" Send="AnimBracketStop Unpowered"/>
+        <On Terms="Effect.TownHallL2WeaponLaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <BuildModel value="TownProtossTownHallL2Birth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossTownHallL2Death" SoundLink="PhotonCannon_Forged_Death_00"/>
+        <DeathCustoms>
+            <AnimProps value="Death,00"/>
+            <ModelLink value="TownProtossTownHallL2DeathUnpowered"/>
+            <SoundLink value="PhotonCannon_Forged_Death_00"/>
+            <Name value="Variation1"/>
+        </DeathCustoms>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossTownHallL2Placement"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate40Ammo"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <MinimapRenderPriority value="Town"/>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-khaydarinmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapTownIcon"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossMoonwell" parent="CoreTownBaseStructure" unitName="TownProtossMoonwell">
+        <Macros value="MULERepairTowerMacro"/>
+        <!-- Common Setup -->
+        <On Terms="UnitBirth" Send="ModelSwap TownProtossMoonwellPlacement"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <!--<On Terms="Signal.*.PlayBuild" Target="TownProtossBuildingBirth" Send="SetTintColor 206,0,0"/>-->
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="Create SOAProxyPylonWarpInSound"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+        <!--               -->
+        <On Terms="Signal.*.PlayBuild" Send="ModelSwap TownProtossMoonwellBirth"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwellBirth" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossMoonwell" Send="Signal BuildingComplete"/>
+        <BuildModel value="TownProtossMoonwellBirth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossMoonwellDeath" SoundLink="Obelisk_Explode"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <PlacementModel value="TownProtossMoonwellPlacement"/>
+        <MinimapUnitStatusFrame value="MinimapUnitStatus/MinimapMoonwellIcon"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-shieldbattery.dds"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL2" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL2">
+        <Macros value="MULERepairTowerMacro"/>
+        <Macros value="LowAmmoCastleDisabledMacro"/>
+        <On index="26" Terms="UnitHighlightLocal.*.Start; ValidateUnit TownDeadController@TargetHasNoDeadBehavior" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit Building_Tower_HasReload" Send="DeathCustomize Variation1"/>
+        <On Terms="Effect.GuardTowerL2LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <On Terms="Behavior.Building_Tower_AmmoReload.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Effect.Building_AmmoReload_WakeUp.Start" Send="AnimBracketStop Unpowered"/>
+        <On Terms="UnitBirth.*.Normal" Send="AnimBlendTimeApply 0.000000"/>
+        <On Terms="UnitBirth.*.Normal" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="UnitBirth.*.Normal" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.PlayBuild" Send="AnimBracketStop Unpowered"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetShowStatusBar"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit TownDeadController@TargetHasDeadBehavior" Send="DeathCustomize Variation1"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On; ValidateUnit Building_Tower_HasNoReload" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Effect.Building_AmmoReload_WakeUp.Start; ValidateUnit TownDeadController@TargetHasNoDeadBehavior" Send="AnimBracketStop Unpowered"/>
+        <Model value="TownProtossCannonTower"/>
+        <BuildModel value="TownProtossCannonTowerBirth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathArray index="Morph" AnimProps="Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TownProtossCannonTowerDeathUnpowered" SoundLink="PhotonCannon_Explode"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerDeathUnpowered" Name="Variation1"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTower"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <Aliases value="_Tower"/>
+        <CustomUnitStatusOffset value="0,100"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL3Standalone" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL3Standalone">
+        <Aliases value="_Tower"/>
+        <Macros value="MULERepairTowerMacro"/>
+        <Macros value="LowAmmoCastleDisabledMacro"/>
+        <On Terms="UnitBirth" Send="ModelSwap TownProtossCannonTowerPlacement"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="Create SOAProxyPylonWarpInSound"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+        <On Terms="Signal.*.PlayBuild" Send="ModelSwap TownProtossCannonTowerBirth"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerBirth" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap TownProtossCannonTower"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTower" Send="Signal BuildingComplete"/>
+        <On Terms="Effect.GuardTowerL3LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <Model value="TownProtossCannonTower"/>
+        <BuildModel value="TownProtossCannonTowerBirth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathArray index="Morph" ModelLink="TownProtossCannonTowerDeathUnpowered"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerDeathUnpowered" Name="DeathUnpowered"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTower"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL3" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL3">
+        <Macros value="MULERepairTowerMacro"/>
+        <Macros value="LowAmmoCastleDisabledMacro"/>
+        <On index="26" Terms="UnitHighlightLocal.*.Start; ValidateUnit TownDeadController@TargetHasNoDeadBehavior" Send="StatusIncrement PreTargetingTint"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit Building_Tower_HasReload" Send="DeathCustomize Variation1"/>
+        <On Terms="Effect.GuardTowerL3LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <On Terms="UnitBirth.*.Normal" Send="AnimBlendTimeApply 0.000000"/>
+        <On Terms="UnitBirth.*.Normal" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="UnitBirth.*.Normal" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.PlayBuild" Send="AnimBracketStop Unpowered"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On" Send="SetShowStatusBar"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit TownDeadController@TargetHasDeadBehavior" Send="DeathCustomize Variation1"/>
+        <On Terms="Behavior.TownDeadController@DeadBehavior.On; ValidateUnit Building_Tower_HasNoReload" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Effect.Building_AmmoReload_WakeUp.Start; ValidateUnit TownDeadController@TargetHasNoDeadBehavior" Send="AnimBracketStop Unpowered"/>
+        <Model value="TownProtossCannonTower"/>
+        <BuildModel value="TownProtossCannonTowerBirth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathArray index="Morph" AnimProps="Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TownProtossCannonTowerDeathUnpowered" SoundLink="PhotonCannon_Explode"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerDeathUnpowered" Name="Variation1"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTower"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <Aliases value="_Tower"/>
+        <CustomUnitStatusOffset value="0,100"/>
+    </CActorUnit>
+    <CActorUnit id="TownProtossCannonTowerL2Standalone" parent="CoreTownBaseStructure" unitName="TownProtossCannonTowerL2Standalone">
+        <Aliases value="_Tower"/>
+        <Macros value="MULERepairTowerMacro"/>
+        <Macros value="LowAmmoCastleDisabledMacro"/>
+        <!-- Common Setup -->
+        <On Terms="UnitBirth" Send="ModelSwap TownProtossCannonTowerPlacement"/>
+        <On Terms="Signal.*.PlayBuild" Send="Create TownProtossBuildingBirth"/>
+        <On Terms="Signal.*.PlayBuild" Send="TimerSet 10.000000 BirthTimer"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="Create SOAProxyPylonWarpInSound"/>
+        <On Terms="TimerExpired; TimerName BirthTimer" Send="AnimPlay BirthWarpOut Stand,Build,End"/>
+        <On Terms="Signal.*.BuildingComplete" Send="SetTransferOverrideAnim Stand,Unpowered"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End Instant"/>
+        <On Terms="Signal.*.BuildingComplete" Send="AnimBracketStop Unpowered"/>
+        <On Terms="Behavior.Building_Tower_AmmoReload.On" Send="AnimBracketStart Unpowered Stand,Unpowered,Start Stand,Unpowered Stand,Unpowered,End"/>
+        <On Terms="Effect.Building_AmmoReload_WakeUp.Start" Send="AnimBracketStop Unpowered"/>
+        <!-- Tileset - Protoss -->
+        <On Terms="Signal.*.PlayBuild" Send="ModelSwap TownProtossCannonTowerBirth"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTowerBirth" Send="AnimPlay Build Stand,Build"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap TownProtossCannonTower"/>
+        <On Terms="ModelSwapped; ModelSwapTo TownProtossCannonTower" Send="Signal BuildingComplete"/>
+        <On Terms="Effect.GuardTowerL2LaunchMissile.Start; At Caster" Send="AnimPlay Attack Attack"/>
+        <Model value="TownProtossCannonTower"/>
+        <BuildModel value="TownProtossCannonTowerBirth"/>
+        <DeathArray index="Normal" ModelLink="TownProtossCannonTowerDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathArray index="Morph" ModelLink="TownProtossCannonTowerDeathUnpowered"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathCustoms AnimProps="Death" ModelLink="TownProtossCannonTowerDeathUnpowered" Name="DeathUnpowered"/>
+        <DeathActorModel value="TownTownHall2DeadModel"/>
+        <DeathActorModelLow value="TownTownHall2DeadModel"/>
+        <PlacementModel value="TownProtossCannonTower"/>
+        <BarOffset value="35"/>
+        <CustomUnitStatusFrame value="UnitStatus/TowerUnitStatusFrameTemplate"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_blue.dds"/>
+        </GroupIcon>
+        <StatusBarOn index="Progress" value="0"/>
+        <StatusBarOn index="Custom" value="1"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-zeratulmonolith.dds"/>
+        <Wireframe>
+            <Image index="0" value="Assets\Textures\ui_targetportrait_buildings_ravenscourt_castle_normal_red.dds"/>
+        </Wireframe>
+        <CustomUnitStatusOffset value="0,100"/>
+    </CActorUnit>
+    <CActorSound id="MinionProtossCatapultWeapon@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="UnitDeath.MinionProtossCatapultWeapon@AttackMissile" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="GenericProtossModelWarpIn" parent="ModelAnimationStyleContinuous">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On index="0" Terms="ActorCreation" Send="$Birth 0 -1.000000 -1.000000 5.000000 AsDuration"/>
+        <On index="2" Terms="AnimDone; AnimName Birth" Send="Destroy"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.100000 WarpIn"/>
+        <On Terms="TimerExpired; TimerName WarpIn" Target="_Unit" Send="SetOpacity 1.000000 4.900000"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpMoveDownBy2"/>
+        <AutoScaleFactor value="1.250000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="TownProtossBuildingBirth" parent="ModelConstruction">
+        <Aliases value="_ProtossBuildModel"/>
+        <On Terms="ActorCreation" Send="Create ProtossConstructionAttached"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Build,Start Stand,Build Stand,Build,End ContentPlayOnce 12.000000 AsDuration"/>
+        <On Terms="AnimDone; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create ProtossBuildingStartSound"/>
+        <On Terms="UnitConstruction.TownProtossMoonwell.Start" Send="Create"/>
+        <On Terms="UnitConstruction.TownProtossCannonTowerL2Standalone.Start" Send="Create"/>
+        <Model value="ProtossBuildingBirth"/>
+    </CActorModel>
+    <CActorUnit id="MinionProtossCatapult" parent="CoreMinionCore" unitName="MinionProtossCatapult">
+        <!--                -->
+        <On Terms="UnitBirth" Send="ModelSwap MinionProtossCatapult@WarpIn"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@WarpIn" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap MinionProtossCatapult@Model"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@Model" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossCatapult@Model" Send="AnimBaselineStart"/>
+        <On Terms="UnitDeathCustomize" Send="DeathCustomize RagdollBasic"/>
+        <!-- -->
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimClear Birth"/>
+        <Model value="MinionProtossCatapult@Model"/>
+        <BuildModel value="MinionProtossCatapult@WarpIn"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossCatapult@Death" SoundLink="Tempest_Explode" VoiceLink="TempestDeathVoice"/>
+        <DeathCustoms ActorModel="UnitDeathRagdoll" ModelLink="MinionProtossCatapult@DeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PlacementModel value="MinionProtossCatapult@Model"/>
+        <VarianceWindowStandIntro value="0.330000"/>
+        <VarianceWindowWalkIntro value="0.330000"/>
+        <VarianceWindowWalkOutro value="0.330000"/>
+        <WalkAnimMoveSpeed value="2"/>
+    </CActorUnit>
+    <CActorAction id="MinionProtossWizardWeapon@Attack" parent="GenericAttack" effectImpact="MinionProtossWizardWeapon@ImpactSet" effectLaunch="MinionProtossWizardWeapon@LM">
+        <LaunchSiteOps Ops="SOpAttachCenter SOpMoveByDot15"/>
+        <ImpactPhysics Name="HighTemplarPsiBlastImpact" MatchKeys="Basic" Physics="HighTemplarPsiBlastDeathImpactForce"/>
+    </CActorAction>
+    <CActorModel id="TownProtossBuildingBirthLarge" parent="ModelConstruction">
+        <Aliases value="_ProtossBuildModel"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand,Build,Start Stand,Build Stand,Build,End ContentPlayOnce 12.000000 AsDuration"/>
+        <On Terms="AnimDone; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create ProtossBuildingStartSound"/>
+        <On Terms="UnitConstruction.TownProtossTownHallL2.Start" Send="Create"/>
+        <On Terms="UnitConstruction.TownProtossTownHallL3.Start" Send="Create"/>
+        <On Terms="UnitConstruction.TownProtossCannonTowerL2Standalone.Start" Send="Create"/>
+        <On Terms="UnitConstruction.TownProtossCore.Start" Send="Create"/>
+        <Model value="ProtossBuildingBirthLarge"/>
+    </CActorModel>
+    <CActorSound id="BuildingProtoss_PowerDownSmall" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On Terms="Behavior.Building_Town_AmmoReload.On; ValidateUnit NotDeadOrConstruction" Send="Create"/>
+        <On Terms="Behavior.Building_Tower_AmmoReload.On; ValidateUnit NotDeadOrConstruction" Send="Create"/>
+        <Sound value="Protoss_PowerDownSmall"/>
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <Macros value="HeroVorazunVoid@Macro"/>
+    </CActorSound>
+    <CActorSound id="BuildingProtoss_PowerUpSmall" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Tileset"/>
+        <On Terms="Behavior.Building_Town_AmmoReload.Off; ValidateUnit NotDeadOrConstruction" Send="Create"/>
+        <Sound value="Protoss_PowerUpSmall"/>
+        <Filter index="All" value="1"/>
+        <VisibleTo index="Self" value="1"/>
+        <VisibleTo index="Ally" value="1"/>
+        <VisibleTo index="Enemy" value="1"/>
+        <Macros value="HeroVorazunVoid@Macro"/>
+    </CActorSound>
+    <CActorSound id="GenericProtossWarpLoop" parent="CoreSoundContinuous">
+        <On Terms="Behavior.GenericProtossWarping.On" Send="Create"/>
+        <On Terms="Behavior.GenericProtossWarping.Off" Send="Destroy"/>
+        <On Terms="Behavior.TownProtossWarpIn.On" Send="Create"/>
+        <On Terms="Behavior.TownProtossWarpIn.Off" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+    </CActorSound>
+    <CActorSound id="GenericProtossWarpStart" parent="CoreSoundOneShot">
+        <On Terms="Behavior.GenericProtossWarping.On" Send="Create"/>
+        <Host Subject="_Selectable"/>
+    </CActorSound>
+    <CActorSound id="GenericProtossWarpStop" parent="CoreSoundOneShot">
+        <On Terms="Behavior.GenericProtossWarping.Off" Send="Create"/>
+        <Host Subject="_Selectable"/>
+    </CActorSound>
+    <CActorMissile id="MinionProtossWizardWeapon@AttackMissile" parent="GenericAttackMissile" unitName="MinionProtossWizardWeapon@AttackMissile"/>
+    <CActorAction id="MinionProtossRangedWeapon@Attack" parent="GenericAttack" effectImpact="MinionProtossRangedWeapon@Damage" effectLaunch="MinionProtossRangedWeapon@LaunchMissile"/>
+    <CActorMissile id="MinionProtossRangedWeapon@AttackMissile" parent="GenericAttackMissile" unitName="MinionProtossRangedWeapon@AttackMissile"/>
+    <CActorUnit id="MinionProtossMelee" parent="CoreMinionCore" unitName="MinionProtossMelee">
+        <Macros value="HeroVorazunVoid@Macro"/>
+        <!-- Common -->
+        <On Terms="UnitBirth" Send="ModelSwap MinionProtossMelee@WarpIn"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@WarpIn" Send="AnimPlay BirthWarpOut Birth"/>
+        <!-- <On Terms="ActorCreation" Send="Create Storm_Effect_MinionWarpIn"/> -->
+        <!--                -->
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap MinionProtossMelee@Model"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@Model" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossMelee@Model" Send="AnimBaselineStart"/>
+        <On Terms="UnitDeathCustomize" Send="DeathCustomize RagdollBasic"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimClear Birth"/>
+        <Model value="MinionProtossMelee@Model"/>
+        <BuildModel value="MinionProtossMelee@WarpIn"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossMelee@Death" SoundLink="Death_Splat2" VoiceLink="MinionProtoss_MinionMelee_Death"/>
+        <DeathCustoms ActorModel="UnitDeathRagdoll" ModelLink="MinionProtossMelee@DeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PlacementModel value="MinionProtossMelee@Model"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <BarOffset value="5"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossRanged" parent="CoreMinionCore" unitName="MinionProtossRanged">
+        <!-- <On Terms="ActorCreation" Send="Create Storm_Effect_MinionWarpIn"/> -->
+        <!--            -->
+        <On Terms="UnitBirth" Send="ModelSwap MinionProtossRanged@WarpIn"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@WarpIn" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap MinionProtossRanged@Model"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@Model" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossRanged@Model" Send="AnimBaselineStart"/>
+        <On Terms="UnitDeathCustomize" Send="DeathCustomize RagdollBasic"/>
+        <!-- -->
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimClear Birth"/>
+        <Model value="MinionProtossRanged@Model"/>
+        <BuildModel value="MinionProtossRanged@WarpIn"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossRanged@Death" SoundLink="Death_Splat2" VoiceLink="MinionProtoss_MinionRanged_Death"/>
+        <DeathCustoms ActorModel="UnitDeathRagdoll" ModelLink="MinionProtossRanged@DeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <WalkAnimMoveSpeed value="3"/>
+        <BarOffset value="5"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_blue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_archer_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="MinionProtossWizard" parent="CoreMinionCore" unitName="MinionProtossWizard">
+        <On index="35" Terms="WeaponStart.*.AttackStart" Send="AnimPlay Attack Spell,A"/>
+        <!--  -->
+        <On Terms="UnitBirth" Send="ModelSwap MinionProtossWizard@WarpIn"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@WarpIn" Send="AnimPlay BirthWarpOut Birth"/>
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="ModelSwap MinionProtossWizard@Model"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@Model" Send="$Birth"/>
+        <On Terms="ModelSwapped; ModelSwapTo MinionProtossWizard@Model" Send="AnimBaselineStart"/>
+        <!-- -->
+        <On Terms="AnimDone; AnimName BirthWarpOut" Send="AnimClear BirthWarpOut"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimClear Birth"/>
+        <Model value="MinionProtossWizard@Model"/>
+        <BuildModel value="MinionProtossWizard@WarpIn"/>
+        <DeathArray index="Normal" ModelLink="MinionProtossWizard@Death" SoundLink="Wizard_Minion_Death" VoiceLink="MinionProtoss_MinionPsionic_Death"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_blue.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\ui_targetportrait_bbay_minions_wizard_red.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="MinionProtossMeleeWeapon@Attack" parent="GenericAttack" effectAttack="MinionProtossMeleeWeapon@Damage">
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <ImpactPhysics>
+            <Name value="Attack00"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="00"/>
+            <Physics value="ZealotAttackDeathForce00"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack01"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="01"/>
+            <Physics value="ZealotAttackDeathForce01"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack02"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="02"/>
+            <Physics value="ZealotAttackDeathForce02"/>
+        </ImpactPhysics>
+        <AcquisitionYawHalfArc value="25.000000"/>
+        <AcquisitionPitchHalfArc value="25.000000"/>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CModel id="MinionProtossCatapultWeapon@Warning" parent="PersistentSpellFX">
+        <Model value="assets\UI\Cursors\Storm_UI_AOECursor_Fantasy_TeamColor\Storm_UI_AOECursor_Fantasy_TeamColor.m3"/>
+    </CModel>
+    <CModel id="GenericProtossModelWarpIn" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\ProtossUnitWarpIn\ProtossUnitWarpIn.m3"/>
+        <EditorCategories value=""/>
+    </CModel>
+    <CModel id="MinionProtossCatapultWeapon@Impact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Reaver_Missile_Impact\Reaver_Missile_Impact.m3"/>
+    </CModel>
+    <CModel id="MinionProtossCatapultWeapon@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Reaver_Missile\Reaver_Missile.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerPlacement" parent="Building" Race="Protoss">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Placement\MonolithCannon_Zeratul_COOP_Placement.m3"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="1.100000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="MinionProtossWizardWeapon@AttackImpact" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\AdeptSoulMissileImpact\AdeptSoulMissileImpact.m3"/>
+    </CModel>
+    <CModel id="MinionProtossWizardWeapon@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\AdeptSoulMissile\AdeptSoulMissile.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRangedWeapon@AttackImpact" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Adept_Missile_Impact\Adept_Missile_Impact.m3"/>
+    </CModel>
+    <CModel id="MinionProtossRangedWeapon@AttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Adept_Missile\Adept_Missile.m3"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerDeathUnpowered" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_DeathUnpowered\MonolithCannon_Zeratul_COOP_DeathUnpowered.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="TownWallTaldarim" parent="Building" Race="Protoss">
+        <Model value="assets\Buildings\Storm_Building_Hell_Wall\Storm_Building_Hell_Wall.m3"/>
+        <Radius value="0.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionOffset value="0.000000,0.000000,0.200000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <SquibTypeDefault value="Rock"/>
+        <VariationCount value="18"/>
+    </CModel>
+    <CModel id="TownProtossCannonTower" parent="Building" Race="Protoss">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP\MonolithCannon_Zeratul_COOP.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_Ascend"/>
+            <Type value="Sound"/>
+            <Payload value="KhaydarinMonolith_Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_PowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="KhaydarinMonolith_PowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_Descend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="KhaydarinMonolith_Descend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_PowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="KhaydarinMonolith_PowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.650000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.100000"/>
+        <ShadowRadius value="1.100000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerBirth" parent="Building" Prefix="Units\">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_WarpIn\MonolithCannon_Zeratul_COOP_WarpIn.m3"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossCannonTowerDeath" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\COOP\Zeratul\Buildings\MonolithCannon_Zeratul_COOP_Death\MonolithCannon_Zeratul_COOP_Death.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2\DarkProtossTurretEx2.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="Race:Neutral"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_Ascend"/>
+            <Type value="Sound"/>
+            <Payload value="KhaydarinMonolith_Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_PowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="KhaydarinMonolith_PowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_Descend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="KhaydarinMonolith_Descend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_PowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="KhaydarinMonolith_PowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_WarpIn\DarkProtossTurretEx2_WarpIn.m3"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2DeathUnpowered" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Unpowered_Death\DarkProtossTurretEx2_Unpowered_Death.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2Placement" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL2Death" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Death\DarkProtossTurretEx2_Death.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="TownProtossCorePlacement" parent="Building">
+        <Model value="Assets\Buildings\Protoss\NexusPlacement\NexusPlacement.m3"/>
+        <EditorCategories value=""/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellPlacement" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Placement\ProtossShield_Battery_Placement.m3"/>
+        <EditorCategories value=""/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossCore" parent="Building">
+        <Model value="Assets\Buildings\Protoss\NexusEx1\NexusEx1.m3"/>
+        <EditorCategories value=""/>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+        <TextureDeclares Prefix="nexus_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="TownProtossCoreDeath" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\NexusDeathEx1\NexusDeathEx1.m3"/>
+        <AnimSpeed value="0.750000"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.300000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.733000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="1.133000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ProtossExplosionLarge"/>
+            <Type value="Sound"/>
+            <Time value="1.433000"/>
+        </Events>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+    </CModel>
+    <CModel id="TownProtossCoreBirth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\NexusWarpIn\NexusWarpIn.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.100000"/>
+        </Events>
+        <Radius value="1.400000"/>
+        <ScaleMax value="1.750000,1.750000,1.750000"/>
+        <ScaleMin value="1.750000,1.750000,1.750000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="2.499700"/>
+        <ShadowRadius value="2.499700"/>
+        <SquibTypeDefault value="Metal"/>
+        <TextureDeclares Prefix="nexus_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="campaign"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="campaign"/>
+            <Adaptions TriggerOnSubstring="_Emissive" Slot="campaign"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="TownProtossTownHallL3Placement" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Shakuras_Placement\DarkProtossTurretEx2_Shakuras_Placement.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="TownProtossMoonwell" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery\ProtossShield_Battery.m3"/>
+        <EditorCategories value=""/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellBirth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_WarpIn\ProtossShield_Battery_WarpIn.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+        </Events>
+        <Lighting value="ShieldBattery"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@DeathRagdoll" parent="UnitDeathRagdoll" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Reaver_Ragdoll_Death\Reaver_Ragdoll_Death.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Variation value="0"/>
+            <Anim value="Death,00"/>
+            <Name value="Reaver_DeathExplosion"/>
+            <Type value="Sound"/>
+            <Time value="1.370000"/>
+            <Payload value="Reaver_DeathExplosion"/>
+        </Events>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Reaver_Death\Reaver_Death_01.m3"/>
+        <EditorCategories value=""/>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,00"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,01"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="1.200000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Events>
+            <Variation value="1"/>
+            <Anim value="Death,02"/>
+            <Name value="Uni_DeathFXincidentallFire"/>
+            <Type value="Sound"/>
+            <Time value="0.600000"/>
+            <Payload value="Uni_DeathFXincidentallFire"/>
+        </Events>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@WarpIn" parent="Unit">
+        <Model value="Assets\Units\Protoss\Reaver_WarpIn\Reaver_WarpIn.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <Priority value="16"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.750000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2\DarkProtossTurretEx2.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <EditorCategories value="Race:Neutral"/>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_Ascend"/>
+            <Type value="Sound"/>
+            <Payload value="KhaydarinMonolith_Ascend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,End,00"/>
+            <Name value="KhaydarinMonolith_PowerUp"/>
+            <Type value="Sound"/>
+            <Time value="1.503000"/>
+            <Payload value="KhaydarinMonolith_PowerUp"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_Descend"/>
+            <Type value="Sound"/>
+            <Time value="2.142000"/>
+            <Payload value="KhaydarinMonolith_Descend"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Unpowered,Start,00"/>
+            <Name value="KhaydarinMonolith_PowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.615000"/>
+            <Payload value="KhaydarinMonolith_PowerDown"/>
+        </Events>
+        <PlanetPanelCamera value="Star2CameraHigh15"/>
+        <Radius value="0.750000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraHigh15"/>
+        <UnitGlossaryCamera value="Star2CameraHigh15"/>
+    </CModel>
+    <CModel id="MinionProtossCatapult@Model" parent="Unit">
+        <Model value="Assets\Units\Protoss\Reaver\Reaver.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraLow07"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.750000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraLow07"/>
+        <UnitGlossaryCamera value="Star2CameraLow07"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3Birth" parent="Building">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_WarpIn\DarkProtossTurretEx2_WarpIn.m3"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3Death" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Death\DarkProtossTurretEx2_Death.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="TownProtossMoonwellDeath" parent="BuildingDeath" Prefix="Units\" low="">
+        <Model value="Assets\Buildings\Protoss\ProtossShield_Battery_Death\ProtossShield_Battery_Death.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@WarpIn" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Adept_Golden_WarpIn\Adept_Golden_WarpIn.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="TownProtossTownHallL3DeathUnpowered" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\DarkProtossTurretEx2_Unpowered_Death\DarkProtossTurretEx2_Unpowered_Death.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@WarpIn" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden_WarpIn\HighTemplar_Golden_WarpIn.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.526100"/>
+        <ShadowRadius value="0.526100"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@WarpIn" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_WarpIn\Zealot_Golden_WarpIn.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.555400"/>
+        <ShadowRadius value="0.555400"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_Death\Zealot_Golden_Death.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@DeathRagdoll" parent="UnitDeathRagdoll">
+        <Model value="Assets\Units\Protoss\Zealot_Golden_DeathRagdoll\Zealot_Golden_DeathRagdoll.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\Adept_Golden_Death\Adept_Golden_Death.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@DeathRagdoll" parent="UnitDeathRagdoll">
+        <Model value="Assets\Units\Protoss\Adept_Golden_DeathRagdoll\Adept_Golden_DeathRagdoll.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@Death" parent="UnitDeath">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden_Death\HighTemplar_Golden_Death.m3"/>
+        <EditorCategories value=""/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+    </CModel>
+    <CModel id="MinionProtossMelee@Model" parent="Unit">
+        <Model value="Assets\Units\Protoss\Zealot_Golden\Zealot_Golden.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="MinionProtossRanged@Model" parent="Unit">
+        <Model value="Assets\Units\Protoss\Adept_Golden\Adept_Golden.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.350000,1.350000,1.350000"/>
+        <ScaleMin value="1.350000,1.350000,1.350000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="MinionProtossWizard@Model" parent="Unit">
+        <Model value="Assets\Units\Protoss\HighTemplar_Golden\HighTemplar_Golden.m3"/>
+        <EditorCategories value=""/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CWeaponLegacy id="MinionProtossCatapultWeapon">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="Minion_CatapultMinionReaver_Damage"/>
+        <TargetFilters value="Visible;NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AcquireFilters value="-;Creep,NoMinionAggro,Structure,Heroic"/>
+        <MinScanRange value="11"/>
+        <Range value="11"/>
+        <Period value="3"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="MinionProtossCatapultWeapon@CP"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MinionProtossWizardWeapon">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="MinionProtossWizardWeapon@Damage"/>
+        <TargetFilters value="Visible;NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AcquireFilters value="-;Creep,NoMinionAggro,Structure,Heroic"/>
+        <MinScanRange value="3"/>
+        <Range value="3"/>
+        <RangeSlop value="0"/>
+        <Period value="1.5"/>
+        <Backswing value="0"/>
+        <Effect value="MinionProtossWizardWeapon@LM"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MinionProtossRangedWeapon">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="MinionProtossRangedWeapon@Damage"/>
+        <TargetFilters value="Visible;NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AcquireFilters value="-;Creep,NoMinionAggro,Structure,Heroic"/>
+        <RangeSlop value="0"/>
+        <Period value="1.5"/>
+        <Backswing value="0"/>
+        <Effect value="MinionProtossRangedWeapon@LaunchMissile"/>
+        <LegacyOptions index="Uninterruptible" value="1"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+        <UninterruptibleDuration value="0.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MinionProtossMeleeWeapon">
+        <EditorCategories value=""/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="MinionProtossMeleeWeapon@Damage"/>
+        <TargetFilters value="Visible;NoMinionAggro,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AcquireFilters value="-;Creep,NoMinionAggro,Structure,Heroic"/>
+        <MinScanRange value="0.875"/>
+        <Range value="0.875"/>
+        <Period value="1.5"/>
+        <Backswing value="0.12"/>
+        <Effect value="MinionProtossMeleeWeapon@Damage"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
+    <CMoverMissile id="MinionProtossRangedWeapon@Mover" parent="MissileDefault"/>
+    <CMoverMissile id="MinionProtossWizardWeapon@Mover" parent="MissileDefault"/>
+    <CMoverMissile id="MinionProtossCatapultWeapon@MissileMover" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="10"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-0.2,-0.1"/>
+            <YawPitchRoll value="719.2968"/>
+            <Overlays Scale="0.7,0.1"/>
+        </MotionPhases>
+        <MotionPhases index="1">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="10"/>
+            <ClearanceAcceleration value="75"/>
+            <YawPitchRoll value="MAX"/>
+            <Overlays Scale="0.1,0.1"/>
+        </MotionPhases>
+        <MotionOverlays Type="Wave" Axis="1,0,0" Wavelength="6,0.1"/>
+    </CMoverMissile>
+    <CSound id="MinionProtoss_MinionRanged_Death" parent="ProtossDeath">
+        <EditorCategories value="CoreHero:Minions"/>
+        <AssetArray TemplateParam="Adept_Death00" Weight="15"/>
+        <AssetArray TemplateParam="Adept_Death01"/>
+        <AssetArray TemplateParam="Adept_Death02"/>
+        <AssetArray TemplateParam="Adept_Death03"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Select value="Random"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="MinionProtoss_MinionPsionic_Death" parent="Death">
+        <EditorCategories value="CoreHero:Minions"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death0.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death1.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death2.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death3.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\HighTemplar\HighTemplar_Death4.wav"/>
+        <DupeDestroyCount value="6"/>
+        <Volume value="-20.000000,-20.000000"/>
+    </CSound>
+    <CSound id="MinionProtossCatapultWeapon@SoundLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_AttackLaunch04.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,0.000000"/>
+        <Volume value="0.000000,1.000000"/>
+    </CSound>
+    <CSound id="MinionProtossCatapultWeapon@SoundImpact" parent="_FX_NPC_Death">
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Reaver_ScarabImpact04.wav" FacialGroup=""/>
+        <Pitch value="-4.000000,0.000000"/>
+        <Volume value="0.000000,1.000000"/>
+    </CSound>
+    <CSound id="MinionProtossWizardWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Impact_04.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="MinionProtossWizardWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\HighTemplar_Taldarim_Launch_04.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-20.000000,-20.000000"/>
+    </CSound>
+    <CSound id="MinionProtossRangedWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackImpact03.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="MinionProtossRangedWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Adept_AttackLaunch04.wav" FacialGroup=""/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="MinionProtossMeleeWeapon@AttackImpact" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Attacks\Protoss_AttackImpactMediumSlice3.wav"/>
+        <Pitch value="-2.000000,5.000000"/>
+        <Volume value="-15.000000,-15.000000"/>
+    </CSound>
+    <CSound id="MinionProtossMeleeWeapon@AttackLaunch" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch4.wav"/>
+        <AssetArray File="Assets\Sounds\Protoss\Zealot\Zealot_AttackLaunch5.wav"/>
+        <Category value="Combat"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="4"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="4" Volume="-3.000000"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-0.890000,1.640000"/>
+        <VariationMinimum value="8"/>
+        <Volume value="-15.000000,-15.000000"/>
+        <VolumeRolloffPoints Distance="10.000000"/>
+        <VolumeRolloffPoints Distance="20.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound id="MinionProtoss_MinionMelee_Death" parent="Death">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death01.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death01.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death02.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death03.wav"/>
+        <AssetArray File="LocalizedData\Sounds\ProtossUnitVO\Zealot\Zealot_Death04.wav"/>
+        <Pitch value="-0.500000,0.500000"/>
+        <Volume value="-25.000000,-25.000000"/>
+    </CSound>
+    <CSound id="GenericProtossWarpLoop" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\WarpGate\WarpGate_TrainLoop.wav"/>
+        <LoopCount value="-1"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="GenericProtossWarpStart" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\WarpGate\WarpGate_TrainStart.wav"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CSound id="GenericProtossWarpStop" parent="_FX_NPC_Combat">
+        <AssetArray File="Assets\Sounds\Protoss\WarpGate\WarpGate_TrainFinish.wav"/>
+        <Volume value="-5.000000,-5.000000"/>
+    </CSound>
+    <CDataCollectionAbil id="MinionProtossCatapult">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreHero:Minions,CoreDataGroup:Unit"/>
+        <DataRecord Entry="Actor,MinionProtossCatapult"/>
+        <DataRecord Entry="Model,MinionProtossCatapult@Death"/>
+        <DataRecord Entry="Model,MinionProtossCatapult@WarpIn"/>
+        <DataRecord Entry="Model,MinionProtossCatapult@Model"/>
+        <DataRecord Entry="Model,MinionProtossCatapult@DeathRagdoll"/>
+        <DataRecord Entry="Unit,MinionProtossCatapult"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="MinionProtossCatapultWeapon">
+        <EditorCategories value="CoreHero:Minions,CoreDataGroup:Weapon"/>
+        <DataRecord Entry="Actor,MinionProtossCatapultWeapon@Attack"/>
+        <DataRecord Entry="Actor,MinionProtossCatapultWeapon@AttackMissile"/>
+        <DataRecord Entry="Actor,MinionProtossCatapultWeapon@SoundImpact"/>
+        <DataRecord Entry="Actor,MinionProtossCatapultWeapon@SoundLaunch"/>
+        <DataRecord Entry="Actor,MinionProtossCatapultWeapon@Warning"/>
+        <DataRecord Entry="Effect,MinionProtossCatapultWeapon@CP"/>
+        <DataRecord Entry="Effect,MinionProtossCatapultWeapon@LM"/>
+        <DataRecord Entry="Effect,MinionProtossCatapultWeapon@ImpactSearch"/>
+        <DataRecord Entry="Effect,MinionProtossCatapultWeapon@Damage"/>
+        <DataRecord Entry="Model,MinionProtossCatapultWeapon@Warning"/>
+        <DataRecord Entry="Model,MinionProtossCatapultWeapon@AttackMissile"/>
+        <DataRecord Entry="Model,MinionProtossCatapultWeapon@Impact"/>
+        <DataRecord Entry="Mover,MinionProtossCatapultWeapon@MissileMover"/>
+        <DataRecord Entry="Sound,MinionProtossCatapultWeapon@SoundImpact"/>
+        <DataRecord Entry="Sound,MinionProtossCatapultWeapon@SoundLaunch"/>
+        <DataRecord Entry="Unit,MinionProtossCatapultWeapon@AttackMissile"/>
+        <DataRecord Entry="Weapon,MinionProtossCatapultWeapon"/>
+    </CDataCollection>
+    <CDataCollectionAbil id="MinionProtossMelee">
+        <EditorCategories value="CoreHero:Minions,CoreDataGroup:Unit"/>
+        <DataRecord Entry="Actor,MinionProtossMelee"/>
+        <DataRecord Entry="Model,MinionProtossMelee@Model"/>
+        <DataRecord Entry="Model,MinionProtossMelee@Death"/>
+        <DataRecord Entry="Model,MinionProtossMelee@WarpIn"/>
+        <DataRecord Entry="Unit,MinionProtossMelee"/>
+        <DataRecord Entry="Model,MinionProtossMelee@DeathRagdoll"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="MinionProtossMeleeWeapon">
+        <EditorCategories value="CoreHero:Minions,CoreDataGroup:Weapon"/>
+        <DataRecord Entry="Actor,MinionProtossMeleeWeapon@Attack"/>
+        <DataRecord Entry="Effect,MinionProtossMeleeWeapon@Damage"/>
+        <DataRecord Entry="Sound,MinionProtossMeleeWeapon@AttackLaunch"/>
+        <DataRecord Entry="Sound,MinionProtossMeleeWeapon@AttackImpact"/>
+        <DataRecord Entry="Weapon,MinionProtossMeleeWeapon"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="MinionProtossRanged">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreHero:Minions,CoreDataGroup:Unit"/>
+        <DataRecord Entry="Actor,MinionProtossRanged"/>
+        <DataRecord Entry="Model,MinionProtossRanged@Model"/>
+        <DataRecord Entry="Model,MinionProtossRanged@Death"/>
+        <DataRecord Entry="Model,MinionProtossRanged@WarpIn"/>
+        <DataRecord Entry="Model,MinionProtossRanged@DeathRagdoll"/>
+        <DataRecord Entry="Unit,MinionProtossRanged"/>
+    </CDataCollectionUnit>
+    <CDataCollectionAbil id="MinionProtossRangedWeapon">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreHero:Minions,CoreDataGroup:Weapon"/>
+        <DataRecord Entry="Actor,MinionProtossRangedWeapon@Attack"/>
+        <DataRecord Entry="Actor,MinionProtossRangedWeapon@AttackMissile"/>
+        <DataRecord Entry="Effect,MinionProtossRangedWeapon@LaunchMissile"/>
+        <DataRecord Entry="Effect,MinionProtossRangedWeapon@Damage"/>
+        <DataRecord Entry="Model,MinionProtossRangedWeapon@AttackImpact"/>
+        <DataRecord Entry="Model,MinionProtossRangedWeapon@AttackMissile"/>
+        <DataRecord Entry="Sound,MinionProtossRangedWeapon@AttackLaunch"/>
+        <DataRecord Entry="Sound,MinionProtossRangedWeapon@AttackImpact"/>
+        <DataRecord Entry="Unit,MinionProtossRangedWeapon@AttackMissile"/>
+        <DataRecord Entry="Weapon,MinionProtossRangedWeapon"/>
+    </CDataCollectionAbil>
+    <CDataCollectionUnit id="MinionProtossWizard">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreHero:Minions,CoreDataGroup:Unit"/>
+        <DataRecord Entry="Actor,MinionProtossWizard"/>
+        <DataRecord Entry="Model,MinionProtossWizard@Model"/>
+        <DataRecord Entry="Model,MinionProtossWizard@Death"/>
+        <DataRecord Entry="Model,MinionProtossWizard@WarpIn"/>
+        <DataRecord Entry="Unit,MinionProtossWizard"/>
+    </CDataCollectionUnit>
+    <CDataCollection id="MinionProtossWizardWeapon">
+        <EditorCategories value="DataGroup:Template,Race:Neutral,CoreHero:Minions,CoreDataGroup:Weapon"/>
+        <DataRecord Entry="Actor,MinionProtossWizardWeapon@Attack"/>
+        <DataRecord Entry="Actor,MinionProtossWizardWeapon@AttackMissile"/>
+        <DataRecord Entry="Effect,MinionProtossWizardWeapon@LM"/>
+        <DataRecord Entry="Effect,MinionProtossWizardWeapon@ImpactSet"/>
+        <DataRecord Entry="Effect,MinionProtossWizardWeapon@Damage"/>
+        <DataRecord Entry="Model,MinionProtossWizardWeapon@AttackImpact"/>
+        <DataRecord Entry="Model,MinionProtossWizardWeapon@AttackMissile"/>
+        <DataRecord Entry="Mover,MinionProtossWizardWeapon@Mover"/>
+        <DataRecord Entry="Sound,MinionProtossWizardWeapon@AttackLaunch"/>
+        <DataRecord Entry="Sound,MinionProtossWizardWeapon@AttackImpact"/>
+        <DataRecord Entry="Unit,MinionProtossWizardWeapon@AttackMissile"/>
+        <DataRecord Entry="Weapon,MinionProtossWizardWeapon"/>
+    </CDataCollection>
+    <CTurret id="TownProtossCannonTowerStandaloneTurret" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawStart value="-135"/>
+        <YawIdleRate value="9.8437"/>
+        <Fidget TurnAngle="0"/>
+    </CTurret>
+    <CTurret id="TownProtossCannonTowerTurret" parent="FreeRotate">
+        <Fidget TurnAngle="0"/>
+    </CTurret>
+    <CTurret id="TownProtossTownHallTurret" parent="FreeRotate">
+        <Idle value="Spin"/>
+        <YawStart value="-135"/>
+        <YawIdleRate value="9.8437"/>
+        <Fidget TurnAngle="0"/>
+    </CTurret>
+    <CUnit id="TownProtossTownHallL3" parent="CoreBaseTownStructure">
+        <DeathTime value="-1"/>
+        <Facing value="315"/>
+        <FlagArray index="TownStructureTownHall" value="1"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="17000"/>
+        <LifeMax value="17000"/>
+        <EnergyStart value="40"/>
+        <EnergyMax value="40"/>
+        <Sight value="12"/>
+        <KillXP value="2600"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray index="0" Link="Building_Town_RangeIndicator"/>
+        <BehaviorArray Link="TownProtossWarpIn"/>
+        <BehaviorArray Link="BackTown"/>
+        <BehaviorArray Link="StructureAmmoMonitor"/>
+        <BehaviorArray Link="StructureAmmoReplenisher"/>
+        <WeaponArray Link="TownHallL3Weapon" Turret="TownProtossTownHallTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+        </CardLayouts>
+        <Radius value="3"/>
+        <Footprint value="Footprint4x4Contour"/>
+        <PlacementFootprint value="Footprint4x4Contour"/>
+        <MinimapRadius value="2.5"/>
+    </CUnit>
+    <CUnit id="TownProtossCannonTowerL2" parent="CoreBaseTownStructure">
+        <Facing value="315"/>
+        <FlagArray index="TownStructureCannonTower" value="1"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="Tower" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="4300"/>
+        <LifeMax value="4300"/>
+        <EnergyMax value="20"/>
+        <KillXP value="240"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray index="0" Link="TownDeadController"/>
+        <BehaviorArray Link="TownDeadController@GateTower"/>
+        <BehaviorArray Link="Building_Tower_RangeIndicator"/>
+        <BehaviorArray Link="StructureAmmoMonitor"/>
+        <BehaviorArray Link="StructureAmmoReplenisher"/>
+        <WeaponArray Link="GuardTowerL2Weapon" Turret="TownProtossCannonTowerTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <Footprint value="Footprint2x2ContourBlockLOS"/>
+        <PlacementFootprint value="Footprint2x2ContourBlockLOS"/>
+        <MinimapRadius value="0"/>
+        <EnergyStart value="20"/>
+    </CUnit>
+    <CUnit id="TownProtossCannonTowerL3Standalone" parent="CoreBaseTownStructure">
+        <Facing value="315"/>
+        <FlagArray index="TownStructureCannonTower" value="1"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="Tower" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="5300"/>
+        <LifeMax value="5300"/>
+        <EnergyMax value="20"/>
+        <KillXP value="240"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray index="0" Link="Building_Tower_RangeIndicator"/>
+        <BehaviorArray Link="TownProtossWarpIn"/>
+        <BehaviorArray Link="TownTowerStandalone"/>
+        <BehaviorArray Link="StructureAmmoMonitor"/>
+        <BehaviorArray Link="StructureAmmoReplenisher"/>
+        <WeaponArray Link="GuardTowerL3Weapon" Turret="TownProtossCannonTowerStandaloneTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2Contour"/>
+        <MinimapRadius value="0"/>
+        <EnergyStart value="20"/>
+    </CUnit>
+    <CUnit id="TownProtossCannonTowerL3" parent="CoreBaseTownStructure">
+        <Facing value="315"/>
+        <FlagArray index="TownStructureCannonTower" value="1"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="Tower" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="5300"/>
+        <LifeMax value="5300"/>
+        <EnergyMax value="20"/>
+        <KillXP value="240"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray index="0" Link="TownDeadController"/>
+        <BehaviorArray Link="TownDeadController@GateTower"/>
+        <BehaviorArray Link="Building_Tower_RangeIndicator"/>
+        <BehaviorArray Link="StructureAmmoMonitor"/>
+        <BehaviorArray Link="StructureAmmoReplenisher"/>
+        <WeaponArray Link="GuardTowerL3Weapon" Turret="TownProtossCannonTowerTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <Footprint value="Footprint2x2ContourBlockLOS"/>
+        <PlacementFootprint value="Footprint2x2ContourBlockLOS"/>
+        <MinimapRadius value="0"/>
+        <EnergyStart value="20"/>
+    </CUnit>
+    <CUnit id="TownProtossCannonTowerL2Standalone" parent="CoreBaseTownStructure">
+        <Facing value="315"/>
+        <FlagArray index="TownStructureCannonTower" value="1"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="Tower" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="4300"/>
+        <LifeMax value="4300"/>
+        <EnergyMax value="20"/>
+        <KillXP value="240"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray index="0" Link="Building_Tower_RangeIndicator"/>
+        <BehaviorArray Link="TownProtossWarpIn"/>
+        <BehaviorArray Link="TownTowerStandalone"/>
+        <BehaviorArray Link="StructureAmmoMonitor"/>
+        <BehaviorArray Link="StructureAmmoReplenisher"/>
+        <WeaponArray Link="GuardTowerL2Weapon" Turret="TownProtossCannonTowerStandaloneTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2Contour"/>
+        <MinimapRadius value="0"/>
+        <EnergyStart value="20"/>
+    </CUnit>
+    <CUnit id="MinionProtossWizardWeapon@AttackMissile" parent="MISSILE_INVULNERABLE">
+        <Mover value="MinionProtossWizardWeapon@Mover"/>
+    </CUnit>
+    <CUnit id="TownProtossCore">
+        <DeathTime value="-1"/>
+        <Facing value="315"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="CreateVisible" value="1"/>
+        <FlagArray index="Unclickable" value="0"/>
+        <FlagArray index="Unhighlightable" value="0"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FlagArray index="Unstoppable" value="1"/>
+        <FogVisibility value="Dimmed"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="35000"/>
+        <LifeMax value="35000"/>
+        <ShieldsStart value="7500"/>
+        <ShieldsMax value="7500"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="100"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="PalaceDamageResponseController"/>
+        <BehaviorArray Link="CoreScaling"/>
+        <BehaviorArray Link="Building_Core_RangeIndicator"/>
+        <BehaviorArray Link="CoreInvulnerability"/>
+        <WeaponArray Link="KingsCore" Turret="Nexus"/>
+        <CardLayouts>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="3"/>
+        <SeparationRadius value="2"/>
+        <Footprint value="Footprint6x6Contour"/>
+        <PlacementFootprint value="Footprint6x6"/>
+        <MinimapRadius value="2.5"/>
+        <EditorCategories value="ObjectType:Structure"/>
+    </CUnit>
+    <CUnit id="MinionProtossCatapultWeapon@AttackMissile" parent="MISSILE_INVULNERABLE">
+        <Mover value="MinionProtossCatapultWeapon@MissileMover"/>
+    </CUnit>
+    <CUnit id="MinionProtossCatapult" parent="CoreMinion">
+        <DeathTime value="3"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="LeechBehaviorShieldDamage" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <LifeStart value="550"/>
+        <LifeMax value="550"/>
+        <Speed value="2.75"/>
+        <Acceleration value="2"/>
+        <Deceleration value="2"/>
+        <StationaryTurningRate value="149.9414"/>
+        <TurningRate value="149.9414"/>
+        <Sight value="12"/>
+        <KillXP value="1"/>
+        <AbilArray Link="AbathurAssumingDirectControlCancel"/>
+        <BehaviorArray index="0" Link="CatapultMinionScaling"/>
+        <WeaponArray Link="MinionProtossCatapultWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AbathurCancelAssumingDirectControl" Type="AbilCmd" AbilCmd="AbathurAssumingDirectControlCancel,Execute" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="1.125"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="1"/>
+        <ScoreResult value=""/>
+        <AIEvalFactor value="1"/>
+    </CUnit>
+    <CUnit id="MinionProtossRangedWeapon@AttackMissile" parent="MISSILE"/>
+    <CUnit id="MinionProtossMelee" parent="CoreMinion">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="LeechBehaviorShieldDamage" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <LifeStart value="990"/>
+        <LifeMax value="990"/>
+        <Speed value="2.75"/>
+        <KillXP value="70"/>
+        <AbilArray Link="AbathurAssumingDirectControlCancel"/>
+        <BehaviorArray index="0" Link="MeleeMinionScaling"/>
+        <WeaponArray Link="MinionProtossMeleeWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AbathurCancelAssumingDirectControl" Type="AbilCmd" AbilCmd="AbathurAssumingDirectControlCancel,Execute" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <InnerRadius value="0.6875"/>
+        <CargoSize value="1"/>
+        <ScoreResult value=""/>
+        <AIEvalFactor value="1"/>
+        <OverlapIndex value="1"/>
+    </CUnit>
+    <CUnit id="MinionProtossRanged" parent="CoreMinion">
+        <FlagArray index="ForceCollisionCheck" value="1"/>
+        <PushPriority value="40"/>
+        <Collide index="Ground" value="0"/>
+        <LifeStart value="660"/>
+        <LifeMax value="660"/>
+        <Speed value="2.75"/>
+        <KillXP value="60"/>
+        <BehaviorArray index="0" Link="RangedMinionScaling"/>
+        <WeaponArray Link="MinionProtossRangedWeapon"/>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="5"/>
+        <InnerRadius value="0.3125"/>
+        <AIEvalFactor value="1"/>
+        <AlliedPushPriority value="60"/>
+    </CUnit>
+    <CUnit id="TownProtossTownHallL2" parent="CoreBaseTownStructure">
+        <DeathTime value="-1"/>
+        <Facing value="315"/>
+        <FlagArray index="TownStructureTownHall" value="1"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="12900"/>
+        <LifeMax value="12900"/>
+        <EnergyStart value="40"/>
+        <EnergyMax value="40"/>
+        <Sight value="12"/>
+        <KillXP value="1300"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray index="0" Link="Building_Town_RangeIndicator"/>
+        <BehaviorArray Link="TownProtossWarpIn"/>
+        <BehaviorArray Link="FrontTown"/>
+        <BehaviorArray Link="StructureAmmoMonitor"/>
+        <BehaviorArray Link="StructureAmmoReplenisher"/>
+        <WeaponArray Link="TownHallL2Weapon" Turret="TownProtossTownHallTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="3"/>
+        <Footprint value="Footprint4x4Contour"/>
+        <PlacementFootprint value="Footprint4x4Contour"/>
+        <MinimapRadius value="2.5"/>
+    </CUnit>
+    <CUnit id="TownProtossMoonwell" parent="CoreBaseTownStructure">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="TownStructureMoonwell" value="1"/>
+        <Attributes index="NoMinionAggro" value="0"/>
+        <LifeStart value="2000"/>
+        <LifeMax value="2000"/>
+        <ShieldsStart value="500"/>
+        <ShieldsMax value="500"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="50"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <BehaviorArray Link="TownProtossWarpIn"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Cancel" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Footprint value="Footprint3x3Contour"/>
+        <PlacementFootprint value="Footprint3x3Contour"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Structure"/>
+    </CUnit>
+    <CUnit id="MinionProtossWizard" parent="CoreMinion">
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="LeechBehaviorShieldDamage" value="0"/>
+        <PushPriority value="8"/>
+        <Collide index="Ground" value="0"/>
+        <LifeStart value="495"/>
+        <LifeMax value="495"/>
+        <Speed value="2.75"/>
+        <KillXP value="62"/>
+        <AbilArray Link="AbathurAssumingDirectControlCancel"/>
+        <BehaviorArray index="0" Link="WizardMinionScaling"/>
+        <WeaponArray Link="MinionProtossWizardWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AbathurCancelAssumingDirectControl" Type="AbilCmd" AbilCmd="AbathurAssumingDirectControlCancel,Execute" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.5625"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.5625"/>
+        <CargoSize value="1"/>
+        <ScoreResult value=""/>
+        <AIEvalFactor value="1"/>
+        <OverlapIndex value="1"/>
+        <AlliedPushPriority value="8"/>
+    </CUnit>
+    <CBehaviorBuff id="TownProtossWarpIn">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <TurretDisableArray value="TownProtossTownHallTurret"/>
+            <TurretDisableArray value="TownProtossCannonTowerStandaloneTurret"/>
+            <TurretDisableArray value="TownProtossCannonTowerTurret"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericProtossWarping">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="6"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unstoppable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+</Catalog>

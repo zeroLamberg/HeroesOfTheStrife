@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CScoreResultRoot id="HeroesRoot">
+        <HeaderTable value="Heroes"/>
+        <HeaderTable value="Quests"/>
+        <HeaderTable value="HeroQuests"/>
+    </CScoreResultRoot>
+    <CScoreResultScore id="Heroes">
+        <ValueTable value="Takedowns"/>
+        <ValueTable value="Deaths"/>
+        <ValueTable value="TownKills"/>
+        <ValueTable value="IngameSoloKills"/>
+        <ValueTable value="MetaExperience"/>
+        <ValueTable value="Level"/>
+        <ValueTable value="RavenTributesCollected"/>
+        <ValueTable value="DragonNumberOfDragonCaptures"/>
+        <ValueTable value="MinesSkullsCollected"/>
+        <ValueTable value="BlackheartDoubloonsCollected"/>
+    </CScoreResultScore>
+    <CScoreResultScore id="Quests">
+        <ValueTable value="MetaExperience"/>
+        <ValueTable value="Takedowns"/>
+        <ValueTable value="Deaths"/>
+        <ValueTable value="TownKills"/>
+        <ValueTable value="MercCampCaptures"/>
+        <ValueTable value="WatchTowerCaptures"/>
+        <ValueTable value="IngameSoloKills"/>
+        <ValueTable value="TeamWinsDiablo"/>
+        <ValueTable value="TeamWinsFemale"/>
+        <ValueTable value="TeamWinsMale"/>
+        <ValueTable value="TeamWinsStarCraft"/>
+        <ValueTable value="TeamWinsWarcraft"/>
+        <ValueTable value="WinsWarrior"/>
+        <ValueTable value="WinsAssassin"/>
+        <ValueTable value="WinsSupport"/>
+        <ValueTable value="WinsSpecialist"/>
+        <ValueTable value="WinsStarCraft"/>
+        <ValueTable value="WinsDiablo"/>
+        <ValueTable value="WinsWarcraft"/>
+        <ValueTable value="WinsMale"/>
+        <ValueTable value="WinsFemale"/>
+    </CScoreResultScore>
+    <CScoreResultScore id="HeroQuests">
+        <!-- Abathur -->
+        <ValueTable value="SymbioteStabEnemyHeroHit"/>
+        <ValueTable value="ToxicNestEnemyHeroDamage"/>
+        <!-- Arthas -->
+        <ValueTable value="HowlingBlastEnemyHeroHits"/>
+        <ValueTable value="FrostStrikeEnemyHeroHits"/>
+        <!-- Diablo -->
+        <ValueTable value="ShadowChargeEnemyHeroStun"/>
+        <ValueTable value="OverpowerEnemyHeroHit"/>
+        <!-- Falstad -->
+        <ValueTable value="HammerangEnemyHeroHit"/>
+        <ValueTable value="ThunderstormEnemyHeroDamageDealt"/>
+        <!-- Gazlowe -->
+        <ValueTable value="GazloweEnemyStructureDamage"/>
+        <ValueTable value="DethLazorDamage"/>
+        <!-- Illidan -->
+        <ValueTable value="BetrayersStrikeEnemyHeroHit"/>
+        <ValueTable value="CrescentSweepEnemyHeroKill"/>
+        <!-- Kerrigan -->
+        <ValueTable value="ImpalingBladesEnemyHeroHit"/>
+        <ValueTable value="RavageEnemyHeroHit"/>
+        <!-- Malfurion -->
+        <ValueTable value="MalfurionHealAllyHealth"/>
+        <ValueTable value="EntanglingRootsEnemyHeroRooted"/>
+        <!-- Naziba -->
+        <ValueTable value="NazibaStructureDamage"/>
+        <ValueTable value="PlagueofToadsDamage"/>
+        <!-- Nova -->
+        <ValueTable value="HoloDecoyAbsorbDamage"/>
+        <ValueTable value="SnipeEnemyHeroHit"/>
+        <!-- Raynor -->
+        <ValueTable value="PenetratingRoundEnemyHeroHit"/>
+        <ValueTable value="InspireAllyHero"/>
+        <!-- Sonya -->
+        <ValueTable value="AncientSpearEnemyHeroHit"/>
+        <ValueTable value="WhirlwindDamage"/>
+        <!-- Stitches -->
+        <ValueTable value="HookEnemyHeroHit"/>
+        <ValueTable value="DevourHealthRegenerated"/>
+        <!-- Tassadar -->
+        <ValueTable value="ProtectiveShieldAllyHero"/>
+        <ValueTable value="TimeWarpEnemyDamage"/>
+        <!-- Tyrael -->
+        <ValueTable value="PunishingBladeEnemyHeroHit"/>
+        <ValueTable value="HandofSacrificeAllyHero"/>
+        <!-- Uther -->
+        <ValueTable value="UtherHealAllyHealth"/>
+        <ValueTable value="HammerofJusticeEnemyHeroStun"/>
+        <!-- Valla -->
+        <ValueTable value="HungeringArrowEnemyHit"/>
+        <ValueTable value="MultishotEnemyDamage"/>
+        <!-- Muradin -->
+        <ValueTable value="StormhammerEnemyHeroHit"/>
+        <ValueTable value="ThunderclapEnemyHeroHit"/>
+        <!-- Zeratul -->
+        <ValueTable value="SustainedAnomalyEnemyHeroHit"/>
+        <ValueTable value="CleaveEnemyHeroHit"/>
+        <!-- Tychus -->
+        <ValueTable value="FragGrenadeEnemyHeroHit"/>
+        <ValueTable value="OverkillDamage"/>
+        <!-- Sgt. Hammer -->
+        <ValueTable value="100CaliberBlastEnemyHeroHit"/>
+        <ValueTable value="SgtHammerStructureDamage"/>
+        <!-- Tyrande -->
+        <ValueTable value="TyrandeHealAllyHealth"/>
+        <ValueTable value="SentinelEnemyHeroHit"/>
+        <!-- Anub'arak -->
+        <ValueTable value="ImpaleEnemyHeroHit"/>
+        <ValueTable value="RegeneratingCarapaceAbsorbDamage"/>
+        <!-- ETC -->
+        <ValueTable value="PowerSlideEnemyHeroHit"/>
+        <ValueTable value="GuitarSoloHealAmount"/>
+    </CScoreResultScore>
+</Catalog>

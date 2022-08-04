@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorConstant id="MercenaryVanguardWeapon@DefenderDamageModifier">
+        <ApplicationRule value="Multiply"/>
+        <Amount value="0.666"/>
+    </CAccumulatorConstant>
+    <CAccumulatorSwitch id="MercenaryVanguardWeapon@DefenderDamageSwitch">
+        <CaseArray Validator="CasterIsMercDefender" Accumulator="MercenaryVanguardWeapon@DefenderDamageModifier"/>
+    </CAccumulatorSwitch>
+</Catalog>

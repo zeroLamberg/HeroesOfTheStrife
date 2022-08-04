@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipAutorifle@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaEquipAutorifle@CooldownCompleteOnlyAtUnit0"/>
+        <OperandArray value="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipFlamethrower@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaEquipFlamethrower@CooldownCompleteOnlyAtUnit0"/>
+        <OperandArray value="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipGrenadeLauncher@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaEquipGrenadeLauncher@CooldownCompleteOnlyAtUnit0"/>
+        <OperandArray value="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaEquipSnipe@CooldownCompleteOnlyAtUnit0CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaEquipSnipe@CooldownCompleteOnlyAtUnit0"/>
+        <OperandArray value="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaEquipSnipe@CooldownCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaEquipSnipe@Cooldown" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaTalentWeaponMasterToTheLimit@CarryBehaviorCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaTalentWeaponMasterToTheLimit@CarryBehavior" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountUpgrade id="CountUpgradeHeroKatarina@BaseBlueCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroKatarina@BaseBlue" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroKatarina@BaseGoldenCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroKatarina@BaseGolden" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroKatarina@BaseGreenCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroKatarina@BaseGreen" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroKatarina@BaseGreyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroKatarina@BaseGrey" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroKatarina@BasePurpleCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroKatarina@BasePurple" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHeroKatarina@BaseRedCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="HeroKatarina@BaseRed" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaEquipSnipe@CooldownCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaEquipSnipe@CooldownCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaEquipAutorifle@CooldownCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaEquipAutorifle@Cooldown" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaEquipFlamethrower@CooldownCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaEquipFlamethrower@Cooldown" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaEquipGrenadeLauncher@CooldownCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaEquipGrenadeLauncher@Cooldown" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaEquipAutorifle@CooldownCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaEquipAutorifle@CooldownCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaEquipFlamethrower@CooldownCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaEquipFlamethrower@CooldownCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaEquipGrenadeLauncher@CooldownCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaEquipGrenadeLauncher@CooldownCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_AutorifleCompleteOnlyAtUnit0EqCountBehaviorDeadCompleteOnlyAtUnit0">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponCarriedCompleteOnlyAtUnit0"/>
+        <OperandArray value="GTCountBehaviorKatarina_Ammo_AutorifleCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_Flamethrowe2429795416">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponCarriedCompleteOnlyAtUnit0"/>
+        <OperandArray value="GTCountBehaviorKatarina_Ammo_FlamethrowerCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_Chain2727456026">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponCarriedCompleteOnlyAtUnit0"/>
+        <OperandArray value="GTCountBehaviorKatarina_Ammo_ChaingunCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponCarriedCompleteOnlyAtUnit0GTCountBehaviorKatarina_Ammo_SnipeCompleteOnlyAtUnit0EqCountBehaviorDeadCompleteOnlyAtUnit0">
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponCarriedCompleteOnlyAtUnit0"/>
+        <OperandArray value="GTCountBehaviorKatarina_Ammo_SnipeCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponAutorifle@WeaponCarriedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponAutorifle@WeaponCarried" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponAutorifle@WeaponEquipped" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponFlamethrower@WeaponCarriedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponFlamethrower@WeaponCarried" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponFlamethrower@WeaponEquipped" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponCarriedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponGrenadeLauncher@WeaponCarried" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponSnipe@WeaponCarriedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponSnipe@WeaponCarried" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaWeaponSnipe@WeaponEquipped" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponCarriedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponAutorifle@WeaponCarriedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponAutorifle@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponCarriedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponFlamethrower@WeaponCarriedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponFlamethrower@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponCarriedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponCarriedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponGrenadeLauncher@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponCarriedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponSnipe@WeaponCarriedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroKatarinaWeaponSnipe@WeaponEquippedCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementCountBehavior id="CountBehaviorHeroKatarinaExclusionZone@TimedBehaviorCasterCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroKatarinaExclusionZone@TimedBehaviorCaster" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorKatarina_Ammo_AutorifleCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Katarina_Ammo_Autorifle" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorKatarina_Ammo_ChaingunCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Katarina_Ammo_Chaingun" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorKatarina_Ammo_FlamethrowerCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Katarina_Ammo_Flamethrower" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorKatarina_Ammo_SnipeCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Katarina_Ammo_Snipe" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementGT id="GTCountBehaviorKatarina_Ammo_AutorifleCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorKatarina_Ammo_AutorifleCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementGT>
+    <CRequirementGT id="GTCountBehaviorKatarina_Ammo_ChaingunCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorKatarina_Ammo_ChaingunCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementGT>
+    <CRequirementGT id="GTCountBehaviorKatarina_Ammo_FlamethrowerCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorKatarina_Ammo_FlamethrowerCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementGT>
+    <CRequirementGT id="GTCountBehaviorKatarina_Ammo_SnipeCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorKatarina_Ammo_SnipeCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementGT>
+</Catalog>

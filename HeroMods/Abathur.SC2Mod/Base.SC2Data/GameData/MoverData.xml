@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="HeroAbathurWeaponLocustBombard@Mover">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="3200"/>
+            <Gravity value="20"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="5759.6484"/>
+            <FlightTime value="1.2"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroAbathurWeaponLocustNormal@Missle">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="18"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HeroAbathurStab@Missile">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Speed value="25"/>
+            <MaxSpeed value="25"/>
+            <ActorTracking value="Actual"/>
+            <RotationLaunchActorType value="LaunchToTarget"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

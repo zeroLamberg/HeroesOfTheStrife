@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="HeroTalandar@SecondSuitUIControllerQ"/>
+<Behavior id="HeroTalandar@SecondSuitUIControllerW"/>
+<Behavior id="HeroTalandarAccumulatedShield@SecondCarryBehavior"/>
+<Behavior id="HeroTalandarAccumulatedShield"/>
+<Effect id="HeroTalandarAccumulatedShield@EnergyAddDamageTaken"/>
+<Effect id="HeroTalandarTalentAccumulatedShieldImmortal@Heal"/>
+<Effect id="HeroTalandarTalentPurification@EnergyAdd"/>
+<Effect id="HeroTalandarTalentAccumulatedShieldShieldCapacitor@RefreshTokenCounter"/>
+<Effect id="HeroTalandarArsenalOvercharge@SetTalandarAbilitiesChargesDefault"/>
+<Effect id="HeroTalandarAccumulatedShield@ApplyShield"/>
+</Preload>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <ModType>
+        <Value>Interface</Value>
+    </ModType>
+    <Icon>
+        <Value>EditorData\Images\UI_Arcade_IconUltraArchon.tga</Value>
+    </Icon>
+    <Dependencies>
+        <Value>file:Mods\Commanders Conflict\Development\MapMods\BattleForSlayn.SC2Mod</Value>
+    </Dependencies>
+    <Screenshot>
+        <File>
+            <Value>assets\Screenshots\Screenshot-1.jpg</Value>
+            <Value>assets\Screenshots\Screenshot-2.jpg</Value>
+            <Value>assets\Screenshots\Screenshot-3.jpg</Value>
+        </File>
+        <CaptionId>
+            <Value>1</Value>
+            <Value>2</Value>
+            <Value>3</Value>
+        </CaptionId>
+        <Flags>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+        </Flags>
+    </Screenshot>
+</DocInfo>

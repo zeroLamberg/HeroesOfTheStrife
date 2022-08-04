@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CPreloadModel id="UI_Cursor_Circle_Modern"/>
+    <CPreloadModel id="UI_Cursor_Circle_FantasyOld"/>
+    <CPreloadModel id="UI_Cursor_Circle_FantasyOld_TeamColored"/>
+    <CPreloadModel id="UI_Cursor_Circle_Fantasy_TeamColored"/>
+    <CPreloadModel id="UI_Cursor_Circle_SciFi"/>
+    <CPreloadModel id="UI_Cursor_Circle_Modern_TeamColored"/>
+    <CPreloadModel id="UI_Cursor_Circle_SciFi_TeamColored"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_End_Fantasy_Low"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_End_SciFi">
+        <Link value="UI_Cursor_StretchLine_End_Purifier"/>
+    </CPreloadModel>
+    <CPreloadModel id="UI_Cursor_StretchLine_Mid_Fantasy_Low"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_Start_Fantasy_Low"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_Start_SciFi"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_Start_Fantasy"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_StartFade_Fantasy"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_End_Fantasy"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_Mid_Fantasy"/>
+    <CPreloadModel id="UI_Cursor_StretchLine_Mid_SciFi"/>
+    <CPreloadModel id="UI_RangeSplat"/>
+    <CPreloadModel id="UI_Cursor_Circle_Fantasy"/>
+</Catalog>

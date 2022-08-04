@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="MinionProtossRangedWeapon@Mover" parent="MissileDefault"/>
+    <CMoverMissile id="MinionProtossWizardWeapon@Mover" parent="MissileDefault"/>
+    <CMoverMissile id="MinionProtossCatapultWeapon@MissileMover" parent="MissileDefault">
+        <MotionPhases index="0">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="10"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-0.2,-0.1"/>
+            <YawPitchRoll value="719.2968"/>
+            <Overlays Scale="0.7,0.1"/>
+        </MotionPhases>
+        <MotionPhases index="1">
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="10"/>
+            <ClearanceAcceleration value="75"/>
+            <YawPitchRoll value="MAX"/>
+            <Overlays Scale="0.1,0.1"/>
+        </MotionPhases>
+        <MotionOverlays Type="Wave" Axis="1,0,0" Wavelength="6,0.1"/>
+    </CMoverMissile>
+    <CMoverMissile id="MercenaryVanguardWeapon@Mover">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-1"/>
+            <Speed value="7.5"/>
+            <MaxSpeed value="30"/>
+            <Gravity value="60"/>
+            <ClearanceLookahead value="3"/>
+            <YawPitchRoll value="MAX"/>
+            <FlightTime value="1,-1"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>

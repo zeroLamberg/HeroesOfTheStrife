@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorEventMacroRunnable id="HeroKatarina@BaseGreenMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Diffuse_Green"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Emissive_Green"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Diffuse_Green"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroKatarina@BaseGreyMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Diffuse_Grey"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Emissive_Grey"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Diffuse_Grey"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Emissive_Grey"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Flamer_Diffuse_Grey"/>
+        <Do Send="TextureSelectById Scouter_Readout_Grey"/>
+        <Do Send="TextureSelectById Techcube2_Grey"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroKatarina@BaseGoldenMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Diffuse_Golden"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Emissive_Golden"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Diffuse_Golden"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Emissive_Golden"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Flamer_Diffuse_Golden"/>
+        <Do Send="TextureSelectById Scouter_Readout_Yellow"/>
+        <Do Send="TextureSelectById Techcube2_Yellow"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroKatarina@BasePurpleMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Diffuse_Purple"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Emissive_Purple"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Emissive_Purple"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Diffuse_Purple"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Flamer_Diffuse_Purple"/>
+        <Do Send="TextureSelectById Scouter_Readout_Purple"/>
+        <Do Send="TextureSelectById Techcube2_Purple"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroKatarina@BaseBlueMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Diffuse_Blue"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Emissive_Blue"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Emissive_Blue"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Diffuse_Blue"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Flamer_Diffuse_Blue"/>
+        <Do Send="TextureSelectById Scouter_Readout_Blue"/>
+        <Do Send="TextureSelectById Techcube2_Teal"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacroRunnable id="HeroKatarina@BaseRedMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Diffuse_Red"/>
+        <Do Send="TextureSelectById Hero_Katarina_Body_Emissive_Red"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Emissive_Red"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Base_Diffuse_Red"/>
+        <Do Send="TextureSelectById Hero_Katarina_Weapon_Flamer_Diffuse_Red"/>
+        <Do Send="TextureSelectById Scouter_Readout_Red"/>
+        <Do Send="TextureSelectById Techcube2_Red"/>
+    </CActorEventMacroRunnable>
+    <CActorEventMacro id="HeroKatarina@SkinEventMacro">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroKatarina@BaseBlue" Send="EventMacroRun HeroKatarina@BaseBlueMacro"/>
+        <On Terms="ModelSwap; ValidatePlayer HeroKatarina@BaseBlue" Send="EventMacroRun HeroKatarina@BaseBlueMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroKatarina@BaseGolden" Send="EventMacroRun HeroKatarina@BaseGoldenMacro"/>
+        <On Terms="ModelSwap; ValidatePlayer HeroKatarina@BaseGolden" Send="EventMacroRun HeroKatarina@BaseGoldenMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroKatarina@BaseGreen" Send="EventMacroRun HeroKatarina@BaseGreenMacro"/>
+        <On Terms="ModelSwap; ValidatePlayer HeroKatarina@BaseGreen" Send="EventMacroRun HeroKatarina@BaseGreenMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroKatarina@BaseGrey" Send="EventMacroRun HeroKatarina@BaseGreyMacro"/>
+        <On Terms="ModelSwap; ValidatePlayer HeroKatarina@BaseGrey" Send="EventMacroRun HeroKatarina@BaseGreyMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroKatarina@BasePurple" Send="EventMacroRun HeroKatarina@BasePurpleMacro"/>
+        <On Terms="ModelSwap; ValidatePlayer HeroKatarina@BasePurple" Send="EventMacroRun HeroKatarina@BasePurpleMacro"/>
+        <On Terms="ActorCreation; ValidatePlayer HeroKatarina@BaseRed" Send="EventMacroRun HeroKatarina@BaseRedMacro"/>
+        <On Terms="ModelSwap; ValidatePlayer HeroKatarina@BaseRed" Send="EventMacroRun HeroKatarina@BaseRedMacro"/>
+    </CActorEventMacro>
+    <CActorSiteOpLocalOffset id="HeroKatarinaExclusionZone@SOp2">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LocalOffset value="0.000000,-1.000000,0.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSplat id="KatarinaTalentClusterChargeOvercharge@CursorSplatOuter" parent="CoreGuideVisualCircleSciFi" abil="HeroKatarinaClusterCharge">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On index="0" Terms="Abil.HeroKatarinaClusterCharge.Guide; ValidatePlayer KatarinaTalentClusterChargeOvercharge" Send="Create"/>
+        <Model value="KatarinaTalentClusterChargeOvercharge@AOECursorSplatSciFi"/>
+    </CActorSplat>
+    <CActorSound id="HeroKatarinaFlashGrenade@SoundExplosion" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaFlashGrenade@TargetSearch.Start" Send="Create"/>
+        <Sound value="HeroKatarinaFlashGrenade@Explosion"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaFlashGrenade@SoundCast" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Abil.HeroKatarinaFlashGrenade.SourcePrepStart" Send="Create"/>
+        <Sound value="HeroKatarinaFlashGrenade@Cast"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaFlashGrenade@SoundToss" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaFlashGrenade@LaunchMissileSwitch.Start" Send="Create"/>
+        <Sound value="HeroKatarinaFlashGrenade@Toss"/>
+    </CActorSound>
+    <CActorSimple id="HeroKatarinaFlashGrenade@BlindActorSimple" parent="CoreBlind" behavior="HeroKatarinaFlashGrenade@Blind">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CActorSimple>
+    <CActorModel id="HeroKatarinaFlashGrenade@TargetImpact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaFlashGrenade@ImpactSet.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorRange id="HeroKatarinaFlashGrenade@Range" parent="CoreRangeAbilPlusSplat" abil="HeroKatarinaFlashGrenade">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CActorRange>
+    <CActorSplat id="HeroKatarinaFlashGrenade@CursorGuide" parent="CoreGuideVisualCircleSciFi" abil="HeroKatarinaFlashGrenade">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CActorSplat>
+    <CActorSplat id="HeroKatarinaFlashGrenade@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Scale value="12.800000"/>
+    </CActorSplat>
+    <CActorMissile id="HeroKatarinaFlashGrenade@AttackMissile" parent="CoreMissileWithDeath" unitName="HeroKatarinaFlashGrenade@Missile">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CActorMissile>
+    <CActorRange id="HeroKatarinaExclusionZone@Range" parent="CoreRangeAbilPlusSplat" abil="HeroKatarinaExclusionZone">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CActorRange>
+    <CActorSplat id="HeroKatarinaExclusionZone@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Scale value="10.750000"/>
+    </CActorSplat>
+    <CActorAction id="HeroKatarinaExclusionZone@ActionFromExplosion" parent="CoreGenericAttack" effectLaunch="HeroKatarinaExclusionZone@LaunchMissileFromExplosion1">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On index="6" Terms="Effect.HeroKatarinaExclusionZone@LaunchMissileFromExplosion1.Start" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaunchMissileFromExplosion2.Start" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaunchMissileFromExplosion3.Start" Send="Create"/>
+        <Missile value="HeroKatarinaExclusionZone@AttackMissile"/>
+    </CActorAction>
+    <CActorSound id="HeroKatarinaExclusionZone@GrenadeExplosion" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@SpawnTowersPersistent.Start" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroKatarinaExclusionZone@FinalImpact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@FinalDamage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroKatarinaExclusionZone@FinalDamageSound" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamDamage.Start" Send="Create"/>
+        <Sound value="HeroKatarinaExclusionZone@FinalDamage"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@GrenadeThrow" parent="CoreSoundOneShot">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaunchMissileFromCaster.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpCasterUnit"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@TowerBirthSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="UnitBirth.HeroKatarinaExclusionZone@Tower1" Send="Create"/>
+        <On Terms="UnitBirth.HeroKatarinaExclusionZone@Tower2" Send="Create"/>
+        <On Terms="UnitBirth.HeroKatarinaExclusionZone@Tower3" Send="Create"/>
+        <Sound value="HeroKatarinaExclusionZone@TowerBirth"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@TowerDeathSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="UnitDeath.HeroKatarinaExclusionZone@Tower1" Send="Create"/>
+        <On Terms="UnitDeath.HeroKatarinaExclusionZone@Tower2" Send="Create"/>
+        <On Terms="UnitDeath.HeroKatarinaExclusionZone@Tower3" Send="Create"/>
+        <Sound value="HeroKatarinaExclusionZone@TowerDeath"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@PulseBeamLaunchSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Start" Send="Create"/>
+        <Sound value="HeroKatarinaExclusionZone@PulseBeamLaunch"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@PulseBeamEndSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Stop" Send="Create"/>
+        <Sound value="HeroKatarinaExclusionZone@PulseBeamEnd"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@PulseDamageSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamDamage.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaExclusionZone@PulseBeamSound" parent="CoreSoundContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Stop" Send="Destroy"/>
+        <Sound value="HeroKatarinaExclusionZone@PulseBeam"/>
+    </CActorSound>
+    <CActorRegionArc id="HeroKatarinaExclusionZone@GuideGroundRegionArc" parent="GuideRegionNormal">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On index="1" removed="1"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <HostSiteOps Ops="SOp2DRotation"/>
+        <NotifyRadiusKey value="_Scalable"/>
+        <NotifyArcKey value="_Scalable"/>
+        <RegionFlags index="UseEffectRange" value="1"/>
+        <Radius value="1.000000"/>
+    </CActorRegionArc>
+    <CActorArc id="HeroKatarinaExclusionZone@Guide" parent="CoreGuideVisualTriangleSciFiTint" abil="HeroKatarinaExclusionZone">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <HostSiteOps Ops="SOp2DRotation SOpBasicScopePositionFollowHoldRotation HeroKatarinaExclusionZone@SOp2"/>
+        <Model value="HeroKatarinaExclusionZone@CursorGuide"/>
+        <Scale value="0.750000"/>
+    </CActorArc>
+    <CActorSound id="HeroKatarinaClusterCharge@ClusterChargeSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Behavior.HeroKatarinaClusterCharge@TimedLife.On" Send="Create"/>
+        <On Terms="Behavior.HeroKatarinaClusterCharge@TimedLife.Off" Send="Destroy"/>
+    </CActorSound>
+    <CActorModel id="HeroKatarinaExclusionZone@PulseEffect" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On index="3" Terms="Effect.HeroKatarinaExclusionZone@LaserBeamImpactSet.Start; At Target" Send="Create"/>
+        <On index="4" removed="1"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="HeroKatarinaClusterCharge@ClusterExplosionSound" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Behavior.HeroKatarinaClusterCharge@TimedLife.Off" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaClusterCharge@InitialInstaExplosionSet.Start" Send="Create"/>
+    </CActorSound>
+    <CActorArc id="HeroKatarinaExclusionZone@GuideGround" parent="GuideVisualArc">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On index="0" Terms="Effect.HeroKatarinaExclusionZone@PeriodicSearcher.Start"/>
+        <On index="1" Send="Create HeroKatarinaExclusionZone@GuideGroundRegionArc"/>
+        <On index="4" Terms="Effect.HeroKatarinaExclusionZone@PeriodicSearcher.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTargetPoint SOpForwardOriginPoint SOpMoveBackBy1"/>
+        <Model value="HeroKatarinaExclusionZone@CursorGuideGround"/>
+        <Macros value="HeroVorazunVoid@Macro"/>
+        <Scale value="0.750000"/>
+    </CActorArc>
+    <CActorSiteOpLocalOffset id="HeroKatarinaExclusionZone@SOp">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LocalOffset value="0.000000,2.750000,0.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorBeamSimple id="HeroKatarinaExclusionZone@SearchActionBeam2" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Mercenaries"/>
+        <On index="0" Send="AnimBracketStart BSD Stand Stand Death"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Stop; At Effect" Send="AnimBracketStop BSD"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Start" Send="Create"/>
+        <Model value="HeroKatarinaExclusionZone@Beam"/>
+        <HostLaunchSiteOps Ops="SOpCasterUnit SOpAttachTarget"/>
+        <HostImpactSiteOps Ops="SOpTargetUnit SOpAttachTarget"/>
+    </CActorBeamSimple>
+    <CActorAction id="HeroKatarinaExclusionZone@SearchAction" parent="GenericAttackBase">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Mercenaries"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearch.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Stop" Send="Destroy"/>
+        <ImpactSiteOps Ops="SOpAttachTarget"/>
+        <AcquisitionYawHalfArc value="10.000000"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorBeamSimple id="HeroKatarinaExclusionZone@SearchActionBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Mercenaries"/>
+        <On index="0" Send="AnimBracketStart BSD Stand Stand Death"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Stop; At Effect" Send="AnimBracketStop BSD"/>
+        <On Terms="Effect.HeroKatarinaExclusionZone@LaserBeamSearchPersistent.Start" Send="Create"/>
+        <Model value="HeroKatarinaExclusionZone@Beam"/>
+        <HostLaunchSiteOps Ops="SOpCasterUnit SOpAttachOverhead SOpMoveDownByDot25"/>
+        <HostImpactSiteOps Ops="SOpTargetUnit SOpAttachOverhead SOpMoveDownByDot25"/>
+    </CActorBeamSimple>
+    <CActorUnit id="HeroKatarinaExclusionZone@Tower1" parent="CoreUnitBase" unitName="HeroKatarinaExclusionZone@Tower1">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Model value="HeroKatarinaExclusionZone@Tower"/>
+        <On Terms="ActorCreation" Send="AnimPlay Birth Build,C,Start"/>
+        <On Terms="AnimDone; AnimPlaying Birth Build,C,Start" Send="AnimPlay Birth Build,D,Start"/>
+        <On Terms="ActorCreation" Send="AnimPlay Birth Build,D,Start"/>
+        <On Terms="AnimDone; AnimPlaying Birth Build,D,Start" Send="$Stand PlayForever"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaExclusionZone@TowerDeath"/>
+    </CActorUnit>
+    <CActorUnit id="HeroKatarinaExclusionZone@Tower2" parent="CoreUnitBase" unitName="HeroKatarinaExclusionZone@Tower2">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="ActorCreation" Send="AnimPlay Birth Build,C,Start"/>
+        <On Terms="AnimDone; AnimPlaying Birth Build,C,Start" Send="AnimPlay Birth Build,D,Start"/>
+        <On Terms="ActorCreation" Send="AnimPlay Birth Build,D,Start"/>
+        <On Terms="AnimDone; AnimPlaying Birth Build,D,Start" Send="$Stand PlayForever"/>
+        <Model value="HeroKatarinaExclusionZone@Tower"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaExclusionZone@TowerDeath"/>
+    </CActorUnit>
+    <CActorUnit id="HeroKatarinaExclusionZone@Tower3" parent="CoreUnitBase" unitName="HeroKatarinaExclusionZone@Tower3">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="ActorCreation" Send="AnimPlay Birth Build,C,Start"/>
+        <On Terms="AnimDone; AnimPlaying Birth Build,C,Start" Send="AnimPlay Birth Build,D,Start"/>
+        <On Terms="ActorCreation" Send="AnimPlay Birth Build,D,Start"/>
+        <On Terms="AnimDone; AnimPlaying Birth Build,D,Start" Send="$Stand PlayForever"/>
+        <Model value="HeroKatarinaExclusionZone@Tower"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaExclusionZone@TowerDeath"/>
+    </CActorUnit>
+    <CActorMissile id="HeroKatarinaExclusionZone@AttackMissile" parent="CoreMissileWithDeath" unitName="HeroKatarinaExclusionZone@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaExclusionZone@MissileExplosion"/>
+    </CActorMissile>
+    <CActorAction id="HeroKatarinaExclusionZone@Attack" parent="CoreGenericAttack" effectLaunch="HeroKatarinaExclusionZone@LaunchMissileFromCaster">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LaunchSiteOps Ops="SOpAttachWeaponRight"/>
+    </CActorAction>
+    <CActorSound id="HeroKatarinaClusterCharge@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Abil.HeroKatarinaClusterCharge.SourceCastStart" Send="Create"/>
+        <HostSiteOps Ops="SOpCasterUnit"/>
+    </CActorSound>
+    <CActorModel id="HeroKatarinaAimedShot@ModelImpact" parent="CoreModelAnimationStyleOneShotUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On index="3" Terms="Effect.HeroKatarinaAimedShot@Damage.Start" Send="Create"/>
+        <On index="4" removed="1"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+    </CActorModel>
+    <CActorSound id="HeroKatarinaAimedShot@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaAimedShot@Damage.Start; At Target" Send="Create"/>
+        <HostSiteOps Ops="SOpCasterPoint"/>
+        <Sound value="Katarina_AimedShot_SoundImpact"/>
+    </CActorSound>
+    <CActorAction id="HeroKatarinaAimedShot@Attack" parent="GenericAttackPointStandard" effectImpact="HeroKatarinaAimedShot@ImpactSet" effectLaunch="HeroKatarinaAimedShot@LM">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.Katarina_AimedShot_RicochetBolt_ImpactSet.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On Terms="Effect.Katarina_AimedShot_RicochetBolt_ImpactSet.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Katarina_AimedShot_AttackLaunch"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow SOpMoveUpBy2"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorSound id="HeroKatarinaWeaponSwap@ChangeCarriedWeaponSound" parent="SoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Abil.HeroKatarinaWeaponSwap.SourceCastStart" Send="Create"/>
+    </CActorSound>
+    <CActorAction id="HeroKatarinaLaserShot@Action" parent="GenericAttackPointStandard" effectImpact="HeroKatarinaLaserShot@ImpactSet" effectLaunch="HeroKatarinaLaserShot@Search">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow MuradinStormBoltOffset"/>
+        <ImpactMap index="None" Model="HeroKatarinaLaserShot@Impact"/>
+        <DamageSiteOps Ops="SOpTargetPoint"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorAction id="HeroKatarinaMegaShot@Action" parent="GenericAttackPointStandard" effectImpact="HeroKatarinaMegaShot@ImpactSet" effectLaunch="HeroKatarinaMegaShot@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="HeroKatarinaMegaShot@Launch"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow SOpMoveUpBy2"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorModel id="HeroKatarinaMegaShot@ModelImpact" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaMegaShot@ImpactSearch.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorRange id="HeroKatarinaClusterCharge@Range" parent="CoreRangeAbilPlusSplat" abil="HeroKatarinaClusterCharge">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+    </CActorRange>
+    <CActorSplat id="HeroKatarinaClusterCharge@RangeSplat" parent="UI_RangeSplat">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Scale value="8.500000"/>
+    </CActorSplat>
+    <CActorAction id="HeroKatarinaClusterCharge@Action" parent="GenericAttack" effectLaunch="HeroKatarinaClusterCharge@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+    </CActorAction>
+    <CActorUnit id="HeroKatarinaClusterCharge@ClusterBomb" parent="GenericUnitBase" unitName="HeroKatarinaClusterCharge@ClusterBomb">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaClusterCharge@Explosion"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+    </CActorUnit>
+    <CActorMissile id="HeroKatarinaClusterCharge@ActionMissile" parent="GenericAttackMissile" unitName="HeroKatarinaClusterCharge@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+    </CActorMissile>
+    <CActorAction id="HeroKatarinaWeaponGrenadeLauncher@Attack" parent="CoreGenericAttackHeroRangedMissile" effectImpact="HeroKatarinaWeaponGrenadeLauncher@ImpactSet" effectLaunch="HeroKatarinaWeaponGrenadeLauncher@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LaunchSiteOps Ops="SOpAttachHarness SOpMoveForwardByDotFour"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <ImpactMap index="Shield" Sound="HeroKatarinaWeaponGrenadeLauncher@AttackImpactShield"/>
+        <ImpactSound value="GenericAttackImpactSound"/>
+    </CActorAction>
+    <CActorMissile id="HeroKatarinaWeaponGrenadeLauncher@AttackMissile" parent="GenericAttackMissile" unitName="HeroKatarinaWeaponGrenadeLauncher@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+    </CActorMissile>
+    <CActorSound id="HeroKatarinaWeaponMaster@NoAmmo" parent="SoundOneShot">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaWeaponAutorifle@OutOfAmmo.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@OutOfAmmo.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaWeaponGrenadeLauncher@OutOfAmmo.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaWeaponSnipe@OutOfAmmo.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaEquipAutorifle@SoundEq" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaEquipAutorifle.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaEquipGrenadeLauncher@SoundEq" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaEquipGrenadeLauncher.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaEquipSnipe@SoundEq" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaEquipSnipe.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaEquipFlamethrower@SoundEq" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaEquipFlamethrower.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaLaserShot@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaLaserShot@Search.Start; At Caster" Send="Create"/>
+        <Sound value="HeroKatarinaLaserShot@Launch"/>
+    </CActorSound>
+    <CActorSound id="HeroKatarinaMegaShot@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaMegaShot@LaunchMissile.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpCasterPoint"/>
+        <Sound value="Katarina_MegaShot_SoundLaunch"/>
+    </CActorSound>
+    <CActorMissile id="HeroKatarinaMegaShot@ActionMissile" parent="CoreHeroMissileWithDeath" unitName="Katarina_TripleShot_AttackMissile">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Model value="HeroKatarinaMegaShot@ActionMissile"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaMegaShot@ActionMissile"/>
+    </CActorMissile>
+    <CActorQuad id="HeroKatarinaMegaShot@CursorGuide" parent="CoreGuideVisualQuadDownFantasy" abil="HeroKatarinaMegaShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Height value="14.000000"/>
+        <Width value="1.320000"/>
+    </CActorQuad>
+    <CActorSound id="HeroKatarinaLaserShot@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaLaserShot@ImpactSet.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="HeroKatarinaFlameStream@ModelFireLaunch" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaFlameStream@InitialPersistent.Start" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaFlameStream@InitialPersistent.Stop" Send="TimerSet 0.250000 Remove"/>
+        <On Terms="TimerExpired; TimerName Remove" Send="Destroy"/>
+        <On Terms="Effect.HeroKatarinaFlameStream@InitialPersistent.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpCasterUnit SOpAttachWeapon SOpMoveBackByDot25"/>
+    </CActorModel>
+    <CActorSound id="HeroKatarinaMegaShot@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaMegaShot@ImpactSearch.Start; At Target" Send="Create"/>
+        <Sound value="Katarina_MegaShot_SoundImpact"/>
+    </CActorSound>
+    <CActorAction id="HeroKatarinaWeaponAutorifle@Attack" parent="CoreGenericAttackHeroRangedMissile" effectImpact="HeroKatarinaWeaponAutorifle@ImpactSet" effectLaunch="HeroKatarinaWeaponAutorifle@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="HeroKatarina_Weapon_Autorifle_AttackLaunch"/>
+        <ImpactMap index="None" Sound="HeroKatarina_Weapon_Autorifle_AttackImpact"/>
+        <ImpactMap index="Shield" Sound="HeroKatarinaWeaponAutorifle@AttackImpactShield"/>
+        <ImpactSound value="GenericAttackImpactSound"/>
+    </CActorAction>
+    <CActorMissile id="HeroKatarinaWeaponAutorifle@AttackMissile" parent="CoreMissileWithDeath" unitName="HeroKatarinaWeaponAutorifle@Missile">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CActorMissile>
+    <CActorSound id="HeroKatarinaWeaponFlamethrower@SoundLoop" parent="CoreSoundContinuous">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpCasterUnit"/>
+    </CActorSound>
+    <CActorMissile id="HeroKatarinaAimedShot@AttackMissile" parent="CoreHeroMissileWithDeath" unitName="Katarina_AimedShot_Missile">
+        <Macros value="GlobalLoopMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Model value="HeroKatarinaAimedShot@Missile"/>
+        <DeathArray index="Normal" ModelLink="HeroKatarinaAimedShot@Missile"/>
+    </CActorMissile>
+    <CActorSound id="HeroKatarinaWeaponFlamethrower@SoundLaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="WeaponStart.HeroKatarinaWeaponFlamethrower.AttackStart" Send="Create"/>
+        <On Terms="Effect.HeroKatarinaFlameStream@InitialPersistent.Start" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="HeroKatarinaEquipAutorifle" parent="CoreItemBase" unitName="HeroKatarinaEquipAutorifle">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="HeroKatarinaEquipGrenadeLauncher" parent="CoreItemBase" unitName="HeroKatarinaEquipGrenadeLauncher">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="HeroKatarinaEquipSnipe" parent="CoreItemBase" unitName="HeroKatarinaEquipSnipe">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="HeroKatarinaEquipFlamethrower" parent="CoreItemBase" unitName="HeroKatarinaEquipFlamethrower">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="HeroKatarina" parent="CoreHeroBase" unitName="HeroKatarina">
+        <Macros value="HeroKatarina@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <!--<On index="42" Terms="Signal.*.InvisibleModel" Target="HeroRingUnitRadiusDot75" Send="SetVisibility"/>
+        <On index="43" Terms="Signal.*.RestoreModel" Target="HeroRingUnitRadiusDot75" Send="SetVisibility 1"/>
+        <On index="44" Terms="Signal.*.InvisibleRing" Target="HeroRingUnitRadiusDot75" Send="SetVisibility"/>
+        <On index="45" Terms="Signal.*.RestoreRing" Target="HeroRingUnitRadiusDot75" Send="SetVisibility 1"/>
+        <On index="46" Terms="ActorCreation" Send="Create HeroRingUnitRadiusDot75"/>
+        <On index="47" Terms="ActorDestruction" Target="HeroRingUnitRadiusDot75" Send="Destroy"/>-->
+        <On Terms="UnitDeathCustomize; !ValidateUnit SourceDoesNotHaveSuppressGenericDeath" Send="DeathCustomize Variation1"/>
+        <!-- Katarina - Common Anims                -->
+        <On Terms="Signal.*.TakeWeapon" Send="AnimPlay TakeWeaponAnim Cover,End 0 0.300000 0.300000 3.000000 AsTimeScaleAbsolute 0.000000 200"/>
+        <On Terms="Abil.HeroKatarinaAimedShot.SourcePrepStart" Send="$Spell,C,Start 0 -1.000000 -1.000000 1.500000 AsTimeScaleAbsolute"/>
+        <On Terms="Effect.HeroKatarinaAimedShot@LM.Start" Send="$Spell,C,End 0 -1.000000 -1.000000 1.500000 AsTimeScaleAbsolute"/>
+        <On Terms="Abil.HeroKatarinaLaserShot.SourcePrepStart" Send="$Spell,C,Start 0 -1.000000 -1.000000 1.250000 AsTimeScaleAbsolute"/>
+        <On Terms="Effect.HeroKatarinaLaserShot@InitialPersistent.Start" Send="$Spell,C,End 0 -1.000000 -1.000000 1.250000 AsTimeScaleAbsolute"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Start; At Caster" Send="AnimBracketStart Attack {} Attack"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Stop; At Caster" Send="AnimBracketStop Attack"/>
+        <!--                                               -->
+        <On Terms="WeaponStop.*.AttackStop; ValidateUnit HeroKatarina@QueueEquipCombine" Send="AnimClear Attack"/>
+        <On Terms="Abil.HeroKatarinaMegaShot.SourcePrepStart" Send="$Spell,C,Start 0 -1.000000 -1.000000 1.500000 AsTimeScaleAbsolute"/>
+        <On Terms="Effect.HeroKatarinaMegaShot@LaunchPersistent.Start" Send="$Spell,C,End 0 -1.000000 -1.000000 1.500000 AsTimeScaleAbsolute"/>
+        <On Terms="Abil.HeroKatarinaClusterCharge.SourcePrepStart" Send="$Spell,A"/>
+        <On Terms="Abil.HeroKatarinaExclusionZone.SourcePrepStart" Send="$Spell,A"/>
+        <On Terms="Abil.HeroKatarinaFlashGrenade.SourcePrepStart" Send="$Spell,A"/>
+        <On Terms="Behavior.HeroKatarinaFlameStream.On" Target="HeroKatarinaWeaponFlamethrower@ModelFireLaunch" Send="Signal FlameStreamOn"/>
+        <On Terms="Behavior.HeroKatarinaFlameStream.Off" Target="HeroKatarinaWeaponFlamethrower@ModelFireLaunch" Send="Signal FlameStreamOff"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Start; At Caster" Send="Create HeroKatarinaWeaponFlamethrower@ModelFireLaunch"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Start; At Caster; ValidateUnit HeroKatarinaFlameStream@TargetHasBuff" Target="HeroKatarinaWeaponFlamethrower@ModelFireLaunch" Send="Signal FlameStreamOn"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Attack" Send="AnimClear Attack"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Spell" Send="AnimClear Spell"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="WeaponStart.*.AttackStart; ValidateUnit HeroKatarinaWeaponFlamethrower@TargetNotWeaponEquipped" Send="AnimPlay Attack Attack"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying TakeWeaponAnim Cover" Send="AnimClear TakeWeaponAnim"/>
+        <On Terms="Abil.*.SourcePrepStart; AnimPlaying TakeWeaponAnim Cover" Send="AnimClear TakeWeaponAnim"/>
+        <On Terms="Signal.*.TakeWeapon" Send="AnimClear Spell"/>
+        <Model value="HeroKatarina@KatarinaAutoriflerSniped"/>
+        <Baselines index="Stand" AnimProps="Stand,00"/>
+        <Baselines index="Walk" AnimProps="Walk"/>
+        <BuildModel value="HeroKatarina@KatarinaAutoriflerSniped"/>
+        <DeathArray index="Normal" SoundLink="Katarina_Death"/>
+        <DeathCustoms AnimProps="Death" ModelLink="Invisible" Name="Variation1"/>
+        <PlacementModel value="HeroKatarina@KatarinaAutoriflerSniped"/>
+        <PortraitActor value="KatarinaPortraitActor"/>
+        <PortraitModel value="HeroKatarina@Portrait"/>
+        <WalkAnimMoveSpeed value="2.3203"/>
+        <AbilSoundArray AbilCmd="Katarina_TossEMPGrenade,Execute" Sound="Katarina_UltimateUsed"/>
+        <AbilSoundArray AbilCmd="HeroKatarinaAimedShot,255" Sound="Katarina_PrimaryBattleAbility"/>
+        <AbilSoundArray AbilCmd="HeroKatarinaMegaShot,255" Sound="Katarina_PrimaryBattleAbility"/>
+        <AbilSoundArray AbilCmd="HeroKatarinaFlameStream,255" Sound="Katarina_PrimaryBattleAbility"/>
+        <AbilSoundArray AbilCmd="HeroKatarinaLaserShot,255" Sound="Katarina_PrimaryBattleAbility"/>
+        <CustomUnitStatusFrame value="UnitStatus/HeroUnitStatusFrameOrangeEnergy"/>
+        <ErrorArray Error="NotEnoughEnergy" Sound="Katarina_EnergyLow"/>
+        <MinimapIcon value="assets\Textures\UI_MinimapIcon_Hero_Katarina.dds"/>
+        <UnitIcon value="assets\Textures\storm_ui_ingame_heroselect_btn_katarina.dds"/>
+    </CActorUnit>
+    <CActorSound id="HeroKatarinaWeaponFlamethrower@SoundImpact" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@Damage.Start; At Target" Send="Create"/>
+    </CActorSound>
+    <CActorAction id="HeroKatarinaWeaponSnipe@Attack" parent="CoreGenericAttackHeroRangedMissile" effectImpact="HeroKatarinaWeaponSnipe@ImpactSet" effectLaunch="HeroKatarinaWeaponSnipe@LaunchMissile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Remove index="0" removed="1"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+    </CActorAction>
+    <CActorMissile id="HeroKatarinaWeaponSnipe@AttackMissile" parent="GenericAttackMissile" unitName="HeroKatarinaWeaponSnipe@Missile">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <DeathArray index="Normal" ModelLink="RaynorAttackMissile"/>
+    </CActorMissile>
+    <CActorSound id="HeroKatarinaLaserShot@SoundPrelaunch" parent="CoreSoundOneShot">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Abil.HeroKatarinaLaserShot.SourcePrepStart" Send="Create"/>
+        <Sound value="HeroKatarinaLaserShot@Prelaunch"/>
+    </CActorSound>
+    <CActorBeamSimple id="HeroKatarinaLaserShot@Beam" parent="BeamSimpleAnimationStyleContinuous">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On index="0" Send="AnimBracketStart BSD Stand Stand Death 0 3.000000 AsTimeScale"/>
+        <On Terms="Effect.HeroKatarinaLaserShot@PointForVisual.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.250000 Life"/>
+        <On Terms="TimerExpired; TimerName Life" Send="AnimBracketStop BSD"/>
+        <HostForProps Subject="::Creator"/>
+        <HostLaunch Subject="_Unit"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon SOpMoveBackByDot5" HoldPosition="1" HoldRotation="1"/>
+        <HostImpact Scope="Target" Effect="HeroKatarinaLaserShot@PointForVisual"/>
+        <HostImpactSiteOps Ops="SOpTargetPointStationary SOpMoveUpBy2" HoldPosition="1" HoldRotation="1"/>
+    </CActorBeamSimple>
+    <CActorModel id="HeroKatarinaWeaponFlamethrower@ModelFireLaunch" parent="CoreModelAnimationStyleContinuousUnit">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaWeaponFlamethrower@InitialCreatePersistent.Stop" Send="Destroy"/>
+        <On Terms="Signal.*.FlameStreamOn" Send="SetScale 1.500000 0.250000"/>
+        <On Terms="Signal.*.FlameStreamOff" Send="SetScale 1.000000 0.250000"/>
+        <HostSiteOps Ops="SOpCasterUnit SOpAttachWeapon SOpMoveBackByDot25"/>
+    </CActorModel>
+    <CActorQuad id="HeroKatarinaAimedShot@CursorGuide" parent="CoreGuideVisualQuadDownFantasy" abil="HeroKatarinaAimedShot">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Height value="14.000000"/>
+        <Width value="1.000000"/>
+    </CActorQuad>
+    <CActorQuad id="HeroKatarinaLaserShot@CursorGuide" parent="CoreGuideVisualQuadDownFantasy" abil="HeroKatarinaLaserShot">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Height value="15.000000"/>
+        <Width value="1.000000"/>
+    </CActorQuad>
+    <CActorPortrait id="KatarinaPortraitActor">
+        <Macros value="HeroKatarina@SkinEventMacro"/>
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+    </CActorPortrait>
+    <CActorSplat id="HeroKatarinaClusterCharge@CursorSplat" parent="CoreGuideVisualCircleSciFi" abil="HeroKatarinaClusterCharge">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+    </CActorSplat>
+    <CActorSplat id="HeroKatarinaClusterCharge@CursorSplatOuter" parent="CoreGuideVisualCircleSciFi" abil="HeroKatarinaClusterCharge">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Model value="HeroKatarinaClusterCharge@AOECursorSplatSciFi"/>
+    </CActorSplat>
+    <CActorAction id="HeroKatarinaFlashGrenade@AttackClose" parent="CoreGenericAttack" effectImpact="HeroKatarinaFlashGrenade@TargetSearch" effectLaunch="HeroKatarinaFlashGrenade@LaunchMissileClose">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Missile value="HeroKatarinaFlashGrenade@AttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorAction id="HeroKatarinaFlashGrenade@AttackMedium" parent="CoreGenericAttack" effectImpact="HeroKatarinaFlashGrenade@TargetSearch" effectLaunch="HeroKatarinaFlashGrenade@LaunchMissileMedium">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Missile value="HeroKatarinaFlashGrenade@AttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorAction id="HeroKatarinaFlashGrenade@AttackFar" parent="CoreGenericAttack" effectImpact="HeroKatarinaFlashGrenade@TargetSearch" effectLaunch="HeroKatarinaFlashGrenade@LaunchMissileFar">
+        <EditorCategories value="DoodadType:NotDoodad,CoreHero:Katarina"/>
+        <Missile value="HeroKatarinaFlashGrenade@AttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpShadow"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorModel id="HeroKatarinaFlashGrenade@Explosion" parent="CoreModelAnimationStyleOneShot">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <On Terms="Effect.HeroKatarinaFlashGrenade@TargetSearch.Start" Send="Create"/>
+    </CActorModel>
+</Catalog>

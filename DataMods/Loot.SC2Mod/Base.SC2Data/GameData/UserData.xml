@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="Mount">
+        <Instances Id="HearthstoneCard">
+            <Fixed Fixed="4.5">
+                <Field Id="WalkAnimMoveSpeed"/>
+            </Fixed>
+            <GameLink GameLink="Mount_HearthstoneCard_Summon">
+                <Field Id="VO Mounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCard_Dismiss">
+                <Field Id="VO Dismounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCard_Move_Loop">
+                <Field Id="VO Looping"/>
+            </GameLink>
+            <GameLink GameLink="MountHearthstoneCard">
+                <Field Id="Model"/>
+            </GameLink>
+            <GameLink GameLink="MountHearthstoneCardVar02TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="MountHearthstoneCardVar03TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="2"/>
+            </GameLink>
+            <String String="2015:06:02:00:00:00">
+                <Field Id="ReleaseDate"/>
+            </String>
+            <Text Text="UserData/Mount/HearthstoneCard_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCard_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCard_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCard_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCard_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCard_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="MountCategory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="MountCollectionCategory" Instance="Magical">
+                <Field Id="CollectionCategory"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+        </Instances>
+        <Instances Id="HearthstoneCardMedivh">
+            <Fixed Fixed="4.5">
+                <Field Id="WalkAnimMoveSpeed"/>
+            </Fixed>
+            <GameLink GameLink="Mount_HearthstoneCard_Summon">
+                <Field Id="VO Mounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCard_Dismiss">
+                <Field Id="VO Dismounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCard_Move_Loop">
+                <Field Id="VO Looping"/>
+            </GameLink>
+            <GameLink GameLink="MountHearthstoneCardMedivh">
+                <Field Id="Model"/>
+            </GameLink>
+            <Text Text="UserData/Mount/HearthstoneCardMedivh_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardMedivh_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardMedivh_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <User Type="MountCollectionCategory" Instance="Magical">
+                <Field Id="CollectionCategory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="MountCategory"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+        </Instances>
+        <Instances Id="HearthstoneCardCookieBite">
+            <Fixed Fixed="4.5">
+                <Field Id="WalkAnimMoveSpeed"/>
+            </Fixed>
+            <GameLink GameLink="Mount_CookieBite_Summon">
+                <Field Id="VO Mounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_CookieBite_Dismiss">
+                <Field Id="VO Dismounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_CookieBite_Stand_Loop">
+                <Field Id="VO Looping"/>
+            </GameLink>
+            <GameLink GameLink="Mount_CookieBite_Move_Loop">
+                <Field Id="VO Moving"/>
+            </GameLink>
+            <GameLink GameLink="MountHearthstoneCardCookieBite">
+                <Field Id="Model"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardCookieBiteMountVar1TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardCookieBiteMountVar2TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardCookieBiteMountVar3TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardCookieBiteMountVar4TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="4"/>
+            </GameLink>
+            <String String="2017:12:12:00:00:00">
+                <Field Id="ReleaseDate"/>
+            </String>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationAdditionalSearchText_003">
+                <Field Id="VariationAdditionalSearchText" Index="3"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationAdditionalSearchText_004">
+                <Field Id="VariationAdditionalSearchText" Index="4"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationName_003">
+                <Field Id="VariationName" Index="3"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardCookieBite_VariationName_004">
+                <Field Id="VariationName" Index="4"/>
+            </Text>
+            <User Type="Event" Instance="WinterVeil">
+                <Field Id="Event"/>
+            </User>
+            <User Type="MountCollectionCategory" Instance="SeasonalEvents">
+                <Field Id="CollectionCategory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="4"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="3"/>
+            </User>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="MountCategory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Platinum">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Platinum">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Platinum">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Platinum">
+                <Field Id="VariationSupporterTypeRequired" Index="4"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Platinum">
+                <Field Id="VariationSupporterTypeRequired" Index="3"/>
+            </User>
+        </Instances>
+        <Instances Id="HearthstoneCardSoapBar">
+            <Fixed Fixed="4.5">
+                <Field Id="WalkAnimMoveSpeed"/>
+            </Fixed>
+            <GameLink GameLink="MountHearthstoneCardSoapBar">
+                <Field Id="Model"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCardSoapBar_Summon">
+                <Field Id="VO Mounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCardSoapBar_Dismiss">
+                <Field Id="VO Dismounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCardSoapBar_Move_Loop">
+                <Field Id="VO Moving"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCardSoapBar_Idle_Loop">
+                <Field Id="VO Stationary"/>
+            </GameLink>
+            <GameLink GameLink="Mount_HearthstoneCardSoapBar_Start">
+                <Field Id="VO Start Moving"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardSoapBarMountVar1TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardSoapBarMountVar0TextureSwap">
+                <Field Id="VariationCreationActorMessage"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardSoapBarMountVar2TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="HearthstoneCardSoapBarMountVar3TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="3"/>
+            </GameLink>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationAdditionalSearchText_003">
+                <Field Id="VariationAdditionalSearchText" Index="3"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/HearthstoneCardSoapBar_VariationName_003">
+                <Field Id="VariationName" Index="3"/>
+            </Text>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="MountCategory"/>
+            </User>
+            <User Type="MountCollectionCategory" Instance="Magical">
+                <Field Id="CollectionCategory"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="3"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="Event" Instance="[Default]">
+                <Field Id="Event"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Gold">
+                <Field Id="VariationSupporterTypeRequired"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Gold">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Gold">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Gold">
+                <Field Id="VariationSupporterTypeRequired" Index="3"/>
+            </User>
+        </Instances>
+        <Instances Id="BlackheartsDoubloon">
+            <Fixed Fixed="4.5">
+                <Field Id="WalkAnimMoveSpeed"/>
+            </Fixed>
+            <GameLink GameLink="MountBlackheartsDoubloon">
+                <Field Id="Model"/>
+            </GameLink>
+            <GameLink GameLink="Mount_Doubloon_Summon">
+                <Field Id="VO Mounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_Doubloon_Dismiss">
+                <Field Id="VO Dismounted"/>
+            </GameLink>
+            <GameLink GameLink="Mount_Doubloon_Move_Loop">
+                <Field Id="VO Looping"/>
+            </GameLink>
+            <GameLink GameLink="MountDoubloonVar02TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="MountDoubloonVar03TextureSwap">
+                <Field Id="VariationCreationActorMessage" Index="2"/>
+            </GameLink>
+            <String String="2015:09:00:00:00:00">
+                <Field Id="ReleaseDate"/>
+            </String>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationName">
+                <Field Id="VariationName"/>
+            </Text>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationAdditionalSearchText">
+                <Field Id="VariationAdditionalSearchText"/>
+            </Text>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationAdditionalSearchText_001">
+                <Field Id="VariationAdditionalSearchText" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationAdditionalSearchText_002">
+                <Field Id="VariationAdditionalSearchText" Index="2"/>
+            </Text>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationInfo">
+                <Field Id="VariationInfo"/>
+            </Text>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationName_001">
+                <Field Id="VariationName" Index="1"/>
+            </Text>
+            <Text Text="UserData/Mount/BlackheartsDoubloon_VariationName_002">
+                <Field Id="VariationName" Index="2"/>
+            </Text>
+            <User Type="MountMountCategory" Instance="Ridesurf">
+                <Field Id="MountCategory"/>
+            </User>
+            <User Type="MountCollectionCategory" Instance="Magical">
+                <Field Id="CollectionCategory"/>
+            </User>
+            <User Type="Event" Instance="[Default]">
+                <Field Id="Event"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="IsEnabled"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="2"/>
+            </User>
+            <User Type="GenericTrueFalse" Instance="True">
+                <Field Id="VariationIsUsed" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="GrandMaster">
+                <Field Id="Meta Data - Supporter Type Required"/>
+            </User>
+            <User Type="AccessDeniedError" Instance="SupporterGrandMaster">
+                <Field Id="AccessDeniedError"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="1"/>
+            </User>
+            <User Type="PlayerSupporterType" Instance="Bronze">
+                <Field Id="VariationSupporterTypeRequired" Index="2"/>
+            </User>
+        </Instances>
+    </CUser>
+</Catalog>

@@ -1,0 +1,427 @@
+include "TriggerLibs/NativeLib"
+include "LibCore"
+include "LibGame"
+include "LibUIUI"
+
+include "LibHSld_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Selendis
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libHSld_InitLibraries () {
+    libNtve_InitVariables();
+    libCore_InitVariables();
+    libGame_InitVariables();
+    libUIUI_InitVariables();
+}
+
+// Variable Initialization
+bool libHSld_InitVariables_completed = false;
+
+void libHSld_InitVariables () {
+    if (libHSld_InitVariables_completed) {
+        return;
+    }
+
+    libHSld_InitVariables_completed = true;
+
+}
+
+// Functions
+fixed libHSld_gf_HeroSelendisTemplarWillpowerShieldsModifier (int lp_player, string lp_effect, unit lp_triggeringUnit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((lp_effect == "HeroSelendisWeapon@Damage") || (lp_effect == "HeroSelendisWeapon@DamageCritical"))) {
+        if ((UnitTypeTestAttribute(UnitGetType(lp_triggeringUnit), c_unitAttributeHeroic) == true) && (PlayerHasTalent(lp_player, "HeroSelendisTalentTemplarWillPowerPlasmaShield") == true)) {
+            return libHSld_gv_heroSelendisTemplarWillpowerShieldsModifierPlasmaShield;
+        }
+        else {
+            return libHSld_gv_heroSelendisTemplarWillpowerShieldsModifier;
+        }
+    }
+    else {
+        return libHSld_gv_heroSelendisTemplarWillpowerShieldsModifierPhaseBulwark;
+    }
+}
+
+fixed libHSld_gf_HeroSelendisTemplarWillpowerHPShieldsMaxModifier (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((PlayerHasTalent(lp_player, "HeroSelendisTalentTemplarWillpowerReconfigurationShield") == false)) {
+        return libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifier;
+    }
+    else {
+        return libHSld_gv_heroSelendisTemplarWillpowerHPShieldsMaxModifierReconfigurationShields;
+    }
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Selendis - Templar Willpower (Damaged)
+//--------------------------------------------------------------------------------------------------
+bool libHSld_gt_HeroSelendisTemplarWillpowerDamaged_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_damagingUnit;
+    int lv_damagingPlayer;
+    unit lv_targetUnit;
+    fixed lv_shieldsValueDamaged;
+    fixed lv_shieldsValueMax;
+    fixed lv_shieldsValueCurrent;
+    fixed lv_shieldsValueCurrent_FCT;
+    string lv_shieldsBehavior;
+    bool lv_isCrit;
+    string lv_style;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_damagingUnit = EventUnitDamageSourceUnit();
+    lv_damagingPlayer = EventUnitDamageSourcePlayer();
+    lv_targetUnit = EventUnit();
+    lv_shieldsBehavior = "HeroSelendisTemplarWillpower";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitDamageEffect() != "HeroSelendisWeapon@Damage") && (EventUnitDamageEffect() != "HeroSelendisWeapon@DamageCritical") && ((PlayerHasTalent(lv_damagingPlayer, "HeroSelendisTalentTemplarWillpowerPhaseBulwark") == false) || (UnitTypeTestAttribute(UnitGetType(lv_targetUnit), c_unitAttributeHeroic) == false))) {
+        return true;
+    }
+
+    lv_shieldsValueDamaged = (EventUnitDamageAmount() + EventUnitDamageBehaviorShield());
+    if ((lv_shieldsValueDamaged <= 0.0)) {
+        return true;
+    }
+
+    lv_shieldsValueCurrent = UnitBehaviorDamageModifyRemaining(lv_damagingUnit, lv_shieldsBehavior);
+    lv_shieldsValueCurrent_FCT = lv_shieldsValueCurrent;
+    lv_isCrit = libCore_gf_CheckForCriticalDamage(EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect(), c_unitDamageTypeAny);
+    lv_shieldsValueDamaged *= libHSld_gf_HeroSelendisTemplarWillpowerShieldsModifier(lv_damagingPlayer, EventUnitDamageEffect(), lv_targetUnit);
+    lv_shieldsValueMax = StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, "HeroSelendis", "LifeMax", lv_damagingPlayer));
+    lv_shieldsValueMax *= libHSld_gf_HeroSelendisTemplarWillpowerHPShieldsMaxModifier(lv_damagingPlayer);
+    if ((lv_shieldsValueCurrent < lv_shieldsValueMax)) {
+        lv_shieldsValueCurrent += lv_shieldsValueDamaged;
+        if ((lv_shieldsValueCurrent > lv_shieldsValueMax)) {
+            lv_shieldsValueCurrent = lv_shieldsValueMax;
+        }
+    }
+
+    CatalogFieldValueSet(c_gameCatalogBehavior, lv_shieldsBehavior, "DamageResponse.ModifyLimit", lv_damagingPlayer, FixedToString(lv_shieldsValueCurrent, 3));
+    UnitBehaviorAdd(lv_damagingUnit, lv_shieldsBehavior, lv_damagingUnit, 1);
+    if (((lv_shieldsValueCurrent_FCT + lv_shieldsValueDamaged) >= lv_shieldsValueMax)) {
+        lv_shieldsValueCurrent_FCT = (lv_shieldsValueMax - lv_shieldsValueCurrent_FCT);
+    }
+    else {
+        lv_shieldsValueCurrent_FCT = lv_shieldsValueDamaged;
+    }
+    if ((lv_shieldsValueCurrent_FCT < 1.0)) {
+        return true;
+    }
+
+    if ((lv_isCrit == true)) {
+        lv_style = "FCT_Shield_Crit";
+    }
+    else {
+        lv_style = "FCT_Shield_Normal";
+    }
+    libUIUI_gf_UICombatFloatingElementsCreateTextTagatUnitForPlayers(lv_damagingUnit, FixedToText(lv_shieldsValueCurrent_FCT, 0), lv_style, libUIUI_ge_UIFCTDirection_Vertical, libCore_gv_playerGroupFromPlayer[lv_damagingPlayer], 0, "EventAnimate", false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHSld_gt_HeroSelendisTemplarWillpowerDamaged_Init () {
+    libHSld_gt_HeroSelendisTemplarWillpowerDamaged = TriggerCreate("libHSld_gt_HeroSelendisTemplarWillpowerDamaged_Func");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisWeapon@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisWeapon@DamageCritical");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisExecutorBlade@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisExecutorChargeApproach@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisVindicatorsBeam@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisTalentVindicatorsBeamInduction@PercentDamage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisPowerStrike@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisPowerStrike@ExpireDamage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisTemplarWillpowerDamaged, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Selendis - Templar Willpower (Absorbed)
+//--------------------------------------------------------------------------------------------------
+bool libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_damagingUnit;
+    int lv_damagingPlayer;
+    unit lv_targetUnit;
+    fixed lv_shieldsValueDamaged;
+    fixed lv_shieldsValueMax;
+    fixed lv_shieldsValueCurrent;
+    fixed lv_shieldsValueCurrent_FCT;
+    string lv_shieldsBehavior;
+    bool lv_isCrit;
+    string lv_style;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_damagingUnit = EventUnitDamageSourceUnit();
+    lv_damagingPlayer = EventUnitDamageSourcePlayer();
+    lv_targetUnit = EventUnit();
+    lv_shieldsBehavior = "HeroSelendisTemplarWillpower";
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnitDamageSourceUnit()) == "HeroSelendis"))) {
+            return false;
+        }
+
+        if (!(((EventUnitDamageEffect() != "HeroSelendisWeapon@Damage") || (EventUnitDamageEffect() != "HeroSelendisWeapon@DamageCritical") || (EventUnitDamageEffect() != "HeroSelendisExecutorBlade@Damage") || (EventUnitDamageEffect() != "HeroSelendisExecutorChargeApproach@Damage") || (EventUnitDamageEffect() != "HeroSelendisVindicatorsBeam@Damage") || (EventUnitDamageEffect() != "HeroSelendisTalentVindicatorsBeamInduction@PercentDamage") || (EventUnitDamageEffect() != "HeroSelendisTalentTemplarWillpowerDeflectionShield@Damage") || (EventUnitDamageEffect() != "HeroSelendisPowerStrike@Damage") || (EventUnitDamageEffect() != "HeroSelendisPowerStrike@ExpireDamage") || (EventUnitDamageEffect() != "HeroSelendisTalentPowerStrikeTemplarsZeal@TimedDamage")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventUnitDamageEffect() != "HeroSelendisWeapon@Damage") && (EventUnitDamageEffect() != "HeroSelendisWeapon@DamageCritical") && ((PlayerHasTalent(lv_damagingPlayer, "HeroSelendisTalentTemplarWillpowerPhaseBulwark") == false) || (UnitTypeTestAttribute(UnitGetType(lv_targetUnit), c_unitAttributeHeroic) == false))) {
+        return true;
+    }
+
+    lv_shieldsValueDamaged = EventUnitDamageAbsorbed();
+    if ((lv_shieldsValueDamaged <= 0.0)) {
+        return true;
+    }
+
+    lv_shieldsValueCurrent = UnitBehaviorDamageModifyRemaining(lv_damagingUnit, lv_shieldsBehavior);
+    lv_shieldsValueCurrent_FCT = lv_shieldsValueCurrent;
+    lv_isCrit = libCore_gf_CheckForCriticalDamage(EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect(), c_unitDamageTypeAny);
+    lv_shieldsValueDamaged *= libHSld_gf_HeroSelendisTemplarWillpowerShieldsModifier(lv_damagingPlayer, EventUnitDamageEffect(), lv_targetUnit);
+    lv_shieldsValueMax = StringToFixed(CatalogFieldValueGet(c_gameCatalogUnit, "HeroSelendis", "LifeMax", lv_damagingPlayer));
+    lv_shieldsValueMax *= libHSld_gf_HeroSelendisTemplarWillpowerHPShieldsMaxModifier(lv_damagingPlayer);
+    if ((lv_shieldsValueCurrent < lv_shieldsValueMax)) {
+        lv_shieldsValueCurrent += lv_shieldsValueDamaged;
+        if ((lv_shieldsValueCurrent > lv_shieldsValueMax)) {
+            lv_shieldsValueCurrent = lv_shieldsValueMax;
+        }
+    }
+
+    CatalogFieldValueSet(c_gameCatalogBehavior, lv_shieldsBehavior, "DamageResponse.ModifyLimit", lv_damagingPlayer, FixedToString(lv_shieldsValueCurrent, 3));
+    UnitBehaviorAdd(lv_damagingUnit, lv_shieldsBehavior, lv_damagingUnit, 1);
+    if (((lv_shieldsValueCurrent_FCT + lv_shieldsValueDamaged) >= lv_shieldsValueMax)) {
+        lv_shieldsValueCurrent_FCT = (lv_shieldsValueMax - lv_shieldsValueCurrent_FCT);
+    }
+    else {
+        lv_shieldsValueCurrent_FCT = lv_shieldsValueDamaged;
+    }
+    if ((lv_shieldsValueCurrent_FCT < 1.0)) {
+        return true;
+    }
+
+    if ((lv_isCrit == true)) {
+        lv_style = "FCT_Shield_Crit";
+    }
+    else {
+        lv_style = "FCT_Shield_Normal";
+    }
+    libUIUI_gf_UICombatFloatingElementsCreateTextTagatUnitForPlayers(lv_damagingUnit, FixedToText(lv_shieldsValueCurrent_FCT, 0), lv_style, libUIUI_ge_UIFCTDirection_Vertical, libCore_gv_playerGroupFromPlayer[lv_damagingPlayer], 0, "EventAnimate", false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed_Init () {
+    libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed = TriggerCreate("libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed_Func");
+    TriggerAddEventUnitDamageAbsorbed(libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Selendis - Phase Weapon
+//--------------------------------------------------------------------------------------------------
+bool libHSld_gt_HeroSelendisPhaseWeapon_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((PlayerHasTalent(EventUnitDamageSourcePlayer(), "HeroSelendisTalentPhaseWeapon") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitHasBehavior2(EventUnitDamageSourceUnit(), "HeroSelendisTalentPhaseWeapon@ActiveBuff") == false)) {
+        libGame_gf_UnitStatsLifestealCalculation((EventUnitDamageAmount() + EventUnitDamageBehaviorShield()), libHSld_gv_heroSelendisPhaseWeaponLifestealPassive, false, false, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    }
+    else {
+        libGame_gf_UnitStatsLifestealCalculation((EventUnitDamageAmount() + EventUnitDamageBehaviorShield()), libHSld_gv_heroSelendisPhaseWeaponLifestealActive, false, false, EventUnit(), EventUnitDamageSourceUnit(), EventUnitDamageEffect());
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHSld_gt_HeroSelendisPhaseWeapon_Init () {
+    libHSld_gt_HeroSelendisPhaseWeapon = TriggerCreate("libHSld_gt_HeroSelendisPhaseWeapon_Func");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisPhaseWeapon, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisWeapon@Damage");
+    TriggerAddEventUnitDamaged(libHSld_gt_HeroSelendisPhaseWeapon, null, c_unitDamageTypeAny, c_unitDamageEither, "HeroSelendisWeapon@DamageCritical");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Selendis - Force of Will - Talent Choosen
+//--------------------------------------------------------------------------------------------------
+bool libHSld_gt_HeroSelendisForceofWillTalentChoosen_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_selendis;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_selendis = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(lv_selendis, "HeroSelendisTemplarWillpower") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorAdd(lv_selendis, "HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior", lv_selendis, 1);
+    UnitBehaviorSetDurationRemaining(lv_selendis, "HeroSelendisTalentTemplarWillpowerForceOfWill@ArmorBehavior", UnitBehaviorDuration(lv_selendis, "HeroSelendisTemplarWillpower"));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHSld_gt_HeroSelendisForceofWillTalentChoosen_Init () {
+    libHSld_gt_HeroSelendisForceofWillTalentChoosen = TriggerCreate("libHSld_gt_HeroSelendisForceofWillTalentChoosen_Func");
+    TriggerAddEventPlayerEffectUsed(libHSld_gt_HeroSelendisForceofWillTalentChoosen, c_playerAny, "HeroSelendisTalentTemplarWillpowerForceOfWill@TalentChoosenSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Selendis - Calldown Vindicator - Mothership
+//--------------------------------------------------------------------------------------------------
+bool libHSld_gt_HeroSelendisCalldownVindicatorMothership_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_mothership;
+    fixed lv_remainingDuration;
+    fixed lv_totalDuration;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_mothership = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_totalDuration = UnitBehaviorDurationTotal(lv_mothership, "HeroSelendisCalldownVindicator@TimedLifeBehavior");
+    lv_remainingDuration = UnitBehaviorDuration(lv_mothership, "HeroSelendisCalldownVindicator@TimedLifeBehavior");
+    UnitBehaviorSetDuration(lv_mothership, "HeroSelendisCalldownVindicator@TimedLifeBehavior", (lv_totalDuration+libHSld_gv_heroSelendisCalldownVindicatorMothership));
+    UnitBehaviorSetDurationRemaining(lv_mothership, "HeroSelendisCalldownVindicator@TimedLifeBehavior", (lv_remainingDuration+libHSld_gv_heroSelendisCalldownVindicatorMothership));
+    lv_totalDuration = UnitBehaviorDurationTotal(lv_mothership, "HeroSelendisCalldownVindicator@TimedLifeBehavior");
+    lv_remainingDuration = UnitBehaviorDuration(lv_mothership, "HeroSelendisCalldownVindicator@TimedLifeBehavior");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHSld_gt_HeroSelendisCalldownVindicatorMothership_Init () {
+    libHSld_gt_HeroSelendisCalldownVindicatorMothership = TriggerCreate("libHSld_gt_HeroSelendisCalldownVindicatorMothership_Func");
+    TriggerAddEventPlayerEffectUsed(libHSld_gt_HeroSelendisCalldownVindicatorMothership, c_playerAny, "HeroSelendisTalentCalldownVindicatorMothership@DummyTriggerSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero - Selendis - Templar Blades - Icon UI Controller
+//--------------------------------------------------------------------------------------------------
+bool libHSld_gt_HeroSelendisTemplarBladesIconUIController_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_itPlayer;
+    string lv_itBehavior;
+    int lv_itStack;
+    playergroup lv_enemyPlayerGroup;
+    unit lv_targetUnit;
+    int lv_imageFrame;
+
+    // Automatic Variable Declarations
+    unit auto09DF96B2_u;
+    int auto09DF96B2_i;
+    int auto04B76BA7_ae;
+    const int auto04B76BA7_ai = 1;
+    playergroup autoDA39D7BA_g;
+
+    // Variable Initialization
+    lv_enemyPlayerGroup = PlayerGroupEmpty();
+    lv_targetUnit = EventUnit();
+    lv_imageFrame = c_invalidDialogControlId;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogControlHookupUnitStatus(c_triggerControlTypeImage, "HeroUnitStatusParentFrame/HeroSpecificStackingBuffsPanel/SelendisStacksFrameContainer/SelendisTemplarBladesFrame/SelendisTemplarBlades", lv_targetUnit);
+    lv_imageFrame = DialogControlLastCreated();
+    lv_enemyPlayerGroup = libGame_gf_EnemyPlayerGroupOfPlayer(UnitGetOwner(lv_targetUnit));
+    DialogControlSetVisible(lv_imageFrame, lv_enemyPlayerGroup, false);
+    auto09DF96B2_u = lv_targetUnit;
+    auto09DF96B2_i = 1;
+    for ( ; auto09DF96B2_i <= UnitBehaviorCountAll(auto09DF96B2_u) ; auto09DF96B2_i += BoolToInt(lv_itBehavior == UnitBehaviorGet(auto09DF96B2_u, auto09DF96B2_i)) ) {
+        lv_itBehavior = UnitBehaviorGet(auto09DF96B2_u, auto09DF96B2_i);
+        if ((lv_itBehavior == "HeroSelendisTalentTemplarBlades@TargetMarkBuff")) {
+            auto04B76BA7_ae = UnitBehaviorCount(lv_targetUnit, "HeroSelendisTalentTemplarBlades@TargetMarkBuff");
+            lv_itStack = 1;
+            for ( ; ( (auto04B76BA7_ai >= 0 && lv_itStack <= auto04B76BA7_ae) || (auto04B76BA7_ai < 0 && lv_itStack >= auto04B76BA7_ae) ) ; lv_itStack += auto04B76BA7_ai ) {
+                autoDA39D7BA_g = lv_enemyPlayerGroup;
+                lv_itPlayer = -1;
+                while (true) {
+                    lv_itPlayer = PlayerGroupNextPlayer(autoDA39D7BA_g, lv_itPlayer);
+                    if (lv_itPlayer < 0) { break; }
+                    if ((UnitBehaviorEffectPlayer(lv_targetUnit, lv_itBehavior, c_effectPlayerCaster, (lv_itStack-1)) == lv_itPlayer)) {
+                        DialogControlSetVisible(lv_imageFrame, lv_enemyPlayerGroup, true);
+                    }
+
+                }
+            }
+            return true;
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libHSld_gt_HeroSelendisTemplarBladesIconUIController_Init () {
+    libHSld_gt_HeroSelendisTemplarBladesIconUIController = TriggerCreate("libHSld_gt_HeroSelendisTemplarBladesIconUIController_Func");
+    TriggerAddEventUnitBehaviorChange(libHSld_gt_HeroSelendisTemplarBladesIconUIController, null, "HeroSelendisTalentTemplarBlades@TargetMarkBuff", c_unitBehaviorChangeIncrease);
+    TriggerAddEventUnitBehaviorChange(libHSld_gt_HeroSelendisTemplarBladesIconUIController, null, "HeroSelendisTalentTemplarBlades@TargetMarkBuff", c_unitBehaviorChangeDecrease);
+}
+
+void libHSld_InitTriggers () {
+    libHSld_gt_HeroSelendisTemplarWillpowerDamaged_Init();
+    libHSld_gt_HeroSelendisTemplarWillpowerAbsorbed_Init();
+    libHSld_gt_HeroSelendisPhaseWeapon_Init();
+    libHSld_gt_HeroSelendisForceofWillTalentChoosen_Init();
+    libHSld_gt_HeroSelendisCalldownVindicatorMothership_Init();
+    libHSld_gt_HeroSelendisTemplarBladesIconUIController_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libHSld_InitLib_completed = false;
+
+void libHSld_InitLib () {
+    if (libHSld_InitLib_completed) {
+        return;
+    }
+
+    libHSld_InitLib_completed = true;
+
+    libHSld_InitLibraries();
+    libHSld_InitVariables();
+    libHSld_InitTriggers();
+}
+

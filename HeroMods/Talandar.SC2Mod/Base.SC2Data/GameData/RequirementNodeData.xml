@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorHeroGenericInventoryControllerCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0">
+        <OperandArray value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitCountBehaviorUltimate1UnlockedCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorUltimate1UnlockedCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0">
+        <OperandArray value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnitCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorDeadCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorDeadCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorDeadCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit0">
+        <OperandArray value="EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit0EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray value="EqCountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit0"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1"/>
+    </CRequirementAnd>
+    <CRequirementCountBehavior id="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroTalandarDragoonArmorSuit@DragoonCarryBehavior" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroTalandarPraetorArmorSuit@PraetorCarryBehavior" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroTalandarPurifierBeam@PurifierBeam" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroTalandarSolarCannonChannel@DummyChannel" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HeroTalandarSolariteFlareChannel@DummyChannel" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementEq id="EqCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit1">
+        <OperandArray index="0" value="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroTalandarSolarCannonChannel@DummyChannelCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit0">
+        <OperandArray index="0" value="CountBehaviorHeroTalandarSolariteFlareChannel@DummyChannelCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementOr id="OrCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitAndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="AndCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnitEqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0">
+        <OperandArray value="CountBehaviorHeroTalandarDragoonArmorSuit@DragoonCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="EqCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit0"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnitAndCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnitCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+        <OperandArray value="AndCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnitCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrCountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnitCountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit">
+        <OperandArray value="CountBehaviorHeroTalandarPurifierBeam@PurifierBeamCompleteOnlyAtUnit"/>
+        <OperandArray value="CountBehaviorHeroTalandarPraetorArmorSuit@PraetorCarryBehaviorCompleteOnlyAtUnit"/>
+    </CRequirementOr>
+</Catalog>

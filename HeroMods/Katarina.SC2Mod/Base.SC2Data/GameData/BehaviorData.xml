@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="HeroKatarina@EquipMovespeed">
+        <BehaviorCategories index="Fast" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1"/>
+        <Modification>
+            <AdditiveMoveSpeedFactor value="0.4"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaFlameStream">
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaWeaponFlamethrower@CasterHasWeaponEquipped"/>
+        <Duration value="7"/>
+        <Modification WeaponRange="2.25" WeaponScanBonus="2.25"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentArsenal" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="3"/>
+        </Cost>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Cooldown.dds"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <RefreshEffect value="HeroKatarinaTalentArsenal@TokenCounterController"/>
+        <FinalEffect value="HeroKatarinaTalentArsenal@ResetToken"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="3"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentWeaponMasterToTheLimit@ActiveBuff">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit"/>
+        <Duration value="10"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentWeaponMasterToTheLimit@CarryBehavior" parent="CoreCarryBehaviorParent">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentWeaponMasterToTheLimit"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentTargetAcquired" parent="CoreQuestToken">
+        <Cost>
+            <Charge CountMax="3"/>
+        </Cost>
+        <InfoIcon value="assets\Icons\Common_General\Icon_General_AutoAttack_Damage.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentTargetAcquired"/>
+        <RefreshEffect value="HeroKatarinaTalentTargetAcquired@TokenCounterController"/>
+        <DamageResponse>
+            <Cost>
+                <Charge CountMax="3"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentTargetPractice@Movespeed" parent="CoreSprint">
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentTargetPractice"/>
+        <Duration value="8"/>
+        <Modification>
+            <AdditiveMoveSpeedFactor value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentTargetPractice@AttackSpeed">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <BehaviorCategories index="User14" value="1"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentTargetPractice"/>
+        <Duration value="8"/>
+        <Modification>
+            <AdditiveAttackSpeedFactor value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="KatarinaTalentClusterChargeCripplingCharge@StatsDebuff" parent="CoreDamageReduction">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <MaxStackCount value="10"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-7"/>
+            <AttributeChangeArray index="1" Points="-7"/>
+            <AttributeChangeArray Attribute="CategoryDebuffSpellPower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentWeaponMasterAmmoMaster" parent="CoreCarryBehaviorParent">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Modification>
+            <VitalMaxArray index="Energy" value="50"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaEquipAutorifle@Cooldown">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaEquipFlamethrower@Cooldown">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaEquipGrenadeLauncher@Cooldown">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaEquipSnipe@Cooldown">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="8"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffEquipped" parent="CoreUnitStatsModificator">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <MaxStackCount value="25"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray index="16" Points="2"/>
+            <AttributeChangeArray index="17" Points="2"/>
+        </Modification>
+        <BuffFlags index="RefreshStack" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponFlamethrower@AdditiveEffectArmorBuffCarried" parent="CoreUnitStatsModificator">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <MaxStackCount value="15"/>
+        <Duration value="4"/>
+        <Modification>
+            <AttributeChangeArray index="16" Points="2"/>
+            <AttributeChangeArray index="17" Points="2"/>
+        </Modification>
+        <BuffFlags index="RefreshStack" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaFlashGrenade@VisionReduction" parent="CoreVisionRemoval">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <MaxStackCount value="64"/>
+        <Duration value="4"/>
+        <Modification SightBonus="-0.1328" SightMaximum="12" SightMinimum="3.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaFlashGrenade@Blind" parent="CoreBlind">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="4"/>
+        <DamageResponse>
+            <RequireEffectArray value="HeroKatarinaWeaponAutorifle@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponGrenadeLauncher@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponFlamethrower@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponSnipe@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponAutorifle@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponGrenadeLauncher@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponFlamethrower@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponSnipe@Damage"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaFlashGrenade@Silence" parent="CoreSilence">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Duration value="0.75"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaFlashGrenade@VisionSource">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina,Race:Neutral"/>
+        <Duration value="0.5"/>
+        <Modification UnifiedMoveSpeedFactor="-0.9"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@CasterDurationBuff">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <TimeScaleSource Value="Global"/>
+        <RemoveValidatorArray value="HeroKatarinaExclusionZone"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@TimedBehaviorCaster">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <InfoFlags index="AlwaysUseGameText" value="1"/>
+        <BehaviorCategories index="Restorable" value="1"/>
+        <EditorCategories value="CoreHero:Katarina"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="10"/>
+        <FinalEffect value="HeroKatarinaExclusionZone@FinalSearchAffectedHeroes"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@FinalRoots" parent="CoreRoot">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1">
+            <AccumulatorArray value="HeroKatarinaExclusionZone@AdditionalTimeArithmetic"/>
+        </Duration>
+        <RemoveValidatorArray value="HeroKatarinaExclusionZone"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@FinalSilence" parent="CoreSilence">
+        <EditorCategories value="Race:Neutral,AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1">
+            <AccumulatorArray value="HeroKatarinaExclusionZone@AdditionalTimeArithmetic"/>
+        </Duration>
+        <RemoveValidatorArray value="HeroKatarinaExclusionZone"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@HeroInZoneController">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Duration value="0.3"/>
+        <RemoveValidatorArray value="HeroKatarinaExclusionZone"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@HeroTimedBehavior">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <RemoveValidatorArray value="HeroKatarinaExclusionZone@HasHeroInZoneController"/>
+        <RemoveValidatorArray value="HeroKatarinaExclusionZone"/>
+        <BuffFlags index="Countdown" value="0"/>
+        <Duration value="10.0625"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@TowerActivation">
+        <EditorCategories value="CoreHero:Katarina"/>
+        <Duration value="1.25"/>
+        <FinalEffect value="HeroKatarinaExclusionZone@ApplyTimedLife"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaExclusionZone@TowerTimedLife">
+        <EditorCategories value="CoreHero:Katarina"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentWeaponMasterAmmoRestoration@CarryBehavior" parent="CoreCarryBehaviorParent">
+        <BehaviorFlags index="EnabledWhileDead" value="0"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <DisableValidatorArray value="EnergyNotFullCaster"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+        <PeriodicEffect value="HeroKatarinaTalentWeaponMasterAmmoRestoration@ApplyPeriodic"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentMasterAutorifle@ShieldBuff" parent="CoreShieldLeech">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <DisplayDuration index="Self" value="0"/>
+        <DisplayDuration index="Ally" value="0"/>
+        <DisplayDuration index="Enemy" value="0"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentMasterAutorifle"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaTalentWeaponMasterAmmoRestoration@Periodic">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <RemoveValidatorArray value="EnergyNotFullCaster"/>
+        <RemoveValidatorArray value="HeroKatarinaTalentWeaponMasterAmmoRestoration"/>
+        <Duration value="3"/>
+        <FinalEffect value="HeroKatarinaTalentWeaponMasterAmmoRestoration@AddAmmo"/>
+        <Modification>
+            <BehaviorLinkDisableArray value="HeroKatarinaTalentWeaponMasterAmmoRestoration@CarryBehavior"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffEquipped" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="10"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponGrenadeLauncher@AdditiveEffectArmorDebuffCarried" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="5"/>
+        <Duration value="3"/>
+        <Modification>
+            <AttributeChangeArray index="0" Points="-2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaClusterCharge@TimedLife">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1.4"/>
+        <FinalEffect value="HeroKatarinaClusterCharge@TimedLifeSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaClusterCharge@SpreadBehavior">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1.4"/>
+        <FinalEffect value="HeroKatarinaClusterCharge@SpreadPersistent"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaLaserShot@Silence" parent="CoreSilence">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponAutorifle@WeaponCarried">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponGrenadeLauncher@WeaponCarried">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <DamageResponse Handled="HeroKatarinaWeaponGrenadeLauncher@ApplyArmorDebuffCarried" Location="Attacker" TargetFilters="-;Structure">
+            <RequireEffectArray value="HeroKatarinaWeaponAutorifle@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponFlamethrower@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponSnipe@Damage"/>
+            <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponFlamethrower@WeaponCarried">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <DamageResponse Handled="HeroKatarinaWeaponFlamethrower@ApplyArmorBuffCarried" Location="Attacker">
+            <RequireEffectArray value="HeroKatarinaWeaponAutorifle@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponGrenadeLauncher@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponSnipe@Damage"/>
+            <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponFlamethrower@WeaponEquipped">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Modification>
+            <WeaponEnableArray value="HeroKatarinaWeaponFlamethrower"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponAutorifle"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponGrenadeLauncher"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponSnipe"/>
+        </Modification>
+        <FinalEffect value="HeroKatarinaEquipFlamethrower@ApplyCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponGrenadeLauncher@WeaponEquipped">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Modification>
+            <WeaponEnableArray value="HeroKatarinaWeaponGrenadeLauncher"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponAutorifle"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponFlamethrower"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponSnipe"/>
+        </Modification>
+        <FinalEffect value="HeroKatarinaEquipGrenadeLauncher@ApplyCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponSnipe@WeaponCarried">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <DamageResponse Handled="HeroKatarinaWeaponSnipe@ApplySpellPowerCarried" Location="Attacker">
+            <RequireEffectArray value="HeroKatarinaWeaponAutorifle@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponFlamethrower@Damage"/>
+            <RequireEffectArray value="HeroKatarinaWeaponGrenadeLauncher@Damage"/>
+            <ValidatorArray value="BasicAttackEffectTreeCheckCombine"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponSnipe@WeaponEquipped">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Modification>
+            <WeaponEnableArray value="HeroKatarinaWeaponSnipe"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponAutorifle"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponGrenadeLauncher"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponFlamethrower"/>
+        </Modification>
+        <FinalEffect value="HeroKatarinaEquipSnipe@ApplyCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponAutorifle@WeaponEquipped">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Modification>
+            <WeaponEnableArray value="HeroKatarinaWeaponAutorifle"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponGrenadeLauncher"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponFlamethrower"/>
+            <WeaponDisableArray value="HeroKatarinaWeaponSnipe"/>
+        </Modification>
+        <FinalEffect value="HeroKatarinaEquipAutorifle@ApplyCooldown"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerEquipped" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="5"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="17" Points="10"/>
+            <AttributeChangeArray Attribute="CategoryBuffSpellPower"/>
+        </Modification>
+        <BehaviorCategories index="TimedLife" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaWeaponSnipe@AdditiveEffectSpellPowerCarried" parent="CoreUnitStatsModificator">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="10"/>
+        <Duration value="5"/>
+        <Modification>
+            <AttributeChangeArray index="17" Points="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HeroKatarinaClusterCharge@Slow" parent="CoreSlow">
+        <EditorCategories value="AbilityorEffectType:Units,CoreHero:Katarina"/>
+        <Duration value="1.4"/>
+        <Modification UnifiedMoveSpeedFactor="-0.15"/>
+    </CBehaviorBuff>
+</Catalog>
